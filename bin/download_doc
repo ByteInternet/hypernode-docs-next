@@ -1,0 +1,96 @@
+#!/usr/bin/env python
+
+import os
+import re
+import sys
+from argparse import ArgumentParser
+from logging import DEBUG, INFO, StreamHandler, getLogger
+from pathlib import Path
+from typing import List, Tuple
+
+import requests
+from bs4 import BeautifulSoup
+from markdownify import markdownify as md
+
+logger = getLogger(__name__)
+
+
+def configure_logging(debug: bool) -> None:
+    level = DEBUG if debug else INFO
+    logger.setLevel(level)
+    ch = StreamHandler()
+    logger.addHandler(ch)
+
+
+def parse_args(args) -> Tuple[str, Path, bool, bool]:
+    parser = ArgumentParser(description="Download, convert and save documentation page")
+    parser.add_argument("url", nargs=1, help="Documentation URL to download")
+    parser.add_argument(
+        "--output-dir", help="Directory to save the page", default=os.getcwd()
+    )
+    parser.add_argument(
+        "-v", "--verbose", help="Be more verbose", action="store_true", default=False
+    )
+    parser.add_argument(
+        "-f",
+        "--force",
+        help="Overwrite existing file when it exists",
+        action="store_true",
+        default=False,
+    )
+
+    parsed_args = parser.parse_args(args)
+
+    return (
+        parsed_args.url[0],
+        Path(parsed_args.output_dir),
+        parsed_args.force,
+        parsed_args.verbose,
+    )
+
+
+def convert_title_to_filename(title: str) -> str:
+    filename = title.lower()
+    filename = filename.replace(".", "")
+    filename = re.sub(r"[ -!?]+", "_", filename)
+    filename = re.sub(r"_+", "_", filename)
+    return filename
+
+
+def main(args: List[str]) -> int:
+    url, output_dir, force, verbose = parse_args(args)
+
+    configure_logging(verbose)
+
+    if not os.path.isdir(output_dir):
+        logger.error(f"Output directory {output_dir} does not exist!")
+        return os.EX_USAGE
+
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, "html.parser")
+    article_heading = soup.find(class_="hc-heading").text
+    article_body = soup.find(id="article-body")
+    article_body_markdown = md(str(article_body))
+    # Remove unnecessary empty lines
+    article_body_markdown = article_body_markdown.replace("\n\n\n", "\n\n")
+
+    filename = convert_title_to_filename(article_heading)
+    filepath = output_dir.joinpath(filename + ".md")
+    document_contents = f"# {article_heading}" "\n" f"{article_body_markdown}"
+
+    if os.path.isfile(filepath):
+        if force:
+            logger.warning(f"Overwriting file {filepath}")
+        else:
+            logger.error(f"File {filepath} already exists! Exiting")
+            return os.EX_USAGE
+
+    with open(filepath, mode="w", encoding="utf-8") as f:
+        logger.warning(f"Writing converted doc to {filepath}")
+        f.write(document_contents)
+
+    return os.EX_OK
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

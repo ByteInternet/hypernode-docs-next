@@ -1,0 +1,8 @@
+ipython==7.31.1
+pre-commit==2.17.0
+black==22.3.0
+pytest==6.2.4
+pytest-xdist==2.4.0
+mypy==0.940
+flake8==3.9.2
+tox==3.24.1
