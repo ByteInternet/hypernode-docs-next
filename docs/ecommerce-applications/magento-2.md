@@ -1,9 +1,9 @@
-# eCommerce Applications
+# Magento 2
 
 ```{toctree}
 :caption: 'Contents:'
 :maxdepth: 1
 :glob:
 
-ecommerce_applications/*
+magento-2/*
 ```

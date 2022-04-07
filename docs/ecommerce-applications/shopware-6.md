@@ -5,5 +5,5 @@
 :maxdepth: 1
 :glob:
 
-shopware/*
+shopware-6/*
 ```

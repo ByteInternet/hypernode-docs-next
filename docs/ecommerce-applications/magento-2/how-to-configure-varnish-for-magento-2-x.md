@@ -1,3 +1,4 @@
+<!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-configure-varnish-for-magento-2-x -->
 # How to Configure Varnish for Magento 2.x
 
 Customers with Hypernode Professional and Excellence plans can use Varnish to boost their Magento shop. This article explains how you can configure Varnish 4 or 6 for your Hypernode. If you want to know which Varnish version you need to configure, please check the [Magento documentation](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html) first. Do you have a Magento 1 shop, please check [this article](https://support.hypernode.com/knowledgebase/varnish-on-magento1/).
@@ -62,17 +63,19 @@ Configure Magento 2.x for Varnish
 
 ### Configure Your Backend Servers Through the Commandline
 
-If you want to flush the Varnish cache from the Magento backend, you need to add the Varnish server in your Magento config to `http-cache-hosts`.
+If you want to flush the Varnish cache from the Magento backend, you need to add the Varnish server in your Magento config to `http-cache-hosts`
+
+.
 
 To do this, run the following command:
-
 
 ```
 cd /data/web/magento2;
 chmod 750 bin/magento;
 bin/magento setup:config:set --http-cache-hosts=127.0.0.1:6081;
+
 ```
-Now when you flush your caches in cache management, your varnish full_page cache will be flushed too.
+Now when you flush your caches in cache management, your varnish full\_page cache will be flushed too.
 
 ### Test and Upload Your VCL
 
@@ -85,7 +88,6 @@ backend default {
 }
 
 ```
-
 If your VCL checks out, upload it to your Hypernode (using SCP, FTP or FTPS or whichever client you prefer)
 
 #### Remove Health Check Probe from Configuration
@@ -107,8 +109,7 @@ backend default {
 }
 
 ```
-
-Make sure you change this to the aforementioned configuration (without the health_check probe), since this will break on our Nginx configuration and will therefore result in a `503 Guru Meditation` error.
+Make sure you change this to the aforementioned configuration (without the health\_check probe), since this will break on our Nginx configuration and will therefore result in a `503 Guru Meditation` error.
 
 Import Your VCL into the Varnish Daemon
 ---------------------------------------
@@ -202,7 +203,7 @@ Sometimes while you enable Varnish, or even while Varnish was already enabled an
 
 "*upstream sent too big header while reading response header from upstream*"
 
-This error can 9 out of 10 times be fixed by adding some Nginx config. You can create a file, i.e. **~/nginx/server.header_buffer** with the following content:
+This error can 9 out of 10 times be fixed by adding some Nginx config. You can create a file, i.e. **~/nginx/server.header\_buffer** with the following content:
 
 ```
 fastcgi_buffers 16 16k;
@@ -216,7 +217,7 @@ proxy_busy_buffers_size 256k;
 ### 503 Errors
 
 * There is a bug when Varnish is activated on Magento 2.2.0, resulting in a "503 backend fetch" error. Please see Magento Github issue [10165](https://github.com/magento/magento2/issues/10165). For now, we advise you to either wait with upgrading to Magento 2.2.0 when using Varnish until this bug is fixed or use an adjusted .vcl as a temporary workaround:
-* In Magento 2.4.x (and possibly earlier versions as well) a solution could be to disable the **product_identities_extender** plugin. This is a default Magento plugin which doesn't seem to work properly with Varnish enabled. All credit for this solution goes to [Tree of Information](https://www.treeofinformation.nl/) whom have spend a long time investigting this issue.
+* In Magento 2.4.x (and possibly earlier versions as well) a solution could be to disable the **product\_identities\_extender** plugin. This is a default Magento plugin which doesn't seem to work properly with Varnish enabled. All credit for this solution goes to [Tree of Information](https://www.treeofinformation.nl/) whom have spend a long time investigting this issue.
 
 ### Restart Varnish
 
