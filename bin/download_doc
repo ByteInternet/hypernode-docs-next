@@ -11,6 +11,7 @@ from typing import List, Tuple
 import requests
 from bs4 import BeautifulSoup
 from markdownify import markdownify as md
+from slugify import slugify
 
 logger = getLogger(__name__)
 
@@ -50,11 +51,58 @@ def parse_args(args) -> Tuple[str, Path, bool, bool]:
 
 
 def convert_title_to_filename(title: str) -> str:
-    filename = title.lower()
-    filename = filename.replace(".", "")
-    filename = re.sub(r"[ -!?]+", "_", filename)
-    filename = re.sub(r"_+", "_", filename)
-    return filename
+    return slugify(title)
+
+
+def replace_old_toc_with_new_toc(content: str) -> str:
+    parsed_lines = []
+    stripping_toc = False
+    stripping_done = False
+    toc_line = -1
+    i = -1
+
+    for line in content.splitlines():
+        i += 1
+        stripped_line = line.strip()
+
+        if stripped_line == "**TABLE OF CONTENTS**" and not stripping_done:
+            stripping_toc = True
+            toc_line = i
+            continue
+
+        if stripping_toc:
+            if not stripped_line:
+                continue
+            if (
+                stripped_line.startswith("* [")
+                or stripped_line.startswith("+ [")
+                or stripped_line.startswith("- [")
+            ):
+                continue
+            else:
+                stripping_toc = False
+                stripping_done = True
+
+        if not stripping_toc:
+            parsed_lines.append(line)
+
+    if stripping_toc and not stripping_done:
+        raise Exception("Unfinished Table of Contents found!")
+
+    if toc_line != -1:
+        lines = parsed_lines[:toc_line]
+        lines.append("## Table of Contents")
+        lines.append("```{contents}")
+        lines.append(":depth: 3")
+        lines.append(":backlinks: none")
+        lines.append("```")
+        lines.append("")
+        lines += parsed_lines[toc_line:]
+        parsed_lines = lines
+
+    content = "\n".join(parsed_lines)
+
+    return content
 
 
 def main(args: List[str]) -> int:
@@ -71,12 +119,31 @@ def main(args: List[str]) -> int:
     article_heading = soup.find(class_="hc-heading").text
     article_body = soup.find(id="article-body")
     article_body_markdown = md(str(article_body))
+
+    # Remove trailing whitespace from lines
+    TRAILING_WHITESPACE_PATTERIN = re.compile(r"[ ]+\n")
+    article_body_markdown = TRAILING_WHITESPACE_PATTERIN.sub(
+        "\n", article_body_markdown
+    )
+
     # Remove unnecessary empty lines
-    article_body_markdown = article_body_markdown.replace("\n\n\n", "\n\n")
+    DUPLICATE_EMPTY_LINE_PATTERN = re.compile(r"[\n]{3,}")
+    article_body_markdown = DUPLICATE_EMPTY_LINE_PATTERN.sub(
+        "\n\n", article_body_markdown
+    )
+
+    article_body_markdown = replace_old_toc_with_new_toc(article_body_markdown)
 
     filename = convert_title_to_filename(article_heading)
     filepath = output_dir.joinpath(filename + ".md")
-    document_contents = f"# {article_heading}" "\n" f"{article_body_markdown}"
+    document_source_comment = f"<!-- source: {url} -->"
+    document_contents = (
+        f"{document_source_comment}"
+        "\n"
+        f"# {article_heading}"
+        "\n"
+        f"{article_body_markdown}"
+    )
 
     if os.path.isfile(filepath):
         if force:

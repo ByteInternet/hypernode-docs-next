@@ -3,6 +3,7 @@ sphinx_rtd_theme==0.5.2
 myst-parser==0.17.0
 mdit-py-plugins
 sphinx-copybutton==0.5.0
+python-slugify==6.1.1
 
 beautifulsoup4
 markdownify
