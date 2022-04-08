@@ -6,6 +6,7 @@ import sys
 from argparse import ArgumentParser
 from logging import DEBUG, INFO, StreamHandler, getLogger
 from pathlib import Path
+from textwrap import dedent
 from typing import List, Tuple
 
 import requests
@@ -58,16 +59,14 @@ def replace_old_toc_with_new_toc(content: str) -> str:
     parsed_lines = []
     stripping_toc = False
     stripping_done = False
-    toc_line = -1
-    i = -1
+    toc_placeholder = "___toc_placeholder___"
 
     for line in content.splitlines():
-        i += 1
         stripped_line = line.strip()
 
         if stripped_line == "**TABLE OF CONTENTS**" and not stripping_done:
             stripping_toc = True
-            toc_line = i
+            parsed_lines.append(toc_placeholder)
             continue
 
         if stripping_toc:
@@ -89,18 +88,17 @@ def replace_old_toc_with_new_toc(content: str) -> str:
     if stripping_toc and not stripping_done:
         raise Exception("Unfinished Table of Contents found!")
 
-    if toc_line != -1:
-        lines = parsed_lines[:toc_line]
-        lines.append("## Table of Contents")
-        lines.append("```{contents}")
-        lines.append(":depth: 3")
-        lines.append(":backlinks: none")
-        lines.append("```")
-        lines.append("")
-        lines += parsed_lines[toc_line:]
-        parsed_lines = lines
-
     content = "\n".join(parsed_lines)
+
+    SPHINX_TOC = """
+    ## Table of Contents
+    ```{contents}
+    :depths: 3
+    :backlinks: none
+    ```
+    """
+
+    content = content.replace(toc_placeholder, dedent(SPHINX_TOC).lstrip())
 
     return content
 
