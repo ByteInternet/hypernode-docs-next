@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+pushd docs
+python3 -m http.server --directory _build/html/
+popd
