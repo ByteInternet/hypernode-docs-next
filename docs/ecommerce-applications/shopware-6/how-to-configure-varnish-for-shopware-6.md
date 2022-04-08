@@ -1,17 +1,15 @@
-<!-- Article sourced from https://support.hypernode.com/en/support/solutions/articles/48001200525-how-to-configure-varnish-for-shopware-6-->
+<!-- source: https://support.hypernode.com/en/support/solutions/articles/48001200525-how-to-configure-varnish-for-shopware-6 -->
 # How to Configure Varnish for Shopware 6
 
 Customers with Hypernode Professional and Excellence plans can use Varnish to boost their shop. This article explains how you can configure Varnish for your Hypernode.
 
 Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. We'd recommend to first test varnish on a [staging environment](https://support.hypernode.com/en/ecommerce/shopware/how-to-use-a-basic-staging-environment-with-shopware-6) or a[development plan](https://support.hypernode.com/en/hypernode/tools/how-to-use-hypernode-development-plans) before implementing varnish on a live node.
 
-
-**TABLE OF CONTENTS**
-
-* [Step One: Enable Varnish on the Hypernode](#Step-One%3A-Enable-Varnish-on-the-Hypernode)
-* [Step Two: How to Setup Varnish for the Vhost](#Step-Two%3A-How-to-Setup-Varnish-for-the-Vhost)
-* [Step Three: Configure Shopware to work with Varnish](#Step-Three%3A-Configure-Shopware-to-work-with-Varnish)
-* [Step Four: Implement a .vcl Into Varnish](#Step-Four%3A-Implement-a-.vcl-Into-Varnish)
+## Table of Contents
+```{contents}
+:depth: 3
+:backlinks: none
+```
 
 ### Step One: Enable Varnish on the Hypernode
 
@@ -34,7 +32,7 @@ To enable varnish for these vhosts you can run the below command:
 
 `/data/web/nginx/example.com/public.shopware6.conf`
 
-```
+``` nginx
 ## Redirecting to varnish
 location / {
     set $log\_handler varnish;
@@ -50,7 +48,7 @@ location / {
 ```
 `/data/web/nginx/example.com/varnish.shopware6.conf`
 
-```
+``` nginx
 root /data/web/public;
 
 include /etc/nginx/handlers.conf;

@@ -1,20 +1,11 @@
-<!-- Article sourced from https://support.hypernode.com/en/ecommerce/magento-1/how-to-create-a-sitemap-xml-for-magento-1-x-->
+<!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-create-a-sitemap-xml-for-magento-1-x -->
 # How to Create a Sitemap.xml for Magento 1.x
 
-**TABLE OF CONTENTS**
-
-* [Enable sitemap.xml in Magento](#Enable-sitemap.xml-in-Magento)
-	+ [Configure Magento to Create Sitemaps](#Configure-Magento-to-Create-Sitemaps)
-	+ [Create a sitemap.xml in Magento](#Create-a-sitemap.xml-in-Magento)
-	+ [Generate the Sitemap Manually](#Generate-the-Sitemap-Manually)
-* [Configure Nginx to Use the Same Sitemap for All Storefronts](#Configure-Nginx-to-Use-the-Same-Sitemap-for-All-Storefronts)
-* [Configure Nginx to Use a Sitemap.xml per Storefront](#Configure-Nginx-to-Use-a-Sitemap.xml-per-Storefront)
-* [Alternative Configurations](#Alternative-Configurations)
-	+ [Configure Nginx to Serve a Sitemap.xml Outside the Public Directory](#Configure-Nginx-to-Serve-a-Sitemap.xml-Outside-the-Public-Directory)
-	+ [Configure Sitemaps When Storecode to URL is Enabled](#Configure-Sitemaps-When-Storecode-to-URL-is-Enabled)
-* [Add Your Sitemap Location to Your Robots.txt](#Add-Your-Sitemap-Location-to-Your-Robots.txt)
-* [Troubleshooting](#Troubleshooting)
-* [Additional Links](#Additional-Links)
+## Table of Contents
+```{contents}
+:depth: 3
+:backlinks: none
+```
 
 Enable sitemap.xml in Magento
 -----------------------------
@@ -27,7 +18,7 @@ Enable sitemap.xml in Magento
 
 Now fill in the information:
 
-![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48014490516/original/fd1mcqcAauLYam9kta5meMie5IN1KHQT9A.png?1573051897)
+![](_res/fd1mcqcAauLYam9kta5meMie5IN1KHQT9A.png)
 
 ### Create a sitemap.xml in Magento
 
@@ -36,7 +27,7 @@ When the generation of sitemaps is enabled in the catalog settings, we should ma
 * Navigate to `Catalog` > `Google Sitemap` > `Add Sitemap`
 * Add a sitemap.xml file to the configuration:
 
-![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48014490605/original/H9E8O25ldZ5qKqfgzvipavKFhZ--9c8flQ.png?1573051934)
+![](_res/H9E8O25ldZ5qKqfgzvipavKFhZ--9c8flQ.png)
 
 *If you use only one sitemap for all storefronts, just use `/` as path. If you want to use multiple sitemap.xml files depending on your storefront create a `sitemap` directory in `/data/web/public`, a directory named after each storefront to save each sitemap.xml on a different location.*
 
@@ -44,7 +35,7 @@ When the generation of sitemaps is enabled in the catalog settings, we should ma
 
 After adding a sitemap to the Magento configuration, we'll make sure the sitemap exists by clicking the `generate` button on the far right of the page:
 
-![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48014490772/original/kx1awTbeS6Uajk4vtfprlMD0TsqwUSAb0g.png?1573051984)
+![](_res/kx1awTbeS6Uajk4vtfprlMD0TsqwUSAb0g.png)
 
 Configure Nginx to Use the Same Sitemap for All Storefronts
 -----------------------------------------------------------
@@ -58,25 +49,22 @@ When you want to use a different sitemap per storefront some additional configur
 
 * Make sure there is no sitemap in `/data/web/public/sitemap.xml` to avoid an incorrect sitemap to be served (change the location of the sitemap.xml in Magento from `/sitemap.xml` to `/sitemaps/$storecode/sitemap.xml` where `$storecode` is the name of your storefront)
 * Create a sitemap directory and a directory for your storefront:
-* ```
-for CODE in $(n98-magerun sys:store:list --format csv | sed 1d | cut -d "," -f 2 )
-do
-mkdir -p /data/web/public/sitemaps/$CODE
-done
-
-```
+  ```
+  for CODE in $(n98-magerun sys:store:list --format csv | sed 1d | cut -d "," -f 2 )
+  do
+  mkdir -p /data/web/public/sitemaps/$CODE
+  done
+  ```
 * Create an Nginx include as `/data/web/nginx/server.sitemap` to route all requests to sitemap.xml to the given store:
-* ```
-location /sitemap.xml {
-    rewrite ^/sitemap\.xml$ /sitemaps/$storecode/sitemap.xml;
-}
-
-```
+  ```
+  location /sitemap.xml {
+      rewrite ^/sitemap\.xml$ /sitemaps/$storecode/sitemap.xml;
+  }
+  ```
 * Now test your sitemap by requesting and verify whether the right sitemap is served:
-* ```
-curl -v https://www.example.com/sitemap.xml
-
-```
+  ```
+  curl -v https://www.example.com/sitemap.xml
+  ```
 
 Alternative Configurations
 --------------------------

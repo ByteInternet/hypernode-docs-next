@@ -5,9 +5,7 @@
 :maxdepth: 2
 :glob:
 
-page
-
-ecommerce_applications
+ecommerce-applications
 ```
 
 # Indices and tables
