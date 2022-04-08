@@ -15,16 +15,14 @@ pip install -r requirements/base.txt
 pip install -r requirements/development.txt
 ```
 
-## Building
+## Building the docs
 
 ```
-cd docs
-make html
+bin/build_docs
 ```
 
-## Serving the HTML
+## Serving the docs
 
 ```
-cd docs
-python3 -m http.server --directory _build/html/
+bin/serve_docs
 ```
