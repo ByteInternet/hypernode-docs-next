@@ -6,8 +6,10 @@ import sys
 from argparse import ArgumentParser
 from logging import DEBUG, INFO, StreamHandler, getLogger
 from pathlib import Path
+from posixpath import basename
 from textwrap import dedent
 from typing import List, Tuple
+from urllib.parse import urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -131,6 +133,30 @@ def main(args: List[str]) -> int:
     )
 
     article_body_markdown = replace_old_toc_with_new_toc(article_body_markdown)
+
+    def download_image_cb(match: re.Match) -> str:
+        image_url = match.group(1)
+        r = urlparse(image_url)
+        filename = basename(r.path)
+
+        res_dir = output_dir.joinpath("_res")
+        filepath = res_dir.joinpath(filename)
+        markdown_image_url = f"![](_res/{filename})"
+        if os.path.isfile(filepath):
+            return markdown_image_url
+
+        if not os.path.isdir(res_dir):
+            os.mkdir(res_dir)
+
+        res_response = requests.get(image_url)
+        # @NOTE(timon): Perhaps check mime type?
+        with open(filepath, mode="wb") as f:
+            f.write(res_response.content)
+
+        return markdown_image_url
+
+    IMAGE_PATTERN = re.compile(r"!\[\]\((.+)\)")
+    article_body_markdown = IMAGE_PATTERN.sub(download_image_cb, article_body_markdown)
 
     filename = convert_title_to_filename(article_heading)
     filepath = output_dir.joinpath(filename + ".md")
