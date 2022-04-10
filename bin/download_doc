@@ -57,7 +57,7 @@ def convert_title_to_filename(title: str) -> str:
     return slugify(title)
 
 
-def replace_old_toc_with_new_toc(content: str) -> str:
+def remove_old_table_of_contents(content: str, replace: bool = False) -> str:
     parsed_lines = []
     stripping_toc = False
     stripping_done = False
@@ -92,15 +92,17 @@ def replace_old_toc_with_new_toc(content: str) -> str:
 
     content = "\n".join(parsed_lines)
 
-    SPHINX_TOC = """
-    ```{contents}
-    :caption: 'Table of Contents'
-    :depth: 3
-    :backlinks: none
-    ```
-    """
-
-    content = content.replace(toc_placeholder, dedent(SPHINX_TOC).lstrip())
+    if replace:
+        SPHINX_TOC = """
+        ```{contents}
+        :caption: 'Table of Contents'
+        :depth: 3
+        :backlinks: none
+        ```
+        """
+        content = content.replace(toc_placeholder, dedent(SPHINX_TOC).lstrip())
+    else:
+        content = content.replace(toc_placeholder, "")
 
     return content
 
@@ -143,7 +145,7 @@ def main(args: List[str]) -> int:
         "\n\n", article_body_markdown
     )
 
-    article_body_markdown = replace_old_toc_with_new_toc(article_body_markdown)
+    article_body_markdown = remove_old_table_of_contents(article_body_markdown)
 
     def download_image_cb(match: re.Match) -> str:
         image_url = match.group(1)
