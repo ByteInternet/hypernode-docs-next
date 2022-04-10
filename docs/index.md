@@ -1,11 +1,13 @@
 # Welcome to Hypernode Support's documentation!
 
 ```{toctree}
-:caption: 'Table of Contents'
+:caption: 'eCommerce Applications'
 :maxdepth: 2
 :glob:
 
-ecommerce-applications
+ecommerce-applications/magento-1
+ecommerce-applications/magento-2
+ecommerce-applications/shopware-6
 ```
 
 # Indices and tables
