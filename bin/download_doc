@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os
 import re
@@ -118,7 +118,18 @@ def main(args: List[str]) -> int:
     soup = BeautifulSoup(response.content, "html.parser")
     article_heading = soup.find(class_="hc-heading").text
     article_body = soup.find(id="article-body")
-    article_body_markdown = md(str(article_body))
+
+    def code_language_cb(el):
+        if not el.has_attr("class"):
+            return None
+        for class_name in el["class"]:
+            if class_name.startswith("language-"):
+                return class_name.replace("language-", "")
+        return None
+
+    article_body_markdown = md(
+        str(article_body), code_language_callback=code_language_cb
+    )
 
     # Remove trailing whitespace from lines
     TRAILING_WHITESPACE_PATTERIN = re.compile(r"[ ]+\n")
