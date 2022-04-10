@@ -69,7 +69,7 @@ If you want to flush the Varnish cache from the Magento backend, you need to add
 
 To do this, run the following command:
 
-```
+```bash
 cd /data/web/magento2;
 chmod 750 bin/magento;
 bin/magento setup:config:set --http-cache-hosts=127.0.0.1:6081;
@@ -81,7 +81,7 @@ Now when you flush your caches in cache management, your varnish full\_page cach
 
 After downloading your VCL, check (in notepad or something similar) if the following configuration is present:
 
-```
+```php
 backend default {
   .host = "127.0.0.1";
   .port = "8080";
@@ -94,7 +94,7 @@ If your VCL checks out, upload it to your Hypernode (using SCP, FTP or FTPS or w
 
 **Note:** The default VCL might have the following configuration:
 
-```
+```php
 backend default {
      .host = "localhost";
      .port = "8080";
@@ -116,7 +116,7 @@ Import Your VCL into the Varnish Daemon
 
 Import your VCL into Varnish and save as `mag2`:
 
-```
+```bash
 varnishadm vcl.load mag2 /data/web/default.vcl
 
 ```
@@ -124,7 +124,7 @@ The output should say: *your VCL is compiled*. If you receive a `Permission deni
 
 Now tell Varnish to activate the loaded VCL:
 
-```
+```bash
 varnishadm vcl.use mag2
 
 ```
@@ -134,7 +134,7 @@ In the examples we used the name ‘mag2’ for our VCL, but you can use any nam
 
 List all VCL’s with the following command:
 
-```
+```bash
 varnishadm vcl.list
 
 ```
@@ -153,13 +153,13 @@ To flush the Varnish cache of your Magento store on the command line you can use
 
 Additionally you can flush your cache through the Magento admin backend or use `varnishadm` directly:
 
-```
+```bash
 varnishadm "ban req.url ~ ."
 
 ```
 Or if you want to flush the cache for a single domain in a multisite setup:
 
-```
+```bash
 varnishadm "ban req.http.host == example.com"
 
 ```
@@ -173,13 +173,13 @@ Enable Debug Headers
 
 If you are implementing Varnish on Magento 2, you might want to view some caching headers that indicate whether the page is cacheable or not. To do this, put your Magento install in `Developer mode`. Now if you request a page through curl, you can see the `X-Magento-Cache-Debug` header:
 
-```
+```bash
 curl -I -v --location-trusted 'example.hypernode.io' > /dev/null | grep X-Magento
 
 ```
 Which will show the debug headers:
 
-```
+```bash
 X-Magento-Cache-Control: max-age=86400, public, s-maxage=86400
 X-Magento-Cache-Debug: MISS
 
@@ -205,7 +205,7 @@ Sometimes while you enable Varnish, or even while Varnish was already enabled an
 
 This error can 9 out of 10 times be fixed by adding some Nginx config. You can create a file, i.e. **~/nginx/server.header\_buffer** with the following content:
 
-```
+```bash
 fastcgi_buffers 16 16k;
 fastcgi_buffer_size 32k;
 proxy_buffer_size 128k;
@@ -223,7 +223,7 @@ proxy_busy_buffers_size 256k;
 
 If you ever need to restart Varnish you can use the following systemctl command for that:
 
-```
+```bash
 hypernode-servicectl restart varnish
 
 ```
