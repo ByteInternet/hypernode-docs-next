@@ -1,7 +1,7 @@
 # Welcome to Hypernode Support's documentation!
 
 ```{toctree}
-:caption: 'Contents:'
+:caption: 'Table of Contents'
 :maxdepth: 2
 :glob:
 

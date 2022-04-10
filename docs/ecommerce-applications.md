@@ -1,8 +1,8 @@
 # eCommerce Applications
 
 ```{toctree}
-:caption: 'Contents:'
-:maxdepth: 1
+:caption: 'Table of Contents'
+:maxdepth: 2
 :glob:
 
 ecommerce-applications/*

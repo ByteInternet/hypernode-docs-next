@@ -93,8 +93,8 @@ def replace_old_toc_with_new_toc(content: str) -> str:
     content = "\n".join(parsed_lines)
 
     SPHINX_TOC = """
-    ## Table of Contents
     ```{contents}
+    :caption: 'Table of Contents'
     :depth: 3
     :backlinks: none
     ```
