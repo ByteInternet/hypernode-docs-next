@@ -5,12 +5,6 @@ Customers with Hypernode Professional and Excellence plans can use Varnish to bo
 
 Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. We'd recommend to first test varnish on a [staging environment](https://support.hypernode.com/en/ecommerce/shopware/how-to-use-a-basic-staging-environment-with-shopware-6) or a[development plan](https://support.hypernode.com/en/hypernode/tools/how-to-use-hypernode-development-plans) before implementing varnish on a live node.
 
-## Table of Contents
-```{contents}
-:depth: 3
-:backlinks: none
-```
-
 ### Step One: Enable Varnish on the Hypernode
 
 You can enable varnish on the hypernode using the [systemctl-tool](https://support.hypernode.com/en/hypernode/tools/how-to-use-the-hypernode-systemctl-cli-tool) by running: 

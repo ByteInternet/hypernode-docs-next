@@ -7,12 +7,6 @@ To avoid outgoing email being detected as spam, you should change the email `ret
 
 If the recipient is using SAV (Sender Address Verification), and the email address is not reachable, or the SPF record does not match the email source, a spamfilter could see this as a spam message.
 
-## Table of Contents
-```{contents}
-:depth: 3
-:backlinks: none
-```
-
 Change Your Return-Path
 -----------------------
 

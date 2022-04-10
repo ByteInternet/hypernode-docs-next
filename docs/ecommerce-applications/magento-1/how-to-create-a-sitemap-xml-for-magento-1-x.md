@@ -1,12 +1,6 @@
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-create-a-sitemap-xml-for-magento-1-x -->
 # How to Create a Sitemap.xml for Magento 1.x
 
-## Table of Contents
-```{contents}
-:depth: 3
-:backlinks: none
-```
-
 Enable sitemap.xml in Magento
 -----------------------------
 

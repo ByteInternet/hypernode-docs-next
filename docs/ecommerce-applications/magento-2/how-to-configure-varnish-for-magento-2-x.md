@@ -5,12 +5,6 @@ Customers with Hypernode Professional and Excellence plans can use Varnish to bo
 
 Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. Don't implement varnish on production nodes without testing Varnish first on a [development node](https://support.hypernode.com/knowledgebase/development-plans-for-your-magento-shop/) or the [Hypernode Docker](https://support.hypernode.com/en/best-practices/testing/hypernode-docker).
 
-## Table of Contents
-```{contents}
-:depth: 3
-:backlinks: none
-```
-
 Enable Varnish 4.0 or 6.0 for Magento 2.x
 -----------------------------------------
 
