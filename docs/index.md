@@ -5,6 +5,7 @@
 :maxdepth: 2
 :glob:
 
+hypernode-platform
 ecommerce-applications
 ```
 
