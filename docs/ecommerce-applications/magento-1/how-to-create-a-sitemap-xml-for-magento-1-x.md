@@ -43,25 +43,23 @@ When you want to use a different sitemap per storefront some additional configur
 
 * Make sure there is no sitemap in `/data/web/public/sitemap.xml` to avoid an incorrect sitemap to be served (change the location of the sitemap.xml in Magento from `/sitemap.xml` to `/sitemaps/$storecode/sitemap.xml` where `$storecode` is the name of your storefront)
 * Create a sitemap directory and a directory for your storefront:
-* ```bash
-for CODE in $(n98-magerun sys:store:list --format csv | sed 1d | cut -d "," -f 2 )
-do
-mkdir -p /data/web/public/sitemaps/$CODE
-done
-
-```
+  ```bash
+  for CODE in $(n98-magerun sys:store:list --format csv | sed 1d | cut -d "," -f 2 )
+  do
+  mkdir -p /data/web/public/sitemaps/$CODE
+  done
+  ```
 * Create an Nginx include as `/data/web/nginx/server.sitemap` to route all requests to sitemap.xml to the given store:
-* ```nginx
-location /sitemap.xml {
-    rewrite ^/sitemap\.xml$ /sitemaps/$storecode/sitemap.xml;
-}
+  ```nginx
+  location /sitemap.xml {
+      rewrite ^/sitemap\.xml$ /sitemaps/$storecode/sitemap.xml;
+  }
+  ```
 
-```
 * Now test your sitemap by requesting and verify whether the right sitemap is served:
-* ```bash
-curl -v https://www.example.com/sitemap.xml
-
-```
+  ```bash
+  curl -v https://www.example.com/sitemap.xml
+  ```
 
 Alternative Configurations
 --------------------------
@@ -74,7 +72,6 @@ In case the sitemap.xml is created outside the public webroot (`/data/web/public
 location /sitemap.xml {
     alias /data/web/magento/sitemap.xml;
 }
-
 ```
 ### Configure Sitemaps When Storecode to URL is Enabled
 
@@ -84,7 +81,6 @@ Use the following configuration if storecode to URL is enabled in your webshop a
 location ~ .+/sitemap.xml {
     rewrite ^/([^/]+)/sitemap\.xml$ /sitemaps/$1/sitemap.xml;
 }
-
 ```
 Add Your Sitemap Location to Your Robots.txt
 --------------------------------------------
@@ -93,25 +89,24 @@ When you can successfully request your sitemap.xml, add it to your `robots.txt`:
 
 ```bash
 Sitemap: http://www.example.com/sitemap.xml
-
 ```
 Troubleshooting
 ---------------
 
 We've seen one or two special cases where creating a sitemap was extremely slow. This was caused by some queries that sometimes took 10 minutes (!) to complete. In this very specific case the solution was to enable `use_index_extensions` in mysql. To do this, add `SET SESSION optimizer_switch='use_index_extensions=on'` to the mysql `initStatements` in your `local.xml`:
 
-```bash
-<connection >
-    <host > <![CDATA[mysqlmaster]] > </host >
-     <username > <![CDATA[app]] > </username >
-     <password > <![CDATA[somepass]] > </password >
-     <dbname > <![CDATA[magento_db]] > </dbname >
-     <initStatements > <![CDATA[SET NAMES utf8; SET SESSION optimizer_switch='use_index_extensions=on';]] > </initStatements >
-     <model > <![CDATA[mysql4]] > </model >
-     <type > <![CDATA[pdo_mysql]] > </type >
-     <pdoType > <![CDATA[]] > </pdoType >
-     <active >1 </active >
- </connection >
+```xml
+<connection>
+    <host><![CDATA[mysqlmaster]]></host>
+     <username><![CDATA[app]]></username>
+     <password><![CDATA[somepass]]></password>
+     <dbname><![CDATA[magento_db]]></dbname>
+     <initStatements><![CDATA[SET NAMES utf8; SET SESSION optimizer_switch='use_index_extensions=on';]]><initStatements>
+     <model><![CDATA[mysql4]]></model>
+     <type><![CDATA[pdo_mysql]]></type>
+     <pdoType><![CDATA[]]></pdoType>
+     <active>1</active>
+ </connection>
 ```
 Additional Links
 ----------------

@@ -17,20 +17,20 @@ Every email has two senders. The first sender is the From line that is seen in t
 To set the return-path for your Magento 2 shop log n on the admin panel and follow the instructions:
 
 * Login to your Magento admin panel.
-* Navigate to Stores > Configuration in the side navigation panel.
+* Navigate to `Stores` > `Configuration` in the side navigation panel.
 
 ![](_res/lsFHX4hWNSzEZ0r3Q94GBpVXvJmljmpf4g.png)
 
-* From the Advanced section, select System and in the dropdown on the right select Mail Sending Settings:
+* From the `Advanced` section, select `System` and in the dropdown on the right select **Mail Sending Settings**:
 
 ![](_res/UQKWXm53v5UAIomG_A27w5JfvJ_NxIijbw.png)
 
-* Change Set Return-Path to “specified”.
-* In the Return-Path Email field, set a valid email address:
+* Change **Set Return-Path** to "specified".
+* In the **Return-Path Email** field, set a valid email address:
 
 ![](_res/GIifdVjgF1glwRvzhoQwSqCFEbmzEJ7NbQ.png)
 
-* Click Save Config to save the changes.
+* Click **Save Config** to save the changes.
 
 Workaround Return-Path Email Bug in Magento 2
 ---------------------------------------------

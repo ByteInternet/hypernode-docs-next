@@ -24,23 +24,23 @@ To enable varnish for these vhosts you can run the below command:
 
 **Please note: this should create 2 files in your nginx vhost environment. If this is not the case make sure you've 2 files in you vhost-config (/data/web/nginx/example.com). If not, you should make sure to have 2 files:**
 
-`/data/web/nginx/example.com/public.shopware6.conf`
+`/data/web/nginx/example.com/public.shopware6.conf`:
 
 ``` nginx
 ## Redirecting to varnish
 location / {
-    set $log\_handler varnish;
+    set $log_handler varnish;
 
-    proxy\_pass http://127.0.0.1:6081;
-    proxy\_read\_timeout 900s;  # equal to fastcgi\_read\_timeout at handlers.conf:16
-    proxy\_set\_header X-Real-IP  $remote\_addr;
-    proxy\_set\_header X-Forwarded-For $proxy\_add\_x\_forwarded\_for;
-    proxy\_set\_header X-Forwarded-Proto $scheme;
-    proxy\_set\_header X-Forwarded-Port $server\_port;
-    proxy\_set\_header Host $http\_host;
+    proxy_pass http://127.0.0.1:6081;
+    proxy_read_timeout 900s;  # equal to fastcgi_read_timeout at handlers.conf:16
+    proxy_set_header X-Real-IP  $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Forwarded-Port $server_port;
+    proxy_set_header Host $http_host;
 }
 ```
-`/data/web/nginx/example.com/varnish.shopware6.conf`
+`/data/web/nginx/example.com/varnish.shopware6.conf`:
 
 ``` nginx
 root /data/web/public;
@@ -50,23 +50,22 @@ include /etc/nginx/handlers.conf;
 index index.php index.html;
 
 location /recovery/install {
-    try\_files $uri /recovery/install/index.php$is\_args$args;
+    try_files $uri /recovery/install/index.php$is_args$args;
 }
 
 location /recovery/update/ {
-    location /recovery/update/assets {
-    }
-    if (!-e $request\_filename){
+    location /recovery/update/assets {}
+    if (!-e $request_filename){
         rewrite . /recovery/update/index.php last;
     }
 }
 
 location / {
-    try\_files $uri /index.php$is\_args$args;
+    try_files $uri /index.php$is_args$args;
 }
 
 location ~ \.php$ {
-    echo\_exec @phpfpm;
+    echo_exec @phpfpm;
 }
 ```
 ### Step Three: Configure Shopware to work with Varnish
@@ -81,11 +80,11 @@ To actually use Varnish you need to implement a varnish config file, a .vcl. If 
 
 So, the steps to implement the Varnish configuration into Varnish are:
 
-* Create a file on your node, for example: **data/web/shopware6.vcl**with the Varnish config
+* Create a file on your node, for example: **data/web/shopware6.vcl** with the Varnish config
 * Load the .vcl into Varnish: `varnishadm vcl.load shopware6 /data/web/shopware6.vcl`
-* Activate the loaded config**,**"shopware6": `varnishadm vcl.use shopware6`
+* Activate the loaded config, **shopware6**: `varnishadm vcl.use shopware6`
 
-```
+```bash
 app@j6yt8m-example-magweb-cmbl:~$ varnishadm vcl.load shopware6 /data/web/shopware6.vcl
 VCL compiled.
 
