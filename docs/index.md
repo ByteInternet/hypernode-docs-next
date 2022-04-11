@@ -10,6 +10,14 @@ ecommerce-applications/magento-2
 ecommerce-applications/shopware-6
 ```
 
+```{toctree}
+:caption: 'Hypernode Platform'
+:maxdepth: 2
+:glob:
+
+hypernode-platform/tools
+```
+
 # Indices and tables
 
 - {ref}`genindex`
