@@ -139,7 +139,9 @@ def main(args: List[str]) -> int:
         return None
 
     article_body_markdown = md(
-        str(article_body), code_language_callback=code_language_cb
+        str(article_body),
+        code_language_callback=code_language_cb,
+        escape_underscore=False,
     )
 
     # Remove trailing whitespace from lines
