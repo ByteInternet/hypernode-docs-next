@@ -1,4 +1,4 @@
-# Shopware
+# Shopware 6
 
 ```{toctree}
 :caption: 'Table of Contents'

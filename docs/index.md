@@ -1,13 +1,27 @@
 # Welcome to Hypernode Support's documentation!
 
 ```{toctree}
+:caption: 'Getting Started'
+:maxdepth: 2
+:glob:
+
+getting-started/*
+```
+
+```{toctree}
 :caption: 'eCommerce Applications'
 :maxdepth: 2
 :glob:
 
-ecommerce-applications/magento-1
-ecommerce-applications/magento-2
-ecommerce-applications/shopware-6
+ecommerce-applications/*
+```
+
+```{toctree}
+:caption: 'Best Practices'
+:maxdepth: 2
+:glob:
+
+best-practices/*
 ```
 
 ```{toctree}
@@ -15,7 +29,31 @@ ecommerce-applications/shopware-6
 :maxdepth: 2
 :glob:
 
-hypernode-platform/tools
+hypernode-platform/*
+```
+
+```{toctree}
+:caption: 'Services'
+:maxdepth: 2
+:glob:
+
+services/*
+```
+
+```{toctree}
+:caption: 'Troubleshooting'
+:maxdepth: 2
+:glob:
+
+troubleshooting/*
+```
+
+```{toctree}
+:caption: 'About Hypernode'
+:maxdepth: 2
+:glob:
+
+about-hypernode/*
 ```
 
 # Indices and tables
