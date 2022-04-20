@@ -113,7 +113,6 @@ https://support.hypernode.com/en/ecommerce/shopware/how-to-install-shopware-6-on
 https://support.hypernode.com/en/ecommerce/shopware/how-to-setup-a-multistore-in-shopware/
 https://support.hypernode.com/en/ecommerce/shopware/how-to-use-a-basic-staging-environment-with-shopware-6/
 https://support.hypernode.com/en/ecommerce/shopware/how-to-use-a-basic-staging-environment-with-shopware/
-https://support.hypernode.com/en/getting-started/how-to-order/
 https://support.hypernode.com/en/getting-started/how-to-order/how-to-get-started-with-your-hypernode-trial/
 https://support.hypernode.com/en/getting-started/how-to-order/how-to-order-a-domain-presence-plan/
 https://support.hypernode.com/en/hypernode/backups/how-to-restore-your-hypernode-from-a-backup/
