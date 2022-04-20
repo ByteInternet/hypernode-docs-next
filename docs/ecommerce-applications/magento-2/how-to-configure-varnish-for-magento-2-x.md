@@ -68,7 +68,7 @@ cd /data/web/magento2;
 chmod 750 bin/magento;
 bin/magento setup:config:set --http-cache-hosts=127.0.0.1:6081;
 ```
-Now when you flush your caches in cache management, your varnish full\_page cache will be flushed too.
+Now when you flush your caches in cache management, your varnish full_page cache will be flushed too.
 
 ### Test and Upload Your VCL
 
@@ -100,7 +100,7 @@ backend default {
     }
 }
 ```
-Make sure you change this to the aforementioned configuration (without the health\_check probe), since this will break on our Nginx configuration and will therefore result in a `503 Guru Meditation` error.
+Make sure you change this to the aforementioned configuration (without the health_check probe), since this will break on our Nginx configuration and will therefore result in a `503 Guru Meditation` error.
 
 Import Your VCL into the Varnish Daemon
 ---------------------------------------
@@ -189,7 +189,7 @@ Sometimes while you enable Varnish, or even while Varnish was already enabled an
 
 "*upstream sent too big header while reading response header from upstream*"
 
-This error can 9 out of 10 times be fixed by adding some Nginx config. You can create a file, i.e. **~/nginx/server.header\_buffer** with the following content:
+This error can 9 out of 10 times be fixed by adding some Nginx config. You can create a file, i.e. **~/nginx/server.header_buffer** with the following content:
 
 ```nginx
 fastcgi_buffers 16 16k;
@@ -202,7 +202,7 @@ proxy_busy_buffers_size 256k;
 ### 503 Errors
 
 * There is a bug when Varnish is activated on Magento 2.2.0, resulting in a "503 backend fetch" error. Please see Magento Github issue [10165](https://github.com/magento/magento2/issues/10165). For now, we advise you to either wait with upgrading to Magento 2.2.0 when using Varnish until this bug is fixed or use an adjusted .vcl as a temporary workaround:
-* In Magento 2.4.x (and possibly earlier versions as well) a solution could be to disable the **product\_identities\_extender** plugin. This is a default Magento plugin which doesn't seem to work properly with Varnish enabled. All credit for this solution goes to [Tree of Information](https://www.treeofinformation.nl/) whom have spend a long time investigting this issue.
+* In Magento 2.4.x (and possibly earlier versions as well) a solution could be to disable the **product_identities_extender** plugin. This is a default Magento plugin which doesn't seem to work properly with Varnish enabled. All credit for this solution goes to [Tree of Information](https://www.treeofinformation.nl/) whom have spend a long time investigting this issue.
 
 ### Restart Varnish
 
