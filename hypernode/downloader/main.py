@@ -93,53 +93,17 @@ def figure_out_root_dir(filename: str, document: BeautifulSoup) -> Path:
     return Path(os.getcwd())
 
 
-def main(args: List[str]) -> int:
-    url, output_dir, force, verbose = parse_args(args)
-
-    configure_logging(verbose, logger)
-
-    response = requests.get(url)
-    document = BeautifulSoup(response.content, "html.parser")
-    article_heading = document.find(class_="hc-heading").text
-    article_body = document.find(id="article-body")
-
-    filename = slugify(article_heading) + ".md"
-    if not output_dir:
-        output_dir = figure_out_root_dir(filename, document)
-    filepath = output_dir.joinpath(filename)
-
-    if not os.path.isdir(output_dir):
-        logger.error(f"Output directory {output_dir} does not exist!")
-        return os.EX_USAGE
-
-    def code_language_cb(el):
-        if not el.has_attr("class"):
-            return None
-        for class_name in el["class"]:
-            if class_name.startswith("language-"):
-                return class_name.replace("language-", "")
-        return None
-
-    article_body_markdown = md(
-        str(article_body),
-        code_language_callback=code_language_cb,
-        escape_underscore=False,
-    )
-
-    # Remove trailing whitespace from lines
+def remove_trailing_whitespace(content: str) -> str:
     TRAILING_WHITESPACE_PATTERIN = re.compile(r"[ ]+\n")
-    article_body_markdown = TRAILING_WHITESPACE_PATTERIN.sub(
-        "\n", article_body_markdown
-    )
+    return TRAILING_WHITESPACE_PATTERIN.sub("\n", content)
 
-    # Remove unnecessary empty lines
+
+def remove_excess_empty_lines(content: str) -> str:
     DUPLICATE_EMPTY_LINE_PATTERN = re.compile(r"[\n]{3,}")
-    article_body_markdown = DUPLICATE_EMPTY_LINE_PATTERN.sub(
-        "\n\n", article_body_markdown
-    )
+    return DUPLICATE_EMPTY_LINE_PATTERN.sub("\n\n", content)
 
-    article_body_markdown = remove_old_table_of_contents(article_body_markdown)
 
+def replace_images_with_local_variants(content: str, output_dir: str) -> str:
     def download_image_cb(match: re.Match) -> str:
         image_url = match.group(1)
         r = urlparse(image_url)
@@ -162,17 +126,55 @@ def main(args: List[str]) -> int:
         return markdown_image_url
 
     IMAGE_PATTERN = re.compile(r"!\[\]\((.+)\)")
-    article_body_markdown = IMAGE_PATTERN.sub(download_image_cb, article_body_markdown)
+    return IMAGE_PATTERN.sub(download_image_cb, content)
+
+
+def code_language_callback(element: BeautifulSoup) -> Optional[str]:
+    if not element.has_attr("class"):
+        return None
+    for class_name in element["class"]:
+        if class_name.startswith("language-"):
+            return class_name.replace("language-", "")
+    return None
+
+
+def main(args: List[str]) -> int:
+    url, output_dir, force, verbose = parse_args(args)
+
+    configure_logging(verbose, logger)
+
+    response = requests.get(url)
+    document = BeautifulSoup(response.content, "html.parser")
+    article_heading = document.find(class_="hc-heading").text
+    article_body = document.find(id="article-body")
+
+    filename = slugify(article_heading) + ".md"
+    if not output_dir:
+        output_dir = figure_out_root_dir(filename, document)
+    if not os.path.isdir(output_dir):
+        logger.error(f"Output directory {output_dir} does not exist!")
+        return os.EX_USAGE
+
+    article_body_markdown = md(
+        str(article_body),
+        code_language_callback=code_language_callback,
+        escape_underscore=False,
+    )
+    article_body_markdown = remove_trailing_whitespace(article_body_markdown)
+    article_body_markdown = remove_excess_empty_lines(article_body_markdown)
+    article_body_markdown = remove_old_table_of_contents(article_body_markdown)
+    article_body_markdown = replace_images_with_local_variants(
+        article_body_markdown, output_dir
+    )
 
     document_source_comment = f"<!-- source: {url} -->"
     document_contents = (
-        f"{document_source_comment}"
-        "\n"
-        f"# {article_heading}"
-        "\n"
+        f"{document_source_comment}\n"
+        f"# {article_heading}\n"
         f"{article_body_markdown}"
     )
 
+    filepath = output_dir.joinpath(filename)
     if os.path.isfile(filepath):
         if force:
             logger.warning(f"Overwriting file {filepath}")
