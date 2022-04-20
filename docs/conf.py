@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = "Hypernode Support Documentation"
-copyright = "2022, Timon de Groot"
-author = "Timon de Groot"
+copyright = "2022, Hypernode"
+author = "Hypernode"
 
 # The full version, including alpha/beta/rc tags
 release = "dev"
