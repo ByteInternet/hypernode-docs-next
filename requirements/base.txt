@@ -6,5 +6,4 @@ sphinx-copybutton==0.5.0
 python-slugify==6.1.1
 
 beautifulsoup4
-#markdownify
-git+https://github.com/tdgroot/python-markdownify.git@code_language_callback
+markdownify==0.11.1

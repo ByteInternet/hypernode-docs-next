@@ -8,7 +8,7 @@ from logging import DEBUG, INFO, StreamHandler, getLogger
 from pathlib import Path
 from posixpath import basename
 from textwrap import dedent
-from typing import List, Tuple
+from typing import List, Optional, Tuple
 from urllib.parse import urlparse
 
 import requests
@@ -26,11 +26,13 @@ def configure_logging(debug: bool) -> None:
     logger.addHandler(ch)
 
 
-def parse_args(args) -> Tuple[str, Path, bool, bool]:
+def parse_args(args) -> Tuple[str, Optional[Path], bool, bool]:
     parser = ArgumentParser(description="Download, convert and save documentation page")
     parser.add_argument("url", nargs=1, help="Documentation URL to download")
     parser.add_argument(
-        "--output-dir", help="Directory to save the page", default=os.getcwd()
+        "--output-dir",
+        help="Directory to save the page",
+        default=None,
     )
     parser.add_argument(
         "-v", "--verbose", help="Be more verbose", action="store_true", default=False
@@ -47,14 +49,10 @@ def parse_args(args) -> Tuple[str, Path, bool, bool]:
 
     return (
         parsed_args.url[0],
-        Path(parsed_args.output_dir),
+        Path(parsed_args.output_dir) if parsed_args.output_dir else None,
         parsed_args.force,
         parsed_args.verbose,
     )
-
-
-def convert_title_to_filename(title: str) -> str:
-    return slugify(title)
 
 
 def remove_old_table_of_contents(content: str, replace: bool = False) -> str:
@@ -112,14 +110,25 @@ def main(args: List[str]) -> int:
 
     configure_logging(verbose)
 
-    if not os.path.isdir(output_dir):
-        logger.error(f"Output directory {output_dir} does not exist!")
-        return os.EX_USAGE
-
     response = requests.get(url)
     soup = BeautifulSoup(response.content, "html.parser")
     article_heading = soup.find(class_="hc-heading").text
     article_body = soup.find(id="article-body")
+    if not output_dir:
+        breadcrumbs = soup.find(class_="breadcrumb")
+        categories = []
+        for crumb in breadcrumbs.findChildren(recursive=False):
+            categories.append(slugify(crumb.text.strip()))
+        if len(categories) > 2:
+            output_dir = Path("docs").joinpath(*categories[2:])
+            if not os.path.isdir(output_dir):
+                os.makedirs(output_dir, exist_ok=True)
+        else:
+            output_dir = Path(os.getcwd())
+
+    if not os.path.isdir(output_dir):
+        logger.error(f"Output directory {output_dir} does not exist!")
+        return os.EX_USAGE
 
     def code_language_cb(el):
         if not el.has_attr("class"):
@@ -130,7 +139,9 @@ def main(args: List[str]) -> int:
         return None
 
     article_body_markdown = md(
-        str(article_body), code_language_callback=code_language_cb
+        str(article_body),
+        code_language_callback=code_language_cb,
+        escape_underscore=False,
     )
 
     # Remove trailing whitespace from lines
@@ -171,7 +182,7 @@ def main(args: List[str]) -> int:
     IMAGE_PATTERN = re.compile(r"!\[\]\((.+)\)")
     article_body_markdown = IMAGE_PATTERN.sub(download_image_cb, article_body_markdown)
 
-    filename = convert_title_to_filename(article_heading)
+    filename = slugify(article_heading)
     filepath = output_dir.joinpath(filename + ".md")
     document_source_comment = f"<!-- source: {url} -->"
     document_contents = (
