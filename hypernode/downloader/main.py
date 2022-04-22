@@ -4,7 +4,7 @@ from logging import getLogger
 from pathlib import Path
 from posixpath import basename
 from textwrap import dedent
-from typing import List, Optional
+from typing import List, Optional, Tuple
 from urllib.parse import urlparse
 
 import requests
@@ -16,6 +16,10 @@ from hypernode.common.logging import configure_logging
 from hypernode.downloader.input import parse_args
 
 logger = getLogger(__name__)
+
+
+class ConvertException(Exception):
+    pass
 
 
 def remove_old_table_of_contents(content: str, replace: bool = False) -> str:
@@ -73,9 +77,10 @@ def find_output_dir_for_document(filename: str) -> Optional[Path]:
         for file in files:
             if file == filename:
                 return Path(root)
+    return None
 
 
-def figure_out_root_dir(filename: str, document: BeautifulSoup) -> Path:
+def figure_out_output_dir(filename: str, document: BeautifulSoup) -> Path:
     output_dir = find_output_dir_for_document(filename)
     if output_dir:
         return output_dir
@@ -103,7 +108,7 @@ def remove_excess_empty_lines(content: str) -> str:
     return DUPLICATE_EMPTY_LINE_PATTERN.sub("\n\n", content)
 
 
-def replace_images_with_local_variants(content: str, output_dir: str) -> str:
+def replace_images_with_local_variants(content: str, output_dir: Path) -> str:
     def download_image_cb(match: re.Match) -> str:
         image_url = match.group(1)
         r = urlparse(image_url)
@@ -138,22 +143,22 @@ def code_language_callback(element: BeautifulSoup) -> Optional[str]:
     return None
 
 
-def main(args: List[str]) -> int:
-    url, output_dir, force, verbose = parse_args(args)
-
-    configure_logging(verbose, logger)
-
+def fetch_document(url: str) -> BeautifulSoup:
     response = requests.get(url)
-    document = BeautifulSoup(response.content, "html.parser")
+    return BeautifulSoup(response.content, "html.parser")
+
+
+def convert_document(
+    document: BeautifulSoup, url: str, output_dir: Optional[Path] = None
+) -> Tuple[Path, str]:
     article_heading = document.find(class_="hc-heading").text
     article_body = document.find(id="article-body")
 
     filename = slugify(article_heading) + ".md"
     if not output_dir:
-        output_dir = figure_out_root_dir(filename, document)
+        output_dir = figure_out_output_dir(filename, document)
     if not os.path.isdir(output_dir):
-        logger.error(f"Output directory {output_dir} does not exist!")
-        return os.EX_USAGE
+        raise ConvertException(f"Output directory {output_dir} does not exist!")
 
     article_body_markdown = md(
         str(article_body),
@@ -175,6 +180,23 @@ def main(args: List[str]) -> int:
     )
 
     filepath = output_dir.joinpath(filename)
+
+    return (filepath, document_contents)
+
+
+def main(args: List[str]) -> int:
+    url, output_dir, force, verbose = parse_args(args)
+
+    configure_logging(verbose, logger)
+
+    document = fetch_document(url)
+
+    try:
+        filepath, contents = convert_document(document, url, output_dir=output_dir)
+    except ConvertException as e:
+        logger.critical(e)
+        return os.EX_USAGE
+
     if os.path.isfile(filepath):
         if force:
             logger.warning(f"Overwriting file {filepath}")
@@ -184,6 +206,6 @@ def main(args: List[str]) -> int:
 
     with open(filepath, mode="w", encoding="utf-8") as f:
         logger.warning(f"Writing converted doc to {filepath}")
-        f.write(document_contents)
+        f.write(contents)
 
     return os.EX_OK

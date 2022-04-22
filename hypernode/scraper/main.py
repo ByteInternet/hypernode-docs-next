@@ -1,3 +1,4 @@
+import os
 from logging import getLogger
 from typing import List
 from urllib.parse import urlparse
@@ -57,3 +58,4 @@ def main(args: List[str]) -> int:
     with open("documentation_urls.txt", "w", encoding="utf-8") as f:
         for link in result:
             f.write(f"{link}\n")
+    return os.EX_OK
