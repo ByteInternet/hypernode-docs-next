@@ -63,3 +63,11 @@ html_theme_options = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
+
+html_css_files = [
+    "https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,600,700,800",
+    "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700",
+    "https://static.hypernode.com/fontawesome/css/fontawesome-all.css",
+    "https://static.hypernode.com/css/byteStyle.css",
+    "css/hypernode.css",
+]

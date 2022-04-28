@@ -1,0 +1,41 @@
+:root {
+    --primary-blue: #005DAB;
+    --text-blue: #074E8A;
+    --light-blue: #EEF8FF;
+    --light-blue-clear: #F8FCFF;
+    --aqua: #51B3DB;
+
+    --primary-orange: #FF7101;
+    --light-orange: #FF8201;
+
+    --grey: #F5F6F8;
+    --grey-border: #D9E7F3;
+    --light-grey-sidebar: #E5EAF0;
+
+    --message-success: #4CB05D;
+    --message-success-bg: #E3F6CF;
+    --message-danger: #D0021B;
+    --message-danger-bg: #FAE5E8;
+    --message-warning: #FF8E6E;
+    --message-warning-bg: #FFF1ED;
+    --message-info: #368EC4;
+    --message-info-bg: #E7F2F8;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: inherit;
+    margin: 40px 0;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+.wy-nav-content {
+    max-width: 1200px;
+}
