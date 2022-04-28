@@ -58,6 +58,7 @@ def remove_old_table_of_contents(content: str, replace: bool = False) -> str:
     content = "\n".join(parsed_lines)
 
     if replace:
+        # @TODO(timon): this behavior needs a test too, but the feature can probably be disregarded.
         SPHINX_TOC = """
         ```{contents}
         :caption: 'Table of Contents'
