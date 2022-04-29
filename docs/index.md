@@ -1,4 +1,4 @@
-# Welcome to Hypernode Support's documentation!
+# Welcome to Hypernode Docs!
 
 ```{toctree}
 :caption: 'Getting Started'
