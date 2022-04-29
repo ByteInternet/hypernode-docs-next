@@ -39,3 +39,19 @@ h2 {
 .wy-nav-content {
     max-width: 1200px;
 }
+.wy-side-nav-search,
+.wy-nav-top {
+    background-color: var(--primary-blue);
+}
+.wy-menu-vertical p.caption {
+    color: var(--primary-orange);
+}
+.wy-menu-vertical a {
+    color: var(--text-blue);
+}
+.wy-menu-vertical a:hover {
+    background-color: var(--grey);
+}
+.wy-nav-side {
+    background-color: var(--light-grey-sidebar);
+}
