@@ -49,7 +49,8 @@ class TestConvertDocument(HypernodeTestCase):
         self.md.assert_called_once_with(
             '<article id="article-body">Article Content</article>',
             code_language_callback=ANY,
-            escape_underscore=False,
+            escape_asterisks=False,
+            escape_underscores=False,
         )
         self.remove_trailing_whitespace.assert_called_once_with("Article Content")
         self.remove_excess_empty_lines.assert_called_once_with("Article Content")

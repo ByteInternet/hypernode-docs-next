@@ -100,7 +100,7 @@ def figure_out_output_dir(filename: str, document: BeautifulSoup) -> Path:
 
 
 def remove_trailing_whitespace(content: str) -> str:
-    TRAILING_WHITESPACE_PATTERIN = re.compile(r"[ ]+\n")
+    TRAILING_WHITESPACE_PATTERIN = re.compile(r"[ \t]+\n")
     return TRAILING_WHITESPACE_PATTERIN.sub("\n", content)
 
 
@@ -164,7 +164,8 @@ def convert_document(
     article_body_markdown = md(
         str(article_body),
         code_language_callback=code_language_callback,
-        escape_underscore=False,
+        escape_asterisks=False,
+        escape_underscores=False,
     )
     article_body_markdown = remove_trailing_whitespace(article_body_markdown)
     article_body_markdown = remove_excess_empty_lines(article_body_markdown)
@@ -185,10 +186,27 @@ def convert_document(
     return (filepath, document_contents)
 
 
+def get_url_from_document(path: str) -> Optional[str]:
+    PATTERN = re.compile(r"<!-- source: (.+) -->")
+    with open(path, mode="r", encoding="utf-8") as f:
+        m = PATTERN.match(f.readline())
+        return m.group(1) if m else None
+
+
 def main(args: List[str]) -> int:
-    url, output_dir, force, verbose = parse_args(args)
+    document_url_or_path, output_dir, force, verbose = parse_args(args)
 
     configure_logging(verbose, logger)
+
+    if not document_url_or_path.startswith("http"):
+        url = get_url_from_document(document_url_or_path)
+        if not url:
+            logger.error(
+                f"Failed to find source URL in document {document_url_or_path}, exiting."
+            )
+            return os.EX_USAGE
+    else:
+        url = document_url_or_path
 
     document = fetch_document(url)
 

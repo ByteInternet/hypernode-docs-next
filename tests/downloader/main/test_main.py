@@ -17,6 +17,7 @@ class TestMain(HypernodeTestCase):
         self.fetch_document = self.set_up_patch(
             module + "fetch_document", return_value=self.document
         )
+        self.get_url_from_document = self.set_up_patch(module + "get_url_from_document")
         self.convert_document = self.set_up_patch(module + "convert_document")
         self.convert_document.return_value = (self.filepath, self.contents)
         self.isfile = self.set_up_patch(module + "os.path.isfile", return_value=False)
@@ -75,5 +76,27 @@ class TestMain(HypernodeTestCase):
         self.convert_document.side_effect = [ConvertException()]
 
         return_code = main([self.url])
+
+        self.assertEqual(return_code, EX_USAGE)
+
+    def test_main_converts_url_argument_if_path(self) -> None:
+        self.get_url_from_document.return_value = self.url
+        filepath = str(self.filepath)
+
+        return_code = main([filepath])
+
+        self.get_url_from_document.assert_called_once_with(filepath)
+        self.fetch_document.assert_called_once_with(self.url)
+
+        self.assertEqual(return_code, EX_OK)
+
+    def test_main_fails_if_url_argument_is_path_but_cannot_resolve(self) -> None:
+        self.get_url_from_document.return_value = None
+        filepath = str(self.filepath)
+
+        return_code = main([filepath])
+
+        self.get_url_from_document.assert_called_once_with(filepath)
+        self.fetch_document.assert_not_called()
 
         self.assertEqual(return_code, EX_USAGE)
