@@ -23,6 +23,8 @@ When you choose the block option, our spam filter will delete emails with a high
 
 The diagram below shows an approximation of what happens when you set up the spam filter. A false positive is an incorrectly rejected email.
 
+|  |  |  |  |
+| --- | --- | --- | --- |
 | **Mode** | **SA Threshold** | **Spam blocked** | **False Positives** |
 | Disabled | 9999 | 0% | 0 |
 | Low | 12 | 70% | 1 in 57.000 |

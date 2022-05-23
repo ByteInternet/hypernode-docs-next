@@ -7,7 +7,7 @@ To facilitate some type of flexibility regarding these settings anyway we have a
 
 
 Enabling a Larger thread_stack
--------------------------------
+------------------------------
 
 On a Hypernode you can enable the larger `thread_stack` by running this command:
 

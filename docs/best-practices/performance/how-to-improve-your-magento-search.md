@@ -6,9 +6,9 @@ The built-in Magento search option is known for it’s non-existent speed and pr
 1. Tweak the built-in Magento search option
 2. Use an external search engine.
 
-We recommend the latter, and specifically: ElasticSearch. If you have a Magento 2 shop, ElasticSearch has one major advantage: you can use this search engine out-of-the-box, without having to install any extension. Starting from a Hypernode Professional, ElasticSearch is built-in to your Hypernode. If you are on a lower plan, you’ll need to either upgrade, or make use of an external search provider. We have arranged special Hypernode discounts with our partner Bonsai, a specialised managed ElasticSearch provider. Ask our support team for the discount code!
+We recommend the latter, and specifically: ElasticSearch. If you have a Magento 2 shop, ElasticSearch has one major advantage: you can use this search engine out-of-the-box, without having to install any extension. On all Hypernode Pelican, Falcon and Eagle plans, ElasticSearch is built-in to your Hypernode. If you are on a formerly known plan like Start or Grow, you’ll need to either upgrade, or make use of an external search provider. We have arranged special Hypernode discounts with our partner Bonsai, a specialised managed ElasticSearch provider. Ask our support team for the discount code!
 
-Another alternative is Sphinx Search. Sphinx is an open source search engine that improves the search function in your Magento. Sphinx is fast and provides you with relevant search results. There are many external search engines, but Sphinx came out as the best option due to it’s usability, documentation and speed. Sphinx is supported on your Hypernode (Professional and Excellence plans). You will, however, need extra (paid) plugins for your Magento to make use of Sphinx.
+Another alternative is Sphinx Search. Sphinx is an open source search engine that improves the search function in your Magento. Sphinx is fast and provides you with relevant search results. There are many external search engines, but Sphinx came out as the best option due to it’s usability, documentation and speed. Sphinx is supported on your Hypernode (Pelican, Falcon and Eagle plans). You will, however, need extra (paid) plugins for your Magento to make use of Sphinx.
 
 
 ElasticSearch
@@ -16,7 +16,7 @@ ElasticSearch
 
 While previously it was already possible to use ElasticSearch with your Hypernode by connecting to an external search provider, we have now made it possible to use ElasticSearch for search in your shop out of the box on Hypernode without requiring any external service or configuration. In[this article](https://support.hypernode.com/en/hypernode/tools/how-to-use-elasticsearch-on-hypernode) we’ll explain a bit more about ElasticSearch and how to enable and configure it.
 
-Please note that due to the relatively heavy resource requirements for ElasticSearch this feature can only be enabled for Professional S plans or larger. If you are on a smaller plan and previously already depended on an external paid ElasticSearch provider now might be a good time to consider simplifying your setup.
+Please note that due to the relatively heavy resource requirements for ElasticSearch this feature can only be enabled on every plan except the formerly known Grow plan. If you are on a smaller plan and previously already depended on an external paid ElasticSearch provider now might be a good time to consider simplifying your setup.
 
 ### ElasticSearch providers
 
@@ -33,7 +33,7 @@ Sphinx
 
 Sphinx indexes up to 10-15 MB of text per second per single CPU core 60+ MB/sec per server. Technically, Sphinx is a standalone software package that provides fast and relevant full-text search functionality to client applications. It was specially designed to integrate well with SQL databases storing the data, and to be easily accessed by scripting languages. However, Sphinx does not depend on – or requires – any specific database to function.
 
-We added support for the Sphinx search indexer on Hypernode Professional and Excellent nodes. Using Sphinx requires the `Mirasvit Sphinx Search Ultimate extension`. This paid extension can be purchased through the [Mirasvit website](https://mirasvit.com/magento-extensions/sphinx-search-ultimate.html). If you have a Magento 2 shop, make sure to use the [specific Magento 2 extension](https://mirasvit.com/magento-2-extensions/sphinx-search-ultimate.html).
+We added support for the Sphinx search indexer on Hypernode Pelican, Falcon and Excellent nodes. Using Sphinx requires the `Mirasvit Sphinx Search Ultimate extension`. This paid extension can be purchased through the [Mirasvit website](https://mirasvit.com/magento-extensions/sphinx-search-ultimate.html). If you have a Magento 2 shop, make sure to use the [specific Magento 2 extension](https://mirasvit.com/magento-2-extensions/sphinx-search-ultimate.html).
 
 More information about using Sphinx can be found in [their documentation](http://sphinxsearch.com/docs/). Can’t find an answer to your question? Please contact Mirasvit through their [Support Portal](https://mirasvit.com/contact/).
 
@@ -47,6 +47,8 @@ To configure Sphinx Search on Hypernode, all you need to do is install the Magen
 
 When adjusting the Sphinx settings, you should make use the following information:
 
+|  |  |
+| --- | --- |
 | **Name Setting** | **Value** |
 | Search Engine | `External Sphinx Search Engine` |
 | Sphinx Host     | `localhost` |

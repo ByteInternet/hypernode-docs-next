@@ -42,6 +42,8 @@ Hypernode Emergency Service Costs
 
 If you discover a disruption that causes downtime, you have the option to report this to Hypernode 24/7. Usage of Hypernode Emergency Service outside office hours has additional fees:
 
+|  |  |  |
+| --- | --- | --- |
 |  | **SLA Basic** | **SLA Standard** |
 | Costs per incident (max 1 hour)     | € 200,- (ex VAT) + half year contract SLA Standard     | € 100,- (ex VAT) |
 | After one hour you pay an additional hourly fee     | € 200,- (ex VAT) | € 100,- (ex VAT) |

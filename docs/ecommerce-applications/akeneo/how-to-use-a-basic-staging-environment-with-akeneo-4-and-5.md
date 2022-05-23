@@ -45,7 +45,7 @@ cp -R akeneo akeneo-staging
 ln -s ~/akeneo-staging/akeneo/pim-community-standard/public akeneo_staging
 ```
 Duplicate the akeneo_pim database to staging_akeneo_pim
-----------------------------------------------------------
+-------------------------------------------------------
 
 ```bash
 mysql -e 'CREATE DATABASE staging_akeneo_pim;'

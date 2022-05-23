@@ -1,7 +1,7 @@
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-configure-varnish-for-magento-1-x/ -->
 # How to Configure Varnish for Magento 1.x
 
-Customers with Hypernode Professional and Excellence plans can use Varnish to boost their Magento shop. To manage and configure Varnish for Magento 1.x you’ll need Turpentine. This article explains how you can configure Varnish for your Hypernode. Do you have a Magento 2.x shop, please check [this article](https://support.hypernode.com/en/ecommerce/magento-2/how-to-configure-varnish-for-magento-2-x)
+Customers with Hypernode Pelican, Falcon (formerly known as Professional) and Eagle (formerly known as Excellence) plans can use Varnish to boost their Magento shop. To manage and configure Varnish for Magento 1.x you’ll need Turpentine. This article explains how you can configure Varnish for your Hypernode. Do you have a Magento 2.x shop, please check [this article](https://support.hypernode.com/en/ecommerce/magento-2/how-to-configure-varnish-for-magento-2-x)
 
 Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. Don't implement Varnish on production nodes while still under development but use [development node](https://support.hypernode.com/knowledgebase/development-plans-for-your-magento-shop/) or a local staging environment like the [Hypernode Docker](https://support.hypernode.com/en/best-practices/testing/hypernode-docker) instead.
 

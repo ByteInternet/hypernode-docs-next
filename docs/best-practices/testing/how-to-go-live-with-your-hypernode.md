@@ -145,7 +145,7 @@ Note that the time on Hypernode is configured to UTC, so the times used in the c
 Step 11: Configure Backups on Hypernode (Optional)
 --------------------------------------------------
 
-For Hypernode Professional and Excellence hosting plans free backups are available. If you need a backup, contact us via support@hypernode.com. Hypernode Start and Grow plans do not have free backups included, but we can make one available for 25 euros excl VAT per backup. 
+For Hypernode Pelican, Falcon S (or up) and Eagle hosting plans free backups are available. If you need a backup, contact us via support@hypernode.com. Hypernode Pelican S and Falcon XS (used to be Grow) plans do not have free backups included, but we can make one available for 25 euros excl VAT per backup. 
 
 Downgrade or Cancel Your Previous Plan
 --------------------------------------

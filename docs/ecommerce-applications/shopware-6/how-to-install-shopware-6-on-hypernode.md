@@ -1,7 +1,7 @@
 <!-- source: https://support.hypernode.com/en/ecommerce/shopware/how-to-install-shopware-6-on-hypernode/ -->
 # How to Install Shopware 6 on Hypernode
 
-This article will explain how you can setup the latest version of Shopware 6 on Hypernode as easy as possible. Shopware 6 requires a Hypernode Professional S hosting plan or larger.
+This article will explain how you can setup the latest version of Shopware 6 on Hypernode as easy as possible. Shopware 6 cannot be installed on the old Grow plans.
 
 
 Upgrade Your PHP Version

@@ -1,7 +1,7 @@
 <!-- source: https://support.hypernode.com/en/best-practices/database/how-to-run-rabbitmq-on-hypernode/ -->
 # How to Run RabbitMQ on Hypernode
 
-RabbitMQ is available on Hypernode for all Excellence plans and all Professional S plans and up. Check the changelog [here](https://changelog.hypernode.com/changelog/platform/release-6052-rabbitmq-on-hypernode/).
+RabbitMQ is available on all Hypernode plans. Check the changelog [here](https://changelog.hypernode.com/changelog/platform/release-6052-rabbitmq-on-hypernode/).
 
 
 What is RabbitMQ?
@@ -22,8 +22,6 @@ Details RabbitMQ on Hypernode
 
 Enabling RabbitMQ
 -----------------
-
-RabbitMQ is available on Hypernode for all Excellence plans and all Professional  plans and up.
 
 Enabling RabbitMQ can be done via de [commandline tool](https://support.hypernode.com/knowledgebase/hypernode-systemctl-cli-tool/) or the [Hypernode API](https://community.hypernode.io/#/Documentation/hypernode-api/README).
 

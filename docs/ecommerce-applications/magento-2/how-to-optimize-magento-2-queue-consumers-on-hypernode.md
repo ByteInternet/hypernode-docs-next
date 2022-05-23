@@ -33,7 +33,7 @@ pkill -f queue:consumers
 That's it, now your consumer processes should not be stuck anymore.
 
 Configure only_spawn_when_message_available to reduce CPU and memory usage
-------------------------------------------------------------------------------
+--------------------------------------------------------------------------
 
 If your shop runs on Magento 2.4.1 or higher, it’s possible to reduce the CPU and memory usage by adding the `queue/only_spawn_when_message_available` parameter in app/etc/env.php. By combining this setting with the `queue/consumers-wait-for-messages` setting, the consumer will only run when a message is available in the queue and it will be terminated when there are no more messages to process. The combination of these settings can be beneficial for Magento shops that run on smaller Hypernodes with less resources where the consumers can run infrequently. An example of this configuration can be found below:
 

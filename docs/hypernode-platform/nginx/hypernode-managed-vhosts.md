@@ -51,7 +51,7 @@ Once the Hypernode Managed Vhosts (HMV) system is enabled, you can start definin
 
 ### Adding Vhosts
 
-To add a new vhost, for example the domainname [www.example.com](http://www.example.com), to your configuration, you can simply run the command `hypernode-manage-vhosts www.example.com`. This will create a new vhost configuration in /data/web/nginx/[www.example.com/](http://www.example.com/), using the Magento 2 template. You can define the configuration template to use, by using the `--type` argument. For example, you can use the Magento 1 config by using the command `hypernode-manage-vhosts --type magento1 www.example.com`. You can choose from 'magento1', 'magento2', 'akeneo', 'vuestorefront', 'generic-php' and more. For a complete list of available templates you can run the command `hypernode-manage-vhosts --help`.
+To add a new vhost, for example the domainname [www.example.com](http://www.example.com), to your configuration, you can simply run the command `hypernode-manage-vhosts www.example.com`. This will create a new vhost configuration in /data/web/nginx/[www.example.com/](http://www.example.com/), using the Magento 2 template. You can define the configuration template to use, by using the `--type` argument. For example, you can use the Magento 1 config by using the command `hypernode-manage-vhosts --type magento1 www.example.com`. You can choose from 'magento1', 'magento2', 'akeneo', 'vuestorefront', 'generic-php', 'wordpress' and more. For a complete list of available templates you can run the command `hypernode-manage-vhosts --help`.
 
 Important: Simply creating the folder [www.example.com](http://www.example.com) does NOT create a vhost. You will need to use the `hypernode-manage-vhosts` command
 
@@ -76,6 +76,14 @@ To list all configured vhosts you can run the command: 
 `hypernode-manage-vhosts --list`
 
 This will provide a nice overview of all the vhosts with useful information like is it the *default_server*, is *Let's Encrypt* configured, or is *Varnish* enabled.
+
+### Setting a different webroot
+
+Sometimes you have to use a different webroot, for example when you're running multiple applications on one Hypernode. In that case, you can specify the webroot by providing the *--webroot* option:
+
+`hypernode-manage-vhosts example.com --webroot /data/web/my_other_application/public`
+
+Please take not that the webroot option is not used for the built-in staging for your vhost, that will still point to */data/web/staging* by default.
 
 Let’s Encrypt and Hypernode Managed Vhosts
 ------------------------------------------
@@ -105,7 +113,7 @@ But with HMV you need to configure the vhost for Varnish as well. You can do thi
 
 Once you the command is processed you could list all the vhost to check if Varnish is enabled for that Vhost. The value in the Varnish column should be set to **True**.
 
-To disable Varnish for a vhost, use the following command: `hypernode-manage-vhosts example.com --disable-varnish`
+To disable Varnish for a vhost, use the following command: `hypernode-manage-vhosts example.com --disable-varnish`
 
 Managing Configuration Files
 ----------------------------

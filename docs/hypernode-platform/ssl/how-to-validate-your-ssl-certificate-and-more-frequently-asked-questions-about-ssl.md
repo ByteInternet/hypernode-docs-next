@@ -20,6 +20,8 @@ Pricing
 
 The costs for an SSL certificate consist of two aspects: the costs for the actual certificate and the service costs for the certificate.
 
+|  |  |  |  |
+| --- | --- | --- | --- |
 | **Type** | **Certificate costs** | **Service costs** | **Total** |
 | Single | € 8,00 | € 30,00 | € 38,00 |
 | Wildcard | € 75,00 | € 80,00 | € 155,00 |

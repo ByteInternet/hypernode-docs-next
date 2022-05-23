@@ -1,11 +1,48 @@
 <!-- source: https://support.hypernode.com/en/services/control-panel/how-to-use-teams/ -->
 # How To Use Teams
 
+With teams you can invite other users to manage your Hypernode and it gives you much finer-grained control over who has access to your Hypernode. In this documentation we describe how you can manage your teams.
+
 We’ve distinguished three scenarios: inviting a developer, a merchant or an agency. If a team member (not the owner) extends an invitation, the owner will also be notified.
 
 
-Inviting a Developer
---------------------
+Creating a Team
+---------------
+
+To create a new team:
+
+1. Log into the [Control Panel](https://my.hypernode.com).
+2. From sidebar on the left, click **Teams**.
+3. Click **Create a new Team**.
+4. Give the team a name.
+5. Optional: select one or more available Hypernodes that should be handled by your new team. You can also add Hypernodes to your team afterwards.
+6. Click **Create team**.
+
+You will now see the team detail page from which you can invite new members and change the team name. By clicking on Hypernodes on the left you can see which Hypernodes are in this team.
+
+Deleting a Team
+---------------
+
+Please note you can only delete a team if you're the creator of the team.
+
+1. From sidebar on the left, click **Teams**.
+2. Click on the **trash can** behind the team you want to delete.
+3. Confirm the deletion on the next page.
+
+Adding Hypernodes to a Team
+---------------------------
+
+There are two ways to add a Hypernode to a team:
+
+1. Upon creation of a team, select one or more Hypernodes to be added to the team.
+2. Add a Hypernode to an existing team by hoovering over **Teams**in the sidebar and then selecting **Hypernodes**. From the dropdown in the bar at the top of the page, select the correct team and then click the **Add/remove from team**button to add Hypernodes.
+
+Manage Users in a Team
+----------------------
+
+There are three different roles you can assign to members to members of your team. Each role is defined by a set of permissions. The permissions, based on the specific role, apply to all Hypernodes in a team. This also includes the SSL certificates that have been linked to the Hypernodes in the team. For detailed information on what those roles are and which permissions they have, please click [here](https://support.hypernode.com/en/services/control-panel/user-roles-and-permissions-on-hypernodes-control-panel).
+
+### Inviting a Member
 
 All users can add a developer to their team. To add a new developer:
 
@@ -13,36 +50,11 @@ All users can add a developer to their team. To add a new developer:
 2. From the sidebar on the left, click **Teams**.
 3. Click **Details** to edit a specific team.
 4. Click **Invite new member**.
-5. Fill in their email, add a personal message and click **Send invitation**.
+5. Fill in their email, select the desired role and add a personal message and click **Send invitation**.
 
 An invitation will be sent to the invitee's email address. Once they have accepted the invitation, the owner and inviting member will be notified of this via email. Please note that the new member has access to all settings, except for the up or downgrading of a plan.
 
-Inviting a Merchant
--------------------
-
-If you're an agency and you ordered a Hypernode for your customer (merchant), you want to give them access to their own Hypernode. However, you don't want them to see all other Hypernodes in your account. You can do this by creating a new team:
-
-1. Log into the Hypernode Control Panel.
-2. From the sidebar on the left, click **Teams**.
-3. Click **Create a new Team**.
-4. Give the team a name and select one or more available Hypernodes to your customer should have access to.
-5. Click **Create team**.
-6. Click **Invite new member** to invite the customer to the team.
-
-Inviting an Agency
-------------------
-
-If you're a merchant and you would like to invite an agency to work on your Hypernode, you can do so by creating a team and inviting the agency to join your team.
-
-1. Log into the Hypernode Control Panel.
-2. From the sidebar on the left, click **Teams**.
-3. Click **Create a new Team**.
-4. Give the team a name and select one or more available Hypernodes to your dee should have access to.
-5. Click**Create team**.
-6. Click **Invite new member** to invite the developer to the team.
-
-Revoking Access
----------------
+### Revoking Access
 
 1. Log into the Hypernode Control Panel.
 2. From the sidebar on the left, click **Teams**.

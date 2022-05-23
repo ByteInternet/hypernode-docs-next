@@ -65,6 +65,8 @@ You can add a number of values to the different DNS records. These values are ex
 
 Here you enter the domain name, which can be a fixed address such as example.nl or [www.example.nl](http://www.example.nl), but you can also add a so called wildcard record. A wildcard record is for example * .example.nl and means that all subdomains that do not have a separate DNS record fall under this, an example:
 
+|  |  |  |  |  |
+| --- | --- | --- | --- | --- |
 | **Name** | **Type** | **Priority** | **Content** | **Time to live** |
 | example.com | A | - | 125.125.125.125 | 600 |
 | [www.example.com](http://www.example.com) | A | - | 124.124.124.124 | 600 |
@@ -119,6 +121,8 @@ This is the A record for IPv6 addresses. 
 
 The MX records contain the host names of the mail server(s). In addition to the hostname, you can assign a priority to each MX record. For example, you can give your own mail servers a higher priority (a lower number) than our smtp2.byte.nl server. This means that smtp2.byte.nl is only used as a mail server when your own servers are not available. We also call this "fallback server". Also make sure that you do not give every MX record a priority of 10, otherwise our server will not be able to determine which record is about the primary mail server. These are the MX records of the Hypernode mail servers:
 
+|  |  |  |  |
+| --- | --- | --- | --- |
 | **Name** | **Type** | **Value** | **Prio** |
 | example.com | MX | smtp1.byte.nl | 10 |
 | example.com | MX | smtp2.byte.nl | 20 |
@@ -129,6 +133,8 @@ Always use your primary domain for your MX records. An MX record with the Name o
 
 With a CNAME record you can make a reference for a hostname to another hostname. 
 
+|  |  |  |  |
+| --- | --- | --- | --- |
 | **Name** | **Type** | **Value** | **Prio** |
 | [www.example.com](http://www.example.com) | CNAME | example.hypernode.io | - |
 

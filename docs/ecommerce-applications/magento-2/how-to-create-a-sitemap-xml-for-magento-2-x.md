@@ -18,7 +18,7 @@ Now open the `Generation Settings` dropdown and select:
 
 * **Enabled**: Yes
 * **Start Time**: Insert some time after 00:00 (Don’t choose exactly 00:00 as many other jobs are scheduled around midnight too)
-* **Frequency**: Choose `Daily`, or if you have many product changes during the day, select `Hourly` (Hourly is quite heavy on your databases, so don’t do this on Hypernode Start, Grow and Professional M plans)
+* **Frequency**: Choose `Daily`, or if you have many product changes during the day, select `Hourly` (Hourly is quite heavy on your databases, so don’t do this on Falcon XS, S and M plans)
 * **Error Email Recipient**: The error collector email address of the magento partner that maintains the website
 * **Error Email Sender**: A valid return-path that is used for your magento store (If set), or otherwise a sender that is not blocked by your spam filter
 * **Error Email Template**: You can leave this at ‘Use System Value’

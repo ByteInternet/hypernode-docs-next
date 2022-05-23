@@ -13,13 +13,13 @@ What Hypernode Plans Are There?
 
 Depending on your shop’s wants and needs, we offer different Hypernode hosting plans:
 
-* Grow
-* Professional (and up)
-* Excellence (and up)
+* Pelican (and up)
+* Falcon (and up) formerly known as Professional
+* Eagle (and up) formerly known as Excellence
 
 Each production plan has a development equivalent. A development plan is cheaper and therefore recommended when developing and testing shops before going live. A development plan can easily be upgraded to a production plan.
 
-Small shops with few products or start-ups will do nicely with a Grow or Professional S plan. Bigger shops with 4000 to 30.000 visitors a day will need at least a Hypernode Professional M plan. Big, high end shops with a lot of (unique) visitors a day and products need a lot of CPU and data storage, so an Excellence plan is just what they need.
+Small shops with few products or start-ups will do nicely with a Falcon XS or Falcon S plan. Bigger shops with 4000 to 30.000 visitors a day will need at least a Hypernode Falcon M plan. Big, high end shops with a lot of (unique) visitors a day and products need a lot of CPU and data storage, so an Eagle plan is just what they need.
 
 A complete overview can be found on [our website](https://www.hypernode.com/magento-hosting-plans/).
 
@@ -33,7 +33,7 @@ Which Hypernode Plan Do I Need?
 
 Depending on your needs. Naturally you’ll need enough disk space for your shop, as well as enough CPU to make sure your shops stays fast during peak hours.
 
-If your shop generates a lot of traffic but is small in size, it’s better to choose a Hypernode plan that can handle said traffic easily. Bigger hosting plans like Hypernode Professional and Excellence also offer a lot more features, such as; historical back-ups, Varnish cache and PCI compliancy (only with Excellence plans).
+If your shop generates a lot of traffic but is small in size, it’s better to choose a Hypernode plan that can handle said traffic easily. Bigger hosting plans like Hypernode Falcon and Eagle also offer a lot more features, such as; historical back-ups, Varnish cache and PCI compliancy (only with Eagle plans).
 
 Not sure what to order? Do not worry about ordering the wrong plan. The contract term of Hypernode plans is only 30 days and you can up- or downgrade your plan any time you want. You only pay for what you use.
 
@@ -42,9 +42,9 @@ Booting Your Hypernode In a Different Data Center
 
 We make use of cloud providers:
 
-* Combell OpenStack: Hypernode Grow and Professional plans, booted in Gent (Belgium)
-* DigitalOcean: Hypernode Start, Grow and Professional plans, booted in other data centers around the world
-* Amazon Web Services: Hypernode Excellence plans.
+* Combell OpenStack: Hypernode Falcon plans, booted in Gent (Belgium)
+* DigitalOcean: Hypernode Pelican plans, booted in other data centers around the world
+* Amazon Web Services: Hypernode Eagle plans.
 
 When you order a Hypernode, your node is by default booted in Gent (Combell OpenStack) or Frankfurt (Amazon).
 

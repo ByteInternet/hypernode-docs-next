@@ -19,6 +19,8 @@ The recipient of the email checks the SPF and DKIM records. If the message does 
 
 This is an example of a DMARC record:
 
+|  |  |  |  |  |
+| --- | --- | --- | --- | --- |
 | **Name** | **Type** | **Priority** | **Content** | **TTL** |
 | _dmarc.yourdomain.com     | TXT | (empty) | v=DMARC1; p=quarantine     | 600 |
 

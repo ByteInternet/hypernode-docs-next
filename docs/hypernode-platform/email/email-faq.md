@@ -127,6 +127,8 @@ The server name of our POP3 mailserver is"pop.byte.nl. You use port 110 to retri
 Which Settings Should I Use to Receive Email?
 ---------------------------------------------
 
+|  |  |  |
+| --- | --- | --- |
 | **Server type** | **Server address** | **Port** |
 | POP | pop.byte.nl | 110 |
 | Secure POP (TLS) | pop.byte.nl | 995 |
@@ -138,6 +140,8 @@ Secure IMAP is the recommended and most secure method for receiving mail. When y
 Which Settings Should I Use for Sending Email?
 ----------------------------------------------
 
+|  |  |  |
+| --- | --- | --- |
 | **Server type** | **Server address** | **Port** |
 | SMTP Submission | SMTP.byte.nl | 587 |
 | SMTP | SMTP.byte.nl | 2525 of 25 |

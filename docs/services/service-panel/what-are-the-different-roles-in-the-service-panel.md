@@ -25,6 +25,8 @@ The Technisch Beheerder has access to all technical settings in the Service Pane
 
 ### Permissions per role
 
+|  |  |  |  |
+| --- | --- | --- | --- |
 | **Permission** | **Registrant** | **Contractant** | **Technisch Beheerder** |
 | Logging in to the Service Panel | ✓ | ✓ | ✓ |
 | Configuring email | ✓ | ✓ | ✓ |

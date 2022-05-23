@@ -1,11 +1,11 @@
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001178710-how-to-install-akeneo-5-on-hypernode/ -->
 # How to install Akeneo 5 on Hypernode
 
-Akeneo 5 preferably requires a Hypernode Professional M hosting plan or larger. You can either choose to install it on a seperate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 8.0, PHP 7.4 and Elasticsearch 7.x**, so it won’t affect your shop negatively. Installing Akeneo version 5.x may take up to 15 minutes.
+Akeneo 5 preferably requires a Hypernode Pelican L, Falcon M, Eagle M hosting plan or larger. You can either choose to install it on a seperate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 8.0, PHP 7.4 and Elasticsearch 7.x**, so it won’t affect your shop negatively. Installing Akeneo version 5.x may take up to 15 minutes.
 
 
 Enable managed_vhosts
-----------------------
+---------------------
 
 All new Hypernodes (from April 2020) will automatically be booted with [Hypernode Managed Vhosts](https://support.hypernode.com/en/hypernode/nginx/hypernode-managed-vhosts). If you already have an older Hypernode, then you need to enable Hypernode Managed Vhosts by running the following command:
 
@@ -13,7 +13,7 @@ All new Hypernodes (from April 2020) will automatically be booted with [Hypernod
 hypernode-systemctl settings managed_vhosts_enabled True
 ```
 Create a Managed_vhost for a (Sub)Domain
------------------------------------------
+----------------------------------------
 
 If your Magento or Shopware installation already points to `example.hypernode.io`, you can create a managed_vhost for your Akeneo installation on a subdomain, for example `akeneo.example.hypernode.io`. The command below will also install Let’s Encrypt and force your domain to use HTTPS.
 
@@ -163,8 +163,46 @@ bin/console pim:user:create
 ```bash
 ln -s /data/web/akeneo/pim-community-standard/public /data/web/akeneo_public
 ```
-Configure Your Akeneo Crons
----------------------------
+Setting up the job queue daemon
+-------------------------------
+
+On Hypernode we have two options to set up the job queue daemon for Akeneo. This can be done via Supervisor or the Cron.
+
+### Option 1. Configure Supervisor
+
+#### Enable Supervisor
+
+Before we start using Supervisor we first need to enable it on the Hypernode.
+
+```bash
+hypernode-systemctl settings supervisor_enabled True
+
+```
+#### Create a configuration file for Supervisor
+
+Create a file in the configuration directory of supervisor: ~/supervisor/akeneodaemon.conf
+
+```bash
+[program:akeneo_queue_daemon]
+command=php /data/web/akeneo/pim-community-standard/bin/console akeneo:batch:job-queue-consumer-daemon --env=prod
+autostart=false
+autorestart=true
+stderr_logfile=/data/web/akeneo_daemon.err.log
+stdout_logfile=/data/web/akeneo_daemon.out.log
+user=app
+```
+#### Bring the changes into effect
+
+```bash
+ supervisorctl reread
+supervisorctl update
+```
+#### Launch the daemon
+
+```bash
+supervisorctl start akeneo_queue_daemon
+```
+### Option 2. Configure Your Akeneo Crons
 
 Configure your crons by adding these scripts to your crontab file as recommended by Akeneo:
 

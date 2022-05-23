@@ -5,7 +5,7 @@ Hypernode makes use of Nginx. Nginx has much better performance than Apache, and
 
 
 Set the Same server_name for Each Storefront
----------------------------------------------
+--------------------------------------------
 
 To explicitly set the server name to be example.com, create a file called `server.server_name` in `/data/web/nginx` containing:
 
@@ -15,7 +15,7 @@ set $custom_server_name example.com;
 This sets the `server_name` to example.com for all used storefronts.
 
 Dynamically Setting the server_name Depending on Your Used Storefront
-----------------------------------------------------------------------
+---------------------------------------------------------------------
 
 If you use several licenses for multiple storefronts, you can easily set the `server_name` dynamically using a mapping.
 

@@ -3,7 +3,7 @@
 
 To protect your Hypernode from all kinds of attacks, bots, brute forces and scriptkiddies causing downtime, we've implemented several layers of rate limiting.
 
-Most of these rate limit methods only apply to bots, but to avoid FPM worker depletion, we [implemented a rate limiting mechanism per IP](https://support.hypernode.com/changelog/release-4735-upper-limit-active-php-requests-per-ip/) to prevent one single IP from exhausting the available FPM workers.
+Most of these rate limit methods only apply to bots, but to avoid FPM worker depletion, we [implemented a rate limiting mechanism per IP](https://changelog.hypernode.com/release-4735-upper-limit-active-php-requests-per-ip/) to prevent one single IP from exhausting the available FPM workers.
 
 This article will explain the differences between the different rate limiting methods and show you how to find which rate limiting method applies and if needed, how to override them.
 

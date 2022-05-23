@@ -11,6 +11,8 @@ Adding DNS Records
 
 Please add the following DNS records to your nameservers, to authenticate your domain. If you already have an SPF record (the fourth record in the table) in place please check out our documentation on [SPF](https://support.hypernode.com/en/hypernode/dns/how-to-set-up-your-spf-records-for-hypernode), or contact our support for assistance on how to merge the SPF content into your existing values.
 
+|  |  |  |  |
+| --- | --- | --- | --- |
 | **Name** | **Type** | **TTL** | **Content** |
 | x-transip-mail-auth.***example.com*** | TXT | 600 | f491ddb3e61d1c92ab6de9f81257b1c0b95986d6550517f005c8e5e895da6fd2
 

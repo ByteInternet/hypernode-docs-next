@@ -33,6 +33,7 @@ Activate via Your Control Panel
 6. Now select **Enable Blackfire** to enable Blackfire
 
 **Please take into account that it takes a most 10 minutes for our system to actually create the account. Grab a cup of coffee and relax!**
+-------------------------------------------------------------------------------------------------------------------------------------------
 
 Activate via Your Service Panel
 -------------------------------
@@ -43,7 +44,7 @@ Activate via Your Service Panel
 4. Select **Enable**, enter your Service ID and Server Token
 5. Save your input by clicking **Opslaan.**
 
-****Please take into account that it takes a most 10 minutes for our system to actually create the account. Grab a cup of coffee and relax!****
+**Please take into account that it takes a most 10 minutes for our system to actually create the account. Grab a cup of coffee and relax!**
 
 How Is It Different From New Relic?
 -----------------------------------
@@ -61,29 +62,50 @@ For more information, check [the Blackfire documentation](https://blackfire.io/d
 Using Blackfire With Varnish
 ----------------------------
 
-If you want to use Varnish in combination with Blackfire, some additional configuration in your VCL is required.
+If you want to use Varnish in combination with Blackfire, some additional configuration in your VCL is required like described on the website of [Blackfire](https://blackfire.io/docs/integrations/proxies/varnish). This is quite an expert level change and requires enough experience with varnish to manually edit your VCL. Do note the "Authorized IPs" section on top of the following snippet. If you don't add the correct IP you will get an error:
 
-This is quite an expert level change and requires enough experience with varnish to manually edit your VCL.
+"*Are you authorized to profile this page? No probe response, missing PHP extension or invalid signature for relaying agent.*"
 
-```
+``` php
 acl profile {
+   # Authorized IPs, add your own IPs from which you want to profile.
    "x.y.z.w";
+
+   # Add the Blackfire.io IPs when using builds:
+   # Ref https://blackfire.io/docs/reference-guide/faq#how-should-i-configure-my-firewall-to-let-blackfire-access-my-apps
+   "46.51.168.2";
+   "54.75.240.245";
 }
 
 sub vcl_recv {
+  if (req.esi_level > 0) {
+    # ESI request should not be included in the profile.
+    # Instead you should profile them separately, each one
+    # in their dedicated profile.
+    # Removing the Blackfire header avoids to trigger the profiling.
+    # Not returning let it go trough your usual workflow as a regular
+    # ESI request without distinction.
+    unset req.http.X-Blackfire-Query;
+  }
+
+  # If it's a Blackfire query and the client is authorized,
+  # just pass directly to the application.
   if (req.http.X-Blackfire-Query && client.ip ~ profile) {
-    if (req.esi_level > 0) {
-        # ESI request should not be included in the profile.
-        # Instead you should profile them separately, each one
-        # in their dedicated profile.
-        # Removing the Blackfire header avoids to trigger the profiling.
-        # Not returning let it go trough your usual workflow as a regular
-        # ESI request without distinction.
-        unset req.http.X-Blackfire-Query;
-    } else {
-        return (pass);
-    }
+    return (pass);
   }
 }
 ```
 You can find the extended instructions in [the Blackfire documentation](https://blackfire.io/docs/reference-guide/configuration)
+
+Profiling Simple HTTP Requests
+------------------------------
+
+Profiling an HTTP request can be done on the command line thanks to the blackfire utility. The easiest way to profile an HTTP request is to use the curl sub-command of the blackfire utility. You can run this command on the command line of your Hypernode.
+
+```
+blackfire curl http://example.com/
+```
+
+*****If you'd like to profile an HTTP request via the CLI on your Hypernode, make sure to whitelist `127.0.0.1`in your .vcl.
+
+Also please note that you can only profile live applications with a paid plan of Blackfire, for more info click [here](https://support.blackfire.io/en/articles/1455348-hack-edition-users-cannot-profile-non-local-http-applications).

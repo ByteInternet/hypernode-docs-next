@@ -5,7 +5,7 @@ Hypernode offers a staging environment so it can be used as a sandbox for your A
 
 
 Update managed_vhosts
-----------------------
+---------------------
 
 Update the current managed_vhost with staging port.
 
@@ -57,7 +57,7 @@ cp -R akeneo akeneo-staging
 ln -s /data/web/akeneo-staging/akeneo/pim-community-standard/web akeneo_staging
 ```
 Duplicate the akeneo_pim database to staging_akeneo_pim
-----------------------------------------------------------
+-------------------------------------------------------
 
 ```bash
 mysql -e 'CREATE DATABASE staging_akeneo_pim;'

@@ -17,6 +17,8 @@ A user can have different roles between teams. Each role is defined by a set of 
 Permissions
 -----------
 
+|  |  |  |  |  |
+| --- | --- | --- | --- | --- |
 | **Permissions** | **Merchant (view-only)** | **Developer** | **Admin** | **Owner** |
 | See the team | ✅ | ✅ | ✅ | ✅ |
 | See the Hypernodes in the team | ✅ | ✅ | ✅ | ✅ |

@@ -1,11 +1,11 @@
 <!-- source: https://support.hypernode.com/en/ecommerce/akeneo/how-to-install-akeneo-3-on-hypernode/ -->
 # How to Install Akeneo 3 on Hypernode
 
-Akeneo 3 preferably requires a Hypernode Professional M hosting plan or larger. You can either choose to install it on a seperate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 5.7, PHP 7.2 and Elasticsearch 6.x**, so it won’t affect your shop negatively. Installing Akeneo version 3.x may take up to 15 minutes.
+Akeneo 3 preferably requires a Hypernode Pelican L, Falcon M, Eagle M hosting plan or larger. You can either choose to install it on a seperate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 5.7, PHP 7.2 and Elasticsearch 6.x**, so it won’t affect your shop negatively. Installing Akeneo version 3.x may take up to 15 minutes.
 
 
 Enable managed_vhosts
-----------------------
+---------------------
 
 All new Hypernodes (from April 2020) will automatically be booted with [Hypernode Managed Vhosts](https://support.hypernode.com/en/hypernode/nginx/hypernode-managed-vhosts). If you already have an older Hypernode, then you need to enable Hypernode Managed Vhosts by running the following command:
 
@@ -13,7 +13,7 @@ All new Hypernodes (from April 2020) will automatically be booted with [Hypernod
 hypernode-systemctl settings managed_vhosts_enabled True
 ```
 Create a Managed_vhost for a (Sub)Domain
------------------------------------------
+----------------------------------------
 
 If your Magento or Shopware installation already points to `example.hypernode.io`,  you can create a managed_vhost for your Akeneo installation on a subdomain, for example `akeneo.example.hypernode.io`. The command below will also install Let’s Encrypt and force your domain to use HTTPS.
 

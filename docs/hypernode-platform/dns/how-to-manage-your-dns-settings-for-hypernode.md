@@ -13,11 +13,11 @@ Dedicated IP on Hypernode – 3 exceptions
 
 There are 3 exceptions in where you cannot benefit from a dedicated IP and which may have impact on how your would like to manage your DNS:
 
-1. A change of cloud provider – also when switching between Professional and Excellence plans – will trigger an IP change
+1. A change of cloud provider – also when switching between Falcon (formerly known as Professional), Pelican and Eagle (Formerly known as Excellence) plans – will trigger an IP change
 2. If you request your node to be booted in a different region (data centre) the IP address will change as well.
 3. In extreme emergency situations (like fire or longtime power outages) we might need to migrate your Hypernode to another data centre. Luckily these chances are very low.
 
-If you're likely to switch between Professional and Excellence plans in the future, we recommend you to move your domain(s) to Hypernode so we can handle the DNS of your domains to avoid downtime. Or, use the DNS settings as explained below (by using CNAME and not A record).
+If you're likely to switch between Falcon and Eagle plans in the future, we recommend you to move your domain(s) to Hypernode so we can handle the DNS of your domains to avoid downtime. Or, use the DNS settings as explained below (by using CNAME and not A record).
 
 Three ways to handle your DNS
 -----------------------------

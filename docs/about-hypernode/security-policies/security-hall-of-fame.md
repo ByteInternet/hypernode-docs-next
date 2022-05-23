@@ -3,6 +3,8 @@
 
 We would like to thank the following individuals and/or organizations, who have responsibly disclosed vulnerabilities to us.
 
+|  |  |  |
+| --- | --- | --- |
 | [Hatim Chabik](https://twitter.com/H_chabik) | 13 Jan 2022 | Reported a Reflective XSS attack on marketing sites. |
 | [Manu Sharma](https://www.linkedin.com/in/manu-sharma-7ba8671aa) | 31 May 2021 | Reported a Reflective XSS attack on marketing sites. |
 | [Ghazanfar Ali Kazam](https://twitter.com/p3n73st3r) | 31 May 2021 | Reported information leakage from an internal server. |
@@ -15,7 +17,3 @@ We would like to thank the following individuals and/or organizations, who have 
 | [Maksym Bendeberia](https://www.linkedin.com/in/jogspokoen/) / [WebSafety Ninja](https://websafety.ninja/) | 12 March 2019 | Reported information leakage from an internal deployment server. |
 | [Jan Piet van Dijk](https://www.linkedin.com/in/janpietvandijk/) / [Interwijs B.V.](https://www.interwijs.nl/) | 28 August 2018 | Reported a privilege escalation on Hypernode, leading to a local root exploit. |
 | [Wijnand Wieskamp](https://www.linkedin.com/in/wijnand-wieskamp-8a784313/) / [Crystalsoft B.V.](https://www.crystalsoft.nl/) | 1 June 2018 | Reported a misconfiguration that allowed a Hypernode’s preconfigured security settings to be bypassed. |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |

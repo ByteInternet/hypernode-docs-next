@@ -13,12 +13,12 @@ Our Hypernode platform is available to  webshops worldwide. Our customers can c
 
 After years of preparation, testing and improving, we started using the OpenStack platform within the Combell Group in 2018. Hypernode is part of this group. Making use of Combell OpenStack enables us to take matters in our own hands, because we have direct contact with colleagues instead of a supplier.
 
-If you order a trial or hosting plan (Hypernode Grow and Professional) your Hypernode will be booted in Ghent, Belgium.
+If you order a trial or hosting plan (Falcon) your Hypernode will be booted in Ghent, Belgium.
 
 **Advantages Combell OpenStack**
 
 * We have influence on the roadmap and therefore more flexibility in achieving what we want
-* Combell OpenStack provides the same uptime guarantee as DigitalOcean: 99.5% for Grow plans and 99.9% for the Professional line
+* Combell OpenStack provides the same uptime guarantee as DigitalOcean: 99.9% for the Falcon line
 * Just as good or even better performance than DigitalOcean
 * In the case of incidents and issues, we have very short communication lines
 * Combell OpenStack uses only the latest hardware. Booting a new node is much faster compared to DigitalOcean
@@ -32,13 +32,13 @@ Combell OpenStack has only one data center in Ghent (Belgium).
 
 DigitalOcean is an innovative and relatively young hosting party that focuses purely on the wishes of developers instead of end users. This works very well for us, because their focus is entirely on what is essential for good stable hosting. With our Hypernode platform we build the bridge between developer and end user.
 
-We use DigitalOcean for shops that want their Hypernode (Grow or Professional) to be located in a data center outside Western Europe.
+We use DigitalOcean for shops that want their Hypernode to be located in a data center outside Western Europe.
 
 **Advantages DigitalOcean**
 
 * Innovative and young company
 * We have good contact with their engineers to discuss our wishes
-* Uptime guarantee: 99.5% for Grow plans and 99.9% for the Professional line
+* Uptime guarantee: 99.9% for the Pelican line
 * Reliable and stable infrastructure
 * Unlimited IOPS (Input / Output operations per second)
 
@@ -51,7 +51,7 @@ We use DigitalOcean for shops that want their Hypernode (Grow or Professional) t
 
 ### Amazon Cloud Services (AWS)
 
-All our Hypernode Excellence plans are hosted at AWS.
+All our Hypernode Eagle plans are hosted at AWS.
 
 Cloud provider Amazon is market leader in web hosting. Amazon offers top quality: a very stable and innovative platform that offers Hypernode a lot of space for developing and offering smart and handy features on the Hypernode platform.
 
@@ -71,9 +71,9 @@ Cloud provider Amazon is market leader in web hosting. Amazon offers top quality
 Your Hypernode in a Different Data Center
 -----------------------------------------
 
-If you order a trial or hosting plan (Hypernode Grow and Professional) your Hypernode will be booted in Ghent, **Belgium**.
+If you order a trial or hosting plan (Falcon) your Hypernode will be booted in Ghent, **Belgium**.
 
-In case you ordered a Hypernode Excellence plan, your Hypernode is booted in Frankfurt (**Germany**).
+In case you ordered a Hypernode Eagle plan, your Hypernode is booted in Frankfurt (**Germany**).
 
 If your main target group is outside of Western Europe, you may want to move your shop to a different data center, closer to your customers.
 

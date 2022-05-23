@@ -21,6 +21,8 @@ DNS Records for Office365
 
 When you want to keep using the Hypernode name servers while using Office365 you need to change your DNS Set Up at Hypernode with the following records.
 
+|  |  |  |  |  |
+| --- | --- | --- | --- | --- |
 | **Name** | **Type** | **Content** | **Prio** | **TTL** |
 | domain.nl | MX | domain-nl.mail.protection.outlook.com **(replace smtp1.byte.nl)** | 10 | 3600 |
 | autodiscover.domain.nl | CNAME | autodiscover.outlook.com | – | 3600 |

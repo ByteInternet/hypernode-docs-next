@@ -27,6 +27,8 @@ Requesting Older Snapshots
 
 If you need a less recent snapshot (older than one day) and you don't have SLA Standard, you need to contact Support. Please note we charge a fee for this:
 
+|  |  |  |
+| --- | --- | --- |
 |  | **SLA Basic** | **SLA Standard** |
 | Most recent Hypernode Backup (AWS/Openstack)     | Free | Free |
 | Most recent Hypernode Backup (DigitalOcean)     | Free | Free |

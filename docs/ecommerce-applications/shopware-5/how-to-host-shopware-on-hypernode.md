@@ -1,7 +1,7 @@
 <!-- source: https://support.hypernode.com/en/ecommerce/shopware/how-to-host-shopware-on-hypernode/ -->
 # How to Host Shopware on Hypernode
 
-Shopware CMS is becoming more popular in the E-commerce business each day. Lots of aspects are similar to a Magento environment, so why should you not be able to host Shopware on Hypernode? There are already several shopware shops running successfully on Hypernode! All you need to do is add a Shopware specific Nginx configuration file to your environment. Shopware requires a Hypernode Professional S hosting plan or larger.
+Shopware CMS is becoming more popular in the E-commerce business each day. Lots of aspects are similar to a Magento environment, so why should you not be able to host Shopware on Hypernode? There are already several shopware shops running successfully on Hypernode! All you need to do is add a Shopware specific Nginx configuration file to your environment. Shopware requires a Hypernode Falcon S hosting plan or larger.
 
 
 What is Shopware?

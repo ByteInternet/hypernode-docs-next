@@ -31,6 +31,8 @@ In the examples below we use md5 hashing; that is a form of hashing that always 
 * **Reusable:** A hashed file or text must always generate the same hash.
 * **Non-reversible:**  A hash cannot be converted back to the original text.
 
+|  |  |
+| --- | --- |
 | **Text** | **Hashed text** |
 | Hypernode over hashing | cc967ac33065d74f72590edd4f5491d5 |
 | Hypernode over hashing | 95ed53c538bfa7471cf2a0604094555e |
@@ -46,6 +48,8 @@ To log in as a user, the password must of course be verified. Now the password c
 
 ### Example Unhashed Data
 
+|  |  |  |
+| --- | --- | --- |
 | **Name** | **Password** | **Hash of the password** |
 | Jack | 123456 | e10adc3949ba59abbe56e057f20f883e |
 | Pete | Password | 701f33b8d1366cde9cb3822256a62c01 |
@@ -60,6 +64,8 @@ The text above explains the advantages and disadvantages of hashing and why just
 
 In the previous table you saw that the hashes for the passwords of Pete and Casey were identical and that is of course not optimal. Once you know the password for a user's hash, you know which other users use that password. However, with Salt you can fix this:
 
+|  |  |  |  |
+| --- | --- | --- | --- |
 | **Name** | **Password** | **Text that needs to be hashed** | **Hash** |
 | Jack | 123456 | Jack+ 123456 | 90b60bac3e1113e180ddefed30c37b6e |
 | Pete | Password | Pete + wachtwoord | d9bc513252dede0277c864f23df84039 |

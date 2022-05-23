@@ -15,6 +15,8 @@ If your domain is hosted externally and you want to send email via your Hypernod
 
 This record should be as follows: 
 
+|  |  |  |  |
+| --- | --- | --- | --- |
 | **Label** | **Type** | **TTL** | **Content** |
 | hypernode._domainkey.example.com | CNAME | 3600 | hypernode._domainkey.*example*.hypernode.io |
 
@@ -22,6 +24,8 @@ This record should be as follows: 
 
 This record should be as follows: 
 
+|  |  |  |  |
+| --- | --- | --- | --- |
 | **Label** | **Type** | **TTL** | **Content** |
 | _domainkey.example.com | TXT | 3600 | o=~ |
 
@@ -29,6 +33,8 @@ This record should be as follows: 
 
 This record is required by our email delivery partner, and indicates they are authorized to accept outgoing mail for your domain. 
 
+|  |  |  |  |
+| --- | --- | --- | --- |
 | **Label** | **Type** | **TTL** | **Content** |
 | x-transip-mail-auth.example.com | TXT | 3600 | f491ddb3e61d1c92ab6de9f81257b1c0b95986d6550517f005c8e5e895da6fd2 |
 
@@ -36,6 +42,8 @@ This record is required by our email delivery partner, and indicates they are au
 
 This is the TransIP SPF record. If you already have an SPF record, you need to add Hypernode specific "include:spf.example.hypernode.io" to your existing record.
 
+|  |  |  |  |
+| --- | --- | --- | --- |
 | **Label** | **Type** | **TTL** | **Content** |
 | @ | TXT | 3600 | v=spf1 include:spf.example.hypernode.io ~all |
 
@@ -50,6 +58,8 @@ The DNS Check verifies whether the domain is correctly pointed to the Hypernode 
 
 The recommended way to configure your DNS is to create a CNAME record in your DNS configuration, pointing to Hypernode:
 
+|  |  |  |  |
+| --- | --- | --- | --- |
 | **Label** | **Type** | **TTL** | **Content** |
 | [www.example.com](http://www.example.com) | CNAME | 600 | example.hypernode.io |
 
@@ -59,6 +69,8 @@ This means that [www.example.com](http://www.example.com) will point to wherever
 
 One way to redirect your apex (or naked) domain, when the domain is not hosted on the Byte name servers, is to use the www-izers:
 
+|  |  |  |  |
+| --- | --- | --- | --- |
 | **Label** | **Type** | **TTL** | **Content** |
 | [example.com](http://www.example.com) | A | 600 |  46.21.232.141 |
 | [example.com](http://www.example.com) | A | 600 |  46.21.233.172 |
@@ -71,6 +83,8 @@ This is the preferred way for the DNS Check because if for whatever reason the I
 
 It's also an option to use the direct IP address of your Hypernode. You can find your IP with the “ping example.hypernode.io” command. 
 
+|  |  |  |  |
+| --- | --- | --- | --- |
 | **Label** | **Type** | **TTL** | **Content** |
 | [example.com](http://www.example.com) | A | 600 | IP of your Hypernode |
 

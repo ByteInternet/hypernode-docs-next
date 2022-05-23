@@ -41,6 +41,8 @@ If you use your own mail server and want to move your site to Hypernode, you gen
 * Go to the tab **Instellingen**and select **DNS.**
 * If you didn't edit the DNS, you will see the default DNS records. This means there are two MX records:
 
+|  |  |  |  |
+| --- | --- | --- | --- |
 | **Name** | **Type** | **Value** | **Prio** |
 | example.nl | MX | smtp1.byte.nl | 10 |
 | example.nl | MX | smtp2.byte.nl | 20 |
