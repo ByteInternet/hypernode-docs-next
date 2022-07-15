@@ -69,5 +69,5 @@ html_css_files = [
     "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700",
     "https://static.hypernode.com/fontawesome/css/fontawesome-all.css",
     "https://static.hypernode.com/css/byteStyle.css",
-    "css/hypernode.css",
+    "css/main.css",
 ]
