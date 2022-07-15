@@ -39,3 +39,13 @@ in another terminal run
 ``` bin/watch ```
 
 open localhost and now you can make changes in style and refresh the page without rebuilding
+
+when you're working on scss run 
+```
+sass --watch docs/_static/scss:docs/_static/css
+```
+
+or after change compile scss:
+```
+sass docs/_static/scss:docs/_static/css
+```
