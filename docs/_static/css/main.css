@@ -1,0 +1,93 @@
+:root {
+  --primary-blue: #063b67;
+  --secondary-blue: #074e8a;
+  --text-blue: #063b67;
+  --light-blue: #EEF8FF;
+  --light-blue-clear: #F8FCFF;
+  --aqua: #51B3DB;
+  --primary-orange: #FF7101;
+  --light-orange: #FF8201;
+  --grey: #F5F6F8;
+  --grey-border: #D9E7F3;
+  --light-grey-sidebar: #E5EAF0;
+  --message-success: #4bb52d;
+  --message-success-bg: #E3F6CF;
+  --message-danger: #D10000;
+  --message-danger-bg: #FAE5E8;
+  --message-warning: #FF8E6E;
+  --message-warning-bg: #FFF1ED;
+  --message-info: #368EC4;
+  --message-info-bg: #E7F2F8;
+}
+
+h1,
+h2,
+h3,
+h4,
+span {
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: inherit;
+  margin: 40px 0;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 1.2em;
+}
+
+.wy-nav-content {
+  max-width: 1200px;
+}
+
+.wy-side-nav-search {
+  background-color: var(--primary-blue);
+}
+
+.wy-menu-vertical p.caption {
+  color: var(--primary-blue);
+}
+
+.wy-menu-vertical a {
+  color: var(--text-blue);
+}
+
+.wy-menu-vertical li.current > a {
+  color: var(--primary-orange);
+}
+
+.wy-menu-vertical li.toctree-l2 a,
+.wy-menu-vertical li.toctree-l2.current > a {
+  background: rgb(245, 245, 245);
+}
+
+.wy-menu-vertical li.toctree-l3 a,
+.wy-menu-vertical li.toctree-l3.current > a {
+  background: rgb(235, 235, 235);
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
+  background: rgb(230, 230, 230);
+}
+
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a {
+  background: rgb(220, 220, 220);
+}
+
+.wy-menu-vertical a:hover {
+  background-color: var(--grey);
+}
+
+.wy-nav-side {
+  background-color: var(--light-grey-sidebar);
+}
+
+/*# sourceMappingURL=main.css.map */
