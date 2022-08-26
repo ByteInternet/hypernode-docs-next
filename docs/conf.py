@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "Hypernode Docs"
+project = "Docs"
 copyright = "2022, Hypernode"
 author = "Hypernode"
 
@@ -58,6 +58,7 @@ html_theme_options = {
     "collapse_navigation": False,
     "titles_only": False,
 }
+html_show_sphinx = False
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
