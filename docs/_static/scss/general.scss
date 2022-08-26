@@ -9,6 +9,15 @@ span {
 a {
     text-decoration: none;
 }
+a:visited {
+    color: var(--secondary-blue)!important;
+}
+a:hover {
+    color: var(--blue)!important;
+}
+.wy-side-nav-search a:visited {
+    color: white!important;
+}
 
 h1 {
     font-size: 48px;
@@ -23,12 +32,28 @@ h2 {
 
 .wy-nav-content {
     max-width: 1200px;
+    padding: 20px;
+    height: auto;
+}
+
+.wy-side-scroll {
+  height: auto;
 }
 
 .wy-side-nav-search {
     background-color: var(--primary-blue);
+    margin-bottom: 0;
+    position: fixed;
+    top: 0;
+    height: 100px;
 }
 
+.wy-menu-vertical {
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+    position: fixed;
+    top: 100px;
+}
 .wy-menu-vertical p.caption {
     color: var(--primary-blue);
 }
@@ -65,5 +90,182 @@ h2 {
 }
 
 .wy-nav-side {
-    background-color: var(--light-grey-sidebar);
+    background-color: var(--light-blue);
 }
+
+.rst-content { 
+    width: 900px;
+    padding: 0 50px;
+}
+
+/* code blocks */ 
+.rst-content section ul {
+    line-height: auto;
+}
+.rst-content section ul li {
+    list-style: none;
+}
+ul.simple li {
+    p {
+        line-height: 40px;
+    }
+    code {
+        border:none;
+        width: max-content;
+        font-family: 'Ubuntu Mono', monospace;
+        font-weight: 500;
+        font-size: 13px;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 8px;
+        background: #292d3e;
+    
+        &.literal {
+            color: var(--aqua);
+        }
+    }
+    
+}
+
+.rst-content div.highlight-nginx,
+.rst-content div.highlight-default {
+    border: none;
+    
+
+    .highlight {
+        font-family: 'Ubuntu Mono', monospace;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 10px;
+        line-height: 24px;
+        margin: 10px 0;
+        border-radius: 8px;
+        background-color: #292d3e;
+
+        .c1 {
+            color: var(--message-warning);
+        }
+        .mi,
+        .o,
+        .mf {
+            color: #e4e4e4;
+        }
+
+        .s,
+        .n,
+        .nb,
+        .s1 {
+            color: var(--aqua);
+        }
+        .k {
+            color: #D9E7F3;
+        }
+    }
+}
+.rst-content div.highlight pre {
+    font-size: 14px;
+}
+
+/* code blocks end */ 
+
+/* buttons next previous */ 
+    .btn,
+    .btn-neutral {
+        background: none;
+        border: none;
+        font-weight: 600;
+        color: var(--primary-orange)!important;
+        
+        .fa {
+            display: none;
+        }
+
+        &:visited {
+            color: var(--primary-orange)!important;
+
+        }
+    }
+/* buttons next previous end */ 
+
+/* scrollbar */
+.wy-menu {
+    &::-webkit-scrollbar{
+        width: 5px;
+    }
+    &::-webkit-scrollbar-thumb
+    {
+        background-color: var(--primary-blue);
+        border-radius: 3px;
+        background-clip: content-box;
+    }
+    /* scrollbar end */
+    
+    /* sidebar */
+    & a {
+        font-size: 13px;
+    }
+
+    & a:hover {
+        background-color: white;
+    }
+    & li.current {
+        background: #fff;
+    
+        a {
+            color: var(--blue);
+        }
+    }
+    & li.toctree-l1.current>a {
+        border-bottom: 0;
+        border-top: 0;
+    }
+    
+    
+    & li.current,
+    & li.toctree-l2,
+    & li.toctree-l2 a,
+    & li.toctree-l2.current,
+    & li.toctree-l2.current li.toctree-l3,
+    & li.toctree-l3.current li.toctree-l4,
+    & li.toctree-l3.current li.toctree-l4 > a,
+    & li.toctree-l2.current li.toctree-l3 > a {
+        background: var(--light-blue);
+    }
+    
+    
+    & li.current > a,
+    & li.toctree-l2.current a,
+    & li.toctree-l3.current li.toctree-l4.current > a,
+    & li.toctree-l2.current li.toctree-l3.current > a
+    {
+        background: #fff;
+    }
+    
+    
+    & li.current>a, & li.on a {
+        background: #fff;
+    }
+    & li.current>a button.toctree-expand,
+    & li.on a button.toctree-expand,
+    & li>a button.toctree-expand,
+    & li.on a button.toctree-expand{
+        display: none;
+    }
+    
+    ul {
+        margin-left: 22px;
+        border-left: 1px solid #c1d2e1;
+    
+    }
+    
+    & li.current>a,
+    & li.on a,
+    & li.toctree-l2.current li.toctree-l3>a,
+    & li.toctree-l2.current>a,
+    & li.toctree-l3.current li.toctree-l4>a {
+        padding: 10px;
+    }
+}
+
+/* sidebar end */
+

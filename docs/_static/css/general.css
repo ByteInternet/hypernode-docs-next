@@ -10,6 +10,18 @@ a {
   text-decoration: none;
 }
 
+a:visited {
+  color: var(--secondary-blue) !important;
+}
+
+a:hover {
+  color: var(--blue) !important;
+}
+
+.wy-side-nav-search a:visited {
+  color: white !important;
+}
+
 h1 {
   font-size: 48px;
   line-height: inherit;
@@ -23,10 +35,27 @@ h2 {
 
 .wy-nav-content {
   max-width: 1200px;
+  padding: 20px;
+  height: auto;
+}
+
+.wy-side-scroll {
+  height: auto;
 }
 
 .wy-side-nav-search {
   background-color: var(--primary-blue);
+  margin-bottom: 0;
+  position: fixed;
+  top: 0;
+  height: 100px;
+}
+
+.wy-menu-vertical {
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+  position: fixed;
+  top: 100px;
 }
 
 .wy-menu-vertical p.caption {
@@ -65,7 +94,155 @@ h2 {
 }
 
 .wy-nav-side {
-  background-color: var(--light-grey-sidebar);
+  background-color: var(--light-blue);
 }
+
+.rst-content {
+  width: 900px;
+  padding: 0 50px;
+}
+
+/* code blocks */
+.rst-content section ul {
+  line-height: auto;
+}
+
+.rst-content section ul li {
+  list-style: none;
+}
+
+ul.simple li p {
+  line-height: 40px;
+}
+ul.simple li code {
+  border: none;
+  width: max-content;
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  background: #292d3e;
+}
+ul.simple li code.literal {
+  color: var(--aqua);
+}
+
+.rst-content div.highlight-nginx,
+.rst-content div.highlight-default {
+  border: none;
+}
+.rst-content div.highlight-nginx .highlight,
+.rst-content div.highlight-default .highlight {
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px;
+  line-height: 24px;
+  margin: 10px 0;
+  border-radius: 8px;
+  background-color: #292d3e;
+}
+.rst-content div.highlight-nginx .highlight .c1,
+.rst-content div.highlight-default .highlight .c1 {
+  color: var(--message-warning);
+}
+.rst-content div.highlight-nginx .highlight .mi,
+.rst-content div.highlight-nginx .highlight .o,
+.rst-content div.highlight-nginx .highlight .mf,
+.rst-content div.highlight-default .highlight .mi,
+.rst-content div.highlight-default .highlight .o,
+.rst-content div.highlight-default .highlight .mf {
+  color: #e4e4e4;
+}
+.rst-content div.highlight-nginx .highlight .s,
+.rst-content div.highlight-nginx .highlight .n,
+.rst-content div.highlight-nginx .highlight .nb,
+.rst-content div.highlight-nginx .highlight .s1,
+.rst-content div.highlight-default .highlight .s,
+.rst-content div.highlight-default .highlight .n,
+.rst-content div.highlight-default .highlight .nb,
+.rst-content div.highlight-default .highlight .s1 {
+  color: var(--aqua);
+}
+.rst-content div.highlight-nginx .highlight .k,
+.rst-content div.highlight-default .highlight .k {
+  color: #D9E7F3;
+}
+
+.rst-content div.highlight pre {
+  font-size: 14px;
+}
+
+/* code blocks end */
+/* buttons next previous */
+.btn,
+.btn-neutral {
+  background: none;
+  border: none;
+  font-weight: 600;
+  color: var(--primary-orange) !important;
+}
+.btn .fa,
+.btn-neutral .fa {
+  display: none;
+}
+.btn:visited,
+.btn-neutral:visited {
+  color: var(--primary-orange) !important;
+}
+
+/* buttons next previous end */
+/* scrollbar */
+.wy-menu {
+  /* scrollbar end */
+  /* sidebar */
+}
+.wy-menu::-webkit-scrollbar {
+  width: 5px;
+}
+.wy-menu::-webkit-scrollbar-thumb {
+  background-color: var(--primary-blue);
+  border-radius: 3px;
+  background-clip: content-box;
+}
+.wy-menu a {
+  font-size: 13px;
+}
+.wy-menu a:hover {
+  background-color: white;
+}
+.wy-menu li.current {
+  background: #fff;
+}
+.wy-menu li.current a {
+  color: var(--blue);
+}
+.wy-menu li.toctree-l1.current > a {
+  border-bottom: 0;
+  border-top: 0;
+}
+.wy-menu li.current, .wy-menu li.toctree-l2, .wy-menu li.toctree-l2 a, .wy-menu li.toctree-l2.current, .wy-menu li.toctree-l2.current li.toctree-l3, .wy-menu li.toctree-l3.current li.toctree-l4, .wy-menu li.toctree-l3.current li.toctree-l4 > a, .wy-menu li.toctree-l2.current li.toctree-l3 > a {
+  background: var(--light-blue);
+}
+.wy-menu li.current > a, .wy-menu li.toctree-l2.current a, .wy-menu li.toctree-l3.current li.toctree-l4.current > a, .wy-menu li.toctree-l2.current li.toctree-l3.current > a {
+  background: #fff;
+}
+.wy-menu li.current > a, .wy-menu li.on a {
+  background: #fff;
+}
+.wy-menu li.current > a button.toctree-expand, .wy-menu li.on a button.toctree-expand, .wy-menu li > a button.toctree-expand, .wy-menu li.on a button.toctree-expand {
+  display: none;
+}
+.wy-menu ul {
+  margin-left: 22px;
+  border-left: 1px solid #c1d2e1;
+}
+.wy-menu li.current > a, .wy-menu li.on a, .wy-menu li.toctree-l2.current li.toctree-l3 > a, .wy-menu li.toctree-l2.current > a, .wy-menu li.toctree-l3.current li.toctree-l4 > a {
+  padding: 10px;
+}
+
+/* sidebar end */
 
 /*# sourceMappingURL=general.css.map */
