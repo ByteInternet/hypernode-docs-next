@@ -33,19 +33,56 @@ h1 {
 h2 {
     font-size: 32px;
     line-height: 1.2em;
+    margin-top: 40px;
 }
+.wy-grid-for-nav {
+    display: grid;
+    grid-template-columns: 300px 900px 300px;
+    justify-content: center;
+}
+@media screen and (max-width: 768px) {
+    .wy-grid-for-nav {
+
+    }  
+}
+
 .wy-nav-content-wrap {
     background: #fcfcfc;
+    // margin-left: 24%;
+}
+
+@media screen and (max-width: 768px) {
+    .wy-nav-content-wrap{
+        margin-left: 0;
+    }  
+}
+
+.wy-nav-top {
+    background: transparent;
+    color: var(--primary-blue);
+}
+.wy-nav-side {
+    position: sticky;
+    top: 0;
+    background: inherit;
 }
 
 .wy-nav-content {
     max-width: 1200px;
     padding: 20px;
     height: auto;
+
+    &-wrap {
+        margin-left: 0;
+    }
 }
 
 .wy-side-scroll {
   height: auto;
+
+  ul:last-child {
+    margin-bottom: 60px;
+  }
 }
 
 .wy-side-nav-search {
@@ -55,6 +92,15 @@ h2 {
     padding: 0 10px 10px 10px;
     top: 0;
     height: 100px;
+}
+
+@media screen and (max-width: 768px){
+    .wy-nav-side.shift {
+        width: 244px;
+    }
+    .wy-nav-content-wrap.shift {
+        margin-left: 244px;
+    }
 }
 
 .wy-menu-vertical {
@@ -94,12 +140,8 @@ h2 {
     background:rgb(220, 220, 220)
 }
 
-.wy-nav-side {
-    background-color: var(--light-blue);
-}
-
 .rst-content { 
-    width: 900px;
+    max-width: 900px;
     padding: 0 50px;
 }
 
@@ -120,7 +162,7 @@ ul.simple li {
         font-family: 'Ubuntu Mono', monospace;
         font-weight: 500;
         font-size: 13px;
-        padding: 10px;
+        padding: 5px 10px;
         margin: 10px 0;
         border-radius: 8px;
         background: #292d3e;
@@ -131,10 +173,28 @@ ul.simple li {
     }
     
 }
+code.docutils.literal.notranslate {
+    border:none;
+        width: max-content;
+        font-family: 'Ubuntu Mono', monospace;
+        font-weight: 500;
+        font-size: 13px;
+        padding: 5px 10px;
+        margin: 10px 0;
+        border-radius: 8px;
+        background: #292d3e;
+        display: inline-flex;
+        line-height: 1;
+    
+        &.literal {
+            color: var(--aqua);
+        }
+}
 
 .rst-content div.highlight-nginx,
 .rst-content div.highlight-default,
-.rst-content div.highlight-bash {
+.rst-content div.highlight-bash,
+.rst-content div.highlight-php {
     border: none;
     
 
@@ -229,7 +289,7 @@ ul.simple li {
     & li.toctree-l3.current li.toctree-l4,
     & li.toctree-l3.current li.toctree-l4 > a,
     & li.toctree-l2.current li.toctree-l3 > a {
-        background: var(--light-blue);
+        background: inherit;
     }
     
     

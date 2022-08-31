@@ -36,10 +36,33 @@ h1 {
 h2 {
   font-size: 32px;
   line-height: 1.2em;
+  margin-top: 40px;
+}
+
+.wy-grid-for-nav {
+  display: grid;
+  grid-template-columns: 300px 900px 300px;
+  justify-content: center;
 }
 
 .wy-nav-content-wrap {
   background: #fcfcfc;
+}
+
+@media screen and (max-width: 768px) {
+  .wy-nav-content-wrap {
+    margin-left: 0;
+  }
+}
+.wy-nav-top {
+  background: transparent;
+  color: var(--primary-blue);
+}
+
+.wy-nav-side {
+  position: sticky;
+  top: 0;
+  background: inherit;
 }
 
 .wy-nav-content {
@@ -47,9 +70,15 @@ h2 {
   padding: 20px;
   height: auto;
 }
+.wy-nav-content-wrap {
+  margin-left: 0;
+}
 
 .wy-side-scroll {
   height: auto;
+}
+.wy-side-scroll ul:last-child {
+  margin-bottom: 60px;
 }
 
 .wy-side-nav-search {
@@ -61,6 +90,14 @@ h2 {
   height: 100px;
 }
 
+@media screen and (max-width: 768px) {
+  .wy-nav-side.shift {
+    width: 244px;
+  }
+  .wy-nav-content-wrap.shift {
+    margin-left: 244px;
+  }
+}
 .wy-menu-vertical {
   height: calc(100vh - 100px);
   overflow-y: scroll;
@@ -99,12 +136,8 @@ h2 {
   background: rgb(220, 220, 220);
 }
 
-.wy-nav-side {
-  background-color: var(--light-blue);
-}
-
 .rst-content {
-  width: 900px;
+  max-width: 900px;
   padding: 0 50px;
 }
 
@@ -126,7 +159,7 @@ ul.simple li code {
   font-family: "Ubuntu Mono", monospace;
   font-weight: 500;
   font-size: 13px;
-  padding: 10px;
+  padding: 5px 10px;
   margin: 10px 0;
   border-radius: 8px;
   background: #292d3e;
@@ -135,14 +168,33 @@ ul.simple li code.literal {
   color: var(--aqua);
 }
 
+code.docutils.literal.notranslate {
+  border: none;
+  width: max-content;
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 5px 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  background: #292d3e;
+  display: inline-flex;
+  line-height: 1;
+}
+code.docutils.literal.notranslate.literal {
+  color: var(--aqua);
+}
+
 .rst-content div.highlight-nginx,
 .rst-content div.highlight-default,
-.rst-content div.highlight-bash {
+.rst-content div.highlight-bash,
+.rst-content div.highlight-php {
   border: none;
 }
 .rst-content div.highlight-nginx .highlight,
 .rst-content div.highlight-default .highlight,
-.rst-content div.highlight-bash .highlight {
+.rst-content div.highlight-bash .highlight,
+.rst-content div.highlight-php .highlight {
   font-family: "Ubuntu Mono", monospace;
   font-weight: 500;
   font-size: 16px;
@@ -155,7 +207,8 @@ ul.simple li code.literal {
 }
 .rst-content div.highlight-nginx .highlight .c1,
 .rst-content div.highlight-default .highlight .c1,
-.rst-content div.highlight-bash .highlight .c1 {
+.rst-content div.highlight-bash .highlight .c1,
+.rst-content div.highlight-php .highlight .c1 {
   color: var(--message-warning);
 }
 .rst-content div.highlight-nginx .highlight .mi,
@@ -166,7 +219,10 @@ ul.simple li code.literal {
 .rst-content div.highlight-default .highlight .mf,
 .rst-content div.highlight-bash .highlight .mi,
 .rst-content div.highlight-bash .highlight .o,
-.rst-content div.highlight-bash .highlight .mf {
+.rst-content div.highlight-bash .highlight .mf,
+.rst-content div.highlight-php .highlight .mi,
+.rst-content div.highlight-php .highlight .o,
+.rst-content div.highlight-php .highlight .mf {
   color: #e4e4e4;
 }
 .rst-content div.highlight-nginx .highlight .s,
@@ -183,7 +239,12 @@ ul.simple li code.literal {
 .rst-content div.highlight-bash .highlight .n,
 .rst-content div.highlight-bash .highlight .nb,
 .rst-content div.highlight-bash .highlight .s1,
-.rst-content div.highlight-bash .highlight .p {
+.rst-content div.highlight-bash .highlight .p,
+.rst-content div.highlight-php .highlight .s,
+.rst-content div.highlight-php .highlight .n,
+.rst-content div.highlight-php .highlight .nb,
+.rst-content div.highlight-php .highlight .s1,
+.rst-content div.highlight-php .highlight .p {
   color: var(--aqua);
 }
 .rst-content div.highlight-nginx .highlight .k,
@@ -194,7 +255,10 @@ ul.simple li code.literal {
 .rst-content div.highlight-default .highlight .m,
 .rst-content div.highlight-bash .highlight .k,
 .rst-content div.highlight-bash .highlight .nv,
-.rst-content div.highlight-bash .highlight .m {
+.rst-content div.highlight-bash .highlight .m,
+.rst-content div.highlight-php .highlight .k,
+.rst-content div.highlight-php .highlight .nv,
+.rst-content div.highlight-php .highlight .m {
   color: #D9E7F3;
 }
 
@@ -243,7 +307,7 @@ ul.simple li code.literal {
   border-top: 0;
 }
 .wy-menu li.current, .wy-menu li.toctree-l2, .wy-menu li.toctree-l2 a, .wy-menu li.toctree-l2.current, .wy-menu li.toctree-l2.current li.toctree-l3, .wy-menu li.toctree-l3.current li.toctree-l4, .wy-menu li.toctree-l3.current li.toctree-l4 > a, .wy-menu li.toctree-l2.current li.toctree-l3 > a {
-  background: var(--light-blue);
+  background: inherit;
 }
 .wy-menu li.current > a, .wy-menu li.toctree-l2.current a, .wy-menu li.toctree-l3.current li.toctree-l4.current > a, .wy-menu li.toctree-l2.current li.toctree-l3.current > a {
   background: #fff;
