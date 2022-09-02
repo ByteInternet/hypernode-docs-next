@@ -446,5 +446,25 @@ code.docutils.literal.notranslate.literal {
   }
 }
 /* -------- PORTRAIT END ---------- */
+/* ---------- MOBILE -------------- */
+@media screen and (max-width: 768px) {
+  .rst-content {
+    padding: 0;
+  }
+  h1 {
+    font-size: 38px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  .wy-menu a {
+    font-size: 15px;
+  }
+  p {
+    font-size: 17px;
+    line-height: 26px;
+  }
+}
+/* ---------- MOBILE END -------------- */
 
 /*# sourceMappingURL=general.css.map */
