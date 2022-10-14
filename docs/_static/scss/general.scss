@@ -152,17 +152,14 @@ code.docutils.literal.notranslate {
 }
 code.docutils.literal.notranslate {
     background: #efefef;
-    padding: 6px 10px;
+    padding: 2px 6px;
 
     &.literal {
         color: var(--blue);
     }
 }
 
-.rst-content div.highlight-nginx,
-.rst-content div.highlight-default,
-.rst-content div.highlight-bash,
-.rst-content div.highlight-php {
+.rst-content div.notranslate {
     border: none;
     
 
@@ -175,7 +172,7 @@ code.docutils.literal.notranslate {
         margin: 10px 0;
         border-radius: 8px;
         background-color: #292d3e;
-        color: var(--aqua);
+        color: #D9E7F3;
 
         .c1 {
             color: var(--message-warning);
@@ -189,22 +186,26 @@ code.docutils.literal.notranslate {
         .s,
         .n,
         .nb,
-        .s1,
-        .p {
+        .na,
+        .s1 {
             color: var(--aqua);
         }
+
+        .s1 {
+            color: var(--light-orange);
+        }
+
         .k,
         .nv,
-        .m {
+        .m,
+        .vg,
+        .p {
             color: #D9E7F3;
         }
     }
 }
 .rst-content div.highlight pre {
     font-size: 14px;
-}
-.rst-content div.highlight-bash {
-    color: var(--aqua);
 }
 
 /* code blocks end */ 
@@ -227,6 +228,10 @@ code.docutils.literal.notranslate {
         }
     }
 /* buttons next previous end */ 
+
+.rst-content p + ul {
+    margin-top: -14px;
+}
 
 /* scrollbar */
 .wy-menu {
