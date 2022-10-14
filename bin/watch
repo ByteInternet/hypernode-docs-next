@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-
+import datetime
+import os
 import subprocess
 
 from inotify.adapters import InotifyTree
@@ -21,6 +22,8 @@ def watch_for_changes(debug=False):
     IGNORED_EVENTS = ["IN_CLOSE_WRITE", "IN_CLOSE_NOWRITE", "IN_ACCESS", "IN_OPEN"]
     IGNORED_PATHS = ["docs/_build"]
 
+    last_build = None
+
     for event in i.event_gen(yield_nones=False):
         (_, type_names, path, filename) = event
 
@@ -35,11 +38,21 @@ def watch_for_changes(debug=False):
                 ignore = True
                 break
 
+        if filename.endswith(".swx") or filename.endswith(".swp") or filename.endswith("~"):
+            ignore = True
+
         if ignore:
             continue
 
+        if last_build:
+            # If build has been triggered in the last 50 ms, skip
+            delta = (datetime.datetime.now() - last_build).microseconds / 1000
+            if delta < 50:
+                continue
+
         build_docs()
         refresh_assets()
+        last_build = datetime.datetime.now()
 
         if debug:
             print(
