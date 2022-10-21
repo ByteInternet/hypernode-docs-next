@@ -42,6 +42,8 @@ h2 {
     display: grid;
     grid-template-columns: 300px 900px 300px;
     justify-content: center;
+    position: relative;
+    top: 80px;
 }
 
 .wy-nav-content-wrap {
@@ -73,20 +75,29 @@ h2 {
 }
 
 .wy-side-nav-search {
+    width: 100%;
     background-color: var(--primary-blue);
-    margin-bottom: 0;
+    padding: 0 185px;
     position: fixed;
-    padding: 0 10px 10px 10px;
     top: 0;
-    height: 100px;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 50px;
+
+    div {
+        width: 300px;
+    }
 }
 
 .wy-menu-vertical {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 60px);
     overflow-y: scroll;
     position: fixed;
-    top: 100px;
+    top: 110px;
     padding-bottom: 60px;
+    padding-top: 5px;
 }
 .wy-menu-vertical p.caption {
     color: var(--primary-blue);
@@ -231,12 +242,13 @@ code.docutils.literal.notranslate {
 /* scrollbar */
 .wy-menu {
     &::-webkit-scrollbar{
-        width: 5px;
+        width: 10px;
+        background-color: var(--grey-border);
     }
     &::-webkit-scrollbar-thumb
     {
         background-color: var(--primary-blue);
-        border-radius: 3px;
+        border-radius: 5px;
         background-clip: content-box;
     }
     /* scrollbar end */
@@ -299,10 +311,13 @@ code.docutils.literal.notranslate {
         }
     }
     
-    ul {
+    
+    & li.toctree-l2,
+    & li.toctree-l3,
+    & li.toctree-l4,
+    & li.toctree-l5 {
         margin-left: 22px;
         border-left: 1px solid #c1d2e1;
-    
     }
     
     & li.current>a,
@@ -311,8 +326,6 @@ code.docutils.literal.notranslate {
     & li.toctree-l2.current>a,
     & li.toctree-l2>a,
     & li.toctree-l3.current li.toctree-l4>a {
-        padding: 10px;
-        max-width: 170px;   
         border-right: none;
     }
 }
@@ -336,7 +349,7 @@ code.docutils.literal.notranslate {
         border-radius: 5px;
         border: 1px solid var(--grey-border);
         position: fixed;
-        top: 100px;
+        top: 150px;
         background-color: #fff;
         // box-shadow: 3px 3px 10px rgba(0,0,0,.10);
         width: 250px;
@@ -353,7 +366,7 @@ code.docutils.literal.notranslate {
 }
 /* aside end */
 
-/* header */
+/* breadcrumb */
 .wy-side-nav-search img {
     background-color: transparent;
     position: relative;
@@ -368,8 +381,13 @@ code.docutils.literal.notranslate {
 }
 .wy-side-nav-search>a:hover {
     background: transparent;
-
 }
+.wy-side-nav-search input[type=text],
+.wy-body-for-nav input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
+    border: none;
+    box-shadow: none;
+}
+
 
 .logo-title {
     display: flex;
@@ -388,8 +406,15 @@ code.docutils.literal.notranslate {
 }
 
 .header {
-    height: 30px;
-    line-height: 30px;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 60px;
+    border-bottom: 1px solid var(--grey-border);
+    padding-left: 190px;
+    z-index:2;
+    background-color: white;
 }
 
 /* header end */
