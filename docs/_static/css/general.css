@@ -331,6 +331,10 @@ code.docutils.literal.notranslate.literal {
 }
 .wy-menu li.current > a, .wy-menu li.on a, .wy-menu li.toctree-l2.current li.toctree-l3 > a, .wy-menu li.toctree-l2.current > a, .wy-menu li.toctree-l2 > a, .wy-menu li.toctree-l3.current li.toctree-l4 > a {
   border-right: none;
+  padding: 10px;
+}
+.wy-menu li.current > a, .wy-menu li.on a {
+  padding-left: 20px;
 }
 
 /* sidebar end */

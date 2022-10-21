@@ -327,7 +327,14 @@ code.docutils.literal.notranslate {
     & li.toctree-l2>a,
     & li.toctree-l3.current li.toctree-l4>a {
         border-right: none;
+        padding: 10px;
     }
+    & li.current>a,
+    & li.on a {
+        padding-left: 20px;
+    }
+
+    
 }
 
 /* sidebar end */
