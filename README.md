@@ -49,3 +49,20 @@ or after changes compile scss once:
 ```
 sass docs/_static/scss:docs/_static/css
 ```
+
+## Deploying the docs with Hypernode Deploy
+
+To deploy to a local Hypernode Docker environment:
+```
+$ docker pull docker.hypernode.com/byteinternet/hypernode-buster-docker:latest
+$ docker run docker.hypernode.com/byteinternet/hypernode-buster-docker:latest
+$ # Note the IP address, it should be 172.17.0.2 (otherwise refer to deploy.php)
+```
+
+Next make sure your `~/.ssh/yourdeploykey` equivalent can log in to the Docker host (172.17.0.2) as the app user. You can add it to the `/data/web/.ssh/authorized_keys` file on in the instance manually.
+
+Then deploy to your local Hypernode Docker:
+```
+docker run --rm -it --env SSH_PRIVATE_KEY="$(cat ~/.ssh/yourdeploykey | base64)" -v ${PWD}:/build quay.io/hypernode/deploy:latest hypernode-deploy build -vvv  # First build the artifact
+docker run --rm -it --env SSH_PRIVATE_KEY="$(cat ~/.ssh/yourdeploykey | base64)" -v ${PWD}:/build quay.io/hypernode/deploy:latest hypernode-deploy deploy docker -vvv  # Then perform the deploy
+```
