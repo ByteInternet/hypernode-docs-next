@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "Docs"
+project = "Documentation"
 copyright = "2022, Hypernode"
 author = "Hypernode"
 
@@ -73,6 +73,4 @@ html_css_files = [
     "https://static.hypernode.com/css/byteStyle.css",
     "css/main.css",
 ]
-html_js_files = [
-    "js/app.js"
-]
+html_js_files = ["js/app.js"]
