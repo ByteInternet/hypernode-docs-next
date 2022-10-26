@@ -35,6 +35,10 @@ task('deploy:hmv_docker', static function () use (&$DOCKER_HOST, &$DOCKER_WEBROO
     run(sprintf('if test -f /etc/hypernode/is_docker; then hypernode-manage-vhosts %s --disable-https --type generic-php --yes --webroot %s --default-server; fi', $DOCKER_HOST, $DOCKER_WEBROOT));
 });
 
+after("deploy:nginx:manage_vhost", static function () {
+    $runID = getenv("RUN_ID");
+    run(sprintf("hypernode-manage-vhosts %s.{{hostname}}", $runID));
+});
 
 $configuration = new Configuration();
 $configuration->addDeployTask('deploy:disable_public');
@@ -79,7 +83,7 @@ $dockerStage = $configuration->addStage('docker', $DOCKER_HOST);
 $dockerStage->addServer($DOCKER_HOST);
 
 $runID = getenv("RUN_ID");
-$testingStage = $configuration->addStage("acceptance", "$runID.docs.hntestgroot.hypernode.io");
+$testingStage = $configuration->addStage("acceptance", "$runID.hntestgroot.hypernode.io");
 $testingStage->addBrancherServer("hntestgroot");
 
 return $configuration;
