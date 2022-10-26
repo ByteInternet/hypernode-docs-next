@@ -1,6 +1,7 @@
 <?php
 namespace Hypernode\DeployConfiguration;
 
+use function Deployer\after;
 use function Deployer\run;
 use function Deployer\task;
 
@@ -35,9 +36,11 @@ task('deploy:hmv_docker', static function () use (&$DOCKER_HOST, &$DOCKER_WEBROO
     run(sprintf('if test -f /etc/hypernode/is_docker; then hypernode-manage-vhosts %s --disable-https --type generic-php --yes --webroot %s --default-server; fi', $DOCKER_HOST, $DOCKER_WEBROOT));
 });
 
-after("deploy:nginx:manage_vhost", static function () {
+task("deploy:docs_vhost", static function () {
     $runID = getenv("RUN_ID");
     run(sprintf("hypernode-manage-vhosts %s.{{hostname}}", $runID));
+    run("rm -rf /data/web/nginx/%s.{{hostname}}", $runID);
+    run("ln -s /data/web/nginx/{{domain}} /data/web/nginx/%s.{{hostname}}", $runID);
 });
 
 $configuration = new Configuration();
@@ -46,6 +49,7 @@ $configuration->addDeployTask('python:venv:create');
 $configuration->addDeployTask('python:venv:requirements');
 $configuration->addDeployTask('python:build_documentation');
 $configuration->addDeployTask('deploy:hmv_docker');
+$configuration->addDeployTask('deploy:docs_vhost');
 $configuration->setPlatformConfigurations([
     new PlatformConfiguration\NginxConfiguration("etc/nginx"),
 ]);
