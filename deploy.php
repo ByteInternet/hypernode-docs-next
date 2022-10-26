@@ -3,8 +3,6 @@ namespace Hypernode\DeployConfiguration;
 
 use function Deployer\run;
 use function Deployer\task;
-use function Deployer\currentHost;
-use function Deployer\upload;
 
 $DOCKER_HOST = '172.17.0.2';
 $DOCKER_WEBROOT = sprintf('/data/web/apps/%s/current/pub', $DOCKER_HOST);
@@ -76,5 +74,9 @@ $configuration->setDeployExclude([
 $dockerStage = $configuration->addStage('docker', $DOCKER_HOST);
 # Define the target server (docker instance) we're deploying to
 $dockerStage->addServer($DOCKER_HOST);
+
+$runID = getenv("RUN_ID");
+$testingStage = $configuration->addStage("acceptance", "$runID.docs.hntestgroot.hypernode.io");
+$testingStage->addBrancherServer("hntestgroot");
 
 return $configuration;

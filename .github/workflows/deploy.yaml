@@ -1,0 +1,55 @@
+name: Deploy to acceptance server
+
+on:
+  pull_request:
+
+env:
+  COMPOSER_CACHE_DIR: /tmp/composer-cache
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: quay.io/hypernode/deploy:3-php8.1-node18
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: /tmp/composer-cache
+          key: ${{ runner.os }}-composer
+      - uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - run: hypernode-deploy build -vvv
+        env:
+          RUN_ID: ${{ github.run_id }}
+      - name: archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: deployment-build
+          path: build/build.tgz
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    container: quay.io/hypernode/deploy:3-php8.1-node18
+    steps:
+      - uses: actions/checkout@v2
+      - name: download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: deployment-build
+          path: build/
+      - uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - run: mkdir -p $HOME/.ssh
+      - name: deploy to acceptance
+        run: hypernode-deploy deploy acceptance -vvv
+        env:
+          HYPERNODE_API_TOKEN: ${{ secrets.HYPERNODE_API_TOKEN }}
+          RUN_ID: ${{ github.run_id }}
+      - name: Comment hostname on PR
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: |
+            Acceptance server is available at ${{ github.run_id }}.docs.hntestgroot.hypernode.io
