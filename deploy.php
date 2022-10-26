@@ -39,8 +39,8 @@ task('deploy:hmv_docker', static function () use (&$DOCKER_HOST, &$DOCKER_WEBROO
 task("deploy:docs_vhost", static function () {
     $runID = getenv("RUN_ID");
     run(sprintf("hypernode-manage-vhosts %s.{{hostname}}", $runID));
-    run("rm -rf /data/web/nginx/%s.{{hostname}}", $runID);
-    run("ln -s /data/web/nginx/{{domain}} /data/web/nginx/%s.{{hostname}}", $runID);
+    run(sprintf("rm -rf /data/web/nginx/%s.{{hostname}}", $runID));
+    run(sprintf("ln -s /data/web/nginx/{{domain}} /data/web/nginx/%s.{{hostname}}", $runID));
 });
 
 $configuration = new Configuration();
