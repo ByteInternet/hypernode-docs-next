@@ -42,6 +42,9 @@ $configuration->addDeployTask('python:venv:create');
 $configuration->addDeployTask('python:venv:requirements');
 $configuration->addDeployTask('python:build_documentation');
 $configuration->addDeployTask('deploy:hmv_docker');
+$configuration->setPlatformConfigurations([
+    new PlatformConfiguration\NginxConfiguration("etc/nginx"),
+]);
 
 # Just some sane defaults to exclude from the deploy
 $configuration->setDeployExclude([
