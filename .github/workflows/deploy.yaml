@@ -54,4 +54,4 @@ jobs:
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: |
-            Acceptance server is available at http://${{ github.run_id }}.${{ env.BRANCHER_HOSTNAME }}
+            Acceptance server is available at https://${{ github.run_id }}.${{ env.BRANCHER_HOSTNAME }}
