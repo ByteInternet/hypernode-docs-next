@@ -1,3 +1,5 @@
 *.swp
 _build
 *.pyc
+deployment-report.json
+build/
