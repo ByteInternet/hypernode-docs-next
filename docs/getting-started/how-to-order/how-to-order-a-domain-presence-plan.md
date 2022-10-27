@@ -27,7 +27,7 @@ To order one of these plans, please follow the steps below:
 4. Select the plan you need.
 5. Click on 'Controleren & Afronden'
 	1. If you already have an account with Hypernode you can either login and complete the order.
-	2. If you do not have an account yet, we will ask you to register. After that you can complete the order.
+	2. If you do notdfdfadfd have an account yet, we will ask you to register. After that you can complete the order.
 6. After completing your order you can either transfer your domain or our system will register the domain.
 
 FAQ
