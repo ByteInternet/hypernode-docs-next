@@ -20,7 +20,7 @@ Using the command `hypernode-systemctl preinstall`, you can automatically instal
 
 Please be aware that this does not set the general Hypernode settings (php, mysql) to the supported values. This still needs to happen manually. In addition, for Magento 1, make sure the `/data/web/public` folder is empty.
 
-```nginx
+```bash
 # Start the preinstall
 app@example.hypernode.io:~$ hypernode-systemctl preinstall magento1 --sample-data
 Preinstall magento1 with sample data job posted, see hypernode-log (or livelog) for job progress.
@@ -41,12 +41,12 @@ By default, your Hypernode is configured to use Magento 2. If you wish to instea
 
 This disables the configuration that is only needed for Magento 2. To do this, run the following command
 
-```nginx
+```bash
  rm ~/nginx/magento2.flag
 ```
 You will also need to [configure your vhost](https://support.hypernode.com/en/hypernode/nginx/hypernode-managed-vhosts) to use the magento 1 configuration.
 
-```nginx
+```bash
 hypernode-manage-vhosts --type=magento1 example.hypernode.io
 ```
 If you are already testing on another vhost, you will need to change it's type too.
@@ -55,17 +55,17 @@ If you are already testing on another vhost, you will need to change it's type t
 
 The first step should be to create a database. You connect to your database with the following command:
 
-```nginx
+```bash
  mysql
 ```
 Create a database by using the next command:
 
-```nginx
+```mysql
 CREATE DATABASE <database_name>;
 ```
 After this you exit the MySQL client and write down your database name so you can use it with the installer later. You will also need your database settings. You can see these with the following command:
 
-```nginx
+```bash
 cat ~/.my.cnf
 ```
 This will show you the username, password, and host used on your Hypernode. Together with the database you created above you now have all the information needed to install Magento 1
@@ -75,7 +75,7 @@ This will show you the username, password, and host used on your Hypernode. Toge
 * To install the latest Magento you’ll have to go to your **public** directory: cd /data/web/public
 Use the following command to install Magento through `magerun`:
 
-```nginx
+```bash
 magerun install
 ```
 * Choose which version you wish to install. The first option [1] is the most recent version of Magento. You may also choose to install the openmage LTS version. Press “Enter”.
