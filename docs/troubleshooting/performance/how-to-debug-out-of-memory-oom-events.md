@@ -19,7 +19,7 @@ The default is to be more restrictive, as on average that seems to be the most e
 
 This configurable setting can be set using the [hypernode-api](https://community.hypernode.io/#/Documentation/hypernode-api/README) or using the [hypernode-systemctl](https://community.hypernode.io/#/Documentation/hypernode-api/settings/README) command-line tool from the Hypernode.
 
-If you want to enable or disable this setting yourself, you can do so with the command below. But before you do, be sure to read[this changelog](https://changelog.hypernode.com/changelog/release-5874-better-out-of-memory-pattern-detection-for-preventive-non-essential-process-slaying/) for an in-depth explanation of what the setting exactly entails.
+If you want to enable or disable this setting yourself, you can do so with the command below. But before you do, be sure to read [this changelog](https://changelog.hypernode.com/changelog/release-5874-better-out-of-memory-pattern-detection-for-preventive-non-essential-process-slaying/) for an in-depth explanation of what the setting exactly entails.
 
 ```nginx
 $ hypernode-systemctl settings permissive_memory_management --value True
