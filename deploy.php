@@ -1,4 +1,5 @@
 <?php
+
 namespace Hypernode\DeployConfiguration;
 
 use function Deployer\after;
@@ -38,9 +39,7 @@ task('deploy:hmv_docker', static function () use (&$DOCKER_HOST, &$DOCKER_WEBROO
 
 task("deploy:docs_vhost", static function () {
     $runID = getenv("RUN_ID");
-    run(sprintf("hypernode-manage-vhosts --https --force-https %s.{{hostname}}", $runID));
-    run(sprintf("rm -rf /data/web/nginx/%s.{{hostname}}", $runID));
-    run(sprintf("ln -s /data/web/nginx/{{domain}} /data/web/nginx/%s.{{hostname}}", $runID));
+    run(sprintf("hypernode-manage-vhosts --https --force-https %s.{{hostname}} --webroot {{current_path}}/{{public_folder}}", $runID));
 });
 
 $configuration = new Configuration();
@@ -50,9 +49,6 @@ $configuration->addDeployTask('python:venv:requirements');
 $configuration->addDeployTask('python:build_documentation');
 $configuration->addDeployTask('deploy:hmv_docker');
 $configuration->addDeployTask('deploy:docs_vhost');
-$configuration->setPlatformConfigurations([
-    new PlatformConfiguration\NginxConfiguration("etc/nginx"),
-]);
 
 # Just some sane defaults to exclude from the deploy
 $configuration->setDeployExclude([
@@ -87,7 +83,7 @@ $dockerStage = $configuration->addStage('docker', $DOCKER_HOST);
 $dockerStage->addServer($DOCKER_HOST);
 
 $runID = getenv("RUN_ID");
-$testingStage = $configuration->addStage("acceptance", "$runID.hntestgroot.hypernode.io");
+$testingStage = $configuration->addStage("acceptance", "docs");
 $testingStage->addBrancherServer("hntestgroot");
 
 return $configuration;
