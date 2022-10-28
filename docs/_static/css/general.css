@@ -172,22 +172,16 @@ code.docutils.literal.notranslate.literal {
 
 code.docutils.literal.notranslate {
   background: #efefef;
-  padding: 6px 10px;
+  padding: 2px 6px;
 }
 code.docutils.literal.notranslate.literal {
   color: var(--blue);
 }
 
-.rst-content div.highlight-nginx,
-.rst-content div.highlight-default,
-.rst-content div.highlight-bash,
-.rst-content div.highlight-php {
+.rst-content div.notranslate {
   border: none;
 }
-.rst-content div.highlight-nginx .highlight,
-.rst-content div.highlight-default .highlight,
-.rst-content div.highlight-bash .highlight,
-.rst-content div.highlight-php .highlight {
+.rst-content div.notranslate .highlight {
   font-family: "Ubuntu Mono", monospace;
   font-weight: 500;
   font-size: 16px;
@@ -196,71 +190,36 @@ code.docutils.literal.notranslate.literal {
   margin: 10px 0;
   border-radius: 8px;
   background-color: #292d3e;
-  color: var(--aqua);
+  color: #D9E7F3;
 }
-.rst-content div.highlight-nginx .highlight .c1,
-.rst-content div.highlight-default .highlight .c1,
-.rst-content div.highlight-bash .highlight .c1,
-.rst-content div.highlight-php .highlight .c1 {
+.rst-content div.notranslate .highlight .c1 {
   color: var(--message-warning);
 }
-.rst-content div.highlight-nginx .highlight .mi,
-.rst-content div.highlight-nginx .highlight .o,
-.rst-content div.highlight-nginx .highlight .mf,
-.rst-content div.highlight-default .highlight .mi,
-.rst-content div.highlight-default .highlight .o,
-.rst-content div.highlight-default .highlight .mf,
-.rst-content div.highlight-bash .highlight .mi,
-.rst-content div.highlight-bash .highlight .o,
-.rst-content div.highlight-bash .highlight .mf,
-.rst-content div.highlight-php .highlight .mi,
-.rst-content div.highlight-php .highlight .o,
-.rst-content div.highlight-php .highlight .mf {
+.rst-content div.notranslate .highlight .mi,
+.rst-content div.notranslate .highlight .o,
+.rst-content div.notranslate .highlight .mf {
   color: #e4e4e4;
 }
-.rst-content div.highlight-nginx .highlight .s,
-.rst-content div.highlight-nginx .highlight .n,
-.rst-content div.highlight-nginx .highlight .nb,
-.rst-content div.highlight-nginx .highlight .s1,
-.rst-content div.highlight-nginx .highlight .p,
-.rst-content div.highlight-default .highlight .s,
-.rst-content div.highlight-default .highlight .n,
-.rst-content div.highlight-default .highlight .nb,
-.rst-content div.highlight-default .highlight .s1,
-.rst-content div.highlight-default .highlight .p,
-.rst-content div.highlight-bash .highlight .s,
-.rst-content div.highlight-bash .highlight .n,
-.rst-content div.highlight-bash .highlight .nb,
-.rst-content div.highlight-bash .highlight .s1,
-.rst-content div.highlight-bash .highlight .p,
-.rst-content div.highlight-php .highlight .s,
-.rst-content div.highlight-php .highlight .n,
-.rst-content div.highlight-php .highlight .nb,
-.rst-content div.highlight-php .highlight .s1,
-.rst-content div.highlight-php .highlight .p {
+.rst-content div.notranslate .highlight .s,
+.rst-content div.notranslate .highlight .n,
+.rst-content div.notranslate .highlight .nb,
+.rst-content div.notranslate .highlight .na,
+.rst-content div.notranslate .highlight .s1 {
   color: var(--aqua);
 }
-.rst-content div.highlight-nginx .highlight .k,
-.rst-content div.highlight-nginx .highlight .nv,
-.rst-content div.highlight-nginx .highlight .m,
-.rst-content div.highlight-default .highlight .k,
-.rst-content div.highlight-default .highlight .nv,
-.rst-content div.highlight-default .highlight .m,
-.rst-content div.highlight-bash .highlight .k,
-.rst-content div.highlight-bash .highlight .nv,
-.rst-content div.highlight-bash .highlight .m,
-.rst-content div.highlight-php .highlight .k,
-.rst-content div.highlight-php .highlight .nv,
-.rst-content div.highlight-php .highlight .m {
+.rst-content div.notranslate .highlight .s1 {
+  color: var(--light-orange);
+}
+.rst-content div.notranslate .highlight .k,
+.rst-content div.notranslate .highlight .nv,
+.rst-content div.notranslate .highlight .m,
+.rst-content div.notranslate .highlight .vg,
+.rst-content div.notranslate .highlight .p {
   color: #D9E7F3;
 }
 
 .rst-content div.highlight pre {
   font-size: 14px;
-}
-
-.rst-content div.highlight-bash {
-  color: var(--aqua);
 }
 
 /* code blocks end */
@@ -282,6 +241,10 @@ code.docutils.literal.notranslate.literal {
 }
 
 /* buttons next previous end */
+.rst-content p + ul {
+  margin-top: -14px;
+}
+
 /* scrollbar */
 .wy-menu {
   /* scrollbar end */

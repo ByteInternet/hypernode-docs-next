@@ -1,5 +1,7 @@
 *.swp
 _build
 *.pyc
+.idea
+.vscode
 deployment-report.json
 build/
