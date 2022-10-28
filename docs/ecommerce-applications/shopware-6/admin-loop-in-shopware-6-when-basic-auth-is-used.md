@@ -16,6 +16,6 @@ $ cat /data/web/nginx/whitelist-development-exception.conf
 geo $development_exceptions {
     default "Development restricted area";
     # The IP that you want to access the Shopware 6 admin from
-    1.2.3.4 "off"; 
+    127.0.0.1 "off"; 
 }
 ```

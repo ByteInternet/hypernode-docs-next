@@ -3,3 +3,5 @@ _build
 *.pyc
 .idea
 .vscode
+deployment-report.json
+build/
