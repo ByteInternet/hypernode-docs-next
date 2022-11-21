@@ -145,11 +145,18 @@ h2 {
 ul.simple li p {
     line-height: 40px;
 }
+
+code,
+pre,
+pre span,
+span.pre {
+    font-family: 'Ubuntu Mono', monospace;
+}
+
 ul.simple li code,
 code.docutils.literal.notranslate {
     border:none;
     width: max-content;
-    font-family: 'Ubuntu Mono', monospace;
     font-weight: 500;
     font-size: 13px;
     padding: 10px;
