@@ -38,8 +38,7 @@ task('deploy:hmv_docker', static function () use (&$DOCKER_HOST, &$DOCKER_WEBROO
 });
 
 task("deploy:docs_vhost", static function () {
-    $runID = getenv("RUN_ID");
-    run(sprintf("hypernode-manage-vhosts --https --force-https %s.{{hostname}} --webroot {{current_path}}/{{public_folder}}", $runID));
+    run("hypernode-manage-vhosts --https --force-https {{hostname}} --webroot {{current_path}}/{{public_folder}}");
 });
 
 $configuration = new Configuration();
@@ -82,7 +81,6 @@ $dockerStage = $configuration->addStage('docker', $DOCKER_HOST);
 # Define the target server (docker instance) we're deploying to
 $dockerStage->addServer($DOCKER_HOST);
 
-$runID = getenv("RUN_ID");
 $testingStage = $configuration->addStage("acceptance", "docs");
 $testingStage->addBrancherServer("hntestgroot");
 
