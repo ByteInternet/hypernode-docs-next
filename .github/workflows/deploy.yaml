@@ -45,7 +45,6 @@ jobs:
         run: hypernode-deploy deploy acceptance -vvv
         env:
           HYPERNODE_API_TOKEN: ${{ secrets.HYPERNODE_API_TOKEN }}
-          RUN_ID: ${{ github.run_id }}
       - name: Get brancher hostname
         run: echo "BRANCHER_HOSTNAME=$(jq .hostnames[0] deployment-report.json -r)" >> $GITHUB_ENV
       - name: Comment hostname on PR
