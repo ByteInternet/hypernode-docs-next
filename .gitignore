@@ -3,5 +3,6 @@ _build
 *.pyc
 .idea
 .vscode
+*.css.map
 deployment-report.json
 build/
