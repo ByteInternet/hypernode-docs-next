@@ -2,7 +2,7 @@
 
 ipython==7.32.0
 pre-commit==2.18.1
-black==22.3.0
+black==22.10.0
 pytest==7.1.2
 pytest-xdist==2.5.0
 mypy==0.950
