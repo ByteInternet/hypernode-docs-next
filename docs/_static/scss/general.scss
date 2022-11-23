@@ -139,17 +139,14 @@ h2 {
 .rst-content section ul {
     line-height: auto;
 }
-.rst-content section ul li {
-    list-style: none;
-}
-ul.simple li p {
-    line-height: 40px;
-}
 
 code,
 pre,
 pre span,
-span.pre {
+span.pre,
+.rst-content .linenodiv pre,
+.rst-content div[class^=highlight] pre,
+.rst-content pre.literal-block {
     font-family: 'Ubuntu Mono', monospace;
 }
 
@@ -157,7 +154,6 @@ ul.simple li code,
 code.docutils.literal.notranslate {
     border:none;
     width: max-content;
-    font-weight: 500;
     font-size: 13px;
     padding: 10px;
     margin: 10px 0;
@@ -183,7 +179,6 @@ code.docutils.literal.notranslate {
 
     .highlight {
         font-family: 'Ubuntu Mono', monospace;
-        font-weight: 500;
         font-size: 16px;
         padding: 10px;
         line-height: 24px;
