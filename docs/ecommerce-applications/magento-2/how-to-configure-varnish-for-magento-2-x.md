@@ -13,14 +13,20 @@ As Magento 2 supports Varnish out of the box, there is no need for the turpentin
 
 **First configure the Varnish version (4.0 or 6.0) via the [hypernode-systemctl tool](https://support.hypernode.com/knowledgebase/hypernode-systemctl-cli-tool/)**
 
-`hypernode-systemctl settings varnish_version 4.0`
+```console
+$ hypernode-systemctl settings varnish_version 4.0
+```
 
 **Or if you want to switch to Varnish 6.0**
-`hypernode-systemctl settings varnish_version 6.0`
+```console
+$ hypernode-systemctl settings varnish_version 6.0
+```
 
 **Enable Varnish via the [hypernode-systemctl tool](https://support.hypernode.com/knowledgebase/hypernode-systemctl-cli-tool/)**
 
-`hypernode-systemctl settings varnish_enabled true`
+```console
+$ hypernode-systemctl settings varnish_enabled true
+```
 
 **Enable Varnish via the [Service Panel](https://service.byte.nl/)**
 
@@ -29,7 +35,7 @@ As Magento 2 supports Varnish out of the box, there is no need for the turpentin
 * Click on "Varnish"
 * Use the switch to enable Varnish
 
-**Enable Varnish via the[Control Panel](https://auth.hypernode.com/)**
+**Enable Varnish via the [Control Panel](https://auth.hypernode.com/)**
 
 * Click on "Hypernodes"
 * Click on "Caching"
@@ -41,7 +47,9 @@ Configure Varnish on the Vhost
 
 Since the introduction of **[hypernode-manage-vhosts](https://changelog.hypernode.com/changelog/release-7166-hypernode-manage-vhosts-enabled-by-default/)**Hypernode may work somewhat different than you might be used to. With HMV enabled, it requires one more step to configure Varnish for your shop/vhost. Remember, for each domain, there should be a vhost created. You can list an overview of all configured vhosts with `hypernode-manage-vhosts --list`. While you do that, note that there is a column, "varnish". By default this is set to "False". Which means that Varnish isn't configured for this vhost. You can configure Varnish for the vhost by running the following command:
 
-`hypernode-manage-vhosts EXAMPLE.COM --varnish`
+```console
+$ hypernode-manage-vhosts EXAMPLE.COM --varnish
+```
 
 Configure Magento 2.x for Varnish
 ---------------------------------
@@ -58,38 +66,36 @@ Configure Magento 2.x for Varnish
 
 ### Configure Your Backend Servers Through the Commandline
 
-If you want to flush the Varnish cache from the Magento backend, you need to add the Varnish server in your Magento config to `http-cache-hosts`
-
-.
+If you want to flush the Varnish cache from the Magento backend, you need to add the Varnish server in your Magento config to `http-cache-hosts`.
 
 To do this, run the following command:
 
-```bash
-cd /data/web/magento2;
-chmod 750 bin/magento;
-bin/magento setup:config:set --http-cache-hosts=127.0.0.1:6081;
-
+```console
+$ cd /data/web/magento2;
+$ chmod 750 bin/magento;
+$ bin/magento setup:config:set --http-cache-hosts=127.0.0.1:6081;
 ```
+
 Now when you flush your caches in cache management, your varnish full_page cache will be flushed too.
 
 ### Test and Upload Your VCL
 
 After downloading your VCL, check (in notepad or something similar) if the following configuration is present:
 
-```php
+```vcl
 backend default {
   .host = "127.0.0.1";
   .port = "8080";
 }
-
 ```
+
 If your VCL checks out, upload it to your Hypernode (using SCP, FTP or FTPS or whichever client you prefer)
 
 #### Remove Health Check Probe from Configuration
 
 **Note:** The default VCL might have the following configuration:
 
-```php
+```vcl
 backend default {
      .host = "localhost";
      .port = "8080";
@@ -102,8 +108,8 @@ backend default {
          .threshold = 5;
     }
 }
-
 ```
+
 Make sure you change this to the aforementioned configuration (without the health_check probe), since this will break on our Nginx configuration and will therefore result in a `503 Guru Meditation` error.
 
 Import Your VCL into the Varnish Daemon
@@ -111,16 +117,16 @@ Import Your VCL into the Varnish Daemon
 
 Import your VCL into Varnish and save as `mag2`:
 
-```bash
-varnishadm vcl.load mag2 /data/web/default.vcl
+```console
+$ varnishadm vcl.load mag2 /data/web/default.vcl
 
 ```
 The output should say: *your VCL is compiled*. If you receive a `Permission denied` error, and have recently activated Varnish, please close all ssh sessions, and log back in to reload your new permissions.
 
 Now tell Varnish to activate the loaded VCL:
 
-```bash
-varnishadm vcl.use mag2
+```console
+$ varnishadm vcl.use mag2
 
 ```
 In the examples we used the name ‘mag2’ for our VCL, but you can use any name you prefer.
@@ -129,9 +135,8 @@ In the examples we used the name ‘mag2’ for our VCL, but you can use any nam
 
 List all VCL’s with the following command:
 
-```bash
-varnishadm vcl.list
-
+```console
+$ varnishadm vcl.list
 ```
 The VCL you just imported and activated should have the status `active`. If all went well, varnish is now functioning with a working VCL.
 
@@ -148,15 +153,13 @@ To flush the Varnish cache of your Magento store on the command line you can use
 
 Additionally you can flush your cache through the Magento admin backend or use `varnishadm` directly:
 
-```bash
-varnishadm "ban req.url ~ ."
-
+```console
+$ varnishadm "ban req.url ~ ."
 ```
 Or if you want to flush the cache for a single domain in a multisite setup:
 
-```bash
-varnishadm "ban req.http.host == example.com"
-
+```console
+$ varnishadm "ban req.http.host == example.com"
 ```
 Warming Your Cache
 ------------------
@@ -168,17 +171,18 @@ Enable Debug Headers
 
 If you are implementing Varnish on Magento 2, you might want to view some caching headers that indicate whether the page is cacheable or not. To do this, put your Magento install in `Developer mode`. Now if you request a page through curl, you can see the `X-Magento-Cache-Debug` header:
 
-```bash
-curl -I -v --location-trusted 'example.hypernode.io' > /dev/null | grep X-Magento
-
+```console
+$ curl -I -v --location-trusted 'example.hypernode.io' > /dev/null | grep X-Magento
 ```
+
 Which will show the debug headers:
 
-```bash
+```console
+$ curl -I -v --location-trusted 'example.hypernode.io' > /dev/null | grep X-Magento
 X-Magento-Cache-Control: max-age=86400, public, s-maxage=86400
 X-Magento-Cache-Debug: MISS
-
 ```
+
 VCL Tip
 -------
 
@@ -189,8 +193,8 @@ In our experience the by default generated .vcl from your Magento backend often 
 Troubleshooting
 ---------------
 
-* If you are receiving `Permission denied` errors while running `varnishadm` or other Varnish CLI commands, and you have just activated Varnish, close any existing ssh sessions, and log back in to reload your updated permissions.
-* If your Varnish setup is not working over SSL, check [this article](https://support.hypernode.com/en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-byte-nl#Redirecting-to-HTTPS-When-Using-Varnish)
+- If you are receiving `Permission denied` errors while running `varnishadm` or other Varnish CLI commands, and you have just activated Varnish, close any existing ssh sessions, and log back in to reload your updated permissions.
+- If your Varnish setup is not working over SSL, check [this article](https://support.hypernode.com/en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-byte-nl#Redirecting-to-HTTPS-When-Using-Varnish)
 
 ### 502 Errors
 
@@ -200,13 +204,12 @@ Sometimes while you enable Varnish, or even while Varnish was already enabled an
 
 This error can 9 out of 10 times be fixed by adding some Nginx config. You can create a file, i.e. **~/nginx/server.header_buffer** with the following content:
 
-```bash
+```nginx
 fastcgi_buffers 16 16k;
 fastcgi_buffer_size 32k;
 proxy_buffer_size 128k;
 proxy_buffers 4 256k;
 proxy_busy_buffers_size 256k;
-
 ```
 
 ### 503 Errors
@@ -218,7 +221,6 @@ proxy_busy_buffers_size 256k;
 
 If you ever need to restart Varnish you can use the following systemctl command for that:
 
-```bash
-hypernode-servicectl restart varnish
-
+```console
+$ hypernode-servicectl restart varnish
 ```
