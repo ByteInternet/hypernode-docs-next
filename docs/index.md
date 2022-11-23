@@ -17,6 +17,16 @@ ecommerce-applications/*
 ```
 
 ```{toctree}
+:caption: 'Hypernode Deploy'
+:maxdepth: 2
+:glob:
+
+hypernode-deploy/getting-started
+hypernode-deploy/applications
+hypernode-deploy/pipelines
+```
+
+```{toctree}
 :caption: 'Best Practices'
 :maxdepth: 2
 :glob:
