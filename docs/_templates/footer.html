@@ -11,6 +11,12 @@
     </div>
   {%- endif %}
 
+  {%- if display_github %}
+  <div class="edit">
+    <a target="_blank" rel="noopener" href="https://github.com/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}.md"><span class="fa fa-github"></span> Edit on GitHub</a>
+  </div>
+  {%- endif %}
+
   <hr/>
 
   <div role="contentinfo" class="copyright">

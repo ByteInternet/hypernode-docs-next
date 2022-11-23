@@ -370,6 +370,14 @@ code.docutils.literal.notranslate.literal {
   font-size: 11px;
 }
 
+.wy-breadcrumbs li {
+  padding-top: initial;
+}
+
+li.wy-breadcrumbs-aside a {
+  padding: 10px;
+}
+
 .header {
   height: 50px;
   line-height: 50px;
@@ -384,6 +392,10 @@ code.docutils.literal.notranslate.literal {
 
 /* header end */
 /* footer */
+.edit {
+  text-align: center;
+}
+
 .copyright p {
   font-size: 11px;
 }
