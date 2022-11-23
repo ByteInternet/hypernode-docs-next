@@ -418,6 +418,12 @@ code.docutils.literal.notranslate {
 .wy-breadcrumbs-aside a {
     font-size: 11px;
 }
+.wy-breadcrumbs li {
+    padding-top: initial;
+}
+li.wy-breadcrumbs-aside a {
+    padding: 10px;
+}
 
 .header {
     height: 50px;
@@ -434,6 +440,9 @@ code.docutils.literal.notranslate {
 /* header end */
 
 /* footer */
+.edit {
+    text-align: center;
+}
 .copyright p {
     font-size: 11px;
 }

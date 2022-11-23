@@ -34,9 +34,9 @@
           {%- if display_github %}
             {%- if check_meta and 'github_url' in meta %}
               <!-- User defined GitHub URL -->
-              <a href="{{ meta['github_url'] }}" class="fa fa-github"> {{ _('Edit on GitHub') }}</a>
+              <a target="_blank" rel="noopener" href="{{ meta['github_url'] }}"><span class="fa fa-github"></span> {{ _('Edit on GitHub') }}</a>
             {%- else %}
-              <a href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/{{ theme_vcs_pageview_mode or "blob" }}/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ page_source_suffix }}" class="fa fa-github"> {{ _('Edit on GitHub') }}</a>
+              <a target="_blank" rel="noopener" href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/{{ theme_vcs_pageview_mode or "blob" }}/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ page_source_suffix }}"><span class="fa fa-github"></span> {{ _('Edit on GitHub') }}</a>
             {%- endif %}
           {%- elif display_bitbucket %}
             {%- if check_meta and 'bitbucket_url' in meta %}

@@ -58,6 +58,13 @@ html_theme_options = {
     "collapse_navigation": False,
     "titles_only": False,
 }
+html_context = {
+    "display_github": True,  # Integrate GitHub
+    "github_user": "ByteInternet",  # Username
+    "github_repo": "hypernode-docs-next",  # Repo name
+    "github_version": "master",  # Version
+    "conf_py_path": "/docs/",  # Path in the checkout to the docs root
+}
 html_show_sphinx = False
 html_show_sourcelink = False
 
