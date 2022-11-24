@@ -29,7 +29,7 @@ bin/build_docs
 bin/serve_docs
 ```
 ## Setup Frontend step by step
-``` 
+```
 clone the repository
 pip install -r requirements/development.txt
 bin/build_docs

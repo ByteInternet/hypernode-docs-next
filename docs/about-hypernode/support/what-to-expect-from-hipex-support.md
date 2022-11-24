@@ -13,7 +13,7 @@ Please use [support@hipex.io](mailto:support@hipex.io) for all your questions/pr
 
 
 ## Can I reach Hipex by phone?
-Yes, you can during office hours you can call us at +31(0)85-888 77 54. 
+Yes, you can during office hours you can call us at +31(0)85-888 77 54.
 
 # Outside office hours
 It's after business hours and I have an emergency, what should I do?
@@ -23,13 +23,13 @@ An urgent matter is for example:
 - customers can't place any orders
 
 
-## Step 1 Use your mail that is known in Pack and send us a ticket to spoed@hipex.io 
+## Step 1 Use your mail that is known in Pack and send us a ticket to spoed@hipex.io
 Don't forget to mention:
 
 - name of the server or your domain
 - an extensive description of your problem
 
-Please know if you don't use the correct mail adress, your ticket won't be follow up as the system doesn't recogonize. 
+Please know if you don't use the correct mail adress, your ticket won't be follow up as the system doesn't recogonize.
 
 ## Step 2 The Request is Sent to the On Duty Hero
 As soon as you report the disruption via one of the designated channels, an alert is sent via PagerDuty to the HERO (Hypernode/Hipex Emergency Request Operative) team. One of our heroes will confirm receipt of the urgent ticket.
@@ -46,4 +46,3 @@ Upon resolving the issue, the Hero will issue a debrief to the Support Departmen
 
 # Hipex knowledge base
 Till further notice [Hipex knowledge base](https://www.hipex.io/docs/nl/) will exist. Eventually we will integrate both Hypernode and [Hipex knowledge base](https://www.hipex.io/docs/nl/) together.
-

@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import datetime
-import os
 import subprocess
 
 from inotify.adapters import InotifyTree
@@ -38,7 +37,11 @@ def watch_for_changes(debug=False):
                 ignore = True
                 break
 
-        if filename.endswith(".swx") or filename.endswith(".swp") or filename.endswith("~"):
+        if (
+            filename.endswith(".swx")
+            or filename.endswith(".swp")
+            or filename.endswith("~")
+        ):
             ignore = True
 
         if ignore:

@@ -7,7 +7,7 @@ There are a few handy helpers you can use on Hypernode to get a quick overview o
 
 Shows you the top requests from the latest `/var/log/nginx/access.log`
 ```bash
-app@levkc9-yourappname-magweb-cmbs:~$ mostreqs 
+app@levkc9-yourappname-magweb-cmbs:~$ mostreqs
      20 "GET / HTTP/1.1"
       6 "GET /wp-login.php HTTP/1.1"
       3 "GET /favicon.ico HTTP/1.1"
@@ -18,7 +18,7 @@ alias mostreqs='grep phpfpm /var/log/nginx/access.log | jq .request | sus | tail
 
 Shows you a live view of the requests that are currently landing in NGINX
 ```bash
-app@levkc9-yourappname-magweb-cmbs:~$ livereqs 
+app@levkc9-yourappname-magweb-cmbs:~$ livereqs
 1.2.3.4	NL			2021-12-06T14:27:08+00:00	GET / HTTP/1.1	301	Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36
 alias livereqs='tal|pnl --fields ip,country,handler,remote_user,date,req,status,user_agent'
 ```
