@@ -1,11 +1,10 @@
 <!-- source: https://support.hypernode.com/en/hypernode/ssl/how-to-upgrade-your-ssl-settings-to-an-a-plus/ -->
+
 # How to Upgrade Your SSL Settings to an A+
 
 Many developers use the [Qualys SSL labs server test](https://www.ssllabs.com/ssltest/) to validate the SSL settings on their Hypernode. This article explains how to get an A+ rating for your Hypernode SSL configuration.
 
-
-SSL on Hypernode Background
----------------------------
+## SSL on Hypernode Background
 
 There are multiple ways of configuring SSL on Hypernode, you can use [Let’s Encrypt](https://support.hypernode.com/en/hypernode/ssl/how-to-use-let-s-encrypt-on-hypernode), [Your own SSL certificate](https://support.hypernode.com/knowledgebase/use-ssl-certificates-on-your-hypernode/) or [Buy one from Hypernode via your Service Panel](https://support.hypernode.com/knowledgebase/link-ssl-certificate-hypernode/). Option 2 and 3 are only applicable if you are a **Service Panel** user with access to the [Service Panel](https://service.byte.nl/).
 
@@ -32,8 +31,8 @@ When you have different vhosts configured, you also need to enable the SSL confi
 ```nginx
 hypernode-manage-vhosts example.com --ssl-config modern
 ```
-Get an A+ Rating
-----------------
+
+## Get an A+ Rating
 
 Most of the settings to get a high rating are already in place. We choose and maintain the available ciphers, diffie hellman params and the settings for your Nginx instance to get an **A** rating in the test. By adding some additional configuration, you can easily upgrade this rating to an **A+**.
 
@@ -46,11 +45,13 @@ Add a header by creating a server.hsts configuration file in /data/web/nginx�
 ```nginx
 add_header Strict-Transport-Security "max-age=31536000;" always;
 ```
+
 If all subdomains use SSL too, this is even better:
 
 ```nginx
 add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 ```
+
 This will make sure all subdomains will redirect to SSL when a HTTP connection is made.
 
 Verifying SSL settings and headers is easily done using curl:
@@ -75,36 +76,36 @@ For more experienced CLI users, searching with grep is the easiest way to solve 
 ```nginx
 grep -RE '<code>http://(www\.)?example\.com</code>' /data/web/public 
 ```
+
 Or when you are on Magento 2:
 
 ```nginx
 grep -RE '<code>http://(www\.)?example\.com</code>' /data/web/public /data/web/magento2
 ```
-Redirect all traffic from HTTP to HTTPS
----------------------------------------
+
+## Redirect all traffic from HTTP to HTTPS
 
 To redirect all traffic to HTTPS, you can easily add some configuration in Nginx.
 To do so, use [the instructions in our article about redirecting all traffic to HTTPS](https://support.hypernode.com/knowledgebase/redirect-all-http-traffic-to-https-in-nginx/).
 
 If not all of your domains are HTTPS enabled (which is recommended), you can [selectively redirect specific domains to HTTPS, using a mapping](https://support.hypernode.com/knowledgebase/redirect-specific-domains-urls-https/).
 
-Additional Information and Troubleshooting
-------------------------------------------
+## Additional Information and Troubleshooting
 
 Additional resources
 
 For more information, you can check the following resources:
 
-* [Qualys SSL Labs SSL tester documentation](https://www.ssllabs.com/projects/documentation/index.html)
-* [Mozilla recommended SSL settings](https://wiki.mozilla.org/Security/Server_Side_TLS)
-* [Google Mixed Content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content)
+- [Qualys SSL Labs SSL tester documentation](https://www.ssllabs.com/projects/documentation/index.html)
+- [Mozilla recommended SSL settings](https://wiki.mozilla.org/Security/Server_Side_TLS)
+- [Google Mixed Content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content)
 
 Troubleshooting
 
 If the Qualys SSL labs server test is not working on your Hypernode, check the following possibilities:
 
-* Make sure you have ordered or implemented an SSL certificate on your Hypernode
-* Check the [known issues page at Qualys](https://community.qualys.com/docs/DOC-4865)
-* Check if the Qualys [user agent](https://support.hypernode.com/knowledgebase/blocking-user-agents-referrers/) or [IP address](https://support.hypernode.com/knowledgebase/blocking-allowing-ip-addresses-in-nginx/) is blocked
-* Check if [the Qualys user agent or IP address is rate limited](https://support.hypernode.com/knowledgebase/resolving-429-many-requests/)
-* Check if basic auth is enabled on your node. If this is the case, add a temporary user name and password to the password file and adjust the URL to scan to https://:@example.com (Do not forget to remove the user after the test)
+- Make sure you have ordered or implemented an SSL certificate on your Hypernode
+- Check the [known issues page at Qualys](https://community.qualys.com/docs/DOC-4865)
+- Check if the Qualys [user agent](https://support.hypernode.com/knowledgebase/blocking-user-agents-referrers/) or [IP address](https://support.hypernode.com/knowledgebase/blocking-allowing-ip-addresses-in-nginx/) is blocked
+- Check if [the Qualys user agent or IP address is rate limited](https://support.hypernode.com/knowledgebase/resolving-429-many-requests/)
+- Check if basic auth is enabled on your node. If this is the case, add a temporary user name and password to the password file and adjust the URL to scan to https://:@example.com (Do not forget to remove the user after the test)

@@ -1,11 +1,10 @@
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/basic-authentication-on-hypernode-development-plans/ -->
+
 # Basic Authentication on Hypernode Development Plans
 
 Development Hypernodes are configured to offer a Basic Authentication challenge to all visitors. These plans are meant to develop a webshop, to run all the tests you can think of, and to give your customer (the merchant) access during development. Keep in mind though, these development plans cannot be used to go live with a shop.
 
-
-Usermanagement
---------------
+## Usermanagement
 
 When using Basic Authentication, visitors to the website will have to enter a username and password, before being able to access the site. This is a separate account from any website specific accounts, and in most browsers are displayed as a separate popup.
 
@@ -13,8 +12,8 @@ When using Basic Authentication, visitors to the website will have to enter a us
 
 The default credentials for development nodes are:
 
-* Username: dev
-* Password: dev
+- Username: dev
+- Password: dev
 
 We advise you to change the default username and password as soon as possible.
 
@@ -26,8 +25,7 @@ To add users, or change an existing users’ password, use the command: `htpassw
 
 To remove a users, use the command: `htpasswd -D /data/web/nginx/htpasswd-development username`
 
-Whitelisting
-------------
+## Whitelisting
 
 If you need to connect your development node to external services, API’s, and tooling that do not support basic authentication, it’s possible to whitelist specific IP addresses, user agents, or request paths. Your Hypernode comes preconfigured with a whitelist file that allows you to easily configure your basic auth whitelist, in the file`/data/web/nginx/whitelist-development-exception.conf`
 
@@ -45,10 +43,9 @@ To whitelist a specific user agent you can add it to the User Agent whitelist ma
 
 ### Whitelist an URL
 
-To whitelist a specific URL you can add it to the url whitelist map in the whitelist file. Please note that the whitelist is based on the entire URL, including any arguments. As such, we advise using a regex pattern when whitelisting. 
+To whitelist a specific URL you can add it to the url whitelist map in the whitelist file. Please note that the whitelist is based on the entire URL, including any arguments. As such, we advise using a regex pattern when whitelisting.
 
-Troubleshooting
----------------
+## Troubleshooting
 
-* Google Pagespeed analysis uses the Google bot user agent and can therefore not be used on development nodes.
-* In some cases, particularly if you have not yet enabled [Hypernode Managed Vhosts](https://support.hypernode.com/nginx-configuration/hypernode-managed-vhosts/), it’s possible the Basic Authentication blocks the Let’s Encrypt validation server. If you wish to make use of Let’s Encrypt on your development Hypernode, you should add the ‘letsencrypt’ user agent to the whitelist file.
+- Google Pagespeed analysis uses the Google bot user agent and can therefore not be used on development nodes.
+- In some cases, particularly if you have not yet enabled [Hypernode Managed Vhosts](https://support.hypernode.com/nginx-configuration/hypernode-managed-vhosts/), it’s possible the Basic Authentication blocks the Let’s Encrypt validation server. If you wish to make use of Let’s Encrypt on your development Hypernode, you should add the ‘letsencrypt’ user agent to the whitelist file.

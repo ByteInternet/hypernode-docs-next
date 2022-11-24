@@ -1,10 +1,10 @@
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001207016-how-to-configure-varnish-for-shopware-5/ -->
+
 # How to Configure Varnish for Shopware 5
 
 Shopware 5 applications can greatly benefit from Varnish caching. On the client side, pages load faster, while on the server side, the load decreases.
 
 The Hypernode platform supports Varnish as a caching layer and configuration is actually quite simple.
-
 
 ### Step One: Enable Varnish on the Hypernode
 
@@ -16,8 +16,8 @@ Varnish can be enabled with a simple command using the [hypernode-systemctl CLI]
 
 The [hypernode-manage-vhosts](https://support.hypernode.com/en/hypernode/nginx/hypernode-managed-vhosts) (HMV) config allows you to enable varnish for every vhost individually. So if you for example have a domain example.com. You should create 2 vhosts:
 
-* example.com
-* [www.example.com](http://www.example.com)
+- example.com
+- [www.example.com](http://www.example.com)
 
 `hypernode-manage-vhosts example.com www.example.com --type shopware5 --varnish`
 
@@ -58,6 +58,7 @@ Cache-Control: max-age=0, private
 X-Cache: HIT
 X-Cache-Hits: 1
 ```
+
 If your page is not in the cache yet, `X-Cache` should contain 'MISS' and `X-Cache-Hits` should contain '0'. Otherwise, `X-Cache` should contain 'HIT' and `X-Cache-Hits` should increment each time you visit the page again.
 
 ### Step Six: Removing verification headers from Varnish configuration
@@ -75,6 +76,7 @@ if (obj.hits > 0) {
 
 set resp.http.X-Cache-Hits = obj.hits;
 ```
+
 Make it so that the lines look like the following:
 
 ```
@@ -88,6 +90,7 @@ if (obj.hits > 0) {
 
 #set resp.http.X-Cache-Hits = obj.hits;
 ```
+
 Now, we need to reload the varnish configuration again. This can be done by loading it with a slightly different identifier:
 
 `varnishadm vcl.load shopware5 /data/web/shopware5.vcl`

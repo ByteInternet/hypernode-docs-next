@@ -1,10 +1,11 @@
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-block-your-webshop-for-specific-countries/ -->
+
 # How to Block Your Webshop for Specific Countries
 
 A lot of spam and abuse comes from specific countries. If you don't do business there, you could block these countries altogether. This article explains how to block them. First some considerations:
 
-* Country detection is 99,8% accurate (according to MaxMind, the supplier of the geo database).
-* It is generally better to servce a static page, than to enforce a hard block. Static pages consume almost no resources and can be used to explain alternative ways to contact your organisation.
+- Country detection is 99,8% accurate (according to MaxMind, the supplier of the geo database).
+- It is generally better to servce a static page, than to enforce a hard block. Static pages consume almost no resources and can be used to explain alternative ways to contact your organisation.
 
 If you want to block, say, Russia and China, create the files `http.countries_map` and `server.countries_block` in the `/nginx` folder on your Hypernode. In these files you can use the following configuration:
 
@@ -17,6 +18,7 @@ map $geoip_country_code $block_country {
     RU yes;
 }
 ```
+
 In `server.countries_block`:
 
 ```nginx
@@ -24,6 +26,7 @@ if ($block_country = yes) {
     return 403;
 }
 ```
+
 Alternatively you can rewrite the request inside `http.countries_map` and upload a static `access_denied_for_country.html` page.
 
 ```nginx
@@ -31,8 +34,8 @@ if ($block_country = yes) {
     rewrite ^ /access_denied_for_country.html break;
 }
 ```
-Using The hypernode-systemctl command-line Tool
------------------------------------------------
+
+## Using The hypernode-systemctl command-line Tool
 
 We have implemented a `block_attack` functionality in the hypernode-systemctl CLI tool as well. To list the possible values you can run this on your Hypernode:
 
@@ -63,18 +66,21 @@ positional arguments:
 optional arguments:
   -h, --help            show this help message and exit
 ```
+
 If for example you would then want to block all requests from China because you noticed some suspicious traffic from `CN` IPs in `hypernode-fpm-status`, then you can run:
 
 ```nginx
 app@pup1l6-vdloo-magweb-cmbl:~$ hypernode-systemctl block_attack BlockChinaBruteForce
 Block attack job posted, see hypernode-log (or livelog) for job progress
 ```
+
 After `hypernode-log` or `livelog` reports the newly posted `block_attack` job as finished the new rule should be deployed.
 
 ```nginx
 app@pup1l6-vdloo-magweb-cmbl:~$ hypernode-log  | grep block_attack | tail -n 1
 block_attack                    2019-01-10T15:34:29Z    2019-01-10T15:34:31Z    success     4/4     finished
 ```
+
 The newly deployed Nginx rule will then be in the `/data/web/nginx` directory:
 
 ```nginx

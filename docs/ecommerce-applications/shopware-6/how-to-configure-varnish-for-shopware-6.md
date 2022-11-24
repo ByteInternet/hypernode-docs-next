@@ -1,4 +1,5 @@
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001200525-how-to-configure-varnish-for-shopware-6 -->
+
 # How to Configure Varnish for Shopware 6
 
 Customers with Hypernode Pelican, Falcon (formerly known as Professional) and Eagle (formerly known as Excellence) plans can use Varnish to boost their shop. This article explains how you can configure Varnish for your Hypernode.
@@ -7,7 +8,7 @@ Although Varnish is extremely awesome when it get's to speeding up websites, Var
 
 ### Step One: Enable Varnish on the Hypernode
 
-You can enable varnish on the hypernode using the [systemctl-tool](https://support.hypernode.com/en/hypernode/tools/how-to-use-the-hypernode-systemctl-cli-tool) by running: 
+You can enable varnish on the hypernode using the [systemctl-tool](https://support.hypernode.com/en/hypernode/tools/how-to-use-the-hypernode-systemctl-cli-tool) by running:
 
 `hypernode-systemctl settings varnish_enabled True`
 
@@ -15,8 +16,8 @@ You can enable varnish on the hypernode using the [systemctl-tool](https://suppo
 
 The [hypernode-manage-vhosts](https://support.hypernode.com/en/hypernode/nginx/hypernode-managed-vhosts) (HMV) config allows you to enable varnish for every vhost individually. So if you for example have a domain example.com. You should create 2 vhosts:
 
-* example.com
-* [www.example.com](http://www.example.com)
+- example.com
+- [www.example.com](http://www.example.com)
 
 To enable varnish for these vhosts you can run the below command:
 
@@ -26,7 +27,7 @@ To enable varnish for these vhosts you can run the below command:
 
 `/data/web/nginx/example.com/public.shopware6.conf`:
 
-``` nginx
+```nginx
 ## Redirecting to varnish
 location / {
     set $log_handler varnish;
@@ -40,9 +41,10 @@ location / {
     proxy_set_header Host $http_host;
 }
 ```
+
 `/data/web/nginx/example.com/varnish.shopware6.conf`:
 
-``` nginx
+```nginx
 root /data/web/public;
 
 include /etc/nginx/handlers.conf;
@@ -68,6 +70,7 @@ location ~ \.php$ {
     echo_exec @phpfpm;
 }
 ```
+
 ### Step Three: Configure Shopware to work with Varnish
 
 **This step is only necessary if you're on Shopware >= 6.4.**
@@ -80,9 +83,9 @@ To actually use Varnish you need to implement a varnish config file, a .vcl. If 
 
 So, the steps to implement the Varnish configuration into Varnish are:
 
-* Create a file on your node, for example: **data/web/shopware6.vcl** with the Varnish config
-* Load the .vcl into Varnish: `varnishadm vcl.load shopware6 /data/web/shopware6.vcl`
-* Activate the loaded config, **shopware6**: `varnishadm vcl.use shopware6`
+- Create a file on your node, for example: **data/web/shopware6.vcl** with the Varnish config
+- Load the .vcl into Varnish: `varnishadm vcl.load shopware6 /data/web/shopware6.vcl`
+- Activate the loaded config, **shopware6**: `varnishadm vcl.use shopware6`
 
 ```bash
 app@j6yt8m-example-magweb-cmbl:~$ varnishadm vcl.load shopware6 /data/web/shopware6.vcl

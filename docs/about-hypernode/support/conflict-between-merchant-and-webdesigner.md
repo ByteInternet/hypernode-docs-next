@@ -1,23 +1,21 @@
 <!-- source: https://support.hypernode.com/en/about/support/conflict-between-merchant-and-webdesigner/ -->
+
 # Conflict Between Merchant and Webdesigner
 
-**Please note that this only applies to Service Panel users who log in via service.byte.nl.**It may happen that a conflict arises between a Registrant (domain name holder) and the web designer / developer (Contractor and / or Technical administrator). These conflicts usually concern invoices. Hypernode can't mediate in these kinds of situations, but will always aim to prevent this from happening.
+\*\*Please note that this only applies to Service Panel users who log in via service.byte.nl.\*\*It may happen that a conflict arises between a Registrant (domain name holder) and the web designer / developer (Contractor and / or Technical administrator). These conflicts usually concern invoices. Hypernode can't mediate in these kinds of situations, but will always aim to prevent this from happening.
 
 When a conflict arises between a domain name holder and a developer, there are two types of situations concerning the account roles:
 
 1. The merchant is the Registrant, the developer/partner is the Contractant and Technisch Beheerder.
-2. The merchant is the Registrant and the Contractant, the developer/partner is the Technisch Beheerder.
+1. The merchant is the Registrant and the Contractant, the developer/partner is the Technisch Beheerder.
 
-
-Different Customer Roles
-------------------------
+## Different Customer Roles
 
 When multiple parties are involved in the division of roles of a domain name / package, it can happen that multiple accounts have different roles. This is due to legal considerations, but also because you want to give a technical party access to your site if you are not that technical yourself.
 
 Please see [this article](https://support.hypernode.com/en/hypernode/tools/what-are-the-different-roles-in-the-service-panel-and-what-is-the-difference-between-them) for more information about the different roles in the Service Panel.
 
-Different Roles in a Conflict
------------------------------
+## Different Roles in a Conflict
 
 **Case 1 - The merchant is the Registrant, the developer/partner is the Contractant and Technisch Beheerder.**
 
@@ -28,16 +26,14 @@ If the merchant is Registrant and Contractant, but neglects to pay their develop
 
 We cannot disable a merchants website in this case, as Hypernode has their own agreement with the merchant: the hosting agreement.
 
-Even though Hypernode cannot mediate in these types of situations, we can always give you advice on how to handle a conflict like this. Please shoot us a message on [support@hypernode.com](mailto:support@hypernode.com). 
+Even though Hypernode cannot mediate in these types of situations, we can always give you advice on how to handle a conflict like this. Please shoot us a message on [support@hypernode.com](mailto:support@hypernode.com).
 
-Frequently Asked Questions
---------------------------
+## Frequently Asked Questions
 
 ### Who Has Acces to Backups?
 
-The Contractant and Technisch Beheerder have acces to the backups, the Registrant does not. 
+The Contractant and Technisch Beheerder have acces to the backups, the Registrant does not.
 
-Who Is the Owner of the Website?
---------------------------------
+## Who Is the Owner of the Website?
 
-The owner of the contract (Contractant) is the owner of the website. 
+The owner of the contract (Contractant) is the owner of the website.

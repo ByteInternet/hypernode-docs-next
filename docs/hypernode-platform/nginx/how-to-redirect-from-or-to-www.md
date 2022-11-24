@@ -1,4 +1,5 @@
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-redirect-from-or-to-www/ -->
+
 # How to Redirect From or to WWW
 
 Many constructions are possible when it gets to the base URL. Some shop owners prefer a domain name starting with www, others prefer without.
@@ -11,9 +12,7 @@ For Service Panel customers only: when your domain is hosted at Hypernode, simpl
 
 More info can be found [on our page about setting your DNS](https://support.hypernode.com/knowledgebase/dns-settings-hypernode/).
 
-
-Redirect From Apex to WWW
--------------------------
+## Redirect From Apex to WWW
 
 **When hypernode-managed-vhosts enabled**
 To redirect all traffic to www you have to create both a vhost for the Apex and for the [www](http://www). For the non-www vhost you can create the vhost as type wwwizer. This will redirect all traffic to the [www](http://www). version of that vhost. This can be achieved by running: hypernode-manage-vhosts [example.com](//example.com) --type wwwizer
@@ -23,6 +22,7 @@ To redirect all traffic to www you have to create both a vhost for the Apex and 
 |    example.com | wwwizer  |      False     | False |    False    |  True   | intermediate |
 |www.example.com | magento2 |      False     | False |    False    |  False  | intermediate |
 ```
+
 **Without hypernode-manage-vhosts enabled (old legacy nginx-config)**
 
 You can redirect all traffic to www with the following Nginx snippet:
@@ -32,10 +32,10 @@ if ($http_host ~* "^example.com$") {
   rewrite ^ https://www.$http_host$request_uri;
 }
 ```
+
 Save this snippet in `/data/web/nginx/server.rewrites`.
 
-Redirect From WWW to Apex
--------------------------
+## Redirect From WWW to Apex
 
 To redirect all traffic from www to the apex domain use the following Nginx snippet:
 
@@ -44,13 +44,13 @@ if ($http_host ~ ^www\.(?<domain>.+)$ ) {
         return 301 https://$domain$request_uri;
 }
 ```
+
 Save this snippet in `/data/web/public/server.rewrites` or in case you are using Varnish public.rewrites.
 
-Redirect When Using Varnish
----------------------------
+## Redirect When Using Varnish
 
 When you are using Varnish, the redirect will be cached, causing a redirect loop.
 
-Instead you can use the public prefix, which is included before Varnish and thus will not be cached. 
+Instead you can use the public prefix, which is included before Varnish and thus will not be cached.
 
 Save your file as `/data/web/nginx/public.rewrites`

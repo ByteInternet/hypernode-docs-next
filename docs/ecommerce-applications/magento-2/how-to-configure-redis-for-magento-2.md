@@ -1,18 +1,16 @@
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-configure-redis-for-magento-2/ -->
+
 # How to Configure Redis for Magento 2
 
 Redis is a caching method which can increase the speed of the backend and frontend of your shop. On Hypernode every customer has access to Redis cache, starting from 64 MB, depending on the plan. This article will explain how to configure Redis on your Magento 2 shop on Hypernode and how to work with redis-cli.
 
 Want to know how to configure Redis in Magento 1? Have a look at [this article](https://support.hypernode.com/en/ecommerce/magento-1/how-to-configure-redis-for-magento-1)!
 
-
-Configure Redis Cache for Magento 2
------------------------------------
+## Configure Redis Cache for Magento 2
 
 There are two ways to configure Redis Cache for Magento 2. You can either run a command which automatically updates the `env.php` with the correct details or you can manually change the `env.php` file.
 
-Configure Redis Cache for Magento 2 Through the Commandline
------------------------------------------------------------
+## Configure Redis Cache for Magento 2 Through the Commandline
 
 Use the following command to enable Redis backend caching:
 
@@ -30,8 +28,8 @@ Now flush your cache:
 $ rm -rf /data/web/magento2/var/cache/*
 $ redis-cli flushall
 ```
-Configure Redis Full Page Caching for Magento 2
------------------------------------------------
+
+## Configure Redis Full Page Caching for Magento 2
 
 To enable page caching Redis, extend your /data/web/magento2/app/etc/env.php with the following snippet. You should paste this in between the cache keys, so leave the cache tag in this snippet out of it.
 
@@ -49,14 +47,15 @@ And flush your cache:
 $ rm -rf /data/web/magento2/var/cache/*
 $ redis-cli flushall
 ```
-Flush Your Caches
------------------
+
+## Flush Your Caches
 
 To flush your Magento cache, clear the Redis database corresponding to your configured Redis database:
 
 ```console
 $ redis-cli -n 1 flushdb
 ```
+
 Or alternatively use `n98-magerun2` or the Magento cli tool:
 
 ```console
@@ -65,13 +64,14 @@ $ n98-magerun2 cache:flush
 ## Flush using magento cli
 $ cd /data/web/magento2 && bin/magento cache:flush
 ```
+
 To flush all sessions, caches etc (flush the full Redis instance), use the following command:
 
 ```console
 $ redis-cli flushall
 ```
-Changing the Compression Library
---------------------------------
+
+## Changing the Compression Library
 
 It is possible to use the compression library 'Snappy' on Hypernode. More information about Snappy can be found in the changelog: [Release-4224](https://changelog.hypernode.com/changelog/release-4224/).
 
@@ -83,8 +83,8 @@ $ bin/magento setup:config:set --cache-backend-redis-compression-lib=snappy
 # If you use Magento's builtin page cache with Redis
 $ bin/magento setup:config:set --page-cache-redis-compression-lib=snappy
 ```
-Configure Magento 2 to Use Redis as the Session Store
------------------------------------------------------
+
+## Configure Magento 2 to Use Redis as the Session Store
 
 You can use Redis for storing sessions too!
 
@@ -110,6 +110,7 @@ Now flush your cache:
 $ rm -rf /data/web/magento2/var/cache/*
 $ redis-cli flushall
 ```
+
 ### Enable Second Redis Instance for Sessions
 
 We have made is possible to enable a second Redis instance more tailored for saving session data (more information can be found in our [changelog](https://changelog.hypernode.com/changelog/experimental-changes-redis-sessions-aws-performance/)).
@@ -146,8 +147,8 @@ To verify whether your configuration is working properly, first clear your sessi
 ```console
 $ redis-cli -n 2 keys '*'
 ```
-Troubleshooting
----------------
+
+## Troubleshooting
 
 A quick note, when you run into the configured max memory limit make sure that the necessary Redis keys are set to volatile (ensure an expire). Otherwise the complete allocated configured memory will fill up and Redis will 'crash'.
 
@@ -160,12 +161,12 @@ A temporary solution is to flush the Redis cache, you can do this by using the `
 ```console
 $ redis-cli flushall
 ```
+
 This will flush out all available Redis databases. Please keep in mind that this is only a temporary solution. The underlying cause is in the code of your application and needs to be permanently resolved.
 
 A more extended how-to about configuring Redis caches can be found on the [Magento help pages](http://devdocs.magento.com/guides/v2.0/config-guide/redis/redis-pg-cache.html).
 
-Bots
-----
+## Bots
 
 As you know, the sessions of your webshop can also be stored in Redis. If you use Redis caching and store the sessions in Redis as well, you'll have to share the available Redis memory. This shouldn't be a problem on a regular basis, however we've seen scenarios wherein a shop stores its sessions in Redis and had some aggressive bots/crawlers visiting the shop. This resulted in a much larger amount of sessions to be stored in Redis than usual which is causing the Redis memory to fill up in no time, and crashes Redis.
 

@@ -1,4 +1,5 @@
 <!-- source: https://support.hypernode.com/en/hypernode/dns/how-to-manage-your-dns-settings-for-hypernode/ -->
+
 # How to Manage your DNS Settings for Hypernode
 
 Hypernode is a cloud-based hosting service. In case of an up- or downgrade, your shop can transparently be moved to other hardware with different specs. When upgrading or downgrading a Hypernode plan, we first create a second node, migrate your shop to this new node and then remove the old one.
@@ -7,26 +8,23 @@ Thanks to Hypernode’s very cool **Dedicated IP**feature the IP-address of your
 
 **This article explains 3 ways to handle your DNS. Please decide for yourself what would be the best option for your specific situation.**
 
-
-Dedicated IP on Hypernode – 3 exceptions
-----------------------------------------
+## Dedicated IP on Hypernode – 3 exceptions
 
 There are 3 exceptions in where you cannot benefit from a dedicated IP and which may have impact on how your would like to manage your DNS:
 
 1. A change of cloud provider – also when switching between Falcon (formerly known as Professional), Pelican and Eagle (Formerly known as Excellence) plans – will trigger an IP change
-2. If you request your node to be booted in a different region (data centre) the IP address will change as well.
-3. In extreme emergency situations (like fire or longtime power outages) we might need to migrate your Hypernode to another data centre. Luckily these chances are very low.
+1. If you request your node to be booted in a different region (data centre) the IP address will change as well.
+1. In extreme emergency situations (like fire or longtime power outages) we might need to migrate your Hypernode to another data centre. Luckily these chances are very low.
 
 If you're likely to switch between Falcon and Eagle plans in the future, we recommend you to move your domain(s) to Hypernode so we can handle the DNS of your domains to avoid downtime. Or, use the DNS settings as explained below (by using CNAME and not A record).
 
-Three ways to handle your DNS
------------------------------
+## Three ways to handle your DNS
 
 There are 3 ways to handle your DNS. Only customers who have access to a Service Panel can choose option 1.
 
 1. Move your domain(s) to Hypernode and let Hypernode manage the DNS (Dutch customers only)
-2. Manage an external DNS by pointing your domain(s) to Hypernode by using CNAME and not A record
-3. Manage an external DNS by pointing your domain(s) to the IP address of Hypernode via A record
+1. Manage an external DNS by pointing your domain(s) to Hypernode by using CNAME and not A record
+1. Manage an external DNS by pointing your domain(s) to the IP address of Hypernode via A record
 
 Good to know:
 
@@ -40,15 +38,14 @@ As there are situations you cannot benefit from a dedicated IP on Hypernode, ple
 
 Below you will find a detailed explanation of option 1 and 2.
 
-Service Panel users only: let us manage your DNS
-------------------------------------------------
+## Service Panel users only: let us manage your DNS
 
 If you have your domain at Hypernode, we can manage your DNS. We will update the DNS records when the IP of your Hypernode changes. The steps:
 
 1. [Log in to your Service Panel](https://auth.byte.nl/)with your customer number and password and select your Hypernode.
-2. Navigate to ‘SSL & DNS instellingen’ under tab ‘Instellingen’. Here, you will see an overview of all available domains.
-3. Search for the domain you would like to link to your Hypernode
-4. Go to the column ‘DNS Beheren’, click on “Beschikbaar” and select ‘Koppel domeinnaam aan deze Hypernode’.
+1. Navigate to ‘SSL & DNS instellingen’ under tab ‘Instellingen’. Here, you will see an overview of all available domains.
+1. Search for the domain you would like to link to your Hypernode
+1. Go to the column ‘DNS Beheren’, click on “Beschikbaar” and select ‘Koppel domeinnaam aan deze Hypernode’.
 
 Whenever you want to unlink a domain, simply choose ‘Ontkoppel domeinnaam van deze Hypernode’.
 
@@ -62,16 +59,15 @@ If a domain is linked to a Hypernode, it’s no longer possible to manually chan
 
 ****Please note**:**
 
-* By letting us manage your DNS, you will also be able to use your apex domain
-* Preferably the TTL for the DNS records is reasonably low to make the transition to Hypernode quick. Check this beforehand.
+- By letting us manage your DNS, you will also be able to use your apex domain
+- Preferably the TTL for the DNS records is reasonably low to make the transition to Hypernode quick. Check this beforehand.
 
-Manage your own DNS: CNAME for the www record
----------------------------------------------
+## Manage your own DNS: CNAME for the www record
 
 Configuration:
 
-* Have a CNAME for your www-domain + an A Record that directs to the dedicated IP address of your Hypernode
-* Have a CNAME for your www-domain + an A record for your apex (also called naked) domain pointing to a redirector that redirects to the www-domain (our wwwizers)
+- Have a CNAME for your www-domain + an A Record that directs to the dedicated IP address of your Hypernode
+- Have a CNAME for your www-domain + an A record for your apex (also called naked) domain pointing to a redirector that redirects to the www-domain (our wwwizers)
 
 These examples assume you have a site called yourdomain.com and a Hypernode called yourd01.hypernode.io.
 
@@ -80,15 +76,16 @@ The recommended way to configure your DNS is to create a CNAME record in your DN
 ```
 www.yourdomain.com      CNAME       yourd01.hypernode.io
 ```
+
 This means that [www.yourdomain.com](http://www.yourdomain.com) will point to wherever yourd01.hypernode.io points, and we will make sure that that always points to the correct IP address.
 
-****Please note**:** You can also configure your wildcard (*) domain name to Hypernode.
+****Please note**:** You can also configure your wildcard (\*) domain name to Hypernode.
 
 ```
 *.yourdomain.com      CNAME       yourd01.hypernode.io
 ```
-Managing your own DNS: A record for your naked (or apex) domain
----------------------------------------------------------------
+
+## Managing your own DNS: A record for your naked (or apex) domain
 
 Problems arise when people visit your naked (also called apex) domain name: yourdomain.com, without the ‘www.’-prefix. It is not possible to create a CNAME record for your apex domain.
 
@@ -103,6 +100,7 @@ Another solution is to redirect traffic for the apex domain yourdomain.com to it
 yourdomain.com A 46.21.232.141
 yourdomain.com A 46.21.233.172
 ```
+
 **Please note**: Note that if you make use of the wwwizer redirect servers, people that visit <https://yourdomain.com> directly will get an error message, either indicating that there is no https available or a plain connection refused error. The wwwizers actually work as a forwarding service to the direct IP address of the Hypernode. This way we can manage any IP changes for you. That is the advantage, the disadvantage is that these records do not cooperate with SSL and that therefore the certificate does not work properly on the domain name without the [www](http://www).
 
 ### Let's Encrypt and Wwwizers
@@ -111,12 +109,11 @@ Also important to note is that [Let's Encrypt](https://support.hypernode.com/en/
 
 Don’t fancy these solutions? Migrate your domain to Hypernode and let us manage your DNS.
 
-DNS and Hypernode Managed Vhosts
---------------------------------
+## DNS and Hypernode Managed Vhosts
 
 The Hypernode Managed Vhosts (HMV) system is currently enabled by default on all new booted Hypernodes (all Hypernodes created after 01-05-2020).
 
-Check if you have HMV enabled by running this command: 
+Check if you have HMV enabled by running this command:
 
 `hypernode-systemctl settings managed_vhosts_enabled`
 
@@ -134,23 +131,21 @@ Please note that defining the vhosts '[www.example.com](http://www.example.com)'
 
 Read more about Hypernode Managed Vhosts in [this article](https://support.hypernode.com/en/hypernode/nginx/hypernode-managed-vhosts).
 
-Redirects in Nginx
-------------------
+## Redirects in Nginx
 
 If you want to force a redirect to either the [www](http://www). or the non-[www](http://www). domain, you can use a redirect.
 
 You can read how this works [in this article](https://support.hypernode.com/knowledgebase/redirect-from-or-to-www/).
 
-Shop on a subdomain?
---------------------
+## Shop on a subdomain?
 
 If you host your shop on a subdomain (for example shop.yourdomain.com), and you don’t want to be available on [www.shop.yourdomain.com](http://www.shop.yourdomain.com), you can forget all about the wwwizer service, and there’s no need to add the two IP addresses in your A records as explained above. Simply create a CNAME-record pointing to your Hypernode, and it will work:
 
 ```
 shop.yourdomain.com      CNAME       yourd01.hypernode.io
 ```
-Use the Store Front Status check in Magereport Premium
-------------------------------------------------------
+
+## Use the Store Front Status check in Magereport Premium
 
 If you visit [Magereport Premium](https://www.magereport.com/) with your Hypernode plan, you can verify whether your domains are redirected to your Hypernode.
 

@@ -1,13 +1,12 @@
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001165533-how-to-block-spammers-and-scanners/ -->
+
 # How to Block Spammers and Scanners
 
 It is increasingly common for spammers to crawl your site. This often results in high load on your Hypernode and a slow site for real visitors.
 
 It can be hard to trace down these abusers. Here are some strategies for finding and blocking them.
 
-
-Step 1: Identify Culprits
--------------------------
+## Step 1: Identify Culprits
 
 A common use case is that spammers or scanners fill up all your PHPFPM slots when they scan or brute-force your site. We’ve developed the tool, `hypernode-fpm-status`, to grant you more insight into what is going on in your PHPFPM workers. Try this:
 
@@ -26,8 +25,8 @@ root@pup0t4-example-magweb-xls ~ # hypernode-fpm-status
 12353 GONE 82.5902+3 46.28.203.130 POST my.hypernode.io/downloader/index.php?A=loggedin (Mozilla/5.0 (Windows; U; Windows NT 6.0) Gecko/20091201 Firefox/3.5.6 GTB5)
 root@pup0t4-example-magweb-xls ~ #
 ```
-Step 2: Add IPs to Blacklist
-----------------------------
+
+## Step 2: Add IPs to Blacklist
 
 You’ll immediately notice two IPs that are trying to download files from your server. You’ve found your scanners!
 
@@ -36,6 +35,7 @@ Now log in to your Hypernode using SSH and edit `/data/web/nginx/server.blacklis
 ```nginx
 editor /data/web/nginx/server.blacklist
 ```
+
 Add the IPs to the file:
 
 ```nginx
@@ -50,6 +50,7 @@ Add the IPs to the file:
 deny 108.61.122.72; # look out! always close with semi-colon ;
 deny 46.28.203.130;
 ```
+
 If you make a mistake, the shell will warn you:
 
 ```nginx
@@ -60,8 +61,8 @@ Your Nginx configuration contains errors, please check
 
 ~ $
 ```
-Step 3: Check to See That All Is Well
--------------------------------------
+
+## Step 3: Check to See That All Is Well
 
 Now you’ll see that the client is banned from the server:
 

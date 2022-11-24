@@ -1,11 +1,10 @@
 <!-- source: https://support.hypernode.com/en/best-practices/security/how-to-secure-magento-cacheleak/ -->
+
 # How to Secure Magento Cacheleak
 
 A misconfigured webserver can leak Magento cache files containing database passwords. This is possible, because internal cache files are stored in the public document space of Magento. Default protection is included in the Magento installation, but this is not always activated, especially with modern webservers such as Nginx.
 
-
-What Magento Cacheleak?
------------------------
+## What Magento Cacheleak?
 
 The vulnerability is a compound of three problems:
 
@@ -21,13 +20,11 @@ The secret installation path can be retrieved from various sources, such as `get
 
 Magento has built-in protection of internal data (`/var`) when the Apache webserver is used (using `.htaccess` files). However, big sites are switching to modern webservers such as Nginx (23% runs Nginx as of August). Default protection doesn’t hold and manual intervention is required by the administrator.
 
-What Are the Consequences?
---------------------------
+## What Are the Consequences?
 
 When the above conditions are met, a malicious person can anonymously fetch the internal Magento cache and thus obtain secrets such as the database password. This password gives access to customer and payment data.
 
-How Do I Fix It?
-----------------
+## How Do I Fix It?
 
 Hypernode customers who run their Magento shop on the Hypernode platform are already protected against this and many other security risks.
 
@@ -44,6 +41,7 @@ Many people are switching over to Nginx. At the very least, you should make sure
 ```nginx
 location ^~ /var/ { return 403; }
 ```
+
 However, because Nginx [location rules](http://nginx.org/en/docs/http/ngx_http_core_module.html#location) are matched in a non-trivial way, you should verify that there are no other rules that take precedence. For reference, here is (a subset of) the battle tested config that our customers on the Hypernode platform enjoy.
 
 ```
@@ -291,7 +289,7 @@ http {
 
 }
 ```
-Need Help?
-----------
+
+## Need Help?
 
 Magento is no easy open source CMS. Although we’re very skilled in hosting Magento shops, making them fast and keeping conversion high, we’re no Magento developers. Luckily, we know a lot of agencies that do know a lot about how Magento works. If you need help, don’t hesitate to [contact one of these agencies](https://www.magereport.com/page/support).

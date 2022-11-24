@@ -1,4 +1,5 @@
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001153093-dns-for-service-panel-users/ -->
+
 # DNS for Service Panel Users
 
 DNS stands for "Domain Name System" and is a protocol that translates  domain names to IP addresses on the internet. A DNS server is simply a table that contains IP addresses and hostnames (the name of a computer). The internet also uses DNS. When you go to a website, the IP address of the server behind the domain name is checked.
@@ -7,11 +8,9 @@ You can edit the DNS setting for your domain names in the Service Panel (Instell
 
 It takes 24 hours for a DNS change to be implemented everywhere. Take this into account.
 
-More information about DNS settings for your Magento webshop on Hypernode technology, for example how to manage your DNS settings for a Hypernode can be found [here](https://support.hypernode.com/en/hypernode/dns/how-to-manage-your-dns-settings-for-hypernode). 
+More information about DNS settings for your Magento webshop on Hypernode technology, for example how to manage your DNS settings for a Hypernode can be found [here](https://support.hypernode.com/en/hypernode/dns/how-to-manage-your-dns-settings-for-hypernode).
 
-
-Manage DNS With a Third Party
------------------------------
+## Manage DNS With a Third Party
 
 Please note that Hypernode cannot provide uptime guarantees for external DNS. Your SLA does not apply in this case. When a domain name is registered externally, please keep in mind that Hypernode has no influence on the functioning of the DNS. If you don't want to transfer your domain name to Hypernode, changing the name servers to the Byte name servers is a good second option. You will need a Presence plan to be able to manage your DNS from the Service Panel. When you have the DNS set up correctly you can ask your domain name provider to change the name servers to the Byte name servers:
 
@@ -23,8 +22,7 @@ nsc.byte.nl
 
 If it is not possible to change the name servers at your domain provider you can find how to direct your domain to your Hypernode [here](https://support.hypernode.com/en/hypernode/dns/how-to-manage-your-dns-settings-for-hypernode#Manage-your-own-DNS%3A-CNAME-for-the-www-record).
 
-How Does DNS Work at Hypernode?
--------------------------------
+## How Does DNS Work at Hypernode?
 
 You can find the DNS settings in our Service Panel.  To do this, go to the 'Instellingen' tab and choose the DNS option. For each Presence plan we have a list of standard DNS set up:
 
@@ -56,8 +54,7 @@ This will delete the DNS record.
 
 This changes a current record. You will see the same screen as you click on **Add Record,** but you can edit a current record here.
 
-The Fields in a DNS Table
--------------------------
+## The Fields in a DNS Table
 
 You can add a number of values to the different DNS records. These values are explained below:
 
@@ -65,12 +62,12 @@ You can add a number of values to the different DNS records. These values are ex
 
 Here you enter the domain name, which can be a fixed address such as example.nl or [www.example.nl](http://www.example.nl), but you can also add a so called wildcard record. A wildcard record is for example * .example.nl and means that all subdomains that do not have a separate DNS record fall under this, an example:
 
-|  |  |  |  |  |
-| --- | --- | --- | --- | --- |
-| **Name** | **Type** | **Priority** | **Content** | **Time to live** |
-| example.com | A | - | 125.125.125.125 | 600 |
-| [www.example.com](http://www.example.com) | A | - | 124.124.124.124 | 600 |
-| *.example.com | A | - | 123.123.123.123 | 600 |
+|                                           |          |              |                 |                  |
+| ----------------------------------------- | -------- | ------------ | --------------- | ---------------- |
+| **Name**                                  | **Type** | **Priority** | **Content**     | **Time to live** |
+| example.com                               | A        | -            | 125.125.125.125 | 600              |
+| [www.example.com](http://www.example.com) | A        | -            | 124.124.124.124 | 600              |
+| \*.example.com                            | A        | -            | 123.123.123.123 | 600              |
 
 ### Type
 
@@ -90,8 +87,7 @@ TTL stands for “Time To Live”, which is the time in seconds that a server re
 
 Hypernode recommends using a short TTL for the A records. Suppose you want to change an IP address of a record with a TTL of an hour or more, it will take an hour for people who have already visited the site to be notified of the change. A short TTL ensures that you can switch quickly if necessary.
 
-Types of Records
-----------------
+## Types of Records
 
 Different DNS records have been created for the different types of internet traffic. Here it is described which types of DNS records are most common and what purpose they have;
 
@@ -109,34 +105,34 @@ If you have set up other name servers, the DNS data will be downloaded from that
 
 ### A Records
 
-The A record is used to link a domain name to an IP address. Usually there are multiple A records per domain name. In the example mentioned earlier under “The fields in a DNS table” there are three A records. One ensures that all visitors of domainname.nl are forwarded to the correct server and the other ensures that the domain name starting with www is also redirected to the server. A domain name always needs at least one A record to identify the web server. The third A record in the example is a wildcard record (* [.example.com](//.example.com))
+The A record is used to link a domain name to an IP address. Usually there are multiple A records per domain name. In the example mentioned earlier under “The fields in a DNS table” there are three A records. One ensures that all visitors of domainname.nl are forwarded to the correct server and the other ensures that the domain name starting with www is also redirected to the server. A domain name always needs at least one A record to identify the web server. The third A record in the example is a wildcard record (\* [.example.com](//.example.com))
 
 If no A (or CNAME) record exists for * .example.nl, subdomains will not be accessible and (provided no separate address has been created for it) [www.example.nl](http://www.domainname.nl) neither. Www.example.com is seen as a subdomain by DNS.
 
 ### AAAA Records
 
-This is the A record for IPv6 addresses. 
+This is the A record for IPv6 addresses.
 
 ### MX Records
 
 The MX records contain the host names of the mail server(s). In addition to the hostname, you can assign a priority to each MX record. For example, you can give your own mail servers a higher priority (a lower number) than our smtp2.byte.nl server. This means that smtp2.byte.nl is only used as a mail server when your own servers are not available. We also call this "fallback server". Also make sure that you do not give every MX record a priority of 10, otherwise our server will not be able to determine which record is about the primary mail server. These are the MX records of the Hypernode mail servers:
 
-|  |  |  |  |
-| --- | --- | --- | --- |
-| **Name** | **Type** | **Value** | **Prio** |
-| example.com | MX | smtp1.byte.nl | 10 |
-| example.com | MX | smtp2.byte.nl | 20 |
+|             |          |               |          |
+| ----------- | -------- | ------------- | -------- |
+| **Name**    | **Type** | **Value**     | **Prio** |
+| example.com | MX       | smtp1.byte.nl | 10       |
+| example.com | MX       | smtp2.byte.nl | 20       |
 
-Always use your primary domain for your MX records. An MX record with the Name on “mail.example.nl” will only work for …@mail.example.nl addresses. 
+Always use your primary domain for your MX records. An MX record with the Name on “mail.example.nl” will only work for …@mail.example.nl addresses.
 
 ### CNAME Records
 
-With a CNAME record you can make a reference for a hostname to another hostname. 
+With a CNAME record you can make a reference for a hostname to another hostname.
 
-|  |  |  |  |
-| --- | --- | --- | --- |
-| **Name** | **Type** | **Value** | **Prio** |
-| [www.example.com](http://www.example.com) | CNAME | example.hypernode.io | - |
+|                                           |          |                      |          |
+| ----------------------------------------- | -------- | -------------------- | -------- |
+| **Name**                                  | **Type** | **Value**            | **Prio** |
+| [www.example.com](http://www.example.com) | CNAME    | example.hypernode.io | -        |
 
 An advantage of using a CNAME is that if the IP address of the web server changes you won't need  to change the record for the www domain.
 
@@ -146,7 +142,7 @@ TXT records are flexible in use, you can store all kinds of information in a TXT
 
 ### SRV records
 
-SRV (Service) records are used by some programs or devices to provide automatic settings. Certain IP telephones, for example, can easily be connected or reached with this. An SRV record has a specific format: <service>. <protocol> .example.org, and a specific value: “<priority> <weight> <port> <destination address>”. If you want to create an SRV record, you will receive the name of the service and the protocol of the program or device that can use SRV records. You can find this in the manual or on the website of your product. For example: Your domain name is example.com and you must create “_sip._tcp.example.com” with the following value: “10 60 5060 bigbox.example.com”. You enter “_sip._tcp” as the name, “60 5060 bigbox.example.com” as the value and “10” as the Priority.
+SRV (Service) records are used by some programs or devices to provide automatic settings. Certain IP telephones, for example, can easily be connected or reached with this. An SRV record has a specific format: <service>. <protocol> .example.org, and a specific value: “<priority> <weight> <port> <destination address>”. If you want to create an SRV record, you will receive the name of the service and the protocol of the program or device that can use SRV records. You can find this in the manual or on the website of your product. For example: Your domain name is example.com and you must create “\_sip.\_tcp.example.com” with the following value: “10 60 5060 bigbox.example.com”. You enter “\_sip.\_tcp” as the name, “60 5060 bigbox.example.com” as the value and “10” as the Priority.
 
 ### SOA Records
 
@@ -156,8 +152,7 @@ An SOA record is mainly used for the internal communication of different DNS ser
 
 With an SPF record you can define which mail servers are allowed to send email for that particular domain (and prevent spam from being sent from your domain). You can find more information about SPF records and how to use them for Hypernode [here](https://support.hypernode.com/en/hypernode/dns/how-to-set-up-your-spf-records-for-hypernode).
 
-DNS Caching
------------
+## DNS Caching
 
 DNS Caching means that the content of a DNS record is stored on a server between your computer and the authoritative name server. Some providers store this data longer than specified in the TTL, so it can take up to a day for the changes to your DNS record to take effect everywhere. This is something to keep in mind when changing DNS settings. There is very little you can do about it that the whole world does not immediately see your new site (most of it), but as a developer it is of course annoying. Fortunately, there is a (local) solution, namely the hosts file. This is a file where you can enter hostnames and IP addresses yourself. This way you can link a domain name to an IP address so that when you visit this domain name, the DNS server is no longer consulted and you are always referred to the same IP address.Please see[this article](https://support.hypernode.com/en/best-practices/testing/how-to-test-your-website-by-changing-your-hosts-file) for more information about the host file.
 

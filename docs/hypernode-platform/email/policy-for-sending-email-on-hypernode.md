@@ -1,11 +1,10 @@
 <!-- source: https://support.hypernode.com/en/hypernode/email/policy-for-sending-email-on-hypernode/ -->
+
 # Policy for sending email on Hypernode
 
 All emails send from a Hypernode using the local PHP mail() functionality or sent to port 25 on the local host, is routed through our central outgoing email platform that filters spam emails and emails from infected websites. This mail platform handles rate limiting and enforces a strict limit on your outgoing email flow. If you exceed the limits, your email will be delayed and delivered at a later time.
 
-
-Introduction
-------------
+## Introduction
 
 Sending too much mail in a short amount of time could cause jams and mail delayed deliverance when sending to large email providers like Gmail and Microsoft.
 
@@ -17,8 +16,7 @@ Our mailservers make sure only a limited amount of emails can be send per hour f
 
 This means effectively that all email coming from your Hypernode will be stored and delivered at a later time.
 
-Mail Policies
--------------
+## Mail Policies
 
 ### Confirmed Receiver and Opt-In
 
@@ -42,11 +40,11 @@ Use a rate limit on your mailings. Do not send 10.000 emails at once, but use a 
 
 When sending emails through or mail platform, the following restrictions apply:
 
-* Send a maximum of 1 email **per second**
-* Limit your emails **per 10 minutes** to a maximum of **200 emails**
-* Limit your emails **per hour** to a maximum of **1000 emails**
-* Limit your emails **per day** to a maximum of **5000 emails**
-* Limit your emails **per destination domain** to a maximum of **60 emails per minute**
+- Send a maximum of 1 email **per second**
+- Limit your emails **per 10 minutes** to a maximum of **200 emails**
+- Limit your emails **per hour** to a maximum of **1000 emails**
+- Limit your emails **per day** to a maximum of **5000 emails**
+- Limit your emails **per destination domain** to a maximum of **60 emails per minute**
 
 The limits might look odd, because in case you send 200 emails per 10 minutes, wouldn’t that mean that you send 1200 emails per hour? Unfortunately it does not exactly work that way. They are hard limits of the maximum amount of emails you can send per second/10 minutes/hour/day/domain, without the risk of being rate limited.
 
@@ -54,11 +52,10 @@ When the rate limiter is active, emails will be stored on the mailserver to be d
 
 Examples:
 
-* If you want to send 900 emails, you can safely send them in batches of 200 per 10 minutes.
-* If you want to send 1200 emails, you can send 1000 spread over the first hour, and then you have 200 left to send the next hour.
+- If you want to send 900 emails, you can safely send them in batches of 200 per 10 minutes.
+- If you want to send 1200 emails, you can send 1000 spread over the first hour, and then you have 200 left to send the next hour.
 
-Sending Mail Through Third Parties
-----------------------------------
+## Sending Mail Through Third Parties
 
 If you are sending larger mailings containing 5000 emails and up per day you are recommended to use an external mail provider like [Mailchimp](https://mailchimp.com/) or [Klaviyo](https://www.klaviyo.com/) to send your mail.
 
@@ -66,8 +63,7 @@ These third party email providers are not rate limited, as long as the mail does
 
 There are many [Magento email extensions](https://www.magentocommerce.com/magento-connect/integrations/email-integration.html) to send your mail through your own external mail provider or your own mailserver.
 
-Check if Emails Were Rate Limited
----------------------------------
+## Check if Emails Were Rate Limited
 
 By looking at mail headers it is possible to verify whether emails were rate limited: all emails include a x-byte-ratelimited header:
 

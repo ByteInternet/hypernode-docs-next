@@ -1,9 +1,10 @@
 # Applications
 
 ```{toctree}
-:caption: 'Chapters'
-:maxdepth: 1
-:glob:
-
+---
+caption: Chapters
+maxdepth: 1
+glob:
+---
 applications/*
 ```

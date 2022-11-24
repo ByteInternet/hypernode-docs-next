@@ -1,22 +1,21 @@
 <!-- source: https://support.hypernode.com/en/ecommerce/shopware/how-to-use-a-basic-staging-environment-with-shopware/ -->
+
 # How to Use a Basic Staging Environment With Shopware
 
 A staging environment is very useful, for things such as:
 
-* Let a customer (shop-owner) try out a proposed change
-* To quickly make a copy of a production shop to analyse a bug that didn't show up during development
-* Automated testing by external tools
+- Let a customer (shop-owner) try out a proposed change
+- To quickly make a copy of a production shop to analyse a bug that didn't show up during development
+- Automated testing by external tools
 
 This article explains how you can set up a staging environment on Hypernode for a Shopware shop.
 
 Keep in mind:
 
-* Your staging environment **shares resources** (disk, CPU, mem) with your production site. If you want to do things such as automated load tests, it is recommended to order a [development plan](https://support.hypernode.com/knowledgebase/development-plans-for-your-magento-shop/) instead, so your production site will not be affected.
-* We don't recommend creating hard links from your production media folder to your staging media folder as our back up mechanism does not cope well with hard links.
+- Your staging environment **shares resources** (disk, CPU, mem) with your production site. If you want to do things such as automated load tests, it is recommended to order a [development plan](https://support.hypernode.com/knowledgebase/development-plans-for-your-magento-shop/) instead, so your production site will not be affected.
+- We don't recommend creating hard links from your production media folder to your staging media folder as our back up mechanism does not cope well with hard links.
 
-
-How to Make a Copy of a Live Site
----------------------------------
+## How to Make a Copy of a Live Site
 
 Set up your staging environment by following the steps.
 
@@ -29,16 +28,19 @@ rsync -va --delete --delete-excluded \
 --exclude /var/cache/ \
 /data/web/public/ /data/web/staging/
 ```
+
 ### Step two: Create a staging database
 
 ```nginx
 mysql -e 'create database if not exists staging'
 ```
+
 ### Step three: Connect your file system to the database
 
 ```nginx
 editor /data/web/staging/.env
 ```
+
 Make sure to change the 'DB_DATABASE' value to your staging database: DB_DATABASE="staging"
 
 ### Step four: Dump the production database and import into the staging database
@@ -46,6 +48,7 @@ Make sure to change the 'DB_DATABASE' value to your staging database: DB_DATABAS
 ```nginx
 mysqldump shopware | mysql staging
 ```
+
 ### Step five: Redirect domains to your staging environment
 
 To redirect requests to the staging environment, you need the following snippet. Create a `/data/web/nginx/http.staging_redir_mapping` file containing:
@@ -57,6 +60,7 @@ dehault 0;
 example.com 1;
 }
 ```
+
 Next, create a snippet to redirect all sites mapped as staging_site to the staging environment.
 
 To do this, create a /data/web/nginx/server.staging_redir file containing:
@@ -66,6 +70,7 @@ if ($staging_site = 1) {
 return 301 http://$http_host:8888$request_uri;
 }
 ```
+
 Now all traffic for domains that are mapped as staging_domain, will be redirected to the same URL but on port 8888.
 
 ### Step six: Change the SHOP_URL in /data/web/staging/.env

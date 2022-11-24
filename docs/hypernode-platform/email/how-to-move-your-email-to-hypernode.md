@@ -1,13 +1,12 @@
 <!-- source: https://support.hypernode.com/en/hypernode/email/how-to-move-your-email-to-hypernode/ -->
+
 # How to Move Your Email to Hypernode
 
 **Please note that this only applies to Service Panel users who log in via service.byte.nl.**
 
 Want to move your email to Hypernode? This guide will explain how to do so without losing messages.
 
-
-Moving Your Email Addresses to Hypernode
-----------------------------------------
+## Moving Your Email Addresses to Hypernode
 
 Before moving your email address to Hypernode, you need to create the email address in the Service Panel. You can use [this article](https://support.hypernode.com/en/hypernode/email/email-faq#How-Can-I-Create-a-New-Email-Address?) from our Support Documentation to do so.
 
@@ -31,24 +30,23 @@ For example: create the email address [sales@domein.nl](mailto:sales@domai.nl) =
 
 If you want to forward your all mail, option one (configuring your DNS) is the easier option. If you only want to forward mail sent to certain email address, we recommend option two. Both options require advanced knowledge of DNS and/or email.
 
-Moving Your Own Mail Server to Hypernode
-----------------------------------------
+## Moving Your Own Mail Server to Hypernode
 
 If you use your own mail server and want to move your site to Hypernode, you generally have to take the following steps:
 
-* Check which mail server is configured for your domain.
-* Log in to the Service Panel and select the desired domain.
-* Go to the tab **Instellingen**and select **DNS.**
-* If you didn't edit the DNS, you will see the default DNS records. This means there are two MX records:
+- Check which mail server is configured for your domain.
+- Log in to the Service Panel and select the desired domain.
+- Go to the tab **Instellingen**and select **DNS.**
+- If you didn't edit the DNS, you will see the default DNS records. This means there are two MX records:
 
-|  |  |  |  |
-| --- | --- | --- | --- |
-| **Name** | **Type** | **Value** | **Prio** |
-| example.nl | MX | smtp1.byte.nl | 10 |
-| example.nl | MX | smtp2.byte.nl | 20 |
+|            |          |               |          |
+| ---------- | -------- | ------------- | -------- |
+| **Name**   | **Type** | **Value**     | **Prio** |
+| example.nl | MX       | smtp1.byte.nl | 10       |
+| example.nl | MX       | smtp2.byte.nl | 20       |
 
-* Select the first MX-record and replace 'smtp1.byte.nl' with your own mail server. Click **Save record**.
-* If your mail server is 'mail.xs4all.nl', this is all you need to do. If it's called 'mail.example.nl' you also need to create an A-record for 'mail.example.nl'. This is because you're transferring the domain to Hypernode.
-* To do this click **new record**.
-* Enter 'mail' in the name field. Enter the IP of your email server as **Content** and click **Add**.
-* Done!
+- Select the first MX-record and replace 'smtp1.byte.nl' with your own mail server. Click **Save record**.
+- If your mail server is 'mail.xs4all.nl', this is all you need to do. If it's called 'mail.example.nl' you also need to create an A-record for 'mail.example.nl'. This is because you're transferring the domain to Hypernode.
+- To do this click **new record**.
+- Enter 'mail' in the name field. Enter the IP of your email server as **Content** and click **Add**.
+- Done!

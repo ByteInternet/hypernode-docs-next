@@ -1,11 +1,10 @@
 <!-- source: https://support.hypernode.com/en/troubleshooting/performance/how-to-debug-out-of-memory-oom-events/ -->
+
 # How to Debug ‘out of Memory’ (OOM) Events
 
 When processes on your Hypernode require more memory than is available, there is a risk of downtime. To prevent such an ‘out of memory’ event from happening, the Linux oom-killer process tries to kill processes in order to free up memory. This oom-killer process is a last resort measure to prevent the Hypernode from going down in its entirety.
 
-
-The OOM-Killer Explained
-------------------------
+## The OOM-Killer Explained
 
 The OOM-killer will try to kill the process using the most memory first. As this is usually MySQL, this is not always a good idea. So we use Cgroups, a Linux kernel feature, to group certain processes together and assign them a value to have control over which processes should be killed first and which crucial processes should not be killed at all.
 
@@ -24,11 +23,13 @@ If you want to enable or disable this setting yourself, you can do so with the c
 ```nginx
 $ hypernode-systemctl settings permissive_memory_management --value True
 ```
+
 To disable this setting use the following command:
 
 ```nginx
 $ hypernode-systemctl settings permissive_memory_management --value False
 ```
+
 Note that even though this setting can give you some more leeway in regards to memory utilization on Hypernode and gives you the option to make a decision whether you value keeping the site online at the cost of killing non-essential processes early versus trading some risk in terms of stability for increasing the chance of memory hungry one-off processes to complete, if you notice structural Out Of Memory messages in your kern.log that often indicates a real problem in the shop or that it might be time to upgrade.
 
 **Prioritize Important Processes**
@@ -47,23 +48,21 @@ Please keep in mind that marking processes as unkillable does not magically add 
 
 For more information about hypernode-oom-protect please see the [changelog](https://changelog.hypernode.com/changelog/release-6202-mark-processes-as-unkillable-when-out-of-memory/).
 
-Debug OOM Events
-----------------
+## Debug OOM Events
 
 If you receive a notification that an ‘out of memory’ event has occurred, the OOM-killer process will already have done its job and you’ll see that memory has been freed up. So in order to find out what happened, we’ll have to inspect the logs. You can use the command `less /var/log/kern.log|grep -v 'UFW BLOCK'` (or `dmesg --ctime --color=always | grep -v 'UFW BLOCK'`) to find out what happened. Example below:
 
 ![](_res/9nkno19vwnKiKurVVTlGYteTtH2vlIt8Zg.png)
 
-So you may have found an out of memory event in your kernel log. It will start with*‘[process] invoked oom-killer’* followed by a stack trace and and a list of running processes and child processes.
+So you may have found an out of memory event in your kernel log. It will start with\*‘\[process\] invoked oom-killer’\* followed by a stack trace and and a list of running processes and child processes.
 
 ![](_res/QkACqkfX9oGO8bG9aiI_9pxiFKopQSXimw.png)
 
-The log ends with ‘*Killed process [pid] (name of process)*’. You’ll also have a timestamp (not included in these screenshots) so you’ll be able to check other logs and see if something correlates. Note that this does not always mean there is a single culprit. Logs you could check are /var/log/mysql/mysql-slow.log and /var/log/php-fpm/php-slow.log. In addition, you can check the exception.log and system.log in Magento’s /data/web/public/var/log folder.
+The log ends with ‘*Killed process \[pid\] (name of process)*’. You’ll also have a timestamp (not included in these screenshots) so you’ll be able to check other logs and see if something correlates. Note that this does not always mean there is a single culprit. Logs you could check are /var/log/mysql/mysql-slow.log and /var/log/php-fpm/php-slow.log. In addition, you can check the exception.log and system.log in Magento’s /data/web/public/var/log folder.
 
-How to Deal With out of Memory Events
--------------------------------------
+## How to Deal With out of Memory Events
 
-If you receive emails about OOM events regularly, there are various ways to deal with this. These options roughly fall into two categories; Reducing memory usage, and reducing memory requirements. 
+If you receive emails about OOM events regularly, there are various ways to deal with this. These options roughly fall into two categories; Reducing memory usage, and reducing memory requirements.
 
 ### Reducing Memory Usage
 
@@ -83,8 +82,7 @@ Another way it to ensure less memory is needed by reducing file sizes. As Magent
 
 If you cannot make enough memory available, one of the only remaining options is to [upgrade](https://www.hypernode.com/magento-hosting-plans/) to a larger Hypernode with more memory. As Magento becomes more complex over time, and databases and visitor counts grow, at one point or another your shop will become to large for your existing Hypernode and require an upgrade for extra memory, and other server capacity.
 
-Release MySQL Memory Script
----------------------------
+## Release MySQL Memory Script
 
 On smaller Hypernodes or on Hypernodes with databases with big datasets, over time sometimes too much memory is allocated by MySQL. The rest of the system will go in a state of undesirable memory pressure while MySQL is hogging a lot of memory that it might not even actively use. MySQL’s memory footprint can be configured with settings such as `innodb_buffer_pool_size` but correctly tweaking MySQL’s memory allocation is a complex topic and sometimes periodically restarting the service is the easiest solution.
 
@@ -115,12 +113,14 @@ else
     fi
 fi
 ```
+
 You can configure this script with a cron like:
 
 ```nginx
 * * * * * /usr/local/bin/release_mysql_cached_memory -m 1024 -c 30
 
 ```
+
 Then when the system reaches a configurable low watermark of memory available on the system, MySQL will automatically be restarted to free up some RAM. The second argument specifies a cooldown in minutes for how long there should be at least between any MySQL restart. Of course you don’t want to be restarting your database too often in a production environment.
 
 In general you should not need to run a script like this to keep your memory usage at bay, but in some cases where you know that tweaking MySQL memory usage exactly correctly is difficult or if you’re working with limited resources this might be a good tool to have in your toolkit.
