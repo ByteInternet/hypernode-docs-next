@@ -1,16 +1,14 @@
 <!-- source: https://support.hypernode.com/en/best-practices/security/how-to-deploy-magento-patches/ -->
+
 # How to Apply Magento Patches
 
 Every now and then Magento releases a patch that ensures that your webshop can perform optimally and is protected as much as possible. By ensuring that you always install the latest patches, you can not only take advantage of the latest features, but above all prevent your site from being vulnerable to malicious parties. It is therefore important to always install all patches from Magento on your webshop.
 
-
-Different Magento Patches
--------------------------
+## Different Magento Patches
 
 Every once in a while Magento issues a new patch for Magento Community and Magento Enterprise to increase the security of their software. These patches are basically security releases, and new Magento versions mostly contain all prior patches. Whenever a new patch comes out, make sure to download and install it as soon as possible. A complete overview of Magento patches can be found on [Magento.com](https://magento.com/security/patches).
 
-Check Your Shop With MageReport.com
------------------------------------
+## Check Your Shop With MageReport.com
 
 Not sure whether your shop is vulnerable and needs to be patched? Check [MageReport](https://www.magereport.com/)!
 
@@ -18,8 +16,7 @@ Not sure whether your shop is vulnerable and needs to be patched? Check [MageRep
 
 MageReport is not able to check from ‘the outside’ whether these patches are installed. Checking your shop will likely result in ‘unknown’, unless we see your shop has been updated to a security version in which the patch has been incorporated. If this is the case, the check will be green.
 
-Seven Steps to Apply the Patch and Increase Your Magento Security
------------------------------------------------------------------
+## Seven Steps to Apply the Patch and Increase Your Magento Security
 
 You need SSH (shell) access to download and apply the patch. You need only three commands, CD, WGET and BASH, to navigate, download and apply the patch.
 
@@ -44,16 +41,19 @@ Navigate to your Magento folder:
 ```nginx
  cd example.nl
 ```
+
 After this, the command BASH will apply the patch you just downloaded:
 
 ```nginx
  bash NAME_PATCH
 ```
+
 Let’s assume here that the patch name is: `patch_supee-5994.sh` . Your actual command would look like this:
 
 ```nginx
  bash patch_supee-5994.sh
 ```
+
 ### Step 5: Clear Your Cache
 
 It’s important to flush the Magento cache after applying the patch. Flushing your caches can be done in the back-end of your Magento shop under Cache management. More info about flushing your cache in the back-end of Magento can be found in the [Magentocommerce Knowledgebase](http://www.magentocommerce.com/knowledge-base/entry/cache-storage-management/%09200). Don’t forget to flush your OPcode or APC cache as well!
@@ -69,8 +69,8 @@ After testing your shop, it’s highly advised to remove the patch file. This wi
 ```nginx
  rm NAME_PATCH
 ```
-FAQ
----
+
+## FAQ
 
 **I keep getting a Hunk failed error. What should I do?**
 
@@ -93,24 +93,27 @@ Every check that’s been installed can easily be found in the content of your s
 ```nginx
   grep '|' app/etc/applied.patches.list
 ```
+
 The output will look like this:
 
 ```nginx
 -e 2015-04-14 08:34:22 UTC | SUPEE-5344 | EE_1.14.1.0 | v1 | a5c9abcb6a387aabd6b33ebcb79f6b7a97bbde77 | Thu Feb 5 19:14:49 2015 +0200 | v1.14.1.0..HEAD
 ```
+
 In this example only SUPEE-5344 has been applied. When you uninstalled a patch, you’ll see this:
 
 ```nginx
  -e 2015-04-14 15:21:48 UTC | SUPEE-5344 | EE_1.14.1.0 | v1 | a5c9abcb6a387aabd6b33ebcb79f6b7a97bbde77 | Thu Feb 5 19:14:49 2015 +0200 | v1.14.1.0..HEAD | REVERTED
 ```
+
 **Magereport keeps saying security patch 6482 isn’t installed**
 
 We found out that there are several reasons why Patch 6788 comes out as uninstalled on [MageReport.com.](https://www.magereport.com/page/support), so we recommend you to check the following:
 
-* When compilation is enabled in the backend of your Magento, SUPEE-6482 doesn’t work properly. Disable compilation (navigate to System > Tools > Compilation page and click on Disable button) to make sure the patch works. After disabling compilation, check your site with [MageReport.com.](https://www.magereport.com/page/support) again. If the check still comes out as not installed, try re-compiling.
-* Check if the patch is installed in the correct directory;
-* Reload your opcode cache, webserver, php-fpm process and possible other caches. The old code might be still be active;
-* Check your shops’ .htaccess. If you’ve made any adjustements in your .htaccess, it’s possible the patch is only partially installed;
-* Using a Magento version older than Magento 1.6.1.0? Update to a more recent version. When patching Magento versions older than Magento 1.6.1.0, certain redirects aren’t added.
+- When compilation is enabled in the backend of your Magento, SUPEE-6482 doesn’t work properly. Disable compilation (navigate to System > Tools > Compilation page and click on Disable button) to make sure the patch works. After disabling compilation, check your site with [MageReport.com.](https://www.magereport.com/page/support) again. If the check still comes out as not installed, try re-compiling.
+- Check if the patch is installed in the correct directory;
+- Reload your opcode cache, webserver, php-fpm process and possible other caches. The old code might be still be active;
+- Check your shops’ .htaccess. If you’ve made any adjustements in your .htaccess, it’s possible the patch is only partially installed;
+- Using a Magento version older than Magento 1.6.1.0? Update to a more recent version. When patching Magento versions older than Magento 1.6.1.0, certain redirects aren’t added.
 
 We hope one of the causes mentioned above can fix your problem. If not, we recommend you to hire a Magento specialist. Unfortunately we can’t help fixing these problems. We’re a hosting company that specializes in Magento hosting. Magento development however is a completely different specialty. A list of Magento developers per country can be found on [MageReport.com.](https://www.magereport.com/page/support)

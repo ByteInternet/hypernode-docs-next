@@ -1,4 +1,5 @@
 <!-- source: https://support.hypernode.com/en/hypernode/dns/how-to-set-up-your-spf-records-for-hypernode/ -->
+
 # How to Set Up your SPF Records for Hypernode
 
 SPF or Sender Policy Framework is a technique used to fight spam.
@@ -9,13 +10,11 @@ This mechanism helps fighting spam as third party mail servers used by spammers 
 
 In other words: Sender Policy Framework (SPF) is a security mechanism created to prevent the bad guys from sending emails on your behalf by defining which IP addresses can be used to send emails from your domain.
 
-
-Composing an SPF record on Hypernode
-------------------------------------
+## Composing an SPF record on Hypernode
 
 ### Implementing SPF records for the domains that you use on your Hypernode
 
-For all domains that you send email for, create an SPF record. 
+For all domains that you send email for, create an SPF record.
 
 For every Hypernode, we created a TXT record containing the IP of the Hypernode itself and the IP ranges we use for our outgoing mail platform.
 This record is updated when you do an up or downgrade, so it’s always up to date with the IP address used for your Hypernode.
@@ -30,10 +29,10 @@ You can add this record to your SPF record using an include mechanism:
 ```
 include:spf.example.hypernode.io
 ```
+
 When you know which services and IP addresses are allowed to send email from your domain, glue it all together in a single SPF record.
 
-Determine your mail behaviour
------------------------------
+## Determine your mail behaviour
 
 When you start to setup SPF, first determine which mail servers are allowed to send email. This can be your office mail server, additional third parties for transactional email like Mailchimp, MailJet and Elastic Mail etc.
 
@@ -49,13 +48,13 @@ When this is done, your record should look something like:
 ```
  v=spf1 mx include:servers.mcsv.net include:spf.example.hypernode.io include:_spf.google.com -all"
 ```
+
 Now open the DNS editor of your DNS provider, and create a TXT record that contains the record. Sometimes you need to add double quotes around the statement, sometimes you don’t.
 After adding the record, make sure your changes are saved in case there is a “Save your changes”-button, and use dig to verify whether the record is visible when doing a lookup.
 
 Never create multiple SPF records for the same domain, but instead include all mechanisms in a single record!
 
-How the sender policy framework (SPF) works
--------------------------------------------
+## How the sender policy framework (SPF) works
 
 To determine where the email of a certain domain is delivered we use MX records. These records point to the IP address (or addresses) of the mail server.
 
@@ -65,37 +64,34 @@ This mechanism prevents unauthorised email senders from “email spoofing”. Em
 
 Due to the way email works, it’s almost impossible to prevent others from sending email on your behalf. SPF is a mechanism to prevent this from happening.
 
-What do SPF records look like
------------------------------
+## What do SPF records look like
 
 SPF records in general consist of 2 parts:
 
-* A version indicator: v=spf1.
-* The record body: In general a set of IP addresses or hostnames that are allowed to send email (mechanisms).
+- A version indicator: v=spf1.
+- The record body: In general a set of IP addresses or hostnames that are allowed to send email (mechanisms).
 
-Breaking up an SPF record
--------------------------
+## Breaking up an SPF record
 
 Let’s use this SPF record as an example:
 
 ```
 v=spf1 a mx include:spf.example.hypernode.io ip4:82.94.214.5 ~all
 ```
+
 The use of the version indicator is fairly easy: As creating multiple TXT records is possible, this is used to indicate that the specific TXT record is an SPF record. This indicator currently is v=spf1, as we are still using version one of the SPF implementation.
 The record body consists of a set of mechanisms available to instruct mail servers which IP’s are allowed to send email for this domain.
 
-Mechanisms
-----------
+## Mechanisms
 
 The mechanisms used in this example are:
 
-* The a mechanism for hostnames. When the sender's IP address matches the IP address (a record) of the domain, the email is allowed.
-* The ip4 mechanism for regular IPv4 addresses. Add the IP address after "IP4" to whitelist the IP address. If email is sent from this IP and the domain name resolves to this IP, the email is accepted.
-* The mx mechanism. If the email is sent from this MX record, the e-mail is allowed.
-* The include mechanism. If the conditions in the record (that is included) are met, then the mail is allowed.
+- The a mechanism for hostnames. When the sender's IP address matches the IP address (a record) of the domain, the email is allowed.
+- The ip4 mechanism for regular IPv4 addresses. Add the IP address after "IP4" to whitelist the IP address. If email is sent from this IP and the domain name resolves to this IP, the email is accepted.
+- The mx mechanism. If the email is sent from this MX record, the e-mail is allowed.
+- The include mechanism. If the conditions in the record (that is included) are met, then the mail is allowed.
 
-Qualifiers
-----------
+## Qualifiers
 
 Mechanisms can be prefixed with a qualifier which describes which action to take when a sending IP address matches the mechanism. The default qualifier is a +, which can also be left out.
 
@@ -104,18 +100,18 @@ This means our example SPF record can as well be written as:
 ```
 v=spf1 +a +mx +include:spf.example.hypernode.io ~all
 ```
+
 The following qualifiers are available:
 
-* + (Pass) – An IP that matches the mechanism with this qualifier should pass the SPF check.
-* - (Fail) – An IP that matches the mechanism with this qualifier should fail the SPF check.
-* ~ (SoftFail) – An IP that matches the mechanism with this qualifier should soft-fail. In other words: The SPF check should fail, but the mail should be accepted by the receiving sender.
-* ? (Neutral) – An IP that matches the mechanism with this qualifier should neither pass nor fail the SPF check.
+- + (Pass) – An IP that matches the mechanism with this qualifier should pass the SPF check.
+- - (Fail) – An IP that matches the mechanism with this qualifier should fail the SPF check.
+- ~ (SoftFail) – An IP that matches the mechanism with this qualifier should soft-fail. In other words: The SPF check should fail, but the mail should be accepted by the receiving sender.
+- ? (Neutral) – An IP that matches the mechanism with this qualifier should neither pass nor fail the SPF check.
 
 The last statement of an SPF record (in our example ~all) is the catchall qualifier: This indicates what the receiving mail server should do with the email if non of the defined mechanisms match.
 These qualifiers together enable you to create a fine-grained selection of email senders that should or should not be rejected by the receiving mail server.
 
-The Return-Path
----------------
+## The Return-Path
 
 When working with SPF, it is important to know that the receiving mail server that validates the SPF record, never looks at the email address that is set as the From address.
 
@@ -134,25 +130,25 @@ Although there are multiple online web-based tools to lookup your SPF record, th
 ```nginx
  dig -t TXT +short example.com
 ```
+
 Which  in this case returns 2 TXT records, of which one is the SPF record:
 
 ```nginx
 "v=spf1 -all"
 ```
-Troubleshooting
----------------
+
+## Troubleshooting
 
 Debugging SPF issues can be hard, as the only way of finding information about whether your SPF is correct, is by digging through the mail headers of your received and sent emails.
 Luckily there are several third party services and analysis tools available to assist you in creating and maintaining your SPF record.
 
 We list a few that can help you solving SPF problems:
 
-* [Kittermans SPF validation](https://www.kitterman.com/spf/validate.html) – This is the first SPF checker ever, and still well known for it’s completeness
-* [The SPF Check @ MX Toolbox](https://mxtoolbox.com/spf.aspx)– This is the most complete online email utility
-* [Mailcleaner Batch SPF Tester](https://www.mailcleaner.net/tools/test_spf.html) – Very useful to verify if all your domains are setup correctly.
+- [Kittermans SPF validation](https://www.kitterman.com/spf/validate.html) – This is the first SPF checker ever, and still well known for it’s completeness
+- [The SPF Check @ MX Toolbox](https://mxtoolbox.com/spf.aspx)– This is the most complete online email utility
+- [Mailcleaner Batch SPF Tester](https://www.mailcleaner.net/tools/test_spf.html) – Very useful to verify if all your domains are setup correctly.
 
-Differences compared to DKIM
-----------------------------
+## Differences compared to DKIM
 
 SPF is not the same as DKIM. SPF and DKIM are both spam protection mechanism that prevent unauthorised senders from mailing in your behalf.
 Where DKIM works with signing messages and validating the signature to determine whether the sender is who he or she says they , SPF uses DNS to determine which IP addresses are allowed to send email for a particular domain.

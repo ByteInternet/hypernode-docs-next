@@ -1,4 +1,5 @@
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-configure-lesti-fpc/ -->
+
 # How to Configure Lesti::FPC
 
 Lesti::FPC is a FPC Full Page Caching module you can use to speed up the frontend of your shop.
@@ -13,35 +14,35 @@ This article will explain how to configure Lesti::FPC and use it on Hypernode. I
 
 **NB: When you used the [hypernode-importer](https://support.hypernode.com/en/hypernode/tools/how-to-migrate-your-shop-to-hypernode#Option-2-for-all-customers%3A-Migrate-your-shop-via-Shell-using-hypernode-importer) and you were already using `Lesti::FPC`, you can skip this tutorial, as we already added the configuration for caching using `Lesti::FPC`.**
 
-
-Download Lesti::FPC
--------------------
+## Download Lesti::FPC
 
 Go to your public folder:
 
 ```nginx
 cd /data/web/public
 ```
+
 If the `~/public/.modman` directory is not present, initialise modman to create the directory:
 
 ```nginx
 modman init
 ```
+
 Use the following command to install the Lesti::FPC module on your shop:
 
 ```nginx
 modman clone git://github.com/GordonLesti/Lesti_Fpc.git
 ```
-Move the Files to the Correct Folder
-------------------------------------
+
+## Move the Files to the Correct Folder
 
 Go to the .modman/Lesti_Fpc/app/etc folder and copy the fpc.xml.sample to the `app/etc` directory and rename it to fpc.xml:
 
 ```nginx
 cd ~/public/.modman/Lesti_Fpc/app/etc && cp fpc.xml.sample /data/web/public/app/etc/fpc.xml
 ```
-Edit Your fpc.xml File
-----------------------
+
+## Edit Your fpc.xml File
 
 Open the file and delete everything between the `<fpc>` and `</fpc>` tags.
 
@@ -65,11 +66,11 @@ In between the `<fpc>` and `</fpc>` tags, paste the following lines of code:
   <compression_lib>gzip</compression_lib>
 </backend_options>
 ```
+
 Enable FPC caching in your Magento backend.
 
 Flush your cache after making these adjustments.
 
-Warm Your Full Page Cache
--------------------------
+## Warm Your Full Page Cache
 
 To warm your full page cache, see the page about cache warming.

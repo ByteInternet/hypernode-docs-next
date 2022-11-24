@@ -1,13 +1,12 @@
 <!-- source: https://support.hypernode.com/en/about/about-us/hypernode-certification-for-agencies/ -->
+
 # Hypernode Certification for Agencies
 
 Hypernode Certified developers have shown that they are among the top Magento development agencies in the Benelux. They are periodically assessed by our Magento experts on output (fast and safe Magento webshops) and development processes.
 
 This article explains the importance of a Hypernode certification for Magento developers and online retailers and how, as a Magento development agency, you can become a Hypernode Certified Agency.
 
-
-Our Mission
------------
+## Our Mission
 
 Over 65% of the Dutch Magento agencies are currently working with Hypernode. Our custom-made platform helps Magento agencies to develop, manage and maintain high quality standards for Magento shops.
 
@@ -19,37 +18,34 @@ We want to use these learnings by contributing to the quality of the whole Magen
 
 Our goal: happy and satisfied Magento users. How?
 
-* By challenging Magento agencies to improve their quality even more than they already do.
-* By providing Magento merchants a list of the best Magento development agencies worldwide.
-* By sharing best practices concerning Magento development.
-* By auditing certified agencies on their output and processes, not at a specific moment in time, but periodically. This certification program is not a one-time check, but a continuous guarantee of quality.
+- By challenging Magento agencies to improve their quality even more than they already do.
+- By providing Magento merchants a list of the best Magento development agencies worldwide.
+- By sharing best practices concerning Magento development.
+- By auditing certified agencies on their output and processes, not at a specific moment in time, but periodically. This certification program is not a one-time check, but a continuous guarantee of quality.
 
-Criteria and Guidelines
------------------------
+## Criteria and Guidelines
 
 A Hypernode Certified Agency delivers excellent quality when it comes to development and management of Magento webshops which will lead to happy customers.
 
 **The criteria for receiving the certificate are as follows:**
 
-* A Hypernode Certified Agency develops and manages Magento shops with outstanding performance.
-* A Hypernode Certified Agency develops and manages Magento shops with the highest level of security.
-* A Hypernode Certified Agency works with professional processes concerning development, deployment and management.
-* A Hypernode Certified Agency has thorough knowledge of Magento.
-* A Hypernode Certified Agency manages at least 5 Magento 2 stores in production on a Hypernode.
+- A Hypernode Certified Agency develops and manages Magento shops with outstanding performance.
+- A Hypernode Certified Agency develops and manages Magento shops with the highest level of security.
+- A Hypernode Certified Agency works with professional processes concerning development, deployment and management.
+- A Hypernode Certified Agency has thorough knowledge of Magento.
+- A Hypernode Certified Agency manages at least 5 Magento 2 stores in production on a Hypernode.
 
 To check if an agency meets the criteria mentioned above, we maintain standards. Two weeks before the deadline to participate in an audit we will send out these standards to interested agencies with the request to prove to us how they meet these standards.
 
 After receiving the Hypernode certificate, we continuously evaluate if agencies still meet the high-quality standards. This way the certification is not a one-time check, but a continuous evaluation over time.
 
-Registration Procedure
-----------------------
+## Registration Procedure
 
 Throughout the year, Magento development agencies using the Hypernode platform can apply for Hypernode certification. If you want to qualify for this, send an email to: certification@hypernode.com. In this you indicate that you would like to participate in the next audit round and you specify a contact person in advance.
 
 There is an audit moment every six months. We send all interested Magento development agencies the guidelines that a Hypernode Certified development agency must meet. It is then up to the agencies to demonstrate that they comply with these guidelines. The audit is based on the input submitted and a telephone conversation for a personal explanation.
 
-FAQ
----
+## FAQ
 
 ### What Is the Difference Between Hypernode Certification and Magento Certification?
 

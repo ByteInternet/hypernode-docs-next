@@ -1,12 +1,12 @@
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001208544-installation-and-configuration-of-pm2/ -->
+
 # Installation and configuration of PM2
 
 PM2 is a process manager which keeps your application running as a daemon. It can be used to run Node.js applications like PWA apps or even internal services to support your eCommerce application. In this article we'll cover the installation and configuration process of PM2.
 
 We will run PM2 in combination with a program called supervisord to make sure that PM2 keeps running even when you upgrade/downgrade your Hypernode.
 
-Installing PM2
---------------
+## Installing PM2
 
 PM2 can be installed in various ways. In this article we'll install the process manager globally for the app user. We'll also create an alias for PM2, so that the program will not spawn the PM2 daemon on the fly. We don't want that to happen, because we want PM2 to run in the foreground so that it can be managed by supervisord.
 
@@ -31,13 +31,12 @@ app@abbt5w-tdgroot-magweb-cmbl:~$ # Check if pm2 program can be found
 app@abbt5w-tdgroot-magweb-cmbl:~$ which pm2
 /data/web/.npm/bin/pm2
 ```
-Enabling supervisord
---------------------
+
+## Enabling supervisord
 
 To make use of supervisord, we first have to make sure it is enabled and running. This can be done by running the command `hypernode-systemctl settings supervisor_enabled true`. Then run the command `livelog` to wait for the changes to be applied.
 
-The example application
------------------------
+## The example application
 
 For this article we'll use a simple web server application written in Python. Feel free to use your own application!
 
@@ -70,10 +69,10 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
 The application only handles `GET` requests and responds with the text "Hello, Visitor!". Save the file to `/data/web/my_application/main.py` and give it execution permissions with the command chmod +x `/data/web/my_application/main.py.`
 
-Configuring and running PM2
----------------------------
+## Configuring and running PM2
 
 Now that we have PM2 installed, supervisor available and an application to run, we can combine all the things together. Create a file at /data/web/supervisor/my_application.conf with the following contents.
 
@@ -83,10 +82,11 @@ command=/data/web/.npm/bin/pm2 --no-daemon --interpreter=python3 start /data/web
 autostart=true
 autorestart=true
 ```
+
 For more information about options and configuration of PM2 and supervisor, please see the following links:
 
-* [Supervisord configuration file](http://supervisord.org/configuration.html#program-x-section-settings)
-* [PM2 quick start](https://pm2.keymetrics.io/docs/usage/quick-start/)
+- [Supervisord configuration file](http://supervisord.org/configuration.html#program-x-section-settings)
+- [PM2 quick start](https://pm2.keymetrics.io/docs/usage/quick-start/)
 
 Now we're almost done, we only need to execute a few commands to load the supervisord configuration and start the PM2 process manager.
 

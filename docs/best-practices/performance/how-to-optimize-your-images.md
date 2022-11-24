@@ -1,4 +1,5 @@
 <!-- source: https://support.hypernode.com/en/best-practices/performance/how-to-optimize-your-images/ -->
+
 # How to Optimize Your Images
 
 If you want a faster shop, you have probably looked at [Google Pagespeed Insights](https://developers.google.com/speed/pagespeed/insights/) for useful suggestions. It probably told you to optimize your images. Which means, reducing the size-on-disk without losing quality. This is a very cumbersome process if you do this by hand (opening in Photoshop, saving-as, etcetera). But it is very easy if you use Hypernode. If you follow this article, **it will take you only a couple of minutes to set up automatic image optimization**.
@@ -8,12 +9,8 @@ Thanks to Peter Jaap for doing the [initial research](https://www.byte.nl/blog/a
 > [@Hypernode_com](https://twitter.com/Hypernode_com) hypernode-image-optimizer is pretty effective "Optimization profit over all files: 502812 KB (82%)". Thanks for that!
 >
 > — Sander Mangel (@sandermangel) [March 16, 2015](https://twitter.com/sandermangel/status/577459189867528192)
->
->
 
-
-How Much Can You Win?
----------------------
+## How Much Can You Win?
 
 First, log in on your Hypernode by SSH and type this command:
 
@@ -28,20 +25,20 @@ $ hypernode-image-optimizer ~/public/media
 Optimization profit over all files: 226 MB (30%)
 
 ```
+
 Great! It has not changed anything yet, but has calculated that you can save 226MB (or 30%) of disk-usage by optimizing your images.
 
-Saving the optimized images for real
-------------------------------------
+## Saving the optimized images for real
 
 Make sure you have a backup of your media files. Then use this command to replace the old images with the optimized images:
 
 ```nginx
 $ hypernode-image-optimizer --quality 80 --write --newonly ~/path/to/media
 ```
+
 Visit your site, do a CTRL-F5 (Mac: CMD-R) to refresh your cache and visually inspect the results. You will most likely not see a difference, apart from a much quicker page ;)
 
-Exclude Directories
--------------------
+## Exclude Directories
 
 To use the `hypernode-image-optimizer` and exclude one or more directories, specify `--exclude` with one or more paths. For example:
 
@@ -55,8 +52,8 @@ app@83f01a-vdloo-magweb-cmbl:~$ hypernode-image-optimizer /data/web/public --exc
 # /data/web/public/static/adminhtml/Magento
 
 ```
-Recommended: Periodic Optimization Using Cron
----------------------------------------------
+
+## Recommended: Periodic Optimization Using Cron
 
 To keep the disk usage reduced and your shop fast, we recommend you to add a cronjob to optimize new images every night.
 
@@ -66,16 +63,17 @@ NB: [Magereport.com](http://magereport.com) checks for a cronjob that optimizes 
 $ crontab -e
 
 ```
+
 And add this line:
 
 ```nginx
 30 4 * * * chronic hypernode-image-optimizer --experimental --quality 80 --write --newonly ~/public/media
 
 ```
+
 Presto, every night at 4:30 all new images (uploaded the previous day) will be optimized.
 
-Pro Tips
---------
+## Pro Tips
 
 The image optimizer will do two things.
 
@@ -97,12 +95,12 @@ $ hypernode-image-optimizer ~/public/media --experimental
 Safe optimization profit over 1002 files: 17 MB (56%)
 
 ```
+
 So this is another huge win in size! It takes 2 to 3 times more time, so especially the first run (where all image files are considered) may take a while (e.g. several days if you have hundred thousands of products). This should not be a problem, as the image optimizer runs in the lowest possible priority, so will not disturb your live performance.
 
 As with the regular optimizer, ensure you have a backup before using the experimental mode.
 
-Examples of Different Quality Levels
-------------------------------------
+## Examples of Different Quality Levels
 
 [![result100](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/48022287798/original/U4S0eOMYihH2sp0wE2feM67OowgJmjj0Gw.png?1578669560)](https://support.hypernode.com/assets/uploads/result100.png)
 

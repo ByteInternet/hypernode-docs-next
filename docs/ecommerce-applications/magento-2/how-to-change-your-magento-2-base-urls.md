@@ -1,13 +1,12 @@
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-change-your-magento-2-base-urls/ -->
+
 # How to Change Your Magento 2 Base URLs
 
 There are several ways to configure the `base_url` settings of your Magento 2 shop.
 
 `note:` When you have an SSL certificate and use the secure base URL you should change the unsecure base URLs to HTTPS as well. This could result in conflicts when you leave this on HTTP.
 
-
-Configuring Your Base URLs Over the Web
----------------------------------------
+## Configuring Your Base URLs Over the Web
 
 ### Configure Your Base URLs in the Magento 2 Admin
 
@@ -37,8 +36,7 @@ To clear your caches, click the big orange button at the top of the page:
 
 As changing the base URLs using PHPmyAdmin works the same for both Magento 1 and Magento 2, take a look at [the Magento 1 article about changing base URLs](https://support.hypernode.com/knowledgebase/change-baseurl-magento1/#Configure_your_base_URLs_usingphpMyAdmin).
 
-Configuring Your Base URLs Using SSH
-------------------------------------
+## Configuring Your Base URLs Using SSH
 
 ### Change Base URLs Settings With MySQL From the Command Line
 
@@ -55,11 +53,13 @@ To do this, login on your Hypernode using SSH and navigate to your Magento 2 dir
 ```nginx
 cd ~/magento2
 ```
+
 Then, get an overview of the current base URL settings:
 
 ```nginx
 n98-magerun2 sys:store:config:base-url:list
 ```
+
 This will print out a list of your storefronts and their URL configuration:
 
 ```nginx
@@ -71,6 +71,7 @@ Magento Stores - Base URLs
 | 1 | default | http://support.hypernode.io/ | http://support.hypernode.io/ |
 +----+---------+------------------------------+------------------------------+
 ```
+
 Next run magerun2 and set the base URLs:
 
 ```nginx
@@ -82,10 +83,11 @@ magerun2 --root-dir=/data/web/magento2 config:store:set web/unsecure/base_link_u
 magerun2 --root-dir=/data/web/magento2 config:store:set web/secure/base_link_url https://$SHOPHOST/
 magerun2 --root-dir=/data/web/magento2 cache:flush
 ```
+
 Keep in mind:
 
-* Make sure the base urls always end with a trailing slash (`/`)
-* Replace the URL for `SHOPHOST` with the url of you shop.
+- Make sure the base urls always end with a trailing slash (`/`)
+- Replace the URL for `SHOPHOST` with the url of you shop.
 
 ### Change the Base URLs to SSL Using a Script
 
@@ -99,6 +101,7 @@ wget https://gist.githubusercontent.com/hn-support/0c76ebb5615a5be789997db2ae40b
 chmod +x change-baseurls.py
 ./change-baseurls.py
 ```
+
 Now check your base URLs using Magerun:
 
 ```nginx

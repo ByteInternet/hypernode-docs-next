@@ -1,4 +1,5 @@
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-restrict-access-to-your-admin-area/ -->
+
 # How to Restrict Access to Your Admin Area
 
 It is very important to restrict access to your Magento admin panel. Hypernodes do have a [Fail2Ban](https://support.hypernode.com/knowledgebase/how-to-protect-your-magento-store-against-brute-force/), but if your password has been leaked, hackers will have access to all your data and your customers data with all the consequences that entails. One of the best ways to restrict access is by limiting the IP address that can even access the admin section.

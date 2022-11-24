@@ -1,17 +1,16 @@
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-create-a-robots-txt-for-your-magento-1-shop/ -->
+
 # How to Create a robots.txt for your Magento 1 Shop
 
 Using a `robots.txt` is essential for instructing bots and crawlers how and at which rate your shop should be indexed. In this article we explain how to configure your Hypernode to serve a `robots.txt` for one or multiple storefronts.
 
-
-Using robots.txt for Magento
-----------------------------
+## Using robots.txt for Magento
 
 ### Manage multiple robots.txt for multiple storefronts
 
 If you want to use several different `robots.txt` for each storefront, we need to create some configuration:
 
-* Create a directory structure and copy the current `robots.txt` in place per storefront:
+- Create a directory structure and copy the current `robots.txt` in place per storefront:
 
 ```nginx
 for CODE in $(n98-magerun sys:store:list --format csv | sed 1d | cut -d "," -f 2 )
@@ -21,20 +20,23 @@ cp /data/web/public/robots.txt /data/web/public/robots/$CODE/robots.txt
 echo -e "\n\n## robots for storefront: $CODE" >> /data/web/public/robots/$CODE/robots.txt
 done
 ```
-* Now create `/data/web/nginx/server.robots` with the following content:
+
+- Now create `/data/web/nginx/server.robots` with the following content:
 
 ```nginx
 location /robots.txt {
 rewrite ^/robots\.txt$ /robots/$storecode/robots.txt;
 }
 ```
+
 It’s recommended to give each `robots.txt` for each storefront some unique identifier (for example the storefront name in a comment in the file), so it’s clear which `robots.txt` is served on which storefront.
 
-* Now test your `robots.txt` by requesting and verify whether the right sitemap is served:
+- Now test your `robots.txt` by requesting and verify whether the right sitemap is served:
 
 ```nginx
 curl -v https://www.example.com/robots.txt
 ```
+
 Now start editing your `robots.txt` for each store!
 
 ### Manage one robots.txt for all storefronts
@@ -129,6 +131,7 @@ Disallow: *cPath=*
 ";
 }
 ```
+
 This will create a location `/robots.txt` which returns the same data on all storefronts.
 
 ### Create a single robots.txt

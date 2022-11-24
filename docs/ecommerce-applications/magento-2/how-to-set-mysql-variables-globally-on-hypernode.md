@@ -1,10 +1,10 @@
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001208261-how-to-set-mysql-variables-globally-on-hypernode/ -->
+
 # How to set MySQL variables globally on Hypernode
 
 You can set MySQL variables for Magento in `~/magento2/app/etc/env.php` by editing the initStatements. This way the variables won’t get lost after a MySQL restart or an upgrade. Below you can find some examples on how to configure this in your env.php file.
 
 Example configuration on how to change the innodb_lock_wait_timeout:
-
 
 ```nginx
                 'initStatements' => 'SET NAMES utf8; SET GLOBAL innodb_lock_wait_timeout = 200;',

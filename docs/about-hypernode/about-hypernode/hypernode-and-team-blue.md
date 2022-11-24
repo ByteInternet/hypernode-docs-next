@@ -1,4 +1,5 @@
 <!-- source: https://support.hypernode.com/en/about/about-us/hypernode-and-team-blue/ -->
+
 # Hypernode and team.blue
 
 From 2019 Hypernode is part of team.blue, a leading digital enabler for companies and entrepreneurs.
@@ -9,10 +10,10 @@ The vision of the group has always been to grow the business by acquiring and in
 
 Thanks to a continuous strong organic growth and additional acquisitions, Combell Group has become a market leader in hosting services in the Benelux and The Nordics. We're now the 3rd biggest cloud hosting company in Europe, and a leading mass webhoster in Northwest Europe.
 
-In 2019 Combell Group (“Combell”) and TransIP Group (“TransIP”) merged into team.blue, one of the latest European tech companies to exceed a $1 billion valuation. Team.blue offers digital tools such as hosting, email and applications to over 1.2 million customers across Europe, with a base of over 600 employees working in expert teams.
+In 2019 Combell Group (“Combell”) and TransIP Group (“TransIP”) merged into team.blue, one of the latest European tech companies to exceed a \$1 billion valuation. Team.blue offers digital tools such as hosting, email and applications to over 1.2 million customers across Europe, with a base of over 600 employees working in expert teams.
 
 In this team.blue group Hypernode is part of team.blue NL. A few of the other companies in this vertical are TransIP, CloudVPS, Signet, Proserve, Vimexx and Breedband.
 
 Given that Hypernode is part of team.blue, we will collaborate with other team.blue companies on different projects.
 
-You can find more information about team.blue on [this website](https://team.blue/). 
+You can find more information about team.blue on [this website](https://team.blue/).

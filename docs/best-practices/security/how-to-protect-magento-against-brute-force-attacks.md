@@ -1,11 +1,10 @@
 <!-- source: https://support.hypernode.com/en/best-practices/security/how-to-protect-magento-against-brute-force-attacks/ -->
+
 # How to Protect Magento Against Brute Force Attacks
 
 Magento comes standard with sections for administrative purposes, like `/admin` and `/downloader`. These sections are interesting targets for hackers. This article explains how to protect your shop from malicious attacks.
 
-
-Available check on MageReport.com
----------------------------------
+## Available check on MageReport.com
 
 MageReport gives insight in the vulnerability of your shop by checking these URL’s:
 
@@ -14,10 +13,10 @@ MageReport gives insight in the vulnerability of your shop by checking these URL
 /admin
 /downloader
 ```
+
 An error is raised, when an admin/downloader login screen is found, or a basic auth dialogue (on RSS).
 
-What is the problem?
---------------------
+## What is the problem?
 
 Each Magento shop comes standard with several sections for administrative purposes (also called “back-end” or “admin panel”). These are by default located at `/admin`, `/downloader` and various `/rss` endpoints (such as `/rss/catalog/notifystock/`) and can be abused in several ways.
 
@@ -25,12 +24,11 @@ First, if these sections are at their default locations, hackers can easily find
 
 On our platform, we see about **one million brute-force probes** per week.
 
-Second, even if you have strong passwords (like “*ks$Sf@#571”) that cannot be guessed easily, these brute-force attacks might impose a problem. Valuable server capacity is wasted in handling these failed login attempts. In other words, your site may be slower while under attack.
+Second, even if you have strong passwords (like “\*ks\$Sf@#571”) that cannot be guessed easily, these brute-force attacks might impose a problem. Valuable server capacity is wasted in handling these failed login attempts. In other words, your site may be slower while under attack.
 
 Third, to exploit several known Magento vulnerabilities, a hacker would require the name of the admin panel. So it is best to make this secret.
 
-What do I do?
--------------
+## What do I do?
 
 On Hypernode we have implemented adaptive filtering.
 
@@ -64,6 +62,7 @@ location /downloader/ {
   }
 }
 ```
+
 Replace x.x.x.x with the IP addresses you want to allow.
 
 And do the same for `nginx/server.rss`:
@@ -108,6 +107,7 @@ location = /rss/order/review {
 
 etc...
 ```
+
 **Do you use Apache?**
 
 Modify the existing `downloader/.htaccess` file and add these lines to end:
@@ -117,6 +117,7 @@ order deny,allow
 deny from all
 allow from x.x.x.x
 ```
+
 Because the RSS endpoint is reachable under various locations, it is generally not possible to filter RSS when using Apache (without using mod_rewrite). It is recommended to upgrade to at least version 1.9.3 and disable RSS in the backend.
 
 ### 3. Install adaptive filtering
@@ -137,6 +138,7 @@ logpath = /var/log/nginx/access.log
 bantime = 7200
 maxretry = 10
 ```
+
 And this in `/etc/fail2ban/filter.d/hn-nginx-retry-ban.conf`:
 
 ```nginx
@@ -147,13 +149,13 @@ failregex = ^&lt;HOST&gt; .+"POST \S+wp-login.php
             ^&lt;HOST&gt; .+"POST \S+(/downloader/|/downloader/index.php\?A=loggedin|/admin/index/|/admin/)\s
 ignoreregex =
 ```
+
 Disclaimer: these configuration snippets are provided “as is” and we do not guarantee that they will work for you.
 
 ### Amasty Improved Layered Navigation (Magento 1)
 
 Do you have a Magento 1 shop and do you use the Amasty extension? You may be open to bruteforce attacks if you have a vulnerable version of the Improved Layered Navigation plugin installed. Try visiting the path `/amshopby/adminhtml_filter` (e.g. [www.example.com/amshopby/adminhtml_filter](http://www.example.com/amshopby/adminhtml_filter)) and check if you are redirected to your admin login page. If so, follow the instructions above to restrict access to this path.
 
-Need help?
-----------
+## Need help?
 
 We do not provide Magento consultancy ourselves, however we partnered with professional agencies that will be able to help you. Don’t hesitate to [contact one of these agencies](https://www.magereport.com/page/support).

@@ -1,16 +1,14 @@
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001155575-how-to-change-your-hypernode-settings/ -->
+
 # How to Change Your Hypernode Settings
 
 The Control Panel offers an overview of your Hypernode’s statistics and settings. These settings can easily be adjusted via the command line. This article offers an in-depth explanation of these values.
 
-
-How to Change These Settings
-----------------------------
+## How to Change These Settings
 
 The settings below can be configured through our hypernode-systemctl tool. The hypernode-systemctl tool allows you to set certain values for your Hypernode via the command line interface. In the past we asked you to contact support or to go to your Service Panel to change a setting. The hypernode-systemctl tool saves valuable time and makes developing and maintaining a Magento shop even more easier.
 
-The Settings in the Control Panel
----------------------------------
+## The Settings in the Control Panel
 
 ### Uses floating IP
 

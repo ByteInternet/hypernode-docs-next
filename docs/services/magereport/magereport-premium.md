@@ -1,31 +1,28 @@
 <!-- source: https://support.hypernode.com/en/services/magereport/magereport-premium/ -->
+
 # MageReport Premium
 
 [MageReport Premium](http://magereport.com/) provides Hypernode customers with extra information about the performance of their Magento shop. This article explains the difference between MageReport and MageReport Premium and gives more information about the performance checks and charts. MageReport Premium offers a [checklist](https://www.magereport.com/scan/checklist/) with a complete overview of all your shops and the status per check.
 
 *Want access to MageReport Premium? MageReport Premium is developed for our optimised Magento hosting platform: Hypernode. Check out [Hypernode.com](https://www.hypernode.com/) for more information.*
 
-
-Hypernode Customers Get Even More
----------------------------------
+## Hypernode Customers Get Even More
 
 Anyone can scan their Magento shop with [MageReport.com](http://magereport.com/) to check whether there are any security issues. However, when logged on with their Hypernode account, Hypernode customers can access additional data such as Performance checks and charts. MageReport Premium offers a [checklist](https://www.magereport.com/scan/checklist/) with a complete overview of all your shops and the status per check. MageReport (Premium) offers:
 
-* Security level checks *(MageReport & MageReport Premium)*
-* Performance checks *(MageReport Premium only)*
-* Charts *(MageReport Premium only)*
+- Security level checks *(MageReport & MageReport Premium)*
+- Performance checks *(MageReport Premium only)*
+- Charts *(MageReport Premium only)*
 
 The Performance checks and charts offer specific information about your shop’s performance and help you optimize your Hypernode. That’s why MageReport for Hypernode users is called MageReport Premium.
 
 Accessing [MageReport Premium](http://magereport.com/) is easy by logging on to MageReport.com with your Hypernode customer account. Choose ‘Sign in with Byte’(for Service Panel users) or 'Sign in with Hypernode' (for Control Panel users) on your top right.
 
-Security Level
---------------
+## Security Level
 
 The Security level checks are accessible for any Magento shop owner (Hypernode or not) and show you the safety of your Magento shop. If a check comes out red, navigate to the given support documentation how-to and find out how to fix the vulnerability. All Security level how-to’s can be found in the [Security category](https://support.hypernode.com/knowledgebase_category/security/).
 
-Performance Checks
-------------------
+## Performance Checks
 
 The Performance checks in MageReport Premium tell you how to make your shop even faster, by showing the bottlenecks in your Magento.
 
@@ -59,8 +56,7 @@ Not optimising images properly results in extremely slow loading time. Quick loa
 
 *NB: MageReport.com checks for a cronjob that optimizes your images periodically. If you optimised your images only once, the check will come out red.*
 
-Stability
----------
+## Stability
 
 ### Storefronts Configured Correctly?
 
@@ -73,12 +69,12 @@ n98-magerun sys:store:config:base-url:list
 ```nginx
 magerun2 sys:store:config:base-url:list
 ```
+
 This tool shows the storefronts configured in your shop and the storecode. In MageReport Premium you can check whether your DNS is configured correctly. See our manual on [configuring DNS](https://support.hypernode.com/en/hypernode/dns/how-to-manage-your-dns-settings-for-hypernode)for more information.
 
 *If you’re using Cloudflare the check will say your storefronts aren’t configured correctly and your shop is not live. Right now MageReport can’t detect if a shop is using Cloudflare, so you can ignore this.*
 
-Charts
-------
+## Charts
 
 Most charts give you more specific information about a Performance check.
 

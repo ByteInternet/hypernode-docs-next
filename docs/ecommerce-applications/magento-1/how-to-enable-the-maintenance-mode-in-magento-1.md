@@ -1,4 +1,5 @@
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-enable-the-maintenance-mode-in-magento-1/ -->
+
 # How to Enable the Maintenance Mode in Magento 1
 
 Maintenance mode is a shortcut to serve a temporary error notification to all customers that are visiting your shop informing them to come back at a later time, as it is currently not possible to place an order.
@@ -7,9 +8,7 @@ Periodically shop owners and maintainers want to perform upgrades, install exten
 
 To do this in a secure manner, without customers being able to placing orders that get lost during the operation, maintenance mode is available on your Magento shop.
 
-
-Enable Maintenance Mode for Magento 1
--------------------------------------
+## Enable Maintenance Mode for Magento 1
 
 ### Enable the Maintenance Mode in Magento 1 by Setting the maintenance.flag
 
@@ -20,6 +19,7 @@ Alternatively you can use `n98-magerun` to do this for you:
 ```
 n98-magerun sys:maintenance
 ```
+
 This will switch the maintenance mode from ON to OFF or from OFF to ON.
 
 If you site is set to maintenance mode ON, an error message will be shown to all visitors of your site:
@@ -40,6 +40,7 @@ if (file_exists($maintenanceFile)) {
     exit;
 }
 ```
+
 To:
 
 ```
@@ -51,8 +52,8 @@ if (file_exists($maintenanceFile) && !in_array ($ip, $allowed_ips)) {
     exit;
 }
 ```
-Serve a Custom Error Message When in Maintenance Mode
------------------------------------------------------
+
+## Serve a Custom Error Message When in Maintenance Mode
 
 To serve the error page in your own style, we should add some layout files in the directory from where error pages are served.
 
@@ -68,16 +69,19 @@ Magento 1:
 cd /data/web/public/errors
 cp -rv default custom/
 ```
+
 Next copy the local.xml.sample to local.xml:
 
 ```
 cp local.xml.sample local.xml
 ```
+
 Now change `<skin>default</skin>` to `<skin>custom</skin>`; in both `local.xml` and `design.xml` to activate the custom skin we just created:
 
 ```
 editor local.xml design.xml
 ```
+
 After this change, the static content for error pages is served from `/errors/custom` rather than from `/errors/default`.
 
 *You can now start designing and adjust the custom error files to your preferences by changing the files in the `custom/` directory.*

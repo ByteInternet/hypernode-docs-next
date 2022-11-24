@@ -1,4 +1,5 @@
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-enable-the-maintenance-mode-in-magento-2/ -->
+
 # How to Enable the Maintenance Mode in Magento 2
 
 Maintenance mode is a shortcut to serve a temporary error notification to all customers that are visiting your shop informing them to come back at a later time, as it is currently not possible to place an order.
@@ -7,9 +8,7 @@ Periodically shop owners and maintainers want to perform upgrades, install exten
 
 To do this in a secure manner, without customers being able to placing orders that get lost during the operation, maintenance mode is available on your Magento shop.
 
-
-Maintenance Mode for Magento 2
-------------------------------
+## Maintenance Mode for Magento 2
 
 In contrast to Magento 1, Magento 2 provides an internal mechanism to add IP addresses that should be able to access the site while in maintenance mode, so we don’t need additional configuration in the `index.php` to allow developers access to the site while the maintenance flag is set.
 
@@ -22,6 +21,7 @@ To do this, log in on your Hypernode, and create the maintenance flag:
 ```nginx
 touch /data/web/magento2/var/.maintenance.flag
 ```
+
 If you site is set to maintenance mode **ON**, an error message will be shown to all visitors of your site:
 
 ### Allow a Developer Access to a Magento Installation in Maintenance Mode
@@ -31,6 +31,7 @@ To allow your developers access to the Magento 2 site while in maintenance mode,
 ```nginx
 echo 1.2.3.4 1.2.3.5 1.2.4.5 >> /data/web/magento2/var/.maintenance.ip
 ```
+
 Alternatively you can do this using the bin/magento cli tool:
 
 ```nginx
@@ -38,18 +39,19 @@ cd ~/magento2
 chmod +x bin/magento
 bin/magento maintenance:enable --ip=1.2.3.4 --ip=2.3.4.5
 ```
+
 When the IP addresses are set in the `.maintenance.ip` file, you can use `n98-magerun` to achieve the same:
 
 ```nginx
 n98-magerun2 sys:maintenance --on
 n98-magerun2 sys:maintenance --off
 ```
+
 ### Additional Information
 
 For additional information, take a look at the [Magento 2 documentation about enabling the maintenance mode.](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-subcommands-maint.html)
 
-Serve a Custom Error Message When in Maintenance Mode
------------------------------------------------------
+## Serve a Custom Error Message When in Maintenance Mode
 
 To serve the error page in your own style, we should add some layout files in the directory from where error pages are served.
 
@@ -65,16 +67,19 @@ Magento 2:
 cd /data/web/magento2/errors
 cp -rv default custom/
 ```
+
 Next copy the `local.xml.sample` to `local.xml`:
 
 ```nginx
 cp local.xml.sample local.xml
 ```
+
 Now change `<skin>default</skin>` to `<skin>custom</skin>` in both `local.xml` and `design.xml` to activate the custom skin we just created:
 
 ```nginx
 editor local.xml design.xml
 ```
+
 After this change, the static content for error pages is served from `/errors/custom` rather than from `/errors/default`.
 
 *You can now start designing and adjust the custom error files to your preferences by changing the files in the `custom/` directory.*

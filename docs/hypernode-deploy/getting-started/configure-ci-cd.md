@@ -9,9 +9,9 @@ In this example we'll be covering the Github Actions CI/CD configuration.
 Hypernode Deploy needs a few 'credentials' to be able to function. The necessary credentials are:
 
 1. The private SSH key. (`SSH_PRIVATE_KEY`)
-2. The composer auth.json file, optional. (`DEPLOY_COMPOSER_AUTH`)
+1. The composer auth.json file, optional. (`DEPLOY_COMPOSER_AUTH`)
    - This is only necessary when your project needs to access private Composer repositories.
-3. The Hypernode API token, optional. (`HYPERNODE_API_TOKEN`)
+1. The Hypernode API token, optional. (`HYPERNODE_API_TOKEN`)
    - This is only necessary when you make use of Hypernode API driven features like Brancher.
 
 These credentials can usually be stored as 'secret' environment variables in the pipeline system.
@@ -152,7 +152,6 @@ jobs:
         run: hypernode-deploy cleanup
 ```
 
-
 ```{note}
 CI/CD configuration templates can be found here:
 - [Github Actions](../pipelines/github-actions.md)
@@ -160,6 +159,6 @@ CI/CD configuration templates can be found here:
 - [Bitbucket Pipelines](../pipelines/bitbucket-pipelines.md)
 ```
 
-[1]: <https://github.com/features/actions>
-[2]: <https://about.gitlab.com/features/continuous-integration/>
-[3]: <https://bitbucket.org/product/features/pipelines>
+[1]: https://github.com/features/actions
+[2]: https://about.gitlab.com/features/continuous-integration/
+[3]: https://bitbucket.org/product/features/pipelines

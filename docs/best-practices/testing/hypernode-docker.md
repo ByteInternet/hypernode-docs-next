@@ -1,26 +1,24 @@
 <!-- source: https://support.hypernode.com/en/best-practices/testing/hypernode-docker/ -->
+
 # Hypernode-docker
 
 The official Hypernode Docker image for Magento development is now available. This image can be used to set up a fast and easy local development environment for Hypernode, or as a build machine in a CI environment representative of the production environment. The image contains the exact same packages and configuration as a real Hypernode except for some Docker specific tweaks. By testing and developing against this image you can be sure that when you deploy to a Hypernode in production there will be no surprises because of different software versions or configurations.
 
 Interested in a case study? Read [this article](https://blog.guapa.nl/local-development-with-the-hypernode-docker-container-linux/) about the Hypernode docker of one of our partners!
 
-
-About the Hypernode Docker Image
---------------------------------
+## About the Hypernode Docker Image
 
 We build this image multiple times a day (every time we do a [release](https://support.hypernode.com/category/changelog/)) by applying our configuration management on the [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker) ['fat' container](https://blog.phusion.nl/2015/01/20/baseimage-docker-fat-containers-treating-containers-vms/). By treating the Docker as a lightweight VM instead of as a vehicle for a single process we stay close to what an actual Hypernode actually looks like. No micro-services or a multi-container application, but a single instance with minimal network overhead and all batteries included.
 
 The `hypernode-docker` image has SSH, PHP, NGINX, MySQL, Redis, Varnish and Elasticsearch. The biggest difference between a real Hypernode and this container is that this environment does not have an [init system](https://en.wikipedia.org/wiki/Init). While it is possible to [run systemd within a Docker Container](https://developers.redhat.com/blog/2014/05/05/running-systemd-within-docker-container/) if the host is also runs [systemd](https://www.freedesktop.org/wiki/Software/systemd/), we choose not to do so to achieve greater compatibility and user-friendliness.
 
-***New:**On the newest Hypernode-docker image is Elasticsearch 7.x by default included. There is nothing you'd have to do to be able to use it since ES 7.x is enabled by default.
+\*\*\*New:\*\*On the newest Hypernode-docker image is Elasticsearch 7.x by default included. There is nothing you'd have to do to be able to use it since ES 7.x is enabled by default.
 
-Usage
------
+## Usage
 
 First of all download the latest version of Docker for Windows or Mac from the [Docker website](https://www.docker.com/get-started) and make sure to install Docker on your computer. If you are working with Linux you can find all the info to install Docker in their documentation [Docker Docs](https://docs.docker.com/install).
 
-Now you need to decide which **[image](https://github.com/byteinternet/hypernode-docker)**you need. We've several images, all with other PHP and MySQL versions. After you decided which images fits your requirements you can pull the image to your local machine and start a new Docker container. In the below example we used the image "hypernode-buster-docker-php74-mysql57". If you need another you can change that name in both commands below to the image you want to use.
+Now you need to decide which \*\*[image](https://github.com/byteinternet/hypernode-docker)\*\*you need. We've several images, all with other PHP and MySQL versions. After you decided which images fits your requirements you can pull the image to your local machine and start a new Docker container. In the below example we used the image "hypernode-buster-docker-php74-mysql57". If you need another you can change that name in both commands below to the image you want to use.
 
 ### Start the Docker and logging in
 
@@ -30,12 +28,14 @@ Starting a container
 docker pull docker.hypernode.com/byteinternet/hypernode-buster-docker-php74-mysql57:latest
 docker run -p 222:22 -p 8080:80 -p 8025:8025 docker.hypernode.com/byteinternet/hypernode-buster-docker-php74-mysql57:latest
 ```
+
 This makes the SSH, HTTP, and Mailhog ports available on the localhost. If you need any other ports (Such as 443 for HTTPS, or 2222 for sftp) available, you can insert these in the command above. In this example you should use the following command to connect to the container:
 
 ```
 # Login as app user, obviously you can replace "app" with "root" to login as root
 ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -p 222 app@127.0.0.1
 ```
+
 The password is ‘*insecure_docker_ssh_password*’.
 
 **Checker whether or not you're are in the Docker environment**
@@ -45,11 +45,13 @@ The password is ‘*insecure_docker_ssh_password*’.
 app@e4b7d958e69c:~$ ls /etc/hypernode/is_docker
 /etc/hypernode/is_docker
 ```
+
 Now you're ready to use the hypernode-importer to import a shop from a remote server.
 
 ```
 hypernode-importer --host yourhypernode.hypernode.io --path /data/web/public --set-default-url
 ```
+
 To see the container in your browser you should change the base-url to “[http://127.0.0.1:8080/”](http://127.0.0.1:8080/%E2%80%9D) and don’t forget to flush your cache afterwards:
 
 #### **Magento 1**[How to change base-urls in Magento 1](https://support.hypernode.com/knowledgebase/change-baseurl-magento1/#Configuring_your_base_URL8217s_using_SSH)
@@ -57,6 +59,7 @@ To see the container in your browser you should change the base-url to “[http:
 ```
 magerun ca:fl
 ```
+
 #### **Magento 2**[How to change base-url in Magento 2](https://support.hypernode.com/en/ecommerce/magento-2/how-to-change-your-magento-2-base-urls)
 
 ```
@@ -67,6 +70,7 @@ magerun ca:fl
 cd magento2
 magerun2 ca:fl
 ```
+
 #### **General Docker Commands**
 
 You might want to start several docker containers to develop multiple webshops. These commands may come in handy:
@@ -88,6 +92,7 @@ docker stop 9187ce8348b0
 # Remove container (container must be stop before it could be removed)
 docker rm 9187ce8348b0
 ```
+
 ### Restarting services
 
 Because `systemctl` is not available inside the container, the services are started by an [init script](https://github.com/phusion/baseimage-docker#running-scripts-during-container-startup) on container startup. Note that because the systemd unit files are not parsed there could be a slight drift between what commandline flags the processes actually use in production compared to in this contanier.
@@ -97,10 +102,10 @@ To restart all services run:
 ```
 bash /etc/my_init.d/60_restart_services.sh
 ```
+
 If you only want to restart a specific service, inspect the restart_services.sh script and kill the screen for the service you want to restart. Then run the corresponding screen command to start the service again.
 
-Starting the container
-----------------------
+## Starting the container
 
 ### Running the container on the foreground
 
@@ -175,12 +180,14 @@ To start the container in the background, run the following command:
 $ docker run -d -p 222:22 -p 8080:80 -p 8025:8025 docker.hypernode.com/byteinternet/hypernode-docker:latest
 36532b58822cf27f74234f6afc01db21fca15b480bf43634ae725db35047dc5a
 ```
+
 The IP address of the container can then be found with:
 
 ```
 $ docker inspect -f '{{ .NetworkSettings.IPAddress }}' 36532b58822cf27f74234f6afc01db21fca15b480bf43634ae725db35047dc5a
 172.17.0.3
 ```
+
 You can view the logs with docker logs:
 
 ```
@@ -240,20 +247,22 @@ hypernode-docker status: everything ok
 *** Booting runit daemon...
 *** Runit started as PID 312
 ```
-Importing a Magento shop
-------------------------
+
+## Importing a Magento shop
 
 1. Add a hosts entry for the Docker:
 
 ```
 grep -q hypernode.hypernode.local /etc/hosts || echo "172.17.0.2 hypernode.hypernode.local" >> /etc/hosts
 ```
+
 2. Start an SSH agent and add your key:
 
 ```
 eval $(ssh-agent -s)
 ssh-add # Add your keys
 ```
+
 3. Log in to the hypernode-docker container:
 
 ```
@@ -261,6 +270,7 @@ ssh-add # Add your keys
 # The default password is 'insecure_docker_ssh_password', or use the insecure key
 ssh -A root@172.17.0.2
 ```
+
 4. Double-check you are in the Docker environment and not the real Hypernode:
 
 ```
@@ -268,6 +278,7 @@ ssh -A root@172.17.0.2
 app@e4b7d958e69c:~$ ls /etc/hypernode/is_docker
 /etc/hypernode/is_docker
 ```
+
 5.
 
 Run the [hypernode-importer](https://support.hypernode.com/knowledgebase/migrating-your-magento-to-hypernode/#Option_2_Migrate_your_shop_via_Shell_using_hypernode-importer_8211_Magento_1_2) to import a shop from a real Hypernode:
@@ -275,12 +286,12 @@ Run the [hypernode-importer](https://support.hypernode.com/knowledgebase/migrati
 ```
 hypernode-importer --host yourhypernode.hypernode.io --path /data/web/public --set-default-url
 ```
+
 6. Point your browser to the importer shop:
 
 Go to <http://hypernode.hypernode.local/>
 
-Adding keys to Container
-------------------------
+## Adding keys to Container
 
 To create a Docker instance of hypernode-docker with your own keys, create a directory with your public key in it and a Dockerfile.
 
@@ -294,20 +305,22 @@ MAINTAINER yourname
 ADD key.pub /tmp/key.pub
 RUN cat /tmp/key.pub > /root/.ssh/authorized_keys && cat /tmp/key.pub > /data/web/.ssh/authorized_keys && rm -f /tmp/deployment.pub
 ```
+
 Then build the Docker with:
 
 ```
 docker build -t hypernode-with-keys .
 ```
+
 And once finished, start the Docker with
 
 ```
 docker run hypernode-with-keys
 ```
+
 Note: remember that you will also need to change the default app and root user passwords if you're looking to create a secure environment.
 
-Inspecting Emails Sent from The Docker
---------------------------------------
+## Inspecting Emails Sent from The Docker
 
 Like in the [hypernode-vagrant](https://github.com/ByteInternet/hypernode-vagrant#mail) project, all emails are caught and redirected to a [MailHog](https://github.com/mailhog/MailHog) instance. You can visit the mailhog web interface on port `8025`. So for example, if the IP of your container is `172.17.0.2` you would be able to access MailHog on <http://172.17.0.2:8025/>.
 
@@ -316,10 +329,10 @@ Alternatively you could set up a hosts entry like so on the host (not in the Doc
 ```
 grep -q hypernode.hypernode.local /etc/hosts || echo "172.17.0.2 hypernode.hypernode.local" >> /etc/hosts
 ```
+
 And then visit the MailHog instance on [http://hypernode.hypernode.local:8025](http://hypernode.hypernode.local:8025/).
 
-Installing Magento 1
---------------------
+## Installing Magento 1
 
 Make sure you have a hosts entry set up:
 
@@ -327,6 +340,7 @@ Make sure you have a hosts entry set up:
 # Note that you need root to write to /etc/hosts
 grep -q hypernode.hypernode.local /etc/hosts || echo "172.17.0.2 hypernode.hypernode.local" >> /etc/hosts
 ```
+
 Switch to a Magento 1 compatible PHP version
 
 ```
@@ -341,21 +355,25 @@ bash /etc/my_init.d/60_restart_services.sh
 # Log out of the Docker
 exit
 ```
+
 Log in to the container as the app user
 
 ```
 ssh app@172.17.0.2 -i keys/insecure_key
 ```
+
 Remove any Magento 2 specific NGINX configuration
 
 ```
 rm -rf /data/web/nginx/magento2.flag
 ```
+
 Create a new database:
 
 ```
 echo 'create database magento;' | mysql
 ```
+
 Install Magento with [n98-magerun](https://github.com/netz98/n98-magerun):
 
 ```
@@ -396,8 +414,8 @@ php -d memory_limit=1024M /usr/local/bin/n98-magerun install --magentoVersionByN
 --dbName=magento --installSampleData=no --useDefaultConfigParams=yes --installationFolder=/data/web/public \
 --baseUrl=http://hypernode.hypernode.local --replaceHtaccessFile=no --no-interaction
 ```
-Varnish on Docker
------------------
+
+## Varnish on Docker
 
 By default Varnish is already enabled, but won’t work because the server is missing some configuration in order to work correctly. This isn’t implemented because there were earlier issues with Varnish on a Vagrant environment.
 
@@ -407,6 +425,7 @@ If you want to experiment with Varnish in your Docker environment you should ove
 # Log in as the root user
 ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -p 222 root@127.0.0.1
 ```
+
 Overwrite the content of “/etc/nginx/outside.conf” to the following:
 
 ```
@@ -474,8 +493,8 @@ include /etc/nginx/app/staging.*;
 include /etc/nginx/server.blocked_bots.conf;
 }
 ```
-Restart Services
-----------------
+
+## Restart Services
 
 Restart the services after you changed the config file.
 

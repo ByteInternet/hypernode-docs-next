@@ -1,11 +1,10 @@
 <!-- source: https://support.hypernode.com/en/about/support/24-7-monitoring-and-alerting/ -->
+
 # 24/7 Monitoring and Alerting
 
 At Hypernode we understand like no other that the availability and stability of the application is a top priority for our customers. This stability depends on many different factors, including the stability of the Hypernode itself. To ensure the highest possible stability, our experts monitor your Hypernode 24 hours a day, 7 days a week. If something threatens the stability of the Hypernode, an engineer stands ready to intervene.
 
-
-Monitoring
-----------
+## Monitoring
 
 It is our responsibility to monitor all the offered services on the Hypernode. As such we have setup a global monitoring network that checks your Hypernode’s availability from locations in Europe, the United States, and Eastern Asia. Each location checks the availability roughly every 2 minutes. An alert is raised if too many errors are received globally, and an Emergency Rescue is started.  If the automated Emergency Rescue can’t fix the issue, the alert is escalated to the Hypernode Emergency Recovery Operative (Hero).
 
@@ -17,8 +16,7 @@ Our monitoring is focused at the Hypernode hosting software services that come p
 
 The big thing missing from the list of things we monitor, is your application, or “Does Magento work”. The reason for this is twofold. First, while we do know a lot about hosting software, and we know quite a bit about the hosted applications and Magento, we don’t know your specific implementation. We also don’t know what is ‘normal’ or ‘expected’ behavior for your application. For example, if your application starts giving errors because it’s overloaded, due to a new marketing campaign aimed at your Chinese customers, you don’t want our automated systems to interpret that as a DDoS, and block all of China. You also wouldn’t want our Emergency Rescue to restart MySQL, because your application is throwing errors since you’re mid-upgrade.
 
-Alerting
---------
+## Alerting
 
 When the Emergency Rescue process can’t fix the issue, or takes longer than expected, an alert is raised to the Hypernode Emergency Recovery Operative (Hero), to manually investigate and fix the issue. The Hero is stand-by 24/7, both during, and outside of office hours. The alert automatically escalates to the entire team, if the Hero doesn’t respond to the alert within 30 minutes. Both on- and off-duty engineers are continuously alerted until the issue is acknowledged by a Hero.
 

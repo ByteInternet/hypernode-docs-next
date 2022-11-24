@@ -1,4 +1,5 @@
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48000967652-what-limits-apply-to-active-php-requests-per-ip/ -->
+
 # What Limits Apply To Active PHP Requests Per IP
 
 Hypernodes uses Nginx and PHP-FPM for processing and serving PHP pages. PHP-FPM uses FPM worker threads to process requests from Nginx. The amount of workers that are available on the Hypernode depends on how many available CPU cores the server has. Benchmark tests have concluded that, based on CPU contention and concurrency, the optimal number of workers is defined by the formula `vCPUs * 5`.

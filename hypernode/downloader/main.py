@@ -7,6 +7,7 @@ from textwrap import dedent
 from typing import List, Optional, Tuple
 from urllib.parse import urlparse
 
+import mdformat
 import requests
 from bs4 import BeautifulSoup
 from markdownify import markdownify as md
@@ -179,6 +180,9 @@ def convert_document(
         f"{document_source_comment}\n"
         f"# {article_heading}\n"
         f"{article_body_markdown}"
+    )
+    document_contents = mdformat.text(
+        document_contents, extensions=["frontmatter", "myst"]
     )
 
     filepath = output_dir.joinpath(filename)

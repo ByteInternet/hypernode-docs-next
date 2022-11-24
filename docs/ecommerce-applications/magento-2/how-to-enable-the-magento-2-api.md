@@ -1,4 +1,5 @@
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-enable-the-magento-2-api/ -->
+
 # How to Enable the Magento 2 API
 
 To enable the Magento API, first [**create the correct users**](https://www.yireo.com/tutorials/magebridge/administration/596-step-by-step-create-a-magento-api-user).
@@ -23,4 +24,5 @@ location /api {
     }
 }
 ```
+
 NB: If you don’t want to update IP addresses in all config files with every change of IP address, you can choose to use [**include files**](https://support.hypernode.com/knowledgebase/create-reusable-config-for-custom-snippets/).
