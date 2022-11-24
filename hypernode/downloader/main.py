@@ -4,11 +4,12 @@ from logging import getLogger
 from pathlib import Path
 from posixpath import basename
 from textwrap import dedent
-from typing import List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple
 from urllib.parse import urlparse
 
 import mdformat
 import requests
+import yaml
 from bs4 import BeautifulSoup
 from markdownify import markdownify as md
 from slugify import slugify
@@ -150,6 +151,40 @@ def fetch_document(url: str) -> BeautifulSoup:
     return BeautifulSoup(response.content, "html.parser")
 
 
+def get_document_metadata(document: BeautifulSoup) -> Dict[str, str]:
+    result = {}
+
+    ALLOWED_META_NAMES = "description"
+    ALLOWED_META_PROPS = ()
+
+    for meta_element in document.find_all("meta"):
+        if not meta_element.has_attr("content") or not meta_element["content"]:
+            continue
+
+        if meta_element.has_attr("name") and meta_element["name"] in ALLOWED_META_NAMES:
+            result[meta_element["name"]] = meta_element["content"]
+        elif (
+            meta_element.has_attr("property")
+            and meta_element["property"] in ALLOWED_META_PROPS
+        ):
+            result["property={}".format(meta_element["property"])] = meta_element[
+                "content"
+            ]
+
+    return result
+
+
+def get_metadata_frontmatter(document: BeautifulSoup) -> str:
+    frontmatter_yaml = "\n"
+
+    metadata = get_document_metadata(document)
+    if metadata:
+        frontmatter = {"myst": {"html_meta": metadata}}
+        frontmatter_yaml = yaml.dump(frontmatter, default_flow_style=False)
+
+    return "---\n{}---".format(frontmatter_yaml)
+
+
 def convert_document(
     document: BeautifulSoup, url: str, output_dir: Optional[Path] = None
 ) -> Tuple[Path, str]:
@@ -177,7 +212,8 @@ def convert_document(
 
     document_source_comment = f"<!-- source: {url} -->"
     document_contents = (
-        f"{document_source_comment}\n"
+        get_metadata_frontmatter(document) + "\n\n"
+        f"{document_source_comment}\n\n"
         f"# {article_heading}\n"
         f"{article_body_markdown}"
     )
