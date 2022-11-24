@@ -181,7 +181,9 @@ def convert_document(
         f"# {article_heading}\n"
         f"{article_body_markdown}"
     )
-    document_contents = mdformat.text(document_contents)
+    document_contents = mdformat.text(
+        document_contents, extensions=["frontmatter", "myst"]
+    )
 
     filepath = output_dir.joinpath(filename)
 
