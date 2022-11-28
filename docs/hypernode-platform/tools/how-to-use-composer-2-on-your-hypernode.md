@@ -46,6 +46,7 @@ Of course you could install any version of composer you want manually by running
 ```nginx
 wget https://getcomposer.org/composer-stable.phar -O composer
 chmod +x composer
+./composer --version
 Composer version 2.0.12 2021-04-01 10:14:59
 ```
 
