@@ -10,7 +10,7 @@ From January 2022, Composer 2 is the default Composer version on our Hypernode p
 
 To switch between Composer versions you can use the hypernode-api or the hypernode-systemctl command-line tool:
 
-```nginx
+```console
 app@levka6-appname-magweb-cmbl:~$ ls -lah /usr/local/bin/composer
 lrwxrwxrwx 1 root root 9 Jan  5 16:08 /usr/local/bin/composer -> composer1
 app@levka6-appname-magweb-cmbl:~$ ls -lah /usr/local/bin/composer*
@@ -25,12 +25,12 @@ update_node                     2022-01-06T15:50:12Z  2022-01-06T15:50:13Z  runn
 app@levka6-appname-magweb-cmbl:~$ ls -lah /usr/local/bin/composer*
 lrwxrwxrwx 1 root root    9 Jan  5 16:08 /usr/local/bin/composer -> composer2
 -rwxr-xr-x 1 root root 2.0M Jan  5 16:09 /usr/local/bin/composer1
-  -rwxr-xr-x 1 root root 2.3M Jan  5 16:09 /usr/local/bin/composer2
+-rwxr-xr-x 1 root root 2.3M Jan  5 16:09 /usr/local/bin/composer2
 ```
 
 And to switch back to Composer 1:
 
-```nginx
+```console
 app@levka6-appname-magweb-cmbl:~$ hypernode-systemctl settings composer_version 1.x
 Operation was successful and is being processed. Please allow a few minutes for the settings to be applied. Run 'livelog' to see the progress.
 ```
@@ -43,16 +43,16 @@ The reason for this is backwards compatibility because Magento only started [inc
 
 Of course you could install any version of composer you want manually by running:
 
-```nginx
-wget https://getcomposer.org/composer-stable.phar -O composer
-chmod +x composer
-./composer --version
-Composer version 2.0.12 2021-04-01 10:14:59
+```console
+$ wget https://getcomposer.org/composer-stable.phar -O composer
+$ chmod +x composer
+$ ./composer --version
+Composer version 2.2.18 2022-08-20 11:33:38
 ```
 
 But to have all the relevant development tools available out of the box we have also added `composer2` in a separate path:
 
-```nginx
+```console
 $ which composer
 /usr/local/bin/composer1
 $ which composer2
@@ -60,7 +60,7 @@ $ which composer2
 $ composer --version
 Composer version 1.10.21 2021-04-01 09:16:34
 $ composer2 --version
-Composer version 2.0.12 2021-04-01 10:14:59
+Composer version 2.2.18 2022-08-20 11:33:38
 ```
 
 So if you want to use Composer 2 you only need to run `composer2` instead of `composer`.
