@@ -32,7 +32,7 @@ The most common use-cases are done by integrating Hypernode Brancher into your i
 
 Let’s say you want to upgrade your MySQL version to 8.0 on your Hypernode. We provide all of the tooling to do this easily, by running the following command:
 
-```bash
+```console
 hypernode-systemctl settings mysql_version 8.0
 ```
 
@@ -48,7 +48,7 @@ You can use Brancher in three (and soon four) different ways: via our Hypernode 
 
 You can create new Brancher nodes via the Hypernode API with the following POST request:
 
-```bash
+```console
 curl -X POST -H "Authorization: Token <token>" https://api.hypernode.com/v2/app/<appname>/brancher/
 ```
 
@@ -89,8 +89,8 @@ This will automatically create a Brancher node based on the parent Hypernode and
 
 You can use the command hypernode-systemctl brancher tool to quickly interact with the Hypernode API in a validated and controlled manner. Creating a Brancher node goes like this:
 
-```bash
-app@cj8jlu-testalex-magweb-cmbl ~ # hypernode-systemctl brancher --create
+```console
+app@cj8jlu-testalex-magweb-cmbl:~$ hypernode-systemctl brancher --create
 Brancher App created for app 'testalex'. See hypernode-systemctl brancher --list for the progress
 app_name: testalex-eph123456
 parent: testalex
@@ -100,8 +100,8 @@ IP: will become available in a couple of minutes
 
 You can then list the available Brancher nodes:
 
-```bash
-app@cj8jlu-testalex-magweb-cmbl ~ # hypernode-systemctl brancher --list
+```console
+app@cj8jlu-testalex-magweb-cmbl:~$ hypernode-systemctl brancher --list
 +--------------------+---------------+------------+------------+-----------------+---------------------------------+
 |        Name        |     Parent    | Terminated |    Type    |        IP       |               Host              |
 +--------------------+---------------+------------+------------+-----------------+---------------------------------+
@@ -112,14 +112,14 @@ app@cj8jlu-testalex-magweb-cmbl ~ # hypernode-systemctl brancher --list
 
 Finally, you can delete it:
 
-```bash
+```console
 app@cj8jlu-testalex-magweb-cmbl:~$ hypernode-systemctl brancher --delete
-Brancher App 'testalex-ephxowpw3' deleted. See hypernode-systemctl brancher --list for the list of remaining brancher apps.
+Brancher App 'testalex-eph123456' deleted. See hypernode-systemctl brancher --list for the list of remaining brancher apps.
 ```
 
 And with some creativity you can come up with a one-liner to remove all active Brancher nodes:
 
-```bash
+```console
 app@cj8jlu-testalex-magweb-cmbl:~$ hypernode-systemctl brancher --list | grep False | grep brancher | awk '{print$2}' | xargs -n1 hypernode-systemctl brancher --delete
 Brancher App 'testalex-eph123456' deleted. See hypernode-systemctl brancher --list for the list of remaining brancher apps.
 Brancher App 'testalex-eph234567' deleted. See hypernode-systemctl brancher --list for the list of remaining brancher apps.
