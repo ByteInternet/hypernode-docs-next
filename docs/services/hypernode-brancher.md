@@ -53,6 +53,7 @@ curl -X POST -H "Authorization: Token <token>" https://api.hypernode.com/v2/app/
 ```
 
 The appname specified in the request url is the appname on which the Brancher node will be based. This returns the name of the Brancher node, which is in the format of `<appname>-eph123456`.
+To make things easier for you, we have made API client libraries available in [PHP](https://github.com/ByteInternet/hypernode-api-php) and in [Python](https://github.com/ByteInternet/hypernode-api-python). Go check them out!
 
 Once the Brancher node becomes available, you can control it via the `/v2/app/<appname>-eph123456` endpoint just like a regular Hypernode.
 
