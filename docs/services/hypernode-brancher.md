@@ -10,7 +10,7 @@ Overall, Hypernode Brancher is a valuable addition to the Hypernode toolset, and
 
 ## What is Hypernode Brancher?
 
-Hypernode Brancher is a new feature that’s released in December 2022, and runs alongside our core product Hypernode. It’s an addon based on your Hypernode subscription and is intended to add additional functionality that’s useful for developing and testing your webshop.
+Hypernode Brancher is an extra service that runs alongside our core product Hypernode. It’s an addon based on your Hypernode subscription and is intended to add additional functionality that’s useful for developing and testing your webshop.
 
 Hypernode Brancher is a mutable and temporary copy of your Hypernode. It’s based on the latest backup made for your Hypernode, meaning that the state on the Brancher node is at most 24 hours old.
 
