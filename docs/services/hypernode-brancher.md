@@ -1,6 +1,6 @@
 # Hypernode Brancher
 
-Hypernode Brancher is a powerful tool that allows users to create and manage temporary servers based on their production Hypernode. 
+Hypernode Brancher is a powerful tool that allows users to create and manage temporary servers based on their production Hypernode.
 
 Hypernode Brancher is fully integrated with the Hypernode platform. With just a few simple commands, users can create and manage Brancher nodes. This is useful for running parallel integration tests, testing software version upgrades, or performing any other tasks that require a temporary and isolated server environment.
 
@@ -12,17 +12,17 @@ Overall, Hypernode Brancher is a valuable addition to the Hypernode toolset, and
 
 Hypernode Brancher is a new feature that’s released in December 2022, and runs alongside our core product Hypernode. It’s an addon based on your Hypernode subscription and is intended to add additional functionality that’s useful for developing and testing your webshop.
 
-Hypernode Brancher is a mutable and temporary copy of your Hypernode. It’s based on the latest backup made for your Hypernode, meaning that the state on the Brancher node is at most 24 hours old. 
+Hypernode Brancher is a mutable and temporary copy of your Hypernode. It’s based on the latest backup made for your Hypernode, meaning that the state on the Brancher node is at most 24 hours old.
 
 If you wish to get a more recent state on the Brancher node, you can create a new backup on your Hypernode using hypernode-systemctl create_backup. Note that this requires SLA Standard to be enabled on your Hypernode.
 
 ## Why should I use it?
 
-Typically you simulate the environment on your Hypernode via the hypernode-docker image. This is an easy way to have a near-identical environment which contains all Hypernode tooling without having to test on your actual Hypernode. 
+Typically you simulate the environment on your Hypernode via the hypernode-docker image. This is an easy way to have a near-identical environment which contains all Hypernode tooling without having to test on your actual Hypernode.
 
 However, there are some significant drawbacks to using the Docker image. For one, this isn’t exposed to the internet like a regular Hypernode is. Requesting SSL certificates, exposing your environment to other colleagues or taking advantage of the full Hypernode automation are all missing in the Hypernode Docker image. Next to that, we cannot replicate full behaviour on Docker containers because of the lack of systemd, which we heavily utilize on Hypernode.
 
-All of these features are available on Hypernode Brancher, as it’s just another Hypernode. Next to that, it copies over the state of your Hypernode, meaning that there are no strange side-effects that would happen on production that you wouldn’t be able to reproduce on a Docker container. 
+All of these features are available on Hypernode Brancher, as it’s just another Hypernode. Next to that, it copies over the state of your Hypernode, meaning that there are no strange side-effects that would happen on production that you wouldn’t be able to reproduce on a Docker container.
 
 The most common use-cases are done by integrating Hypernode Brancher into your integration tests, or as an ad-hoc situation where you want to test a software version upgrade.
 
