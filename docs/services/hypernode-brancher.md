@@ -38,6 +38,40 @@ However, we do warn you about changing this, as downgrading your MySQL version i
 
 One way of testing this change is by using a development Hypernode, and try out the change there. The problem here lies in the fact that you can only try this once on your development environment, and that it has a different state compared to your production Hypernode.
 
+### Example: Acceptance server per pull request
+
+Another common use-case is to have a separate acceptance server per pull request. You can give access to this acceptance server to your colleagues, or to your customers, so that they can test your changes before they are merged into the main branch.
+
+You can achieve this by making a separate Github Actions workflow. This workflow will create a new Brancher node based on the current pull request, and leave a comment on the pull request with the URL to the Brancher node. This way, you can easily test your changes in a real environment, and you can easily clean up the Brancher node when you’re done.
+This workflow file can look like this:
+
+```yaml
+name: Deploy to acceptance server
+
+on:
+  pull_request:
+
+...
+
+jobs:
+    ...
+      - name: deploy to acceptance
+        run: hypernode-deploy deploy acceptance -vvv
+        env:
+          HYPERNODE_API_TOKEN: ${{ secrets.HYPERNODE_API_TOKEN }}
+      - name: Get brancher hostname
+        run: echo "BRANCHER_HOSTNAME=$(jq .hostnames[0] deployment-report.json -r)" >> $GITHUB_ENV
+      - name: Comment hostname on PR
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: |
+            Acceptance server is available at https://${{ env.BRANCHER_HOSTNAME }}
+```
+
+This fetches the hostname of the Brancher node, and leaves a comment on the pull request with the URL to the Brancher node on every push to the pull request:
+
+![](_res/github_actions_comment_brancher.png)
+
 ## How do I use it?
 
 You can use Brancher in three (and soon four) different ways: via our Hypernode API, Hypernode Deploy or the `hypernode-systemctl brancher` CLI tool.
