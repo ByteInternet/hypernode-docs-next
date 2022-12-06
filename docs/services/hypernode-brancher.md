@@ -26,9 +26,7 @@ All of these features are available on Hypernode Brancher, as it’s just anothe
 
 The most common use-cases are done by integrating Hypernode Brancher into your integration tests, or as an ad-hoc situation where you want to test a software version upgrade.
 
-### Integration tests
-
-### MySQL version upgrade
+### Example: MySQL version upgrade
 
 Let’s say you want to upgrade your MySQL version to 8.0 on your Hypernode. We provide all of the tooling to do this easily, by running the following command:
 
