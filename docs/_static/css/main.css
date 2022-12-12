@@ -16,9 +16,9 @@
   --message-success-bg: #E3F6CF;
   --message-danger: #D10000;
   --message-danger-bg: #FAE5E8;
-  --message-warning: #FF8E6E;
+  --message-warning: #DC7500;
   --message-warning-bg: #FFF1ED;
-  --message-info: #368EC4;
+  --message-info: #074E8A;
   --message-info-bg: #E7F2F8;
 }
 
@@ -34,21 +34,32 @@ a {
   text-decoration: none;
 }
 
-a.ahref-blue {
-  text-decoration: underline;
+a:hover:not(.logo-title) {
+  opacity: 0.7;
 }
 
 a:visited {
-  color: var(--secondary-blue) !important;
+  color: var(--primary-blue);
+}
+
+a.ahref-blue {
+  text-decoration: underline;
+  color: var(--primary-blue);
+}
+
+a.ahref-orange {
+  text-decoration: underline;
+  color: var(--primary-orange);
+}
+
+.main-content a {
+  color: var(--secondary-blue);
+  text-decoration: underline;
 }
 
 .main-content a:visited {
-  color: var(--light-orange) !important;
-}
-
-.main-content a:hover {
-  color: var(--hover-orange) !important;
-  text-decoration: underline;
+  opacity: 0.8;
+  color: var(--secondary-blue) !important;
 }
 
 .wy-side-nav-search a:visited {
@@ -249,9 +260,13 @@ code.docutils.literal.notranslate.literal {
 /* buttons next previous */
 .btn,
 .btn-neutral {
-  background: none;
-  border: none;
+  background: #fff;
+  background-color: #fff !important;
+  border: 1px solid var(--primary-orange);
   font-weight: 600;
+  font-size: 12px;
+  max-width: 110px;
+  padding: 0 15px;
   color: var(--primary-orange) !important;
 }
 .btn .fa,
@@ -261,6 +276,18 @@ code.docutils.literal.notranslate.literal {
 .btn:visited,
 .btn-neutral:visited {
   color: var(--primary-orange) !important;
+}
+.btn:hover,
+.btn-neutral:hover {
+  opacity: 1;
+}
+
+.btn:active {
+  padding: 0 15px;
+}
+
+.rst-content .btn:focus {
+  outline: 0px solid;
 }
 
 /* buttons next previous end */
@@ -353,6 +380,25 @@ code.docutils.literal.notranslate.literal {
 }
 
 /* aside end */
+/*notes (admonition notes)*/
+.rst-content .admonition {
+  background: var(--message-info-bg);
+  padding: 25px 20px 20px 40px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.rst-content .note .admonition-title {
+  background: transparent;
+  color: #074E8A;
+  font-size: 16px;
+}
+.rst-content .note p,
+.rst-content .note a {
+  font-size: 13px;
+}
+
+/* notes (admonition notes) end */
 /* breadcrumb */
 .wy-side-nav-search img {
   background-color: transparent;
