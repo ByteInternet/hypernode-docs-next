@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "Support Docs"
+project = "Docs"
 copyright = "2022, Hypernode"
 author = "Hypernode"
 

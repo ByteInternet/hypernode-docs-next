@@ -87,12 +87,13 @@ h2 {
 .wy-side-nav-search {
     width: 100%;
     background-color: var(--primary-blue);
-    padding: 0 185px;
+    padding: 0;
     position: fixed;
     top: 0;
     height: 60px;
-    display: flex;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 300px 900px 300px;
+    justify-content: center;
     align-items: center;
     column-gap: 50px;
 
@@ -109,8 +110,10 @@ h2 {
     padding-bottom: 60px;
     padding-top: 5px;
 }
+
 .wy-menu-vertical p.caption {
     color: var(--primary-blue);
+    padding: 0 20px;
 }
 
 .wy-menu-vertical a {
@@ -289,7 +292,6 @@ code.docutils.literal.notranslate {
         border-top: 0;
     }
 
-
     & li.current,
     & li.toctree-l2,
     & li.toctree-l2 a,
@@ -320,9 +322,6 @@ code.docutils.literal.notranslate {
     }
     & a {
         font-size: 13px;
-    }
-    & a:visited {
-        color: var(--primary-blue)!important;
     }
 
     & li.toctree-l2 li.toctree-l3 a:hover,
@@ -420,11 +419,11 @@ code.docutils.literal.notranslate {
 /* notes (admonition notes) end */
 
 /* breadcrumb */
+
 .wy-side-nav-search img {
     background-color: transparent;
     position: relative;
     top:0;
-    left:-10px;
     margin: 0;
     height: auto;
     width: 150px;
@@ -451,14 +450,22 @@ code.docutils.literal.notranslate {
     margin-bottom: 0;
     font-size: 15px;
 }
+
+.wy-breadcrumbs {
+    max-width: 1461px;
+    margin: auto;
+
+    & li {
+        padding-top: initial;
+    }
+}
+
 .wy-breadcrumbs,
 .wy-breadcrumbs li a,
 .wy-breadcrumbs-aside a {
     font-size: 11px;
 }
-.wy-breadcrumbs li {
-    padding-top: initial;
-}
+
 li.wy-breadcrumbs-aside a {
     padding: 10px;
 }
@@ -470,7 +477,6 @@ li.wy-breadcrumbs-aside a {
     position: fixed;
     top: 60px;
     border-bottom: 1px solid var(--grey-border);
-    padding-left: 190px;
     z-index:2;
     background-color: white;
 }
