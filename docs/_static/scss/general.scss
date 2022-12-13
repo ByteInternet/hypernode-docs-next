@@ -38,7 +38,7 @@ a.ahref-orange {
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 40px;
     line-height: inherit;
     margin: 40px 0;
 }
@@ -48,6 +48,11 @@ h2 {
     line-height: 1.2em;
     margin-top: 40px;
 }
+
+section {
+    scroll-margin-top: 120px;
+}
+
 .wy-grid-for-nav {
     display: grid;
     grid-template-columns: 300px 900px 300px;
@@ -68,6 +73,7 @@ h2 {
     position: sticky;
     top: 0;
     background: inherit;
+    z-index: 10;
 }
 
 .wy-nav-content {
@@ -122,6 +128,8 @@ h2 {
 
 .wy-menu-vertical li.current>a {
     color: var(--primary-orange);
+    scroll-margin-top: 10px;
+
 }
 
 .wy-menu-vertical li.toctree-l2 a,
@@ -477,7 +485,7 @@ li.wy-breadcrumbs-aside a {
     position: fixed;
     top: 60px;
     border-bottom: 1px solid var(--grey-border);
-    z-index:2;
+    z-index:20;
     background-color: white;
 }
 
