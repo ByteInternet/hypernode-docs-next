@@ -106,7 +106,6 @@ section {
   grid-template-columns: 300px 900px 300px;
   justify-content: center;
   align-items: center;
-  column-gap: 50px;
 }
 .wy-side-nav-search div {
   width: 300px;
@@ -274,6 +273,11 @@ code.docutils.literal.notranslate.literal {
   outline: 0px solid;
 }
 
+.btn-orange {
+  background-color: var(--primary-orange) !important;
+  color: #fff !important;
+}
+
 /* buttons next previous end */
 .rst-content p + ul {
   margin-top: -14px;
@@ -392,10 +396,6 @@ code.docutils.literal.notranslate.literal {
   padding: 0;
 }
 
-.wy-side-nav-search > a:hover {
-  background: transparent;
-}
-
 .wy-side-nav-search input[type=text],
 .wy-body-for-nav input:not([type=checkbox]):not([type=radio]):not([type=submit]) {
   border: none;
@@ -412,6 +412,19 @@ code.docutils.literal.notranslate.literal {
   display: flex;
   margin-bottom: 0;
   font-size: 15px;
+  justify-self: flex-start;
+}
+.wy-side-nav-search > a:hover {
+  background: transparent;
+}
+
+.wy-side-nav-search > a.wy-side-nav__login {
+  justify-self: flex-end;
+  position: relative;
+  right: 23px;
+  padding: 0 15px;
+  max-width: 100px;
+  font-size: 12px;
 }
 
 .wy-breadcrumbs {
