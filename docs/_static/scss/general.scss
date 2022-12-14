@@ -252,7 +252,7 @@ section {
     @media (max-width: $breakpoint-mobile) {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        height: 85px;
+        height: 90px;
     }
 }
 
@@ -266,7 +266,7 @@ section {
     background-color: #fff;
 
     @media (max-width: $breakpoint-mobile) {
-        top: 130px;
+        top: 135px;
      }
 
 }
@@ -787,7 +787,7 @@ li.wy-breadcrumbs-aside a {
     background-color: white;
 
     @media (max-width: $breakpoint-mobile) {
-       top: 85px;
+       top: 90px;
     }
 }
 
