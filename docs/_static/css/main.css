@@ -14,12 +14,16 @@
   --light-grey-sidebar: #E5EAF0;
   --message-success: #4bb52d;
   --message-success-bg: #E3F6CF;
+  --message-success-text: #0D3D00;
   --message-danger: #D10000;
   --message-danger-bg: #FAE5E8;
+  --message-danger-text: #6A0000;
   --message-warning: #DC7500;
   --message-warning-bg: #FFF1ED;
+  --message-warning-text: #9C3900;
   --message-info: #074E8A;
   --message-info-bg: #E7F2F8;
+  --message-info-text: #063b67;
 }
 
 h1,
@@ -390,21 +394,101 @@ code.docutils.literal.notranslate.literal {
 
 /* aside end */
 /*notes (admonition notes)*/
-.rst-content .admonition {
-  background: var(--message-info-bg);
+.rst-content .note,
+.rst-content .attention,
+.rst-content .caution,
+.rst-content .danger,
+.rst-content .error,
+.rst-content .hint,
+.rst-content .important,
+.rst-content .tip,
+.rst-content .warning {
   padding: 25px 20px 20px 40px;
   margin: 20px 0;
   border-radius: 4px;
 }
-
-.rst-content .note .admonition-title {
+.rst-content .note .admonition-title,
+.rst-content .attention .admonition-title,
+.rst-content .caution .admonition-title,
+.rst-content .danger .admonition-title,
+.rst-content .error .admonition-title,
+.rst-content .hint .admonition-title,
+.rst-content .important .admonition-title,
+.rst-content .tip .admonition-title,
+.rst-content .warning .admonition-title {
   background: transparent;
-  color: #074E8A;
   font-size: 16px;
 }
 .rst-content .note p,
-.rst-content .note a {
+.rst-content .note a,
+.rst-content .attention p,
+.rst-content .attention a,
+.rst-content .caution p,
+.rst-content .caution a,
+.rst-content .danger p,
+.rst-content .danger a,
+.rst-content .error p,
+.rst-content .error a,
+.rst-content .hint p,
+.rst-content .hint a,
+.rst-content .important p,
+.rst-content .important a,
+.rst-content .tip p,
+.rst-content .tip a,
+.rst-content .warning p,
+.rst-content .warning a {
   font-size: 13px;
+}
+.rst-content .note {
+  background: var(--message-info-bg);
+}
+.rst-content .note p {
+  color: var(--message-info-text);
+}
+.rst-content .note .admonition-title {
+  color: var(--message-info-text);
+}
+.rst-content .attention,
+.rst-content .caution,
+.rst-content .warning,
+.rst-content .important {
+  background: var(--message-warning-bg);
+}
+.rst-content .attention p,
+.rst-content .caution p,
+.rst-content .warning p,
+.rst-content .important p {
+  color: var(--message-warning-text);
+}
+.rst-content .attention .admonition-title,
+.rst-content .caution .admonition-title,
+.rst-content .warning .admonition-title,
+.rst-content .important .admonition-title {
+  color: var(--message-warning-text);
+}
+.rst-content .danger,
+.rst-content .error {
+  background: var(--message-danger-bg);
+}
+.rst-content .danger p,
+.rst-content .error p {
+  color: var(--message-danger-text);
+}
+.rst-content .danger .admonition-title,
+.rst-content .error .admonition-title {
+  color: var(--message-danger-text);
+}
+.rst-content .hint,
+.rst-content .tip {
+  background: var(--message-success-bg);
+}
+.rst-content .hint p,
+.rst-content .tip p {
+  color: var(--message-success-text);
+}
+.rst-content .hint .admonition-title,
+.rst-content .tip .admonition-title {
+  color: var(--message-success-text);
 }
 
 /* notes (admonition notes) end */

@@ -14,12 +14,16 @@
   --light-grey-sidebar: #E5EAF0;
   --message-success: #4bb52d;
   --message-success-bg: #E3F6CF;
+  --message-success-text: #0D3D00;
   --message-danger: #D10000;
   --message-danger-bg: #FAE5E8;
+  --message-danger-text: #6A0000;
   --message-warning: #DC7500;
   --message-warning-bg: #FFF1ED;
+  --message-warning-text: #9C3900;
   --message-info: #074E8A;
   --message-info-bg: #E7F2F8;
+  --message-info-text: #063b67;
 }
 
 /*# sourceMappingURL=colors.css.map */
