@@ -799,6 +799,10 @@ code.docutils.literal.notranslate.literal {
   font-size: 11px;
 }
 
+.wy-breadcrumbs li a:visited {
+  color: var(--light-orange);
+}
+
 li.wy-breadcrumbs-aside a {
   padding: 10px;
 }
