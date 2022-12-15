@@ -163,7 +163,7 @@ section {
         z-index: 100;
 
         @media (max-width: $breakpoint-mobile) {
-            top: 98px;
+            top: 102px;
          }
     }
 }
@@ -763,6 +763,10 @@ code.docutils.literal.notranslate {
     
     @media (max-width: $breakpoint-mobile) {
         margin: 0 20px 0 65px;
+        width: 100%;
+        max-width: calc(100% - 90px);
+        overflow: scroll;
+        white-space: nowrap;
     }
 }
 

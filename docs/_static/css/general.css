@@ -170,7 +170,7 @@ section {
 }
 @media (max-width: 1024px) and (max-width: 420px) {
   .wy-nav-top {
-    top: 98px;
+    top: 102px;
   }
 }
 
@@ -758,6 +758,10 @@ code.docutils.literal.notranslate.literal {
 @media (max-width: 420px) {
   .wy-breadcrumbs {
     margin: 0 20px 0 65px;
+    width: 100%;
+    max-width: calc(100% - 90px);
+    overflow: scroll;
+    white-space: nowrap;
   }
 }
 
