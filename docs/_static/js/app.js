@@ -3,4 +3,3 @@ window.addEventListener('load', function() {
       link.target = '_blank';
     });
 });
-
