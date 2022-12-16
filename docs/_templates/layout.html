@@ -200,8 +200,9 @@
       {#- Translators: This is an ARIA section label for the navigation menu that is visible when viewing the page on mobile devices -#}
       <nav class="wy-nav-top" aria-label="{{ _('Mobile navigation menu') }}" {% if theme_style_nav_header_background %} style="background: {{theme_style_nav_header_background}}" {% endif %}>
         {%- block mobile_nav %}
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="{{ pathto(master_doc) }}">{{ project }}</a>
+          <i data-toggle="wy-nav-top" class="menu-hamburger">
+            <div class="icon"></div>
+          </i>
         {%- endblock %}
       </nav>
 
