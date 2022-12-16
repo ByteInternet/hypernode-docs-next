@@ -781,15 +781,15 @@ code.docutils.literal.notranslate.literal {
   .wy-breadcrumbs {
     max-width: none;
     margin: 0 20px 0 60px;
+    width: 100%;
+    max-width: calc(100% - 90px);
+    overflow: scroll;
+    white-space: nowrap;
   }
 }
 @media (max-width: 420px) {
   .wy-breadcrumbs {
     margin: 0 20px 0 65px;
-    width: 100%;
-    max-width: calc(100% - 90px);
-    overflow: scroll;
-    white-space: nowrap;
   }
 }
 
@@ -797,6 +797,12 @@ code.docutils.literal.notranslate.literal {
 .wy-breadcrumbs li a,
 .wy-breadcrumbs-aside a {
   font-size: 11px;
+}
+
+@media (max-width: 768px) {
+  .wy-breadcrumbs li.wy-breadcrumbs-aside {
+    display: none;
+  }
 }
 
 .wy-breadcrumbs li a:visited {

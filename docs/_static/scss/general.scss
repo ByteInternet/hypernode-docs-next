@@ -759,14 +759,14 @@ code.docutils.literal.notranslate {
     @media (max-width: $breakpoint-landscape) {
         max-width: none;
         margin: 0 20px 0 60px;
-    }
-
-    @media (max-width: $breakpoint-mobile) {
-        margin: 0 20px 0 65px;
         width: 100%;
         max-width: calc(100% - 90px);
         overflow: scroll;
         white-space: nowrap;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        margin: 0 20px 0 65px;
     }
 }
 
@@ -774,6 +774,11 @@ code.docutils.literal.notranslate {
 .wy-breadcrumbs li a,
 .wy-breadcrumbs-aside a {
     font-size: 11px;
+}
+.wy-breadcrumbs li.wy-breadcrumbs-aside {
+    @media (max-width: $breakpoint-portrait) {
+        display: none;
+    }
 }
 
 .wy-breadcrumbs li a:visited {
