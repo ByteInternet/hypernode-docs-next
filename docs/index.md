@@ -1,4 +1,4 @@
-# Welcome to Hypernode Docs!
+# Welcome to Hypernode Docs
 
 ```{toctree}
 ---
