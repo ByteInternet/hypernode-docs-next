@@ -2,7 +2,7 @@
 
 # Hypernode and team.blue
 
-From 2019 Hypernode is part of team.blue, a leading digital enabler for companies and entrepreneurs.
+From 2019 onwards Hypernode is part of team.blue, a leading digital enabler for companies and entrepreneurs.
 
 In 2016 Hypernode became part of the Combell Group. Operations rapidly expanded through various new brands and acquisitions throughout the years.
 
