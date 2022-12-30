@@ -1,51 +1,63 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Hypernode\DeployConfiguration;
 
 use function Deployer\after;
 use function Deployer\run;
 use function Deployer\task;
+use function Deployer\test;
 
 $DOCKER_HOST = '172.17.0.2';
 $DOCKER_WEBROOT = sprintf('/data/web/apps/%s/current/pub', $DOCKER_HOST);
 
 # Disable the symlinking of /data/web/public because we're gonna be deploying both staging and prod on 1 Hypernode.
 task('deploy:disable_public', function () {
-    run("if ! test -d /data/web/public; then unlink /data/web/public; mkdir /data/web/public; fi");
+    if (!test('[ -d /data/web/public ]')) {
+        run('unlink /data/web/public');
+        run('mkdir -p /data/web/public');
+    }
     run("echo 'Not used, see /data/web/apps/ instead' > /data/web/public/index.html;");
 });
 
 # Create the venv
 task('python:venv:create', static function () {
-    run('mkdir -p {{release_path}}/.hypernode');
-    run('virtualenv -p python3 {{release_path}}/.venv');
+    run('mkdir -p .hypernode');
+    run('virtualenv -p python3 .venv');
 });
 
 # Install the requirements
 task('python:venv:requirements', static function () {
-    run('source {{release_path}}/.venv/bin/activate && pip install -r {{release_path}}/requirements/base.txt');
+    run('source .venv/bin/activate && pip install -r requirements/base.txt');
 });
 
 # Build the documentation
 task('python:build_documentation', static function () {
-    run('source {{release_path}}/.venv/bin/activate && cd {{release_path}} && {{release_path}}/bin/build_docs');
-    run('ln -s {{release_path}}/docs/_build/html {{release_path}}/pub');
+    run('source .venv/bin/activate && bin/build_docs');
+    run('ln -s docs/_build/html pub');
 });
 
 # HMV configuration for when this is running in a docker
 task('deploy:hmv_docker', static function () use (&$DOCKER_HOST, &$DOCKER_WEBROOT) {
-    run(sprintf('if test -f /etc/hypernode/is_docker; then hypernode-manage-vhosts %s --disable-https --type generic-php --yes --webroot %s --default-server; fi', $DOCKER_HOST, $DOCKER_WEBROOT));
+    if (test('[ -f /etc/hypernode/is_docker ]')) {
+        run(sprintf(
+            'hypernode-manage-vhosts %s --disable-https --type generic-php --yes --webroot %s --default-server',
+            $DOCKER_HOST,
+            $DOCKER_WEBROOT,
+        ));
+    }
 });
 
 task("deploy:docs_vhost", static function () {
-    run("hypernode-manage-vhosts --https --force-https {{hostname}} --webroot {{current_path}}/{{public_folder}}");
+    run("hypernode-manage-vhosts --https --force-https {{hostname}} --no --webroot {{current_path}}/{{public_folder}}");
 });
 
 $configuration = new Configuration();
+$configuration->addBuildTask('python:venv:create');
+$configuration->addBuildTask('python:venv:requirements');
+$configuration->addBuildTask('python:build_documentation');
 $configuration->addDeployTask('deploy:disable_public');
-$configuration->addDeployTask('python:venv:create');
-$configuration->addDeployTask('python:venv:requirements');
-$configuration->addDeployTask('python:build_documentation');
 $configuration->addDeployTask('deploy:hmv_docker');
 $configuration->addDeployTask('deploy:docs_vhost');
 
@@ -54,14 +66,23 @@ $configuration->setDeployExclude([
     './.git',
     './.github',
     './deploy.php',
-    './.gitlab-ci.yml',
-    './Jenkinsfile',
+    './.pre-commit-config.yaml',
+    './documentation_urls.txt',
+    './tox.ini',
     '.DS_Store',
     '.idea',
     '.gitignore',
     '.editorconfig',
-    'etc/'
+    'etc/',
+    '.venv/',
+    'bin/',
+    'hypernode/',
+    'requirements/',
+    'tests/'
 ]);
+
+$productionStage = $configuration->addStage('production', 'docs.hypernode.io');
+$productionStage->addServer('docs.hypernode.io');
 
 # We can also deploy to a Hypernode Docker instance. To do that you go to
 # https://github.com/byteinternet/hypernode-docker, make sure you
