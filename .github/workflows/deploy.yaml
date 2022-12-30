@@ -2,6 +2,9 @@ name: Deploy to acceptance server
 
 on:
   pull_request:
+  push:
+    branches:
+      - 'master'
 
 env:
   COMPOSER_CACHE_DIR: /tmp/composer-cache
@@ -19,6 +22,7 @@ jobs:
       - uses: webfactory/ssh-agent@v0.5.4
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - run: apt update && apt install -y python3 virtualenv
       - run: hypernode-deploy build -vvv
       - name: archive production artifacts
         uses: actions/upload-artifact@v3
@@ -26,9 +30,10 @@ jobs:
           name: deployment-build
           path: build/build.tgz
 
-  deploy:
+  deploy_acceptance:
     needs: build
     runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/master'
     container: quay.io/hypernode/deploy:3-php8.1-node18
     steps:
       - uses: actions/checkout@v2
@@ -52,3 +57,22 @@ jobs:
         with:
           message: |
             Acceptance server is available at https://${{ env.BRANCHER_HOSTNAME }}
+
+  deploy_production:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    container: quay.io/hypernode/deploy:3-php8.1-node18
+    steps:
+      - uses: actions/checkout@v2
+      - name: download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: deployment-build
+          path: build/
+      - uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - run: mkdir -p $HOME/.ssh
+      - name: deploy to production
+        run: hypernode-deploy deploy production -vvv
