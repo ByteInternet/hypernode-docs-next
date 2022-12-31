@@ -10,7 +10,7 @@ jobs:
     container: quay.io/hypernode/deploy:3-php8.1-node18
     steps:
       - uses: actions/checkout@v2
-      - name: deploy to production
+      - name: Cleanup acceptance environments
         run: hypernode-deploy cleanup acceptance -vvv
         env:
           HYPERNODE_API_TOKEN: ${{ secrets.HYPERNODE_API_TOKEN }}
