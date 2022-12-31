@@ -1,4 +1,4 @@
-name: Deploy to acceptance server
+name: Deploy application
 
 on:
   pull_request:
