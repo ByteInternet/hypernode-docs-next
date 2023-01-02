@@ -103,6 +103,7 @@ $dockerStage = $configuration->addStage('docker', $DOCKER_HOST);
 $dockerStage->addServer($DOCKER_HOST);
 
 $testingStage = $configuration->addStage("acceptance", "docs");
-$testingStage->addBrancherServer("hntestgroot");
+$testingStage->addBrancherServer("hntestgroot")
+    ->setLabels(['stage=acceptance', 'ci_ref=' . (\getenv('GITHUB_REF') ?: 'none')]);
 
 return $configuration;
