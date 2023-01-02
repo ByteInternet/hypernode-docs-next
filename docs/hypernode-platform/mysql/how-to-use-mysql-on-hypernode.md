@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: This article explains how to use MySQL on Hypernode. Factors, such
+      as finding your credentials, whitelisting your IP address and using PHPMyAdmin
+      are included.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/mysql/how-to-use-mysql-on-hypernode/ -->
 
 # How to Use Mysql on Hypernode

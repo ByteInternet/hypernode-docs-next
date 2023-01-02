@@ -1,8 +1,15 @@
+---
+myst:
+  html_meta:
+    description: 'Administrative changes can be done through the Service Panel (or
+      via a letter) due to security reasons. Read how to change customer details here. '
+---
+
 <!-- source: https://support.hypernode.com/en/about/billing/how-to-change-your-customer-details-and-other-questions/ -->
 
 # How to Change your Customer Details and Other Questions
 
-\*\*Please note that this only applies to Service Panel users who log in via service.byte.nl. Please see [this category](https://support.hypernode.com/en/services/control-panel/) for articles that apply to the Control Panel.\*\*For security reasons, you can only make administrative changes to your account when logged into the Service Panel.  In this article we explain how you can edit your customer data.
+\*\*Please note that this only applies to Service Panel users who log in via service.byte.nl. Please see [this category](https://support.hypernode.com/en/services/control-panel/) for articles that apply to the Control Panel.\*\*For security reasons, you can only make administrative changes to your account when logged into the Service Panel. In this article we explain how you can edit your customer data.
 
 ## Why Do I Need to Log Into the Service Panel?
 
@@ -16,7 +23,7 @@ Unable to log in? Please click 'wachtwoord' on the login page to reset your pass
 
 ### Changing Your Password
 
-The first option you will see in your Service Panel under *Mijn gegevens*  is to change your customer account password. Your password provides access to your customer account and, in the case of a hosting plan, also SSH access if you are a Technical Administrator.
+The first option you will see in your Service Panel under *Mijn gegevens* is to change your customer account password. Your password provides access to your customer account and, in the case of a hosting plan, also SSH access if you are a Technical Administrator.
 
 ### Changing the Ascription of Your Account
 

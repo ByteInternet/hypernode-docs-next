@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Let's Encrypt is a CA Authority that provides free SSL certificates
+      through domain validation and automated retrieval. Find here how to use it on
+      Hypernode.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/ssl/how-to-use-let-s-encrypt-on-hypernode/ -->
 
 # How to use Let’s Encrypt on Hypernode
@@ -149,7 +157,7 @@ To periodically check and renew certificates, create a cronjob running dehydrate
 ```nginx
 PATH="/data/web/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 MAILTO="your@email.com"
-0 1 * * * flock -n /data/web/.dehydrated.lock chronic dehydrated --no-lock --cron --create-dirs
+0 1 * * * flock -n /data/web/.dehydrated.lock chronic dehydrated --no-lock --cron --create-dirs
 ```
 
 This will check nightly at 1:00 if there are configured certificates that should be renewed. We use the `--no-lock` option so that flock manages the lock file accordingly and we don't use the outdated lock file mechanism of dehydrated.
@@ -178,7 +186,7 @@ If you decide to not use any SSL certificate anymore and switch back to http (no
 - "My certificates are not in the Nginx config" This can be caused by a change in your Nginx config not picked up by the `nginx-config-reloader`. To manually force a reload, touch some files in `/data/web/nginx`: with the command below or run `hypernode-ssl-config-generator`
 
 ```nginx
-touch /data/web/nginx/http.magerunmaps 
+touch /data/web/nginx/http.magerunmaps
 ```
 
 - Error code: MOZILLA_PKIX_ERROR_REQUIRED_TLS_FEATURE_MISSING" This error appears in Firefox and is caused by an inconsistency in our configuration. We changed this configuration by disabling OCSP stapling. If you keep getting this error, please recreate your Let's Encrypt certificate:
@@ -187,7 +195,7 @@ touch /data/web/nginx/http.magerunmaps 
 rm -rf /data/web/certs dehydrated -c
 ```
 
-- "To accept these terms of service run `/usr/bin/dehydrated --register --accept-terms`. When you run `dehydrated` for the first time you will be asked to accept their [terms of service](https://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.pdf)  by running the following command:
+- To accept these terms of service run `/usr/bin/dehydrated --register --accept-terms`. When you run `dehydrated` for the first time you will be asked to accept their [terms of service](https://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.pdf) by running the following command:
 
 ```nginx
 /usr/bin/dehydrated --register --accept-terms

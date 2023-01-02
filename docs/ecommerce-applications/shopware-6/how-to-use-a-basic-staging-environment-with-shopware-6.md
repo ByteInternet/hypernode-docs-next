@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: A staging environment is very useful to test your shop. In this article
+      we explain how to set up a staging environment on Hypernode for a Shopware 6
+      shop.
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/shopware/how-to-use-a-basic-staging-environment-with-shopware-6/ -->
 
 # How to Use a Basic Staging Environment With Shopware 6
@@ -29,7 +37,8 @@ hypernode-manage-vhosts staging.example.hypernode.io --type shopware6 --https --
 
 ### Step Two: Set the Webroot
 
-Now there is a new vhost, you need to set the webroot to the folder you'd like to use for your staging environment. You can do this by editing the **webroot** on the first line in `/data/web/nginx/staging.example.hypernode.io/server.shopware6.conf`
+Now there is a new vhost, you need to set the webroot to the folder you'd like to use for your staging environment. You can do this by editing the **webroot** on the first line in the following 2 files: `/data/web/nginx/staging.example.hypernode.io/public.shopware6.conf`
+`/data/web/nginx/staging.example.hypernode.io/staging.webroot.conf`
 
 ### Step Three: Copy Your Shopware Files to the Staging Directory
 
@@ -63,7 +72,7 @@ mysqldump $databasename | mysql staging
 ### Step Seven: Change the SHOP_URL in /data/web/staging/.env
 
 ```bash
-editor /data/web/staging/.env
+editor /data/web/shopware_staging/.env
 ```
 
 Make sure you edit the value of APP_URL to your Hypernode-URL: APP_URL="<http://APPNAME.hypernode.io:8888/>"

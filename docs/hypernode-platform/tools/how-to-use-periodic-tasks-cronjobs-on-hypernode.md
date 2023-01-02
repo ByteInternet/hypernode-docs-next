@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Cronjobs are periodic tasks running in the background of your Hypernode
+      for maintenance, such as cleaning up logs or importing products. Here's how
+      to use them.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-periodic-tasks-cronjobs-on-hypernode/ -->
 
 # How to Use Periodic Tasks (Cronjobs) on Hypernode
@@ -58,7 +66,7 @@ For most cases, cronjob syntax is actually quite easy. See the [full documentati
 
 ### Stopping Cronjobs After a Timeout Period
 
-To avoid cronjobs running for hours, blocking all other crontasks to be executed by Magento,  you can make use of the `timeout` utility.
+To avoid cronjobs running for hours, blocking all other crontasks to be executed by Magento, you can make use of the `timeout` utility.
 
 This tool can be given a “max execution time” and will stop the running task when this time period has exeeded.
 

@@ -14,15 +14,35 @@ You can avoid this problem by rotating the log files. This means that when a log
 
 For a log file `~/example.log`, the tool can be used as follows:
 
-| 123 | app@levkd4-example-magweb-cmbl:~\$ hypernode-auto-logrotate example.log Adding logrotate cron job Adding logrotate config entry for "/data/web/example.log" |
+```console
+app@levkd4-example-magweb-cmbl:~$ hypernode-auto-logrotate example.log
+Adding logrotate cron job
+Adding logrotate config entry for "/data/web/example.log"
+```
 
 This will cause the log file to be rotated on a daily basis, at around midnight. If the file is over 50MB, the next day the old logs will have been moved to `~/example.log.1.gz`.
 
-| 12 | app@levkd4-example-magweb-cmbl:~\$ ls example.log\*example.log  example.log.1.gz |
+```console
+app@levkd4-example-magweb-cmbl:~$ ls example.log*
+example.log example.log.1.gz
+```
 
 The tool also has a `--detect` option, with which it will search for log files and rotate them:
 
-| 123456789101112 | app@levkd4-example-magweb-cmbl:~\$ hypernode-auto-logrotate --detectSearching for logfiles...Logfile found: /data/web/example.logLogfile found: /data/web/magento2/var/log/system.logLogfile found: /data/web/magento2/var/log/connector.logLogfile found: /data/web/magento2/var/log/debug.logLogfile found: /data/web/magento2-sample-data/dev/tools/exclude.logLogfile "/data/web/example.log" is already being rotatedAdding logrotate config entry for "/data/web/magento2/var/log/system.log"Adding logrotate config entry for "/data/web/magento2/var/log/connector.log"Adding logrotate config entry for "/data/web/magento2/var/log/debug.log"Adding logrotate config entry for "/data/web/magento2-sample-data/dev/tools/exclude.log" |
+```console
+app@levkd4-example-magweb-cmbl:~$ hypernode-auto-logrotate --detect
+Searching for logfiles...
+Logfile found: /data/web/example.log
+Logfile found: /data/web/magento2/var/log/system.log
+Logfile found: /data/web/magento2/var/log/connector.log
+Logfile found: /data/web/magento2/var/log/debug.log
+Logfile found: /data/web/magento2-sample-data/dev/tools/exclude.log
+Logfile "/data/web/example.log" is already being rotated
+Adding logrotate config entry for "/data/web/magento2/var/log/system.log"
+Adding logrotate config entry for "/data/web/magento2/var/log/connector.log"
+Adding logrotate config entry for "/data/web/magento2/var/log/debug.log"
+Adding logrotate config entry for "/data/web/magento2-sample-data/dev/tools/exclude.log"
+```
 
 The default threshold of the hypernode-auto-logrote is 500 MB meaning the tool will only detect logs larger than 500 MB. You can also lower the threshold by adding the option `--threshold 200MB` (or any other amount) so it will search for logs bigger than 200 MB for example.
 
@@ -32,6 +52,19 @@ The tool has a `--dry-run` option which will print what the tool will do without
 
 The `hypernode-auto-logrotate` command comes with a sensible out-of-the-box configuration. Among other things, this means that it will rotate log files daily, only when they exceed 50MB, and that it will keep four files in rotation (meaning you end up with `example.log.1.gz` up to `example.log.4.gz`). These configurations are stored in `/data/web/hypernode_logrotate.conf`, and can be customized per log by editing this file. For example, the entry added for `example.log` reads
 
-| 123456789101112 | /data/web/example.log {    rotate 4    daily    compress    # do not raise an error if the logfile does not exist    missingok    # file size at which rotation is triggered    size 50M    # copy the file and truncate the original, in case    # another process cannot be told to close the logfile    copytruncate} |
+```logrotate
+/data/web/example.log {
+    rotate 4
+    daily
+    compress
+    # do not raise an error if the logfile does not exist
+    missingok
+    # file size at which rotation is triggered
+    size 50M
+    # copy the file and truncate the original, in case
+    # another process cannot be told to close the logfile
+    copytruncate
+}
+```
 
-The [logrotate main page](https://man.cx/logrotate#heading6) contains instructions on how to customize this
+The [logrotate main page](https://linux.die.net/man/8/logrotate) contains instructions on how to customize this

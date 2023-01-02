@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Misconfigured web servers can leak Magento cache files containing
+      database passwords. To prevent this from happening, read here how to secure
+      Magento cacheleak.
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/security/how-to-secure-magento-cacheleak/ -->
 
 # How to Secure Magento Cacheleak

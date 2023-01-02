@@ -37,7 +37,7 @@ Operation was successful and is being processed. Please allow a few minutes for 
 
 ## Use Composer 2 in a Separate Path
 
-Hypernodes contain both `/usr/local/bin/composer1`and `/usr/local/bin/composer2`. The first one self-updates with the `--1` flag to the latest Composer 1 version and the latter self-updates to the most recent Composer 2 version. Depending on which Composer version is configured, `/usr/local/composer` is a symlink to either one of those paths.
+Hypernodes contain both `/usr/local/bin/composer1`and `/usr/local/bin/composer2`. The first one self-updates with the `--1` flag to the latest Composer 1 version and the latter self-updates to the most recent Composer 2 version. Depending on which Composer version is configured, `/usr/local/composer` is a symlink to either one of those paths.
 
 The reason for this is backwards compatibility because Magento only started [including support for Composer 2 in Magento 2.4.2](https://devdocs.magento.com/guides/v2.4/comp-mgr/cli/cli-upgrade.html).
 

@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'When things go wrong, you want to restore the appropriate database
+      table, files or directories from the backup. We offer this with snapshots. '
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/backups/hypernode-backup-policy/ -->
 
 # Hypernode Backup Policy
@@ -14,7 +21,7 @@ Snapshots are rotated daily after the creation of a new backup. This implies tha
 
 A snapshot is a saved state of the `/data` device at a given moment in time. We can use this to create a static copy of that given state in time and transform this to a virtual device which we can attach to your Hypernode. Once attached, this device is mounted under `/data/backup` and you can easily restore your files by copying them from this file system. To restore database and file backups, see [this article](https://support.hypernode.com/en/hypernode/backups/how-to-restore-your-hypernode-from-a-backup).
 
-**Everyone can always attach the most recent snapshot to your Hypernode for free**.  You can do so by using the following command to attach the latest available snapshot to your node:
+**Everyone can always attach the most recent snapshot to your Hypernode for free**. You can do so by using the following command to attach the latest available snapshot to your node:
 
 `hypernode-systemctl attach_backup`
 

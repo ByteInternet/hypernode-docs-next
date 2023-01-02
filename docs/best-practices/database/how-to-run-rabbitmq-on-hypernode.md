@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: RabbitMQ is message-queueing software where queues running in the
+      background can be defined. Read here how to use it on Hypernode.
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/database/how-to-run-rabbitmq-on-hypernode/ -->
 
 # How to Run RabbitMQ on Hypernode

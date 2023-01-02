@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: This tutorial shows how to create a keypair and use PuTTY (for Windows
+      users) or Terminal (Linux and Mac OSX) to log in to your Hypernode.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/ssh/how-to-use-ssh-keys-on-hypernode/ -->
 
 # How to Use SSH Keys on Hypernode

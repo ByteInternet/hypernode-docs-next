@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: Hypernode offers a staging environment so it can be used as a sandbox
+      for your Akeneo PIM project.
+---
+
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001183489-how-to-use-a-basic-staging-environment-with-akeneo-4-and-5/ -->
 
 # How To Use A Basic Staging Environment with Akeneo 4 and 5
@@ -9,7 +16,7 @@ Hypernode offers a staging environment so it can be used as a sandbox for your A
 Create a vhost for your staging environment.
 
 ```bash
-hypernode-manage-vhosts  staging.example.hypernode.io --force-https --https --type akeneo4
+hypernode-manage-vhosts staging.example.hypernode.io --force-https --https --type akeneo4
 ```
 
 ## Split the Nnginx Configuration for Production and Staging

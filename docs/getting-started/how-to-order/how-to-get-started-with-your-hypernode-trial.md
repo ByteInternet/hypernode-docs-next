@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'Your trial gives you 14 days of free testing on our Hypernode platform.
+      Find out how to get started and test all features on the platform in this article. '
+---
+
 <!-- source: https://support.hypernode.com/en/getting-started/how-to-order/how-to-get-started-with-your-hypernode-trial/ -->
 
 # How to Get Started With Your Hypernode Trial

@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'Development Hypernodes are by default configured to offer a Basic
+      Authentication challenge to all visitors. Read all about it in this article. '
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/basic-authentication-on-hypernode-development-plans/ -->
 
 # Basic Authentication on Hypernode Development Plans
@@ -29,7 +36,7 @@ To remove a users, use the command: `htpasswd -D /data/web/nginx/htpasswd-develo
 
 If you need to connect your development node to external services, API’s, and tooling that do not support basic authentication, it’s possible to whitelist specific IP addresses, user agents, or request paths. Your Hypernode comes preconfigured with a whitelist file that allows you to easily configure your basic auth whitelist, in the file`/data/web/nginx/whitelist-development-exception.conf`
 
-If your Development node lacks this file, or if your whitelist configuration only contains an IP whitelist, you can find a clean version of this file on [our Github](https://gist.github.com/hn-support/3d0ec225e7fd49e6996377e48996f57c#file-whitelist-development-exception-conf). This file also contains examples on how to use the various whitelists.
+If your Development node lacks this file, or if your whitelist configuration only contains an IP whitelist, you can find a clean version of this file on [our Github](https://gist.github.com/hn-support/3d0ec225e7fd49e6996377e48996f57c#file-whitelist-development-exception-conf). This file also contains examples on how to use the various whitelists. Please note that this snipped was made to work if you use all three options, as they 'chain' on to each other.
 
 ### Whitelist an IP or IP range
 
@@ -44,6 +51,24 @@ To whitelist a specific user agent you can add it to the User Agent whitelist ma
 ### Whitelist an URL
 
 To whitelist a specific URL you can add it to the url whitelist map in the whitelist file. Please note that the whitelist is based on the entire URL, including any arguments. As such, we advise using a regex pattern when whitelisting.
+
+## Disable the basic authentication
+
+To disable the basic authentication on our development plans add the following line in the **Nginx** file **whitelist-development-exception.conf**:
+
+```nginx
+# You can make certain IP addresses exempt here from the development
+# basic auth. Beware though, that google and bing bots will always
+# remain blocked on development nodes!
+
+geo $development_exceptions {
+    default "Development restricted area";
+    # 1.2.3.4/32 "off"; # disables basic auth for 1.2.3.4/32
+    0.0.0.0/0 "off"; # Everything is allowed.
+}
+```
+
+Please note that Google and Bing are still blocked when everyone else is allowed.
 
 ## Troubleshooting
 

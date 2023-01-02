@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'An overview of Hypernode security policies and information security
+      certification can be found in this article. '
+---
+
 <!-- source: https://support.hypernode.com/en/about/security/hypernode-security-statement/ -->
 
 # Hypernode Security Statement

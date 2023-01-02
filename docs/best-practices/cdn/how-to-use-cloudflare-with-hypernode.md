@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: Hypernodes are fully configured and support Cloudflare out of the
+      box. Read here how to use them.
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/cdn/how-to-use-cloudflare-with-hypernode/ -->
 
 # How to Use Cloudflare with Hypernode

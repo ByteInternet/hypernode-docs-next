@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: The Hypernode Docker Image can be used to set up a local test environment
+      for Shopware. This article explains how to install Shopware 5 on a Docker environment.
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/shopware/how-to-install-shopware-5-on-hypernode-docker/ -->
 
 # How to Install Shopware 5 on Hypernode Docker

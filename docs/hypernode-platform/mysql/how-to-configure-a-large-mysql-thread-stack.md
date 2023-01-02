@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: For Hypernodes we have a set of MySQL related opt-in settings to
+      facilitate some flexibility (because it is not possible to change root-owned
+      MySQL related config files.)
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/mysql/how-to-configure-a-large-mysql-thread-stack/ -->
 
 # How to Configure a Large MySQL thread_stack

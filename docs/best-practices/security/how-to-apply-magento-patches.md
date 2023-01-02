@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Every now and then Magento issues a new patch to increase the security
+      of their software. In this article we explain how you can install them on your
+      webshop.
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/security/how-to-deploy-magento-patches/ -->
 
 # How to Apply Magento Patches
@@ -39,7 +47,7 @@ Download the patch(es) you need via the [Magento downloads page](http://magento.
 Navigate to your Magento folder:
 
 ```nginx
- cd example.nl
+cd example.nl
 ```
 
 After this, the command BASH will apply the patch you just downloaded:
@@ -106,7 +114,7 @@ In this example only SUPEE-5344 has been applied. When you uninstalled a patch, 
  -e 2015-04-14 15:21:48 UTC | SUPEE-5344 | EE_1.14.1.0 | v1 | a5c9abcb6a387aabd6b33ebcb79f6b7a97bbde77 | Thu Feb 5 19:14:49 2015 +0200 | v1.14.1.0..HEAD | REVERTED
 ```
 
-**Magereport keeps saying security patch 6482 isn’t installed**
+**Magereport keeps saying security patch 6482 isn’t installed**
 
 We found out that there are several reasons why Patch 6788 comes out as uninstalled on [MageReport.com.](https://www.magereport.com/page/support), so we recommend you to check the following:
 

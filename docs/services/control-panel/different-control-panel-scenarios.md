@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: "For security and usability, the Hypernode Control Panel's features\
+      \ are available to users based on the role assigned to the individual user. "
+---
+
 <!-- source: https://support.hypernode.com/en/services/control-panel/different-control-panel-scenarios/ -->
 
 # Different Control Panel Scenarios

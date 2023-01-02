@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'In this article, we explain how to adjust the hosts file of the
+      following operating systems: Windows 10, 8 & 7, Linux and Mac OS X.'
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/testing/how-to-test-your-website-by-changing-your-hosts-file/ -->
 
 # How to Test Your Website by Changing Your Hosts File

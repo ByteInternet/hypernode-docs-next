@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'In Nginx blocking and allowing IP-addresses is done using the access
+      module. Find thorough guidelines in this article. '
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-block-allow-ip-addresses-in-nginx/ -->
 
 # How to block/allow IP-addresses in Nginx

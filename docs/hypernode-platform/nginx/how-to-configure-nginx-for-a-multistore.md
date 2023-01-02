@@ -1,4 +1,11 @@
-<!-- source: https://support.hypernode.com/en/support/solutions/articles/48001201334-how-to-configure-nginx-for-a-multistore/ -->
+---
+myst:
+  html_meta:
+    description: Using domains or subdirectories for storefronts can be done by configuring
+      your Magento shop. Read about how to configure the store codes in Nginx here.
+---
+
+<!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-configure-nginx-for-a-multistore/ -->
 
 # How to Configure Nginx for a Multistore
 
@@ -26,9 +33,9 @@ When you opt for using different domains for each storefront then it will be rel
 set $storecode "example_storecode";
 ```
 
-\***Varnish enabled?**
+#### **Multistore in Combination with Varnish**
 
-If you have a multistore, with hypernode-manage-vhost enabled \*\*&\*\*you are using Varnish. You'd have to add a `varnish.storecode` file with the same content to your vhost as well.
+\***Attention**, If you have a multistore, with hypernode-manage-vhost enabled ANDyou are using Varnish. You'd have to add a `varnish.storecode` file with the same content to your vhost configuration as well. You could simply copy the **server.storecode**like: `cp server.storecode varnish.storecode`
 
 ### Using Subdirectories
 
@@ -101,18 +108,16 @@ ln -s /data/web/public /data/web/public/nl
 Below you can find an example setup where all the above options have been combined.
 
 ```bash
-  Magento Stores - Base URLs
-
+  Magento Stores - Base URLs
 +----+---------+------------------------------------+--------------------+
-
-| id | code    | unsecure_baseurl           | secure_baseurl             |
+| id | code    | unsecure_baseurl           | secure_baseurl             |
 +----+---------+------------------------------------+--------------------+
-| 1  | default | https://www.example.com/   | <https://www.example.com/>   |
-| 2  | fr      | https://www.example.nl/fr/ | https://www.example.nl/fr/ |
-| 3  | en      | https://www.example.nl/en/ | https://www.example.nl/en/ |
-| 4  | be_fr   | https://www.example.be/fr/ | https://www.example.be/fr/ |
-| 5  | be_nl   | https://www.example.be/nl/ | https://www.example.be/nl/ |
-| 6  | nl      | https://www.example.nl/    | https://www.example.nl/    |
+| 1  | default | https://www.example.com/   | https://www.example.com/   |
+| 2  | fr      | https://www.example.nl/fr/ | https://www.example.nl/fr/ |
+| 3  | en      | https://www.example.nl/en/ | https://www.example.nl/en/ |
+| 4  | be_fr   | https://www.example.be/fr/ | https://www.example.be/fr/ |
+| 5  | be_nl   | https://www.example.be/nl/ | https://www.example.be/nl/ |
+| 6  | nl      | https://www.example.nl/    | https://www.example.nl/    |
 +----+---------+------------------------------------+--------------------+
 ```
 

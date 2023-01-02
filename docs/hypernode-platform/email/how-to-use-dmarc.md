@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: Hypernode offers DMARC (Domain-based Message Authentication, Reporting
+      and Conformance) for Service Panel users. Read how to configure it in this article.
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/email/how-to-use-dmarc/ -->
 
 # How to Use DMARC
@@ -12,7 +19,7 @@ The DMARC record is a TXT record in the DNS. It can be described as a combinatio
 
 The recipient of the email checks the SPF and DKIM records. If the message does not pass this check, the DMARC record tells the mail server what to do with the email. There are three different policies (p):
 
-- None policy: with this policy, the server will not do anything with email that fails the DMARC check. The email just goes into the inbox of the receiver.  **This option\*\*\*\*will not be allowed for the Thuiswinkel Waarborg keurmerk.**
+- None policy: with this policy, the server will not do anything with email that fails the DMARC check. The email just goes into the inbox of the receiver. **This option\*\*\*\*will not be allowed for the Thuiswinkel Waarborg keurmerk.**
 - Quarantine policy: emails that fail the DMARC check will be put in special quarantine folders e.g. the junk or spam folder. This is the recommended policy.
 - Reject policy: emails that fail the DMARC check will be rejected. These messages will bounce and will not end up in any folder.
 

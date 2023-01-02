@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: The official Hypernode Docker image for Magento development can be
+      used to build a development environment, or as a build machine. Read all about
+      it here.
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/testing/hypernode-docker/ -->
 
 # Hypernode-docker

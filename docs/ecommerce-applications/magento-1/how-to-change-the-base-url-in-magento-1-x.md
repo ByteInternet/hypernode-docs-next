@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'There are several ways to change the Base URL of your Magento 1.x
+      storefronts. Find detailed instructions for each in this article. '
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-change-the-base-url-in-magento-1-x/ -->
 
 # How to Change the Base URL in Magento 1.x

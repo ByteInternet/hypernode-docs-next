@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'Hypernode is a unique e-commerce platform for your Magento or Shopware
+      shop. Read all about our different hosting solutions in this article. '
+---
+
 <!-- source: https://support.hypernode.com/en/about/billing/how-to-choose-and-order-a-hypernode-plan/ -->
 
 # How to Choose and Order a Hypernode Plan

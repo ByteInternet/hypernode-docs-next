@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: A Hypernode Managed Vhost system is a configuration allowing you
+      to setup multiple domainnames with an own independant configuration. Reall all
+      about it here.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/hypernode-managed-vhosts/ -->
 
 # Hypernode Managed Vhosts
@@ -98,7 +106,7 @@ If so, it will give the following output:
 
 `managed_vhosts_enabled is set to value True`
 
-If you want to request a LE certificate you need to add the  `--https` flag with the HMV-command.
+If you want to request a LE certificate you need to add the `--https` flag with the HMV-command.
 
 `hypernode-manage-vhosts www.example.com --https --force-https`
 

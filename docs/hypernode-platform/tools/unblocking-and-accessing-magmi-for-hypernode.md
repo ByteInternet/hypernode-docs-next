@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Magmi, the Magento mass importer, is an alternative product importer
+      offering better performance than the default. Here's how to unblock and access
+      it.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/tools/unblocking-and-accessing-magmi-for-hypernode/ -->
 
 # Unblocking and Accessing Magmi for Hypernode
@@ -36,8 +44,8 @@ location ~* /magmi($|/) {
 
 Don’t forget to [create a user](https://support.hypernode.com/knowledgebase/protect-a-directory-with-a-password-in-nginx/):
 
-```nginx
-tpasswd -c /data/web/nginx/magmi.htpasswd exampleuser
+```bash
+htpasswd -c /data/web/nginx/magmi.htpasswd exampleuser
 ```
 
 ### Protect Your Magmi Installation With an IP Whitelist

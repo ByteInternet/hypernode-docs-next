@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'In this article, we explain how to preven spam from being sent from
+      your name or email address. Only available in Dutch. '
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/email/how-to-prevent-spam-being-sent-from-your-name-or-email-address/ -->
 
 # How to Prevent Spam Being Sent From Your Name or Email Address

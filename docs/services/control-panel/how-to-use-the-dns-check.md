@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'Use the DNS check in the Control Panel to ensure your externally
+      hosted domain is properly configured to send email via Hypernode. '
+---
+
 <!-- source: https://support.hypernode.com/en/services/control-panel/how-to-use-the-dns-check/ -->
 
 # How to Use the DNS Check

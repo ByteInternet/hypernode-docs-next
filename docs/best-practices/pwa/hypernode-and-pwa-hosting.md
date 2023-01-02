@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Progressive Web Apps (PWA) are a hot item and are considered the
+      future of web development. Read about its advantages, challenges and hosting
+      requirements here.
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/pwa/hypernode-and-pwa-hosting/ -->
 
 # Hypernode and PWA Hosting

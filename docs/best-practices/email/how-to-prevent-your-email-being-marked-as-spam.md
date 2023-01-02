@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: Sometimes messages sent from a Hypernode are marked as spam by external
+      spam filters. Follow these steps in this article to fix any misconfigurations.
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/email/how-to-prevent-your-email-being-marked-as-spam/ -->
 
 # How to Prevent Your Email Being Marked as Spam

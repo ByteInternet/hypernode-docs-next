@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Some shop owners prefer a domain name starting with www, others prefer
+      without. Many constructions are possible. Check out how to redirect from or
+      to WWW here.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-redirect-from-or-to-www/ -->
 
 # How to Redirect From or to WWW
@@ -18,9 +26,9 @@ More info can be found [on our page about setting your DNS](https://support.hype
 To redirect all traffic to www you have to create both a vhost for the Apex and for the [www](http://www). For the non-www vhost you can create the vhost as type wwwizer. This will redirect all traffic to the [www](http://www). version of that vhost. This can be achieved by running: hypernode-manage-vhosts [example.com](//example.com) --type wwwizer
 
 ```nginx
-|   servername   |   type   | default_server | https | force_https | varnish |  ssl_config  |
+| servername | type | default_server | https | force_https | varnish | ssl_config |
 |    example.com | wwwizer  |      False     | False |    False    |  True   | intermediate |
-|www.example.com | magento2 |      False     | False |    False    |  False  | intermediate |
+|www.example.com | magento2 | False | False | False |  False | intermediate |
 ```
 
 **Without hypernode-manage-vhosts enabled (old legacy nginx-config)**
@@ -45,7 +53,7 @@ if ($http_host ~ ^www\.(?<domain>.+)$ ) {
 }
 ```
 
-Save this snippet in `/data/web/public/server.rewrites` or in case you are using Varnish public.rewrites.
+Save this snippet in `/data/web/nginx/server.rewrites` or in case you are using Varnish public.rewrites.
 
 ## Redirect When Using Varnish
 

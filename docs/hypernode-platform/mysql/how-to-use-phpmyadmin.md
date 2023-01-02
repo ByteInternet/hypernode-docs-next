@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'In this article, we provide you with a detailed roadmap about how
+      you can use PHPMyAdmin and how to create a database dump. '
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/mysql/how-to-use-phpmyadmin/ -->
 
 # How to Use PHPMyAdmin
@@ -12,7 +19,7 @@ PHPMyAdmin comes preinstalled on your Hypernode at <http://example.hypernode.io/
 
 ### Credentials
 
-PHPMyAdmin uses the same user and password your database uses. You can find them safely stored on your hypernode in  `/data/web/.my.cnf`.
+PHPMyAdmin uses the same user and password your database uses. You can find them safely stored on your hypernode in `/data/web/.my.cnf`.
 
 ### Enabling HTTPS
 
@@ -41,7 +48,7 @@ When you want to use phpMyAdmin via another domain, via another URL, or you want
 - Create an nginx snippet in /data/web/nginx called `server.phpmyadmin` with the following content:
 
 ```nginx
-location /phpmyadmin/ {
+location /dbadmin/ {
   # Only allow IP addresses defined in /data/web/include.whitelist
   include /etc/nginx/app/include.whitelist;
 
@@ -66,6 +73,8 @@ allow XXX.XXX.XXX.XXX;
 deny all;
 ```
 
+Now make sure to set a symlink from within your webroot: `ln -s /usr/share/phpmyadmin/ dbadmin`
+
 And finally visit phpMyAdmin on <https://yourdomain.nl/dbadmin>
 
 **This will only add another URL where phpMyAdmin is accessible. If you only want to use this endpoint, block all access to `/phpmyadmin` too**
@@ -86,7 +95,7 @@ if ($request_uri ~ ^/phpmyadmin ) {
 
 - **The phpMyAdmin button in the control panel redirects to `https://` and gives a 404 in Nginx**
 
-This is probably because you redirect ALL traffic over HTTPS. Try using PHPMyAdmin over ssl as explained above.
+This is probably because you redirect ALL traffic over HTTPS. Try using PHPMyAdmin over ssl as explained above.
 
 - **I'm receiving an error while dumping the database**
 

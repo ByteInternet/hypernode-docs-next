@@ -1,4 +1,4 @@
-<!-- source: https://support.hypernode.com/en/support/solutions/articles/48001200525-how-to-configure-varnish-for-shopware-6 -->
+<!-- source: https://support.hypernode.com/en/support/solutions/articles/48001200525-how-to-configure-varnish-for-shopware-6/ -->
 
 # How to Configure Varnish for Shopware 6
 

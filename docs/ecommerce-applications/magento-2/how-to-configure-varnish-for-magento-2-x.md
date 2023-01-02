@@ -1,4 +1,11 @@
-<!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-configure-varnish-for-magento-2-x -->
+---
+myst:
+  html_meta:
+    description: This article explains how you can configure Varnish for your Hypernode
+      in order to boost your Magento 2.x shop.
+---
+
+<!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-configure-varnish-for-magento-2-x/ -->
 
 # How to Configure Varnish for Magento 2.x
 
@@ -144,7 +151,7 @@ The VCL you just imported and activated should have the status `active`. If all 
 
 To make sure your .vcl stays active even after a restart of Varnish we run a script every 5 minutes which saves the running config to /data/var/varnish/default.vcl which will be used once Varnish restarts. the "boot" profile will check what the last running .vcl was, and use that config in the "boot" profile.
 
-This will mean that your loaded .vcl profile won't be existing the next time you'll look,  and that your own .vcl profile is renamed to "boot". This is expected behaviour.
+This will mean that your loaded .vcl profile won't be existing the next time you'll look, and that your own .vcl profile is renamed to "boot". This is expected behaviour.
 
 ## Flush Your Varnish Cache When Using Magento 2
 

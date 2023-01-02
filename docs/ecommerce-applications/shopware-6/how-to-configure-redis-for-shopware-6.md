@@ -1,3 +1,7 @@
+---
+needs_review: true
+---
+
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001200521-how-to-configure-redis-for-shopware-6/ -->
 
 # How to Configure Redis for Shopware 6
@@ -21,7 +25,7 @@ framework:
     cache:
         app: cache.adapter.redis
         system: cache.adapter.redis
-        default_redis_provider: '%env(string:REDIS_URL)%'
+        default_redis_provider: '%env(string:REDIS_URL)%'
 ```
 
 Now flush the Shopware cache, either via the backend or via the CLI by running:

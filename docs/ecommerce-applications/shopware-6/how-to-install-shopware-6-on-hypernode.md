@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'In this article we guide you through the steps of setting up the
+      latest version of Shopware 6 as easy as possible. '
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/shopware/how-to-install-shopware-6-on-hypernode/ -->
 
 # How to Install Shopware 6 on Hypernode
@@ -61,7 +68,7 @@ ln -s /data/web/shopware/public/ /data/web/public
 
 #### Install Shopware 6
 
-Now open your browser and browse to <https://APPNAME.hypernode.io/recovery/install/index.php>. At this point you can follow the guide through your browser. Make sure to fill in the right details at the **Configure database**:
+Now open your browser and browse to [https://APPNAME.hypernode.io/recovery/update/index.php](https://APPNAME.hypernode.io/recovery/install/index.php). At this point you can follow the guide through your browser. Make sure to fill in the right details at the **Configure database**:
 
 Database server: localhost
 Database user: app

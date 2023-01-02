@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: It's important to restrict access to your Magento admin panel to
+      keep hackers from having access to all your data. In this article we explain
+      how to do so.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-restrict-access-to-your-admin-area/ -->
 
 # How to Restrict Access to Your Admin Area

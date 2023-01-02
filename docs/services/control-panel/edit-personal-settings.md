@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'You can modify your personal settings from the Hypernode control
+      panel. In this article, we explain you how to edit them. '
+---
+
 <!-- source: https://support.hypernode.com/en/services/control-panel/edit-personal-settings/ -->
 
 # Edit Personal Settings

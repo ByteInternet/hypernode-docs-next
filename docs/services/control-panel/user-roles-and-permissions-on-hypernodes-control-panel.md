@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: For security and usability, the Hypernode Control Panel's features
+      are available to users based on the role assigned to the individual user. Read
+      more here.
+---
+
 <!-- source: https://support.hypernode.com/en/services/control-panel/user-roles-and-permissions-on-hypernodes-control-panel/ -->
 
 # User Roles and Permissions on Hypernode’s Control Panel

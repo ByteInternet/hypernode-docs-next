@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: Hypernode is part of team.blue, a leading digital enabler for companies
+      and entrepreneurs.
+---
+
 <!-- source: https://support.hypernode.com/en/about/about-us/hypernode-and-team-blue/ -->
 
 # Hypernode and team.blue

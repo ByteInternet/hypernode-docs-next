@@ -1,4 +1,11 @@
-<!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-create-a-sitemap-xml-for-magento-1-x -->
+---
+myst:
+  html_meta:
+    description: 'Find detailed guidelines on how to create a sitemap.xml for Magento
+      1.x versions here. '
+---
+
+<!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-create-a-sitemap-xml-for-magento-1-x/ -->
 
 # How to Create a Sitemap.xml for Magento 1.x
 

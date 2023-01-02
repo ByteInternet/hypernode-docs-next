@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: Many developers validate their SSL setting on Hypernode with Qualys
+      SSL labs. This article explains how to get an A+ rating for your SSL configuration.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/ssl/how-to-upgrade-your-ssl-settings-to-an-a-plus/ -->
 
 # How to Upgrade Your SSL Settings to an A+
@@ -38,9 +45,9 @@ Most of the settings to get a high rating are already in place. We choose and ma
 
 Adding security headers
 
-One of the recommended settings in your SSL setup, is adding an HSTS header. This header instructs browsers to only use HTTPS instead of HTTP on your website. This way your cookies are more secure and your browser is protected against downgrade attacks.
+One of the recommended settings in your SSL setup, is adding an `HSTS` header. This header instructs browsers to only use HTTPS instead of HTTP on your website. This way your cookies are more secure and your browser is protected against downgrade attacks.
 
-Add a header by creating a server.hsts configuration file in /data/web/nginx with the following content:
+Add a header by creating a `server.hsts` configuration file in /data/web/nginx with the following content:
 
 ```nginx
 add_header Strict-Transport-Security "max-age=31536000;" always;
@@ -57,7 +64,7 @@ This will make sure all subdomains will redirect to SSL when a HTTP connection i
 Verifying SSL settings and headers is easily done using curl:
 
 ```nginx
-curl -v https://example.com/ 2>&1 > /dev/null 
+curl -v https://example.com/ 2>&1 > /dev/null
 ```
 
 This will redirect all html output to `/dev/null` and only shows the headers and SSL connection information of the request.
@@ -74,7 +81,7 @@ If you experience many mixed content warnings after [changing your base-URLs in 
 For more experienced CLI users, searching with grep is the easiest way to solve these warnings:
 
 ```nginx
-grep -RE '<code>http://(www\.)?example\.com</code>' /data/web/public 
+grep -RE '<code>http://(www\.)?example\.com</code>' /data/web/public
 ```
 
 Or when you are on Magento 2:

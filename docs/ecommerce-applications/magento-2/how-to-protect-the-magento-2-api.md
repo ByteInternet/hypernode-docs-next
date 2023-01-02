@@ -18,7 +18,7 @@ You’re shop is hosted somewhere else? See below for instructions
 
 ## I'm a Hypernode User
 
-Several API methods that might leak confidential data are protected by default:
+Several API methods that might leak confidential data are protected by default:
 
 ```
 V1/products

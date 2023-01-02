@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: This guide will explain how you can log in to the Service Panel and
+      what to do if you don't have access to your data anymore.
+---
+
 <!-- source: https://support.hypernode.com/en/about/support/how-to-log-into-the-service-panel/ -->
 
 # How to Log Into the Service Panel

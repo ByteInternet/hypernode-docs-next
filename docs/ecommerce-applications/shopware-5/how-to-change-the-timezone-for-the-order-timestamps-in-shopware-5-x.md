@@ -6,4 +6,4 @@ As you probably know, the world is divided in a bunch of time zones. Because Hyp
 
 Because the system timezone, and therefore the MySQL timezone as well, is set to UTC. The order timestamps might not match with the timezone that applies to your shop. So you will probably want to change the MySQL timezone for the correct order timestamps.
 
-The solution is quite simpel. There is a free [**plugin for Shopware 5**](https://store.shopware.com/en/bauer34122590788f/order-timestamp-correction-mysql-server-with-utc.html) which allows you to correct the timestamps of the orders.
+The solution is quite simpel. There is a free [**plugin for Shopware 5**](https://store.shopware.com/en/bauer34122590788f/order-timestamp-correction-mysql-server-with-utc.html) which allows you to correct the timestamps of the orders.

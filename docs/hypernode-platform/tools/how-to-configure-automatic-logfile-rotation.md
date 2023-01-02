@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: This article explains how to use hypernode-auto-logrotate, a tool
+      that automatically rotates log files, which helps to avoid disk space issues.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-configure-automatic-logfile-rotation/ -->
 
 # How to Configure Automatic Logfile Rotation
@@ -25,10 +32,10 @@ This will cause the log file to be rotated on a daily basis, at around midnight.
 
 ```nginx
 app@levkd4-example-magweb-cmbl:~/magento2/var/log$ ls system.log*
-system.log  system.log.1.gz
+system.log system.log.1.gz
 ```
 
-The tool also has a `--detect` option, with which it will search for log files and rotate them:
+The tool also has a `--detect` option, with which it will search for log files bigger than 500 MB and rotate them:
 
 ```nginx
 app@levkd4-example-magweb-cmbl:~$ hypernode-auto-logrotate --detect
@@ -64,4 +71,15 @@ The `hypernode-auto-logrotate` command comes with a sensible out-of-the-box conf
 }
 ```
 
-The [logrotate main page](https://man.cx/logrotate#heading6) contains instructions on how to customize this.
+The [logrotate main page](https://linux.die.net/man/8/logrotate)contains instructions on how to customize this.
+
+## Keeping the configuration up to date
+
+*****This cronjob configuration is deployed by default on new Hypernodes. If you don't want this configuration, feel free to comment or delete the configuration from your crontab.*****
+
+To make sure you keep your logrotate config keeps up to date with newer log files, it is advised to run `hypernode-auto-logrotate-detect --detect` every night. Open your cronjob configuration with `crontab -e` and add the following configuration.
+
+```
+# Add logfiles to logrotate configuration
+0 4 * * * /usr/bin/chronic /usr/bin/hypernode-auto-logrotate --detect
+```

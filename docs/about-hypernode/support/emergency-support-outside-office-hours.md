@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'When experiencing a business-critical disruption on your web shop,
+      you can use our Hypernode Emergency Support service for help. '
+---
+
 <!-- source: https://support.hypernode.com/en/about/support/emergency-support-outside-office-hours-/ -->
 
 # Emergency Support (outside office hours)

@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'Follow this article to set up automatic image optimization for a
+      faster shop on Hypernode in only a couple of minutes. '
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/performance/how-to-optimize-your-images/ -->
 
 # How to Optimize Your Images
@@ -55,7 +62,7 @@ app@83f01a-vdloo-magweb-cmbl:~$ hypernode-image-optimizer /data/web/public --exc
 
 ## Recommended: Periodic Optimization Using Cron
 
-To keep the disk usage reduced and your shop fast, we recommend you to add a cronjob to optimize new images every night.
+To keep the disk usage reduced and your shop fast, we recommend you to add a cronjob to optimize new images every night.
 
 NB: [Magereport.com](http://magereport.com) checks for a cronjob that optimizes your images periodically. If you optimized your images only once, the check will come out red.
 

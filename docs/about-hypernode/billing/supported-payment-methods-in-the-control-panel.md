@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: Read what payment methods are supported for the Hypernode Control
+      Panel here
+---
+
 <!-- source: https://support.hypernode.com/en/about/billing/supported-payment-methods-in-the-control-panel/ -->
 
 # Supported Payment Methods in the Control Panel

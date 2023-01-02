@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: A staging environment is very useful to test your shop. In this article
+      we explain how to set up a staging environment on Hypernode for a Magento 1
+      shop.
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-set-up-a-staging-environment-for-magento-1/ -->
 
 # How to Set Up a Staging Environment for Magento 1
@@ -28,7 +36,7 @@ For Nginx configuration (in /data/web/nginx/\*), the following rules apply:
 
 This has two distinct advantages. First, there's no need to change DNS, so its very easy to send your customer a link and it just works. Second, SSL certificates will work the same without warning.
 
-Remember that you will need to update the base_url for every storefront (with the new port number). You would have to update the config anyway, as you will likely require a separate database for MySQL and Redis. See below for a simple command.
+Remember that you will need to update the base_url for every storefront (with the new port number). You would have to update the config anyway, as you will likely require a separate database for MySQL and Redis. See below for a simple command.
 
 ## How to Make a Copy of a Live Site
 
@@ -75,7 +83,7 @@ Now at least change your MySQL database to staging and your Redis databases for 
 
 ### Step Five: Change the Base URL's of Your Staging Environment
 
-**Warning! Changing the base URL's before changing your MySQL database to your staging database will have impact on your production site.**
+**Warning! Changing the base URL's before changing your MySQL database to your staging database will have impact on your production site.**
 
 ```nginx
 cd /data/web/staging

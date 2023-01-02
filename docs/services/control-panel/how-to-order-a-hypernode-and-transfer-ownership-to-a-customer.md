@@ -1,4 +1,12 @@
-<!-- source: https://support.hypernode.com/en/support/solutions/articles/48001212568-how-to-order-a-hypernode-and-transfer-ownership-to-a-customer/ -->
+---
+myst:
+  html_meta:
+    description: 'On Hypernode you can order and transfer ownership of a plan to the
+      customer. This means a different account will be charged for the subscription.
+      The steps are:'
+---
+
+<!-- source: https://support.hypernode.com/en/services/control-panel/how-to-order-a-hypernode-and-transfer-ownership-to-a-customer/ -->
 
 # How To Order a Hypernode and Transfer Ownership To a Customer
 
@@ -21,7 +29,7 @@ To order a new Hypernode plan, follow these steps:
 1. Choose the needed Hypernode plan configuration, SLA and continue:
 
 ![](_res/uA9B2g-CkfkMKHl6NxGYv7LI3Y_US-rgDg.png)
-6\. Read "[Step 2: Tips For Ordering a Hypernode](https://support.hypernode.com/en/support/solutions/articles/48001212568-how-to-order-a-hypernode-and-transfer-ownership-to-customer#Step-2%3A-Tips-For-Ordering-a-Hypernode)"
+6\. Read "[Step 2: Tips For Ordering a Hypernode](https://support.hypernode.com/en/services/control-panel/how-to-order-a-hypernode-and-transfer-ownership-to-a-customer#Step-2%3A-Tips-For-Ordering-a-Hypernode)"
 7\. Give your Hypernode a name and proceed to checkout.
 8\. Check if all information is correct and place your order.
 9\. The new Hypernode plan will be booted and you will receive an email when it's ready.

@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: "It's often difficult to find the exact cause of a spam run. Use\
+      \ this article to find out what happened and how to prevent spam runs from your\
+      \ website. "
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/email/spam-run-via-your-website/ -->
 
 # Spam Run via Your Website

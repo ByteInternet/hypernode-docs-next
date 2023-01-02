@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: "Clean URL's are less intimidating to visitors and have a positive\
+      \ effect on search index optimization (SEO) as well. Find out how to enable\
+      \ them here. "
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-enable-clean-url-s-for-magento-1/ -->
 
 # How to Enable Clean URLs for Magento

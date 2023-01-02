@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'In this article you can find how to enable the Magento 2 API on
+      Hypernode by creating correct users (and code to solve 404 errors). '
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-enable-the-magento-2-api/ -->
 
 # How to Enable the Magento 2 API

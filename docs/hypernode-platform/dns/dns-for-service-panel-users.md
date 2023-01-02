@@ -1,8 +1,16 @@
+---
+myst:
+  html_meta:
+    description: DNS is a protocol that translates domain names to IP addresses on
+      the internet. Read here how you can configure the DNS for your domain name at
+      Hypernode.
+---
+
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001153093-dns-for-service-panel-users/ -->
 
 # DNS for Service Panel Users
 
-DNS stands for "Domain Name System" and is a protocol that translates  domain names to IP addresses on the internet. A DNS server is simply a table that contains IP addresses and hostnames (the name of a computer). The internet also uses DNS. When you go to a website, the IP address of the server behind the domain name is checked.
+DNS stands for "Domain Name System" and is a protocol that translates domain names to IP addresses on the internet. A DNS server is simply a table that contains IP addresses and hostnames (the name of a computer). The internet also uses DNS. When you go to a website, the IP address of the server behind the domain name is checked.
 
 You can edit the DNS setting for your domain names in the Service Panel (Instellingen => DNS).
 
@@ -24,7 +32,7 @@ If it is not possible to change the name servers at your domain provider you can
 
 ## How Does DNS Work at Hypernode?
 
-You can find the DNS settings in our Service Panel.  To do this, go to the 'Instellingen' tab and choose the DNS option. For each Presence plan we have a list of standard DNS set up:
+You can find the DNS settings in our Service Panel. To do this, go to the 'Instellingen' tab and choose the DNS option. For each Presence plan we have a list of standard DNS set up:
 
 3 NS records (name servers) from Hypernode. These cannot be removed or changed. If you need to change the name servers (to for example Cloudflare) you can request this by sending an email to [support@hypernode.com](mailto:support@hypernode.com) (from the email address that is linked to the account)
 
@@ -101,7 +109,7 @@ nsb.byte.nl
 
 nsc.byte.nl
 
-If you have set up other name servers, the DNS data will be downloaded from that server. Hypernode always recommends using the Byte name servers so that in the event of IP changes (if you switch from datacenter) we can switch quickly, without having to make changes to the DNS configuration. You can NOT change the name servers from the Service Panel.  If you need to change the name servers (to for example Cloudflare) you can request this by sending an email to [support@hypernode.com](mailto:support@hypernode.com) (from the email address that is linked to the account).
+If you have set up other name servers, the DNS data will be downloaded from that server. Hypernode always recommends using the Byte name servers so that in the event of IP changes (if you switch from datacenter) we can switch quickly, without having to make changes to the DNS configuration. You can NOT change the name servers from the Service Panel. If you need to change the name servers (to for example Cloudflare) you can request this by sending an email to [support@hypernode.com](mailto:support@hypernode.com) (from the email address that is linked to the account).
 
 ### A Records
 
@@ -134,7 +142,7 @@ With a CNAME record you can make a reference for a hostname to another hostname.
 | **Name**                                  | **Type** | **Value**            | **Prio** |
 | [www.example.com](http://www.example.com) | CNAME    | example.hypernode.io | -        |
 
-An advantage of using a CNAME is that if the IP address of the web server changes you won't need  to change the record for the www domain.
+An advantage of using a CNAME is that if the IP address of the web server changes you won't need to change the record for the www domain.
 
 ### TXT Records
 

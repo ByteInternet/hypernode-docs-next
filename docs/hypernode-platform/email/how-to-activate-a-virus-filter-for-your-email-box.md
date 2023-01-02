@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: A virus filter checks all incoming (and outgoing) email for viruses.
+      In this article we explain how Hypernodes virus filter works and how to deactive
+      it.
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/email/how-to-activate-a-virus-filter-for-your-email-box/ -->
 
 # How to Activate a Virus Filter for Your Email Box

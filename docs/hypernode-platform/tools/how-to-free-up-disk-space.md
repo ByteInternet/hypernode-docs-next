@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'When your disk is full, you can try to free up disk space on your
+      Hypernode before having to upgrade. Check out how to do so here. '
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-free-up-disk-space/ -->
 
 # How to Free up Disk Space
@@ -10,7 +17,7 @@ To display the percentile usage of files that can be created: `df -i /data`
 
 To display the percentage of used space in gigabytes: `df -h /data`
 
-To display the disk usage report sorted in descending order: `ncdu /data`
+To display the disk usage report sorted in descending order: `ncdu /data`
 
 ## Do You Have Too Many Files? Did You Run out of Inodes?
 

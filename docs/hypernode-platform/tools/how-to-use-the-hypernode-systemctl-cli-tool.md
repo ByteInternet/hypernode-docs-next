@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: The hypernode-systemctl tool allows you to set values for your Hypernode
+      via the command line interface. It makes Magento development and maintenance
+      easier.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-the-hypernode-systemctl-cli-tool/ -->
 
 # How to Use the hypernode-systemctl CLI Tool

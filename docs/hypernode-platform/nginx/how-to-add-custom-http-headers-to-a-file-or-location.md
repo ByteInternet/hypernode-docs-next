@@ -1,12 +1,19 @@
+---
+myst:
+  html_meta:
+    description: 'By adding HTTP headers to a file or location, you can provide additional
+      information for several reasons. Find out how to add customer HTTP headers here. '
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-add-custom-http-headers-to-a-file-or-location/ -->
 
 # How to Add Custom HTTP Headers to a File or Location
 
-In some cases you may wish to add additional HTTP headers to a file or location. Most commonly these headers will be used to provide additional information for troubleshooting purposes, for [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) or to set certain caching directives.
+In some cases, you may wish to add additional HTTP headers to a file or location. Most commonly, these headers will be used to provide additional information for troubleshooting purposes, for [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), or to set specific caching directives.
 
 ## Add HTTP Header to a Single File
 
-Adding a HTTP header to one single file is relatively easy. Simply create a `server.headers` file in `/data/web/nginx/` containing the following snippet:
+Adding an HTTP header to one single file is relatively easy. Simply create a `server.headers` file in `/data/web/nginx/` containing the following snippet:
 
 ```nginx
 location /info.html {
@@ -17,7 +24,7 @@ location /info.html {
 
 ## Add HTTP Header to Multiple Files/Location
 
-Most often you wish to add an additional HTTP header to multiple files, for instance to all the images that are loaded when someone is browsing your website. This can be done using a Regular Expression (regex) within the `server.headers` file. For example:
+You often wish to add an HTTP header to multiple files, for instance, all the images loaded when someone is browsing your website. This can be done using a Regular Expression (regex) within the `server.headers` file. For example:
 
 ```nginx
 location ~* (.+\.(jpg|jpeg|gif|css|png|js|ico|html|xml|txt))$ {
@@ -27,14 +34,14 @@ location ~* (.+\.(jpg|jpeg|gif|css|png|js|ico|html|xml|txt))$ {
 
 ```
 
-It is even a possibility to add HTTP headers to **all** files by not defining any location or file. For example:
+It is possible to add HTTP headers to **all** files by not defining any location or file. For example:
 
 ```nginx
 add_header Pragma public;
 
 ```
 
-If you want to override, for example the /media/ location but also other used locations in `/etc/nginx/magentoX.conf`, you must use an other regex then the already defined location block in our Magento Nginx configs:
+If you want to override, for example, the /media/ location but also other used locations in `/etc/nginx/magentoX.conf`, you must use another regex than the already defined location block in our Magento Nginx configs:
 
 Use the following in the `/data/web/nginx/server.headers` configuration file:
 
@@ -48,5 +55,5 @@ And don’t forget to change the domain name in the above example. You could add
 
 # Keep in Mind
 
-- It is not possible in Nginx to add locations twice. Only the first location in the configuration file takes presence. This is because Nginx config works on a per request base.
+- It is only possible in Nginx to add locations once. Only the first location in the configuration file takes presence. This is because the Nginx config works on a per-request base.
 - Don’t use a colon (`:`) when adding headers. This will result in inconsistent results in different browsers.

@@ -11,7 +11,7 @@ But, this is not only applicable for acute security issues. As Magento nerds we 
 The following security issues named in Magereport will not pose a threat to Hypernode customers.
 
 - Security patch 5344 (Shoplift) - In February 2015, we implemented a platform fix within a matter of only 4 hours. Despite this fix, we still advise our customers to patch their shop(s).
-- Unprotected Magmi? - Standardly the access to Magmi is blocked. If you would like  it to be unblocked, check [our Hypernode documentation](https://support.hypernode.com/en/hypernode/tools/unblocking-and-accessing-magmi-for-hypernode).
+- Unprotected Magmi? - Standardly the access to Magmi is blocked. If you would like it to be unblocked, check [our Hypernode documentation](https://support.hypernode.com/en/hypernode/tools/unblocking-and-accessing-magmi-for-hypernode).
 - Unmaintained server? - Hypernode always runs on safe software versions.
 - Unprotected version control? - For all shops on our platform, it is not possible to visit the git directory from the outside.
 - Security patch 5994 (admin disclosure) - We regularly check whether a login is attempted and cover it.
@@ -20,7 +20,7 @@ The following security issues named in Magereport will not pose a threat to Hype
 - Security patch 6285 (XSS, RSS) - Within 4 hours of a leak being discovered, we implemented a platform fix. Of course, we advise our customers to still patch their shops.
 - Credit Card Hijack detected? - This hack is implemented through Shoplift. We have plugged the leak within 4 hours after being discovered. Therefore there are no Hypernode customers who suffered from this hack.
 - EM_Ajaxproducts RCE vulnerability? - We block this on server level.
-- Cart2Quote RCE vulnerability? –  We block this on server level.
+- Cart2Quote RCE vulnerability? – We block this on server level.
 
 ## Hypernode is specifically developed for Magento
 
