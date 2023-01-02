@@ -1,7 +1,3 @@
----
-needs_review: true
----
-
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001200521-how-to-configure-redis-for-shopware-6/ -->
 
 # How to Configure Redis for Shopware 6
@@ -12,8 +8,8 @@ Redis is a caching method which can increase the speed of the backend and fronte
 
 Add the following line to the .env file:
 
-```nginx
-REDIS_URL=redis://localhost/<database ID>
+```bash
+REDIS_URL=redis://localhost:6379/1
 ```
 
 ## Step Two: Create the framework.yml File

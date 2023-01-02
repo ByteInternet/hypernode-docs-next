@@ -3,7 +3,6 @@ myst:
   html_meta:
     description: PageSpeed Booster is a reverse proxy which uses many static optimisation
       techniques to greatly increase the pagespeed score and performance of your website.
-needs_review: true
 ---
 
 <!-- source: https://support.hypernode.com/en/troubleshooting/performance/how-to-implement-pagespeed-booster/ -->
@@ -15,7 +14,7 @@ needs_review: true
 To get started with the PageSpeed Booster (formerly known as Percolate), you must meet the following requirements:
 
 - ***Production environment that is hosted on Hypernode.***
-- ***Dev environment that is a copy of live and hosted on Hypernode.***
+- ***Development/staging environment that is a copy of live and hosted on Hypernode.***
 - ***Varnish has to be enabled***
 - ***Time to thoroughly test the environment with PageSpeed Booster enabled.***
 
@@ -141,22 +140,11 @@ varnishadm vcl.use psb
 
 With the addition of Pagespeed booster, you'll have to deal with an extra layer of cache that needs to be flushed when demanded.
 
-Add your Pagespeed booster URL as entry to the **http_cache_hosts** section in your **env.php**:
+Add your Pagespeed booster URL to your Magento `http_cache_hosts` configuration:
 
-******app/etc/env.php******
-
-```
- ******'http_cache_hosts' => [
-[
-'host' => '127.0.0.1',
-'port' => '6081'
-],
-// PSB
-[
-'host' => 'appname-appname.fsn1.percolate-3.hipex.cloud',
-'port' => '80'
-]
-],******
+```bash
+bin/magento setup:config:set \
+  --http-cache-hosts=varnish:6081,appname-appname.fsn1.percolate-3.hipex.cloud:80
 ```
 
 After the change in your **env.php** perform a cache clean:

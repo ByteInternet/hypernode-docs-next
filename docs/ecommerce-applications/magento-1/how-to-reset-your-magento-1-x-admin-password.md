@@ -4,7 +4,6 @@ myst:
     description: If you are unable to login to your Magento shop, you have several
       methods to retrieve a new password to log back in. Check out here how to reset
       your password.
-needs_review: true
 ---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48000970831-how-to-reset-your-magento-1-x-admin-password/ -->
@@ -28,9 +27,9 @@ Visit your Magento admin backend in a browser, and click the link **Forgot your 
 
 Next insert your email address and press the **Retrieve Password** button.
 
-An email will be send to your email address, containing a password reset link.
+An email will be sent to your email address, containing a password reset link.
 
-An email will be send to your email address, containing a password reset link. Click the **RESET PASSWORD** link, or paste the link in your browser.
+An email will be sent to your email address, containing a password reset link. Click the **RESET PASSWORD** link, or paste the link in your browser.
 
 You then will be asked to insert a new password. Insert the password twice and click the **Reset Password** button to save your changes.
 
@@ -50,7 +49,7 @@ To reset a password through the Magento backend, access the backend in your brow
 
 From the **My Account** management page, insert your **current password** and second, insert your new password twice. After that, click the **Save Account** Button in the top-right corner of the page.
 
-### Reset Someone Elses Password Using the Magento Admin Backend
+### Reset Someone Else's Password Using the Magento Admin Backend
 
 To reset another users credentials, insert the name of the particular user, first, select `System` -> `Permissions` -> `Users`.
 
@@ -67,37 +66,31 @@ The `magerun` Magento management commandline utility provides a plugin to create
 ```bash
 cd ~/public
 magerun admin:user:change-password [username]
-
 ```
 
 This will show a password prompt. Insert the password and test if you can login on the webinterface. The plugin does not ask for a confirmation, so it might be smart to test the password right after changing it.
 
 ## Change the Password Directly in the Database
 
-Additionally you can change the passwords for admin users directly in the database. This is for experts only and not the easiers way. If you are not familiar with using MySQL, use the `magerun` plugin.
+Additionally you can change the passwords for admin users directly in the database. This is for experts only and not the easier way. If you are not familiar with using MySQL, use the `magerun` plugin.
 
 ### Set a New Password Using phpMyAdmin
 
 First, log in to phpMyAdmin:
 
-- Go to phpMyAdmin on the hypernode by visitting <http://appname.hypernode.io/phpmyadmin> or by clicking the link in our service panel.
+- Go to phpMyAdmin on the hypernode by visiting <http://appname.hypernode.io/phpmyadmin> or by clicking the link in our service panel.
 - Login with the username and password in `~/.my.cnf`
-- Select the prod database in the left side panel.
+- Select the prod database on the left side panel.
 - In the top bar, select the `SQL` tab.
 
 Next, follow the instructions below:
 
 - Paste the following query:
-
-```mysql
-UPDATE admin_user SET password = CONCAT(MD5('$SALT$PASSWORD'), ':$SALT') WHERE username = '$USERNAME';
-```
-
-```
-+ Replace `$PASSWORD` with the new admin password and replace `$USERNAME` with the username you want to change the password for.
-+ Replace `$SALT` with a random string of characters. Use the same random string in both parts of the SQL query. The string should be just 2 characters.
-```
-
+  ```mysql
+  UPDATE admin_user SET password = CONCAT(MD5('$SALT$PASSWORD'), ':$SALT') WHERE username = '$USERNAME';
+  ```
+- Replace `$PASSWORD` with the new admin password and replace `$USERNAME` with the username you want to change the password for.
+- Replace `$SALT` with a random string of characters. Use the same random string in both parts of the SQL query. The string should be just 2 characters.
 - Click `Go` to execute the query, and login with the given username using the new password.
 
 If your Magento 1 shop uses table prefixes add the prefix to your table name. IE: If your table prefix is mage\_, use the following query instead:
@@ -118,5 +111,4 @@ export PASSWORD="Randompassword123"
 export DATABASE="magento_live"
 export TABLE_PREFIX="mage_"
 export SALT="$( < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-32};echo; )" ## Or pick your own random password
-
 ```

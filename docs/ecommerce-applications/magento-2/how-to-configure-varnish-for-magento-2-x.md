@@ -77,7 +77,6 @@ To do this, run the following command:
 
 ```console
 $ cd /data/web/magento2;
-$ chmod 750 bin/magento;
 $ bin/magento setup:config:set --http-cache-hosts=127.0.0.1:6081;
 ```
 
