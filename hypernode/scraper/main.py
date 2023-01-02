@@ -1,6 +1,6 @@
 import os
 from logging import getLogger
-from typing import List
+from typing import List, Tuple
 from urllib.parse import urlparse
 
 import requests
@@ -15,17 +15,30 @@ logger = getLogger(__name__)
 scraped_urls = []
 
 
-def scrape(url: str) -> List[str]:
+def get_page_type_for_document(document: BeautifulSoup) -> str:
+    page_type = "unknown"
+    if document.find(name="section", attrs={"class": "category_container"}):
+        page_type = "category"
+    if document.find(name="div", attrs={"class": "folder-view"}):
+        page_type = "folder"
+    if document.find(name="div", attrs={"class": "article-view"}):
+        page_type = "article"
+    return page_type
+
+
+def scrape(url: str) -> List[Tuple[str, str]]:
     try:
         logger.info(f"Fetching {url}")
         response = requests.get(url)
     except Exception:
         logger.warning(f"Failed to fetch {url}")
         return []
-    result = [url]
+
     url_parts = urlparse(url)
-    soup = BeautifulSoup(response.content, "html.parser")
-    links = soup.find_all(name="a")
+    document = BeautifulSoup(response.content, "html.parser")
+
+    result = [(get_page_type_for_document(document), url)]
+    links = document.find_all(name="a")
     for link in links:
         if link.has_attr("href"):
             link_url = link["href"]
@@ -36,14 +49,17 @@ def scrape(url: str) -> List[str]:
             else:
                 continue
             link_url = link_url.split("#")[0].rstrip("/")
+
             if "?" not in link_url:
                 link_url = link_url + "/"
+
             link_url_parts = urlparse(link_url)
             if (
                 link_url_parts.hostname != url_parts.hostname
                 or not link_url_parts.path.startswith("/en/")
             ):
                 continue
+
             if link_url not in scraped_urls:
                 scraped_urls.append(link_url)
                 result.extend(scrape(link_url))
@@ -56,6 +72,6 @@ def main(args: List[str]) -> int:
     configure_logging(verbose, logger)
     result = sorted(scrape("https://support.hypernode.com/en/"))
     with open("documentation_urls.txt", "w", encoding="utf-8") as f:
-        for link in result:
-            f.write(f"{link}\n")
+        for page_type, link in result:
+            f.write(f"{page_type}: {link}\n")
     return os.EX_OK
