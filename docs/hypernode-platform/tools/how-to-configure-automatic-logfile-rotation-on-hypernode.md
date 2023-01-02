@@ -52,7 +52,7 @@ The tool has a `--dry-run` option which will print what the tool will do without
 
 The `hypernode-auto-logrotate` command comes with a sensible out-of-the-box configuration. Among other things, this means that it will rotate log files daily, only when they exceed 50MB, and that it will keep four files in rotation (meaning you end up with `example.log.1.gz` up to `example.log.4.gz`). These configurations are stored in `/data/web/hypernode_logrotate.conf`, and can be customized per log by editing this file. For example, the entry added for `example.log` reads
 
-```logrotate
+```
 /data/web/example.log {
     rotate 4
     daily

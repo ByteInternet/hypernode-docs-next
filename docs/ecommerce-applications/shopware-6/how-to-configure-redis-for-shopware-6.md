@@ -8,7 +8,7 @@ needs_review: true
 
 Redis is a caching method which can increase the speed of the backend and frontend of your shop. On Hypernode every customer has access to Redis cache, starting from 64 MB, depending on the plan. This article will explain how to configure Redis on your shop on Hypernode and how to work with redis-cli.
 
-### Step One: Configure Redis For Shopware 6 by editing the .env File
+## Step One: Configure Redis For Shopware 6 by editing the .env File
 
 Add the following line to the .env file:
 
@@ -16,7 +16,7 @@ Add the following line to the .env file:
 REDIS_URL=redis://localhost/<database ID>
 ```
 
-### Step Two: Create the framework.yml File
+## Step Two: Create the framework.yml File
 
 Create the file "**config/packages/framework.yml**" with the following content:
 

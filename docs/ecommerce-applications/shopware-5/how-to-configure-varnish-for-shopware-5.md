@@ -13,13 +13,13 @@ Shopware 5 applications can greatly benefit from Varnish caching. On the client 
 
 The Hypernode platform supports Varnish as a caching layer and configuration is actually quite simple.
 
-### Step One: Enable Varnish on the Hypernode
+## Step One: Enable Varnish on the Hypernode
 
 Varnish can be enabled with a simple command using the [hypernode-systemctl CLI](https://support.hypernode.com/en/hypernode/tools/how-to-use-the-hypernode-systemctl-cli-tool):
 
 `hypernode-systemctl settings varnish_enabled True`
 
-### Step Two: Enable Varnish for NGINX Vhost
+## Step Two: Enable Varnish for NGINX Vhost
 
 The [hypernode-manage-vhosts](https://support.hypernode.com/en/hypernode/nginx/hypernode-managed-vhosts) (HMV) config allows you to enable varnish for every vhost individually. So if you for example have a domain example.com. You should create 2 vhosts:
 
@@ -28,11 +28,11 @@ The [hypernode-manage-vhosts](https://support.hypernode.com/en/hypernode/nginx/h
 
 `hypernode-manage-vhosts example.com www.example.com --type shopware5 --varnish`
 
-### Step Three: Follow Shopware's Varnish Configuration Documentation
+## Step Three: Follow Shopware's Varnish Configuration Documentation
 
 Please follow Shopware's [documentation about configuring Shopware 5 to work with Varnish](https://developers.shopware.com/sysadmins-guide/varnish-setup/). You can skip the step about configuring Varnish, we'll take you through that :-).
 
-### Step Four: Implement Shopware's Varnish configuration
+## Step Four: Implement Shopware's Varnish configuration
 
 Copy the VCL configuration from [Shopware's documentation](https://developers.shopware.com/sysadmins-guide/varnish-setup/) and save it on your Hypernode, for example at `/data/web/shopware5.vcl`.
 
@@ -44,7 +44,7 @@ After that, we can start using the configuration with the following command:
 
 `varnishadm vcl.use shopware5_debug`
 
-### Step Five: Verify the Varnish configuration
+## Step Five: Verify the Varnish configuration
 
 Go to your site and open the inspector to check the response headers of your page. You should see the following headers:
 
@@ -68,7 +68,7 @@ X-Cache-Hits: 1
 
 If your page is not in the cache yet, `X-Cache` should contain 'MISS' and `X-Cache-Hits` should contain '0'. Otherwise, `X-Cache` should contain 'HIT' and `X-Cache-Hits` should increment each time you visit the page again.
 
-### Step Six: Removing verification headers from Varnish configuration
+## Step Six: Removing verification headers from Varnish configuration
 
 While the `X-Cache` and `X-Cache-Hits` headers are very useful, it is a good practice to disable these headers after you don't need them anymore. You can disable these headers by prefixing the configuration lines with the '#' character, which comments the lines out. The lines in question (from /data/web/shopware5.vcl) are:
 

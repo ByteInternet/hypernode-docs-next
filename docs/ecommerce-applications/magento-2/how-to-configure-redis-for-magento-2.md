@@ -87,8 +87,7 @@ In order to use the compression library Snappy for your Redis cache you can run 
 
 ```console
 $ bin/magento setup:config:set --cache-backend-redis-compression-lib=snappy
-
-# If you use Magento's builtin page cache with Redis
+$ # If you use Magento's builtin page cache with Redis
 $ bin/magento setup:config:set --page-cache-redis-compression-lib=snappy
 ```
 

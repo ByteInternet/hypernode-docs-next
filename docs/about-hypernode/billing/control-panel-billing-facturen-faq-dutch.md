@@ -50,7 +50,7 @@ We zijn steeds meer Internationale klanten aan het bedienen en omdat wij deze ma
 
 ## Kan ik nu met automatisch incasso betalen?
 
-Dat kan zeker, en je kunt nu zelfs ook met Credit Card betalen. Dit doe je simpelweg door in te loggen op [my.hypernode.com](//my.hypernode.com). Vervolgens druk je op je profiel rechtsboven en ga je naar Billing Portal:
+Dat kan zeker, en je kunt nu zelfs ook met Credit Card betalen. Dit doe je simpelweg door in te loggen op [my.hypernode.com](https://my.hypernode.com). Vervolgens druk je op je profiel rechtsboven en ga je naar Billing Portal:
 
 ![](_res/paSdE2q60V3Q_Kc_FulzAluhCvYzJ6j0PQ.png)
 

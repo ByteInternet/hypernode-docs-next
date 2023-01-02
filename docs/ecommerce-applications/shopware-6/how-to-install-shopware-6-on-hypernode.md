@@ -15,7 +15,7 @@ This article will explain how you can setup the latest version of Shopware 6 on 
 
 Shopware 6 need at least PHP version 7.4 to be able to run. So the first thing to do is upgrade your PHP version to 7.4 with the following command:
 
-```nginx
+```bash
 hypernode-systemctl settings php_version 7.4
 ```
 
@@ -23,15 +23,13 @@ hypernode-systemctl settings php_version 7.4
 
 Shopware 6 needs MySQL 5.7 to be able to run. You can change the MySQL version by running the following command:
 
-```nginx
-
+```bash
 hypernode-systemctl settings mysql_version 5.7
-
 ```
 
 ## Install Node.js v10.16
 
-```nginx
+```bash
 hypernode-systemctl settings nodejs_version 10
 ```
 
@@ -43,7 +41,7 @@ There are two ways to install Shopware 6: either by using the pre-install or doi
 
 On Hypernode we offer an easy way to install Shopware 6 using one of our pre-install images. Use the following command to install Shopware 6.
 
-```nginx
+```bash
 hypernode-systemctl preinstall shopware_6
 ```
 
@@ -51,8 +49,7 @@ hypernode-systemctl preinstall shopware_6
 
 Download the latest Shopware 6 version to the public folder from the [Shopware website](https://www.shopware.com/en/download/#shopware-6) by right clicking on "Download for free" click on "Copy Link Address" and paste the link after the `wget` command below.
 
-```nginx
-
+```bash
 mkdir shopware
 cd shopware
 wget https://releases.shopware.com/sw6/install_6.0.0_ea2_1571125323.zip
@@ -66,16 +63,15 @@ rm -rf /data/web/public
 ln -s /data/web/shopware/public/ /data/web/public
 ```
 
-#### Install Shopware 6
+## Install Shopware 6
 
 Now open your browser and browse to [https://APPNAME.hypernode.io/recovery/update/index.php](https://APPNAME.hypernode.io/recovery/install/index.php). At this point you can follow the guide through your browser. Make sure to fill in the right details at the **Configure database**:
 
-Database server: localhost
-Database user: app
-Database password: run cat ~/.my.cnf in your terminal and copy that password.
-Database name: Select your database
-Select "new database", and pick a name you like
-
+- Database server: localhost
+- Database user: app
+- Database password: run `cat ~/.my.cnf` in your terminal and copy that password.
+- Database name: Select your database
+- Select "new database", and pick a name you like
 - Fill in the **Basic shop set-up** how you see fit.
 
 **Done!** You’ve now successfully installed Shopware 6.

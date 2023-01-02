@@ -15,9 +15,8 @@ myst:
 
 First you need to know what User Agent you wish to block. You can retrieve such information from the access logs (`/var/log/nginx/access.log`)
 
-```nginx
+```json
 {"time":"2020-01-27T13:08:05+00:00", "remote_addr":"80.113.31.106", "remote_user":"", "host":"yourappname.hypernode.io", "request":"GET / HTTP/1.1", "status":"200", "body_bytes_sent":"87", "referer":"", "user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36", "request_time":"0.000", "handler":"", "country":"NL", "port":"80", "ssl_cipher":"", "ssl_protocol":""}
-
 ```
 
 Once you know which User Agent you wish to blacklist you can follow the instructions below:
@@ -26,7 +25,6 @@ Once you know which User Agent you wish to blacklist you can follow the instruct
 
 ```bash
 sensible-editor /data/web/nginx/server.blacklist
-
 ```
 
 - Add the following snippet and include the User Agent you wish to block in the first line after `$http_user_agent ~ "`:
@@ -36,7 +34,6 @@ if ($http_user_agent ~ "Windows 95|Windows 98|biz360.com|xpymep|TurnitinBot|sind
     return 403;
     break;
 }
-
 ```
 
 ## How to Block Referrer Sites
@@ -45,7 +42,6 @@ Blocking a referrer site is not much different from blocking a User Agent. Simpl
 
 ```bash
 sensible-editor /data/web/nginx/server.blacklist
-
 ```
 
 and paste the following snippet:
@@ -54,5 +50,4 @@ and paste the following snippet:
 if ($http_referer ~* (seo|referrer|redirect|babes|click|girl|jewelry|love|organic|poker|porn|sex|teen|video|webcam) ) {
     return 405;
 }
-
 ```

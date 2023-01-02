@@ -114,7 +114,7 @@ Customers who log in via [service.byte.nl](http://service.byte.nl) can whitelist
 
 ### Via Your Control Panel
 
-Customers who log in via [my.hypernode.com](//my.hypernode.com) can allow an IP via the Control Panel by following the steps below:
+Customers who log in via [my.hypernode.com](https://my.hypernode.com) can allow an IP via the Control Panel by following the steps below:
 
 1. Log into the Control Panel.
 1. Select the Hypernode.

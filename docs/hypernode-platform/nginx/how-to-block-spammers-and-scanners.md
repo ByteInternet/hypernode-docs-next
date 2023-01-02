@@ -73,7 +73,7 @@ Your Nginx configuration contains errors, please check
 
 Now you’ll see that the client is banned from the server:
 
-```nginx
+```json
 {
     "time":"2014-11-21T09:39:31+00:00",
     "remote_addr":"108.61.122.72",

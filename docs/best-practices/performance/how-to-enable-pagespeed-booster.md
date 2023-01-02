@@ -62,7 +62,7 @@ For the live webshop URL the setting **Site map only** under "General" can be tu
 
 ![](_res/f8CNJ26O7PHi8Gl2A9R6Hg_CS1KC1mz0wA.png)
 
-For \*\*[staging.example.com](//staging.example.com)\*\*this settings can be turned to **False**.
+For \*\*[staging.example.com](https://staging.example.com)\*\*this settings can be turned to **False**.
 
 The setting **Purge mode** under "General" can be turned to **DELAYED_BOT**:
 

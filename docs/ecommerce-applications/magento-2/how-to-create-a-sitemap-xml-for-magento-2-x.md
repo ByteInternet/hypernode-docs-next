@@ -54,11 +54,11 @@ Now fill in the required information:
 
 If all goes well, a sitemap.xml file is generated as /data/web/magento2/pub/sitemaps/sitemap.xml
 
-Now scroll to [Configuring Nginx to use one sitemap for all storefronts](#nginx-all-storefronts) to add the required Nginx configuration.
+Now scroll to [Configuring Nginx to use one sitemap for all storefronts](#configuring-nginx-to-use-one-sitemap-for-all-storefronts) to add the required Nginx configuration.
 
 ### Configure a Sitemap for Each Storefront
 
-Some additional configuration is required if you want to serve a different sitemap.xml for each store view. We assume you have already finished the step [Configure Magento 2 to Create Sitemaps](#create-sitemaps), so if you haven't done this already, do that step first.
+Some additional configuration is required if you want to serve a different sitemap.xml for each store view. We assume you have already finished the step [Configure Magento 2 to Create Sitemaps](#configure-magento-2-to-create-sitemaps), so if you haven't done this already, do that step first.
 
 Let's get started:
 
@@ -76,7 +76,7 @@ For each store view, fill in the information:
 
 If all went well, a `sitemap.xml` file is generated as `/data/web/magento2/pub/sitemaps/sitemap_shop_nl.xml`
 
-Now you can use [Configure Nginx to use a sitemap.xml per storefront](#nginx-per-storefront) to add the required Nginx configuration.
+Now you can use [Configure Nginx to use a sitemap.xml per storefront](#configure-nginx-to-use-a-sitemapxml-per-storefront) to add the required Nginx configuration.
 
 ## Nginx Configuration
 

@@ -18,7 +18,7 @@ Want to know how to configure Redis in Magento 2? Have a look at [this article](
 
 ## Setup Redis by Changing your local.xml File
 
-**NB: When you're using a Magento version newer than 1.8.x, you can use the built-in Redis module and simply copy and paste the below snippet. If you're still using an older version than 1.8.x than you need to first [download the Redis Extension.](#Download-the-Redis-Extension-From-Collin-Mollenhour-from-Github)**
+**NB: When you're using a Magento version newer than 1.8.x, you can use the built-in Redis module and simply copy and paste the below snippet. If you're still using an older version than 1.8.x than you need to first [download the Redis Extension.](#download-the-redis-extension-from-collin-mollenhour-from-github-for-magento-versions-older-than-18x)**
 
 Open your local.xml file and paste the next lines of code after the tag:
 

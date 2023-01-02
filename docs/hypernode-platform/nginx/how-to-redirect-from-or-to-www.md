@@ -23,7 +23,8 @@ More info can be found [on our page about setting your DNS](https://support.hype
 ## Redirect From Apex to WWW
 
 **When hypernode-managed-vhosts enabled**
-To redirect all traffic to www you have to create both a vhost for the Apex and for the [www](http://www). For the non-www vhost you can create the vhost as type wwwizer. This will redirect all traffic to the [www](http://www). version of that vhost. This can be achieved by running: hypernode-manage-vhosts [example.com](//example.com) --type wwwizer
+
+To redirect all traffic to www you have to create both a vhost for the Apex and for the `www`. For the non-www vhost you can create the vhost as type wwwizer. This will redirect all traffic to the `www`. version of that vhost. This can be achieved by running: `hypernode-manage-vhosts example.com --type wwwizer`.
 
 ```nginx
 | servername | type | default_server | https | force_https | varnish | ssl_config |

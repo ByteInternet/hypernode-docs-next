@@ -12,7 +12,7 @@ myst:
 
 If your Magento 2 Cron is stuck or long-running this could be because of a [default setting in Magento 2](https://devdocs.magento.com/guides/v2.4/config-guide/prod/config-reference-envphp.html#consumers_wait_for_messages) causing the consumers to never end. This article describes how you can solve this issue by using the configuration below.
 
-### Check for long-running consumer processes
+## Check for long-running consumer processes
 
 First check if there are any long running consumer processes by running the command below.
 
@@ -20,7 +20,7 @@ First check if there are any long running consumer processes by running the comm
 ps --sort etime -A -o etime,pid,user,args | grep php | grep -vE 'php-fpm|\-\-mode daemon|grep'
 ```
 
-### Edit your env.php
+## Edit your env.php
 
 Edit your ~/magento2/app/etc/env.php and change your consumers_wait_for_messages configuration from 1 to 0.
 
@@ -32,7 +32,7 @@ Edit your ~/magento2/app/etc/env.php and change your consumers_wait_for_messages
 
 Flush your Magento cache after changing your env.php.
 
-### Kill the long-running processes
+## Kill the long-running processes
 
 Kill the consumer crons that are still stuck.
 

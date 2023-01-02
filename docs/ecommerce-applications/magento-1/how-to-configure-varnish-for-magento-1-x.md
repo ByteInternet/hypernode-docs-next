@@ -15,19 +15,18 @@ Although Varnish is extremely awesome when it get's to speeding up websites, Var
 
 ## Table of Contents
 
-- [Enable Varnish for Magento 1.x](#enable-varnish)
-  - [All Customers: Via the hypernode-systemctl CLI Tool](#via-cli-tool)
-  - [Dutch Customers: Via Your Service Panel](#via-service-panel)
-  - [International Customers: Via Your Control Panel](#via-control-panel)
+- [Enable Varnish for Magento 1.x](#enable-varnish-for-magento-1x)
+  - [All Customers: Via the hypernode-systemctl CLI Tool](#all-customers-via-the-hypernode-systemctl-cli-tool)
+  - [Dutch Customers: Via Your Service Panel](#dutch-customers-via-your-service-panel)
+  - [International Customers: Via Your Control Panel](#international-customers-via-your-control-panel)
 - [Install Turpentine](#install-turpentine)
-  - [Configure Turpentine](#configure-terpentine)
-- [Test Your Shop With Varnish](#test-varnish)
-- [Enable Debug Headers](#debug-headers)
-- [Warming Your Cache](#warm-cache)
+  - [Configure Turpentine](#configure-turpentine)
+- [Test Your Shop With Varnish](#test-your-shop-with-varnish)
+- [Enable Debug Headers](#enable-debug-headers)
+- [Warming Your Cache](#warming-your-cache)
 - [Troubleshooting](#troubleshooting)
-  Enable Varnish for Magento 1.x
 
-______________________________________________________________________
+## Enable Varnish for Magento 1.x
 
 Before installing Turpentine we recommend enabling Varnish on your Hypernode using the instructions below.
 

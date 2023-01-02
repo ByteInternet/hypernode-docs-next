@@ -32,7 +32,7 @@ The costs for an SSL certificate consist of two aspects: the costs for the actua
 | Wildcard | € 75,00               | € 80,00           | € 155,00  |
 | EV       | € 95,00               | € 80,00           | € 175,00  |
 
-The certificate costs you pay for an SSL certificate that you order via Hypernode, is the purchase prise we pay at our supplier. We arrange the entire SSL application for you. You do not have to do anything more than to order the certificate in your Service Panel. Only with EV-SSL you still have to take care of a number of things (as explained [here](#What-kind-of-certificates-can-I-order-via-Hypernode?)).
+The certificate costs you pay for an SSL certificate that you order via Hypernode, is the purchase prise we pay at our supplier. We arrange the entire SSL application for you. You do not have to do anything more than to order the certificate in your Service Panel. Only with EV-SSL you still have to take care of a number of things (as explained [here](#what-kind-of-certificates-can-i-order-via-hypernode)).
 
 In the background, the certificate is requested with the correct data, the validation is done (place file, perform validation), the certificate is retrieved and safely stored in the right place. We ensure that your SSL certificate works properly, even if you change your plan. All you have to take care of is to install the SSL on the right Hypernode (which can be done with [one click](https://support.hypernode.com/en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-byte-nl#Install-the-SSL-Certificate-on-your-Hypernode)).
 

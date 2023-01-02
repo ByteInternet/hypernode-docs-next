@@ -11,7 +11,7 @@ needs_review: true
 
 # How to Reset Your Magento 1.x Admin Password
 
-If you are unable to login to your Magento shop, you have several methods to retrieve a new password to log back in.
+If you are unable to log in to your Magento shop, you have several methods to retrieve a new password to log back in.
 
 These methods are:
 
@@ -40,7 +40,7 @@ You then will be asked to insert a new password. Insert the password twice and c
 
 Using the Magento backend, you can only reset a password if you happen to know your current password, or with a little help from someone else with a valid set of credentials.
 
-If you don’t know your current Magento admin credentials, you can either use the **[Reset Password](#reset-pass-function)** functionality as explained earlier, or change your password with the tools mentioned below.
+If you don’t know your current Magento admin credentials, you can either use the **[Reset Password](#use-the-reset-password-functionality)** functionality as explained earlier, or change your password with the tools mentioned below.
 
 ### Reset Your Own Password Via the Magento Backend
 

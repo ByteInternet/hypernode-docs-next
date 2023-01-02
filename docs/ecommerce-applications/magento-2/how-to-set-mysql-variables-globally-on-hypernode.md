@@ -15,7 +15,6 @@ Example configuration on how to change the innodb_lock_wait_timeout:
 
 ```nginx
 'initStatements' => 'SET NAMES utf8; SET GLOBAL innodb_lock_wait_timeout = 200;',
-
 ```
 
 Example configuration on how to change the SQL_mode:

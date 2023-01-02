@@ -113,7 +113,7 @@ If you have set up other name servers, the DNS data will be downloaded from that
 
 ### A Records
 
-The A record is used to link a domain name to an IP address. Usually there are multiple A records per domain name. In the example mentioned earlier under “The fields in a DNS table” there are three A records. One ensures that all visitors of domainname.nl are forwarded to the correct server and the other ensures that the domain name starting with www is also redirected to the server. A domain name always needs at least one A record to identify the web server. The third A record in the example is a wildcard record (\* [.example.com](//.example.com))
+The A record is used to link a domain name to an IP address. Usually there are multiple A records per domain name. In the example mentioned earlier under “The fields in a DNS table” there are three A records. One ensures that all visitors of domainname.nl are forwarded to the correct server and the other ensures that the domain name starting with www is also redirected to the server. A domain name always needs at least one A record to identify the web server. The third A record in the example is a wildcard record (`*.example.com`)
 
 If no A (or CNAME) record exists for * .example.nl, subdomains will not be accessible and (provided no separate address has been created for it) [www.example.nl](http://www.domainname.nl) neither. Www.example.com is seen as a subdomain by DNS.
 

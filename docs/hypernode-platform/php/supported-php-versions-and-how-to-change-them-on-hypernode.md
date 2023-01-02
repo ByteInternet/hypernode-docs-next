@@ -42,7 +42,7 @@ If you can't easily access the command line, you can place a file named 'phpinfo
 phpinfo();
 ```
 
-Then when you access this file, either via your Hypernode at [example.hypernode.io/phpinfo.php,](http://example.hypernode.io/phpinfo.php,) or on your website at [www.example.com/phpinfo.php,](//www.example.com/phpinfo.php,) you can find the PHP version in the top. Don't forget to remove this file after you're done, as this is not something that should be left available.
+Then when you access this file, either via your Hypernode at `example.hypernode.io/phpinfo.php`, or on your website at `www.example.com/phpinfo.php`, you can find the PHP version in the top. Don't forget to remove this file after you're done, as this is not something that should be left available.
 
 ## Changing the PHP Version you Use on Hypernode
 

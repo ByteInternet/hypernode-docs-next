@@ -19,7 +19,7 @@ With your free trial you have 14 days to test your shops’ performance on Hyper
 
 The specs of your trial are: 62GB storage, 3 CPU, 8GB RAM, 1024MB Redis cache, PHP 7.4.
 
-#### Your Control Panel
+## Your Control Panel
 
 Improving our Hypernode platform is [a continuous process](https://support.hypernode.com/category/changelog/) and the sole focus of our development team. You can log into your Control Panel via [this page](https://my.hypernode.com/).
 

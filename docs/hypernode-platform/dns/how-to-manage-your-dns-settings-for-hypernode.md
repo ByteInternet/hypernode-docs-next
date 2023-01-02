@@ -79,7 +79,7 @@ If you cannot transfer your DNS to Hypernode, you can choose to only point the C
 
 If this is not an issue, the configuration needed can be found below:
 
-#### Configuration:
+### Configuration:
 
 - Have a CNAME for your www-domain + an A Record that directs to the dedicated IP address of your Hypernode
 - Have a CNAME for your www-domain + an A record for your apex (also called naked) domain pointing to a redirector that redirects to the www-domain (our wwwizers)

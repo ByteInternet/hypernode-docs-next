@@ -8,8 +8,8 @@ Shopware uses OAuth with a bearer token for logging into the admin and using the
 
 The solution is to whitelist your IP from the basic auth on the Hypernode to not use basic auth when you come from your specified IP. You can whitelist your IP in the `/data/web/nginx/whitelist-development-exception.conf` file.
 
-```
-$ cat /data/web/nginx/whitelist-development-exception.conf
+```nginx
+# $ cat /data/web/nginx/whitelist-development-exception.conf
 # You can make certain IP addresses exempt here from the development
 # basic auth. Beware though, that google and bing bots will always
 # remain blocked on development nodes!

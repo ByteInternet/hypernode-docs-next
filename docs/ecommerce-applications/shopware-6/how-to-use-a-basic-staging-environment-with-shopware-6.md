@@ -44,15 +44,14 @@ Now there is a new vhost, you need to set the webroot to the folder you'd like t
 
 ```bash
 rsync -va --delete --delete-excluded \
---exclude /var/cache/ \
-/data/web/shopware/ /data/web/shopware_staging/
+          --exclude /var/cache/ \
+          /data/web/shopware/ /data/web/shopware_staging/
 ```
 
 ### Step Four: Create a Staging Database
 
-```nginx
+```bash
 mysql -e 'create database if not exists staging'
-
 ```
 
 ### Step Five: Connect Your File System to the Database
@@ -81,11 +80,11 @@ Make sure you edit the value of APP_URL to your Hypernode-URL: APP_URL="<http://
 
 Now to use the staging environment, we need to change the base URLs to use the ports for the staging environment. This way your site is accessible through the same URLs as the production shop but will be using different ports. We change the HTTP port to 8888 and the HTTPS port to 8443. Please note to check which ID is relevant for your URL with the `select * from sales_channel_domain;` query.
 
-```bash
-mysql
-> use staging
+```console
+$ mysql
+> use staging;
 > select * from sales_channel_domain;
-> update sales_channel_domain set url = ‘https://staging.APPNAME.hypernode.io' where url = 'https://EXAMPLE.com';
+> update sales_channel_domain set url = 'https://staging.APPNAME.hypernode.io' where url = 'https://EXAMPLE.com';
 ```
 
 ### Step Nine: Flush the Cache
