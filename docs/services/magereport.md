@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/services/magereport/
+---
+
 # Magereport
 
 ```{toctree}

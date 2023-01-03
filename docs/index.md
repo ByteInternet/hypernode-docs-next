@@ -1,3 +1,16 @@
+---
+redirect_from:
+  - /en/
+  - /en/support/
+  - /en/support/login/
+  - /en/support/solutions/
+  - /en/ecommerce/
+  - /en/getting-started/
+  - /en/hypernode-platform/
+  - /en/services/
+  - /en/troubleshooting/
+---
+
 # Welcome to Hypernode Docs
 
 ```{toctree}

@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/about/support/
+---
+
 # Support
 
 ```{toctree}

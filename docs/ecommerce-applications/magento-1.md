@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/ecommerce/magento-1/
+---
+
 # Magento 1
 
 ```{toctree}

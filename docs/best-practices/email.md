@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/best-practices/email/
+---
+
 # Email
 
 ```{toctree}

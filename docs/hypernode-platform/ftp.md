@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/hypernode/ftp/
+---
+
 # FTP
 
 ```{toctree}
