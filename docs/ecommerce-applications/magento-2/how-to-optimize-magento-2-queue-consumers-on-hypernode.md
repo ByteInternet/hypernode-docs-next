@@ -5,7 +5,7 @@ myst:
       of a default setting in Magento 2 causing the consumers to never end. Here's
       the fix.
 redirect_from:
-- /en/support/solutions/articles/48001186343-how-to-optimize-magento-2-queue-consumers-on-hypernode/
+  - /en/support/solutions/articles/48001186343-how-to-optimize-magento-2-queue-consumers-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001186343-how-to-optimize-magento-2-queue-consumers-on-hypernode/ -->

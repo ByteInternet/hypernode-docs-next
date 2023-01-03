@@ -5,7 +5,7 @@ myst:
       \ effect on search index optimization (SEO) as well. Find out how to enable\
       \ them here. "
 redirect_from:
-- /en/ecommerce/magento-1/how-to-enable-clean-url-s-for-magento-1/
+  - /en/ecommerce/magento-1/how-to-enable-clean-url-s-for-magento-1/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-enable-clean-url-s-for-magento-1/ -->

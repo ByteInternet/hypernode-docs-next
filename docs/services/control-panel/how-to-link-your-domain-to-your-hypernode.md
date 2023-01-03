@@ -4,7 +4,7 @@ myst:
     description: 'In this article, you find detailed guidelines on how to link your
       domain to your Hypernode. '
 redirect_from:
-- /en/best-practices/usage/how-to-link-your-domain-to-your-hypernode/
+  - /en/best-practices/usage/how-to-link-your-domain-to-your-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/usage/how-to-link-your-domain-to-your-hypernode/ -->

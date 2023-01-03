@@ -1,6 +1,6 @@
 ---
 redirect_from:
-- /en/hypernode/tools/how-to-copy-your-hypernode-to-another-hypernode/
+  - /en/hypernode/tools/how-to-copy-your-hypernode-to-another-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-copy-your-hypernode-to-another-hypernode/ -->

@@ -1,6 +1,6 @@
 ---
 redirect_from:
-- /en/support/solutions/articles/48001200521-how-to-configure-redis-for-shopware-6/
+  - /en/support/solutions/articles/48001200521-how-to-configure-redis-for-shopware-6/
 ---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001200521-how-to-configure-redis-for-shopware-6/ -->

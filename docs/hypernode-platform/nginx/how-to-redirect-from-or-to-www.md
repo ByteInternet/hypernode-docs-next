@@ -5,7 +5,7 @@ myst:
       without. Many constructions are possible. Check out how to redirect from or
       to WWW here.
 redirect_from:
-- /en/hypernode/nginx/how-to-redirect-from-or-to-www/
+  - /en/hypernode/nginx/how-to-redirect-from-or-to-www/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-redirect-from-or-to-www/ -->

@@ -4,7 +4,7 @@ myst:
     description: Starting over and in need of a fresh Magento 1 installation? Follow
       the steps in this article to install a Magento 1 installation on Hypernode.
 redirect_from:
-- /en/ecommerce/magento-1/how-to-install-magento-1-on-hypernode/
+  - /en/ecommerce/magento-1/how-to-install-magento-1-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-install-magento-1-on-hypernode/ -->

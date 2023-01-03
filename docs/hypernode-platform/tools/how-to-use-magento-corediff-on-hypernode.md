@@ -5,7 +5,7 @@ myst:
       a Magento 1 or 2. As it's installed on all Hypernodes this helps protect and
       secure your shop
 redirect_from:
-- /en/hypernode/tools/how-to-use-magento-corediff-on-hypernode/
+  - /en/hypernode/tools/how-to-use-magento-corediff-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-magento-corediff-on-hypernode/ -->

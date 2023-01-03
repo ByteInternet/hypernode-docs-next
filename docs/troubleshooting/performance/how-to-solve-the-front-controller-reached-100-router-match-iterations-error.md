@@ -5,7 +5,7 @@ myst:
       appears when corruption in the cache arises, due to a bug in Magento. Here's
       how to solve it.
 redirect_from:
-- /en/troubleshooting/performance/how-to-solve-the-front-controller-reached-100-router-match-iterations-error/
+  - /en/troubleshooting/performance/how-to-solve-the-front-controller-reached-100-router-match-iterations-error/
 ---
 
 <!-- source: https://support.hypernode.com/en/troubleshooting/performance/how-to-solve-the-front-controller-reached-100-router-match-iterations-error/ -->

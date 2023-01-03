@@ -5,7 +5,7 @@ myst:
       time on your Hypernode. Supervisor watches your programs and restarts them if
       they might fail. '
 redirect_from:
-- /en/hypernode/tools/how-to-use-supervisor/
+  - /en/hypernode/tools/how-to-use-supervisor/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-supervisor/ -->

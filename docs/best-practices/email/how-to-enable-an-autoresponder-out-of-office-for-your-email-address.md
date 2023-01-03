@@ -4,7 +4,7 @@ myst:
     description: Read how you can create an autoresponder for your email address in
       this article
 redirect_from:
-- /en/best-practices/email/how-to-enable-an-autoresponder-out-of-office-for-your-email-address/
+  - /en/best-practices/email/how-to-enable-an-autoresponder-out-of-office-for-your-email-address/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/email/how-to-enable-an-autoresponder-out-of-office-for-your-email-address/ -->

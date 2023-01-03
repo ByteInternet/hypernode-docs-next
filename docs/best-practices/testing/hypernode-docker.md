@@ -5,7 +5,7 @@ myst:
       used to build a development environment, or as a build machine. Read all about
       it here.
 redirect_from:
-- /en/best-practices/testing/hypernode-docker/
+  - /en/best-practices/testing/hypernode-docker/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/testing/hypernode-docker/ -->

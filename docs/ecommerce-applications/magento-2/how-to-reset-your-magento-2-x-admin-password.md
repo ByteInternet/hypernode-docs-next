@@ -5,7 +5,7 @@ myst:
       methods to retrieve a new password to log in. Check out here how to reset your
       password.
 redirect_from:
-- /en/ecommerce/magento-2/how-to-reset-your-magento-2-x-admin-password/
+  - /en/ecommerce/magento-2/how-to-reset-your-magento-2-x-admin-password/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-reset-your-magento-2-x-admin-password/ -->

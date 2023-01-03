@@ -4,7 +4,7 @@ myst:
     description: Maintenance mode is a shortcut to serve a temporary error notification
       to all customers. Find here how to enable it in Magento 1.
 redirect_from:
-- /en/ecommerce/magento-1/how-to-enable-the-maintenance-mode-in-magento-1/
+  - /en/ecommerce/magento-1/how-to-enable-the-maintenance-mode-in-magento-1/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-enable-the-maintenance-mode-in-magento-1/ -->

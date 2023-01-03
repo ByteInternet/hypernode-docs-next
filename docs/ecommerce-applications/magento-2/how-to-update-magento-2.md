@@ -4,7 +4,7 @@ myst:
     description: Does your Magento 2 version need an upgrade? This article explains
       how to upgrade to the latest Magento 2 version.
 redirect_from:
-- /en/ecommerce/magento-2/how-to-update-magento-2/
+  - /en/ecommerce/magento-2/how-to-update-magento-2/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-update-magento-2/ -->

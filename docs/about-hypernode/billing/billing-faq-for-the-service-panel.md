@@ -4,7 +4,7 @@ myst:
     description: 'Read all frequently asked questions about billing and their answers
       within this article. '
 redirect_from:
-- /en/about/billing/billing-faq-for-the-service-panel/
+  - /en/about/billing/billing-faq-for-the-service-panel/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/billing/billing-faq-for-the-service-panel/ -->

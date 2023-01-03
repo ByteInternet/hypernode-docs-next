@@ -4,7 +4,7 @@ myst:
     description: 'Follow this article to set up automatic image optimization for a
       faster shop on Hypernode in only a couple of minutes. '
 redirect_from:
-- /en/best-practices/performance/how-to-optimize-your-images/
+  - /en/best-practices/performance/how-to-optimize-your-images/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/performance/how-to-optimize-your-images/ -->

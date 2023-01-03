@@ -4,7 +4,7 @@ myst:
     description: 'Find out how to manage your DNS settings on Hypernode in order to
       avoid downtime when up- or downgrading here. '
 redirect_from:
-- /en/hypernode/dns/how-to-manage-your-dns-settings-for-hypernode/
+  - /en/hypernode/dns/how-to-manage-your-dns-settings-for-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/dns/how-to-manage-your-dns-settings-for-hypernode/ -->

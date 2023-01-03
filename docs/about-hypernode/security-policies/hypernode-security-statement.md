@@ -4,7 +4,7 @@ myst:
     description: 'An overview of Hypernode security policies and information security
       certification can be found in this article. '
 redirect_from:
-- /en/about/security/hypernode-security-statement/
+  - /en/about/security/hypernode-security-statement/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/security/hypernode-security-statement/ -->

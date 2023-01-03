@@ -1,6 +1,6 @@
 ---
 redirect_from:
-- /en/best-practices/security/how-to-use-a-cloud-firewall-on-hypernode/
+  - /en/best-practices/security/how-to-use-a-cloud-firewall-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/security/how-to-use-a-cloud-firewall-on-hypernode/ -->

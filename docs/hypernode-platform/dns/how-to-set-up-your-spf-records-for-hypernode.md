@@ -4,7 +4,7 @@ myst:
     description: Sender Policy Framework, SPF, is a technique used to fight spam.
       Find out here how to set it up for Hypernode.
 redirect_from:
-- /en/hypernode/dns/how-to-set-up-your-spf-records-for-hypernode/
+  - /en/hypernode/dns/how-to-set-up-your-spf-records-for-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/dns/how-to-set-up-your-spf-records-for-hypernode/ -->

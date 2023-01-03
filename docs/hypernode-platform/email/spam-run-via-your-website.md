@@ -5,7 +5,7 @@ myst:
       \ this article to find out what happened and how to prevent spam runs from your\
       \ website. "
 redirect_from:
-- /en/hypernode/email/spam-run-via-your-website/
+  - /en/hypernode/email/spam-run-via-your-website/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/email/spam-run-via-your-website/ -->

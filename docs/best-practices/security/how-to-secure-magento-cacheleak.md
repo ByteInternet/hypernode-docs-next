@@ -5,7 +5,7 @@ myst:
       database passwords. To prevent this from happening, read here how to secure
       Magento cacheleak.
 redirect_from:
-- /en/best-practices/security/how-to-secure-magento-cacheleak/
+  - /en/best-practices/security/how-to-secure-magento-cacheleak/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/security/how-to-secure-magento-cacheleak/ -->

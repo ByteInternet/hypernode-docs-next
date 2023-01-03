@@ -1,6 +1,6 @@
 ---
 redirect_from:
-- /en/services/control-panel/how-to-schedule-an-up-or-downgrade/
+  - /en/services/control-panel/how-to-schedule-an-up-or-downgrade/
 ---
 
 <!-- source: https://support.hypernode.com/en/services/control-panel/how-to-schedule-an-up-or-downgrade/ -->

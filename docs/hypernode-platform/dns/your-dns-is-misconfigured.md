@@ -4,7 +4,7 @@ myst:
     description: The administrator of this domain has pointed www.domain.com to our
       DNS service, instead of appointing a CNAME to his/her Hypernode.
 redirect_from:
-- /en/hypernode/dns/your-dns-is-misconfigured/
+  - /en/hypernode/dns/your-dns-is-misconfigured/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/dns/your-dns-is-misconfigured/ -->

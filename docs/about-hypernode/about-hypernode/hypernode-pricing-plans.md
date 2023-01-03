@@ -3,7 +3,7 @@ myst:
   html_meta:
     description: Which hosting plans and pricing does Hypernode offer.
 redirect_from:
-- /en/support/solutions/articles/48001228422-hypernode-pricing-plans/
+  - /en/support/solutions/articles/48001228422-hypernode-pricing-plans/
 ---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001228422-hypernode-pricing-plans/ -->

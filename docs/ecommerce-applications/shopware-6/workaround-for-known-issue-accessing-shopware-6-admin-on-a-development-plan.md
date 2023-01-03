@@ -1,6 +1,6 @@
 ---
 redirect_from:
-- /en/support/solutions/articles/48001207548-workaround-for-known-issue-accessing-shopware-6-admin-on-a-development-plan/
+  - /en/support/solutions/articles/48001207548-workaround-for-known-issue-accessing-shopware-6-admin-on-a-development-plan/
 ---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001207548-workaround-for-known-issue-accessing-shopware-6-admin-on-a-development-plan/ -->

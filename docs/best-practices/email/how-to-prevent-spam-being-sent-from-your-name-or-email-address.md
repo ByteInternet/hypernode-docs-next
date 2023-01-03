@@ -4,7 +4,7 @@ myst:
     description: 'In this article, we explain how to preven spam from being sent from
       your name or email address. Only available in Dutch. '
 redirect_from:
-- /en/best-practices/email/how-to-prevent-spam-being-sent-from-your-name-or-email-address/
+  - /en/best-practices/email/how-to-prevent-spam-being-sent-from-your-name-or-email-address/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/email/how-to-prevent-spam-being-sent-from-your-name-or-email-address/ -->

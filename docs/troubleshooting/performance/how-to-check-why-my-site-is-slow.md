@@ -5,7 +5,7 @@ myst:
       be and you have no idea what's going on. In this article you will find some
       initial checks.
 redirect_from:
-- /en/troubleshooting/performance/how-to-check-why-my-site-is-slow/
+  - /en/troubleshooting/performance/how-to-check-why-my-site-is-slow/
 ---
 
 <!-- source: https://support.hypernode.com/en/troubleshooting/performance/how-to-check-why-my-site-is-slow/ -->

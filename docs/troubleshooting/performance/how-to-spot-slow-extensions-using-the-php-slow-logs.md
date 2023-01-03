@@ -4,7 +4,7 @@ myst:
     description: 'PHP-FPM offers its slow logs, which spots slow extensions in your
       Magento shop. Read more about it and how to use it in this article. '
 redirect_from:
-- /en/troubleshooting/performance/how-to-spot-slow-extensions-using-the-php-slow-logs/
+  - /en/troubleshooting/performance/how-to-spot-slow-extensions-using-the-php-slow-logs/
 ---
 
 <!-- source: https://support.hypernode.com/en/troubleshooting/performance/how-to-spot-slow-extensions-using-the-php-slow-logs/ -->

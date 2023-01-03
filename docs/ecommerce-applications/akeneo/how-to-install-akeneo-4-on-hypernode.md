@@ -5,7 +5,7 @@ myst:
       Installing Akeneo 4 can be done by using our Pre-Install or you can install
       Akeneo 4 manually.
 redirect_from:
-- /en/ecommerce/akeneo/how-to-install-akeneo-4-on-hypernode/
+  - /en/ecommerce/akeneo/how-to-install-akeneo-4-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/akeneo/how-to-install-akeneo-4-on-hypernode/ -->

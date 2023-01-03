@@ -4,7 +4,7 @@ myst:
     description: 'Using Nginx instead of Apache increases performance and allows more
       visitors. Read here how to use Nginx on Hypernode. '
 redirect_from:
-- /en/hypernode/nginx/how-to-use-nginx/
+  - /en/hypernode/nginx/how-to-use-nginx/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-use-nginx/ -->

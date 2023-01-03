@@ -1,6 +1,6 @@
 ---
 redirect_from:
-- /en/about/support/scope-of-support/
+  - /en/about/support/scope-of-support/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/support/scope-of-support/ -->

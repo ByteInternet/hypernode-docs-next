@@ -4,7 +4,7 @@ myst:
     description: Hypernode offers DMARC (Domain-based Message Authentication, Reporting
       and Conformance) for Service Panel users. Read how to configure it in this article.
 redirect_from:
-- /en/best-practices/email/how-to-use-dmarc/
+  - /en/best-practices/email/how-to-use-dmarc/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/email/how-to-use-dmarc/ -->

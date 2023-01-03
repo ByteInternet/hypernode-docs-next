@@ -4,7 +4,7 @@ myst:
     description: In this article, we explain the ideal process of moving new code
       from a development environment to production without experiencing downtime.
 redirect_from:
-- /en/best-practices/testing/zero-downtime-deployment-on-hypernode/
+  - /en/best-practices/testing/zero-downtime-deployment-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/testing/zero-downtime-deployment-on-hypernode/ -->

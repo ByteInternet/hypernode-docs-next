@@ -4,7 +4,7 @@ myst:
     description: 'All emails send from a Hypernode are routed through a central outgoing
       email platform that filters spam and infected emails. Read here about its policies. '
 redirect_from:
-- /en/hypernode/email/policy-for-sending-email-on-hypernode/
+  - /en/hypernode/email/policy-for-sending-email-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/email/policy-for-sending-email-on-hypernode/ -->

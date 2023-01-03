@@ -4,7 +4,7 @@ myst:
     description: 'This article explains how to install SSL certificates on your Hypernode
       when you have order them via hypernode.com. '
 redirect_from:
-- /en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-com/
+  - /en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-com/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-com/ -->

@@ -4,7 +4,7 @@ myst:
     description: DDoS stands for Distributed Denial of Service. In this article we
       explain what a DDoS attack is and what Hypernode does when this occurs.
 redirect_from:
-- /en/best-practices/security/how-does-hypernode-handle-ddos-attacks-/
+  - /en/best-practices/security/how-does-hypernode-handle-ddos-attacks-/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/security/how-does-hypernode-handle-ddos-attacks-/ -->

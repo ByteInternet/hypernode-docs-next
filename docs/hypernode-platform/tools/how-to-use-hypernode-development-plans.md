@@ -5,7 +5,7 @@ myst:
       the regular Hypernode plans for development and testing. Read more about these
       plans here. '
 redirect_from:
-- /en/hypernode/tools/how-to-use-hypernode-development-plans/
+  - /en/hypernode/tools/how-to-use-hypernode-development-plans/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-hypernode-development-plans/ -->

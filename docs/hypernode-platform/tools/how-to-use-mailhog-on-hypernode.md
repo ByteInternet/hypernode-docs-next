@@ -5,7 +5,7 @@ myst:
       mails from a webshop. MailHog is an email testing tool for it, which we explain
       here.
 redirect_from:
-- /en/hypernode/tools/how-to-use-mailhog-on-hypernode/
+  - /en/hypernode/tools/how-to-use-mailhog-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-mailhog-on-hypernode/ -->

@@ -4,7 +4,7 @@ myst:
     description: In our Control Panel we use Chargebee as our payment service provider
       and Stripe as the payment gateway.
 redirect_from:
-- /en/about/billing/our-payment-service-provider/
+  - /en/about/billing/our-payment-service-provider/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/billing/our-payment-service-provider/ -->

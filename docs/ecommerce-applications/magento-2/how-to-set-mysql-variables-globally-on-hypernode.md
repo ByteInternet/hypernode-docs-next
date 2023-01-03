@@ -4,7 +4,7 @@ myst:
     description: This article explains how to set MySQL variables globally on Hypernode
       by configuring the initStaments in the env.php file
 redirect_from:
-- /en/support/solutions/articles/48001208261-how-to-set-mysql-variables-globally-on-hypernode/
+  - /en/support/solutions/articles/48001208261-how-to-set-mysql-variables-globally-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001208261-how-to-set-mysql-variables-globally-on-hypernode/ -->

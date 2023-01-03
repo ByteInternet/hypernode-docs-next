@@ -5,7 +5,7 @@ myst:
       In this article we explain how Hypernodes virus filter works and how to deactive
       it.
 redirect_from:
-- /en/best-practices/email/how-to-activate-a-virus-filter-for-your-email-box/
+  - /en/best-practices/email/how-to-activate-a-virus-filter-for-your-email-box/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/email/how-to-activate-a-virus-filter-for-your-email-box/ -->

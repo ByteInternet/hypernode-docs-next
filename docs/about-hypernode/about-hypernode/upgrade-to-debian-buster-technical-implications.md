@@ -1,6 +1,6 @@
 ---
 redirect_from:
-- /en/about/about-us/upgrade-to-debian-buster-technical-implications/
+  - /en/about/about-us/upgrade-to-debian-buster-technical-implications/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/about-us/upgrade-to-debian-buster-technical-implications/ -->

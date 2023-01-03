@@ -4,7 +4,7 @@ myst:
     description: We take the security of our servers very serious. This policy offers
       a way to safely report possible security issues to us.
 redirect_from:
-- /en/about/security/responsible-disclosure-policy/
+  - /en/about/security/responsible-disclosure-policy/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/security/responsible-disclosure-policy/ -->

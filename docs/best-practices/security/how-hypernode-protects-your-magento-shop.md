@@ -1,6 +1,6 @@
 ---
 redirect_from:
-- /en/support/solutions/articles/48001158433-how-hypernode-protects-your-magento-shop/
+  - /en/support/solutions/articles/48001158433-how-hypernode-protects-your-magento-shop/
 ---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001158433-how-hypernode-protects-your-magento-shop/ -->

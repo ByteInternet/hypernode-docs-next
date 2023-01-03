@@ -3,7 +3,7 @@ myst:
   html_meta:
     description: This article explains how to undo the cancellation of a domain name.
 redirect_from:
-- /en/services/domains/undoing-the-cancellation-of-a-domain-name/
+  - /en/services/domains/undoing-the-cancellation-of-a-domain-name/
 ---
 
 <!-- source: https://support.hypernode.com/en/services/domains/undoing-the-cancellation-of-a-domain-name/ -->

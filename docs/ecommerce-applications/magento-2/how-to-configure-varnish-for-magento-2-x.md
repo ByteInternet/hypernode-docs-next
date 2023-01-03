@@ -4,7 +4,7 @@ myst:
     description: This article explains how you can configure Varnish for your Hypernode
       in order to boost your Magento 2.x shop.
 redirect_from:
-- /en/ecommerce/magento-2/how-to-configure-varnish-for-magento-2-x/
+  - /en/ecommerce/magento-2/how-to-configure-varnish-for-magento-2-x/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-configure-varnish-for-magento-2-x/ -->

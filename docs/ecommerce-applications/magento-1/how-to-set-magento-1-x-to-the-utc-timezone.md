@@ -5,7 +5,7 @@ myst:
       timezone setting to your customers, check out how change the timezone on Magento
       1.x.
 redirect_from:
-- /en/ecommerce/magento-1/how-to-set-magento-1-x-to-the-utc-timezone/
+  - /en/ecommerce/magento-1/how-to-set-magento-1-x-to-the-utc-timezone/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-set-magento-1-x-to-the-utc-timezone/ -->

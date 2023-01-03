@@ -5,7 +5,7 @@ myst:
       example, which can grow quickly and is hard to remove. Read here how to free
       up disk space.
 redirect_from:
-- /en/hypernode/mysql/how-to-free-disk-space-from-mysql-ibdata1/
+  - /en/hypernode/mysql/how-to-free-disk-space-from-mysql-ibdata1/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/mysql/how-to-free-disk-space-from-mysql-ibdata1/ -->

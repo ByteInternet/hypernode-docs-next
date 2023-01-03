@@ -5,7 +5,7 @@ myst:
       the mail header to see where the email went and discover what might be going
       wrong.
 redirect_from:
-- /en/best-practices/email/how-to-find-the-mail-headers/
+  - /en/best-practices/email/how-to-find-the-mail-headers/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/email/how-to-find-the-mail-headers/ -->

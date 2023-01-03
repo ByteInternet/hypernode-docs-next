@@ -5,7 +5,7 @@ myst:
       panel, but if needed, you might want to be able to flush the cache from the
       command line.
 redirect_from:
-- /en/support/solutions/articles/48000982378-how-to-flush-the-varnish-cache/
+  - /en/support/solutions/articles/48000982378-how-to-flush-the-varnish-cache/
 ---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48000982378-how-to-flush-the-varnish-cache/ -->

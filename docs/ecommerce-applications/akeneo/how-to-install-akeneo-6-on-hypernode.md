@@ -1,6 +1,6 @@
 ---
 redirect_from:
-- /en/support/solutions/articles/48001220118-how-to-install-akeneo-6-on-hypernode/
+  - /en/support/solutions/articles/48001220118-how-to-install-akeneo-6-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001220118-how-to-install-akeneo-6-on-hypernode/ -->

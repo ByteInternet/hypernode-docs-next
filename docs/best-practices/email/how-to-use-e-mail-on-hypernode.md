@@ -5,7 +5,7 @@ myst:
       use Gsuite (Google) or Office365 (Microsoft) as they are more specialized in
       e-mail.
 redirect_from:
-- /en/hypernode/email/how-to-use-e-mail-on-hypernode/
+  - /en/hypernode/email/how-to-use-e-mail-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/email/how-to-use-e-mail-on-hypernode/ -->

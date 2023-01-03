@@ -5,7 +5,7 @@ myst:
       offering better performance than the default. Here's how to unblock and access
       it.
 redirect_from:
-- /en/hypernode/tools/unblocking-and-accessing-magmi-for-hypernode/
+  - /en/hypernode/tools/unblocking-and-accessing-magmi-for-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/unblocking-and-accessing-magmi-for-hypernode/ -->

@@ -5,7 +5,7 @@ myst:
       future of web development. Read about its advantages, challenges and hosting
       requirements here.
 redirect_from:
-- /en/best-practices/pwa/hypernode-and-pwa-hosting/
+  - /en/best-practices/pwa/hypernode-and-pwa-hosting/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/pwa/hypernode-and-pwa-hosting/ -->

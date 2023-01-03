@@ -4,7 +4,7 @@ myst:
     description: 'There are different ways to flush your Magento 1.x caches, via the
       commandline or the backend for example. Read instructions per way in this article. '
 redirect_from:
-- /en/ecommerce/magento-1/how-to-flush-the-magento-1-x-caches/
+  - /en/ecommerce/magento-1/how-to-flush-the-magento-1-x-caches/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-flush-the-magento-1-x-caches/ -->

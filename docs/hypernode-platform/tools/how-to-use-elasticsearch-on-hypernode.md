@@ -5,7 +5,7 @@ myst:
       any external service or configuration. This article explains how to enable and
       configure it.
 redirect_from:
-- /en/hypernode/tools/how-to-use-elasticsearch-on-hypernode/
+  - /en/hypernode/tools/how-to-use-elasticsearch-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-elasticsearch-on-hypernode/ -->

@@ -1,6 +1,6 @@
 ---
 redirect_from:
-- /en/support/solutions/articles/48001184546-how-to-use-composer-2-on-your-hypernode/
+  - /en/support/solutions/articles/48001184546-how-to-use-composer-2-on-your-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001184546-how-to-use-composer-2-on-your-hypernode/ -->

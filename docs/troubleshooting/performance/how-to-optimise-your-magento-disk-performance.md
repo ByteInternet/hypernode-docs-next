@@ -4,7 +4,7 @@ myst:
     description: Optimising your Magento disk performance could lead to higher speed
       and a better performance of your shop. Read here how to optimise it on Hypernode.
 redirect_from:
-- /en/troubleshooting/performance/how-to-optimise-your-magento-disk-performance/
+  - /en/troubleshooting/performance/how-to-optimise-your-magento-disk-performance/
 ---
 
 <!-- source: https://support.hypernode.com/en/troubleshooting/performance/how-to-optimise-your-magento-disk-performance/ -->

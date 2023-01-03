@@ -1,6 +1,6 @@
 ---
 redirect_from:
-- /en/services/domains/how-to-transfer-your-domain-away-from-hypernode/
+  - /en/services/domains/how-to-transfer-your-domain-away-from-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/services/domains/how-to-transfer-your-domain-away-from-hypernode/ -->

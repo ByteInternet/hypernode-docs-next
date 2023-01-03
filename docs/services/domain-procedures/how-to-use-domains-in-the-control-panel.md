@@ -1,6 +1,6 @@
 ---
 redirect_from:
-- /en/services/domains/how-to-use-domains-in-the-control-panel/
+  - /en/services/domains/how-to-use-domains-in-the-control-panel/
 ---
 
 <!-- source: https://support.hypernode.com/en/services/domains/how-to-use-domains-in-the-control-panel/ -->

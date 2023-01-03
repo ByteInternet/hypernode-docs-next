@@ -5,7 +5,7 @@ myst:
       we explain how to set up a staging environment on Hypernode for a Magento 1
       shop.
 redirect_from:
-- /en/ecommerce/magento-1/how-to-set-up-a-staging-environment-for-magento-1/
+  - /en/ecommerce/magento-1/how-to-set-up-a-staging-environment-for-magento-1/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-set-up-a-staging-environment-for-magento-1/ -->

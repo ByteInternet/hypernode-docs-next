@@ -5,7 +5,7 @@ myst:
       mail return-path for your outgoing email to a valid address. Here's how to do
       so in Magento 2.
 redirect_from:
-- /en/ecommerce/magento-2/how-to-set-the-return-path-for-a-magento-2-shop/
+  - /en/ecommerce/magento-2/how-to-set-the-return-path-for-a-magento-2-shop/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-set-the-return-path-for-a-magento-2-shop/ -->

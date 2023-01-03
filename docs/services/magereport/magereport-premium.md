@@ -5,7 +5,7 @@ myst:
       about the performance of their Magento shop. This article explains more about
       MR Premium.
 redirect_from:
-- /en/services/magereport/magereport-premium/
+  - /en/services/magereport/magereport-premium/
 ---
 
 <!-- source: https://support.hypernode.com/en/services/magereport/magereport-premium/ -->

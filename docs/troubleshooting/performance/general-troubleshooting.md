@@ -5,7 +5,7 @@ myst:
       a suspicious or unwanted situation. Learn where to look and reach a conclusion
       fast.
 redirect_from:
-- /en/troubleshooting/performance/general-troubleshooting/
+  - /en/troubleshooting/performance/general-troubleshooting/
 ---
 
 <!-- source: https://support.hypernode.com/en/troubleshooting/performance/general-troubleshooting/ -->

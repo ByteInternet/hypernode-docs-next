@@ -5,7 +5,7 @@ myst:
       we explain both ways of securing information and give examples for how you can
       use it.
 redirect_from:
-- /en/support/solutions/articles/48001153348-how-to-secure-your-data-using-encryption-and-hashing/
+  - /en/support/solutions/articles/48001153348-how-to-secure-your-data-using-encryption-and-hashing/
 ---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001153348-how-to-secure-your-data-using-encryption-and-hashing/ -->

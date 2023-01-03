@@ -4,7 +4,7 @@ myst:
     description: Read here how to validate your SSL certificate and more frequently
       asked question about SSL. Only available in Dutch.
 redirect_from:
-- /en/hypernode/ssl/how-to-validate-your-ssl-certificate-and-more-frequently-asked-questions-about-ssl/
+  - /en/hypernode/ssl/how-to-validate-your-ssl-certificate-and-more-frequently-asked-questions-about-ssl/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/ssl/how-to-validate-your-ssl-certificate-and-more-frequently-asked-questions-about-ssl/ -->

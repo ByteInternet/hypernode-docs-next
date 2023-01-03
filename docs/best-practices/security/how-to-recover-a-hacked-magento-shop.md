@@ -5,7 +5,7 @@ myst:
       versions, or plugins. This article explains how to recover a hacked shop on
       Hypernode.
 redirect_from:
-- /en/best-practices/security/how-to-recover-a-hacked-magento-shop/
+  - /en/best-practices/security/how-to-recover-a-hacked-magento-shop/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/security/how-to-recover-a-hacked-magento-shop/ -->

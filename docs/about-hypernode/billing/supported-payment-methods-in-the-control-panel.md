@@ -4,7 +4,7 @@ myst:
     description: Read what payment methods are supported for the Hypernode Control
       Panel here
 redirect_from:
-- /en/about/billing/supported-payment-methods-in-the-control-panel/
+  - /en/about/billing/supported-payment-methods-in-the-control-panel/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/billing/supported-payment-methods-in-the-control-panel/ -->

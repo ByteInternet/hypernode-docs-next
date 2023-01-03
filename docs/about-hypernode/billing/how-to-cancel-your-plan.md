@@ -4,7 +4,7 @@ myst:
     description: 'You can cancel your Hypernode subscription anytime you want. Read
       more about how to do so in this article. '
 redirect_from:
-- /en/about/billing/how-to-cancel-your-hypernode-plan/
+  - /en/about/billing/how-to-cancel-your-hypernode-plan/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/billing/how-to-cancel-your-hypernode-plan/ -->

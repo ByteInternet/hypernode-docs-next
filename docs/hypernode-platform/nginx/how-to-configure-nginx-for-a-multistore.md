@@ -4,7 +4,7 @@ myst:
     description: Using domains or subdirectories for storefronts can be done by configuring
       your Magento shop. Read about how to configure the store codes in Nginx here.
 redirect_from:
-- /en/hypernode/nginx/how-to-configure-nginx-for-a-multistore/
+  - /en/hypernode/nginx/how-to-configure-nginx-for-a-multistore/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-configure-nginx-for-a-multistore/ -->

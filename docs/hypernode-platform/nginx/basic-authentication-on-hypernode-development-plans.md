@@ -4,7 +4,7 @@ myst:
     description: 'Development Hypernodes are by default configured to offer a Basic
       Authentication challenge to all visitors. Read all about it in this article. '
 redirect_from:
-- /en/hypernode/nginx/basic-authentication-on-hypernode-development-plans/
+  - /en/hypernode/nginx/basic-authentication-on-hypernode-development-plans/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/basic-authentication-on-hypernode-development-plans/ -->

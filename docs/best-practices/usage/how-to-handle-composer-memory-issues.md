@@ -1,6 +1,6 @@
 ---
 redirect_from:
-- /en/support/solutions/articles/48001186354-how-to-handle-composer-memory-issues/
+  - /en/support/solutions/articles/48001186354-how-to-handle-composer-memory-issues/
 ---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001186354-how-to-handle-composer-memory-issues/ -->

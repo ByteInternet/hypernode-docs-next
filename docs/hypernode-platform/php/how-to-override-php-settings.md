@@ -5,7 +5,7 @@ myst:
       are required. 'Max_execution_time' for example. Here's how to override default
       PHP settings.
 redirect_from:
-- /en/hypernode/php/how-to-override-php-settings/
+  - /en/hypernode/php/how-to-override-php-settings/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/php/how-to-override-php-settings/ -->

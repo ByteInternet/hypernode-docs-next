@@ -1,6 +1,6 @@
 ---
 redirect_from:
-- /en/about/billing/migration-faq/
+  - /en/about/billing/migration-faq/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/billing/migration-faq/ -->

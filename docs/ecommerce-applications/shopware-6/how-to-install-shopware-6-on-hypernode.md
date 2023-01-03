@@ -4,7 +4,7 @@ myst:
     description: 'In this article we guide you through the steps of setting up the
       latest version of Shopware 6 as easy as possible. '
 redirect_from:
-- /en/ecommerce/shopware/how-to-install-shopware-6-on-hypernode/
+  - /en/ecommerce/shopware/how-to-install-shopware-6-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/shopware/how-to-install-shopware-6-on-hypernode/ -->

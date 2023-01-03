@@ -5,7 +5,7 @@ myst:
       or us and external search engine. In this article, we explain the different
       possibilities.
 redirect_from:
-- /en/best-practices/performance/how-to-improve-your-magento-search/
+  - /en/best-practices/performance/how-to-improve-your-magento-search/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/performance/how-to-improve-your-magento-search/ -->

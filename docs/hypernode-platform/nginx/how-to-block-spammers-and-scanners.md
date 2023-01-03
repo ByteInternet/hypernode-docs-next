@@ -4,7 +4,7 @@ myst:
     description: It is increasingly common for spammers to crawl your site and a slow
       site for real visitors. Here are some strategies for finding and blocking them.
 redirect_from:
-- /en/support/solutions/articles/48001165533-how-to-block-spammers-and-scanners/
+  - /en/support/solutions/articles/48001165533-how-to-block-spammers-and-scanners/
 ---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001165533-how-to-block-spammers-and-scanners/ -->

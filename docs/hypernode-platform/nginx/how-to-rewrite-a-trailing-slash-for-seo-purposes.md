@@ -4,7 +4,7 @@ myst:
     description: Rewriting trailing slash for a better result in search engines requires
       some Nginx configuration. In this article we explain how to rewrite them.
 redirect_from:
-- /en/hypernode/nginx/how-to-rewrite-a-trailing-slash-for-seo-purposes/
+  - /en/hypernode/nginx/how-to-rewrite-a-trailing-slash-for-seo-purposes/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-rewrite-a-trailing-slash-for-seo-purposes/ -->

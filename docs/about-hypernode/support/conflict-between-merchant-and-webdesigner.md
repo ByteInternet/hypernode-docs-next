@@ -4,7 +4,7 @@ myst:
     description: What to do when a conflict arises between a Registrant (domain name
       holder) and the web designer / developer (Contractor and / or Technical administrator)?
 redirect_from:
-- /en/about/support/conflict-between-merchant-and-webdesigner/
+  - /en/about/support/conflict-between-merchant-and-webdesigner/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/support/conflict-between-merchant-and-webdesigner/ -->

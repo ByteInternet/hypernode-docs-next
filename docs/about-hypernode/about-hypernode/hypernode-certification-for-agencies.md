@@ -5,7 +5,7 @@ myst:
       for Magento developers and retailers and how you can become a Hypernode Certified
       Agency.
 redirect_from:
-- /en/about/about-us/hypernode-certification-for-agencies/
+  - /en/about/about-us/hypernode-certification-for-agencies/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/about-us/hypernode-certification-for-agencies/ -->

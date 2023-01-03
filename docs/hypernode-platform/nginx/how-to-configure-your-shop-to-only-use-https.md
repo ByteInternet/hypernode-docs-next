@@ -5,7 +5,7 @@ myst:
       more safety and a better search index optimization. Read how to do so in this
       article.
 redirect_from:
-- /en/hypernode/nginx/how-to-configure-your-shop-to-only-use-https/
+  - /en/hypernode/nginx/how-to-configure-your-shop-to-only-use-https/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-configure-your-shop-to-only-use-https/ -->

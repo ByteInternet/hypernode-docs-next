@@ -5,7 +5,7 @@ myst:
       responses larger than 1000 bytes. For experts however, it is possible to make
       your own adjustments to tune GZIP Compression.
 redirect_from:
-- /en/hypernode/nginx/how-to-speed-up-your-magento-shop-by-tuning-gzip-compression/
+  - /en/hypernode/nginx/how-to-speed-up-your-magento-shop-by-tuning-gzip-compression/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-speed-up-your-magento-shop-by-tuning-gzip-compression/ -->

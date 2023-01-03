@@ -5,7 +5,7 @@ myst:
       or working in the admin, something is wrong with your setup. Read here how to
       fix this.
 redirect_from:
-- /en/troubleshooting/performance/how-to-fix-invalid-form-key-error/
+  - /en/troubleshooting/performance/how-to-fix-invalid-form-key-error/
 ---
 
 <!-- source: https://support.hypernode.com/en/troubleshooting/performance/how-to-fix-invalid-form-key-error/ -->

@@ -5,7 +5,7 @@ myst:
       as finding your credentials, whitelisting your IP address and using PHPMyAdmin
       are included.
 redirect_from:
-- /en/hypernode/mysql/how-to-use-mysql-on-hypernode/
+  - /en/hypernode/mysql/how-to-use-mysql-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/mysql/how-to-use-mysql-on-hypernode/ -->

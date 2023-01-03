@@ -4,7 +4,7 @@ myst:
     description: 'You can modify your personal settings from the Hypernode control
       panel. In this article, we explain you how to edit them. '
 redirect_from:
-- /en/services/control-panel/edit-personal-settings/
+  - /en/services/control-panel/edit-personal-settings/
 ---
 
 <!-- source: https://support.hypernode.com/en/services/control-panel/edit-personal-settings/ -->

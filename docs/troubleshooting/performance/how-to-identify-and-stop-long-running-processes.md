@@ -5,7 +5,7 @@ myst:
       \ an index (SQL), inefficient or erroneous code (PHP), or a deadlock. Here's\
       \ how to identify them."
 redirect_from:
-- /en/troubleshooting/performance/how-to-identify-and-stop-long-running-processes/
+  - /en/troubleshooting/performance/how-to-identify-and-stop-long-running-processes/
 ---
 
 <!-- source: https://support.hypernode.com/en/troubleshooting/performance/how-to-identify-and-stop-long-running-processes/ -->

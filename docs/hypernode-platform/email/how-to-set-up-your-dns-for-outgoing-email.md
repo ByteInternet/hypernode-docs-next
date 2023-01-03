@@ -4,7 +4,7 @@ myst:
     description: If your domain is hosted externally and you want to send email from
       your Hypernode there are records that need to be added to the external DNS.
 redirect_from:
-- /en/hypernode/email/how-to-set-up-your-dns-for-outgoing-email/
+  - /en/hypernode/email/how-to-set-up-your-dns-for-outgoing-email/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/email/how-to-set-up-your-dns-for-outgoing-email/ -->

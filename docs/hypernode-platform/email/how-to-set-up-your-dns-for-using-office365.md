@@ -4,7 +4,7 @@ myst:
     description: How to set up your DNS when you want to use Office365 on a domain
       that is hosted at Hypernode
 redirect_from:
-- /en/best-practices/email/how-to-set-up-your-dns-for-using-office365/
+  - /en/best-practices/email/how-to-set-up-your-dns-for-using-office365/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/email/how-to-set-up-your-dns-for-using-office365/ -->

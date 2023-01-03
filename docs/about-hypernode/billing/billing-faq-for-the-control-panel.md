@@ -4,7 +4,7 @@ myst:
     description: Every first of the month, we send an invoice to our customers. You
       can easily find all invoices that have been sent in the Control Panel.
 redirect_from:
-- /en/about/billing/billing-faq-for-the-control-panel/
+  - /en/about/billing/billing-faq-for-the-control-panel/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/billing/billing-faq-for-the-control-panel/ -->

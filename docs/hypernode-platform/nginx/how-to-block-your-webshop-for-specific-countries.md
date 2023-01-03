@@ -4,7 +4,7 @@ myst:
     description: Sometimes spam and abuse comes from specific countries. You could
       block these countries, if needed. This article explains how to block them specifically.
 redirect_from:
-- /en/hypernode/nginx/how-to-block-your-webshop-for-specific-countries/
+  - /en/hypernode/nginx/how-to-block-your-webshop-for-specific-countries/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-block-your-webshop-for-specific-countries/ -->

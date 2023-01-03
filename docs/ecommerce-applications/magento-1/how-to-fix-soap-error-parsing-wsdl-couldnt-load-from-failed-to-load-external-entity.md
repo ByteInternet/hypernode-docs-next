@@ -2,10 +2,10 @@
 myst:
   html_meta:
     description: "Get errors like these when trying to perform HTTP requests: \"Parsing\
-      \ WSDL: Couldn't load from '': failed to load external entity\"? Here's how to\
-      \ Fix SOAP errors."
+      \ WSDL: Couldn't load from '': failed to load external entity\"? Here's how\
+      \ to Fix SOAP errors."
 redirect_from:
-- /en/ecommerce/magento-1/how-to-fix-soap-error-parsing-wsdl-couldn-t-load-from-failed-to-load-external-entity/
+  - /en/ecommerce/magento-1/how-to-fix-soap-error-parsing-wsdl-couldn-t-load-from-failed-to-load-external-entity/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-fix-soap-error-parsing-wsdl-couldn-t-load-from-failed-to-load-external-entity/ -->

@@ -5,7 +5,7 @@ myst:
       you receive a lot of spam, we at Hypernode recommend you to configure a spam
       filter.
 redirect_from:
-- /en/best-practices/email/how-to-configure-the-spam-filter/
+  - /en/best-practices/email/how-to-configure-the-spam-filter/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/email/how-to-configure-the-spam-filter/ -->

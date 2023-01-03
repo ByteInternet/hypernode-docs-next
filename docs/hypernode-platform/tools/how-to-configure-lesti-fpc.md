@@ -5,7 +5,7 @@ myst:
       as it is faster than using the default file caching mechanism. Read here how
       to do so
 redirect_from:
-- /en/hypernode/tools/how-to-configure-lesti-fpc/
+  - /en/hypernode/tools/how-to-configure-lesti-fpc/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-configure-lesti-fpc/ -->

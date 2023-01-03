@@ -1,6 +1,6 @@
 ---
 redirect_from:
-- /en/support/solutions/articles/48001166328-how-to-change-the-timezone-for-the-order-timestamps-in-shopware-5-x/
+  - /en/support/solutions/articles/48001166328-how-to-change-the-timezone-for-the-order-timestamps-in-shopware-5-x/
 ---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001166328-how-to-change-the-timezone-for-the-order-timestamps-in-shopware-5-x/ -->

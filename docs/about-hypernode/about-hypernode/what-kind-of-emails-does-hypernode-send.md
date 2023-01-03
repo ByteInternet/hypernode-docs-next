@@ -4,7 +4,7 @@ myst:
     description: Hypernode sends out different kinds of emails to spread information.
       In this article you can find which ones we send and why.
 redirect_from:
-- /en/about/about-us/what-kind-of-emails-does-hypernode-send/
+  - /en/about/about-us/what-kind-of-emails-does-hypernode-send/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/about-us/what-kind-of-emails-does-hypernode-send/ -->

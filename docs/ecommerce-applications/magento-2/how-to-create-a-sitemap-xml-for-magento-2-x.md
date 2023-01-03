@@ -4,7 +4,7 @@ myst:
     description: Find detailed guidelines on how to create a sitemap.xml for Magento
       2.x versions here.
 redirect_from:
-- /en/ecommerce/magento-2/how-to-create-a-sitemap-xml-for-magento-2-x/
+  - /en/ecommerce/magento-2/how-to-create-a-sitemap-xml-for-magento-2-x/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-create-a-sitemap-xml-for-magento-2-x/ -->

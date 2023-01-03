@@ -5,7 +5,7 @@ myst:
       and helps to gain confidence of customers. Read here how to use SSL ordered
       via Byte.nl.
 redirect_from:
-- /en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-byte-nl/
+  - /en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-byte-nl/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-byte-nl/ -->

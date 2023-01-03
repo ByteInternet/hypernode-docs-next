@@ -4,7 +4,7 @@ myst:
     description: 'On Hypernode you can choose from a range of PHP versions. Check
       out which ones and how to change them here. '
 redirect_from:
-- /en/hypernode/php/supported-php-versions-and-how-to-change-them-on-hypernode/
+  - /en/hypernode/php/supported-php-versions-and-how-to-change-them-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/php/supported-php-versions-and-how-to-change-them-on-hypernode/ -->

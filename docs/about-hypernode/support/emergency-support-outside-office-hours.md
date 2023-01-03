@@ -4,7 +4,7 @@ myst:
     description: 'When experiencing a business-critical disruption on your web shop,
       you can use our Hypernode Emergency Support service for help. '
 redirect_from:
-- /en/about/support/emergency-support-outside-office-hours-/
+  - /en/about/support/emergency-support-outside-office-hours-/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/support/emergency-support-outside-office-hours-/ -->

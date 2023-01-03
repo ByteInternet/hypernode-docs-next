@@ -5,7 +5,7 @@ myst:
       you will want to know how you can manage your email queue. Find out how to do
       this here.
 redirect_from:
-- /en/hypernode/email/how-to-manage-your-email-queue/
+  - /en/hypernode/email/how-to-manage-your-email-queue/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/email/how-to-manage-your-email-queue/ -->
