@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'There are different ways to flush your Magento 1.x caches, via the
+      commandline or the backend for example. Read instructions per way in this article. '
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-flush-the-magento-1-x-caches/ -->
 
 # How to Flush the Magento 1.x Caches
@@ -10,7 +17,7 @@ The easiest way to flush your Magento cache is via the backend. After changing s
 
 - Login to the Magento backend
 - Go to `System` > `Cache Management`
-- Click the checkbox of any cache that has been marked `Invalidated` or use one of the selection options above the list to select a group of caches
+- Click the checkbox of any cache that has been marked `Invalidated` or use one of the selection options above the list to select a group of caches
 - Set the `Actions` dropdown to `Refresh` and click the `Submit` button
 
 You can also flush all the caches at once by using either the `Flush Magento Cache` or `Flush Cache Storage` at the top of the page. On Hypernode it is safe to use either of these buttons since the `var/cache` folder that is used by Magento is not shared with any other applications.

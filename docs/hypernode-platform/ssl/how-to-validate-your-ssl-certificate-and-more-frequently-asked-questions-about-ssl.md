@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: Read here how to validate your SSL certificate and more frequently
+      asked question about SSL. Only available in Dutch.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/ssl/how-to-validate-your-ssl-certificate-and-more-frequently-asked-questions-about-ssl/ -->
 
 # How to Validate Your SSL Certificate and More Frequently Asked Questions About SSL
@@ -10,7 +17,7 @@ At Hypernode you can request various SSL certificates via the [Service Panel](ht
 
 - SSL single certificate; you can use this on a single domain for the naked domain and the www domain (example.com and [www.example.com](http://www.example.com)).
 - SSL wildcard certificate; You can use this to secure all subdomains (\* .example.nl) for your domain name, but also on [www.example.nl](http://www.example.nl) and the naked domain (ie example.nl). However, this certificate does not work on \*. \*. example.nl.
-- EV-SSL certificate; you can only use this on the main domain (example.nl). EV stands for Extended Validation and gives you the reliable green bar, known from many bank websites. In terms of technology, an EV-SSL certificate does not differ from the "normal" SSL certificates, but the difference is in the identity investigation. With an EV-SSL certificate, extensive research is done into the identity of the applicant. In that sense, an EV-SSL certificate is "worth" more  or more reliable. The contract period for all SSL certificates is one year.
+- EV-SSL certificate; you can only use this on the main domain (example.nl). EV stands for Extended Validation and gives you the reliable green bar, known from many bank websites. In terms of technology, an EV-SSL certificate does not differ from the "normal" SSL certificates, but the difference is in the identity investigation. With an EV-SSL certificate, extensive research is done into the identity of the applicant. In that sense, an EV-SSL certificate is "worth" more or more reliable. The contract period for all SSL certificates is one year.
 
 Please take into account that it can take a few days to apply for an SSL certificate. This mainly applies to EV SSL certificates for which the applicant needs to show that they have control over the domain for which the certificate was requested, the company data als needs to be verified. To do so, our supplier (Sectigo) looks at a public registry, such as that of the Chamber of Commerce, and they contact the organisation by phone. EV certificates also require documents to be signed and submitted to our supplier.
 
@@ -25,7 +32,7 @@ The costs for an SSL certificate consist of two aspects: the costs for the actua
 | Wildcard | € 75,00               | € 80,00           | € 155,00  |
 | EV       | € 95,00               | € 80,00           | € 175,00  |
 
-The certificate costs you pay for an SSL certificate that you order via Hypernode, is the purchase prise we pay at our supplier. We arrange the entire SSL application for you. You do not have to do anything more than to order the certificate in your Service Panel. Only with EV-SSL you still have to take care of a number of things (as explained [here](#What-kind-of-certificates-can-I-order-via-Hypernode?)).
+The certificate costs you pay for an SSL certificate that you order via Hypernode, is the purchase prise we pay at our supplier. We arrange the entire SSL application for you. You do not have to do anything more than to order the certificate in your Service Panel. Only with EV-SSL you still have to take care of a number of things (as explained [here](#what-kind-of-certificates-can-i-order-via-hypernode)).
 
 In the background, the certificate is requested with the correct data, the validation is done (place file, perform validation), the certificate is retrieved and safely stored in the right place. We ensure that your SSL certificate works properly, even if you change your plan. All you have to take care of is to install the SSL on the right Hypernode (which can be done with [one click](https://support.hypernode.com/en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-byte-nl#Install-the-SSL-Certificate-on-your-Hypernode)).
 
@@ -45,7 +52,7 @@ If the company validation step fails, for example because the company name at Hy
 
 ### Domain Validation
 
-For a domain validated certificate, the certificate issuer only performs domain validation. When the domain name runs on the Byte name servers, we can do the validation for you. If not, the default method of doing this will be email validation. You will receive an email for this on a standard email address; admin, administrator, hostmaster, postmaster, or webmaster@example.nl. In some cases the address from the whois data is also possible. Unfortunately, other email addresses cannot be used for this, because only these emails are accepted by the CA/B forum. If it is not possible to use one of these email addresses, you can also choose  CNAME validation. To do this, a CNAME record must be added to the domain name's DNS that can be verified by the certificate issuer. To request this option, you can send an email to support@hypernode.com, you will then receive the record that needs to be added to the DNS.
+For a domain validated certificate, the certificate issuer only performs domain validation. When the domain name runs on the Byte name servers, we can do the validation for you. If not, the default method of doing this will be email validation. You will receive an email for this on a standard email address; admin, administrator, hostmaster, postmaster, or webmaster@example.nl. In some cases the address from the whois data is also possible. Unfortunately, other email addresses cannot be used for this, because only these emails are accepted by the CA/B forum. If it is not possible to use one of these email addresses, you can also choose CNAME validation. To do this, a CNAME record must be added to the domain name's DNS that can be verified by the certificate issuer. To request this option, you can send an email to support@hypernode.com, you will then receive the record that needs to be added to the DNS.
 
 ### Whois Validation
 
@@ -65,7 +72,7 @@ If the telephone validation fails, you can contact our support department. We ca
 
 ## Can I Request an SSL Certificate on My Hypernode Name?
 
-Please note that you cannot request an SSL certificate for your app name (e.g. example.hypernode.io). You can create a [Let's Encrypt certificate](https://support.hypernode.com/en/hypernode/ssl/how-to-use-let-s-encrypt-on-hypernode) for this. If you want SSL for your domain, you need a Presence or Presence Plus plan for each domain for which you want to request an SSL certificate.  This is necessary because the domain must be known in our administration before we can order an SSL certificate.
+Please note that you cannot request an SSL certificate for your app name (e.g. example.hypernode.io). You can create a [Let's Encrypt certificate](https://support.hypernode.com/en/hypernode/ssl/how-to-use-let-s-encrypt-on-hypernode) for this. If you want SSL for your domain, you need a Presence or Presence Plus plan for each domain for which you want to request an SSL certificate. This is necessary because the domain must be known in our administration before we can order an SSL certificate.
 
 So first make sure that you have ordered a Presence plan, even if your domain is registered externally. Then you order the SSL certificate as an add-on to this Presence plan. Make sure that you have the Contractant role for both plans.
 

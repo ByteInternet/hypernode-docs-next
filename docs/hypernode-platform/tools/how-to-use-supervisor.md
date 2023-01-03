@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: 'Supervisor enables you to use programs that need to run all the
+      time on your Hypernode. Supervisor watches your programs and restarts them if
+      they might fail. '
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-supervisor/ -->
 
 # How to Use Supervisor
@@ -55,7 +63,7 @@ python3 /data/web/long_running/supervisortest.py
 If our program works we can add it to Supervisor. To do this we add a config file in the folder `/data/web/supervisor`. This file needs to have the `*.conf` extension.
 
 ```nginx
-mkdir -p /data/web/supervisor
+mkdir -p /data/web/supervisor
 nano /data/web/supervisor/supervisortest.conf
 ```
 

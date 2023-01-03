@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: If your domain is hosted externally and you want to send email from
+      your Hypernode there are records that need to be added to the external DNS.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/email/how-to-set-up-your-dns-for-outgoing-email/ -->
 
 # How to Set Up Your DNS for Outgoing Email
@@ -29,3 +36,15 @@ To check if your DNS records have been configured correctly, please check our on
 - The fourth record is the SPF record. Please make sure you include spf.***example***.hypernode.io in your DNS's SPF record.
 
 Please check our [DNS validato](https://my.hypernode.com/dns/check/)r to confirm email can be sent successfully.
+
+## Additional audit options
+
+If you're sending email from your Hypernode with multiple domains you can perform an additional audit from the Command Line Interface. The following command can be used and performs a check based on the **mail.logs** from a week earlier.
+
+```console
+app@yqc2sw-example-magweb-cmbl:~$ hypernode-mail-status domains --check
+example.com - mail_auth: ok, dkim_hypernode: ok, spf_record: ok
+example.nl - mail_auth: error, dkim_hypernode: ok, spf_record: ok
+```
+
+In this instance the audit gives a green light for **example.com**. From this domain you will be able to send email through your Hypernode and application. For the domain **example.nl** there is one mandatory DNS record missing, namely the **x-transip-mail-auth** This will lead to email from the domain **example.nl** to be **not send** and being held in your email queue. How to manage your email queue can be found in this [article](https://support.hypernode.com/en/hypernode/email/how-to-manage-your-email-queue).

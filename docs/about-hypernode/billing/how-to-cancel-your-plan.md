@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'You can cancel your Hypernode subscription anytime you want. Read
+      more about how to do so in this article. '
+---
+
 <!-- source: https://support.hypernode.com/en/about/billing/how-to-cancel-your-hypernode-plan/ -->
 
 # How to Cancel Your Plan
@@ -22,6 +29,23 @@ You can cancel your subscription at any time you want. Your cancellation will be
 ### Cancellation Per End Date
 
 You can cancel your subscription at any time via your control panel. The end date of your subscription is always the first of the next month. Example: if you cancel your subscription on the 15th of June, your Hypernode will be no longer available from the 1st of July onwards.
+
+## How to Cancel Your Domain If You Are a Control Panel User
+
+- Log into your Control Panel via [my.hypernode.com](http://my.hypernode.com/)
+- Click on **Domains** in the sidebar.
+
+![](_res/J2LXr0iR8Fg8wtsuwv9-NzosfF82clh05A.png)
+
+- Select the domain by clicking it which you want to cancel or transfer.
+- At **Authorisation code** click on **here**.
+
+![](_res/wg0rB2wf96--Cj5X1MZ4p-CHVCwhkY3e2A.png)
+
+- Confirm the cancellation for the renewal in the next screen.
+- Now the cancellation is finalised.
+- The authorisation code will be sent to the email address listed for the domain handle.
+- The domain is available until the end date. You can transfer this domain to another party or let it expire.
 
 ## How to Cancel Your Plan If You Are a Service Panel User
 

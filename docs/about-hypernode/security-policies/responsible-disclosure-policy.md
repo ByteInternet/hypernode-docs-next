@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: We take the security of our servers very serious. This policy offers
+      a way to safely report possible security issues to us.
+---
+
 <!-- source: https://support.hypernode.com/en/about/security/responsible-disclosure-policy/ -->
 
 # Responsible Disclosure Policy
@@ -58,4 +65,4 @@ If you believe you’ve found a security vulnerability in one of our products or
 - If you saw any customer data, or confidential information, during your research, please inform us of this as well.
 - Your name/handle and a link for recognition in our Hall of Fame.
 
-If you’d like to encrypt the information, please use our PGP-key: (ID: 9AD3B600, Fingerprint: 0DDE A4A1 50C5 B642 1EBB  1F5B FDE7 0F88 9AD3 B600)
+If you’d like to encrypt the information, please use our PGP-key: (ID: 9AD3B600, Fingerprint: 0DDE A4A1 50C5 B642 1EBB 1F5B FDE7 0F88 9AD3 B600)

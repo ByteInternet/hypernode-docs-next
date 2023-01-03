@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: In this article we’ll explain how you can configure FTP/SFTP (create/delete
+      users) and which credentials to use to make a FTP/SFTP connection.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/ftp/how-to-configure-ftp-sftp-on-hypernode/ -->
 
 # How to Configure FTP/SFTP on Hypernode
@@ -46,7 +53,7 @@ If you want to check which FTP users are enabled you can use the `hypernode-ftp 
 
 ```nginx
 Users found:
-bob   /data/web
+bob /data/web
 ```
 
 Or in case you did not add any FTP users yet:
@@ -107,7 +114,7 @@ Customers who log in via [service.byte.nl](http://service.byte.nl) can whitelist
 
 ### Via Your Control Panel
 
-Customers who log in via [my.hypernode.com](//my.hypernode.com) can allow an IP via the Control Panel by following the steps below:
+Customers who log in via [my.hypernode.com](https://my.hypernode.com) can allow an IP via the Control Panel by following the steps below:
 
 1. Log into the Control Panel.
 1. Select the Hypernode.
@@ -162,7 +169,7 @@ When you have generated the keypair you need to add your public key to your Hype
 
 Service Panel users can use the SSH Keymanager in the [Service panel.](https://support.hypernode.com/en/hypernode/ssh/how-to-use-ssh-keys-on-hypernode#Service-Panel-Users%3A-Add-Public-Key-to-the-SSH-Keymanager-2)
 
-Control Panel users also have access to an SSH Keymanager via their Control panel. How this works is explained in  [this article](https://support.hypernode.com/en/services/control-panel/how-to-add-keys-to-the-ssh-keymanager).
+Control Panel users also have access to an SSH Keymanager via their Control panel. How this works is explained in [this article](https://support.hypernode.com/en/services/control-panel/how-to-add-keys-to-the-ssh-keymanager).
 
 Alternatively you can also add the public key to the the `~/.ssh/authorized_keys` file.
 
@@ -176,8 +183,8 @@ Alternatively you can also add the public key to the the `~/.ssh/authorized_keys
 After the public key has been added, we need to make sure the private key gets properly configured. As mentioned you can use FileZilla for this task. Follow the steps below:
 
 1. Open FileZilla
-1. Click  **Edit** and select **Settings**.
-1. Click  **SFTP**.
+1. Click **Edit** and select **Settings**.
+1. Click **SFTP**.
 1. Click **Add keyfile:**
    **![](_res/ATqYHQr1OfQ_MeXwYgN9pTjF4LRI8edWQw.png)**
 1. Select your private key and click **Open**.

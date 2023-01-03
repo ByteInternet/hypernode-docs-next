@@ -1,48 +1,33 @@
+---
+myst:
+  html_meta:
+    description: This article explains how you can install node.js and NPM on a Hypernode
+      and how to use this.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-node-js-and-npm-on-hypernode/ -->
 
 # How to Use Node.js and NPM on Hypernode
 
-This article explains how to use and install other versions of Node.js and also how to install NPM packages on Hypernode
-
-- [Using the Installed Version of Node.js](#Using-the-Installed-Version-of-Node.js)
-- [Installing Node.js v10.16](#Installing-Node.js-v10.16)
-- [Downgrading to Node.js v6](#Downgrading-to-Node.js-v6)
-- [Setting your PATH](#Setting-your-PATH)
-- [Installing Packages](#Installing-Packages)
-  - [Install Gulp](#Install-Gulp)
-  - [Install Grunt](#Install-Grunt)
-  - [Install Sass](#Install-Sass)
-  - [Install Compass](#Install-Compass)
-  - [Install Less](#Install-Less)
-  - [Install Yarn](#Install-Yarn)
-- [Using a newer version of Node.js](#Using-a-newer-version-of-Node.js)
-  - [Install a newer version of Node.js](#Install-a-newer-version-of-Node.js)
-  - [Configure a Manually Installed Node.js](#Configure-a-Manually-Installed-Node.js)
-- [Troubleshooting](#Troubleshooting)
+This article explains how to use and install other versions of Node.js and also how to install NPM packages on Hypernode.
 
 ## Using the Installed Version of Node.js
 
 If you use the installed version, you can just start using node and npm.
 
-## Installing Node.js v10.24.0
+## Upgrading and downgrading Node.js
 
-By default, the installed NodeJS version on our Hypernode platform is v10. You can check this on your Hypernode by running the command `node -v`. If you need to manually upgrade an app to Node.js v10, you can use the command below:
-
-```nginx
-hypernode-systemctl settings nodejs_version --value 10
-```
-
-## Downgrading to Node.js v6
-
-You can also downgrade to Node.js v6 by running this command:
+By default, the installed NodeJS version on our Hypernode platform is v10. You can check this on your Hypernode by running the command `node -v`. If you need to manually upgrade an app to another Node.js version like 18, you can use the command below:
 
 ```nginx
-hypernode-systemctl settings nodejs_version --value 6
+hypernode-systemctl settings nodejs_version 18
 ```
+
+Supported Node.js versions are: 6, 10, 16 and 18.
 
 ## Setting your PATH
 
-If you want to execute the tools that you installed using npm, you should make sure these executables can be located by the shell. This can be easily done this by adjusting your PATH setting.
+If you want to execute the tools that you installed using `npm`, you should make sure these executables can be located by the shell. This can be easily done this by adjusting your PATH setting.
 
 This PATH variable is used by the Bash shell to locate binaries and scripts. You can adjust it by exporting the PATH variable:
 
@@ -50,21 +35,21 @@ This PATH variable is used by the Bash shell to locate binaries and scripts. You
  export PATH="/data/web/node_modules/.bin:$PATH"
 ```
 
-If you want this setting to be configured every time you log in to your Hypernode, you can add this setting to your ~/.profile, this file is loaded every time a new shell is spawned.
+If you want this setting to be configured every time you log in to your Hypernode, you can add this setting to your `~/.profile`, this file is loaded every time a new shell is spawned.
 
 To configure your PATH variable at login time, run the following command:
 
 ```nginx
- echo 'export PATH="/data/web/node_modules/.bin:$PATH"' >> ~/.profile
+echo 'export PATH="/data/web/node_modules/.bin:$PATH"' >> ~/.profile
 ```
 
-Now every time you log in, the Bash shell is configured to look for tools in /data/web/node_modules/.bin and /data/web/.node/bin.
+Now every time you log in, the Bash shell is configured to look for tools in `/data/web/node_modules/.bin` and `/data/web/.node/bin`.
 
 ## Installing Packages
 
 Let's install some packages.
 
-When your PATH is setup correctly, after the installation with npm install, you should immediately be able to use the newly installed tool.
+When your `PATH` is setup correctly, after the installation with `npm install`, you should immediately be able to use the newly installed tool.
 
 To find the latest command line tool installed, run: `ls -ltr /data/web/node_modules/.bin | tail -1`
 
@@ -118,7 +103,7 @@ npm install less
 npm install yarn
 ```
 
-## **Using a newer version of Node.js**
+## **Using an newer version of Node.js**
 
 ### **Install a newer version of Node.js**
 
@@ -147,7 +132,7 @@ That’s it, you now have a precompiled node installation in `~/node`
 
 ### Configure a Manually Installed Node.js
 
-To run the manually installed executables, you need to change your PATH variable to make sure your node is located by the Bash shell before the pre-installed version.
+To run the manually installed executables, you need to change your `PATH` variable to make sure your node is located by the Bash shell before the pre-installed version.
 
 To do this, run the following command to add the locations to your PATH:
 

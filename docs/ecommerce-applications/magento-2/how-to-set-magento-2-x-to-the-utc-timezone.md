@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: If you want to work with a different timezone setting or show a different
+      timezone setting to your customers, check out how change the timezone on Magento
+      2.x.
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-set-magento-2-x-to-the-utc-timezone/ -->
 
 # How to Set Magento 2.x to the UTC Timezone

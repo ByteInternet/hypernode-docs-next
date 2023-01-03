@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: This article describes how to install Akeneo 3 on your Hypernode.
+      Installing Akeneo 3 can be done by using our Pre-Install or you can install
+      Akeneo 3 manually.
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/akeneo/how-to-install-akeneo-3-on-hypernode/ -->
 
 # How to Install Akeneo 3 on Hypernode
@@ -14,7 +22,7 @@ hypernode-systemctl settings managed_vhosts_enabled True
 
 ## Create a Managed_vhost for a (Sub)Domain
 
-If your Magento or Shopware installation already points to `example.hypernode.io`,  you can create a managed_vhost for your Akeneo installation on a subdomain, for example `akeneo.example.hypernode.io`. The command below will also install Let’s Encrypt and force your domain to use HTTPS.
+If your Magento or Shopware installation already points to `example.hypernode.io`, you can create a managed_vhost for your Akeneo installation on a subdomain, for example `akeneo.example.hypernode.io`. The command below will also install Let’s Encrypt and force your domain to use HTTPS.
 
 ```bash
 hypernode-manage-vhosts akeneo.example.hypernode.io --type akeneo --https --force-https

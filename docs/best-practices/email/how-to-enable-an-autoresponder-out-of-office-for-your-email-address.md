@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: Read how you can create an autoresponder for your email address in
+      this article
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/email/how-to-enable-an-autoresponder-out-of-office-for-your-email-address/ -->
 
 # How to Enable an Autoresponder/ Out of Office for Your Email Address
@@ -30,7 +37,7 @@ Got to the [autoresponder](https://service.byte.nl/mail/outofoffice.cgi) page. Y
 - Select the email address
 - Choose for either **Aanzetten**(to activate the autoresponder) or **Uitzetten**(to turn off the autoresponder)
 - Fill in the date on which the autoresponder should be activated in the entry field behind **Start vanaf**
-- Fill in the date on which the autoresponder should be turned off  in the entry field behind **Actief tot**
+- Fill in the date on which the autoresponder should be turned off in the entry field behind **Actief tot**
 - You can create the subject line in the entry field behind **Onderwerp**
 - In the entry field for **Bericht**you can set up the message for the autoresponder
 - Then click **Stel in**to save the settings

@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Debugging outgoing mail issues could require you to inspect all outgoing
+      mails from a webshop. MailHog is an email testing tool for it, which we explain
+      here.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-mailhog-on-hypernode/ -->
 
 # How to Use MailHog on Hypernode
@@ -20,13 +28,13 @@ This will install and activate MailHog (might take a couple minutes).
 
 After the setting is changed and the node is updated, all mail sent from the Hypernode will be caught in the MailHog mailbox. Mail will not reach customers anymore.
 
-To access MailHog we need to link the  `8025` port on the Hypernode to our own `8025` port. This can be done using a SSH connection. Enter the following command on the CLI on your local computer.
+To access MailHog we need to link the `8025` port on the Hypernode to our own `8025` port. This can be done using a SSH connection. Enter the following command on the CLI on your local computer.
 
 ```nginx
 ssh app@appname.hypernode.io -L 8025:localhost:8025
 ```
 
-This will forward `localhost:8025` (where MailHog is running) to our local `8025`  port. Now going to `localhost:8025` in a browser will show the MailHog mailbox with all the mails it catches from the Hypernode.
+This will forward `localhost:8025` (where MailHog is running) to our local `8025` port. Now going to `localhost:8025` in a browser will show the MailHog mailbox with all the mails it catches from the Hypernode.
 
 ## Access MailHog with HMV and Basic Authentication
 

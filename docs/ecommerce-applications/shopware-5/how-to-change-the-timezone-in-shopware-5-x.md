@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: This article describes how to change the timezone in Shopware 5.x
+      on a Hypernode.
+---
+
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001170559-how-to-change-the-timezone-in-shopware-5-x/ -->
 
 # How to Change the Timezone in Shopware 5.x

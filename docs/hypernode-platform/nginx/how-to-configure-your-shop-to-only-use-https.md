@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Hypernode recommends serving your site only over HTTPS traffic for
+      more safety and a better search index optimization. Read how to do so in this
+      article.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-configure-your-shop-to-only-use-https/ -->
 
 # How To Configure Your Shop to Only Use HTTPS
@@ -30,7 +38,7 @@ If so, it will give the following output:
 
 `managed_vhosts_enabled is set to value True`
 
-If you want to request a LE certificate you need to add the  --https flag with the HMV-command.
+If you want to request a LE certificate you need to add the `--https` flag with the HMV-command.
 
 `hypernode-manage-vhosts www.example.com --https --force-https`
 
@@ -41,7 +49,7 @@ This command will not only request a LE Certificate but because of the --force-h
 To order [Let’s Encrypt](https://support.hypernode.com/knowledgebase/use-lets-encrypt-hypernode/) certificates for all storefronts, use the following command:
 
 ```nginx
-## Create an entry for each storefront for DOMAIN in $( n98-magerun sys:store:config:base-url:list --format=csv | sed 1d  | cut -d , -f 3 | perl -pe "s/https?://(www.)?//" | tr -d "/" | sort -u ) ; do    echo -e "$DOMAIN www.${DOMAIN}" >> ~/.dehydrated/domains.txtdone ## Order the certificatesdehydrated -c --create-dirs
+## Create an entry for each storefront for DOMAIN in $( n98-magerun sys:store:config:base-url:list --format=csv | sed 1d | cut -d , -f 3 | perl -pe "s/https?://(www.)?//" | tr -d "/" | sort -u ) ; do echo -e "$DOMAIN www.${DOMAIN}" >> ~/.dehydrated/domains.txtdone ## Order the certificatesdehydrated -c --create-dirs
 ```
 
 Don’t forget to [add the cron to renew your certificates](https://support.hypernode.com/knowledgebase/use-lets-encrypt-hypernode/) to the crontab if you are using Let’s Encrypt!

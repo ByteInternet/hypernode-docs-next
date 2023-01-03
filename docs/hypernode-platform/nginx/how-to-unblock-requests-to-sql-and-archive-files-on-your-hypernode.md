@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: By default .sql files and archive files are blocked on Hypernode.
+      This article explains how you can unblock those files and make them downloadable
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-unblock-requests-to-sql-and-archive-files/ -->
 
 # How to Unblock Requests to sql and Archive Files on Your Hypernode
@@ -20,6 +27,6 @@ Or if you want to unblock an entire directory, you can place the following Nginx
 
 `location ^~ /some_directory/ {}`
 
-\*\*\*\*\*Do note that you have to use the URL path in this situation and **not** the disk path.
+\*\*\*\*\*Do note that you have to use the URL path in this situation and **not** the disk path.
 
 Other variants of this Nginx configuration work as long as it’s more specific than the Nginx configuration that blocks these files (which can be found at the top of this article).

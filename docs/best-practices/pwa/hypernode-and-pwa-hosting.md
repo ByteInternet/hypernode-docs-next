@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Progressive Web Apps (PWA) are a hot item and are considered the
+      future of web development. Read about its advantages, challenges and hosting
+      requirements here.
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/pwa/hypernode-and-pwa-hosting/ -->
 
 # Hypernode and PWA Hosting
@@ -6,13 +14,12 @@ Progressive Web Apps (PWA) are a hot item and are considered the future of web d
 
 Table of Contents
 
-- [The Importance of Mobile Web](#importance-mobile-web)
-- [The Challenges for Webshops](#challenges)
-- [Progressive Web Apps and it's Advantages](#pwa-advantages)
-- [Hypernode and PWA](#hypernode-pwa)
-  The Importance of Mobile Web
+- [The Importance of Mobile Web](#the-importance-of-mobile-web)
+- [The Challenges for Webshops](#the-challenges-for-webshops)
+- [Progressive Web Apps and it's Advantages](#progressive-web-apps-and-its-advantages)
+- [Hypernode and PWA](#hypernode-and-pwa)
 
-______________________________________________________________________
+## The Importance of Mobile Web
 
 Mobile web involves accessing websites via smartphones and tablets. Research company Forrester has predicted mobile commerce continues to grow and will contribute to half of overall retail sales growth by 2022. It is not hard to imagine a webshop optimised for the mobile web will lead to more profit.
 

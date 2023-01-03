@@ -1,8 +1,15 @@
+---
+myst:
+  html_meta:
+    description: Follow the steps in this article to install a Magento 2 installation
+      on Hypernode. It will only take you 5-10 minutes.
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-install-magento-2-on-hypernode/ -->
 
 # How to Install Magento 2 on Hypernode
 
-Magento 2 requires preferably a Magento Grow hosting plan or bigger. Want to [install Magento 1](https://support.hypernode.com/knowledgebase/installing-magento-on-hypernode/) instead?
+Magento 2 requires preferably a Falcon M hosting plan or bigger. Want to [install Magento 1](https://support.hypernode.com/knowledgebase/installing-magento-on-hypernode/) instead?
 
 Installing Magento 2 will take only 5-10 minutes (add 15 minutes if you want the sample data).
 
@@ -54,7 +61,20 @@ Using the command `hypernode-systemctl preinstall [preinstall_type]`, the instal
 
 Please be aware that this does not set the general Hypernode settings (php, mysql) to the proper values. This still needs to happen manually. In addition, for Magento make sure the /data/web/public folder is empty.
 
+First make sure the current Composer version is set to **2.x**
+
 ```
+# Check composer version
+composer -V
+Composer version 1.10.26 2022-04-13 16:39:56
+
+# Update composer version to 2.x
+hypernode-systemctl settings composer_version 2.x
+```
+
+Now you can start the preinstall of Magento 2
+
+```console
 # Start the preinstall
 app@appname.hypernode.io:~$ hypernode-systemctl preinstall magento_2 --sample-data
 Preinstall magento2 with sample data job posted, see hypernode-log (or livelog) for job progress.
@@ -193,9 +213,3 @@ magerun2 cache:flush
 - I’m getting `out-of-memory` errors:
   If you are running on a Start plan: Upgrade to a bigger hypernode with more memory available.
   If this happens while you are running a setup:static-content:deploy: Try deploying static content per language or per theme rather then all at once.
-
-Test code block
-
-```
-Heel veel tekst heel veel tekst Heel veel tekst heel veel tekst Heel veel tekst heel veel tekst Heel veel tekst heel veel tekst Heel veel tekst heel veel tekst Heel veel tekst heel veel tekst Heel veel tekst heel veel tekst Heel veel tekst heel veel tekst Heel veel tekst heel veel tekst
-```

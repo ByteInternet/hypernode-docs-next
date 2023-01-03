@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: New Relic is a profiling tool that explains what happens "behind
+      the scenes". Find here how you can use it to determine the performance bottleneck
+      of your shop.
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/performance/how-to-find-your-performance-bottleneck-with-new-relic/ -->
 
 # How to Find Your Performance Bottleneck with New Relic
@@ -6,7 +14,7 @@
 
 ## Why Use New Relic?
 
-New Relic gives you real-time and historical information about the performance of your shop. Some important features:
+New Relic gives you real-time and historical information about the performance of your shop. Some important features:
 
 - Easy to use; one click install.
 - Gives you a clear overview of possible bottlenecks: pagespeed, transactions, error rates, slow queries and many more.

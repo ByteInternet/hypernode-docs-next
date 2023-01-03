@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: Sometimes spam and abuse comes from specific countries. You could
+      block these countries, if needed. This article explains how to block them specifically.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-block-your-webshop-for-specific-countries/ -->
 
 # How to Block Your Webshop for Specific Countries
@@ -15,7 +22,7 @@ In `http.countries_map`:
 map $geoip_country_code $block_country {
     default no;
     CN yes;
-    RU yes;
+    RU yes;
 }
 ```
 

@@ -40,7 +40,7 @@ Magento 1: The default “admin” is defined in the file `app/etc/local.xml` un
 
 Flush your cache in the back end through: System → Cache Management. Or run in SSH: `magerun cache:flush`
 
-Magento 2: This step is not required, as Magento generates an obfuscated back-end name for you during installation.
+Magento 2: This step is not required, as Magento generates an obfuscated back-end name for you during installation.
 
 ### 2. Secure /downloader and /rss
 
@@ -110,7 +110,7 @@ etc...
 
 **Do you use Apache?**
 
-Modify the existing `downloader/.htaccess` file and add these lines to end:
+Modify the existing`downloader/.htaccess` file and add these lines to end:
 
 ```nginx
 order deny,allow
@@ -122,7 +122,7 @@ Because the RSS endpoint is reachable under various locations, it is generally n
 
 ### 3. Install adaptive filtering
 
-Hackers launching brute-force attacks against your shop are likely to use other malicious tactics as well. Therefore, it is recommended to block hack sources as soon as they are identified. This is called adaptive filtering or an Intrusion Prevention System (IPS). This step requires platform/server access so is generally done by your hosting provider. On Hypernode, we have got you covered: if we detect robot-like, repeated login attempts, the source will be blocked. Profit!
+Hackers launching brute-force attacks against your shop are likely to use other malicious tactics as well. Therefore, it is recommended to block hack sources as soon as they are identified. This is called adaptive filtering or an Intrusion Prevention System (IPS). This step requires platform/server access so is generally done by your hosting provider. On Hypernode, we have got you covered: if we detect robot-like, repeated login attempts, the source will be blocked. Profit!
 
 If you are on your own, you could use these measures (a subset of our own IPS).
 

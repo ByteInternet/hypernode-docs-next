@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'On Hypernode you can choose from a range of PHP versions. Check
+      out which ones and how to change them here. '
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/php/supported-php-versions-and-how-to-change-them-on-hypernode/ -->
 
 # Supported PHP Versions and How to Change Them on Hypernode
@@ -12,8 +19,8 @@ On Hypernode you can choose from a range of PHP versions:
 - **PHP 7.4** (Fully supported)
 - **PHP 7.3** (Security updates only since 6 Dec 2020)
 - **PHP 7.2** (EOL, No updates since 10 Nov 2020)
-- **PHP 7.1** (EOL, No updates since  1 Dec 2019)
-- **PHP 7.0**(EOL, No updates since  3 Dec 2018, deprecated)
+- **PHP 7.1** (EOL, No updates since 1 Dec 2019)
+- **PHP 7.0**(EOL, No updates since 3 Dec 2018, deprecated)
 - **PHP 5.6**(EOL, No updates since 31 Dec 2018, deprecated, we strongly recommend you to upgrade, will likely be phased out by us somewhere in 2022)
 
 You can easily switch the PHP version of your Hypernode, but please thoroughly test a PHP change before implementing it on a live environment!
@@ -35,7 +42,7 @@ If you can't easily access the command line, you can place a file named 'phpinfo
 phpinfo();
 ```
 
-Then when you access this file, either via your Hypernode at [example.hypernode.io/phpinfo.php,](http://example.hypernode.io/phpinfo.php,) or on your website at [www.example.com/phpinfo.php,](//www.example.com/phpinfo.php,) you can find the PHP version in the top. Don't forget to remove this file after you're done, as this is not something that should be left available.
+Then when you access this file, either via your Hypernode at `example.hypernode.io/phpinfo.php`, or on your website at `www.example.com/phpinfo.php`, you can find the PHP version in the top. Don't forget to remove this file after you're done, as this is not something that should be left available.
 
 ## Changing the PHP Version you Use on Hypernode
 
@@ -43,7 +50,7 @@ It's quite easy to change the PHP version used on your Hypernode. You can change
 
 ### Via the hypernode-systemctl Tool
 
-The easiest way to switch is by using the [hypernode-systemctl tool](https://support.hypernode.com/knowledgebase/hypernode-systemctl-cli-tool/).
+The easiest way to switch is by using the [hypernode-systemctl tool](https://support.hypernode.com/knowledgebase/hypernode-systemctl-cli-tool/).
 
 To see what version your Hypernode is configured with, you can run the following command:
 
@@ -124,8 +131,8 @@ According to the [Magento Documentation](https://devdocs.magento.com/guides/v2.4
 According to Magento's Documentation, Magento 1.9.4 supports PHP 5.6, 7.0, 7.1, and 7.2. We strongly advise using at least PHP 7.1, and 7.2 if at all possible.
 
 - PHP 7.2 (Recommended for Magento 1.9)
-- PHP 7.1 (EOL, No updates since  1 Dec 2019)
-- PHP 7.0 (EOL, No updates since  3 Dec 2018, Deprecated, will be removed at the end of 2021 from Hypernode)
+- PHP 7.1 (EOL, No updates since 1 Dec 2019)
+- PHP 7.0 (EOL, No updates since 3 Dec 2018, Deprecated, will be removed at the end of 2021 from Hypernode)
 - PHP 5.6 (EOL, No updates since 31 Dec 2018, Deprecated, will be removed at the end of 2021 from Hypernode)
 
 **Please use the above information as an indication! Always check with your vendors, and technical partners, before deciding on a PHP version.**

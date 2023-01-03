@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: This article explains how to undo the cancellation of a domain name.
+---
+
 <!-- source: https://support.hypernode.com/en/services/domains/undoing-the-cancellation-of-a-domain-name/ -->
 
 # How to Undo the Cancellation of a Domain Name

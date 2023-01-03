@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: 'The patch SUPEE 8788 and release 1.9.3 fix about 17 issues, of which
+      some are highly critical. In this article you find guidelines to install the
+      patch. '
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/security/how-to-install-magento-patch-supee-8788-and-release-1-9-3/ -->
 
 # How to Install Magento patch SUPEE 8788 and release 1.9.3
@@ -38,7 +46,7 @@ Please double check these things first:
 1. Have the SWF files indeed been removed? **If you just copied v1.9.3 over an older version, the old SWF files still exist** (and pose a vulnerability)
 1. Do the JS and CSS files indeed contain the required strings? If not, the patch might have quit halfway so you have a half-patched system.
 1. Do you use Varnish, Cloudflare, a CDN or another caching layer? Your old site might have been cached. Flush your cache or wait until your cache expires.
-1. Do you use **Magento 1.5**? We can only detect proper patch application if you have not removed the uploader.swf by hand. Opposed to the other patches, the Flash file is modified instead of deleted. If you have deleted it yourself (which is quite safe to do anyway), we cannot detect the patch unless we hack your shop. Sorry! (3% of all Magento stores still have 1.5)
+1. Do you use **Magento 1.5**? We can only detect proper patch application if you have not removed the uploader.swf by hand. Opposed to the other patches, the Flash file is modified instead of deleted. If you have deleted it yourself (which is quite safe to do anyway), we cannot detect the patch unless we hack your shop. Sorry! (3% of all Magento stores still have 1.5)
 1. Do you rewrite requests based on `admin` in the URL? Then we cannot properly establish the patch. But if have these security measures in place, you probably do not need Magereport ?
 
 If you still get unexpected results, please mail your URL to magereport@hypernode.com and we will investigate your case. And hopefully make Magereport better, thanks to your help!

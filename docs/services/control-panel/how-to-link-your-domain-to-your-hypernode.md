@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'In this article, you find detailed guidelines on how to link your
+      domain to your Hypernode. '
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/usage/how-to-link-your-domain-to-your-hypernode/ -->
 
 # How to Link Your Domain to Your Hypernode
@@ -55,23 +62,3 @@ To sync the DNS of your domain to a linked Hypernode, use the following steps:
 - Click the orange **DNS manager**button in the top right.
 
 You can manage your domain's DNS on this page. Set the toggle at the top of the page, at **S\*\*\*\*ynchronize DNS with example.hypernode.io**, to **on**to sync your domain to the linked Hypernode. We will automatically add the  CNAME- and A-record that point to your Hypernode to the DNS. We also add [the required records for outgoing email](https://support.hypernode.com/en/hypernode/email/how-to-set-up-your-dns-for-outgoing-email). You can't edit these specific records while the domain is synced to the Hypernode. When you disable syncing, you are able to edit and/or remove these records.
-
-### Mark Your Domain as Linked to Your Hypernode in the Service Panel
-
-To mark your domain as linked to a Hypernode, use the following steps:
-
-- Log in to the Service Panel (service.byte.nl)
-- Select your Hypernode plan
-- Click on the Instellingen tab
-- Click “SSL & DNS”
-- Select your domain name and click “Koppel domeinnaam aan deze Hypernode”
-
-When you link your domain to your Hypernode your DNS records for this domain will be updated.
-
-We store the previous records as a TXT record with the name `___backup__` so when you unlink the domain from your node, we will be able to restore the previous records.
-
-#### Unlink Your Domain From Your Hypernode
-
-To unlink your domain from your Hypernode you can use the same menu: Select the domain from the list and choose “Ontkoppel domeinnaam van deze Hypernode”
-
-This will restore the previous records if the TXT record with the name `__backup__` is still present.

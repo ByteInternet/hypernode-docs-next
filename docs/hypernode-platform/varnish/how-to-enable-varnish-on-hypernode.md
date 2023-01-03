@@ -1,8 +1,8 @@
-<!-- source: https://support.hypernode.com/en/support/solutions/articles/48001209971-how-to-enable-varnish-on-hypernode/ -->
+<!-- source: https://support.hypernode.com/en/hypernode/varnish/how-to-enable-varnish-on-hypernode/ -->
 
 # How to enable Varnish on Hypernode
 
-Customers with a Trial, Pelican M (or up), Falcon S (or up) or Eagle plan can use Varnish to boost the performance of their application. After enabling Varnish, you still need to configure both Varnish and your application. We have [support documentation per application](https://support.hypernode.com/en/support/solutions/articles/48001209971-how-to-enable-varnish-on-hypernode#Configure-Varnish-on-your-application) available to guide you through the process:
+Customers with a Trial, Pelican M (or up), Falcon S (or up) or Eagle plan can use Varnish to boost the performance of their application. After enabling Varnish, you still need to configure both Varnish and your application. We have [support documentation per application](https://support.hypernode.com/en/hypernode/varnish/how-to-enable-varnish-on-hypernode#Configure-Varnish-on-your-application) available to guide you through the process:
 
 ## Enable Varnish 4.0 or 6.0
 

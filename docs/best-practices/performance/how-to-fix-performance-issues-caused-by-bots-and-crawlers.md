@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: Excessive bot traffic is the number one reason for bad Magento performance.
+      Read here how to fix such performance issues on Hypernode.
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/performance/how-to-fix-performance-issues-caused-by-bots-and-crawlers/ -->
 
 # How to Fix Performance Issues Caused by Bots and Crawlers

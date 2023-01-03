@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Unfortunately webshops get hacked, often due to outdated Magento
+      versions, or plugins. This article explains how to recover a hacked shop on
+      Hypernode.
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/security/how-to-recover-a-hacked-magento-shop/ -->
 
 # How to Recover a Hacked Magento Shop
@@ -18,16 +26,16 @@ This is a good priority list to start cleaning up your shop:
 
 ### Collect Evidence
 
-To find out what happened and how, it’s extremely important to collect evidence. We do this, among other things, by collecting the logs in /var/log and in the Magento content directory.
+To find out what happened and how, it’s extremely important to collect evidence. We do this, among other things, by collecting the logs in /var/log and in the Magento content directory.
 
-This needs to be done asap, as the intruder might eliminate traces if he finds out you are on to him. Make sure to make a copy of all the relevant logs (notably, system logging located in /var/log/syslog and /var/log/auth.log, Nginx access and errors logging located in /var/log/nginx/. Also make a copy of Magento’s log files (var/log/\*).
+This needs to be done asap, as the intruder might eliminate traces if he finds out you are on to him. Make sure to make a copy of all the relevant logs (notably, system logging located in/var/log/syslog and /var/log/auth.log, Nginx access and errors logging located in /var/log/nginx/. Also make a copy of Magento’s log files (var/log/\*).
 
 ### Analyse Root Cause
 
 It is 99% likely that the intruder got in through an old security flaw in Magento or its plugins, or by using either a weak, or leaked, user/password combination. Check if your shop is fully patched using Magereport.com.
 
 If you are fully patched, the intruder likely got in through a flaw in one of your used plugins.
-Try to find the method the hackers used to break into your Magento shop. Use this tutorial about breach analysis on Magento.
+Try to find the method the hackers used to break into your Magento shop. Use this tutorial about breach analysis on Magento.
 
 ### Tips to Find and Fix the Issue
 

@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: So your webshop seems to be significantly slower than it used to
+      be and you have no idea what's going on. In this article you will find some
+      initial checks.
+---
+
 <!-- source: https://support.hypernode.com/en/troubleshooting/performance/how-to-check-why-my-site-is-slow/ -->
 
 # How to Check Why My Site Is Slow

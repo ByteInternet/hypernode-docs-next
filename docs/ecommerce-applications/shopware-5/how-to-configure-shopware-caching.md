@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: Shopware provides a built-in HTTP cache to improve the performance
+      and user experience of your shop. We explain how to set it up step by step.
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/shopware/how-to-configure-shopware-caching/ -->
 
 # How to Configure Shopware Caching

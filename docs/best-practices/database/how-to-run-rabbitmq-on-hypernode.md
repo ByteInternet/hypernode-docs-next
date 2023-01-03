@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: RabbitMQ is message-queueing software where queues running in the
+      background can be defined. Read here how to use it on Hypernode.
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/database/how-to-run-rabbitmq-on-hypernode/ -->
 
 # How to Run RabbitMQ on Hypernode
@@ -24,7 +31,7 @@ Enabling RabbitMQ can be done via de [commandline tool](https://support.hypernod
 
 As an app user you enable RabbitMQ this way:
 
-```nginx
+```bash
 hypernode-systemctl settings rabbitmq_enabled True
 ```
 
@@ -32,7 +39,7 @@ Use `False` to turn it off.
 
 If your hosting plan does not support RabbitMQ, you will receive the following message:
 
-```nginx
+```console
 app@uaijq6-test-magweb-do:~$ hypernode-systemctl settings rabbitmq_enabled --value True
 Looks like something went wrong: b'{"rabbitmq_enabled":["RabbitMQ cannot be enabled for this app. Please upgrade to a plan that supports RabbitMQ if you want to make use of this feature."]}'
 ```
@@ -41,7 +48,7 @@ Looks like something went wrong: b'{"rabbitmq_enabled":["RabbitMQ cannot be enab
 
 You can run this command to restart RabbitMQ:
 
-```nginx
+```bash
 hypernode-servicectl restart rabbitmq-server
 ```
 
@@ -61,7 +68,7 @@ Another way to access the admin interface is via [hypernode-vpn](https://changel
 
 You need to make some changes in Magento in order to use RabbitMQ. For example in `/data/web/magento2/app/etc/env.php`:
 
-```nginx
+```php
 'queue' =>
         array (
             'amqp' =>

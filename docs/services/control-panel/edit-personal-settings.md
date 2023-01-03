@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'You can modify your personal settings from the Hypernode control
+      panel. In this article, we explain you how to edit them. '
+---
+
 <!-- source: https://support.hypernode.com/en/services/control-panel/edit-personal-settings/ -->
 
 # Edit Personal Settings
@@ -16,9 +23,9 @@ You can change your personal settings here. Account changes will immediately be 
 
 There are two ways to reset your password:
 
-**Signed out** of my.hypernode.com? [Follow these steps to reset your password.](#signedout)
+**Signed out** of my.hypernode.com? [Follow these steps to reset your password.](#reset-password-while-signed-out)
 
-**Signed in** to my.hypernode.com? [Follow these steps to reset or change your password.](#signedin)
+**Signed in** to my.hypernode.com? [Follow these steps to reset or change your password.](#reset-or-change-password-while-signed-in)
 
 Note: You must have access to the email address associated with your Hypernode account to reset your password. If you’ve lost access to the email address, contact Support.
 

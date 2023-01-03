@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: To use certain software inside your Magento shop, new PHP settings
+      are required. 'Max_execution_time' for example. Here's how to override default
+      PHP settings.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/php/how-to-override-php-settings/ -->
 
 # How to Override PHP Settings
@@ -39,7 +47,7 @@ More info can be found on the[PHP documentation page](http://php.net/manual/en/c
 
 ## Changing your PHP settings
 
-In this example we'll show you how to increase the `max_execution_time` in PHP. If you've created a `.user.ini` file in the right directory, all you need to do is open up your `.user.ini` file and add the following line:
+In this example we'll show you how to increase the `max_execution_time` in PHP. If you've created a `.user.ini` file in the right directory, all you need to do is open up your `.user.ini` file and add the following line:
 
 ```nginx
 max_execution_time = 3600

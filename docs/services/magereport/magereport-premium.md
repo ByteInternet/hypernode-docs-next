@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: MageReport Premium provides Hypernode customers with extra information
+      about the performance of their Magento shop. This article explains more about
+      MR Premium.
+---
+
 <!-- source: https://support.hypernode.com/en/services/magereport/magereport-premium/ -->
 
 # MageReport Premium

@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: 'Hypernode offers its customers discounted development plans of all
+      the regular Hypernode plans for development and testing. Read more about these
+      plans here. '
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-hypernode-development-plans/ -->
 
 # How to Use Hypernode Development Plans

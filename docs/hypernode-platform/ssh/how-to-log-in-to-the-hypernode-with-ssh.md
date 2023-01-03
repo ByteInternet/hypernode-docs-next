@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'To access a new Hypernode, you need to use an SSH client. This tutorial
+      shows how to log in to the Hypernode with PuTTY or Terminal using SSH. '
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/ssh/how-to-log-in-to-the-hypernode-with-ssh/ -->
 
 # How to Log in to the Hypernode With SSH
@@ -138,7 +145,7 @@ Customers who log in via [service.byte.nl](http://service.byte.nl) can whitelist
 
 ### Via Your Control Panel
 
-Customers who log in via [my.hypernode.com](//my.hypernode.com) can allow an IP via the Control Panel by following the steps below:
+Customers who log in via [my.hypernode.com](https://my.hypernode.com) can allow an IP via the Control Panel by following the steps below:
 
 1. Log into the Control Panel.
 1. Select the Hypernode.

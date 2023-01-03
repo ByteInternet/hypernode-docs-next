@@ -1,4 +1,4 @@
-<!-- source: https://support.hypernode.com/en/support/solutions/articles/48001200525-how-to-configure-varnish-for-shopware-6 -->
+<!-- source: https://support.hypernode.com/en/support/solutions/articles/48001200525-how-to-configure-varnish-for-shopware-6/ -->
 
 # How to Configure Varnish for Shopware 6
 
@@ -6,13 +6,13 @@ Customers with Hypernode Pelican, Falcon (formerly known as Professional) and Ea
 
 Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. We'd recommend to first test varnish on a [staging environment](https://support.hypernode.com/en/ecommerce/shopware/how-to-use-a-basic-staging-environment-with-shopware-6) or a[development plan](https://support.hypernode.com/en/hypernode/tools/how-to-use-hypernode-development-plans) before implementing varnish on a live node.
 
-### Step One: Enable Varnish on the Hypernode
+## Step One: Enable Varnish on the Hypernode
 
 You can enable varnish on the hypernode using the [systemctl-tool](https://support.hypernode.com/en/hypernode/tools/how-to-use-the-hypernode-systemctl-cli-tool) by running:
 
 `hypernode-systemctl settings varnish_enabled True`
 
-### Step Two: How to Setup Varnish for the Vhost
+## Step Two: How to Setup Varnish for the Vhost
 
 The [hypernode-manage-vhosts](https://support.hypernode.com/en/hypernode/nginx/hypernode-managed-vhosts) (HMV) config allows you to enable varnish for every vhost individually. So if you for example have a domain example.com. You should create 2 vhosts:
 
@@ -71,13 +71,13 @@ location ~ \.php$ {
 }
 ```
 
-### Step Three: Configure Shopware to work with Varnish
+## Step Three: Configure Shopware to work with Varnish
 
 **This step is only necessary if you're on Shopware >= 6.4.**
 
 Go to [Shopware's Reverse Http Cache documentation](https://developer.shopware.com/docs/guides/hosting/infrastructure/reverse-http-cache) to configure Shopware to take Varnish into account.
 
-### Step Four: Implement a .vcl Into Varnish
+## Step Four: Implement a .vcl Into Varnish
 
 To actually use Varnish you need to implement a varnish config file, a .vcl. If you're on Shopware >= 6.4, fetch the [Varnish configuration from their documentation](https://developer.shopware.com/docs/guides/hosting/infrastructure/reverse-http-cache#configure-varnish) (copy the code block starting with *vcl 4.0;*). Otherwise, you can use the `.vcl` from our [Github](https://gist.github.com/hn-support/29efb2e58b18ff2ef0f25363bd02dbe9), or you can create your own.
 
@@ -87,7 +87,7 @@ So, the steps to implement the Varnish configuration into Varnish are:
 - Load the .vcl into Varnish: `varnishadm vcl.load shopware6 /data/web/shopware6.vcl`
 - Activate the loaded config, **shopware6**: `varnishadm vcl.use shopware6`
 
-```bash
+```console
 app@j6yt8m-example-magweb-cmbl:~$ varnishadm vcl.load shopware6 /data/web/shopware6.vcl
 VCL compiled.
 

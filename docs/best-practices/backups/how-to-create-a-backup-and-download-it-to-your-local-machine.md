@@ -37,7 +37,7 @@ Now we have a backup for both the files and the database, you can zip both backu
 
 ## Download the Backup to Your Local Machine
 
-Now that you've created the backup(s) in **/data/web/backup_hypernode**, you can download the desired backup. There are several options for downloading your backup. In this section we're gonna explain two options. You can choose which ever one would be most convenient  for you.
+Now that you've created the backup(s) in **/data/web/backup_hypernode**, you can download the desired backup. There are several options for downloading your backup. In this section we're gonna explain two options. You can choose which ever one would be most convenient for you.
 
 ### Download via FTP
 

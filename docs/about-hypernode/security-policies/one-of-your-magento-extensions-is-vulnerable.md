@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Find an overview of the consequences and ways to fix things, when
+      receiving a warning that one of the extensions in your Magento shop is vulnerable
+      here.
+---
+
 <!-- source: https://support.hypernode.com/en/about/security/one-of-your-magento-extensions-is-vulnerable/ -->
 
 # One of your Magento Extensions is Vulnerable

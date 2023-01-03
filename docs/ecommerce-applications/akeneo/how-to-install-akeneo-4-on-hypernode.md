@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: This article describes how to install Akeneo 4 on your Hypernode.
+      Installing Akeneo 4 can be done by using our Pre-Install or you can install
+      Akeneo 4 manually.
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/akeneo/how-to-install-akeneo-4-on-hypernode/ -->
 
 # How to Install Akeneo 4 on Hypernode
@@ -198,7 +206,7 @@ user=app
 #### Bring the changes into effect
 
 ```bash
- supervisorctl reread
+supervisorctl reread
 supervisorctl update
 ```
 

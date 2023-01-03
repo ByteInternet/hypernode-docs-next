@@ -1,16 +1,23 @@
+---
+myst:
+  html_meta:
+    description: 'In this article we guide you through the steps of setting up the
+      latest version of Shopware 5 as easy as possible. '
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/shopware/how-to-install-shopware-5-on-hypernode/ -->
 
 # How to Install Shopware 5 on Hypernode
 
-Shopware 5 requires a Hypernode Professional S hosting plan or larger. This article will explain how you can setup the latest version of Shopware 5 on Hypernode as easy as possible.
+Shopware 5 requires a Hypernode Professional S hosting plan or larger. This article will explain how you can setup the latest version of Shopware 5 on Hypernode as easy as possible.
 
 - **TABLE OF CONTENTS**
-  - [Upgrade Your PHP Version](#Upgrade-Your-PHP-Version)
-  - [Add the Shopware Nginx Config File](#Add-the-Shopware-Nginx-Config-File)
-  - [Two Ways to Install Shopware 5](#Two-Ways-to-Install-Shopware-5)
-    - [Download and Install Shopware 5 Using the Pre-install](#Download-and-Install-Shopware-5-Using-the-Pre-install)
-    - [Download and Install the Latest version of Shopware 5](#Download-and-Install-the-Latest-version-of-Shopware-5)
-  - [Install Shopware 5](#Install-Shopware-5)
+  - [Upgrade Your PHP Version](#upgrade-your-php-version)
+  - [Add the Shopware Nginx Config File](#add-the-shopware-nginx-config-file)
+  - [Two Ways to Install Shopware 5](#two-ways-to-install-shopware-5)
+    - [Download and Install Shopware 5 Using the Pre-install](#download-and-install-shopware-5-using-the-pre-install)
+    - [Download and Install the Latest version of Shopware 5](#download-and-install-the-latest-version-of-shopware-5)
+  - [Install Shopware 5](#install-shopware-5)
 
 ## Upgrade Your PHP Version
 

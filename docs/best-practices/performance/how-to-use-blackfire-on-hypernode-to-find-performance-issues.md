@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: All Hypernodes support Blackfire, an amazing tool to find performance
+      bottlenecks in Magento. Read here how to use it on Hypernode.
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/performance/how-to-use-blackfire-on-hypernode-to-find-performance-issues/ -->
 
 # How to Use Blackfire on Hypernode to Find Performance Issues
@@ -59,7 +66,7 @@ If you want to use Varnish in combination with Blackfire, some additional config
 
 "*Are you authorized to profile this page? No probe response, missing PHP extension or invalid signature for relaying agent.*"
 
-```php
+```vcl
 acl profile {
    # Authorized IPs, add your own IPs from which you want to profile.
    "x.y.z.w";

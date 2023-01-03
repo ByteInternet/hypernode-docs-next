@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: This page offers an overview of all tools available on Hypernodes
+      and hypernode-vagrant to Hypernode users to make your life as a developer easier.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/tools/hypernode-cli-tools-and-magerun-plugins/ -->
 
 # Hypernode CLI Tools and Magerun Plugins
@@ -57,7 +64,7 @@ Prints the current worker status per FPM worker on your screen.
 
 ### hypernode-servicectl
 
-As an app user you have the capability of restarting or reloading a select number of services like MySQL, Nginx, php7.1-fpm, Redis, RabbitMQ and Varnish. The command is hypernode-servicectl and it takes  an action (restart or reload) and a service (Nginx, php7.1-fpm, etc) as arguments. This can be useful to resolve some user space issues.
+As an app user you have the capability of restarting or reloading a select number of services like MySQL, Nginx, php7.1-fpm, Redis, RabbitMQ and Varnish. The command is hypernode-servicectl and it takes an action (restart or reload) and a service (Nginx, php7.1-fpm, etc) as arguments. This can be useful to resolve some user space issues.
 
 The command can be executed as hypernode-servicectl or /usr/bin/hypernode-servicectl. The help menu displays the available options.
 

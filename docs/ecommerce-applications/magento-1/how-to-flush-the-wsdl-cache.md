@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: The WSDL cache is used for API soap calls to Magento. Read here how
+      to flush it in case of corruptions causing errors on all API calls to Magento.
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-flush-the-wsdl-cache/ -->
 
 # How to Flush the WSDL Cache

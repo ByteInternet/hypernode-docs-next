@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: An SSL certificate keeps online interactions and transactions private
+      and helps to gain confidence of customers. Read here how to use SSL ordered
+      via Byte.nl.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-byte-nl/ -->
 
 # How to Use SSL Certificates on your Hypernode When Ordered via Hypernode.nl
@@ -30,7 +38,7 @@ In case you do not already have a Presence plan for this domain, start with orde
 
 ### Order a Presence Plan
 
-You need to order a Presence plan to connect the  SSL certificate to your Hypernode. A Presence plan acts as a v-host to make a domain known in our systems, otherwise you cannot order an SSL certificate. So, **first** order a Presence plan for domain.com and **then** order an SSL certificate as an add-on to this Presence plan. The steps:
+You need to order a Presence plan to connect the SSL certificate to your Hypernode. A Presence plan acts as a v-host to make a domain known in our systems, otherwise you cannot order an SSL certificate. So, **first** order a Presence plan for domain.com and **then** order an SSL certificate as an add-on to this Presence plan. The steps:
 
 - [Log in](http://auth.byte.nl/) to the Service Panel
 - Click the ‘Bestel Direct’ button on the right
@@ -60,7 +68,7 @@ When the certificate is ready, you can easily add it to your Hypernode by visiti
 
 **Keep in mind:**
 
-- You can only link SSL certificates from plans  that have the same Contractant role as your Hypernode plan. Make sure these roles match!
+- You can only link SSL certificates from plans that have the same Contractant role as your Hypernode plan. Make sure these roles match!
 - You cannot link Let’s Encrypt certificates via your Service Panel as these certificates are managed locally on the node itself.
 
 ## Add a Custom SSL Certificate
@@ -135,7 +143,7 @@ You can easily force your entire shop to go over HTTPS using a simple redirect.
 
 ### Redirecting all traffic (when Varnish is not used)
 
-To redirect all traffic from HTTP to HTTPS, open the server.rewrites with your editor:
+To redirect all traffic from HTTP to HTTPS, open the `server.rewrites` with your editor:
 
 ```nginx
 editor /data/web/nginx/server.rewrites
@@ -144,12 +152,12 @@ editor /data/web/nginx/server.rewrites
 Then add the following snippet:
 
 ```nginx
-if ($scheme = http) {  return 301 https://$host$request_uri; }
+if ($scheme = http) { return 301 https://$host$request_uri; }
 ```
 
-Now finish saving the option using CTRL+o followed by CTRL+x
+Now finish saving the option using `CTRL+o` followed by `CTRL+x`.
 
-To check if all went well, check if /data/web/nginx/nginx_error_output is present containing an error message. If you can’t find this file, your config reload went well.
+To check if all went well, check if `/data/web/nginx/nginx_error_output` is present containing an error message. If you can’t find this file, your config reload went well.
 
 Now test your result by visiting the domain!
 
@@ -157,7 +165,7 @@ It is also possible to [selectively redirect to HTTP or HTTPS](https://support.h
 
 Redirecting all traffic to https and www
 
-If you want to redirect your domain to both https and www, add this snippet to server.rewrites
+If you want to redirect your domain to both https and www, add this snippet to `server.rewrites`
 
 ```nginx
 if ($http_host ~* "^(?!www\.).*$") {
@@ -177,14 +185,14 @@ if ($scheme = http) {
 
 If you are using Varnish on your Hypernode, the given redirect will be cached by Varnish causing the site to go down with a 'too many redirects' error, as the redirect will be served from the cache on both HTTP and HTTPS.
 
-To resolve this, make use of a public.rewrites instead of a server.rewrites
+To resolve this, make use of a `public.rewrites` instead of a `server.rewrites`.
 
 All files in /data/web/nginx starting with public.\* will be included in front of the Varnish instance, and will therefore not be cached.
 
 ## Things to Remember When Using an SSL Certificate
 
 - Don’t forget to point the DNS for your domain to your Hypernode. More information about how this is done [can be found in the article DNS settings Hypernode](https://support.hypernode.com/knowledgebase/dns-settings-hypernode/).
-- You will need a storefront in Magento with a secure_base_url. Otherwise Magento will redirect you to the main store.  You can change the base urls using the script mentioned above, you can also do this using the following support documentation.
+- You will need a storefront in Magento with a secure_base_url. Otherwise Magento will redirect you to the main store. You can change the base urls using the script mentioned above, you can also do this using the following support documentation.
 
 ## SSL on Your (non-www) Naked Domain While Using the Www-izer
 

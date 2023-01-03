@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: When debugging performance issues, it might be useful to log all
+      database queries to a log file. Find out here how to enable MySQL Query logging
+      for Magento 1.
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-enable-mysql-query-logging-for-magento-1-x/ -->
 
 # How to Enable MySQL Query Logging for Magento 1.x
@@ -17,7 +25,7 @@ To turn on Magento's own query logging mechanism, edit `/data/web/public/lib/Var
 Now look for the line containing `$_debug` and change `false` to `true`:
 
 ```nginx
-protected $_debug               = true;
+protected $_debug = true;
 ```
 
 Sometimes you need to flush your cache before the first queries are logged.

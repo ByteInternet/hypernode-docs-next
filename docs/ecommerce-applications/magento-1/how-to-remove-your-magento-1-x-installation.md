@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'Within this article you can find snippets, which can be used for
+      the removal of your Magento 1.x installation. '
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-remove-your-magento-1-x-installation/ -->
 
 # How to Remove Your Magento 1.x Installation

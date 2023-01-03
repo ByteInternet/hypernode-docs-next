@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: In our Control Panel we use Chargebee as our payment service provider
+      and Stripe as the payment gateway.
+---
+
 <!-- source: https://support.hypernode.com/en/about/billing/our-payment-service-provider/ -->
 
 # Our Payment Service Provider

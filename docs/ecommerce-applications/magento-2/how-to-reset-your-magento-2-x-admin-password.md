@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: If you are unable to login to your Magento 2.x shop, you have several
+      methods to retrieve a new password to log in. Check out here how to reset your
+      password.
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-reset-your-magento-2-x-admin-password/ -->
 
 # How to Reset Your Magento 2.x Admin Password
@@ -29,7 +37,7 @@ An email will be send to your email address, containing a password reset link. C
 
 Using the Magento backend, you can only reset a password if you happen to know your current password, or with a little help from someone else with a valid set of credentials.
 
-If you don’t know your current Magento admin credentials, you can either use the **[Reset Password](#reset-pass-function)** functionality as explained earlier, or change your password with the tools mentioned below.
+If you don’t know your current Magento admin credentials, you can either use the **[Reset Password](#use-the-reset-password-functionality)** functionality as explained earlier, or change your password with the tools mentioned below.
 
 ### Reset Your Own Password Via the Magento Backend
 

@@ -1,10 +1,17 @@
+---
+myst:
+  html_meta:
+    description: The Hypernode Docker Image can be used to set up a local test environment
+      for Shopware. This article explains how to install Shopware 5 on a Docker environment.
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/shopware/how-to-install-shopware-5-on-hypernode-docker/ -->
 
 # How to Install Shopware 5 on Hypernode Docker
 
 The Hypernode Docker Image can be used to set up a local test environment for Magento as well as Shopware. To set such an environment for Shopware is basically the same process as for Magento, with the exception that you'll have to add an additional nginx configuration file named `server.shopware`.
 
-### Step One - Start a Docker Container
+## Step One - Start a Docker Container
 
 Before you can start a Docker container make sure that Docker is running. Next you need to choose which Docker image you want to run depending on the PHP and MySQL version. You can see all available images **[here](https://github.com/byteinternet/hypernode-docker).**
 
@@ -27,11 +34,11 @@ ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -p 222 app@127.0.0
 
 The password is `insecure_docker_ssh_password`.
 
-### Step Two - Add the Shopware Nginx Config File
+## Step Two - Add the Shopware Nginx Config File
 
 Create a **server.shopware** in \*\*/data/web/nginx/\*\*with the content of this [snippet](https://gist.github.com/hn-support/232aa50cd89476aacb54efb6aa56efd8)
 
-### Step Three - Create a Database for Your Shopware shop via Your Terminal
+## Step Three - Create a Database for Your Shopware shop via Your Terminal
 
 Run the command below to create the database "shopware_5".
 
@@ -40,7 +47,7 @@ mysql -e 'create database if not exists shopware_5'
 
 ```
 
-### Step Four - Download Shopware
+## Step Four - Download Shopware
 
 Download the latest Shopware version (version 5 in this example) to your Docker environment:
 
@@ -51,7 +58,7 @@ Download the latest Shopware version (version 5 in this example) to your Docker 
 - unzip the files in /data/web/public:
 - `unzip install_5.5.10_edfcb8e82f331fa5a0935a6c6ff35fe4348bf262.zip -d /data/web/public`
 
-### Step Five - Install Shopware via Your Browser
+## Step Five - Install Shopware via Your Browser
 
 - Open your browser and browse to: “[http://127.0.0.1:8080/recovery/install”](http://127.0.0.1:8080/recovery/install/index.php%E2%80%9D)
 - Click "Next"

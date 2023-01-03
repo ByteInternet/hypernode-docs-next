@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: A staging environment is very useful to test your shop. In this article
+      we explain how to set up a staging environment on Hypernode for a Magento 2
+      shop.
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-set-up-a-basic-staging-environment-for-magento-2/ -->
 
 # How to Set Up a Basic Staging Environment for Magento 2
@@ -29,7 +37,7 @@ rsync -va --delete --delete-excluded \
 
 ```nginx
 cd ~
-rm -rf /data/web/staging && ln -s /data/web/magento2_staging/pub  /data/web/staging
+rm -rf /data/web/staging && ln -s /data/web/magento2_staging/pub /data/web/staging
 ```
 
 ### Step Three: Create a Staging Database
@@ -46,7 +54,7 @@ sensible-editor /data/web/magento2_staging/app/etc/env.php
 
 ```
 
-Now at least change  your MySQL database to staging and your Redis databases for cache and FPC to another one that is not in use by the production. (for example: 3 and 4)
+Now at least change your MySQL database to staging and your Redis databases for cache and FPC to another one that is not in use by the production. (for example: 3 and 4)
 
 ### Step Five: Dump the Production Database Into the Staging Database
 
@@ -57,7 +65,7 @@ magerun2 --root-dir=/data/web/magento2 db:dump --strip="@stripped" --stdout | my
 
 ### Step Six: Change the Base URL's of Your Staging Environment
 
-**Warning! Changing the base URL's before changing your MySQL database to your staging database will have impact on your production site.**
+**Warning! Changing the base URL's before changing your MySQL database to your staging database will have impact on your production site.**
 
 Now to use the staging environment, we need to change the base URL's to use the ports for the staging environment. This way your site is accessible through the same URL's as the production shop but will be using different ports. We change the HTTP port to 8888 and the HTTPS port to 8443.
 
@@ -73,7 +81,7 @@ Now to use the staging environment, we need to change the base URL's to use the 
 OR:
 
 ```nginx
-| 1  | default | https://www.example.com:8443/      | https://www.example.com:8443/
+| 1 | default | https://www.example.com:8443/ | https://www.example.com:8443/
 
 ```
 
@@ -154,7 +162,7 @@ Another solution is creating an unique vhost for your staging environment. This 
 For example you can create a vhost `staging.example.com`. Afterwards you can always choose to enable or disable varnish for this vhost.
 
 ```nginx
-hypernode-manage-vhosts staging.example.com  --varnish
+hypernode-manage-vhosts staging.example.com --varnish
 hypernode-manage-vhosts --list
 +---------------------------------+------------+----------------+-------+-------------+---------+--------------+
 |            servername           |    type    | default_server | https | force_https | varnish |  ssl_config  |
@@ -168,7 +176,7 @@ To be able to reach the new staging environment you need to change the webroot o
 
 `root /data/web/public;`
 
-So now we want to set this to: `root /data/web/example_staging;` and save the file. Now you can set the Magento installation in this location and you're set.
+So now we want to set this to: `root /data/web/example_staging;` and save the file. Now you can set the Magento installation in this location and you're set.
 
 ## Cleanup and Refresh
 

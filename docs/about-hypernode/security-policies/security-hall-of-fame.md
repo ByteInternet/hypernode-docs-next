@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: A list of security researchers we have worked with, that responsibly
+      disclosed vulnerabilities to us.
+---
+
 <!-- source: https://support.hypernode.com/en/about/security/hall-of-fame/ -->
 
 # Security Hall of Fame
@@ -6,6 +13,7 @@ We would like to thank the following individuals and/or organizations, who have 
 
 |                                                                                                                                                                                                         |                   |                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------ |
+| [Sagar Yadav](https://www.linkedin.com/in/sagaryadav8742/)                                                                                                                                              | 16 Apr 2022       | Reported possible information leakage from a legacy service.                                           |
 | [Hatim Chabik](https://twitter.com/H_chabik)                                                                                                                                                            | 13 Jan 2022       | Reported a Reflective XSS attack on marketing sites.                                                   |
 | [Manu Sharma](https://www.linkedin.com/in/manu-sharma-7ba8671aa)                                                                                                                                        | 31 May 2021       | Reported a Reflective XSS attack on marketing sites.                                                   |
 | [Ghazanfar Ali Kazam](https://twitter.com/p3n73st3r)                                                                                                                                                    | 31 May 2021       | Reported information leakage from an internal server.                                                  |

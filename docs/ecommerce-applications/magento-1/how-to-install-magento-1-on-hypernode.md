@@ -1,8 +1,15 @@
+---
+myst:
+  html_meta:
+    description: Starting over and in need of a fresh Magento 1 installation? Follow
+      the steps in this article to install a Magento 1 installation on Hypernode.
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-install-magento-1-on-hypernode/ -->
 
 # How to Install Magento 1 on Hypernode
 
-Although Magento 1 has been End of Life since June 30 2020, it is still possible to host your Magento 1 store at Hypernode by using OpenMage. OpenMage is a free of charge fork of Magento 1,  and allows store owners to continue the use of Magento 1 as a stable and secure eCommerce platform for the next years to come.
+Although Magento 1 has been End of Life since June 30 2020, it is still possible to host your Magento 1 store at Hypernode by using OpenMage. OpenMage is a free of charge fork of Magento 1, and allows store owners to continue the use of Magento 1 as a stable and secure eCommerce platform for the next years to come.
 
 OpenMage can be installed by using their [documentation](https://www.openmage.org/magento-lts/install.html). Don't implement OpenMage on production nodes without testing OpenMage first on a [Development plan](https://support.hypernode.com/en/hypernode/tools/how-to-use-hypernode-development-plans).
 
@@ -82,7 +89,7 @@ magerun install
 ```
 
 - Choose which version you wish to install. The first option \[1\] is the most recent version of Magento. You may also choose to install the openmage LTS version. Press “Enter”.
-- Insert the installation folder. This should be /data/web/public, and press ENTER. magerun will now download the files of the installation.
+- Insert the installation folder. This should be /data/web/public, and press ENTER. magerun will now download the files of the installation.
 - Enter your database credentials:
   - database host
   - database username

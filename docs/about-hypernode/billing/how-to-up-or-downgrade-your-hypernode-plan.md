@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: 'When dealing with visitor peaks, during holidays for example, you
+      might want to take precautions and upgrade a bigger Hypernode plan. Read here
+      how to do so. '
+---
+
 <!-- source: https://support.hypernode.com/en/about/billing/how-to-up-or-downgrade-your-hypernode-plan/ -->
 
 # How to Up- or Downgrade Your Hypernode Plan
@@ -33,7 +41,8 @@ If you log in via [my.hypernode.com](https://auth.hypernode.com/), please use th
   ![](_res/tkmbOB9hsfJ0SfLR-TNCFtKqzRNgC6bvmA.png)
 - Select the desired plan and the type of environment, Development or Production.
 - Select an add-on. Read more about our two SLA levels [here](https://support.hypernode.com/en/about/support/emergency-support-outside-office-hours-#Hypernode-Emergency-Service-Costs).
-- Agree with terms and conditions and click Change to this plan. Your plan will be changed immediately.
+- Optional: schedule the plan change for a specific date and time.
+- Agree with terms and conditions and click Change to this plan. Your plan will be changed immediately. (or on the scheduled date and time)
 - Warnings, if applicable, will be shown on the left:
   ![](_res/Jj6sq6hcxEZtdvCoSzgGoP2vaz9lm-j9oA.png)
 

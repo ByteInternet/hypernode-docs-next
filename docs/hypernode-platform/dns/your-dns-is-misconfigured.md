@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: The administrator of this domain has pointed www.domain.com to our
+      DNS service, instead of appointing a CNAME to his/her Hypernode.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/dns/your-dns-is-misconfigured/ -->
 
 # Your DNS is misconfigured

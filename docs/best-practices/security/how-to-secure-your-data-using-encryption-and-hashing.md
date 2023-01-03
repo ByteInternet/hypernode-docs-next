@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Hashing and encryption are cryptographic functions. In this article
+      we explain both ways of securing information and give examples for how you can
+      use it.
+---
+
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001153348-how-to-secure-your-data-using-encryption-and-hashing/ -->
 
 # How to Secure Your Data Using Encryption and Hashing
@@ -25,7 +33,7 @@ In the examples below we use md5 hashing; that is a form of hashing that always 
 - **Length:** The length of a generated hash is determined by the algorithm it generates. Md5 hashing will always generate a 128 bit (32 digit hexadecimal) code as output.
 - **No collisions**: Two different files should never generate the same hash.
 - **Reusable:** A hashed file or text must always generate the same hash.
-- **Non-reversible:**  A hash cannot be converted back to the original text.
+- **Non-reversible:** A hash cannot be converted back to the original text.
 
 |                        |                                  |
 | ---------------------- | -------------------------------- |

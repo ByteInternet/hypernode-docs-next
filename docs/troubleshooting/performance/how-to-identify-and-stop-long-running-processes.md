@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: "Long running processes might indicate: the site benefiting from\
+      \ an index (SQL), inefficient or erroneous code (PHP), or a deadlock. Here's\
+      \ how to identify them."
+---
+
 <!-- source: https://support.hypernode.com/en/troubleshooting/performance/how-to-identify-and-stop-long-running-processes/ -->
 
 # How to Identify and Stop Long Running Processes
@@ -49,8 +57,8 @@ livefpm
 The output will look something like this:
 ![](_res/Hp5j9Y3gvVUyXkGe2dICoKymkUV6RhtUoQ.png). The example below shows how we kill a all long running queries:
 
-```nginx
-kill -9 26781 26782 26975
+```bash
+kill -9 26781 26782 26975
 ```
 
 By typing several ID numbers after the kill command you can kill multiple long running processes. There won’t be any output, but you’ll see `IDLE` behind the queries you killed. Your visitor will receive a HTTP Error 502 – Bad Gateway message in their browser.

@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: Rewriting trailing slash for a better result in search engines requires
+      some Nginx configuration. In this article we explain how to rewrite them.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-rewrite-a-trailing-slash-for-seo-purposes/ -->
 
 # How to Rewrite a Trailing Slash for SEO Purposes

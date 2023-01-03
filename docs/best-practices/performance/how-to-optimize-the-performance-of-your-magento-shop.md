@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Hypernode offers several optimizations which improve the load times
+      and stability of your shop. Find detailed instructions on the different optimizations
+      here.
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/performance/how-to-optimize-the-performance-of-your-magento-shop/ -->
 
 # How to Optimize the Performance of Your Magento Shop
@@ -36,7 +44,7 @@ On Hypernode you can easily order [development nodes](https://support.hypernode.
 
 IonCube loader is a mechanism to encrypt PHP code to enforce licensing or prevent code edits in extensions. There are still many extensions that are using this technique, causing your shop to slow down by seconds. IonCube is a massive performance killer that should be avoided where possible.
 
-*We know that many shop owners are bound to IonCube due to the use of the Dealer4dealer extension for their shop.  Dealer4Dealer released a newer extension that is not encoded with IonCube. For more information contact [Dealer4dealer](https://dealer4dealer.nl/).*
+*We know that many shop owners are bound to IonCube due to the use of the xCore (formerly known as Dealer4dealer) extension for their shop.* *xCore* *released a newer extension that is not encoded with IonCube. For more information contact [xCore](https://xcore.nl/).*
 
 ## Blocking Unwanted Bots and Crawlers (10 mins)
 
@@ -107,7 +115,7 @@ We recommend the use of Lesti FPC on Hypernode, as it reduces server load and ma
 
 When using a full page cache module like Lesti FPC or Varnish, the site gets a lot faster after the first visit when the page has been cached. We recommend to warm the caches periodically. This can be nightly through cron, or manually after adding many new products.
 
-This can be done [using the n98-plugin available on all Hypernodes](https://support.hypernode.com/knowledgebase/warm-full-page-cache-lestifpc-varnish/). To make use of this script, [a sitemap.xml file should be present](https://support.hypernode.com/en/ecommerce/magento-2/how-to-create-a-sitemap-xml-for-magento-2-x) ([Magento 2](https://support.hypernode.com/en/ecommerce/magento-2/how-to-create-a-sitemap-xml-for-magento-2-x)).
+This can be done [using the n98-plugin available on all Hypernodes](https://support.hypernode.com/knowledgebase/warm-full-page-cache-lestifpc-varnish/). To make use of this script, [a sitemap.xml file should be present](https://support.hypernode.com/en/ecommerce/magento-2/how-to-create-a-sitemap-xml-for-magento-2-x)([Magento 2](https://support.hypernode.com/en/ecommerce/magento-2/how-to-create-a-sitemap-xml-for-magento-2-x)).
 
 ## Sessions in Redis (\<15 mins)
 

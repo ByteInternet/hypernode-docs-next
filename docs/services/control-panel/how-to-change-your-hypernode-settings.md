@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: The Control Panel offers an overview of your Hypernode’s statistics
+      and settings. This article offers an in-depth explanation of these values.
+---
+
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001155575-how-to-change-your-hypernode-settings/ -->
 
 # How to Change Your Hypernode Settings

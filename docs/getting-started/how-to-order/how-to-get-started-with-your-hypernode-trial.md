@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'Your trial gives you 14 days of free testing on our Hypernode platform.
+      Find out how to get started and test all features on the platform in this article. '
+---
+
 <!-- source: https://support.hypernode.com/en/getting-started/how-to-order/how-to-get-started-with-your-hypernode-trial/ -->
 
 # How to Get Started With Your Hypernode Trial
@@ -12,7 +19,7 @@ With your free trial you have 14 days to test your shops’ performance on Hyper
 
 The specs of your trial are: 62GB storage, 3 CPU, 8GB RAM, 1024MB Redis cache, PHP 7.4.
 
-#### Your Control Panel
+## Your Control Panel
 
 Improving our Hypernode platform is [a continuous process](https://support.hypernode.com/category/changelog/) and the sole focus of our development team. You can log into your Control Panel via [this page](https://my.hypernode.com/).
 

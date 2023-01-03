@@ -1,4 +1,12 @@
-<!-- source: https://support.hypernode.com/en/support/solutions/articles/48001178710-how-to-install-akeneo-5-on-hypernode/ -->
+---
+myst:
+  html_meta:
+    description: 'Akeneo 5 preferably requires a Hypernode Professional M hosting
+      plan or larger. You can either choose to install it on a seperate Hypernode
+      instance or on the same Hypernode as your Magento or Shopware installation. '
+---
+
+<!-- source: https://support.hypernode.com/en/ecommerce/akeneo/how-to-install-akeneo-5-on-hypernode/ -->
 
 # How to install Akeneo 5 on Hypernode
 
@@ -91,39 +99,33 @@ hypernode-systemctl preinstall akeneo_5_0
 
 If you don't want to use the pre-install image, than follow the steps below to manually download and install Akeneo in `/data/web/akeneo`
 
-## Install Node.js v12.20
+## Configuring Node.js v16
 
 ```bash
-cd /tmp
-wget https://nodejs.org/dist/v12.20.0/node-v12.20.0-linux-x64.tar.xz
-tar xvfJ node-v12.20.0-linux-x64.tar.xz
-mv node-v12.20.0-linux-x64 ~/.node
-rm node-v12.20.0-linux-x64.tar.xz
-mkdir -p ~/.local/bin
-for f in ~/.node/bin/*; do ln -s $f ~/.local/bin/`basename $f`; done
-source ~/.profile
+hypernode-systemctl settings nodejs_version 16
 ```
 
-After Node.js has been installed you can check if it’s correctly set by running `node -v`. This should output v12.20.0.
+After Node.js has been installed you can check if it’s correctly set by running `node -v`. This should output v16.x.x.
 
 ### Install the Latest Version of Yarn
 
 ```bash
-cd /tmp
-wget https://yarnpkg.com/latest.tar.gz
-tar zvxf latest.tar.gz
-mv yarn-v* ~/.yarn
-rm latest.tar.gz
-ln -s ~/.yarn/bin/yarn ~/.local/bin/yarn
-ln -s ~/.yarn/bin/yarnpkg ~/.local/bin/yarnpkg
+echo 'prefix=${HOME}/.npm' > ~/.npmrc
+npm install -g yarn
+mkdir -p ~/.local/bin
+ln -s ~/.npm/bin/yarn ~/.local/bin/yarn
+ln -s ~/.npm/bin/yarnpkg ~/.local/bin/yarnpkg
 source ~/.profile
 ```
 
 ### Download Akeneo 5
 
 ```bash
-mkdir ~/akeneocd ~/akeneo 
-COMPOSER_MEMORY_LIMIT=-1 composer2 create-project akeneo/pim-community-standard
+mkdir ~/akeneocd ~/akeneo
+wget https://download.akeneo.com/pim-community-standard-v5.0-latest-icecat.tar.gz
+
+## unpack the downloaded .tar.gz file
+tar -xvf pim-community-standard-v5.0-latest-icecat.tar.gz
 ```
 
 ### Create a Database
@@ -148,6 +150,8 @@ sed -i "s/APP_DATABASE_PASSWORD=akeneo_pim/APP_DATABASE_PASSWORD=$(cat ~/.my.cnf
 sed -i "s/APP_DATABASE_USER=akeneo_pim/APP_DATABASE_USER=$(cat ~/.my.cnf | grep user | awk '{print$NF}')/" /data/web/akeneo/pim-community-standard/.env
 sed -i "s/APP_DATABASE_HOST=mysql/APP_DATABASE_HOST=mysqlmaster/" /data/web/akeneo/pim-community-standard/.env
 sed -i "s/APP_INDEX_HOSTS=elasticsearch:9200/APP_INDEX_HOSTS=localhost:9200/" /data/web/akeneo/pim-community-standard/.env
+
+cp /data/web/akeneo/pim-community-standard/.env /data/web/akeneo/pim-community-standard/.env.local
 ```
 
 ### Launch Akeneo 5
@@ -202,7 +206,7 @@ user=app
 #### Bring the changes into effect
 
 ```bash
- supervisorctl reread
+supervisorctl reread
 supervisorctl update
 ```
 

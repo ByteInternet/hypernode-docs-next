@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: 'Use the DNS check in the Control Panel to ensure your externally
+      hosted domain is properly configured to send email via Hypernode. '
+---
+
 <!-- source: https://support.hypernode.com/en/services/control-panel/how-to-use-the-dns-check/ -->
 
 # How to Use the DNS Check
@@ -52,7 +59,7 @@ Please see [this article for how to set up your SPF records for Hypernode](https
 
 The DNS Check verifies whether the domain is correctly pointed to the Hypernode by checking the CNAME- and A-records.
 
-#### CNAME Record
+### CNAME Record
 
 The recommended way to configure your DNS is to create a CNAME record in your DNS configuration, pointing to Hypernode:
 
@@ -63,7 +70,7 @@ The recommended way to configure your DNS is to create a CNAME record in your DN
 
 This means that [www.example.com](http://www.example.com) will point to wherever example.hypernode.io points, and we will make sure that that always points to the correct IP address.
 
-#### A Record
+### A Record
 
 One way to redirect your apex (or naked) domain, when the domain is not hosted on the Byte name servers, is to use the www-izers:
 
@@ -88,7 +95,7 @@ It's also an option to use the direct IP address of your Hypernode. You can find
 
 Please note that if you use the direct IP, the DNS Check will show a warning, as you will encounter DNS downtime if the IP-address of your Hypernode changes.
 
-#### Hypernode Reachable
+### Hypernode Reachable
 
 The DNS Check verifies whether the Hypernode is reachable via the URL you entered.
 

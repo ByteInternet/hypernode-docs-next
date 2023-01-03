@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Redis is a caching method which can increase the speed of the back-
+      and frontend of your shop. Here's how to configure it on Magento 2 and how redis-cli
+      works.
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-configure-redis-for-magento-2/ -->
 
 # How to Configure Redis for Magento 2
@@ -79,8 +87,7 @@ In order to use the compression library Snappy for your Redis cache you can run 
 
 ```console
 $ bin/magento setup:config:set --cache-backend-redis-compression-lib=snappy
-
-# If you use Magento's builtin page cache with Redis
+$ # If you use Magento's builtin page cache with Redis
 $ bin/magento setup:config:set --page-cache-redis-compression-lib=snappy
 ```
 

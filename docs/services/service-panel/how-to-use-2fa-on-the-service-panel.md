@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: In this article, we explain how to use 2FA for the Control Panel.
+      Not available yet.
+---
+
 <!-- source: https://support.hypernode.com/en/services/service-panel/how-to-use-2fa-for-the-service-panel/ -->
 
 # How to Use 2FA on the Service Panel

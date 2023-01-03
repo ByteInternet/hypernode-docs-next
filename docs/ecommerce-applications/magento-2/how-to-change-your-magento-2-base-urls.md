@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: There are several ways to configure the base_url settings of your
+      Magento 2 shop. Find detailed instructions on the different ways here.
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-change-your-magento-2-base-urls/ -->
 
 # How to Change Your Magento 2 Base URLs
@@ -16,7 +23,7 @@ From the top navigation bar, select `Stores` -> `Configuration`:
 
 ![](_res/ep0Mt1rX3owfCnOU-HnyBmjoVvkkMyCtMA.png)
 
-From the configuration menu, select  `General>`Web:
+From the configuration menu, select `General` -> `Web`:
 
 ![](_res/B2xpxxshwDAFcGcbwd8cANYHV20rFGNL4Q.png)
 

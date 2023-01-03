@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    description: This article explains which steps you need to take if you choose
+      to transfer your domain from Hypernode to another provider.
+---
+
 <!-- source: https://support.hypernode.com/en/services/domains/how-to-transfer-your-domain-name-to-another-provider/ -->
 
 # How to Transfer Your Domain Name to Another Provider (Service Panel)

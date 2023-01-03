@@ -1,12 +1,20 @@
+---
+myst:
+  html_meta:
+    description: "Get errors like these when trying to perform HTTP requests: \"Parsing\
+      \ WSDL: Couldn’t load from ”: failed to load external entity\"? Here's how to\
+      \ Fix SOAP errors."
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-fix-soap-error-parsing-wsdl-couldn-t-load-from-failed-to-load-external-entity/ -->
 
 # How to Fix SOAP error: Parsing WSDL: Couldn’t load from “”: failed to load external entity
 
-[Magento’s SOAP API](https://devdocs.magento.com/guides/v2.4/get-started/soap/soap-web-api-calls.html?itm_source=devdocs&itm_medium=search_page&itm_campaign=federated_search&itm_term=soap) references its own WSDL, making the magento instance depend on its own api endpoint. If it is not possible to connect to the SOAP API from the Hypernode, you will get this error when trying to perform requests.
+[Magento’s SOAP API](https://devdocs.magento.com/guides/v2.4/get-started/soap/soap-web-api-calls.html?itm_source=devdocs&itm_medium=search_page&itm_campaign=federated_search&itm_term=soap) references its WSDL, making the Magento instance depend on its API endpoint. If it is impossible to connect to the SOAP API from the Hypernode, you will get this error when trying to perform requests.
 
-Hypernodes are configured to support HTTP requests from the server itself, without the need to add your domain to the `/etc/hosts` as suggested in many articles online. If you get this error, some configuration or error is with withholding the Magento installation to connect to it’s own API endpoint.
+Hypernodes are configured to support HTTP requests from the server itself, without the need to add your domain to the `/etc/hosts` as suggested in many articles online. If you get this error, some configuration or error is with withholding the Magento installation from connecting to its API endpoint.
 
-Magento constructs the WSDL URL based on your Magento instance base URL. This means that if your Magento store is not accessible from the the server itself, SOAP server will not be able to load WSDL during initialisation. As a result you encounter this error.
+Magento constructs the WSDL URL based on your Magento instance base URL. This means that if your Magento store is not accessible from the server itself, the SOAP server will not be able to load WSDL during initialization. As a result, you encounter this error.
 
 # Test If Your SOAP API Is Available for Magento
 
@@ -27,7 +35,7 @@ This should return the XML schema:
 
 ```
 
-If you are not able to `curl` for the WSDL, chances are high this may be the issue.
+If you are not able to `curl` for the WSDL, chances are high that this may be the issue.
 
 # Troubleshooting
 
@@ -37,7 +45,7 @@ If the source IP of the SOAP client is [rate limited](https://support.hypernode.
 
 ## Check If the IP of the Server Is Allowed to Make HTTP Requests
 
-If you are using a whitelist and or blacklist to allow and deny IP’s, make sure the IP of the Hypernode itself and the local host IP (`127.0.0.1`) are both present in the list(s).
+If you are using a whitelist and or blacklist to allow and deny IPs, make sure the IP of the Hypernode itself and the local host IP (`127.0.0.1`) are both present in the list(s).
 
 ## Flush Your `WSDL` Cache
 

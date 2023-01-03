@@ -1,4 +1,12 @@
-<!-- source: https://support.hypernode.com/en/support/solutions/articles/48001212568-how-to-order-a-hypernode-and-transfer-ownership-to-a-customer/ -->
+---
+myst:
+  html_meta:
+    description: 'On Hypernode you can order and transfer ownership of a plan to the
+      customer. This means a different account will be charged for the subscription.
+      The steps are:'
+---
+
+<!-- source: https://support.hypernode.com/en/services/control-panel/how-to-order-a-hypernode-and-transfer-ownership-to-a-customer/ -->
 
 # How To Order a Hypernode and Transfer Ownership To a Customer
 
@@ -8,7 +16,7 @@ This article will explain how to order a Hypernode and how this plan can be tran
 
 ![](_res/fK2hEX9hgqc3u36T059Ko5Ug3ChDk1g6Sg.png)
 
-### Step 1: How To Order a Hypernode
+## Step 1: How To Order a Hypernode
 
 You can order a Hypernode plan via our [order page](https://www.hypernode.com/magento-cloud-hosting/#plans). The Control Panel is our default panel, which means all new Hypernode plans and trials will be booted in the Control Panel.
 
@@ -21,14 +29,14 @@ To order a new Hypernode plan, follow these steps:
 1. Choose the needed Hypernode plan configuration, SLA and continue:
 
 ![](_res/uA9B2g-CkfkMKHl6NxGYv7LI3Y_US-rgDg.png)
-6\. Read "[Step 2: Tips For Ordering a Hypernode](https://support.hypernode.com/en/support/solutions/articles/48001212568-how-to-order-a-hypernode-and-transfer-ownership-to-customer#Step-2%3A-Tips-For-Ordering-a-Hypernode)"
+6\. Read "[Step 2: Tips For Ordering a Hypernode](https://support.hypernode.com/en/services/control-panel/how-to-order-a-hypernode-and-transfer-ownership-to-a-customer#Step-2%3A-Tips-For-Ordering-a-Hypernode)"
 7\. Give your Hypernode a name and proceed to checkout.
 8\. Check if all information is correct and place your order.
 9\. The new Hypernode plan will be booted and you will receive an email when it's ready.
 
 Please note: if you are a Service Panel user (i.e. you use the Dutch panel), please order your new plans directly via [this page in the Service Panel](https://service.byte.nl/planinfo/order-selection/). This is to prevent plans from being booted in the wrong system.
 
-### Step 2: Tips For Ordering a Hypernode
+## Step 2: Tips For Ordering a Hypernode
 
 - Choose a logical name. IE: If your site is example.com, order example.hypernode.com
 - Make sure you pick a node with enough disk space for both your shop and your database.
@@ -37,7 +45,7 @@ Please note: if you are a Service Panel user (i.e. you use the Dutch panel), ple
 - Still developing a shop? Then [select a development environment first](https://support.hypernode.com/knowledgebase/development-plans-for-your-magento-shop/). When your Hypernode [is ready to go live](https://support.hypernode.com/knowledgebase/go-live-with-your-hypernode/) you can easily switch to a production node.
 - Use [this article to remove a Magento installation](https://support.hypernode.com/knowledgebase/remove-magento-installation/) in case you want to reuse an existing Hypernode or accidentally ordered a Hypernode with a preinstalled Magento on it.
 
-### Step 3: Transfer Ownership to your customer
+## Step 3: Transfer Ownership to your customer
 
 To transfer ownership of a Hypernode you need to follow these steps:
 

@@ -1,4 +1,12 @@
-<!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-set-the-return-path-for-a-magento-2-shop -->
+---
+myst:
+  html_meta:
+    description: To avoid outgoing mail being detected as spam, you can change the
+      mail return-path for your outgoing email to a valid address. Here's how to do
+      so in Magento 2.
+---
+
+<!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-set-the-return-path-for-a-magento-2-shop/ -->
 
 # How to Set the Return-Path For a Magento 2 Shop
 
@@ -34,7 +42,7 @@ To set the return-path for your Magento 2 shop log n on the admin panel and foll
 
 ## Workaround Return-Path Email Bug in Magento 2
 
-In some versions of Magento 2 setting the `return-path`  [does not work](https://github.com/magento/magento2/issues/6146). The setting is ignored and the system’s return path is used anyway. This is a notorious bug in Magento 2 which unfortunately has not been fixed yet although the Magento Community Engineering team [is aware of this issue](https://github.com/magento/magento2/issues/6954).
+In some versions of Magento 2 setting the `return-path` [does not work](https://github.com/magento/magento2/issues/6146). The setting is ignored and the system’s return path is used anyway. This is a notorious bug in Magento 2 which unfortunately has not been fixed yet although the Magento Community Engineering team [is aware of this issue](https://github.com/magento/magento2/issues/6954).
 
 ### Our Fix for Hypernode Customers
 
@@ -42,13 +50,13 @@ In order to provide a solution for Hypernode customers who experience issues wit
 
 You can use the following command on your Hypernode to set the `return-path` to your own email address via our API.
 
-```
+```bash
 hypernode-systemctl settings override_sendmail_return_path --value mail@domain.ext
 ```
 
 You can verify whether you entered the right return-path with the following command:
 
-```
+```bash
 php -i | grep sendmail_path
 ```
 

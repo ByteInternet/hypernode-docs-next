@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Elasticsearch can be used to search in your Magento shop without
+      any external service or configuration. This article explains how to enable and
+      configure it.
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-elasticsearch-on-hypernode/ -->
 
 # How to Use Elasticsearch on Hypernode
