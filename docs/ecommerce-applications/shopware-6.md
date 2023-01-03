@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/ecommerce/shopware/
+---
+
 # Shopware 6
 
 ```{toctree}

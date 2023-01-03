@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/troubleshooting/performance/
+---
+
 # Performance
 
 ```{toctree}

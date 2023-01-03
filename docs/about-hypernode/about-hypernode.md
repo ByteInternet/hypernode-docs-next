@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/about/
+---
+
 # About Hypernode
 
 ```{toctree}

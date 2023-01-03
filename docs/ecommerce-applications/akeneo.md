@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/ecommerce/akeneo/
+---
+
 # Akeneo
 
 ```{toctree}

@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/services/control-panel/
+---
+
 # Control Panel
 
 ```{toctree}
