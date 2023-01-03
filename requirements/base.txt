@@ -13,4 +13,5 @@ sphinx-notfound-page==0.8.3
 beautifulsoup4==4.11.1
 markdownify==0.11.2
 python-slugify==6.1.2
-pyyaml==6.0
+pyyaml==5.1
+frontmatter==3.0.7
