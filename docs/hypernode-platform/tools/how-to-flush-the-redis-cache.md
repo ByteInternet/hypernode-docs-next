@@ -4,6 +4,8 @@ myst:
     description: 'Using Redis for caching on Hypernode is recommeded, as it is faster
       than using the file caching mechanism that is enabled by default. Read here
       how to do so. '
+redirect_from:
+  - /en/hypernode/tools/how-to-flush-the-redis-cache/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-flush-the-redis-cache/ -->

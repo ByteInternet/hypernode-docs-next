@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/support/solutions/articles/48001227297-hypernode-brancher/
+---
+
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001227297-hypernode-brancher/ -->
 
 # Hypernode Brancher

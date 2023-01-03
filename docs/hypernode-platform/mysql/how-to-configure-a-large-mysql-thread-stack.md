@@ -4,6 +4,8 @@ myst:
     description: For Hypernodes we have a set of MySQL related opt-in settings to
       facilitate some flexibility (because it is not possible to change root-owned
       MySQL related config files.)
+redirect_from:
+  - /en/hypernode/mysql/how-to-configure-a-large-mysql-thread-stack/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/mysql/how-to-configure-a-large-mysql-thread-stack/ -->

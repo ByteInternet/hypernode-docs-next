@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: This article explains how to use the logs in the Control Panel to
       get a better understanding of actions you or others have performed.
+redirect_from:
+  - /en/services/control-panel/using-logs-in-the-control-panel/
 ---
 
 <!-- source: https://support.hypernode.com/en/services/control-panel/using-logs-in-the-control-panel/ -->

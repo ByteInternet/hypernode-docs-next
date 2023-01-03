@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/services/control-panel/how-to-change-your-plan-via-the-cli/
+---
+
 <!-- source: https://support.hypernode.com/en/services/control-panel/how-to-change-your-plan-via-the-cli/ -->
 
 # How to Change Your Plan via the CLI

@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: When processes on your Hypernode require more memory than is available,
       there is a risk of downtime. This article explains more about the Linux oom-killer.
+redirect_from:
+  - /en/troubleshooting/performance/how-to-debug-out-of-memory-oom-events/
 ---
 
 <!-- source: https://support.hypernode.com/en/troubleshooting/performance/how-to-debug-out-of-memory-oom-events/ -->

@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: After you have copied your shop to Hypernode and tested its functionalities,
       it's time to go live. Follow these steps for a smooth transition.
+redirect_from:
+  - /en/best-practices/testing/how-to-go-live-with-your-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/testing/how-to-go-live-with-your-hypernode/ -->

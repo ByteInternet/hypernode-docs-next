@@ -4,6 +4,8 @@ myst:
     description: Let's Encrypt is a CA Authority that provides free SSL certificates
       through domain validation and automated retrieval. Find here how to use it on
       Hypernode.
+redirect_from:
+  - /en/hypernode/ssl/how-to-use-let-s-encrypt-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/ssl/how-to-use-let-s-encrypt-on-hypernode/ -->

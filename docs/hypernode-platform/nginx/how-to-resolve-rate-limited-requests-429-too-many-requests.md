@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: This article explains the differences between rate limiting methods
       and show you how to find which one applies and if needed, how to override them.
+redirect_from:
+  - /en/hypernode/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests/ -->

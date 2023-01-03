@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/services/control-panel/how-to-use-2fa-on-the-control-panel/
+---
+
 <!-- source: https://support.hypernode.com/en/services/control-panel/how-to-use-2fa-on-the-control-panel/ -->
 
 # How to Use 2FA on the Control Panel

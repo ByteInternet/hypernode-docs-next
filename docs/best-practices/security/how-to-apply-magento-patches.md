@@ -4,6 +4,8 @@ myst:
     description: Every now and then Magento issues a new patch to increase the security
       of their software. In this article we explain how you can install them on your
       webshop.
+redirect_from:
+  - /en/best-practices/security/how-to-deploy-magento-patches/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/security/how-to-deploy-magento-patches/ -->

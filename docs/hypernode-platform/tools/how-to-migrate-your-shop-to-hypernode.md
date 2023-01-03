@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: 'Congratulations on your new Hypernode! Find out how to migrate your
       shop to Hypernode for testing on this page. '
+redirect_from:
+  - /en/hypernode/tools/how-to-migrate-your-shop-to-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-migrate-your-shop-to-hypernode/ -->

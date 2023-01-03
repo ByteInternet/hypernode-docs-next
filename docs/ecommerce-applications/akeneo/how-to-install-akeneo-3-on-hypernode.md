@@ -4,6 +4,8 @@ myst:
     description: This article describes how to install Akeneo 3 on your Hypernode.
       Installing Akeneo 3 can be done by using our Pre-Install or you can install
       Akeneo 3 manually.
+redirect_from:
+  - /en/ecommerce/akeneo/how-to-install-akeneo-3-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/akeneo/how-to-install-akeneo-3-on-hypernode/ -->

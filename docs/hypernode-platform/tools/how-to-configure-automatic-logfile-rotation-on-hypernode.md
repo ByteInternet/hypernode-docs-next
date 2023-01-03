@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/support/solutions/articles/48001185227-how-to-configure-automatic-logfile-rotation-on-hypernode/
+---
+
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001185227-how-to-configure-automatic-logfile-rotation-on-hypernode/ -->
 
 # How to configure automatic logfile rotation on Hypernode

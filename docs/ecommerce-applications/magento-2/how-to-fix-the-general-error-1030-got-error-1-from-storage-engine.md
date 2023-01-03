@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: 'This article describes how to fix the "General error: 1030 Got error
       1 from storage engine" on your Hypernode.'
+redirect_from:
+  - /en/ecommerce/magento-2/how-to-fix-the-general-error-1030-got-error-1-from-storage-engine/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-fix-the-general-error-1030-got-error-1-from-storage-engine/ -->

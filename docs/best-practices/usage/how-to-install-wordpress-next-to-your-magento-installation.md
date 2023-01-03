@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: 'Find detailed guidelines on how to install Wordpress on your Hypernode
       next to your Magento installation in this article. '
+redirect_from:
+  - /en/best-practices/usage/how-to-install-wordpress-next-to-your-magento-installation/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/usage/how-to-install-wordpress-next-to-your-magento-installation/ -->

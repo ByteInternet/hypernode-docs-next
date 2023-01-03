@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: This page offers an overview of all tools available on Hypernodes
       and hypernode-vagrant to Hypernode users to make your life as a developer easier.
+redirect_from:
+  - /en/hypernode/tools/hypernode-cli-tools-and-magerun-plugins/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/hypernode-cli-tools-and-magerun-plugins/ -->

@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/hypernode/varnish/how-to-enable-varnish-on-hypernode/
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/varnish/how-to-enable-varnish-on-hypernode/ -->
 
 # How to enable Varnish on Hypernode

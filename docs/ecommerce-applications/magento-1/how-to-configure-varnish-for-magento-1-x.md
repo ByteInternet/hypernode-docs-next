@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: This article explains how you can configure Varnish for your Hypernode
       in order to boost your Magento shop.
+redirect_from:
+  - /en/ecommerce/magento-1/how-to-configure-varnish-for-magento-1-x/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-configure-varnish-for-magento-1-x/ -->

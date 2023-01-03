@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/support/solutions/articles/48001208544-installation-and-configuration-of-pm2/
+---
+
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001208544-installation-and-configuration-of-pm2/ -->
 
 # Installation and configuration of PM2

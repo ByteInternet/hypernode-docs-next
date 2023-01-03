@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: A lot of bot traffic has a negative impact on the performance of
       your webshop. At Hypernode you can block unwanted bots in your Service Panel.
+redirect_from:
+  - /en/support/solutions/articles/48001163357-how-to-block-bad-bots-via-the-service-panel/
 ---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001163357-how-to-block-bad-bots-via-the-service-panel/ -->

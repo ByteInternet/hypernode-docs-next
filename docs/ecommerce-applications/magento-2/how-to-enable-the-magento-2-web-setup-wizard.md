@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: In this article, we explain how to configure and deconfigure the
       Web Setup Wizard for your Magento 2 shop.
+redirect_from:
+  - /en/ecommerce/magento-2/how-to-enable-the-magento-2-web-setup-wizard/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-enable-the-magento-2-web-setup-wizard/ -->

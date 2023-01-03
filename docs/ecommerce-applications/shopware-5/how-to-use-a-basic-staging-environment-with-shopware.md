@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: A staging environment is very useful to test your shop. In this article
       we explain how to set up a staging environment on Hypernode for a Shopware shop.
+redirect_from:
+  - /en/ecommerce/shopware/how-to-use-a-basic-staging-environment-with-shopware/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/shopware/how-to-use-a-basic-staging-environment-with-shopware/ -->

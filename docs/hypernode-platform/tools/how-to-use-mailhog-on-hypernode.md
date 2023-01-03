@@ -4,6 +4,8 @@ myst:
     description: Debugging outgoing mail issues could require you to inspect all outgoing
       mails from a webshop. MailHog is an email testing tool for it, which we explain
       here.
+redirect_from:
+  - /en/hypernode/tools/how-to-use-mailhog-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-mailhog-on-hypernode/ -->

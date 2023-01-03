@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/support/solutions/articles/48001219280-how-to-deploy-your-application-using-hypernode-deploy-v1/
+---
+
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001219280-how-to-deploy-your-application-using-hypernode-deploy-v1/ -->
 
 # How to deploy your application using Hypernode Deploy v1

@@ -4,6 +4,8 @@ myst:
     description: 'On Hypernode you can order and transfer ownership of a plan to the
       customer. This means a different account will be charged for the subscription.
       The steps are:'
+redirect_from:
+  - /en/services/control-panel/how-to-order-a-hypernode-and-transfer-ownership-to-a-customer/
 ---
 
 <!-- source: https://support.hypernode.com/en/services/control-panel/how-to-order-a-hypernode-and-transfer-ownership-to-a-customer/ -->

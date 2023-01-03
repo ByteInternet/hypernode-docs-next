@@ -4,6 +4,8 @@ myst:
     description: The Hypernode platform is developed independently from a specific
       cloud provider, which allows us to choose only the best. Read here which providers
       we use.
+redirect_from:
+  - /en/about/about-us/which-cloud-providers-do-we-use/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/about-us/which-cloud-providers-do-we-use/ -->

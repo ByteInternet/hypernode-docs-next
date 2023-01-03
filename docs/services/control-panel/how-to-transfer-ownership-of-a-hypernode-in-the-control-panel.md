@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: 'On Hypernode you can transfer ownership. This means a different
       account will be charged for the subscription. Read here how to do this. '
+redirect_from:
+  - /en/services/control-panel/transfer-ownership/
 ---
 
 <!-- source: https://support.hypernode.com/en/services/control-panel/transfer-ownership/ -->

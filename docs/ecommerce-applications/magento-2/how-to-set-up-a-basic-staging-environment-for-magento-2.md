@@ -4,6 +4,8 @@ myst:
     description: A staging environment is very useful to test your shop. In this article
       we explain how to set up a staging environment on Hypernode for a Magento 2
       shop.
+redirect_from:
+  - /en/ecommerce/magento-2/how-to-set-up-a-basic-staging-environment-for-magento-2/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-set-up-a-basic-staging-environment-for-magento-2/ -->

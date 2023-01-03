@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: 'Having statistics on the top 10 visitors could be very usefull.
       Read here how you can easily use the Nginx access logging to find out. '
+redirect_from:
+  - /en/hypernode/nginx/how-to-find-the-the-top-10-visitors-by-parsing-the-nginx-access-logs/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-find-the-the-top-10-visitors-by-parsing-the-nginx-access-logs/ -->

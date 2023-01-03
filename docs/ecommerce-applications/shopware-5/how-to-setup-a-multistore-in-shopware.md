@@ -4,6 +4,8 @@ myst:
     description: Using a multistore in Shopware will allow you to address customers
       in different languages and use different currencies. Check out how to set it
       up here.
+redirect_from:
+  - /en/ecommerce/shopware/how-to-setup-a-multistore-in-shopware/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/shopware/how-to-setup-a-multistore-in-shopware/ -->

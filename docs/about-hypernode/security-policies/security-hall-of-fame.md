@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: A list of security researchers we have worked with, that responsibly
       disclosed vulnerabilities to us.
+redirect_from:
+  - /en/about/security/hall-of-fame/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/security/hall-of-fame/ -->

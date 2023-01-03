@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: By default .sql files and archive files are blocked on Hypernode.
       This article explains how you can unblock those files and make them downloadable
+redirect_from:
+  - /en/hypernode/nginx/how-to-unblock-requests-to-sql-and-archive-files/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-unblock-requests-to-sql-and-archive-files/ -->

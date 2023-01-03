@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/services/domains/extension-specific-info-per-domain/
+---
+
 <!-- source: https://support.hypernode.com/en/services/domains/extension-specific-info-per-domain/ -->
 
 # Extension Specific Info per Domain

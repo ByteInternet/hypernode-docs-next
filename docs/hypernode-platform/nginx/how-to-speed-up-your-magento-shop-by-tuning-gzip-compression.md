@@ -4,6 +4,8 @@ myst:
     description: On Hypernodes, GZIP Compression is already configured to compress
       responses larger than 1000 bytes. For experts however, it is possible to make
       your own adjustments to tune GZIP Compression.
+redirect_from:
+  - /en/hypernode/nginx/how-to-speed-up-your-magento-shop-by-tuning-gzip-compression/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-speed-up-your-magento-shop-by-tuning-gzip-compression/ -->

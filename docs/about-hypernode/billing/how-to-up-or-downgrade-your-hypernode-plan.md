@@ -4,6 +4,8 @@ myst:
     description: 'When dealing with visitor peaks, during holidays for example, you
       might want to take precautions and upgrade a bigger Hypernode plan. Read here
       how to do so. '
+redirect_from:
+  - /en/about/billing/how-to-up-or-downgrade-your-hypernode-plan/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/billing/how-to-up-or-downgrade-your-hypernode-plan/ -->

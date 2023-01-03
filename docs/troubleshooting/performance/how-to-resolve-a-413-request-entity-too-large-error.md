@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/troubleshooting/performance/how-to-resolve-a-413-request-entity-too-large-error/
+---
+
 <!-- source: https://support.hypernode.com/en/troubleshooting/performance/how-to-resolve-a-413-request-entity-too-large-error/ -->
 
 # How to Resolve a 413 Request Entity Too Large Error

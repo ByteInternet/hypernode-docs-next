@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: 'In this article, we provide you with a detailed roadmap about how
       you can use PHPMyAdmin and how to create a database dump. '
+redirect_from:
+  - /en/hypernode/mysql/how-to-use-phpmyadmin/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/mysql/how-to-use-phpmyadmin/ -->

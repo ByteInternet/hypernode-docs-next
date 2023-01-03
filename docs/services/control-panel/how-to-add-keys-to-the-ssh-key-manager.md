@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: 'You can add SSH Keys to your Hypernode via the Control Panel. Find
       out the steps to add SSH Keys in this article. '
+redirect_from:
+  - /en/services/control-panel/how-to-add-keys-to-the-ssh-keymanager/
 ---
 
 <!-- source: https://support.hypernode.com/en/services/control-panel/how-to-add-keys-to-the-ssh-keymanager/ -->

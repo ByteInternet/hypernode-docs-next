@@ -4,6 +4,8 @@ myst:
     description: To optimize the built-in Magento search option, you can tweak this
       or us and external search engine. In this article, we explain the different
       possibilities.
+redirect_from:
+  - /en/best-practices/performance/how-to-improve-your-magento-search/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/performance/how-to-improve-your-magento-search/ -->

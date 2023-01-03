@@ -4,6 +4,8 @@ myst:
     description: When debugging performance issues, it might be useful to log all
       database queries to a log file. Find out here how to enable MySQL Query logging
       for Magento 1.
+redirect_from:
+  - /en/ecommerce/magento-1/how-to-enable-mysql-query-logging-for-magento-1-x/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-enable-mysql-query-logging-for-magento-1-x/ -->

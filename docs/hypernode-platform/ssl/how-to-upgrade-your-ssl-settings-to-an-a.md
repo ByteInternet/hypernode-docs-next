@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: Many developers validate their SSL setting on Hypernode with Qualys
       SSL labs. This article explains how to get an A+ rating for your SSL configuration.
+redirect_from:
+  - /en/hypernode/ssl/how-to-upgrade-your-ssl-settings-to-an-a-plus/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/ssl/how-to-upgrade-your-ssl-settings-to-an-a-plus/ -->
