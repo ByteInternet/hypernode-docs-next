@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/hypernode/php/
+---
+
 # PHP
 
 ```{toctree}

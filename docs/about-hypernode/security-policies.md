@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/about/security/
+---
+
 # Security Policies
 
 ```{toctree}

@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/hypernode/backups/
+---
+
 # Backups
 
 ```{toctree}

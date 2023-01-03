@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/best-practices/security/
+---
+
 # Security
 
 ```{toctree}

@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /en/getting-started/
+---
+
 # Getting Started
 
 ```{toctree}
