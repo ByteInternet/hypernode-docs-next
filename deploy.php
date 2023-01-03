@@ -25,11 +25,17 @@ task('deploy:disable_public', function () {
 task('python:venv:create', static function () {
     run('mkdir -p .hypernode');
     run('virtualenv -p python3 .venv');
+    run('echo export PYTHONPATH=$(pwd) >> .venv/bin/activate');
 });
 
 # Install the requirements
 task('python:venv:requirements', static function () {
     run('source .venv/bin/activate && pip install -r requirements/base.txt');
+});
+
+task('python:generate_redirects', static function () {
+    run('mkdir -p etc/nginx');
+    run('source .venv/bin/activate && bin/generate_nginx_redirects > etc/nginx/server.redirects.conf');
 });
 
 # Build the documentation
@@ -49,17 +55,28 @@ task('deploy:hmv_docker', static function () use (&$DOCKER_HOST, &$DOCKER_WEBROO
     }
 });
 
-task("deploy:docs_vhost", static function () {
-    run("hypernode-manage-vhosts --https --force-https {{hostname}} --no --webroot {{current_path}}/{{public_folder}}");
+task('deploy:docs_vhost:acceptance', static function () {
+    run('hypernode-manage-vhosts --https --force-https {{hostname}} --no --webroot {{current_path}}/{{public_folder}}');
+})->select('stage=acceptance');
+
+task('deploy:docs_vhost:production', static function () {
+    run('hypernode-manage-vhosts --https --force-https docs.hypernode.io --no --webroot {{current_path}}/{{public_folder}}');
+})->select('stage=production');
+
+task('deploy:nginx_redirects', static function () {
+    run('cp {{release_path}}/etc/nginx/server.redirects.conf /data/web/nginx/server.redirects.conf');
 });
 
 $configuration = new Configuration();
 $configuration->addBuildTask('python:venv:create');
 $configuration->addBuildTask('python:venv:requirements');
 $configuration->addBuildTask('python:build_documentation');
+$configuration->addBuildTask('python:generate_redirects');
 $configuration->addDeployTask('deploy:disable_public');
 $configuration->addDeployTask('deploy:hmv_docker');
-$configuration->addDeployTask('deploy:docs_vhost');
+$configuration->addDeployTask('deploy:docs_vhost:acceptance');
+$configuration->addDeployTask('deploy:docs_vhost:production');
+$configuration->addDeployTask('deploy:nginx_redirects');
 
 # Just some sane defaults to exclude from the deploy
 $configuration->setDeployExclude([
@@ -73,12 +90,11 @@ $configuration->setDeployExclude([
     '.idea',
     '.gitignore',
     '.editorconfig',
-    'etc/',
-    '.venv/',
-    'bin/',
-    'hypernode/',
-    'requirements/',
-    'tests/'
+    './.venv',
+    './bin',
+    './hypernode',
+    './requirements',
+    './tests',
 ]);
 
 $productionStage = $configuration->addStage('production', 'docs.hypernode.io');

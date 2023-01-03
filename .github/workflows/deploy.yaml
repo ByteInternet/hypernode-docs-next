@@ -22,7 +22,6 @@ jobs:
       - uses: webfactory/ssh-agent@v0.5.4
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      - run: apt update && apt install -y python3 virtualenv
       - run: hypernode-deploy build -vvv
       - name: archive production artifacts
         uses: actions/upload-artifact@v3
