@@ -3,10 +3,9 @@ from pathlib import Path
 from typing import Optional
 from urllib.parse import urlparse
 
-import yaml
 from frontmatter import Frontmatter
 
-from hypernode.common.docs import get_all_docs
+from hypernode.common.docs import get_all_docs, write_doc
 
 SOURCE_PATTERN = re.compile(r"^<!-- source: (.+) -->$")
 
@@ -25,16 +24,13 @@ def set_source_path_redirect(doc: Path, source_path: str) -> None:
     fm = Frontmatter.read_file(doc)
     attributes = fm["attributes"] or {}
     attributes["redirect_from"] = [source_path]
-    fm_yaml = yaml.dump(attributes, default_flow_style=False)
 
     body = fm["body"]
     if not body:
         with open(doc, mode="r", encoding="utf-8") as f:
             body = f.read()
 
-    with open(doc, mode="w", encoding="utf-8") as f:
-        contents = "---\n" + fm_yaml + "---\n\n" + body
-        f.write(contents)
+    write_doc(doc, body, attributes)
 
 
 def main():
