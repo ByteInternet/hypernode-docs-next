@@ -4,6 +4,8 @@ myst:
     description: Using a robots.txt is essential to handle bots and crawlers. In this
       article we explain how to configure your Hypernode to serve a robots.txt for
       storefront(s).
+redirect_from:
+- /en/ecommerce/magento-1/how-to-create-a-robots-txt-for-your-magento-1-shop/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-create-a-robots-txt-for-your-magento-1-shop/ -->

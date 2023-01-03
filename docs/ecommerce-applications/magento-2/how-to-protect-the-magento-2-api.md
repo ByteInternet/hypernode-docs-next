@@ -1,3 +1,8 @@
+---
+redirect_from:
+- /en/ecommerce/magento-2/how-to-protect-the-magento-2-api/
+---
+
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-protect-the-magento-2-api/ -->
 
 # How to Protect the Magento 2 API

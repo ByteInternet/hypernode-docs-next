@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: 'Learn all about GEO-Blocking regulations and its most important
       rules in this article. '
+redirect_from:
+- /en/about/security/what-you-need-to-know-about-the-geo-blocking-regulation/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/security/what-you-need-to-know-about-the-geo-blocking-regulation/ -->

@@ -1,3 +1,8 @@
+---
+redirect_from:
+- /en/support/solutions/articles/48001208755-how-to-create-a-backup-and-download-it-to-your-local-machine/
+---
+
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001208755-how-to-create-a-backup-and-download-it-to-your-local-machine/ -->
 
 # How to Create a Backup and Download it to Your Local Machine

@@ -1,3 +1,8 @@
+---
+redirect_from:
+- /en/hypernode/tools/how-to-copy-your-hypernode-to-another-hypernode/
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-copy-your-hypernode-to-another-hypernode/ -->
 
 # How to copy your Hypernode to another Hypernode

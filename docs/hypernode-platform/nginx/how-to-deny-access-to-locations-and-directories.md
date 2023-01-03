@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: In this article we explain how to protect a directory from being
       accessed through the web, create a location and deny access to it.
+redirect_from:
+- /en/hypernode/nginx/how-to-deny-access-to-locations-and-directories/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-deny-access-to-locations-and-directories/ -->

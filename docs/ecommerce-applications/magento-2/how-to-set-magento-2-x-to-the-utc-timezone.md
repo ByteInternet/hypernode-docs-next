@@ -4,6 +4,8 @@ myst:
     description: If you want to work with a different timezone setting or show a different
       timezone setting to your customers, check out how change the timezone on Magento
       2.x.
+redirect_from:
+- /en/ecommerce/magento-2/how-to-set-magento-2-x-to-the-utc-timezone/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-set-magento-2-x-to-the-utc-timezone/ -->

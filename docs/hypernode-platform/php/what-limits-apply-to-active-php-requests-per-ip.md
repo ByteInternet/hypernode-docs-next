@@ -4,6 +4,8 @@ myst:
     description: Hypernodes uses Nginx and PHP-FPM for processing and serving PHP
       pages causing a few limitations to PHP requests per IP. Read all about the details
       here.
+redirect_from:
+- /en/support/solutions/articles/48000967652-what-limits-apply-to-active-php-requests-per-ip/
 ---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48000967652-what-limits-apply-to-active-php-requests-per-ip/ -->

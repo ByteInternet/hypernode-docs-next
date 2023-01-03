@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: 'Find detailed guidelines on how to restore your Hypernode from a
       backup here, if needed after a mistake. We restore backups with snapshots. '
+redirect_from:
+- /en/hypernode/backups/how-to-restore-your-hypernode-from-a-backup/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/backups/how-to-restore-your-hypernode-from-a-backup/ -->

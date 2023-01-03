@@ -1,3 +1,8 @@
+---
+redirect_from:
+- /en/about/support/scope-of-support/
+---
+
 <!-- source: https://support.hypernode.com/en/about/support/scope-of-support/ -->
 
 # Scope of Support

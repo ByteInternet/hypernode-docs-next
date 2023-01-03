@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: 'In this article, we explain how to manage teams on the Hypernode
       control panel. You can invite developers, merchants or an agency. '
+redirect_from:
+- /en/services/control-panel/how-to-use-teams/
 ---
 
 <!-- source: https://support.hypernode.com/en/services/control-panel/how-to-use-teams/ -->

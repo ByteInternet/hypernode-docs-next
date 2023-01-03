@@ -4,6 +4,8 @@ myst:
     description: Redis is a caching method which can increase the speed of the back-
       and frontend of your shop. Here's how to configure it on Magento 2 and how redis-cli
       works.
+redirect_from:
+- /en/ecommerce/magento-2/how-to-configure-redis-for-magento-2/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-configure-redis-for-magento-2/ -->

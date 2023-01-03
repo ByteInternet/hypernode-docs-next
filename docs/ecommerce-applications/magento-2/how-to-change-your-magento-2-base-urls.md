@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: There are several ways to configure the base_url settings of your
       Magento 2 shop. Find detailed instructions on the different ways here.
+redirect_from:
+- /en/ecommerce/magento-2/how-to-change-your-magento-2-base-urls/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-change-your-magento-2-base-urls/ -->

@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: In this article, you can read about setting up smart 404 handlings
       on Hypernode.
+redirect_from:
+- /en/best-practices/performance/how-to-set-up-smart-404-handling/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/performance/how-to-set-up-smart-404-handling/ -->

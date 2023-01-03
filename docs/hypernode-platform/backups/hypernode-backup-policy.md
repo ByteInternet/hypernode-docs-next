@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: 'When things go wrong, you want to restore the appropriate database
       table, files or directories from the backup. We offer this with snapshots. '
+redirect_from:
+- /en/hypernode/backups/hypernode-backup-policy/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/backups/hypernode-backup-policy/ -->

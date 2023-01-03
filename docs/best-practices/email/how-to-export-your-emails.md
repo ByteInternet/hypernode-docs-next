@@ -4,6 +4,8 @@ myst:
     description: In this article we explain how you can export your  email with a
       number of common email clients (such as Outlook and Mac Mail) and our own webmail
       application.
+redirect_from:
+- /en/best-practices/email/how-to-export-your-emails/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/email/how-to-export-your-emails/ -->

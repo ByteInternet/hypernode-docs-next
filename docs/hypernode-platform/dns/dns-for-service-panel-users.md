@@ -4,6 +4,8 @@ myst:
     description: DNS is a protocol that translates domain names to IP addresses on
       the internet. Read here how you can configure the DNS for your domain name at
       Hypernode.
+redirect_from:
+- /en/support/solutions/articles/48001153093-dns-for-service-panel-users/
 ---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001153093-dns-for-service-panel-users/ -->

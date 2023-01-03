@@ -4,6 +4,8 @@ myst:
     description: Find an overview of the consequences and ways to fix things, when
       receiving a warning that one of the extensions in your Magento shop is vulnerable
       here.
+redirect_from:
+- /en/about/security/one-of-your-magento-extensions-is-vulnerable/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/security/one-of-your-magento-extensions-is-vulnerable/ -->

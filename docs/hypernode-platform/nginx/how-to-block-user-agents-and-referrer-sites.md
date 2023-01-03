@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: 'Find a thorough step by step guide on blocking user agents and referrer
       sites here. '
+redirect_from:
+- /en/hypernode/nginx/how-to-block-user-agents-and-referrer-sites/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-block-user-agents-and-referrer-sites/ -->

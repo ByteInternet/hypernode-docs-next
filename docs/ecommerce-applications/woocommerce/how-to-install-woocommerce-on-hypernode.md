@@ -1,3 +1,8 @@
+---
+redirect_from:
+- /en/support/solutions/articles/48001213397-how-to-install-woocommerce-on-hypernode/
+---
+
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001213397-how-to-install-woocommerce-on-hypernode/ -->
 
 # How to install WooCommerce on Hypernode

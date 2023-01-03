@@ -4,6 +4,8 @@ myst:
     description: 'In order to keep your backend to suffer from inaccessibility, you
       need to be able to flush the OPcache from the command line. Read here how to
       do so. '
+redirect_from:
+- /en/hypernode/php/how-to-flush-the-php-opcache/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/php/how-to-flush-the-php-opcache/ -->

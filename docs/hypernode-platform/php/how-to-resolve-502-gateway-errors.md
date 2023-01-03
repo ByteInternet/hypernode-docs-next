@@ -4,6 +4,8 @@ myst:
     description: A 502 Bad Gateway error indicates there has been an internal error
       within PHP, which resulted in the site not being rendered. Check out how to
       solve it here.
+redirect_from:
+- /en/hypernode/php/how-to-resolve-502-gateway-errors/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/php/how-to-resolve-502-gateway-errors/ -->

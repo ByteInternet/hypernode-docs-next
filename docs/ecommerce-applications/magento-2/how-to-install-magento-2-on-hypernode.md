@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: Follow the steps in this article to install a Magento 2 installation
       on Hypernode. It will only take you 5-10 minutes.
+redirect_from:
+- /en/ecommerce/magento-2/how-to-install-magento-2-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-install-magento-2-on-hypernode/ -->

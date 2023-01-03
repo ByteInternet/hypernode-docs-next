@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: This article explains how you can install node.js and NPM on a Hypernode
       and how to use this.
+redirect_from:
+- /en/hypernode/tools/how-to-use-node-js-and-npm-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-node-js-and-npm-on-hypernode/ -->

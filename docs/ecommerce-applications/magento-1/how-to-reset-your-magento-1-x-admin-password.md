@@ -4,6 +4,8 @@ myst:
     description: If you are unable to login to your Magento shop, you have several
       methods to retrieve a new password to log back in. Check out here how to reset
       your password.
+redirect_from:
+- /en/support/solutions/articles/48000970831-how-to-reset-your-magento-1-x-admin-password/
 ---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48000970831-how-to-reset-your-magento-1-x-admin-password/ -->

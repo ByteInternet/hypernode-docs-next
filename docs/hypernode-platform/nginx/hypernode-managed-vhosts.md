@@ -4,6 +4,8 @@ myst:
     description: A Hypernode Managed Vhost system is a configuration allowing you
       to setup multiple domainnames with an own independant configuration. Reall all
       about it here.
+redirect_from:
+- /en/hypernode/nginx/hypernode-managed-vhosts/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/hypernode-managed-vhosts/ -->

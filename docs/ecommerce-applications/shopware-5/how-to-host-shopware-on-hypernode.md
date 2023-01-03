@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: Hosting the popular CMS, Shopware, can (of course) be done on Hypernode.
       You only need a specific Nginx configuration. Check out how to use it here.
+redirect_from:
+- /en/ecommerce/shopware/how-to-host-shopware-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/shopware/how-to-host-shopware-on-hypernode/ -->

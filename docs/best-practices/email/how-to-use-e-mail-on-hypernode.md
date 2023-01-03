@@ -4,6 +4,8 @@ myst:
     description: For setting up e-mail on your Hypernode we advice our customers to
       use Gsuite (Google) or Office365 (Microsoft) as they are more specialized in
       e-mail.
+redirect_from:
+- /en/hypernode/email/how-to-use-e-mail-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/email/how-to-use-e-mail-on-hypernode/ -->

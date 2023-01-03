@@ -1,3 +1,8 @@
+---
+redirect_from:
+- /en/services/control-panel/how-to-schedule-an-up-or-downgrade/
+---
+
 <!-- source: https://support.hypernode.com/en/services/control-panel/how-to-schedule-an-up-or-downgrade/ -->
 
 # How to Schedule an Up -or Downgrade

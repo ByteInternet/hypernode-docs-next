@@ -1,3 +1,8 @@
+---
+redirect_from:
+- /en/best-practices/security/how-to-protect-magento-against-brute-force-attacks/
+---
+
 <!-- source: https://support.hypernode.com/en/best-practices/security/how-to-protect-magento-against-brute-force-attacks/ -->
 
 # How to Protect Magento Against Brute Force Attacks

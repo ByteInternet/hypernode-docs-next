@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: 'By adding HTTP headers to a file or location, you can provide additional
       information for several reasons. Find out how to add customer HTTP headers here. '
+redirect_from:
+- /en/hypernode/nginx/how-to-add-custom-http-headers-to-a-file-or-location/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-add-custom-http-headers-to-a-file-or-location/ -->

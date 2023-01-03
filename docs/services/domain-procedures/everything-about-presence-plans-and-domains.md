@@ -4,6 +4,8 @@ myst:
     description: A Presence plan can be used to register a domain but also to redirect
       your domain to a website. Read how you can use a Presence plan at Hypernode
       here
+redirect_from:
+- /en/services/domains/everything-about-presence-plans-and-domains/
 ---
 
 <!-- source: https://support.hypernode.com/en/services/domains/everything-about-presence-plans-and-domains/ -->

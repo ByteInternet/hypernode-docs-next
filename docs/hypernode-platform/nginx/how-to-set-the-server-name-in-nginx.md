@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: Hypernode makes use of Nginx for better performance and to allow
       more visitors. This article explains how to set the server name in Nginx.
+redirect_from:
+- /en/hypernode/nginx/how-to-set-the-server-name-in-nginx/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-set-the-server-name-in-nginx/ -->

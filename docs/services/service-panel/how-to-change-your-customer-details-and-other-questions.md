@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: 'Administrative changes can be done through the Service Panel (or
       via a letter) due to security reasons. Read how to change customer details here. '
+redirect_from:
+- /en/about/billing/how-to-change-your-customer-details-and-other-questions/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/billing/how-to-change-your-customer-details-and-other-questions/ -->

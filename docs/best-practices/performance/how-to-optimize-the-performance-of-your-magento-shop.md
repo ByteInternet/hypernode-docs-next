@@ -4,6 +4,8 @@ myst:
     description: Hypernode offers several optimizations which improve the load times
       and stability of your shop. Find detailed instructions on the different optimizations
       here.
+redirect_from:
+- /en/best-practices/performance/how-to-optimize-the-performance-of-your-magento-shop/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/performance/how-to-optimize-the-performance-of-your-magento-shop/ -->

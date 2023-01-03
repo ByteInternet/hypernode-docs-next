@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: The Service Panel works with a central login, which enables users
       to easily manage multiple plans. This article explains different scenarios.
+redirect_from:
+- /en/about/support/different-service-panel-scenarios/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/support/different-service-panel-scenarios/ -->

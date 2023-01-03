@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: 'Find out here about the two different Presence plans Hypernode offers
       and how to order them. '
+redirect_from:
+- /en/getting-started/how-to-order/how-to-order-a-domain-presence-plan/
 ---
 
 <!-- source: https://support.hypernode.com/en/getting-started/how-to-order/how-to-order-a-domain-presence-plan/ -->

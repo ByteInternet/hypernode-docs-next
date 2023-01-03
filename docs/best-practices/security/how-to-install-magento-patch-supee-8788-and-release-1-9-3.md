@@ -4,6 +4,8 @@ myst:
     description: 'The patch SUPEE 8788 and release 1.9.3 fix about 17 issues, of which
       some are highly critical. In this article you find guidelines to install the
       patch. '
+redirect_from:
+- /en/best-practices/security/how-to-install-magento-patch-supee-8788-and-release-1-9-3/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/security/how-to-install-magento-patch-supee-8788-and-release-1-9-3/ -->

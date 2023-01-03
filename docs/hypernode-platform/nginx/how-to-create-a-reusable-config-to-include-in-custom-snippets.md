@@ -4,6 +4,8 @@ myst:
     description: 'You can use include statement in Nginx to avoid duplicate configurations
       for multiple locations. In this article we explain the different options for
       you. '
+redirect_from:
+- /en/hypernode/nginx/how-to-create-a-reusable-config-to-include-in-custom-snippets/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-create-a-reusable-config-to-include-in-custom-snippets/ -->
