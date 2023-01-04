@@ -1,0 +1,5 @@
+#!/usr/bin/env python3
+from hypernode.redirect.generate_nginx_redirects import main
+
+if __name__ == "__main__":
+    main()
