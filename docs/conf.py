@@ -3,6 +3,7 @@
 # This file only contains a selection of the most common options. For a full
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
+import os
 
 # -- Path setup --------------------------------------------------------------
 
@@ -71,6 +72,8 @@ html_context = {
 }
 html_show_sphinx = False
 html_show_sourcelink = False
+if os.getenv("DOCS_BASE_URL"):
+    html_baseurl = os.getenv("DOCS_BASE_URL")
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
