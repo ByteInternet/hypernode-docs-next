@@ -72,8 +72,12 @@ html_context = {
 }
 html_show_sphinx = False
 html_show_sourcelink = False
+
+sitemap_url_scheme = "{link}"
+
 if os.getenv("DOCS_BASE_URL"):
     html_baseurl = os.getenv("DOCS_BASE_URL")
+    extensions.append("sphinx_sitemap")  # Only generate sitemap when we have a base url
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
