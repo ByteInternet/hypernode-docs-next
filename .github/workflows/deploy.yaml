@@ -22,6 +22,10 @@ jobs:
       - uses: webfactory/ssh-agent@v0.5.4
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Set env for production build
+        if: github.ref == 'refs/heads/master'
+        run: |
+          echo "DOCS_BASE_URL=docs.hypernode.io" >> $GITHUB_ENV
       - run: hypernode-deploy build -vvv
       - name: archive production artifacts
         uses: actions/upload-artifact@v3
