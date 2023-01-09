@@ -6,6 +6,7 @@ myst:
       it here.
 redirect_from:
   - /en/best-practices/testing/hypernode-docker/
+  - /knowledgebase/hypernode-docker/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/testing/hypernode-docker/ -->
@@ -18,7 +19,7 @@ Interested in a case study? Read [this article](https://blog.guapa.nl/local-deve
 
 ## About the Hypernode Docker Image
 
-We build this image multiple times a day (every time we do a [release](https://support.hypernode.com/category/changelog/)) by applying our configuration management on the [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker) ['fat' container](https://blog.phusion.nl/2015/01/20/baseimage-docker-fat-containers-treating-containers-vms/). By treating the Docker as a lightweight VM instead of as a vehicle for a single process we stay close to what an actual Hypernode actually looks like. No micro-services or a multi-container application, but a single instance with minimal network overhead and all batteries included.
+We build this image multiple times a day (every time we do a [release](https://changelog.hypernode.com/)) by applying our configuration management on the [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker) ["fat" container](https://blog.phusion.nl/2015/01/20/baseimage-docker-fat-containers-treating-containers-vms/). By treating the Docker as a lightweight VM instead of as a vehicle for a single process we stay close to what an actual Hypernode actually looks like. No micro-services or a multi-container application, but a single instance with minimal network overhead and all batteries included.
 
 The `hypernode-docker` image has SSH, PHP, NGINX, MySQL, Redis, Varnish and Elasticsearch. The biggest difference between a real Hypernode and this container is that this environment does not have an [init system](https://en.wikipedia.org/wiki/Init). While it is possible to [run systemd within a Docker Container](https://developers.redhat.com/blog/2014/05/05/running-systemd-within-docker-container/) if the host is also runs [systemd](https://www.freedesktop.org/wiki/Software/systemd/), we choose not to do so to achieve greater compatibility and user-friendliness.
 
@@ -64,13 +65,13 @@ hypernode-importer --host yourhypernode.hypernode.io --path /data/web/public --s
 
 To see the container in your browser you should change the base-url to “[http://127.0.0.1:8080/”](http://127.0.0.1:8080/%E2%80%9D) and don’t forget to flush your cache afterwards:
 
-#### **Magento 1**[How to change base-urls in Magento 1](https://support.hypernode.com/knowledgebase/change-baseurl-magento1/#Configuring_your_base_URL8217s_using_SSH)
+#### **Magento 1**[How to change base-urls in Magento 1](../../ecommerce-applications/magento-1/how-to-change-the-base-url-in-magento-1-x.md)
 
 ```
 magerun ca:fl
 ```
 
-#### **Magento 2**[How to change base-url in Magento 2](https://support.hypernode.com/en/ecommerce/magento-2/how-to-change-your-magento-2-base-urls)
+#### **Magento 2**[How to change base-url in Magento 2](../../ecommerce-applications/magento-2/how-to-change-your-magento-2-base-urls.md)
 
 ```
 magerun ca:fl
@@ -289,9 +290,9 @@ app@e4b7d958e69c:~$ ls /etc/hypernode/is_docker
 /etc/hypernode/is_docker
 ```
 
-5.
+5. Import application
 
-Run the [hypernode-importer](https://support.hypernode.com/knowledgebase/migrating-your-magento-to-hypernode/#Option_2_Migrate_your_shop_via_Shell_using_hypernode-importer_8211_Magento_1_2) to import a shop from a real Hypernode:
+Run the [hypernode-importer](../../hypernode-platform/tools/how-to-migrate-your-shop-to-hypernode.md#option-2-for-all-customers-migrate-your-shop-via-shell-using-the-hypernode-importer) to import a shop from a real Hypernode:
 
 ```
 hypernode-importer --host yourhypernode.hypernode.io --path /data/web/public --set-default-url

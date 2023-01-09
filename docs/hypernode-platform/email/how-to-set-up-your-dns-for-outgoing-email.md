@@ -17,17 +17,14 @@ In order to stop spam, and ensure reliable delivery of your webshop’s emails, 
 
 ## Adding DNS Records
 
-Please add the following DNS records to your nameservers, to authenticate your domain. If you already have an SPF record (the fourth record in the table) in place please check out our documentation on [SPF](https://support.hypernode.com/en/hypernode/dns/how-to-set-up-your-spf-records-for-hypernode), or contact our support for assistance on how to merge the SPF content into your existing values.
+Please add the following DNS records to your nameservers, to authenticate your domain. If you already have an SPF record (the fourth record in the table) in place please check out our documentation on [SPF](../dns/how-to-set-up-your-spf-records-for-hypernode.md), or contact our support for assistance on how to merge the SPF content into your existing values.
 
-|                                       |          |         |                                                                  |
-| ------------------------------------- | -------- | ------- | ---------------------------------------------------------------- |
-| **Name**                              | **Type** | **TTL** | **Content**                                                      |
-| x-transip-mail-auth.***example.com*** | TXT      | 600     | f491ddb3e61d1c92ab6de9f81257b1c0b95986d6550517f005c8e5e895da6fd2 |
-
-|
-| \_domainkey.***example.com*** | TXT | 600 | o=~ |
-| hypernode.\_domainkey.***example.com*** | CNAME | 600 | hypernode.\_domainkey.***example***.hypernode.io |
-| ***example.com*** | TXT | 600 | v=spf1 include:spf.***example***.hypernode.io ~all |
+| Name                                    | Type  | TTL | Content                                                          |
+| --------------------------------------- | ----- | --- | ---------------------------------------------------------------- |
+| x-transip-mail-auth.***example.com***   | TXT   | 600 | f491ddb3e61d1c92ab6de9f81257b1c0b95986d6550517f005c8e5e895da6fd2 |
+| \_domainkey.***example.com***           | TXT   | 600 | o=~                                                              |
+| hypernode.\_domainkey.***example.com*** | CNAME | 600 | hypernode.\_domainkey.***example***.hypernode.io                 |
+| ***example.com***                       | TXT   | 600 | v=spf1 include:spf.***example***.hypernode.io ~all               |
 
 ## Validating your DNS records
 
@@ -49,4 +46,4 @@ example.com - mail_auth: ok, dkim_hypernode: ok, spf_record: ok
 example.nl - mail_auth: error, dkim_hypernode: ok, spf_record: ok
 ```
 
-In this instance the audit gives a green light for **example.com**. From this domain you will be able to send email through your Hypernode and application. For the domain **example.nl** there is one mandatory DNS record missing, namely the **x-transip-mail-auth** This will lead to email from the domain **example.nl** to be **not send** and being held in your email queue. How to manage your email queue can be found in this [article](https://support.hypernode.com/en/hypernode/email/how-to-manage-your-email-queue).
+In this instance the audit gives a green light for **example.com**. From this domain you will be able to send email through your Hypernode and application. For the domain **example.nl** there is one mandatory DNS record missing, namely the **x-transip-mail-auth** This will lead to email from the domain **example.nl** to be **not send** and being held in your email queue. How to manage your email queue can be found in this [article](how-to-manage-your-email-queue.md).

@@ -18,7 +18,7 @@ You can edit the DNS setting for your domain names in the Service Panel (Instell
 
 It takes 24 hours for a DNS change to be implemented everywhere. Take this into account.
 
-More information about DNS settings for your Magento webshop on Hypernode technology, for example how to manage your DNS settings for a Hypernode can be found [here](https://support.hypernode.com/en/hypernode/dns/how-to-manage-your-dns-settings-for-hypernode).
+More information about DNS settings for your Magento webshop on Hypernode technology, for example how to manage your DNS settings for a Hypernode can be found [here](how-to-manage-your-dns-settings-for-hypernode.md).
 
 ## Manage DNS With a Third Party
 
@@ -30,7 +30,7 @@ nsb.byte.nl
 
 nsc.byte.nl
 
-If it is not possible to change the name servers at your domain provider you can find how to direct your domain to your Hypernode [here](https://support.hypernode.com/en/hypernode/dns/how-to-manage-your-dns-settings-for-hypernode#Manage-your-own-DNS%3A-CNAME-for-the-www-record).
+If it is not possible to change the name servers at your domain provider you can find how to direct your domain to your Hypernode [here](how-to-manage-your-dns-settings-for-hypernode.md#option-2-manage-an-external-dns-by-pointing-your-domain-to-hypernode-by-using-cname-and-not-an-a-record).
 
 ## How Does DNS Work at Hypernode?
 
@@ -160,11 +160,11 @@ An SOA record is mainly used for the internal communication of different DNS ser
 
 ### SPF Records
 
-With an SPF record you can define which mail servers are allowed to send email for that particular domain (and prevent spam from being sent from your domain). You can find more information about SPF records and how to use them for Hypernode [here](https://support.hypernode.com/en/hypernode/dns/how-to-set-up-your-spf-records-for-hypernode).
+With an SPF record you can define which mail servers are allowed to send email for that particular domain (and prevent spam from being sent from your domain). You can find more information about SPF records and how to use them for Hypernode [here](how-to-set-up-your-spf-records-for-hypernode.md).
 
 ## DNS Caching
 
-DNS Caching means that the content of a DNS record is stored on a server between your computer and the authoritative name server. Some providers store this data longer than specified in the TTL, so it can take up to a day for the changes to your DNS record to take effect everywhere. This is something to keep in mind when changing DNS settings. There is very little you can do about it that the whole world does not immediately see your new site (most of it), but as a developer it is of course annoying. Fortunately, there is a (local) solution, namely the hosts file. This is a file where you can enter hostnames and IP addresses yourself. This way you can link a domain name to an IP address so that when you visit this domain name, the DNS server is no longer consulted and you are always referred to the same IP address.Please see[this article](https://support.hypernode.com/en/best-practices/testing/how-to-test-your-website-by-changing-your-hosts-file) for more information about the host file.
+DNS Caching means that the content of a DNS record is stored on a server between your computer and the authoritative name server. Some providers store this data longer than specified in the TTL, so it can take up to a day for the changes to your DNS record to take effect everywhere. This is something to keep in mind when changing DNS settings. There is very little you can do about it that the whole world does not immediately see your new site (most of it), but as a developer it is of course annoying. Fortunately, there is a (local) solution, namely the hosts file. This is a file where you can enter hostnames and IP addresses yourself. This way you can link a domain name to an IP address so that when you visit this domain name, the DNS server is no longer consulted and you are always referred to the same IP address.Please see[this article](../../best-practices/testing/how-to-test-your-website-by-changing-your-hosts-file.md) for more information about the host file.
 
 ### DKIM and DMARC
 

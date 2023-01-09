@@ -5,6 +5,7 @@ myst:
       shop to Hypernode for testing on this page. '
 redirect_from:
   - /en/hypernode/tools/how-to-migrate-your-shop-to-hypernode/
+  - /knowledgebase/migrating-your-magento-to-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-migrate-your-shop-to-hypernode/ -->
@@ -22,7 +23,7 @@ Congratulations with your brand new Hypernode! In case you already have a shop, 
 - Shopware 5
 - Shopware 6
 
-Before importing your shop, make sure your [vhost](https://support.hypernode.com/a/solutions/articles/48000981127?lang=en) is of the right `type`. You can verify that by listing the existing vhosts with the following command: `hypernode-manage-vhosts --list`. This will generate a list of every vhost, their type and some additional information that might be interesting.
+Before importing your shop, make sure your [vhost](../nginx/hypernode-managed-vhosts.md) is of the right `type`. You can verify that by listing the existing vhosts with the following command: `hypernode-manage-vhosts --list`. This will generate a list of every vhost, their type and some additional information that might be interesting.
 
 If your vhost isn't the right `type`, you should chance the type of the vhost. You can achieve this by the following command:
 
@@ -54,7 +55,7 @@ When you select the maintenance box in the importer tool in the Service Panel, t
 
 \*If your domain is hosted at Hypernode, there is a quick and easy way to switch your DNS to the Hypernode. Login into the [Service Panel](https://service.byte.nl). Make sure your Hypernode is selected in the dropdown menu -> Instellingen -> SSL & DNS instellingen -> Find your domain in the list -> change the 'Beschikbaar' value into 'Koppel domeinnaam aan deze Hypernode'. Repeat these steps for all the domains that should be linked to your Hypernode.
 
-\*If your domain is being hosted externally, you need to change the DNS settings manually. Read [this article](https://support.hypernode.com/knowledgebase/dns-settings-hypernode/)to see which records you need to modify.
+\*If your domain is being hosted externally, you need to change the DNS settings manually. Read [this article](../dns/how-to-manage-your-dns-settings-for-hypernode.md)to see which records you need to modify.
 
 \*Although the Shop importer is a very easy way to import a shop, please keep in mind that is using the command line is a requirement. So if needed, find yourself an [experienced developer](https://www.byte.nl/partners#specialisms=Hypernode&cms=Magento) that can assist you with these tasks.
 
@@ -78,7 +79,7 @@ The `hypernode-importer` is a very comprehensive tool as it has several alternat
 
 Please follow these steps:
 
-- [Log in to your Hypernode with SSH](https://support.hypernode.com/knowledgebase/login-hypernode-ssh/)
+- [Log in to your Hypernode with SSH](../ssh/how-to-log-in-to-the-hypernode-with-ssh.md)
 - Use the `hypernode-importer`to automatically migrate the shop to your Hypernode. All data currently on your Hypernode will be overwritten. Its usage is simple:
   - `--host` Enter the SSH hostname
   - `--user` Enter the SSH user
@@ -96,7 +97,7 @@ Please follow these steps:
 
 ## Done Migrating?
 
-Done? Now it's time to[check if everything works](https://support.hypernode.com/a/solutions/articles/48000985053?lang=en) as it should!
+Done? Now it's time to[check if everything works](../../best-practices/testing/how-to-check-if-everything-works.md) as it should!
 
 ## Tips and Tricks
 

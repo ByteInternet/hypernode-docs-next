@@ -5,6 +5,7 @@ myst:
       commandline or the backend for example. Read instructions per way in this article. '
 redirect_from:
   - /en/ecommerce/magento-2/how-to-flush-the-magento-2-x-caches/
+  - /knowledgebase/magento-cache-management/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-flush-the-magento-2-x-caches/ -->

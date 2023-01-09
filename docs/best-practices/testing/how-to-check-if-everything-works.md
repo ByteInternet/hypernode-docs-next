@@ -21,20 +21,20 @@ A bigger checklist is available [on the Github account](https://gist.github.com/
 
 - Test all storefronts *(use the storefront view in MageReport Premium (only for Magento 1.x versions)).*
 - Test front pages, categories and product pages.
-- Test the catalog search functionality and additional indexers like [Elasticsearch](https://support.hypernode.com/knowledgebase/how-to-improve-your-magento-search/#ElasticSearch) or [Sphinx](https://support.hypernode.com/knowledgebase/how-to-improve-your-magento-search/#Sphinx)
+- Test the catalog search functionality and additional indexers like [Elasticsearch](../../best-practices/performance/how-to-improve-your-magento-search.md#elasticsearch) or [Sphinx](../../best-practices/performance/how-to-improve-your-magento-search.md#sphinx)
 - Verify whether the search pages are fully functional and if you don’t get 404 errors when visiting the products in the results.
-- Test [restricted areas](https://support.hypernode.com/knowledgebase/deny-access-locations-directories/) and [password protected directories](https://support.hypernode.com/knowledgebase/protect-a-directory-with-a-password-in-nginx/) (downloads, etc).
+- Test [restricted areas](../../hypernode-platform/nginx/how-to-deny-access-to-locations-and-directories.md) and [password protected directories](../../hypernode-platform/nginx/how-to-protect-your-magento-store-with-a-password-in-nginx.md) (downloads, etc).
 - Test if you can add new products through the Magento admin.
 - Test the admin functionality by flushing your cache, reindex your indexers and navigate through the Magento admin.
-- Test if your webshop [can send mail](https://support.hypernode.com/knowledgebase/hypernode-email-policy/) that [can be received](https://support.hypernode.com/en/ecommerce/magento-2/how-to-set-the-return-path-for-a-magento-2-shop) without [ending up in the spamfolder](https://support.hypernode.com/en/best-practices/email/how-to-prevent-spam-being-sent-from-your-name-or-email-address).
-- [Test if your cronjobs work](https://support.hypernode.com/knowledgebase/configure-cronjobs-on-hypernode/).
+- Test if your webshop [can send mail](../../hypernode-platform/email/policy-for-sending-email-on-hypernode.md) that [can be received](../../ecommerce-applications/magento-2/how-to-set-the-return-path-for-a-magento-2-shop.md) without [ending up in the spamfolder](../../best-practices/email/how-to-prevent-spam-being-sent-from-your-name-or-email-address.md).
+- [Test if your cronjobs work](../../hypernode-platform/tools/how-to-use-periodic-tasks-cronjobs-on-hypernode.md).
 - Test if all caching mechanisms using Memcached are replaced with Redis:
 
 ```nginx
 grep -Ri memcache /data/web/public/app/etc
 ```
 
-- Test if your timezone is set correctly. Instructions how to do this can be found in the article [Magento and UTC on Hypernode](https://support.hypernode.com/knowledgebase/magento-utc-hypernode/).
+- Test if your timezone is set correctly. Instructions how to do this can be found in the article [Magento and UTC on Hypernode](../../ecommerce-applications/magento-2/how-to-set-magento-2-x-to-the-utc-timezone.md).
 - Test if additional software (such as WordPress) works as well.
 - Verify that connections with external systems (CRM, inventory, analytics, etc) still work and keep working when the IP address of the node changes.
   In some cases you need to notify your external supplier of the new IP. Find your IP with the `ping example.hypernode.io` command.
@@ -49,10 +49,10 @@ grep -Ri memcache /data/web/public/app/etc
   Cancel your payment order to see if the callback requests and redirect from the payment provider to your shop is functional.
 - Test for images, css, js and mixed content warnings.
 - Test if all static content is loaded: View the console in your browser to check if there are javascript errors or 404 errors on stylesheets and js files.
-- Test if [the Magento API is accessible when used](https://support.hypernode.com/knowledgebase/enable-magento-api/).
-- Test if the sitemap is accessible for [Magento 1](https://support.hypernode.com/en/ecommerce/magento-1/how-to-create-a-sitemap-xml-for-magento-1-x)or [Magento 2](https://support.hypernode.com/en/ecommerce/magento-2/how-to-create-a-sitemap-xml-for-magento-2-x).
-- Test if [you can easily download the robots.txt file](https://support.hypernode.com/knowledgebase/create-robots-txt-magento1/) (Or for [Magento 2](https://support.hypernode.com/knowledgebase/create-robots-txt-magento-2/)).
+- Test if [the Magento API is accessible when used](../../ecommerce-applications/magento-2/how-to-enable-the-magento-2-api.md).
+- Test if the sitemap is accessible for [Magento 1](../../ecommerce-applications/magento-1/how-to-create-a-sitemap-xml-for-magento-1-x.md)or [Magento 2](../../ecommerce-applications/magento-2/how-to-create-a-sitemap-xml-for-magento-2-x.md).
+- Test if [you can easily download the robots.txt file](../../ecommerce-applications/magento-1/how-to-create-a-robots-txt-for-your-magento-1-shop.md) (Or for [Magento 2](../../ecommerce-applications/magento-2/how-to-create-a-robots-txt-for-magento-2-x.md)).
 - Test product and price import and export routines.
 - Test product push mechanisms for search engines.
 
-If every box has been checked, you can change the DNS settings of your original domain to Hypernode. Instructions on how to do this, can be found in the article [Go Live With Your Hypernode.](https://support.hypernode.com/en/best-practices/testing/how-to-go-live-with-your-hypernode)
+If every box has been checked, you can change the DNS settings of your original domain to Hypernode. Instructions on how to do this, can be found in the article [Go Live With Your Hypernode.](../../best-practices/testing/how-to-go-live-with-your-hypernode.md)

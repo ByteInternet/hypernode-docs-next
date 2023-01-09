@@ -16,7 +16,7 @@ But, this is not only applicable for acute security issues. As Magento nerds we 
 The following security issues named in Magereport will not pose a threat to Hypernode customers.
 
 - Security patch 5344 (Shoplift) - In February 2015, we implemented a platform fix within a matter of only 4 hours. Despite this fix, we still advise our customers to patch their shop(s).
-- Unprotected Magmi? - Standardly the access to Magmi is blocked. If you would like it to be unblocked, check [our Hypernode documentation](https://support.hypernode.com/en/hypernode/tools/unblocking-and-accessing-magmi-for-hypernode).
+- Unprotected Magmi? - Standardly the access to Magmi is blocked. If you would like it to be unblocked, check [our Hypernode documentation](../../hypernode-platform/tools/unblocking-and-accessing-magmi-for-hypernode.md).
 - Unmaintained server? - Hypernode always runs on safe software versions.
 - Unprotected version control? - For all shops on our platform, it is not possible to visit the git directory from the outside.
 - Security patch 5994 (admin disclosure) - We regularly check whether a login is attempted and cover it.

@@ -32,4 +32,4 @@ location /api {
 }
 ```
 
-NB: If you don’t want to update IP addresses in all config files with every change of IP address, you can choose to use [**include files**](https://support.hypernode.com/knowledgebase/create-reusable-config-for-custom-snippets/).
+NB: If you don’t want to update IP addresses in all config files with every change of IP address, you can choose to use [**include files**](../../hypernode-platform/nginx/how-to-create-a-reusable-config-to-include-in-custom-snippets.md).

@@ -40,7 +40,7 @@ Over the last years Magento made many performance improvements to their software
 
 It is recommended to upgrade your PHP version to PHP 7 as this causes a massive improvement in speed. Before you switch the PHP version, make sure your shop and all extensions are ready to be used with PHP 7 first.
 
-On Hypernode you can easily order [development nodes](https://support.hypernode.com/en/hypernode/tools/how-to-use-hypernode-development-plans) or use the [Hypernode Docker](https://support.hypernode.com/en/best-practices/testing/hypernode-docker) to get your Magento installation running on PHP 7 without risking your production shop. More information can be found in [our article about PHP 7](https://support.hypernode.com/knowledgebase/php-7/).
+On Hypernode you can easily order [development nodes](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) or use the [Hypernode Docker](../../best-practices/testing/hypernode-docker.md) to get your Magento installation running on PHP 7 without risking your production shop.
 
 ## Avoid IonCube Extensions (\<5 mins)
 
@@ -83,17 +83,17 @@ Bots happen to get stuck in this enormous list of urls, causing an increase in l
 
 Another critical performance killer is the catalog search functionality. Many crawlers recognise the results of a search query as a product page that should be indexed. Because the catalog search for Magento is one of the heaviest features in resource costs, it is highly recommended to block these too.
 
-To reduce these effects caused by crawlers and bots,[block all dynamic entry points that should not be accessible by bots](https://support.hypernode.com/knowledgebase/fixing-bad-performance-caused-by-search-engines/). If you block these entry points using a status code 410, you tell the bots to drop the URL from the index and stop indexing it in the future.
+To reduce these effects caused by crawlers and bots,[block all dynamic entry points that should not be accessible by bots](../../best-practices/performance/how-to-fix-performance-issues-caused-by-bots-and-crawlers.md). If you block these entry points using a status code 410, you tell the bots to drop the URL from the index and stop indexing it in the future.
 
 ## Use HTTPS so You Can Take Advantage of HTTP2 (\<10 mins)
 
 On Hypernode we recommend to serve your shop only over HTTPS. This is safer and is better for search indexation optimization.
 
-Most of the available browsers only support HTTP2 when your pages are served over SSL so to use this faster technology, order an SSL certificate and make sure your site [is only served over HTTPS](https://support.hypernode.com/en/hypernode/nginx/how-to-configure-your-shop-to-only-use-https).
+Most of the available browsers only support HTTP2 when your pages are served over SSL so to use this faster technology, order an SSL certificate and make sure your site [is only served over HTTPS](../../hypernode-platform/nginx/how-to-configure-your-shop-to-only-use-https.md).
 
 ## 404 Handling (5 mins)
 
-Make sure 404 pages are not redirected to your catalog search and reduce load times of pages by moving [404 handling from Magento to Nginx](https://support.hypernode.com/knowledgebase/magento-and-smarter-404-handling/).
+Make sure 404 pages are not redirected to your catalog search and reduce load times of pages by moving [404 handling from Magento to Nginx](../../best-practices/performance/how-to-set-up-smart-404-handling.md).
 
 ## Large `core_url_rewrite` Table (10 mins)
 
@@ -111,13 +111,13 @@ Try to use price rules as little as possible and check your MySQL slow log for s
 
 Lesti FPC is a full page cache module that can massively improve the load times of your product pages.
 
-We recommend the use of Lesti FPC on Hypernode, as it reduces server load and makes the shop much faster to load. [How to install can be found in our documentation.](https://support.hypernode.com/knowledgebase/configure-lestifpc/)
+We recommend the use of Lesti FPC on Hypernode, as it reduces server load and makes the shop much faster to load. [How to install can be found in our documentation.](../../hypernode-platform/tools/how-to-configure-lesti-fpc.md)
 
 ## Warm Caches and Test URL’s Using the Sitemap (\<10 mins)
 
 When using a full page cache module like Lesti FPC or Varnish, the site gets a lot faster after the first visit when the page has been cached. We recommend to warm the caches periodically. This can be nightly through cron, or manually after adding many new products.
 
-This can be done [using the n98-plugin available on all Hypernodes](https://support.hypernode.com/knowledgebase/warm-full-page-cache-lestifpc-varnish/). To make use of this script, [a sitemap.xml file should be present](https://support.hypernode.com/en/ecommerce/magento-2/how-to-create-a-sitemap-xml-for-magento-2-x)([Magento 2](https://support.hypernode.com/en/ecommerce/magento-2/how-to-create-a-sitemap-xml-for-magento-2-x)).
+This can be done [using the n98-plugin available on all Hypernodes](../../ecommerce-applications/magento-2/how-to-configure-varnish-for-magento-2-x.md#warming-your-cache). To make use of this script, [a sitemap.xml file should be present](../../ecommerce-applications/magento-2/how-to-create-a-sitemap-xml-for-magento-2-x.md).
 
 ## Sessions in Redis (\<15 mins)
 
@@ -125,11 +125,11 @@ On bigger Hypernodes with more memory available, you can reduce disk IO by stori
 
 This only works on bigger nodes, as there needs to be some memory available for rendering pages using PHP too.
 
-To store sessions in Redis, take a look at [the instructions on how to configure this](https://support.hypernode.com/knowledgebase/configure-sessions-redis-magento1/) ([Magento 2](https://support.hypernode.com/knowledgebase/configure-sessions-redis-magento2/))
+To store sessions in Redis, take a look at [the instructions on how to configure this](../../ecommerce-applications/magento-1/how-to-configure-redis-for-magento-1.md) ([Magento 2](../../ecommerce-applications/magento-2/how-to-configure-redis-for-magento-2.md))
 
 ## Image Optimizations (10 mins)
 
-Big images take more time to download and view than smaller images. We created a resize tool to reduce the size of your images to improve load times. To do this, use the Hypernode-image-optimizer which is installed on all nodes. It’s recommended to run this command nightly through cron. More information can be found in [this article about optimizing your image size](https://support.hypernode.com/knowledgebase/magento-image-optimization-howto/).
+Big images take more time to download and view than smaller images. We created a resize tool to reduce the size of your images to improve load times. To do this, use the Hypernode-image-optimizer which is installed on all nodes. It’s recommended to run this command nightly through cron. More information can be found in [this article about optimizing your image size](../../best-practices/performance/how-to-optimize-your-images.md).
 
 ## Static Content Optimization (15 mins)
 
@@ -147,7 +147,7 @@ To do this, you can create a whitelist of IP’s that should only be allowed to 
 
 This whitelist can then be included in Nginx configuration on locations that are restricted.
 
-More information can be found [in our article about creating reusable config](https://support.hypernode.com/en/hypernode/nginx/how-to-create-a-reusable-config-to-include-in-custom-snippets).
+More information can be found [in our article about creating reusable config](../../hypernode-platform/nginx/how-to-create-a-reusable-config-to-include-in-custom-snippets.md).
 
 In this example your Magmi is accessible through `https://www.example.nl/magmi`.
 
@@ -180,7 +180,7 @@ It is highly recommended to protect your Magento admin backend and custom entry 
 
 Most of the default and well-known entry points that can be abused for password guessing are already protected.
 
-If you use custom entry points that can be abused, create [additional configuration using a whitelist](https://support.hypernode.com/knowledgebase/create-reusable-config-for-custom-snippets/) and include it in all location blocks that should be protected.
+If you use custom entry points that can be abused, create [additional configuration using a whitelist](../../hypernode-platform/nginx/how-to-create-a-reusable-config-to-include-in-custom-snippets.md) and include it in all location blocks that should be protected.
 
 For additional help to check if your shop is brute force protected, use [MageReport](https://magereport.com/).
 
@@ -194,7 +194,7 @@ To make sure a small set of IP addresses can’t take your shop down we use rate
 
 On smaller nodes (mostly on Hypernode Start and Grow plans) this can cause errors when working in the Magento admin. To resolve these errors, you can whitelist IP’s to make sure they will not be rate limited when working in the Magento admin backend. If you use nightly product imports through the Magento SOAP API, sometimes you need to whitelist the remote ip of the import tool as well.
 
-[To whitelist these IP’s have a look at our article about rate limiting](https://support.hypernode.com/en/hypernode/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests).
+[To whitelist these IP’s have a look at our article about rate limiting](../../hypernode-platform/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests.md).
 
 ## Configure Your API (\<10 mins)
 
@@ -202,4 +202,4 @@ With most of the Magento installations, the API functionality works out-of-the-b
 
 In some cases however, specific to the use of clean URL’s, a 404 is returned when visiting the Magento API.
 
-To fix this, use [this article about working with the Magento api on Hypernode](https://support.hypernode.com/knowledgebase/enable-magento-api/).
+To fix this, use [this article about working with the Magento api on Hypernode](../../ecommerce-applications/magento-2/how-to-enable-the-magento-2-api.md).

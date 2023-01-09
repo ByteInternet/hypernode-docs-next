@@ -11,7 +11,7 @@ redirect_from:
 
 # How to Change your Customer Details and Other Questions
 
-\*\*Please note that this only applies to Service Panel users who log in via service.byte.nl. Please see [this category](https://support.hypernode.com/en/services/control-panel/) for articles that apply to the Control Panel.\*\*For security reasons, you can only make administrative changes to your account when logged into the Service Panel. In this article we explain how you can edit your customer data.
+\*\*Please note that this only applies to Service Panel users who log in via service.byte.nl. Please see [this category](../control-panel.md) for articles that apply to the Control Panel.\*\*For security reasons, you can only make administrative changes to your account when logged into the Service Panel. In this article we explain how you can edit your customer data.
 
 ## Why Do I Need to Log Into the Service Panel?
 
@@ -72,7 +72,7 @@ Changes to your plan and the different customer relationships / roles for managi
 
 ### Up- and Downgrading
 
-Please see [this article](https://support.hypernode.com/en/about/billing/how-to-up-or-downgrade-your-hypernode-plan)for more information on how to up- or downgrade your plan.
+Please see [this article](../../about-hypernode/billing/how-to-up-or-downgrade-your-hypernode-plan.md)for more information on how to up- or downgrade your plan.
 
 ## Changing the Account Roles
 

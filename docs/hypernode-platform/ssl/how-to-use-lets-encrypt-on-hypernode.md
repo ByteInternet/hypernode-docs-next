@@ -6,6 +6,7 @@ myst:
       Hypernode.
 redirect_from:
   - /en/hypernode/ssl/how-to-use-let-s-encrypt-on-hypernode/
+  - /knowledgebase/use-lets-encrypt-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/ssl/how-to-use-let-s-encrypt-on-hypernode/ -->
@@ -29,7 +30,7 @@ See their website for more information about how to use [Let's Encrypt](https://
 
 ## Let’s Encrypt and Hypernode Managed Vhosts
 
-**Please note:** If you want to use Let’s Encrypt and have the [Hypernode Managed Vhosts (HMV)](https://support.hypernode.com/en/hypernode/nginx/hypernode-managed-vhosts) system enabled, you need to create a vhost for every domain you want to use Let’s Encrypt on or else it won’t work.
+**Please note:** If you want to use Let’s Encrypt and have the [Hypernode Managed Vhosts (HMV)](../nginx/hypernode-managed-vhosts.md) system enabled, you need to create a vhost for every domain you want to use Let’s Encrypt on or else it won’t work.
 
 First, check if HMV is enabled on your Hypernode:
 `hypernode-systemctl settings managed_vhosts_enabled`
@@ -148,7 +149,7 @@ magerun2 config:store:set web/secure/base_url https://my.hypernode.io
 magerun2 cache:clean
 ```
 
-Read more [here](https://support.hypernode.com/knowledgebase/dns-settings-hypernode/).
+Read more [here](../dns/how-to-manage-your-dns-settings-for-hypernode.md).
 
 Or, additionally you can make use of the scripts we created to change your baseurl provided for [Magento 1](https://gist.github.com/hn-support/0c76ebb5615a5be789997db2ae40bcdd) or for [Magento 2](https://gist.github.com/hn-support/083aabc8f9125b29098454cee1f25c89).
 
@@ -174,7 +175,7 @@ If you want to switch to an SSL certificate managed by Hypernode (for example yo
 - Remove the cronjob from your crontab
 - Renew the Nginx configuration by running `hypernode-ssl-config-generator`
 
-If you decide to not use any SSL certificate anymore and switch back to http (not recommended), don't forget to change your Magento base-url settings back to http, please see these docs for [Magento 1](https://support.hypernode.com/knowledgebase/change-baseurl-magento1/) and [Magento 2](https://support.hypernode.com/knowledgebase/change-baseurl-magento2/).
+If you decide to not use any SSL certificate anymore and switch back to http (not recommended), don't forget to change your Magento base-url settings back to http, please see these docs for [Magento 1](../../ecommerce-applications/magento-1/how-to-change-the-base-url-in-magento-1-x.md) and [Magento 2](../../ecommerce-applications/magento-2/how-to-change-your-magento-2-base-urls.md).
 
 ## Troubleshooting
 

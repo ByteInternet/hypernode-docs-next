@@ -6,6 +6,9 @@ myst:
       works.
 redirect_from:
   - /en/ecommerce/magento-2/how-to-configure-redis-for-magento-2/
+  - /knowledgebase/configure-sessions-redis-magento2/
+  - /knowledgebase/configure-redis-magento2/
+  - /knowledgebase/setup-php-redis-admin-manage-redis-caches/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-configure-redis-for-magento-2/ -->
@@ -14,7 +17,7 @@ redirect_from:
 
 Redis is a caching method which can increase the speed of the backend and frontend of your shop. On Hypernode every customer has access to Redis cache, starting from 64 MB, depending on the plan. This article will explain how to configure Redis on your Magento 2 shop on Hypernode and how to work with redis-cli.
 
-Want to know how to configure Redis in Magento 1? Have a look at [this article](https://support.hypernode.com/en/ecommerce/magento-1/how-to-configure-redis-for-magento-1)!
+Want to know how to configure Redis in Magento 1? Have a look at [this article](../../ecommerce-applications/magento-1/how-to-configure-redis-for-magento-1.md)!
 
 ## Configure Redis Cache for Magento 2
 
@@ -179,4 +182,4 @@ A more extended how-to about configuring Redis caches can be found on the [Magen
 
 As you know, the sessions of your webshop can also be stored in Redis. If you use Redis caching and store the sessions in Redis as well, you'll have to share the available Redis memory. This shouldn't be a problem on a regular basis, however we've seen scenarios wherein a shop stores its sessions in Redis and had some aggressive bots/crawlers visiting the shop. This resulted in a much larger amount of sessions to be stored in Redis than usual which is causing the Redis memory to fill up in no time, and crashes Redis.
 
-You can check the bot traffic on your shop at any time on MageReport. If you want to get a more detailed insight in the bot traffic you can use the command `pnl --yesterday --php --bots --fields ua | sort | uniq -c | sort -n`to get an overview of the top 10 bots that visited your webshop yesterday. For more information about abuse bot check our [article](https://support.hypernode.com/knowledgebase/fixing-bad-performance-caused-by-search-engines/).
+You can check the bot traffic on your shop at any time on MageReport. If you want to get a more detailed insight in the bot traffic you can use the command `pnl --yesterday --php --bots --fields ua | sort | uniq -c | sort -n`to get an overview of the top 10 bots that visited your webshop yesterday. For more information about abuse bot check our [article](../../best-practices/performance/how-to-fix-performance-issues-caused-by-bots-and-crawlers.md).

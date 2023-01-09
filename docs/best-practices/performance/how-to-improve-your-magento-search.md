@@ -6,6 +6,7 @@ myst:
       possibilities.
 redirect_from:
   - /en/best-practices/performance/how-to-improve-your-magento-search/
+  - /knowledgebase/how-to-improve-your-magento-search/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/performance/how-to-improve-your-magento-search/ -->
@@ -23,7 +24,7 @@ Another alternative is Sphinx Search. Sphinx is an open source search engine tha
 
 ## ElasticSearch
 
-While previously it was already possible to use ElasticSearch with your Hypernode by connecting to an external search provider, we have now made it possible to use ElasticSearch for search in your shop out of the box on Hypernode without requiring any external service or configuration. In[this article](https://support.hypernode.com/en/hypernode/tools/how-to-use-elasticsearch-on-hypernode) we’ll explain a bit more about ElasticSearch and how to enable and configure it.
+While previously it was already possible to use ElasticSearch with your Hypernode by connecting to an external search provider, we have now made it possible to use ElasticSearch for search in your shop out of the box on Hypernode without requiring any external service or configuration. In[this article](../../hypernode-platform/tools/how-to-use-elasticsearch-on-hypernode.md) we’ll explain a bit more about ElasticSearch and how to enable and configure it.
 
 Please note that due to the relatively heavy resource requirements for ElasticSearch this feature can only be enabled on every plan except the formerly known Grow plan. If you are on a smaller plan and previously already depended on an external paid ElasticSearch provider now might be a good time to consider simplifying your setup.
 
@@ -65,7 +66,7 @@ When adjusting the Sphinx settings, you should make use the following informatio
 
 ### Troubleshooting
 
-- When using the Mirasvit extension, Magento periodically restarts the Sphinx engine. If this happens too fast, the reload of Sphinx can be ratelimited causing the daemon to stop or to hang. To resolve this issue, whitelist the `Zend_Http_Client` as explained in [the instructions how to prevent a user agent from being rate limited](https://support.hypernode.com/knowledgebase/resolving-429-many-requests/#Ratelimitting_against_bots_and_crawlers).
+- When using the Mirasvit extension, Magento periodically restarts the Sphinx engine. If this happens too fast, the reload of Sphinx can be ratelimited causing the daemon to stop or to hang. To resolve this issue, whitelist the `Zend_Http_Client` as explained in [the instructions how to prevent a user agent from being rate limited](../../hypernode-platform/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests.md#rate-limiting-for-bots-and-crawlers).
 - If your shop is using too much memory, the `searchd` daemon can crash due to OOM. To resolve this upgrade to a bigger Hypernode, or improve the memory print of your webshop.
 - The `searchd`daemon is started from the Magento backend, but in case of a server reboot, memory issues or an otherwise very busy server the process kan be killed, causing an interruption in your search functionality. To circumvent these issues, add a cron that checks if the daemon is running and starts it if it’s not:
   - For Magento 1:

@@ -24,7 +24,7 @@ To get started with the PageSpeed Booster (formerly known as Percolate), you mus
 - ***A development environment hosted on Hypernode containing a copy/mirror of the production site.***
 - ***Varnish enabled on both the production and development environment.***
 - ***Time to thoroughly test the environment with the PageSpeed Booster enabled.***
-- ***The PageSpeed Booster implemented on your development environment according to [these steps](https://support.hypernode.com/en/troubleshooting/performance/how-to-implement-pagespeed-booster#Configuring-PageSpeed-Booster-on-your-Development-Environment) listed in our documentation.***
+- ***The PageSpeed Booster implemented on your development environment according to [these steps](../../troubleshooting/performance/how-to-implement-pagespeed-booster.md#configuring-pagespeed-booster-on-your-development-environment) listed in our documentation.***
 
 ## Step 1: Getting started
 
@@ -90,7 +90,7 @@ Take note that [Cloudflare RocketLoader](https://support.cloudflare.com/hc/en-us
 
 ## Step 3: Implementation of the PageSpeed Booster
 
-After following the above steps, it is now time to set up the necessary Hypernode server configuration for the PageSpeed Booster. These steps are written in our article [How to Implement PageSpeed Booster](https://support.hypernode.com/en/troubleshooting/performance/how-to-implement-pagespeed-booster). It is recommended to implement and use PSB first on your Development Hypernode and subdomain setup for PSB testing.
+After following the above steps, it is now time to set up the necessary Hypernode server configuration for the PageSpeed Booster. These steps are written in our article [How to Implement PageSpeed Booster](../../troubleshooting/performance/how-to-implement-pagespeed-booster.md). It is recommended to implement and use PSB first on your Development Hypernode and subdomain setup for PSB testing.
 
 The steps include:
 
@@ -98,7 +98,7 @@ The steps include:
 - Configure SSL and DNS
 - Configuring Varnish
 - Modifying your Varnish VCL configuration
-- Add the user agent **PSB**to the [allowlist for the ratelimiter](https://support.hypernode.com/en/hypernode/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests#Whitelisting-Additional-User-Agents) in\*\*~/nginx/http.ratelimit\*\* file
+- Add the user agent **PSB**to the [allowlist for the ratelimiter](../../hypernode-platform/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests.md#whitelisting-additional-user-agents) in `~/nginx/http.ratelimit` file
 - Turn off ESI Block Parsing
 - Add PageSpeed Booster as Flush Target
 

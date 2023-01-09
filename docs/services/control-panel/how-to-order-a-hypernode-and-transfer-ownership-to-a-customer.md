@@ -29,12 +29,11 @@ To order a new Hypernode plan, follow these steps:
 1. Click on the orange 'Order Hypernode' button on the right.
 1. Choose your Hypernode plan and click on the orange 'order now' button.
 1. Choose the needed Hypernode plan configuration, SLA and continue:
-
-![](_res/uA9B2g-CkfkMKHl6NxGYv7LI3Y_US-rgDg.png)
-6\. Read "[Step 2: Tips For Ordering a Hypernode](https://support.hypernode.com/en/services/control-panel/how-to-order-a-hypernode-and-transfer-ownership-to-a-customer#Step-2%3A-Tips-For-Ordering-a-Hypernode)"
-7\. Give your Hypernode a name and proceed to checkout.
-8\. Check if all information is correct and place your order.
-9\. The new Hypernode plan will be booted and you will receive an email when it's ready.
+   ![](_res/uA9B2g-CkfkMKHl6NxGYv7LI3Y_US-rgDg.png)
+1. Read "[Step 2: Tips For Ordering a Hypernode](../../services/control-panel/how-to-order-a-hypernode-and-transfer-ownership-to-a-customer.md#step-2-tips-for-ordering-a-hypernode)"
+1. Give your Hypernode a name and proceed to checkout.
+1. Check if all information is correct and place your order.
+1. The new Hypernode plan will be booted and you will receive an email when it's ready.
 
 Please note: if you are a Service Panel user (i.e. you use the Dutch panel), please order your new plans directly via [this page in the Service Panel](https://service.byte.nl/planinfo/order-selection/). This is to prevent plans from being booted in the wrong system.
 
@@ -44,8 +43,8 @@ Please note: if you are a Service Panel user (i.e. you use the Dutch panel), ple
 - Make sure you pick a node with enough disk space for both your shop and your database.
 - Don’t use environment indicators like staging test, testing, dev or development:
 - Without these indicators, you can easily change this node from a live to a test node without confusion or having to migrate to a server with another name.
-- Still developing a shop? Then [select a development environment first](https://support.hypernode.com/knowledgebase/development-plans-for-your-magento-shop/). When your Hypernode [is ready to go live](https://support.hypernode.com/knowledgebase/go-live-with-your-hypernode/) you can easily switch to a production node.
-- Use [this article to remove a Magento installation](https://support.hypernode.com/knowledgebase/remove-magento-installation/) in case you want to reuse an existing Hypernode or accidentally ordered a Hypernode with a preinstalled Magento on it.
+- Still developing a shop? Then [select a development environment first](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md). When your Hypernode [is ready to go live](../../best-practices/testing/how-to-go-live-with-your-hypernode.md) you can easily switch to a production node.
+- Use [this article to remove a Magento installation](../../ecommerce-applications/magento-2/how-to-remove-your-magento-2-x-installation.md) in case you want to reuse an existing Hypernode or accidentally ordered a Hypernode with a preinstalled Magento on it.
 
 ## Step 3: Transfer Ownership to your customer
 

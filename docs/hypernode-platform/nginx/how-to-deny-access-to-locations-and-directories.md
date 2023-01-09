@@ -5,6 +5,7 @@ myst:
       accessed through the web, create a location and deny access to it.
 redirect_from:
   - /en/hypernode/nginx/how-to-deny-access-to-locations-and-directories/
+  - /knowledgebase/deny-access-locations-directories/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-deny-access-to-locations-and-directories/ -->

@@ -6,6 +6,7 @@ myst:
       of your shop.
 redirect_from:
   - /en/best-practices/performance/how-to-find-your-performance-bottleneck-with-new-relic/
+  - /knowledgebase/new-relic-performance-management/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/performance/how-to-find-your-performance-bottleneck-with-new-relic/ -->

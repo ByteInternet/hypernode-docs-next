@@ -11,7 +11,7 @@ Because it is important to keep your hosting environment up to date we’re upgr
 
 ## Software Version Changes
 
-These are some of the versions of software available on the system that have changed in this OS upgrade. Note that this list is not exhaustive and only a snapshot of the situation of the platform during the moment of the initial transition between OS versions. Over time as the platform develops these versions might be mutated further. See the [Hypernode changelog](https://support.hypernode.com/changelog/) for the most up to date reports on changes to the platform.
+These are some of the versions of software available on the system that have changed in this OS upgrade. Note that this list is not exhaustive and only a snapshot of the situation of the platform during the moment of the initial transition between OS versions. Over time as the platform develops these versions might be mutated further. See the [Hypernode changelog](https://changelog.hypernode.com/) for the most up-to-date reports on changes to the platform.
 
 ### Webstack Related Packages
 

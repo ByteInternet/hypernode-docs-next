@@ -170,7 +170,7 @@ The script below was found during the research done by Hypernode. It covers the 
 
 Since Credit Card Hijack is an ongoing credit card fraud dating from May 2015, it’s difficult to pinpoint how exactly the hackers got in. We assume it’s due to a combination of various know Magento leaks. It’s likely hackers used these security vulnerablities to set up this credit card fraud.
 
-We recommend you ‘clean’ your shop following the steps written in the article [Recover a Hacked Magento Shop](https://support.hypernode.com/knowledgebase/recover-a-hacked-magento-shop/) after installing all Magento patches, deleting inactive Magento admins and removing malicious code.
+We recommend you ‘clean’ your shop following the steps written in the article [Recover a Hacked Magento Shop](../../best-practices/security/how-to-recover-a-hacked-magento-shop.md) after installing all Magento patches, deleting inactive Magento admins and removing malicious code.
 
 ## Need Help?
 

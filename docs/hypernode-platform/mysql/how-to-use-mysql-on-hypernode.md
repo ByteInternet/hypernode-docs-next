@@ -6,6 +6,7 @@ myst:
       are included.
 redirect_from:
   - /en/hypernode/mysql/how-to-use-mysql-on-hypernode/
+  - /knowledgebase/using-mysql-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/mysql/how-to-use-mysql-on-hypernode/ -->
@@ -38,7 +39,7 @@ host = mysqlmaster.example.hypernode.io
   - Can create your own databases;
   - Create users;
   - Define views and triggers.
-- If you want to use a GUI to work on your database we recommend using a local GUI ([HeidiSQL](https://support.hypernode.com/en/best-practices/database/how-to-use-heidisql-on-hypernode)) instead of an online GUI ([PHPMyAdmin](https://support.hypernode.com/en/hypernode/mysql/how-to-use-phpmyadmin)).
+- If you want to use a GUI to work on your database we recommend using a local GUI ([HeidiSQL](../../best-practices/database/how-to-use-heidisql-on-hypernode.md)) instead of an online GUI ([PHPMyAdmin](../mysql/how-to-use-phpmyadmin.md)).
 
 ## Whitelisting Your IP Address
 
@@ -153,7 +154,7 @@ You should consider using Magerun (see above), but you could use HeidiSQL to cre
 
 Hypernode offers several version of MySQL to be able to meet te requirements of several Magento, Shopware and Akeneo versions. For example, if you want to install Magento 2.4, you'd have to run MySQL 5.7 or 8.0.
 
-To upgrade your MySQL version you can use[the hypernode-systemctl tool](https://support.hypernode.com/en/hypernode/tools/how-to-use-the-hypernode-systemctl-cli-tool#MySQL) through the command line.
+To upgrade your MySQL version you can use[the hypernode-systemctl tool](../tools/how-to-use-the-hypernode-systemctl-cli-tool.md#mysql) through the command line.
 
 ```nginx
 hypernode-systemctl settings mysql_version --value 5.7

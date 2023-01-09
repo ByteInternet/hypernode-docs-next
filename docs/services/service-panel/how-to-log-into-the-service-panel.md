@@ -26,7 +26,7 @@ After creating a Hypernode account, you should have received an email containing
 
 ### Securing Your Account With Two Factor Authentication
 
-Two factor authentication, also known as two-step verification, is a more secure way of logging in than logging in with just a password, because everyone receives a unique code to log in. In [this article](https://support.hypernode.com/en/services/control-panel/how-to-use-2fa-for-the-control-panel) we explain how to enable two factor authentication on the Service Panel.
+Two factor authentication, also known as two-step verification, is a more secure way of logging in than logging in with just a password, because everyone receives a unique code to log in. In [this article](../control-panel/how-to-use-2fa-on-the-control-panel.md) we explain how to enable two factor authentication on the Service Panel.
 
 ## Forgotten Account Number
 

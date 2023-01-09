@@ -5,6 +5,7 @@ myst:
       avoid downtime when up- or downgrading here. '
 redirect_from:
   - /en/hypernode/dns/how-to-manage-your-dns-settings-for-hypernode/
+  - /knowledgebase/dns-settings-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/dns/how-to-manage-your-dns-settings-for-hypernode/ -->
@@ -75,7 +76,7 @@ If a domain is linked to a Hypernode, it’s no longer possible to manually chan
 - By letting us manage your DNS, you will also be able to use your apex domain
 - Preferably the TTL for the DNS records is low to make the transition to Hypernode quick. Please check this before making any changes to your DNS.
 
-## Option 2: Manage an external DNS by pointing your domain(s) to Hypernode by using CNAME and not an A-record
+## Option 2: Manage an external DNS by pointing your domain to Hypernode by using CNAME and not an A-record
 
 If you cannot transfer your DNS to Hypernode, you can choose to only point the CNAME record to your Hypernode. We do not recommend this option because you cannot use SSL on your naked (also called apex) domain name: yourdomain.com, without the ‘www.’-prefix.
 
@@ -122,7 +123,7 @@ yourdomain.com A 46.21.233.172
 
 ### Let's Encrypt and Wwwizers
 
-Also important to note is that [Let's Encrypt](https://support.hypernode.com/en/hypernode/ssl/how-to-use-let-s-encrypt-on-hypernode) does not work when you use the wwwizers, the Let's Encrypt validation cannot be completed and will return an error. The solution is to purchase a paid SSL certificate via us or to use the direct IP of your Hypernode instead.
+Also important to note is that [Let's Encrypt](../ssl/how-to-use-lets-encrypt-on-hypernode.md) does not work when you use the wwwizers, the Let's Encrypt validation cannot be completed and will return an error. The solution is to purchase a paid SSL certificate via us or to use the direct IP of your Hypernode instead.
 
 Don’t fancy these solutions? Migrate your domain to Hypernode and let us manage your DNS.
 
@@ -146,13 +147,13 @@ To add a new vhost, for example the domain name `www.example.com`, to your confi
 
 Please note that defining the vhosts '[www.example.com](http://www.example.com)', does not automatically add 'example.com' as a vhost. You will have to manually define a vhost for this. Since most people want their 'example.com' to redirect to '[www.example.com](http://www.example.com)', you can use the `--type wwwizer` argument to set this up. This will configure the vhost to redirect all traffic to the www-version of the domain.
 
-Read more about Hypernode Managed Vhosts in [this article](https://support.hypernode.com/en/hypernode/nginx/hypernode-managed-vhosts).
+Read more about Hypernode Managed Vhosts in [this article](../nginx/hypernode-managed-vhosts.md).
 
 ## Redirects in Nginx
 
 If you want to force a redirect to [www](http://www). or the non-[www](http://www). domain, you can use a redirect.
 
-You can read how this works [in this article](https://support.hypernode.com/knowledgebase/redirect-from-or-to-www/).
+You can read how this works [in this article](../nginx/how-to-redirect-from-or-to-www.md).
 
 ## Shop on a subdomain?
 

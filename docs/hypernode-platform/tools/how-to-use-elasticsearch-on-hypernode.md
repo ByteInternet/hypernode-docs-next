@@ -12,7 +12,7 @@ redirect_from:
 
 # How to Use Elasticsearch on Hypernode
 
-While previously it was already possible to use Elasticsearch with your Hypernode by [connecting to an external search provider](https://support.hypernode.com/knowledgebase/how-to-improve-your-magento-search/#ElasticSearch), we have now made it possible to use Elasticsearch for search in your Magento shop out of the box on Hypernode without requiring any external service or configuration. In this article we'll explain a bit more about Elasticsearch and how to enable and configure it.
+While previously it was already possible to use Elasticsearch with your Hypernode by [connecting to an external search provider](../../best-practices/performance/how-to-improve-your-magento-search.md#elasticsearch), we have now made it possible to use Elasticsearch for search in your Magento shop out of the box on Hypernode without requiring any external service or configuration. In this article we'll explain a bit more about Elasticsearch and how to enable and configure it.
 
 ## What is Elasticsearch?
 
@@ -22,13 +22,13 @@ The implementation of Elasticsearch on Hypernode is built for this primary use-c
 
 *If you do want to treat Elasticsearch as a primary database, you should not use the Elasticsearch instance on the Hypernode itself but arrange something externally instead. While we will keep the data between plan upgrades and downgrades, you should regard the built-in Elasticsearch on Hypernode as a cache (akin to how we treat Redis on Hypernode), and not as a consistent database. It is possible that due to future upgrade paths or as a result of a backup restore scenario the data stored in the Elasticsearch will be lost.*
 
-In our release note you'll find a [more detailed description of Elasticsearch.](https://support.hypernode.com/changelog/release-6270-elasticsearch-on-hypernode/)
+In our release note you'll find a [more detailed description of Elasticsearch.](https://changelog.hypernode.com/release-6270-elasticsearch-on-hypernode/)
 
 ## How to Enable Elasticsearch on Hypernode
 
 **Please note that when you change versions all Elasticsearch data will be deleted.**
 
-Elasticsearch can be enabled on all Hypernodes. To enable Elasticsearch, you can [talk to the API](https://community.hypernode.io/#/Documentation/hypernode-api/settings/README) or use the [hypernode-systemctl command-line tool](https://support.hypernode.com/knowledgebase/hypernode-systemctl-cli-tool/). First configure the Elasticsearch version you wish to use. You can see the available versions of Elasticsearch which you can use on your Hypernode when running hypernode-systemctl settings. This will show the following:
+Elasticsearch can be enabled on all Hypernodes. To enable Elasticsearch, you can [talk to the API](https://community.hypernode.io/#/Documentation/hypernode-api/settings/README) or use the [hypernode-systemctl command-line tool](../tools/how-to-use-the-hypernode-systemctl-cli-tool.md). First configure the Elasticsearch version you wish to use. You can see the available versions of Elasticsearch which you can use on your Hypernode when running hypernode-systemctl settings. This will show the following:
 
 ```bash
 $ hypernode-systemctl settings |& grep elasticsearch_version
@@ -61,7 +61,7 @@ elasticsearch_enabled is set to value False
 
 ```
 
-When you choose to enable Elasticsearch on a production node, keep in mind that Elasticsearch will use a lot of resources. We allocate up to 10% of the system memory as the [JVM heap](https://www.elastic.co/guide/en/elasticsearch/reference/current/heap-size.html), with a maximum of 10GB or RAM. Note that the service can have a big impact on the CPU and [IO utilization](https://support.hypernode.com/knowledgebase/magento-disk-performance-optimization/) of your Hypernode. If you notice adverse effects, you can disable the service again or consider upgrading (especially if you already have other opt-in features like [RabbitMQ enabled as well](https://support.hypernode.com/changelog/platform/release-6052-rabbitmq-on-hypernode/)).
+When you choose to enable Elasticsearch on a production node, keep in mind that Elasticsearch will use a lot of resources. We allocate up to 10% of the system memory as the [JVM heap](https://www.elastic.co/guide/en/elasticsearch/reference/current/heap-size.html), with a maximum of 10GB or RAM. Note that the service can have a big impact on the CPU and [IO utilization](../../troubleshooting/performance/how-to-optimise-your-magento-disk-performance.md) of your Hypernode. If you notice adverse effects, you can disable the service again or consider upgrading (especially if you already have other opt-in features like [RabbitMQ enabled as well](https://changelog.hypernode.com/release-6052-rabbitmq-on-hypernode/).
 
 To enable Elasticsearch you can run the following:
 
@@ -158,7 +158,7 @@ yellow open magento2_product_1_v2 0HHoI2ahT6CdX4Z5ybSKcw 5 1 187 0 469.2kb 469.2
 
 ```
 
-Note that the status is yellow instead of green. This is because the index was created with an expected number of replicas. Because on Hypernode there is no Elasticsearch cluster but there is just a single instance, this is expected. If you need guarantees about the replication of your Elasticsearch data we recommend that you use another solution. For some examples check [this list](https://support.hypernode.com/knowledgebase/how-to-improve-your-magento-search/) of external Elasticsearch providers that we recommend.
+Note that the status is yellow instead of green. This is because the index was created with an expected number of replicas. Because on Hypernode there is no Elasticsearch cluster but there is just a single instance, this is expected. If you need guarantees about the replication of your Elasticsearch data we recommend that you use another solution. For some examples check [this list](../../best-practices/performance/how-to-improve-your-magento-search.md) of external Elasticsearch providers that we recommend.
 
 You can configure your created index to expect an amount of zero replicas. That will turn the cluster status back to green. Since Elasticsearch 6`.x` it is not possible to set index level settings in the node configuration, but you can do so during runtime with this command:
 

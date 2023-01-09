@@ -22,7 +22,7 @@ This article explains how you set one up on Hypernode for a Magento 1 shop.
 
 Keep in mind:
 
-- Your staging environment **shares resources** (disk, CPU, memory) with your production site. If you want to do things such as automated load tests, it is recommended to order a [development plan](https://support.hypernode.com/knowledgebase/development-plans-for-your-magento-shop/) instead, so your production site will not be affected.
+- Your staging environment **shares resources** (disk, CPU, memory) with your production site. If you want to do things such as automated load tests, it is recommended to order a [development plan](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) instead, so your production site will not be affected.
 - We don't recommend creating hardlinks from your production media folder to your staging media folder as our backup mechanism does not cope well with hardlinks.
 
 ## How Does it Work
@@ -152,7 +152,7 @@ htpasswd -bc /data/web/htpasswd-staging hypernode hypernode
 
 ```
 
-Read more [here](https://support.hypernode.com/knowledgebase/protect-a-directory-with-a-password-in-nginx/)about using HTTP basic authentication on Hypernode.
+Read more [here](../../hypernode-platform/nginx/how-to-protect-your-magento-store-with-a-password-in-nginx.md) about using HTTP basic authentication on Hypernode.
 
 ## Nginx Configuration
 

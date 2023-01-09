@@ -13,7 +13,7 @@ redirect_from:
 
 Does your Magento 2 version need an upgrade? This article explains how to upgrade to the latest Magento 2 version. Do you have a Magento 1 shop? Please follow the instructions on this page.
 
-**N.B. You can’t update from Magento 1 to Magento 2. If you wish to use Magento 2, you’ll need a fresh install and start from the beginning. Read more about [How to install Magento 2 on Hypernode](https://support.hypernode.com/en/ecommerce/magento-2/how-to-install-magento-2-on-hypernode).**
+**N.B. You can’t update from Magento 1 to Magento 2. If you wish to use Magento 2, you’ll need a fresh install and start from the beginning. Read more about [How to install Magento 2 on Hypernode](how-to-install-magento-2-on-hypernode.md).**
 
 ## Why You Should Update Your Magento Webshop
 
@@ -25,7 +25,7 @@ Not updating your Magento can result in a bad performance and make your shop an 
 
 Whatever version you’re updating, we always recommend you follow these steps first:
 
-- Always make sure you have a recent and clean backup. Both a file- and database backup. You can restore your data quickly if anything goes wrong while updating. More information about making backups can be found in the article [Historical backups](https://support.hypernode.com/en/hypernode/backups/hypernode-backup-policy).
+- Always make sure you have a recent and clean backup. Both a file- and database backup. You can restore your data quickly if anything goes wrong while updating. More information about making backups can be found in the article [Historical backups](../../hypernode-platform/backups/hypernode-backup-policy.md).
 - Check the version's release notes to see what changes have been made.
 - Please choose a quiet moment to update your Magento. Preferably when there’s hardly any traffic on your site.
 - You can test an update on a staging environment, development Hypernode or the Hypernode Docker to ensure all aspects of your shop are compatible with the newest version.
@@ -37,7 +37,7 @@ Make sure you have a Magento account before you update your Magento 2 shop and c
 - Log on to your Magento backend.
 - Navigate to ‘System’.
 - Click ‘Web Setup wizard’.
-  - *If you can’t access the setup page, it’s possible the symlink wasn’t created when installing Magento 2.\*\*[To fix check this how to](https://support.hypernode.com/knowledgebase/using-magento-2-web-setup-wizard/).*
+  - *If you can’t access the setup page, it’s possible the symlink wasn’t created when installing Magento 2.\*\*[To fix check this how to](how-to-enable-the-magento-2-web-setup-wizard.md).*
 - Select the Magento version you wish to upgrade to and click ‘Next’.
 - Start the ‘Readiness check.’
 - Click ‘Next’ if possible; otherwise, resolve the issues that need fixing before continuing.
@@ -48,20 +48,20 @@ Make sure you have a Magento account before you update your Magento 2 shop and c
 Still not able to update Magento? Perhaps you haven’t connected your Magento shop with your Magento account yet:
 
 - First, get your secure keys by [following the steps in this article](http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html).
-- Add the public and private key to your shop via ‘System’ ->’ Web Setup Wizard’ -> ‘System config.’
-- Fill in the keys and click ‘Save config’.
-- Go back to ‘System upgrade’ to update your Magento version.
+- Add the public and private key to your shop via `System` -> `Web Setup Wizard` -> `System config`.
+- Fill in the keys and click `Save config`.
+- Go back to `System upgrade` to update your Magento version.
 
 ## Updating Magento 2 via Composer
 
 To update through composer, use the following commands:
 
-```nginx
+```bash
 export VERSION="2.0.2"
 cd ~/magento2
 
 composer require magento/product-community-edition $VERSION --no-update
-composer update<
+composer update
 
 rm -rf var/di var/generation
 php bin/magento cache:clean
@@ -74,8 +74,8 @@ php bin/magento indexer:reindex
 
 After upgrade, check your Magento version with the following command:
 
-```nginx
-php bin/magento --version
+```bash
+bin/magento --version
 ```
 
 ## Need Help?

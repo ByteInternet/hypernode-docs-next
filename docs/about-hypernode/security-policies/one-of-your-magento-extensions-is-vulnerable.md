@@ -48,7 +48,7 @@ Afterwards you should still have your webshop checked. It’s possible that your
 
 ## More information
 
-To verify if your shop is hacked or not, [use the article about recovering a hacked Magento shop](https://support.hypernode.com/knowledgebase/recover-a-hacked-magento-shop/)
+To verify if your shop is hacked or not, [use the article about recovering a hacked Magento shop](../../best-practices/security/how-to-recover-a-hacked-magento-shop.md)
 
 ## Need help?
 

@@ -6,6 +6,7 @@ myst:
       easier.
 redirect_from:
   - /en/hypernode/tools/how-to-use-the-hypernode-systemctl-cli-tool/
+  - /knowledgebase/hypernode-systemctl-cli-tool/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-the-hypernode-systemctl-cli-tool/ -->
@@ -40,7 +41,7 @@ To see which values you can set and which values they are allowed to have take a
 - `openvpn_enabled`: Enables [OpenVPN](https://community.hypernode.io/#/Documentation/hypernode-vpn/README?) for secure database connections
 - `override_sendmail_return_path`: Override the return-path (Due to the bug in Magento 2)
 - `password_auth`: indicates whether password authentication for the Hypernode is allowed instead of only SSH keys.
-- `permissive_memory_management`: Configure [memory management policy](https://support.hypernode.com/changelog/platform/release-5946-configurable-memory-management-policy-and-rss-bruteforce-detection/) (OOM kills)
+- `permissive_memory_management`: Configure [memory management policy](https://changelog.hypernode.com/release-5946-configurable-memory-management-policy-and-rss-bruteforce-detection/) (OOM kills)
 - `php_version`: Change the PHP version
 - `php_apcu_enabled`: Enable the PHP-apcu
 - `redis_persistent_instance`
@@ -70,13 +71,13 @@ If an invalid value is provided you will be notified of this during the setting 
 
 ### Blackfire
 
-- `blackfire_enabled`Indicates whether Blackfire is enabled. Check out [this article](https://support.hypernode.com/knowledgebase/profiling-magento-blackfire/) on how to set up Blackfire.
+- `blackfire_enabled`Indicates whether Blackfire is enabled. Check out [this article](../../best-practices/performance/how-to-use-blackfire-on-hypernode-to-find-performance-issues.md) on how to set up Blackfire.
 - `blackfire_server_token`The BlackFire server token for your Blackfire setup.
 - `blackfire_server_id` The BlackFire server ID for your Blackfire setup.
 
 ### Disable optimizer switch
 
-Indicates whether `use_index_extensions` and `mrr` are turned off. If turned off this can improve performance due to an issue in PHP 5.6 related to Multi-Range Read Optimization. For more information about this setting see this [changelog](https://support.hypernode.com/changelog/release-5340-block-ftp-access-sftp-used-systems-tweaks/#Opt-in_use_index_extensions_and_Multi-Range_Read_Optimization).
+Indicates whether `use_index_extensions` and `mrr` are turned off. If turned off this can improve performance due to an issue in PHP 5.6 related to Multi-Range Read Optimization. For more information about this setting see this [changelog](https://changelog.hypernode.com/release-5340-block-ftp-access-sftp-used-systems-tweaks/).
 
 ### Elasticsearch
 
@@ -89,30 +90,30 @@ This options allows you to enable IonCube if needed. Note: IonCube is a huge per
 
 ### Firewall block FTP
 
-Indicates whether FTP is completely blocked or not in favour of SFTP. For more information about this setting see this [changelog](https://support.hypernode.com/changelog/release-5340-block-ftp-access-sftp-used-systems-tweaks/).
+Indicates whether FTP is completely blocked or not in favour of SFTP. For more information about this setting see this [changelog](https://changelog.hypernode.com/release-5340-block-ftp-access-sftp-used-systems-tweaks/).
 
 ### Mailhog
 
-This options enables Mailhog. Mailhog is an email testing tool for developers. Check our [documentation](https://support.hypernode.com/knowledgebase/how-to-use-mailhog-on-hypernode/) for a more detailed explanation about Mailhog on Hypernode.
+This options enables Mailhog. Mailhog is an email testing tool for developers. Check our [documentation](../../hypernode-platform/tools/how-to-use-mailhog-on-hypernode.md) for a more detailed explanation about Mailhog on Hypernode.
 
 ### Managed Vhosts
 
-Eanble the Hypernode Managed Vhosts option to setup the Hypernode with a specific Nginx config which allows you to setup multiple domain names with their own independent Nginx configuration. See our [documentation](https://support.hypernode.com/en/hypernode/nginx/hypernode-managed-vhosts) for more information.
+Eanble the Hypernode Managed Vhosts option to setup the Hypernode with a specific Nginx config which allows you to setup multiple domain names with their own independent Nginx configuration. See our [documentation](../nginx/hypernode-managed-vhosts.md) for more information.
 
 ### Modern SSH config enabled
 
-Indicates whether this node will have a stricter set of SSH encryption algorithms enabled. See [this](https://support.hypernode.com/changelog/release-5139-stricter-ssh-encryption-algorithms/%22%3Ethis) [changelog](https://support.hypernode.com/changelog/release-5139-stricter-ssh-encryption-algorithms/) for more information about this setting.
+Indicates whether this node will have a stricter set of SSH encryption algorithms enabled. See [this changelog](https://changelog.hypernode.com/release-5139-stricter-ssh-encryption-algorithms/) for more information about this setting.
 
 ### Modern SSL config enabled
 
-Indicates whether this node will have the Mozilla Modern SSL configuration configured. This provides a higher level of security but loses compatibility with some browsers. For more information about this setting see [this changelog](https://support.hypernode.com/changelog/release-4582-updated-configurable-ssl-ciphers/).
+Indicates whether this node will have the Mozilla Modern SSL configuration configured. This provides a higher level of security but loses compatibility with some browsers. For more information about this setting see [this changelog](https://changelog.hypernode.com/release-4582-updated-configurable-ssl-ciphers/).
 
 ### MySQL
 
 - `mysql_version`: Change the MySQL version (note, once set to 5.7 this can't be reverted)
 - `mysql_disable_stopwords`
 
-This setting makes it possible to disable the built-in stopword file for MyISAM search indexes. Read the [changelog](https://support.hypernode.com/changelog/release-6079-opt-in-disable-stopwords-for-myisam-search-indexes/) for more information.
+This setting makes it possible to disable the built-in stopword file for MyISAM search indexes. Read the [changelog](https://changelog.hypernode.com/release-6079-opt-in-disable-stopwords-for-myisam-search-indexes/) for more information.
 
 - `mysql_ft_min_word_len`
 
@@ -120,21 +121,21 @@ This setting will make it possible to configure the ft_min_word_len for MySQL. T
 
 - `mysql_tmp_on_data_enabled`
 
-Indicates whether the MySQL tmp directory is located in the `/data/` directory of the `app` user or in the `/tmp/` directory of the `root` user. The `root` user does not have the same amount of space available as the `app` user, so enabling this might prevent MySQL from taking up all disk space at the cost of taking of the space of the `app` user. Mostly useful for large shops who create a lot of temporary tables with MySQL. For more information about this settings see [this changelog](https://support.hypernode.com/changelog/release-5133-configurable-mysql-temporary-directory-extra-space/).
+Indicates whether the MySQL tmp directory is located in the `/data/` directory of the `app` user or in the `/tmp/` directory of the `root` user. The `root` user does not have the same amount of space available as the `app` user, so enabling this might prevent MySQL from taking up all disk space at the cost of taking of the space of the `app` user. Mostly useful for large shops who create a lot of temporary tables with MySQL. For more information about this settings see [this changelog](https://changelog.hypernode.com/release-5133-configurable-mysql-temporary-directory-extra-space/).
 
 - `mysql_enable_large_thread_stack`
 
-This option allows you to use a larger MySQL thread_stack from 192K to 512K. Check our [changelog](https://support.hypernode.com/changelog/release-7083-opt-in-large-mysql-thread_stack/) for more information.
+This option allows you to use a larger MySQL thread_stack from 192K to 512K. Check our [changelog](https://changelog.hypernode.com/release-7083-opt-in-large-mysql-thread_stack/) for more information.
 
 ### Open VPN enabled
 
-Our Hypernode-vpn solution implements a standard OpenVPN TLS tunnel to the Hypernode. Which can be used to talk to the MySQL database securely. You simply enable OpenVPN on your Hypernode and all the required packages and configuration are installed automatically. The automation will generate a default user configuration which you can use to connect to the Hypernode. More information can be found [here](https://support.hypernode.com/knowledgebase/how-to-use-hypernode-vpn/)
+Our Hypernode-vpn solution implements a standard OpenVPN TLS tunnel to the Hypernode. Which can be used to talk to the MySQL database securely. You simply enable OpenVPN on your Hypernode and all the required packages and configuration are installed automatically. The automation will generate a default user configuration which you can use to connect to the Hypernode.
 
 ### Override sendmail return-path
 
 Indicates if this node has a return-path set. When you send emails from your Magento shop with no return-path set, the return-path will default to noreply@hypernode.io. This email address may be recognised as a spam address by spam filters, as it is a very generic email used on all Hypernodes without same email configuration.
 
-Check out [this article](https://support.hypernode.com/knowledgebase/set-return-path-email-sent-from-magento-shop/) for more information.
+Check out [this article](../../ecommerce-applications/magento-2/how-to-set-the-return-path-for-a-magento-2-shop.md) for more information.
 
 ### Password Auth
 
@@ -142,7 +143,7 @@ Indicates whether password authentication for the node is allowed instead of onl
 
 ### Permissive Memory Management
 
-Configure the OOM-killer to be permissive of short term memory usage, allowing memory hungry processes to run without executing overly drastic measures. For more information see our [documentation](https://support.hypernode.com/en/troubleshooting/performance/how-to-debug-out-of-memory-oom-events).
+Configure the OOM-killer to be permissive of short term memory usage, allowing memory hungry processes to run without executing overly drastic measures. For more information see our [documentation](../../troubleshooting/performance/how-to-debug-out-of-memory-oom-events.md).
 
 ### PHP
 
@@ -151,15 +152,15 @@ Configure the OOM-killer to be permissive of short term memory usage, allowing m
 
 ### Redis persistent instance
 
-Enable this feature to start another Redis instance for sessions instead of caching. Please note that this might require some changes on your end. For more information about this setting see [this changelog](https://support.hypernode.com/changelog/experimental-changes-redis-sessions-aws-performance/).
+Enable this feature to start another Redis instance for sessions instead of caching. Please note that this might require some changes on your end. For more information about this setting see [this changelog](https://changelog.hypernode.com/experimental-changes-redis-sessions-aws-performance/).
 
 ### RabbitMQ Enabled
 
-This options enables RabbitMQ which allows you to run tasks in the background. RabbitMQ is message-queueing software where queues can be defined. Applications can connect to the queue and transfer a message onto it. This way you can (for example) import many products into Magento without having to wait a substantial time until the process is finished. The import takes place in the background. Check our [documentation](https://support.hypernode.com/en/best-practices/database/how-to-run-rabbitmq-on-hypernode) for more information.
+This options enables RabbitMQ which allows you to run tasks in the background. RabbitMQ is message-queueing software where queues can be defined. Applications can connect to the queue and transfer a message onto it. This way you can (for example) import many products into Magento without having to wait a substantial time until the process is finished. The import takes place in the background. Check our [documentation](../../best-practices/database/how-to-run-rabbitmq-on-hypernode.md) for more information.
 
 ### Supervisor Enabled
 
-This option allows you to use Supervisor. Supervisor allows you to use programs that need to run all the time on your Hypernode. These (usually long running) programs should not fail if there is an error. To accomplish this Supervisor watches your programs and restarts them if they might fail. Supervisor works great for use cases where a web hook or metrics always needs to run. See the [changelog](https://support.hypernode.com/changelog/release-6892-supervisord-support/) for more information on Supervisor.
+This option allows you to use Supervisor. Supervisor allows you to use programs that need to run all the time on your Hypernode. These (usually long running) programs should not fail if there is an error. To accomplish this Supervisor watches your programs and restarts them if they might fail. Supervisor works great for use cases where a web hook or metrics always needs to run. See the [changelog](https://changelog.hypernode.com/release-6892-supervisord-support/) for more information on Supervisor.
 
 ### UnixODBC
 

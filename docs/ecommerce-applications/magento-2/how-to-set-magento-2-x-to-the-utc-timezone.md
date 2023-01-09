@@ -6,6 +6,7 @@ myst:
       2.x.
 redirect_from:
   - /en/ecommerce/magento-2/how-to-set-magento-2-x-to-the-utc-timezone/
+  - /knowledgebase/magento-utc-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-set-magento-2-x-to-the-utc-timezone/ -->

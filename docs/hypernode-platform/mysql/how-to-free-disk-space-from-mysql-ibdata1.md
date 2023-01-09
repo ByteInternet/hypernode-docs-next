@@ -6,6 +6,7 @@ myst:
       up disk space.
 redirect_from:
   - /en/hypernode/mysql/how-to-free-disk-space-from-mysql-ibdata1/
+  - /knowledgebase/free-diskspace-ibdata1/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/mysql/how-to-free-disk-space-from-mysql-ibdata1/ -->

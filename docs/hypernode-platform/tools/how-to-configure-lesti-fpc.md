@@ -16,13 +16,13 @@ Lesti::FPC is a FPC Full Page Caching module you can use to speed up the fronten
 
 More information about the internals of the module can be found on [the website of the developer of the module, Gordon Lesti.](https://gordonlesti.com/lesti-fpc-documentationversion-1-4-5/)
 
-A tutorial on how it works is available on the page [“How does Lesti::FPC work”](https://gordonlesti.com/how-does-lesti-fpc-work/) .
+A tutorial on how it works is available on the page [How does Lesti::FPC work](https://gordonlesti.com/how-does-lesti-fpc-work/).
 
 This module also works in combination with `Redis`.
 
-This article will explain how to configure Lesti::FPC and use it on Hypernode. It is however recommended to first enable [Redis Cache](https://support.hypernode.com/en/support/search/solutions?term=redis+cache) as your caching backend before proceeding with this tutorial.
+This article will explain how to configure Lesti::FPC and use it on Hypernode. It is however recommended to first enable [Redis Cache](../../ecommerce-applications/magento-1/how-to-configure-redis-for-magento-1.md) as your caching backend before proceeding with this tutorial.
 
-**NB: When you used the [hypernode-importer](https://support.hypernode.com/en/hypernode/tools/how-to-migrate-your-shop-to-hypernode#Option-2-for-all-customers%3A-Migrate-your-shop-via-Shell-using-hypernode-importer) and you were already using `Lesti::FPC`, you can skip this tutorial, as we already added the configuration for caching using `Lesti::FPC`.**
+**NB: When you used the [hypernode-importer](how-to-migrate-your-shop-to-hypernode.md#option-2-for-all-customers-migrate-your-shop-via-shell-using-the-hypernode-importer) and you were already using `Lesti::FPC`, you can skip this tutorial, as we already added the configuration for caching using `Lesti::FPC`.**
 
 ## Download Lesti::FPC
 
