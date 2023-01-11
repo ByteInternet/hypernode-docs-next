@@ -25,6 +25,12 @@ As Magento 2 supports Varnish out of the box, there is no need for the turpentin
 $ hypernode-systemctl settings varnish_version 4.0
 ```
 
+Some text above, **in bold**.
+
+```bash
+mkdir /data/web/varnish
+```
+
 **Or if you want to switch to Varnish 6.0**
 
 ```console
