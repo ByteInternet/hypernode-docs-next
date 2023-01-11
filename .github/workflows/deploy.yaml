@@ -25,7 +25,7 @@ jobs:
       - name: Set env for production build
         if: github.ref == 'refs/heads/master'
         run: |
-          echo "DOCS_BASE_URL=https://docs.hypernode.io" >> $GITHUB_ENV
+          echo "DOCS_BASE_URL=https://docs.hypernode.io/" >> $GITHUB_ENV
       - run: hypernode-deploy build -vvv
       - name: archive production artifacts
         uses: actions/upload-artifact@v3
