@@ -19,18 +19,6 @@ This article explains how to install SSL certificates on your Hypernode. An SSL 
 
 SSL sends information across the internet encrypted so that only the intended recipient can understand it. SSL establishes a secure connection between your visitor's browser and your webshop. It allows you to sent private and sensitive information, such as payment credentials, across the internet without having to worry about the problems of eavesdropping, data tampering, and message forgery.
 
-## Service Panel users: SSL on Hypernode
-
-**Service Panel** users (Hypernode.nl) have three options to use SSL for their Hypernode plan(s):
-
-- Order an SSL certificate via Hypernode (recommended)
-- Upload your own SSL certificate
-- Request a certificate using Let’s Encrypt
-
-We recommend purchasing an SSL certificate through Hypernode, because you’ll benefit from our managed hosting services.
-
-When using a third party SSL certificate or [Let’s Encrypt](../ssl/how-to-use-lets-encrypt-on-hypernode.md), you are responsible for implementing, maintaining and renewing the certificate. We cannot provide any support on custom SSL certificates and related issues.
-
 ## Buy an SSL Certificate Via Hypernode (Recommended)
 
 We recommend you to purchase an SSL certificate via Hypernode, because then you’ll benefit from our managed hosting services. Not only do we take care of the technical implementation of the certificate for you, we also renew and validate the certificate on time and provide customer support on SSL issues. This way your e-commerce shop will always have a secure connection.

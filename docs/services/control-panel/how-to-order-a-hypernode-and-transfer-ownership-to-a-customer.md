@@ -35,8 +35,6 @@ To order a new Hypernode plan, follow these steps:
 1. Check if all information is correct and place your order.
 1. The new Hypernode plan will be booted and you will receive an email when it's ready.
 
-Please note: if you are a Service Panel user (i.e. you use the Dutch panel), please order your new plans directly via [this page in the Service Panel](https://service.byte.nl/planinfo/order-selection/). This is to prevent plans from being booted in the wrong system.
-
 ## Step 2: Tips For Ordering a Hypernode
 
 - Choose a logical name. IE: If your site is example.com, order example.hypernode.com
@@ -52,7 +50,7 @@ To transfer ownership of a Hypernode you need to follow these steps:
 
 1. Log into the Control Panel.
 1. Choose Transfer ownership from the Hypernodes sidebar on the left.
-1. Enter the email address of the new owner and choose whether or not to retain access as admin after the transfer.
+1. Enter the email address of the new owner and choose whether to retain access as admin after the transfer.
 1. The new owner receives a confirmation email and can then accept the transfer.
 
 - \*\*Note:\*\*the new owner is required to have a valid payment method to accept the transfer. They have the option to do so at this step in case they do not have a valid payment method on their account.*![](_res/Cnnoe_cHJlCq28NnhDXDLygZFbEgc7MHjA.png)*

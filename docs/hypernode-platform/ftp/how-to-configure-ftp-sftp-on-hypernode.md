@@ -105,21 +105,11 @@ To remove values from your whitelists you can run the following:
 hypernode-systemctl whitelist remove ftp 1.2.3.4
 ```
 
-### Via Your Service Panel
-
-Customers who log in via [service.byte.nl](http://service.byte.nl) can whitelist an IP via the Service Panel by following the steps below:
-
-1. Log on to your [Service Panel](http://service.byte.nl).
-1. Select the Hypernode.
-1. Go to ‘Instellingen’.
-1. Select ‘Externe FTP toegang’.
-1. Add IP address and description.
-
-### Via Your Control Panel
+### Using the Control Panel
 
 Customers who log in via [my.hypernode.com](https://my.hypernode.com) can allow an IP via the Control Panel by following the steps below:
 
-1. Log into the Control Panel.
+1. Log in to the Control Panel.
 1. Select the Hypernode.
 1. Go the **Allowlist**by selecting it from the sidebar on the left:
    ![](_res/Nem5rLWWSoptpV--Zit41mvWidT0C0wDvw.png)
@@ -170,9 +160,7 @@ Start by generating a keypair (a private and a public key). This can be done thr
 
 When you have generated the keypair you need to add your public key to your Hypernode.
 
-Service Panel users can use the SSH Keymanager in the [Service panel](../ssh/how-to-use-ssh-keys-on-hypernode.md#service-panel-users-add-public-key-to-the-ssh-keymanager).
-
-Control Panel users also have access to an SSH Keymanager via their Control panel. How this works is explained in [this article](../../services/control-panel/how-to-add-keys-to-the-ssh-key-manager.md).
+You can manage your authorized SSH keys with the SSH Keymanager in the Control panel. How this works is explained in [this article](../../services/control-panel/how-to-add-keys-to-the-ssh-key-manager.md).
 
 Alternatively you can also add the public key to the the `~/.ssh/authorized_keys` file.
 
@@ -211,5 +199,5 @@ Similar to FTP you can also grant other users access to only certain directories
 ## Troubleshooting
 
 - When using SFTP, you are always chrooted to the homedir. This implies that when you want to copy a file to `/tmp`, you will receive an error, as the `tmp/` directory does not exist in the configured homedir.
-- If you experience a ‘Connection timed out’ error, please check in our service panel if your IP address is whitelisted.
+- If you experience a ‘Connection timed out’ error, please check in the control panel if your IP address is added to the allowlist.
 - If the IP is whitelisted and you still get this error: Check your local firewall and antivirus logs.

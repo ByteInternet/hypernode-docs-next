@@ -15,7 +15,7 @@ The Control Panel offers an overview of your Hypernode’s statistics and settin
 
 ## How to Change These Settings
 
-The settings below can be configured through our hypernode-systemctl tool. The hypernode-systemctl tool allows you to set certain values for your Hypernode via the command line interface. In the past we asked you to contact support or to go to your Service Panel to change a setting. The hypernode-systemctl tool saves valuable time and makes developing and maintaining a Magento shop even more easier.
+The settings below can be configured through our hypernode-systemctl tool. The hypernode-systemctl tool allows you to set certain values for your Hypernode via the command line interface. In the past we asked you to contact support or to go to the Control Panel to change a setting. The hypernode-systemctl tool saves valuable time and makes developing and maintaining a Magento shop even more easier.
 
 ## The Settings in the Control Panel
 

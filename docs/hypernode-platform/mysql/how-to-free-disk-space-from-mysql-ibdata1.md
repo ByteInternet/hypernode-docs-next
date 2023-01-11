@@ -27,8 +27,6 @@ Alternatively, a summary report can be created using the `pt-query-digest utilit
 
 `pt-query-digest /var/log/mysql/mysql-slow.log`
 
-**Dutch** speaking customers also have the option to monitor the long running queries in the “MySQL slow queries” section on their [Service Panel](https://auth.byte.nl/). You can sort them by query time to see the longest queries at the top.
-
 ## How to Reclaim the Disk Space
 
 Before reclaiming the disk space it's important that the long running queries have been resolved/stopped!

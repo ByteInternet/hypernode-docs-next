@@ -31,20 +31,13 @@ $ hypernode-systemctl settings varnish_version 4.0
 $ hypernode-systemctl settings varnish_version 6.0
 ```
 
-**Enable Varnish via the [hypernode-systemctl tool](../../hypernode-platform/tools/how-to-use-the-hypernode-systemctl-cli-tool.md)**
+**Enable Varnish using the [hypernode-systemctl tool](../../hypernode-platform/tools/how-to-use-the-hypernode-systemctl-cli-tool.md)**
 
 ```console
 $ hypernode-systemctl settings varnish_enabled true
 ```
 
-**Enable Varnish via the [Service Panel](https://service.byte.nl/)**
-
-- Log in on the Service Panel
-- Go to the tab "Instellingen"
-- Click on "Varnish"
-- Use the switch to enable Varnish
-
-**Enable Varnish via the [Control Panel](https://auth.hypernode.com/)**
+**Enable Varnish using the [Control Panel](https://auth.hypernode.com/)**
 
 - Click on "Hypernodes"
 - Click on "Caching"

@@ -24,7 +24,6 @@ It may happen that others send mail in your name. These could be viruses that ha
 The email system does not provide for sender verification, so it is possible to specify anything. However, there a few things you could try to minimise the chances of this happening:
 
 - If you get a lot of responses from a single person, you can have this sender blocked by your mail program.
-- If the responses are sent to an address that falls under your Catch All, but that you don't actually use, you can disable this specific address via the Service Panel. For this you create an extra address (the address to which the messages will be sent) and have the mail forwarded to “nobody”. The messages will then be discarded.
 - Tighten your SPF record with -all at the end, so that anything that is not formulated in your SPF record will not be accepted by the receiving mail server.
 - Make sure you have SAV enabled in all your mailboxes.
   \*\*Please note:\*\*This construction only works if no mailboxes have been selected, and no other external addresses have been specified.

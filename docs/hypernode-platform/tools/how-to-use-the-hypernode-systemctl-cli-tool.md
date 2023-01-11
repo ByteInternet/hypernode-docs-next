@@ -13,7 +13,7 @@ redirect_from:
 
 # How to Use the hypernode-systemctl CLI Tool
 
-The `hypernode-systemctl` tool allows you to set certain values for your Hypernode via the command line interface. In the past we asked you to contact support or to go to your Service Panel or Control Panel to change a setting. The `hypernode-systemctl` tool saves valuable time and makes developing and maintaining a Magento shop even more easier.
+The `hypernode-systemctl` tool allows you to set certain values for your Hypernode via the command line interface. In the past we asked you to contact support or to go to the Control Panel to change a setting. The `hypernode-systemctl` tool saves valuable time and makes developing and maintaining a Magento shop even more easier.
 
 ## Which Settings Can Be Changed on Your Hypernode?
 

@@ -62,7 +62,7 @@ Apart from the flat I/O usage line in the MageReport graph, you will likely expe
 
 ### Short Term Solution
 
-Upgrade your Hypernode through our Service Panel. This will not only increase your base I/O capacity, but also reset the burst pool, so you will start with a clean slate.
+Upgrade your Hypernode. This will not only increase your base I/O capacity, but also reset the burst pool, so you will start with a clean slate.
 
 Important:
 

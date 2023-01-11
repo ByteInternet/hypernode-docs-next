@@ -100,7 +100,7 @@ See our manual on configuring DNS for more information. As the DNS changes are p
 
 There are 3 ways to handle your DNS. Only customers who have access to the Service Panel (service.byte.nl) can choose option 1.
 
-1. Move your domain(s) to Hypernode and let Hypernode  manage the DNS (Dutch customers only).
+1. Move your domain(s) to Hypernode and let Hypernode manage the DNS (Dutch customers only).
 1. Manage an external DNS by pointing your domain(s) to Hypernode by using CNAME and not A record.
 1. Manage an external DNS by pointing your domain(s) to the IP-address of Hypernode via A record.
 

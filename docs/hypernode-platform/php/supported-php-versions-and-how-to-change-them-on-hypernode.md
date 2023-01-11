@@ -75,19 +75,7 @@ hypernode-systemctl settings php_version 8.1
 
 Afterwards you can use the livelog command to track progress of the upgrade.
 
-### Via the Service Panel
-
-You can also switch the PHP version of a Hypernode via the Service Panel (service.byte.nl)
-
-1. Log in to your Service Panel.
-1. Select your Hypernode by clicking the app name.
-1. Go to tab **Instellingen**.
-1. Click the **PHP.**
-1. Choose a PHP version.
-
-Afterwards you can navigate back to 'Hypernode Log' option, to track progress of the upgrade.
-
-### Via your Control Panel
+### Using the Control Panel
 
 Via the Control Panel you can change the PHP version by following the following steps
 

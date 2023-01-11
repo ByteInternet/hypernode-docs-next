@@ -33,26 +33,9 @@ To generate an SSH keypair and connect to your Hypernode, you’ll need to use t
 
 ### Add Public Key to Your Hypernode
 
-After you have created a key pair, make sure you add your public key to your Hypernode. Please check first if you have access to a Byte Service Panel or a Hypernode control Panel.
+After you have created a key pair, make sure you add your public key to your Hypernode.
 
-### Service Panel Users: Add Public Key to the SSH Keymanager from Windows
-
-If you log in via the **Service Panel**, you have access to an SSH Keymanager to add your public keys to a Hypernode. The steps:
-
-1. Log in to the [Service Panel](https://service.byte.nl/protected/overzicht/).
-1. Select your domainname (name.hypernode.io).
-1. Go to the 'Instellingen' tab.
-1. Click on the option **Shell / SSH Instellingen.**
-1. Click **Beheer SSH Keys voor dit domein**. Now click on the button **Beheer mijn public keys**.
-1. Click on **SSH Key toevoegen**. If you already have a key configured, you should choose for the **Handmatig** option.
-1. Paste the content of your public key into the public key field and give it a name.
-1. Click on **Opslaan**to add the key to the Keymanager.
-1. Select the domain you wish to add your key to (if you’re a Hypernode customer, make sure you add the key to your Hypernode domain and the Magento domain the site is currently being hosted) and click on the **Opslaan** button.
-1. Your key is now added to your domains.
-
-Repeat the above steps if you would like to add more keys.
-
-### Control Panel Users: Add Public Key via Your Control Panel
+### Add Public Key using the Control Panel
 
 Need to add an SSH key to just **one** Hypernode (e.g. SSH keys that are used to deploy the application and nothing else)? Follow the steps below to do so.
 
@@ -114,8 +97,7 @@ If you want to add SSH users you can also edit the `~/.ssh/authorized_keys` file
 
 To finally connect to Hypernode you’ll have to use your SSH hostname and username.
 
-- **Service Panel** users can find these settings under **Instellingen -> Shell/SSH instellingen**.
-- **Control Panel** users will find this information in the email they received in which we inform you your Hypernode is ready for use.
+You will find this information in the email they received in which we inform you your Hypernode is ready for use.
 
 Use the following steps to connect to Hypernode.
 
@@ -175,26 +157,9 @@ You can check if your key is really in your agent by using the following command
 
 ### Add Public Key to Your Hypernode
 
-After you have created a key pair, make sure you add your public key to your Hypernode. Please check first if you have access to the [Service Panel](https://auth.byte.nl/) or the [Control Pane](http://my.hypernode.com)[l](https://my.hypernode.com/).
+After you have created a key pair, make sure you add your public key to your Hypernode.
 
-### Service Panel Users: Add Public Key to the SSH Keymanager
-
-If you log in via the **Hypernode Service Panel**, you have access to an SSH Keymanager to add your public keys to a Hypernode. The steps:
-
-1. Log in to the [Service Panel](https://service.byte.nl/protected/overzicht/).
-1. Select your plan (example.hypernode.io).
-1. Go to the **Instellingen** tab.
-1. Click on the option **Shell / SSH Instellingen.**
-1. Click **Beheer SSH Keys voor dit domein**. Now click on the button **Beheer mijn public keys**.
-1. Click on **SSH Key toevoegen**. If you already have a key configured, you should choose for the **Handmatig** option.
-1. Paste the content of your public key into the public key field and give it a name.
-1. Click on **Opslaan**to add the key to the Keymanager.
-1. Select the domain you wish to add your key to and click on the **Opslaan** button.
-1. Your key is now added to your domains.
-
-Repeat the above steps if you would like to add more keys.
-
-### Control Panel Users: Add Public Key via Your Control Panel
+### Add Public Key using the Control Panel
 
 Need to add an SSH key to just **one** Hypernode (e.g. SSH keys that are used to deploy the application and nothing else)? Follow the steps below to do so.
 

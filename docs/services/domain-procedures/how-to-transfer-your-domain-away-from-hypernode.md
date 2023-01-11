@@ -7,8 +7,6 @@ redirect_from:
 
 # How to Transfer Your Domain Away From Hypernode
 
-**Please note that this only applies to Control Panel users who log in via my.hypernode.com. If you use the Service Panel (service.byte.nl), you can use [this article](how-to-transfer-your-domain-away-from-hypernode.md) to transfer your domain away from Hypernode.**
-
 ## **I Want to Transfer My Domain Name to Another Provider**
 
 To transfer your domain name to another hosting provider, take the following steps:
@@ -38,7 +36,7 @@ The new provider has to start the transfer. The procedure has been designed so t
 ## **Procedure**
 
 - Hypernode will fully cooperate with any transfer that has correctly been passed in writing.
-- If the proper documents are received, Hypernode  allows the transfer by changing the status of the domain to ACTIVE.
+- If the proper documents are received, Hypernode allows the transfer by changing the status of the domain to ACTIVE.
 - The **new hosting provider** initiates the transfer at **their registrar**.
 - Hypernode will accept the request for transfer within 1-2 days, after that the domain name will be transferred.
 - In case of **.nl/.com/.net/.org/.biz/.info/.de/.nu** domain names: Hypernode will sent the AUTH code to the registered email address on transfer.

@@ -30,7 +30,7 @@ You can activate Blackfire via the hypernode-systemctl tool. First you need to e
 - `hypernode-systemctl settings blackfire_server_id`: string - The Blackfire Service ID for your Blackfire setup.
 - `hypernode-systemctl settings blackfire_server_token`: string - The Blackfire Server Token for your Blackfire setup.
 
-## Activate via Your Control Panel
+## Activate via the Control Panel
 
 1. Log in on the [Control Panel](https://auth.hypernode.com)
 1. Select your Hypernode (example.hypernode.io) and click **Details**
@@ -40,16 +40,6 @@ You can activate Blackfire via the hypernode-systemctl tool. First you need to e
 1. Now select **Enable Blackfire** to enable Blackfire
 
 ## **Please take into account that it takes a most 10 minutes for our system to actually create the account. Grab a cup of coffee and relax!**
-
-## Activate via Your Service Panel
-
-1. Log in to your [Service Panel](https://auth.byte.nl/login/)
-1. Select the Hypernode from the overview
-1. Go to **Instellingen**and then **Blackfire**
-1. Select **Enable**, enter your Service ID and Server Token
-1. Save your input by clicking **Opslaan.**
-
-**Please take into account that it takes a most 10 minutes for our system to actually create the account. Grab a cup of coffee and relax!**
 
 ## How Is It Different From New Relic?
 

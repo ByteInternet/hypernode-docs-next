@@ -61,4 +61,4 @@ To ensure that the Cloud Firewall can always connect to your Hypernode, we advis
 
 For optimal security, it is recommended to configure traffic between the Cloud Firewall and your Hypernode to always be encrypted, through an SSL certificate. For most Cloud Firewall setups you can simply use a regular SSL certificate, as you would normally.
 
-In some cases you may be provided with an Origin SSL certificate by your Cloud Firewall provider. In this case, simply upload a Custom Certificate either via the Service panel, or via the Control Panel.
+In some cases you may be provided with an Origin SSL certificate by your Cloud Firewall provider. In this case, simply upload a Custom Certificate on the Control Panel.

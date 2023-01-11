@@ -16,34 +16,17 @@ Customers with Hypernode Pelican, Falcon (formerly known as Professional) and Ea
 
 Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. Don't implement Varnish on production nodes while still under development but use [development node](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) or a local staging environment like the [Hypernode Docker](../../best-practices/testing/hypernode-docker.md) instead.
 
-## Table of Contents
-
-- [Enable Varnish for Magento 1.x](#enable-varnish-for-magento-1x)
-  - [All Customers: Via the hypernode-systemctl CLI Tool](#all-customers-via-the-hypernode-systemctl-cli-tool)
-  - [Dutch Customers: Via Your Service Panel](#dutch-customers-via-your-service-panel)
-  - [International Customers: Via Your Control Panel](#international-customers-via-your-control-panel)
-- [Install Turpentine](#install-turpentine)
-  - [Configure Turpentine](#configure-turpentine)
-- [Test Your Shop With Varnish](#test-your-shop-with-varnish)
-- [Enable Debug Headers](#enable-debug-headers)
-- [Warming Your Cache](#warming-your-cache)
-- [Troubleshooting](#troubleshooting)
-
 ## Enable Varnish for Magento 1.x
 
 Before installing Turpentine we recommend enabling Varnish on your Hypernode using the instructions below.
 
-### All Customers: Via the hypernode-systemctl CLI Tool
+### Using the hypernode-systemctl CLI Tool
 
 Activating Varnish and set which version to use on your Hypernode can be done via the [hypernode-systemctl tool](../../hypernode-platform/tools/how-to-use-the-hypernode-systemctl-cli-tool.md).
 
-### Dutch Customers: Via Your Service Panel
+### Using the Control Panel
 
-Only *Dutch customers* can also easily activate Varnish via their [Service Panel](https://service.byte.nl/). Go to `Instellingen` and change Varnish to `Actief`. Once you’ve changed this setting and enabled Varnish in Magento, Varnish will store all information in it’s own cache. Only when Varnish needs data that hasn’t been cached it will connect with the server.
-
-### International Customers: Via Your Control Panel
-
-English speaking customers who ordered their Hypernode via Hypernode.com have access to their [control panel](https://my.hypernode.com/). Find your Hypernode, click on `Settings` and go to `Caching`. There you can enable Varnish with 1 click on the button.
+Go to the [control panel](https://my.hypernode.com/). Find your Hypernode, click on `Settings` and go to `Caching`. There you can enable Varnish with 1 click on the button.
 
 ## Install Turpentine
 
@@ -70,9 +53,9 @@ When the Magento Connect Manager is not available, Turpentine needs to be instal
 
 After installing Turpentine and flushing the Magento cache, you can start configuring Turpentine:
 
-- Log on to your [Byte Service Panel](http://auth.byte.nl)
-- Select your Hypernode plan
-- Click on the tab **Instellingen**
+- Log on to the [Control Panel](https://my.hypernode.com)
+- Select your Hypernode
+- Click on the tab **Caching**
 - Select the option `Varnish`
 - You’ll notice Varnish cache is non-active. This is necessary for testing your shop with Varnish. (See `Test your shop with Varnish` below)
 - Don’t close this page, you’ll need this information later
@@ -82,7 +65,7 @@ After installing Turpentine and flushing the Magento cache, you can start config
 - In the `Servers`section, fill in the following information:
   - *Varnish version*: leave this on `auto`
   - *Varnish server list*: varnish:6082
-  - *Varnish authentication key*: Paste the content from your Service Panel here
+  - *Varnish authentication key*: Paste the Varnish secret from the Control Panel here
 - Select `Caching Options` under `Turpentine`
 - Check if the following information is correct:
   - *Backend host*: This should say `varnish`

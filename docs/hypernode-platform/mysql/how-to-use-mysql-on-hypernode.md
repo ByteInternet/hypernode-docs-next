@@ -69,15 +69,6 @@ To remove values from your whitelists you can run the following:
 hypernode-systemctl whitelist remove database 1.2.3.4
 ```
 
-### Whitelist via Your Service Panel
-
-Only our Service Panel users have the option to whitelist an IP via the Service Panel.
-
-1. Log on to your [Service Panel](https://auth.byte.nl).
-1. Select your Hypernode.
-1. Go to `Instellingen` > `Externe database toegang`.
-1. Add the IP addresses to the firewall whitelist.
-
 ## How to Connect to MySQL
 
 ### Use the Command Line Shell on the Production Node
