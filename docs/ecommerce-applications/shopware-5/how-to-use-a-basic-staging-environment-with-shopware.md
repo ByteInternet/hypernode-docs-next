@@ -21,7 +21,7 @@ This article explains how you can set up a staging environment on Hypernode for 
 
 Keep in mind:
 
-- Your staging environment **shares resources** (disk, CPU, mem) with your production site. If you want to do things such as automated load tests, it is recommended to order a [development plan](https://support.hypernode.com/knowledgebase/development-plans-for-your-magento-shop/) instead, so your production site will not be affected.
+- Your staging environment **shares resources** (disk, CPU, mem) with your production site. If you want to do things such as automated load tests, it is recommended to order a [development plan](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) instead, so your production site will not be affected.
 - We don't recommend creating hard links from your production media folder to your staging media folder as our back up mechanism does not cope well with hard links.
 
 ## How to Make a Copy of a Live Site

@@ -5,6 +5,7 @@ myst:
       Find out here how to set it up for Hypernode.
 redirect_from:
   - /en/hypernode/dns/how-to-set-up-your-spf-records-for-hypernode/
+  - /knowledgebase/using-spf-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/dns/how-to-set-up-your-spf-records-for-hypernode/ -->

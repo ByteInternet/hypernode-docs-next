@@ -29,7 +29,7 @@ The main idea behind queues is to avoid doing a resource-intensive task immediat
 
 ## Enabling RabbitMQ
 
-Enabling RabbitMQ can be done via de [commandline tool](https://support.hypernode.com/knowledgebase/hypernode-systemctl-cli-tool/) or the [Hypernode API](https://community.hypernode.io/#/Documentation/hypernode-api/README).
+Enabling RabbitMQ can be done via de [commandline tool](../../hypernode-platform/tools/how-to-use-the-hypernode-systemctl-cli-tool.md) or the [Hypernode API](https://community.hypernode.io/#/Documentation/hypernode-api/README).
 
 As an app user you enable RabbitMQ this way:
 

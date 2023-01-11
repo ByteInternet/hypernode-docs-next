@@ -11,15 +11,15 @@ redirect_from:
 
 # How to Configure Varnish for Magento 2.x
 
-Customers with Hypernode Pelican, Falcon (formerly known as Professional) and Eagle (formerly known as Excellence plans can use Varnish to boost their Magento shop. This article explains how you can configure Varnish 4 or 6 for your Hypernode. If you want to know which Varnish version you need to configure, please check the [Magento documentation](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html) first. Do you have a Magento 1 shop, please check [this article](https://support.hypernode.com/knowledgebase/varnish-on-magento1/).
+Customers with Hypernode Pelican, Falcon (formerly known as Professional) and Eagle (formerly known as Excellence plans can use Varnish to boost their Magento shop. This article explains how you can configure Varnish 4 or 6 for your Hypernode. If you want to know which Varnish version you need to configure, please check the [Magento documentation](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html) first. Do you have a Magento 1 shop, please check [this article](../../ecommerce-applications/magento-1/how-to-configure-varnish-for-magento-1-x.md).
 
-Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. Don't implement varnish on production nodes without testing Varnish first on a [development node](https://support.hypernode.com/knowledgebase/development-plans-for-your-magento-shop/) or the [Hypernode Docker](https://support.hypernode.com/en/best-practices/testing/hypernode-docker).
+Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. Don't implement varnish on production nodes without testing Varnish first on a [development node](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) or the [Hypernode Docker](../../best-practices/testing/hypernode-docker.md).
 
 ## Enable Varnish 4.0 or 6.0 for Magento 2.x
 
 As Magento 2 supports Varnish out of the box, there is no need for the turpentine extension anymore in Magento 2. Simply follow the steps below to configure Varnish 4.0 or 6.0 for Magento 2.
 
-**First configure the Varnish version (4.0 or 6.0) via the [hypernode-systemctl tool](https://support.hypernode.com/knowledgebase/hypernode-systemctl-cli-tool/)**
+**First configure the Varnish version (4.0 or 6.0) via the [hypernode-systemctl tool](../../hypernode-platform/tools/how-to-use-the-hypernode-systemctl-cli-tool.md)**
 
 ```console
 $ hypernode-systemctl settings varnish_version 4.0
@@ -31,7 +31,7 @@ $ hypernode-systemctl settings varnish_version 4.0
 $ hypernode-systemctl settings varnish_version 6.0
 ```
 
-**Enable Varnish via the [hypernode-systemctl tool](https://support.hypernode.com/knowledgebase/hypernode-systemctl-cli-tool/)**
+**Enable Varnish via the [hypernode-systemctl tool](../../hypernode-platform/tools/how-to-use-the-hypernode-systemctl-cli-tool.md)**
 
 ```console
 $ hypernode-systemctl settings varnish_enabled true
@@ -199,7 +199,7 @@ In our experience the by default generated .vcl from your Magento backend often 
 ## Troubleshooting
 
 - If you are receiving `Permission denied` errors while running `varnishadm` or other Varnish CLI commands, and you have just activated Varnish, close any existing ssh sessions, and log back in to reload your updated permissions.
-- If your Varnish setup is not working over SSL, check [this article](https://support.hypernode.com/en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-byte-nl#Redirecting-to-HTTPS-When-Using-Varnish)
+- If your Varnish setup is not working over SSL, check [this article](../../hypernode-platform/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-com.md#redirecting-to-https-when-using-varnish)
 
 ### 502 Errors
 

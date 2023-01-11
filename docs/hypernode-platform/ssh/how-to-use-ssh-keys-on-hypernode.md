@@ -5,6 +5,7 @@ myst:
       users) or Terminal (Linux and Mac OSX) to log in to your Hypernode.
 redirect_from:
   - /en/hypernode/ssh/how-to-use-ssh-keys-on-hypernode/
+  - /knowledgebase/use-ssh-keys-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/ssh/how-to-use-ssh-keys-on-hypernode/ -->
@@ -34,7 +35,7 @@ To generate an SSH keypair and connect to your Hypernode, you’ll need to use t
 
 After you have created a key pair, make sure you add your public key to your Hypernode. Please check first if you have access to a Byte Service Panel or a Hypernode control Panel.
 
-### Service Panel Users: Add Public Key to the SSH Keymanager
+### Service Panel Users: Add Public Key to the SSH Keymanager from Windows
 
 If you log in via the **Service Panel**, you have access to an SSH Keymanager to add your public keys to a Hypernode. The steps:
 

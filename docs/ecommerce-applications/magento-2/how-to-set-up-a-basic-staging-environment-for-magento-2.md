@@ -6,15 +6,16 @@ myst:
       shop.
 redirect_from:
   - /en/ecommerce/magento-2/how-to-set-up-a-basic-staging-environment-for-magento-2/
+  - /knowledgebase/using-a-basic-staging-environment-magento2/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-set-up-a-basic-staging-environment-for-magento-2/ -->
 
 # How to Set Up a Basic Staging Environment for Magento 2
 
-This article is an extension to the [article for Magento 1](https://support.hypernode.com/en/ecommerce/magento-1/how-to-set-up-a-staging-environment-for-magento-1). For information about the capabilities of the staging environment, please read it first.
+This article is an extension to the [article for Magento 1](../magento-1/how-to-set-up-a-staging-environment-for-magento-1.md). For information about the capabilities of the staging environment, please read it first.
 
-Your staging environment **shares resources**(disk, CPU, memory) with your production site. If you want to do things such as automated load tests, it is recommended to order a [development plan](https://support.hypernode.com/knowledgebase/development-plans-for-your-magento-shop/) instead, so your production site will not be affected.
+Your staging environment **shares resources**(disk, CPU, memory) with your production site. If you want to do things such as automated load tests, it is recommended to order a [development plan](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) instead, so your production site will not be affected.
 
 ## How to Make a Copy of a Live Site
 
@@ -121,7 +122,7 @@ A big thank you to our partner [Experius](https://www.experius.nl/) for providin
 
 #### Manually Change the Base URL's of Your Storefronts
 
-If you want to set the base URL's manually, check [our documentation](https://support.hypernode.com/a/solutions/articles/48000981301?lang=en)on changing your base URL's for Magento 1. Do you have a Magento 2 shop, please check [this article](https://support.hypernode.com/en/ecommerce/magento-2/how-to-change-your-magento-2-base-urls)on changing base URL's.
+If you want to set the base URL's manually, check [our documentation](../magento-1/how-to-change-the-base-url-in-magento-1-x.md) on changing your base URL's for Magento 1. Do you have a Magento 2 shop, please check [this article](how-to-change-your-magento-2-base-urls.md) on changing base URL's.
 
 ### Step Seven: Change All References in Your Staging Directory
 
@@ -129,7 +130,7 @@ If you want to set the base URL's manually, check [our documentation](https://su
 
 Keep in mind:
 
-- Re-deploy your static files (clean out pub/static, and [deploy your static files](https://support.hypernode.com/knowledgebase/installing-magento-2-on-hypernode/#Build_static_assets_CSS_JS)\]
+- Re-deploy your static files (clean out pub/static, and [deploy your static files](how-to-install-magento-2-on-hypernode.md#build-static-assets)
 - Find symlinks: `find /data/web/magento2_staging -type l -exec ls -lsa {} \;`
 - Grep for `/data/web/public` in your staging directory: `grep -R '/data/web/public' /data/web/staging`
 - Grep for `/data/web/magento2` in your staging directory: `grep -R '/data/web/magento2' /data/web/{staging,magento2_staging}`
@@ -140,7 +141,7 @@ Keep in mind:
 
 Now you should be able to reach your Magento 2 staging environment on <http://mynode.hypernode.io:8888>
 
-For additional configuration and troubleshooting refer to the [Magento 1 staging environment article](https://support.hypernode.com/en/ecommerce/magento-1/how-to-set-up-a-staging-environment-for-magento-1)
+For additional configuration and troubleshooting refer to the [Magento 1 staging environment article](../magento-1/how-to-set-up-a-staging-environment-for-magento-1.md)
 
 ## Staging Environment and Varnish
 
@@ -160,23 +161,24 @@ In the example above the domain for the staging environment is always different 
 
 ## Hypernode Manage Vhosts
 
-Another solution is creating an unique vhost for your staging environment. This will allow you to use the normal ports so you don't have to use port `8443`.
-For example you can create a vhost `staging.example.com`. Afterwards you can always choose to enable or disable varnish for this vhost.
+Another solution is creating a unique vhost for your staging environment. This will allow you to use the normal ports so you don't have to use port `8443`.
+For example, you can create a vhost `staging.example.com`. Afterwards you can always choose to enable or disable varnish for this vhost.
 
-```nginx
-hypernode-manage-vhosts staging.example.com --varnish
-hypernode-manage-vhosts --list
+```console
+$ hypernode-manage-vhosts staging.example.com --varnish
+$ hypernode-manage-vhosts --list
 +---------------------------------+------------+----------------+-------+-------------+---------+--------------+
 |            servername           |    type    | default_server | https | force_https | varnish |  ssl_config  |
 +---------------------------------+------------+----------------+-------+-------------+---------+--------------+
 |       staging.example.com       |  magento2  |     False      | False |    False    |   True  | intermediate |
 +---------------------------------+------------+----------------+-------+-------------+---------+--------------+
-
 ```
 
 To be able to reach the new staging environment you need to change the webroot of the vhost to whatever folder you like. In this case let's create a folder called **/data/web/example_staging/**. You can change the webroot in the nginx-folder that has been created by creating the vhost, in this case: **/data/web/nginx/staging.example.com/public.magento2.conf**. The webroot is set in the first uncommented line of the file:
 
-`root /data/web/public;`
+```nginx
+root /data/web/public;
+```
 
 So now we want to set this to: `root /data/web/example_staging;` and save the file. Now you can set the Magento installation in this location and you're set.
 
@@ -186,9 +188,8 @@ If you created a staging environment before on the same machine, you might want 
 
 ### Cleanup
 
-```nginx
+```bash
 magerun2 --root-dir=/data/web/magento2_staging uninstall --installationFolder=/data/web/magento2_staging --force
-
 ```
 
 This will remove your Magento installation and drops the database as well.

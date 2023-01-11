@@ -5,6 +5,7 @@ myst:
       Magento shop. Read more about it and how to use it in this article. '
 redirect_from:
   - /en/troubleshooting/performance/how-to-spot-slow-extensions-using-the-php-slow-logs/
+  - /knowledgebase/spot-slow-extensions-using-phps-slow-log/
 ---
 
 <!-- source: https://support.hypernode.com/en/troubleshooting/performance/how-to-spot-slow-extensions-using-the-php-slow-logs/ -->

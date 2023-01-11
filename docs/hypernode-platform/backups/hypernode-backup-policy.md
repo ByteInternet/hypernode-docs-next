@@ -21,7 +21,7 @@ Snapshots are rotated daily after the creation of a new backup. This implies tha
 
 ## The Most Recent Snapshot of Your Hypernode
 
-A snapshot is a saved state of the `/data` device at a given moment in time. We can use this to create a static copy of that given state in time and transform this to a virtual device which we can attach to your Hypernode. Once attached, this device is mounted under `/data/backup` and you can easily restore your files by copying them from this file system. To restore database and file backups, see [this article](https://support.hypernode.com/en/hypernode/backups/how-to-restore-your-hypernode-from-a-backup).
+A snapshot is a saved state of the `/data` device at a given moment in time. We can use this to create a static copy of that given state in time and transform this to a virtual device which we can attach to your Hypernode. Once attached, this device is mounted under `/data/backup` and you can easily restore your files by copying them from this file system. To restore database and file backups, see [this article](how-to-restore-your-hypernode-from-a-snapshot.md).
 
 **Everyone can always attach the most recent snapshot to your Hypernode for free**. You can do so by using the following command to attach the latest available snapshot to your node:
 
@@ -65,7 +65,7 @@ SLA Standard users can also create instant snapshots via the Control Panel (for 
 
 ## Restoring Your Hypernode From a Snapshot
 
-You can restore your Hypernode from a snapshot yourself by using [this article](https://support.hypernode.com/en/hypernode/backups/how-to-restore-your-hypernode-from-a-backup) from our support documentation.
+You can restore your Hypernode from a snapshot yourself by using [this article](how-to-restore-your-hypernode-from-a-snapshot.md) from our support documentation.
 
 Besides attaching the snapshot, which requires you to restore your data yourself, we can also restore your Hypernode from a snapshot for you. This means that we restore the appropriate database, files or directories from the backup. This service costs €125,-. Contact Support for more information about this.
 
@@ -73,7 +73,7 @@ Besides attaching the snapshot, which requires you to restore your data yourself
 
 ## Create Your Own Backup and Download it to Your Local Machine
 
-Due to security reasons we don't have easy options to just click and download your files/database to your local machine from your Control Panel. If you still want to download the files/database to your local machine for your peace of mind you'd have to do this manually. You can find instructions in our [documentation](https://support.hypernode.com/en/support/solutions/articles/48001208755-how-to-create-a-backup-and-download-it-to-your-local-machine).
+Due to security reasons we don't have easy options to just click and download your files/database to your local machine from your Control Panel. If you still want to download the files/database to your local machine for your peace of mind you'd have to do this manually. You can find instructions in our [documentation](../../best-practices/backups/how-to-create-a-backup-and-download-it-to-your-local-machine.md).
 
 ## Using Hard-Links for Backup Retention
 
@@ -87,7 +87,7 @@ We recommend to avoid hard-links in your content at all times.
 
 We make use of two backup mechanisms: One for the Hypernodes running on Amazon (AWS) and Combell OpenStack, and another mechanism for backups on DigitalOcean.
 
-Read more about restoring backups on Hypernode in [our restore backups article](https://support.hypernode.com/knowledgebase/restore-hypernode-backup/).
+Read more about restoring backups on Hypernode in [our restore backups article](how-to-restore-your-hypernode-from-a-snapshot.md).
 
 ### Backups on DigitalOcean
 

@@ -5,6 +5,7 @@ myst:
       and show you how to find which one applies and if needed, how to override them.
 redirect_from:
   - /en/hypernode/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests/
+  - /knowledgebase/resolving-429-many-requests/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests/ -->
@@ -52,7 +53,7 @@ A log entry where the rate limit is applied per IP address (based on the `zonepe
 
 ## Rate Limiting for Bots and Crawlers
 
-Every day, your webshop is visited by many different bots and crawlers. While some, like Google, are important, many only have [a negative impact](https://support.hypernode.com/en/best-practices/performance/how-to-fix-performance-issues-caused-by-bots-and-crawlers) on your site, especially if they don’t follow your robots.txt. To protect your Hypernode against negative performance impacts by misbehaving bots, it utilizes an advanced rate-limiting mechanism. This slows down the hit rate for unimportant bots, leaving more performance for the bots you do care about and, more importantly, your actual visitors.
+Every day, your webshop is visited by many different bots and crawlers. While some, like Google, are important, many only have [a negative impact](../../best-practices/performance/how-to-fix-performance-issues-caused-by-bots-and-crawlers.md) on your site, especially if they don’t follow your robots.txt. To protect your Hypernode against negative performance impacts by misbehaving bots, it utilizes an advanced rate-limiting mechanism. This slows down the hit rate for unimportant bots, leaving more performance for the bots you do care about and, more importantly, your actual visitors.
 
 ### Rejecting 429 Too Many Requests
 
@@ -112,7 +113,7 @@ Besides the above-known plugins that will hit the blacklisted keyword, `http.rat
 
 To prevent a single IP from using all the FPM workers available simultaneously, leaving no workers available for other visitors, we implemented a per IP rate limit mechanism. This mechanism sets a maximum amount of PHP-FPM workers that can be used by one IP to 20. This way, one single IP address cannot deplete all the available FPM workers, leaving other visitors with an error page or a non-responding site.
 
-**Please note:** if [Hypernode Managed Vhosts](https://support.hypernode.com/en/hypernode/nginx/hypernode-managed-vhosts) is enabled, only add the `http.conn_ratelimit` file in the Nginx root. Don't add it to the specific vhost as well, as these files will cancel each other out.
+**Please note:** if [Hypernode Managed Vhosts](hypernode-managed-vhosts.md) is enabled, only add the `http.conn_ratelimit` file in the Nginx root. Don't add it to the specific vhost as well, as these files will cancel each other out.
 
 ### Exclude IP Addresses from the per IP Rate Limiting
 

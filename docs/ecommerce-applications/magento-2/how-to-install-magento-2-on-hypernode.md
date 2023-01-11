@@ -5,19 +5,21 @@ myst:
       on Hypernode. It will only take you 5-10 minutes.
 redirect_from:
   - /en/ecommerce/magento-2/how-to-install-magento-2-on-hypernode/
+  - /knowledgebase/installing-magento-on-hypernode/
+  - /knowledgebase/installing-magento-2-on-hypernode
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-install-magento-2-on-hypernode/ -->
 
 # How to Install Magento 2 on Hypernode
 
-Magento 2 requires preferably a Falcon M hosting plan or bigger. Want to [install Magento 1](https://support.hypernode.com/knowledgebase/installing-magento-on-hypernode/) instead?
+Magento 2 requires preferably a Falcon M hosting plan or bigger. Want to [install Magento 1](../magento-1/how-to-install-magento-1-on-hypernode.md) instead?
 
 Installing Magento 2 will take only 5-10 minutes (add 15 minutes if you want the sample data).
 
 ## Upgrade Your PHP Version
 
-**Before installing Magento,**[**change your PHP version**](https://support.hypernode.com/knowledgebase/php-versions-magento-shop-hypernode/#How_to_change_a_PHP_version_on_Hypernode)**to php7.1 or higher**
+**Before installing Magento,**[**change your PHP version**](../../hypernode-platform/php/supported-php-versions-and-how-to-change-them-on-hypernode.md#changing-the-php-version-you-use-on-hypernode)**to php7.1 or higher**
 
 Some vendor libraries are not compatible with older PHP version anymore, causing errors during the installation.
 
@@ -132,7 +134,7 @@ rm --dir /data/web/public
 ln -s /data/web/magento2/pub /data/web/public
 ```
 
-### Build Static Assets (CSS & JS)
+### Build Static Assets
 
 ```
 cd ~/magento2

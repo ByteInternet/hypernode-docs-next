@@ -71,7 +71,7 @@ We created some configuration for Nginx that shows the remote IP of the visitor 
 
 This way you can block remote visitors without blocking all traffic coming from the same Cloudflare server. This does not work when using Railgun.
 
-For example have a look at [our documentation about blocking or whitelisting IP’s in Nginx](https://support.hypernode.com/knowledgebase/blocking-allowing-ip-addresses-in-nginx/).
+For example have a look at [our documentation about blocking or whitelisting IP’s in Nginx](../../hypernode-platform/nginx/how-to-block-allow-ip-addresses-in-nginx.md).
 
 Another option is to configure a blocklist in the [Cloudflare Admin](https://www.cloudflare.com/a/login).
 

@@ -5,6 +5,7 @@ myst:
       backup here, if needed after a mistake. We restore backups with snapshots. '
 redirect_from:
   - /en/hypernode/backups/how-to-restore-your-hypernode-from-a-backup/
+  - /knowledgebase/restore-hypernode-backup/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/backups/how-to-restore-your-hypernode-from-a-backup/ -->
@@ -27,7 +28,7 @@ The backup snapshot is automagically detached/unmounted, before the backups are 
 
 ### Instant and Older Backups
 
-**Do you need access to backups older than one day or do you want the ability to create instant backups? These functionalities are part of the SLA Standard add-on, which is available for all Hypernodes. Please see [this article for more information about the difference between SLA Basic and SLA Standard](https://support.hypernode.com/en/hypernode/backups/hypernode-backup-policy#SLA-Standard).**
+**Do you need access to backups older than one day or do you want the ability to create instant backups? These functionalities are part of the SLA Standard add-on, which is available for all Hypernodes. Please see [this article for more information about the difference between SLA Basic and SLA Standard](../../hypernode-platform/backups/hypernode-backup-policy.md#sla-standard).**
 
 ### Restore a Database From Snapshots
 

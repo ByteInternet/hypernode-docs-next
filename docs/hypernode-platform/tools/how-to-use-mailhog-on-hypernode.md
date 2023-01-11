@@ -6,6 +6,7 @@ myst:
       here.
 redirect_from:
   - /en/hypernode/tools/how-to-use-mailhog-on-hypernode/
+  - /knowledgebase/how-to-use-mailhog-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-mailhog-on-hypernode/ -->
@@ -40,7 +41,7 @@ This will forward `localhost:8025` (where MailHog is running) to our local `8025
 
 ## Access MailHog with HMV and Basic Authentication
 
-If HMV ([Hypernode Managed Vhosts](https://support.hypernode.com/en/hypernode/nginx/hypernode-managed-vhosts)) is enabled on your Hypernode, you can easily create a vhost for MailHog by using the command below which also enables Basic Authentication.
+If HMV ([Hypernode Managed Vhosts](../nginx/hypernode-managed-vhosts.md)) is enabled on your Hypernode, you can easily create a vhost for MailHog by using the command below which also enables Basic Authentication.
 
 ```nginx
 hypernode-manage-vhosts mailhog.example.hypernode.io --https --force-https --type mailhog

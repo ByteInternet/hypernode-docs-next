@@ -48,7 +48,7 @@ Now that you've created the backup(s) in **/data/web/backup_hypernode**, you can
 
 Follow these steps to download your backup via FTP:
 
-- First of all create a [FTP-user](https://support.hypernode.com/en/hypernode/ftp/how-to-configure-ftp-sftp-on-hypernode)(If you already have a FTP-user make sure it's able to access the backup directory)
+- First of all create a [FTP-user](../../hypernode-platform/ftp/how-to-configure-ftp-sftp-on-hypernode.md)(If you already have a FTP-user make sure it's able to access the backup directory)
   - set the **home-dir** to `/data/web/backup_hypernode`
   - Set your IP on the FTP whitelist
   - Login with your FTP-user on for example FileZilla

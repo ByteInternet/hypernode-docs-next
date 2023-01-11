@@ -19,7 +19,7 @@ We only send ServiceMails to our active customers. ServiceMails contain informat
 
 ## ProductMail
 
-We continuously improve our Hypernode platform and services. Information about releases and changes can be found in our support documentation and [Changelog](https://support.hypernode.com/category/changelog/). In our ProductMail we present you the most interesting Hypernode releases in one email. On average you receive 1 ProductMail per month.
+We continuously improve our Hypernode platform and services. Information about releases and changes can be found in our support documentation and [Changelog](https://changelog.hypernode.com/). In our ProductMail we present you the most interesting Hypernode releases in one email. On average you receive 1 ProductMail per month.
 
 We highly recommend you to subscribe to our ProductMail and never miss an update on Hypernode. Of course each ProductMail shows the option to unsubscribe.
 

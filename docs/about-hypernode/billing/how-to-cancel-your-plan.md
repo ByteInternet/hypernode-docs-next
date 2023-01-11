@@ -101,7 +101,7 @@ You never want to accidentally delete a domain name. Because this causes many pr
 1. A week later we will close the domain at SIDN. Your domain is now unregistered and will be quarantined.
 1. After 40 days in quarantine, the domain will be released for registration again.
 
-If your domain is in quarantine, this means that the domain is no longer accessible on the internet. Your contact information is also retrieved from the Whois. The domain can then only be registered by you again. This prevents domain hijacking. Do you want to get your domain name out of quarantine? Read how to do this on [How to Undo the Cancellation of a Domain Name](https://support.hypernode.com/a/solutions/articles/48001144612?lang=en) page.
+If your domain is in quarantine, this means that the domain is no longer accessible on the internet. Your contact information is also retrieved from the Whois. The domain can then only be registered by you again. This prevents domain hijacking. Do you want to get your domain name out of quarantine? Read how to do this on [How to Undo the Cancellation of a Domain Name](../../services/domain-procedures/how-to-undo-the-cancellation-of-a-domain-name.md) page.
 
 #### Cancelling Foreign Domains
 

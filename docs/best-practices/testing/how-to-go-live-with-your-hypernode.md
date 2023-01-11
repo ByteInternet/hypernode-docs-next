@@ -5,6 +5,7 @@ myst:
       it's time to go live. Follow these steps for a smooth transition.
 redirect_from:
   - /en/best-practices/testing/how-to-go-live-with-your-hypernode/
+  - /knowledgebase/go-live-with-your-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/testing/how-to-go-live-with-your-hypernode/ -->
@@ -89,7 +90,7 @@ To add a new vhost, for example the domainname [www.example.com](http://www.exam
 
 Please note that defining the vhosts '[www.example.com](http://www.example.com)', does not automatically add 'example.com' as a vhost. You will have to manually define a vhost for this. Since most people simply want their 'example.com' to redirect to '[www.example.com](http://www.example.com)', you can simply use the `--type wwwizer` argument to set this up. This will configure the vhost to redirect all traffic to the www-version of the domain.
 
-Read more about Hypernode Managed Vhosts in [this article](https://support.hypernode.com/en/hypernode/nginx/hypernode-managed-vhosts).
+Read more about Hypernode Managed Vhosts in [this article](../../hypernode-platform/nginx/hypernode-managed-vhosts.md).
 
 ## Step 8: Change DNS Records
 
@@ -115,7 +116,7 @@ As there are situations you cannot benefit from a dedicated IP on Hypernode, ple
 
 ### Setting up DNS records to send mail from your Hypernode
 
-Please follow [this article](https://support.hypernode.com/en/hypernode/email/how-to-set-up-your-dns-for-outgoing-email) on how to setup your DNS to send mail from your Hypernode.
+Please follow [this article](../../hypernode-platform/email/how-to-set-up-your-dns-for-outgoing-email.md) on how to setup your DNS to send mail from your Hypernode.
 
 Note that **4**different DNS records have to added or adjusted.
 
@@ -129,19 +130,19 @@ The following example allows mail from both your mail exchangers and all your Hy
 mydomain.com TXT v=spf1 mx:mydomain.com include:spf.appname.hypernode.io ~all
 ```
 
-For more information have a look at [our article about SPF records](https://support.hypernode.com/knowledgebase/using-spf-hypernode/).
+For more information have a look at [our article about SPF records](../../hypernode-platform/dns/how-to-set-up-your-spf-records-for-hypernode.md).
 
 ## Step 9: Configure SSL
 
 Enable SSL for your shop for safety and to improve search engine optimisation.
 
-You can find a detailed how to in [this article](https://support.hypernode.com/knowledgebase/configuring-shop-use-https/)about configuring SSL on your shop.
+You can find a detailed how-to in [this article](../../hypernode-platform/nginx/how-to-configure-your-shop-to-only-use-https.md) about configuring SSL on your shop.
 
 ## Step 10: Configure Cron
 
 Configure cron jobs to run on your Hypernode (`crontab -e`), and configure them not to run on your old host (`crontab -ir`).
 
-Note that the time on Hypernode is configured to UTC, so the times used in the crontab are one or two hours later than Central European Time. More information about cronjobs can be found in [Configure Cronjobs on Hypernode](https://support.hypernode.com/en/hypernode/tools/how-to-use-periodic-tasks-cronjobs-on-hypernode).
+Note that the time on Hypernode is configured to UTC, so the times used in the crontab are one or two hours later than Central European Time. More information about cronjobs can be found in [Configure Cronjobs on Hypernode](../../hypernode-platform/tools/how-to-use-periodic-tasks-cronjobs-on-hypernode.md).
 
 ## Step 11: Configure Backups on Hypernode (Optional)
 

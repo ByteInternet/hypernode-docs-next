@@ -6,6 +6,7 @@ myst:
       via Byte.nl.
 redirect_from:
   - /en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-byte-nl/
+  - /knowledgebase/use-ssl-certificates-on-your-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-byte-nl/ -->
@@ -28,7 +29,7 @@ SSL sends information across the internet encrypted so that only the intended re
 
 We recommend purchasing an SSL certificate through Hypernode, because you’ll benefit from our managed hosting services.
 
-When using a third party SSL certificate or [Let’s Encrypt](https://support.hypernode.com/en/hypernode/ssl/how-to-use-let-s-encrypt-on-hypernode), you are responsible for implementing, maintaining and renewing the certificate. We cannot provide any support on custom SSL certificates and related issues.
+When using a third party SSL certificate or [Let’s Encrypt](../ssl/how-to-use-lets-encrypt-on-hypernode.md), you are responsible for implementing, maintaining and renewing the certificate. We cannot provide any support on custom SSL certificates and related issues.
 
 ## Buy an SSL Certificate Via Hypernode (Recommended)
 
@@ -98,7 +99,7 @@ To upload your custom SSL, follow the steps below:
 
 ## Use Let’s Encrypt
 
-For the more technical equipped developers we provide [Let’s Encrypt](https://support.hypernode.com/en/hypernode/ssl/how-to-use-let-s-encrypt-on-hypernode).
+For the more technical equipped developers we provide [Let’s Encrypt](../ssl/how-to-use-lets-encrypt-on-hypernode.md).
 
 Let’s Encrypt is a way to order free SSL certificates through domain validation. This has a few limitations:
 
@@ -106,7 +107,7 @@ Let’s Encrypt is a way to order free SSL certificates through domain validatio
 - Let’s Encrypt does not provide wildcard and/or EV certificates
 - Let’s Encrypt SSL Certificates are only valid for a 3 months period.
 
-See [our documentation about configuring Let’s Encrypt on your Hypernode](https://support.hypernode.com/en/hypernode/ssl/how-to-use-let-s-encrypt-on-hypernode) on how to setup Let’s Encrypt on your Hypernode.
+See [our documentation about configuring Let’s Encrypt on your Hypernode](../ssl/how-to-use-lets-encrypt-on-hypernode.md) on how to setup Let’s Encrypt on your Hypernode.
 
 ## How Do I remove a Custom SSL certificate From My Hypernode?
 
@@ -121,7 +122,7 @@ Removing an SSL certificate from your Hypernode is easily done via your Service 
 
 Your SSL certificate is now removed from your Hypernode. If you wish to add it again, simply go back to the overview page and click ‘Koppel handmatig een certificaat’.
 
-To remove Let’s Encrypt certificates you need to log in to your hypernode and[delete the created certificates](https://support.hypernode.com/en/hypernode/ssl/how-to-use-let-s-encrypt-on-hypernode#Stop-using-dehydrated-/-Cleanup) over SSH.
+To remove Let’s Encrypt certificates you need to log in to your hypernode and[delete the created certificates](../ssl/how-to-use-lets-encrypt-on-hypernode.md#stop-using-dehydrated--cleanup) over SSH.
 
 ## Changing Your Base URLs
 
@@ -163,7 +164,7 @@ To check if all went well, check if `/data/web/nginx/nginx_error_output` is pres
 
 Now test your result by visiting the domain!
 
-It is also possible to [selectively redirect to HTTP or HTTPS](https://support.hypernode.com/knowledgebase/redirect-specific-domains-urls-https/) depending on the domain, by using a mapping.
+It is also possible to [selectively redirect to HTTP or HTTPS](../nginx/how-to-redirect-from-or-to-www.md) depending on the domain, by using a mapping.
 
 Redirecting all traffic to https and www
 
@@ -193,7 +194,7 @@ All files in /data/web/nginx starting with public.\* will be included in front o
 
 ## Things to Remember When Using an SSL Certificate
 
-- Don’t forget to point the DNS for your domain to your Hypernode. More information about how this is done [can be found in the article DNS settings Hypernode](https://support.hypernode.com/knowledgebase/dns-settings-hypernode/).
+- Don’t forget to point the DNS for your domain to your Hypernode. More information about how this is done [can be found in the article DNS settings Hypernode](../dns/how-to-manage-your-dns-settings-for-hypernode.md).
 - You will need a storefront in Magento with a secure_base_url. Otherwise Magento will redirect you to the main store. You can change the base urls using the script mentioned above, you can also do this using the following support documentation.
 
 ## SSL on Your (non-www) Naked Domain While Using the Www-izer
@@ -201,7 +202,7 @@ All files in /data/web/nginx starting with public.\* will be included in front o
 If you use the www-izer forwarders in the DNS settings for your domain name, people that visit <https://yourdomain.com> directly will get an error message, either indicating that there is no https available or a plain connection refused error.
 If Hypernode manages your DNS, or you’ve configured your DNS to point directly to the Hypernode, this will not be a problem.
 
-For more information please read the article [DNS Settings Hypernode](https://support.hypernode.com/knowledgebase/dns-settings-hypernode/)
+For more information please read the article [DNS Settings Hypernode](../dns/how-to-manage-your-dns-settings-for-hypernode.md)
 
 ## Enable SSL Stapling
 

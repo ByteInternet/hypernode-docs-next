@@ -6,6 +6,7 @@ myst:
       to use them.
 redirect_from:
   - /en/hypernode/tools/how-to-use-periodic-tasks-cronjobs-on-hypernode/
+  - /knowledgebase/configure-cronjobs-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-periodic-tasks-cronjobs-on-hypernode/ -->

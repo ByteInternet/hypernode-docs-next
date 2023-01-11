@@ -45,7 +45,7 @@ There are two ways to add a Hypernode to a team:
 
 ## Manage Users in a Team
 
-There are three different roles you can assign to members to members of your team. Each role is defined by a set of permissions. The permissions, based on the specific role, apply to all Hypernodes in a team. This also includes the SSL certificates that have been linked to the Hypernodes in the team. For detailed information on what those roles are and which permissions they have, please click [here](https://support.hypernode.com/en/services/control-panel/user-roles-and-permissions-on-hypernodes-control-panel).
+There are three different roles you can assign to members to members of your team. Each role is defined by a set of permissions. The permissions, based on the specific role, apply to all Hypernodes in a team. This also includes the SSL certificates that have been linked to the Hypernodes in the team. For detailed information on what those roles are and which permissions they have, please click [here](user-roles-and-permissions-on-hypernodes-control-panel.md).
 
 ### Inviting a Member
 

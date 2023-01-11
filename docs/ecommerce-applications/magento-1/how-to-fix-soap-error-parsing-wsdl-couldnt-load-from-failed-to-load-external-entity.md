@@ -6,6 +6,7 @@ myst:
       \ to Fix SOAP errors."
 redirect_from:
   - /en/ecommerce/magento-1/how-to-fix-soap-error-parsing-wsdl-couldn-t-load-from-failed-to-load-external-entity/
+  - /knowledgebase/soap-error-parsing-wsdl-couldnt-load-failed-load-external-entity/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-fix-soap-error-parsing-wsdl-couldn-t-load-from-failed-to-load-external-entity/ -->
@@ -43,7 +44,7 @@ If you are not able to `curl` for the WSDL, chances are high that this may be th
 
 ## Check If the User Agent of the SOAP Client Is Rate Limited
 
-If the source IP of the SOAP client is [rate limited](https://support.hypernode.com/knowledgebase/resolving-429-many-requests/), find the corresponding rate limit `zone` in `/var/log/nginx/access.log` and add the user agent to the user agent mapping or the IP rate limit whitelist.
+If the source IP of the SOAP client is [rate limited](../../hypernode-platform/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests.md), find the corresponding rate limit `zone` in `/var/log/nginx/access.log` and add the user agent to the user agent mapping or the IP rate limit whitelist.
 
 ## Check If the IP of the Server Is Allowed to Make HTTP Requests
 

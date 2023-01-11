@@ -7,7 +7,7 @@ redirect_from:
 
 # How to Transfer Your Domain Away From Hypernode
 
-**Please note that this only applies to Control Panel users who log in via my.hypernode.com. If you use the Service Panel (service.byte.nl), you can use [this article](https://support.hypernode.com/en/services/domains/how-to-transfer-your-domain-name-to-another-provider) to transfer your domain away from Hypernode.**
+**Please note that this only applies to Control Panel users who log in via my.hypernode.com. If you use the Service Panel (service.byte.nl), you can use [this article](how-to-transfer-your-domain-away-from-hypernode.md) to transfer your domain away from Hypernode.**
 
 ## **I Want to Transfer My Domain Name to Another Provider**
 

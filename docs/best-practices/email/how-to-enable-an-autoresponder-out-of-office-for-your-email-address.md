@@ -57,7 +57,3 @@ Got to the [autoresponder](https://service.byte.nl/mail/outofoffice.cgi) page. Y
 - You can create the subject line in the entry field behind **Onderwerp**
 - In the entry field for **Bericht**you can set up the message for the autoresponder
 - Click on **Activeren**to save the settings
-
-## Create an Email Forward
-
-In stead of enabling an autoresponder, you can also create an email forward to another address. You can find how to do so [here](https://support.hypernode.com/en/hypernode/email/email-faq#Can-I-Forward-Email-to-an-Existing-Address).

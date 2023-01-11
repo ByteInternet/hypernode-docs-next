@@ -55,7 +55,7 @@ add_header Access-Control-Allow-Origin "https://www.example.com";
 
 And don’t forget to change the domain name in the above example. You could add more file extensions if you want.
 
-# Keep in Mind
+## Keep in Mind
 
 - It is only possible in Nginx to add locations once. Only the first location in the configuration file takes presence. This is because the Nginx config works on a per-request base.
 - Don’t use a colon (`:`) when adding headers. This will result in inconsistent results in different browsers.

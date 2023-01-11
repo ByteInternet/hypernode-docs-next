@@ -5,13 +5,14 @@ myst:
       storefronts. Find detailed instructions for each in this article. '
 redirect_from:
   - /en/ecommerce/magento-1/how-to-change-the-base-url-in-magento-1-x/
+  - /knowledgebase/change-baseurl-magento1/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-change-the-base-url-in-magento-1-x/ -->
 
 # How to Change the Base URL in Magento 1.x
 
-*Information about how to change the Base URL in Magento 2.x can be found [here](https://support.hypernode.com/en/ecommerce/magento-2/how-to-change-your-magento-2-base-urls)*
+*Information about how to change the Base URL in Magento 2.x can be found [here](../../ecommerce-applications/magento-2/how-to-change-your-magento-2-base-urls.md)*
 
 There are several ways to change the Base URL of your Magento 1.x storefronts. Below we will provide you with instructions for each of these ways.
 
@@ -28,7 +29,7 @@ There are several ways to change the Base URL of your Magento 1.x storefronts. B
 
 ### Change the Base URL via phpMyAdmin
 
-- Login to [phpMyAdmin](https://support.hypernode.com/knowledgebase/use-phpmyadmin/)
+- Login to [phpMyAdmin](../../hypernode-platform/mysql/how-to-use-phpmyadmin.md)
 - Select the database you're using for Magento and open the table `core_config_data`
 - Click in the top navigation bar on `SQL`
 - Change the command to `SELECT * FROM `core_config_data` WHERE path like '%web%secure%'` and click on `Go`

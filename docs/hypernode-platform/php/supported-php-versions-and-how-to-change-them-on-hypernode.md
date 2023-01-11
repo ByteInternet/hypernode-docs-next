@@ -5,6 +5,7 @@ myst:
       out which ones and how to change them here. '
 redirect_from:
   - /en/hypernode/php/supported-php-versions-and-how-to-change-them-on-hypernode/
+  - /knowledgebase/php-versions-magento-shop-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/php/supported-php-versions-and-how-to-change-them-on-hypernode/ -->
@@ -52,7 +53,7 @@ It's quite easy to change the PHP version used on your Hypernode. You can change
 
 ### Via the hypernode-systemctl Tool
 
-The easiest way to switch is by using the [hypernode-systemctl tool](https://support.hypernode.com/knowledgebase/hypernode-systemctl-cli-tool/).
+The easiest way to switch is by using the [hypernode-systemctl tool](../tools/how-to-use-the-hypernode-systemctl-cli-tool.md).
 
 To see what version your Hypernode is configured with, you can run the following command:
 
@@ -99,7 +100,7 @@ Afterwards it may take up to 10 minutes before your upgrade has completed.
 
 ## Testing a PHP Version
 
-Unfortunately it is not possible to test with 2 PHP versions on one Hypernode. Before switching your PHP version we recommend you to test your shop to see if everything works as it should in the new PHP version. Testing your shop without having your customers notice anything can be done with [Docker for Hypernode](https://support.hypernode.com/knowledgebase/hypernode-docker/). Docker is a tool that gives you the opportunity to set up a virtual staging environment. You can also temporarily order a [Hypernode development package](https://support.hypernode.com/knowledgebase/development-plans-for-your-magento-shop/) to test your shop on.
+Unfortunately it is not possible to test with 2 PHP versions on one Hypernode. Before switching your PHP version we recommend you to test your shop to see if everything works as it should in the new PHP version. Testing your shop without having your customers notice anything can be done with [Docker for Hypernode](../../best-practices/testing/hypernode-docker.md). Docker is a tool that gives you the opportunity to set up a virtual staging environment. You can also temporarily order a [Hypernode development package](../tools/how-to-use-hypernode-development-plans.md) to test your shop on.
 
 ## The Importance of Upgrading PHP
 
@@ -143,4 +144,4 @@ According to Magento's Documentation, Magento 1.9.4 supports PHP 5.6, 7.0, 7.1, 
 
 ### Ioncube compatibility
 
-We support Ioncube for PHP 5.6 and PHP 7.x, but this extension is not enabled by default as it is a big performance killer. If you wish to have Ioncube enabled, please manually enable it via [the hypernode-systemctl tool](https://support.hypernode.com/knowledgebase/hypernode-systemctl-cli-tool/).
+We support Ioncube for PHP 5.6 and PHP 7.x, but this extension is not enabled by default as it is a big performance killer. If you wish to have Ioncube enabled, please manually enable it via [the hypernode-systemctl tool](../tools/how-to-use-the-hypernode-systemctl-cli-tool.md).

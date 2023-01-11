@@ -44,7 +44,7 @@ This way we know which domains are used on a node that is being migrated or upgr
 
 To make this work your domains should be hosted at Hypernode, so [order your domain](https://www.byte.nl/hosting/domeinnaam) or migrate it to Hypernode.
 
-If your domains are not hosted at Hypernode, read the documentation about [how to configure your DNS for Hypernode](https://support.hypernode.com/en/hypernode/dns/how-to-manage-your-dns-settings-for-hypernode).
+If your domains are not hosted at Hypernode, read the documentation about [how to configure your DNS for Hypernode](../../hypernode-platform/dns/how-to-manage-your-dns-settings-for-hypernode.md).
 
 ### Link your Domain to Your Hypernode
 
@@ -63,4 +63,4 @@ To sync the DNS of your domain to a linked Hypernode, use the following steps:
 - Go the domain detail page by clicking **Details**.
 - Click the orange **DNS manager**button in the top right.
 
-You can manage your domain's DNS on this page. Set the toggle at the top of the page, at **S\*\*\*\*ynchronize DNS with example.hypernode.io**, to **on**to sync your domain to the linked Hypernode. We will automatically add the  CNAME- and A-record that point to your Hypernode to the DNS. We also add [the required records for outgoing email](https://support.hypernode.com/en/hypernode/email/how-to-set-up-your-dns-for-outgoing-email). You can't edit these specific records while the domain is synced to the Hypernode. When you disable syncing, you are able to edit and/or remove these records.
+You can manage your domain's DNS on this page. Set the toggle at the top of the page, at **S\*\*\*\*ynchronize DNS with example.hypernode.io**, to **on**to sync your domain to the linked Hypernode. We will automatically add the CNAME- and A-record that point to your Hypernode to the DNS. We also add [the required records for outgoing email](../../hypernode-platform/email/how-to-set-up-your-dns-for-outgoing-email.md). You can't edit these specific records while the domain is synced to the Hypernode. When you disable syncing, you are able to edit and/or remove these records.

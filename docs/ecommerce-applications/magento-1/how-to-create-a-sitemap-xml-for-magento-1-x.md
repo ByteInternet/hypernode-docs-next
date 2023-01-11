@@ -16,7 +16,7 @@ redirect_from:
 ### Configure Magento to Create Sitemaps
 
 - To enable sitemaps inside Magento, log in to your admin
-- Make sure your [crontab is working properly](https://support.hypernode.com/knowledgebase/configure-cronjobs-on-hypernode/)
+- Make sure your [crontab is working properly](../../hypernode-platform/tools/how-to-use-periodic-tasks-cronjobs-on-hypernode.md)
 - Navigate to `System` > `Configuration` > `Catalog` > `Google Sitemap` > `Generation Settings`
 
 Now fill in the information:

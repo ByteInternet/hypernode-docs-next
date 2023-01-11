@@ -7,7 +7,7 @@ redirect_from:
 
 # How to Protect the Magento 2 API
 
-**The Magento team released security update**[**Magento 2.0.3**](https://magento.com/security/patches/magento-203-security-update)\*\*on March 30th 2017. This release contains a security fix that restricts access to anonymous web APIs.\*\*\*\*[Read more.](https://magento.com/security/best-practices/restricting-access-anonymous-web-apis)\*\***We recommend you to**[**update your Magento**](https://support.hypernode.com/en/ecommerce/magento-2/how-to-update-magento-2)**version to Magento 2.0.3 instead of blocking the API.**
+**The Magento team released security update**[**Magento 2.0.3**](https://magento.com/security/patches/magento-203-security-update)\*\*on March 30th 2017. This release contains a security fix that restricts access to anonymous web APIs.\*\*\*\*[Read more.](https://magento.com/security/best-practices/restricting-access-anonymous-web-apis)\*\***We recommend you to**[**update your Magento**](how-to-update-magento-2.md)**version to Magento 2.0.3 instead of blocking the API.**
 
 In March 2016, Paul Bosselaar and others discovered that the Magento 2 API by default discloses information that can be considered private:
 

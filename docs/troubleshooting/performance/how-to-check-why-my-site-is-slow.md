@@ -66,7 +66,7 @@ If `php-fpm: pool www` seems to be causing the high load. Proceed with running `
 - Is all the traffic legit?
   - Check if there are any modules/plugins enabled or installed, this might cause extra load
   - Do you have a sale or sent out emails about the sale? An upgrade might be the best solution here
-- Do you notice non-valid traffic, for example from several countries you don't sell to? [Here's](https://support.hypernode.com/en/hypernode/nginx/how-to-block-your-webshop-for-specific-countries) how to block specific countries.
+- Do you notice non-valid traffic, for example from several countries you don't sell to? [Here's](../../hypernode-platform/nginx/how-to-block-your-webshop-for-specific-countries.md) how to block specific countries.
 
 If `mysqld` and `livefpm` aren't the cause, check for other processes in `htop`. It could be also be the following:
 
@@ -78,7 +78,7 @@ If `mysqld` and `livefpm` aren't the cause, check for other processes in `htop`.
 
 Please note that a slower performance is not always caused by a high load on the Hypernode. There is a number of other reasons which may affect the performance.
 
-Some modules/extensions will connect to external services. These services might not be reachable causing all processes on the Hypernode to hang/or slow down (e.g. Kiyoh reviews). It may be worth checking the `php-slow.log` to spot such issues. Check [this article from our support documentation](https://support.hypernode.com/en/troubleshooting/performance/how-to-spot-slow-extensions-using-the-php-slow-logs#Usage) for more information on this.
+Some modules/extensions will connect to external services. These services might not be reachable causing all processes on the Hypernode to hang/or slow down (e.g. Kiyoh reviews). It may be worth checking the `php-slow.log` to spot such issues. Check [this article from our support documentation](../../troubleshooting/performance/how-to-spot-slow-extensions-using-the-php-slow-logs.md#usage) for more information on this.
 
 Some will use an extravagant amount of database queries, which slows down the whole website. Unfortunately this isn't easy to spot without analysing the what a `php-fpm process` is actually doing.
 

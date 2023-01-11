@@ -5,6 +5,7 @@ myst:
       sites here. '
 redirect_from:
   - /en/hypernode/nginx/how-to-block-user-agents-and-referrer-sites/
+  - /knowledgebase/blocking-user-agents-referrers/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-block-user-agents-and-referrer-sites/ -->

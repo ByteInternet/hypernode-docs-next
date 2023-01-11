@@ -6,6 +6,7 @@ myst:
       you. '
 redirect_from:
   - /en/hypernode/nginx/how-to-create-a-reusable-config-to-include-in-custom-snippets/
+  - /knowledgebase/create-reusable-config-for-custom-snippets/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-create-a-reusable-config-to-include-in-custom-snippets/ -->
@@ -19,7 +20,7 @@ This can be very useful to keep your configuration files tidy and clear. In this
 
 ## Create a Whitelist
 
-If you work with additional applications like [phpRedisAdmin](https://support.hypernode.com/knowledgebase/setup-php-redis-admin-manage-redis-caches/), [Adminer](https://support.hypernode.com/knowledgebase/working-adminer-php-hypernode/), [Magmi](https://support.hypernode.com/knowledgebase/unblocking-and-accessing-magmi-for-hypernode/) or [PHPMyAdmin on a different domain or over ssl](https://support.hypernode.com/knowledgebase/use-phpmyadmin/#Hiding_PHPMyAdmin_from_the_world_by_adding_a_whitelist), a reusable whitelist or basic auth file can make things much easier, as you only need to manage a single file instead of one for every additional location.
+If you work with additional applications like [Magmi](../tools/unblocking-and-accessing-magmi-for-hypernode.md) or [PHPMyAdmin on a different domain or over ssl](../mysql/how-to-use-phpmyadmin.md), a reusable whitelist or basic auth file can make things much easier, as you only need to manage a single file instead of one for every additional location.
 
 When a new developer joins or when the office IP of your organization changes, you can easily change the config without the need to grep for `allow` statements or multiple `basic_auth` files.
 
@@ -61,9 +62,9 @@ Using this construction, you don’t need to update every location when another 
 
 ### Create a Basic Auth Config File
 
-In case you haven’t [created a basic auth password file](https://support.hypernode.com/knowledgebase/protect-a-directory-with-a-password-in-nginx/), do this first.
+In case you haven’t [created a basic auth password file](how-to-protect-your-magento-store-with-a-password-in-nginx.md), do this first.
 
-In this example we use the password file that is [automagically created on Hypernode Development nodes](https://support.hypernode.com/knowledgebase/basic-authentication-on-development-plans/): `/data/web/nginx/htpasswd-development`.
+In this example we use the password file that is [automagically created on Hypernode Development nodes](basic-authentication-on-hypernode-development-plans.md): `/data/web/nginx/htpasswd-development`.
 
 ### Include the Configuration File in Custom Snippets
 

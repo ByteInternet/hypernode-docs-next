@@ -9,17 +9,17 @@ redirect_from:
 
 Customers with Hypernode Pelican, Falcon (formerly known as Professional) and Eagle (formerly known as Excellence) plans can use Varnish to boost their shop. This article explains how you can configure Varnish for your Hypernode.
 
-Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. We'd recommend to first test varnish on a [staging environment](https://support.hypernode.com/en/ecommerce/shopware/how-to-use-a-basic-staging-environment-with-shopware-6) or a[development plan](https://support.hypernode.com/en/hypernode/tools/how-to-use-hypernode-development-plans) before implementing varnish on a live node.
+Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. We'd recommend to first test varnish on a [staging environment](how-to-use-a-basic-staging-environment-with-shopware-6.md) or a[development plan](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) before implementing varnish on a live node.
 
 ## Step One: Enable Varnish on the Hypernode
 
-You can enable varnish on the hypernode using the [systemctl-tool](https://support.hypernode.com/en/hypernode/tools/how-to-use-the-hypernode-systemctl-cli-tool) by running:
+You can enable varnish on the hypernode using the [systemctl-tool](../../hypernode-platform/tools/how-to-use-the-hypernode-systemctl-cli-tool.md) by running:
 
 `hypernode-systemctl settings varnish_enabled True`
 
 ## Step Two: How to Setup Varnish for the Vhost
 
-The [hypernode-manage-vhosts](https://support.hypernode.com/en/hypernode/nginx/hypernode-managed-vhosts) (HMV) config allows you to enable varnish for every vhost individually. So if you for example have a domain example.com. You should create 2 vhosts:
+The [hypernode-manage-vhosts](../../hypernode-platform/nginx/hypernode-managed-vhosts.md) (HMV) config allows you to enable varnish for every vhost individually. So if you for example have a domain example.com. You should create 2 vhosts:
 
 - example.com
 - [www.example.com](http://www.example.com)

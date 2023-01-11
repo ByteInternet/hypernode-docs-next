@@ -36,7 +36,7 @@ The costs for an SSL certificate consist of two aspects: the costs for the actua
 
 The certificate costs you pay for an SSL certificate that you order via Hypernode, is the purchase prise we pay at our supplier. We arrange the entire SSL application for you. You do not have to do anything more than to order the certificate in your Service Panel. Only with EV-SSL you still have to take care of a number of things (as explained [here](#what-kind-of-certificates-can-i-order-via-hypernode)).
 
-In the background, the certificate is requested with the correct data, the validation is done (place file, perform validation), the certificate is retrieved and safely stored in the right place. We ensure that your SSL certificate works properly, even if you change your plan. All you have to take care of is to install the SSL on the right Hypernode (which can be done with [one click](https://support.hypernode.com/en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-byte-nl#Install-the-SSL-Certificate-on-your-Hypernode)).
+In the background, the certificate is requested with the correct data, the validation is done (place file, perform validation), the certificate is retrieved and safely stored in the right place. We ensure that your SSL certificate works properly, even if you change your plan. All you have to take care of is to install the SSL on the right Hypernode (which can be done with [one click](../ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-nl.md#install-the-ssl-certificate-on-your-hypernode)).
 
 ### Your SSL Certificate Is Automatically Renewed
 
@@ -74,13 +74,13 @@ If the telephone validation fails, you can contact our support department. We ca
 
 ## Can I Request an SSL Certificate on My Hypernode Name?
 
-Please note that you cannot request an SSL certificate for your app name (e.g. example.hypernode.io). You can create a [Let's Encrypt certificate](https://support.hypernode.com/en/hypernode/ssl/how-to-use-let-s-encrypt-on-hypernode) for this. If you want SSL for your domain, you need a Presence or Presence Plus plan for each domain for which you want to request an SSL certificate. This is necessary because the domain must be known in our administration before we can order an SSL certificate.
+Please note that you cannot request an SSL certificate for your app name (e.g. example.hypernode.io). You can create a [Let's Encrypt certificate](../ssl/how-to-use-lets-encrypt-on-hypernode.md) for this. If you want SSL for your domain, you need a Presence or Presence Plus plan for each domain for which you want to request an SSL certificate. This is necessary because the domain must be known in our administration before we can order an SSL certificate.
 
 So first make sure that you have ordered a Presence plan, even if your domain is registered externally. Then you order the SSL certificate as an add-on to this Presence plan. Make sure that you have the Contractant role for both plans.
 
 ## How Do I Order an SSL Certificate?
 
-You can request an SSL certificate via our Service Panel. You can order this as an add-on to a Presence package. You can find out how to do that [here](<https://support.hypernode.com/en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-byte-nl#Buy-an-SSL-Certificate-Via-Byte-(Recommended)>).
+You can request an SSL certificate via our Service Panel. You can order this as an add-on to a Presence package. You can find out how to do that [here](../ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-nl.md#buy-an-ssl-certificate-via-hypernode-recommended).
 
 ## How Can I Link the SSL Certificate to the Hypernode?
 
@@ -112,4 +112,4 @@ Make sure there are no more redirects to the HTTPS version of your site.
 
 ## Can I Use My Own SSL Certificate?
 
-You can also use a (custom) SSL certificate you purchased elsewhere on a Hypernode. You can find out how to install this on your Hypernode [here](https://support.hypernode.com/en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-byte-nl#Add-a-Custom-SSL-Certificate).
+You can also use a (custom) SSL certificate you purchased elsewhere on a Hypernode. You can find out how to install this on your Hypernode [here](../ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-nl.md#add-a-custom-ssl-certificate).

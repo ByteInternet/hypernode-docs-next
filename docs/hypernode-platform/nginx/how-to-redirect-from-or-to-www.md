@@ -6,6 +6,8 @@ myst:
       to WWW here.
 redirect_from:
   - /en/hypernode/nginx/how-to-redirect-from-or-to-www/
+  - /knowledgebase/redirect-from-or-to-www/
+  - /knowledgebase/redirect-specific-domains-urls-https/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-redirect-from-or-to-www/ -->
@@ -20,7 +22,7 @@ If you use the wwwizer servers, which are sometimes used when your domain is not
 
 For Service Panel customers only: when your domain is hosted at Hypernode, simply link it to your Hypernode through the [Service Panel](https://service.byte.nl/)
 
-More info can be found [on our page about setting your DNS](https://support.hypernode.com/knowledgebase/dns-settings-hypernode/).
+More info can be found [on our page about setting your DNS](../dns/how-to-manage-your-dns-settings-for-hypernode.md).
 
 ## Redirect From Apex to WWW
 

@@ -5,15 +5,16 @@ myst:
       in order to boost your Magento shop.
 redirect_from:
   - /en/ecommerce/magento-1/how-to-configure-varnish-for-magento-1-x/
+  - /knowledgebase/varnish-on-magento1/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-configure-varnish-for-magento-1-x/ -->
 
 # How to Configure Varnish for Magento 1.x
 
-Customers with Hypernode Pelican, Falcon (formerly known as Professional) and Eagle (formerly known as Excellence) plans can use Varnish to boost their Magento shop. To manage and configure Varnish for Magento 1.x you’ll need Turpentine. This article explains how you can configure Varnish for your Hypernode. Do you have a Magento 2.x shop, please check [this article](https://support.hypernode.com/en/ecommerce/magento-2/how-to-configure-varnish-for-magento-2-x)
+Customers with Hypernode Pelican, Falcon (formerly known as Professional) and Eagle (formerly known as Excellence) plans can use Varnish to boost their Magento shop. To manage and configure Varnish for Magento 1.x you’ll need Turpentine. This article explains how you can configure Varnish for your Hypernode. Do you have a Magento 2.x shop, please check [this article](../../ecommerce-applications/magento-2/how-to-configure-varnish-for-magento-2-x.md)
 
-Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. Don't implement Varnish on production nodes while still under development but use [development node](https://support.hypernode.com/knowledgebase/development-plans-for-your-magento-shop/) or a local staging environment like the [Hypernode Docker](https://support.hypernode.com/en/best-practices/testing/hypernode-docker) instead.
+Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. Don't implement Varnish on production nodes while still under development but use [development node](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) or a local staging environment like the [Hypernode Docker](../../best-practices/testing/hypernode-docker.md) instead.
 
 ## Table of Contents
 
@@ -34,7 +35,7 @@ Before installing Turpentine we recommend enabling Varnish on your Hypernode usi
 
 ### All Customers: Via the hypernode-systemctl CLI Tool
 
-Activating Varnish and set which version to use on your Hypernode can be done via the [hypernode-systemctl tool](https://support.hypernode.com/knowledgebase/hypernode-systemctl-cli-tool/).
+Activating Varnish and set which version to use on your Hypernode can be done via the [hypernode-systemctl tool](../../hypernode-platform/tools/how-to-use-the-hypernode-systemctl-cli-tool.md).
 
 ### Dutch Customers: Via Your Service Panel
 
@@ -97,8 +98,8 @@ We highly recommend you to test Varnish on a staging environment first. This way
 
 There are 2 ways to create a Hypernode staging environment for testing Varnish;
 
-1. [Hypernode development plan](https://support.hypernode.com/knowledgebase/development-plans-for-your-magento-shop/)
-1. The [Hypernode Docker](https://support.hypernode.com/en/best-practices/testing/hypernode-docker)
+1. [Hypernode development plan](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md)
+1. The [Hypernode Docker](../../best-practices/testing/hypernode-docker.md)
 
 We recommend you to use a development node (which can be cancelled any time). **A basic staging environment doesn’t work well with Varnish.**
 
@@ -140,4 +141,4 @@ HTTP/1.1 200 0.79 secs: 14856 bytes ==> /vogelbekdier.html
 
 ## Troubleshooting
 
-If your Varnish setup is not working over SSL, check [this article.](https://support.hypernode.com/en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-byte-nl#Redirecting-to-HTTPS-When-Using-Varnish)
+If your Varnish setup is not working over SSL, check [this article](../../hypernode-platform/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-nl.md#redirecting-to-https-when-using-varnish).

@@ -5,6 +5,7 @@ myst:
       and a better performance of your shop. Read here how to optimise it on Hypernode.
 redirect_from:
   - /en/troubleshooting/performance/how-to-optimise-your-magento-disk-performance/
+  - /knowledgebase/magento-disk-performance-optimization/
 ---
 
 <!-- source: https://support.hypernode.com/en/troubleshooting/performance/how-to-optimise-your-magento-disk-performance/ -->

@@ -6,6 +6,7 @@ myst:
       1.x logs here.
 redirect_from:
   - /en/ecommerce/magento-1/how-to-clean-the-magento-1-x-logs/
+  - /knowledgebase/magento-log-cleaning/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-clean-the-magento-1-x-logs/ -->

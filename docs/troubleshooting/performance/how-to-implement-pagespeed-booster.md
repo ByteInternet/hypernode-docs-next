@@ -63,12 +63,12 @@ To setup PageSpeed Booster on your development environment you'll need a unique 
    `hypernode-manage-vhosts psb.example.com --https --force-https --varnish`
 1. Now point the DNS to the PageSpeed Booster instance with the records you got at the PageSpeed Booster page in your Control Panel.
 1. Make sure Varnish is enabled on the server: hypernode-systemctl settings varnish_enabled.
-1. Add the user agent **PSB**to the [allowlist for the ratelimiter](https://support.hypernode.com/en/hypernode/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests#Whitelisting-Additional-User-Agents) in\*\*~/nginx/http.ratelimit\*\* file.
-1. Disable the [basic-authentication](https://support.hypernode.com/en/hypernode/nginx/basic-authentication-on-hypernode-development-plans#Disable-the-basic-authentication) on the development Hypernode.
+1. Add the user agent **PSB**to the [allowlist for the ratelimiter](../../hypernode-platform/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests.md#whitelisting-additional-user-agents) in\*\*~/nginx/http.ratelimit\*\* file.
+1. Disable the [basic-authentication](../../hypernode-platform/nginx/basic-authentication-on-hypernode-development-plans.md#disable-the-basic-authentication) on the development Hypernode.
 
 ### Configuring Varnish
 
-By now you've a valid SSL for your test domain, and pointed it to the PageSpeed Booster instance which now works as a proxy. Whats left is that you make the required changes to your **.vcl** so that the PageSpeed Booster is able to optimize your pages.
+By now you've a valid SSL for your test domain, and pointed it to the PageSpeed Booster instance which now works as a proxy. What's left is that you make the required changes to your **.vcl** so that the PageSpeed Booster is able to optimize your pages.
 
 If you're using the default generated .vcl configuration file from the Magento 2 backend you could replace that **.vcl** with **[this template](https://gist.github.com/hn-support/2478eb5ed8328553de813f524ae12f91)** which we already adjusted for the PageSpeed Booster.
 
@@ -76,10 +76,10 @@ If you're using the default generated .vcl configuration file from the Magento 2
 
 The last step will be configuring Varnish on your application. Below you can find our available documentation for configuring Varnish on the application you’re using:
 
-- [How to configure Varnish for Magento 1](https://support.hypernode.com/en/ecommerce/magento-1/how-to-configure-varnish-for-magento-1-x)
-- [How to configure Varnish for Magento 2](https://support.hypernode.com/en/ecommerce/magento-2/how-to-configure-varnish-for-magento-2-x)
-- [How to configure Varnish for Shopware 5](https://support.hypernode.com/en/support/solutions/articles/48001207016-how-to-configure-varnish-for-shopware-5)
-- [How to configure Varnish for Shopware 6](https://support.hypernode.com/en/support/solutions/articles/48001200525-how-to-configure-varnish-for-shopware-6)
+- [How to configure Varnish for Magento 1](../../ecommerce-applications/magento-1/how-to-configure-varnish-for-magento-1-x.md)
+- [How to configure Varnish for Magento 2](../../ecommerce-applications/magento-2/how-to-configure-varnish-for-magento-2-x.md)
+- [How to configure Varnish for Shopware 5](../../ecommerce-applications/shopware-5/how-to-configure-varnish-for-shopware-5.md)
+- [How to configure Varnish for Shopware 6](../../ecommerce-applications/shopware-6/how-to-configure-varnish-for-shopware-6.md)
 
 ## Modifying your Current Varnish VCL configuration
 

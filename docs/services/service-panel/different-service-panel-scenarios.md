@@ -13,7 +13,7 @@ redirect_from:
 
 **Please note that this only applies to Service Panel users who log in via service.byte.nl.**
 
-The Service Panel works with a central login, which enables users to easily manage multiple plans. There are three different roles which you can assign to different accounts. This way you can give your developer technical access to your plan, without them having access to stuff like invoices and billing. You can find an explanation of these roles in [this article](https://support.hypernode.com/en/hypernode/tools/what-are-the-different-roles-in-the-service-panel-and-what-is-the-difference-between-them).
+The Service Panel works with a central login, which enables users to easily manage multiple plans. There are three different roles which you can assign to different accounts. This way you can give your developer technical access to your plan, without them having access to stuff like invoices and billing.
 
 The three different roles are as follows:
 

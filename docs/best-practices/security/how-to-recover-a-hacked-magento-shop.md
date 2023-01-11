@@ -6,6 +6,7 @@ myst:
       Hypernode.
 redirect_from:
   - /en/best-practices/security/how-to-recover-a-hacked-magento-shop/
+  - /knowledgebase/recover-a-hacked-magento-shop/
 ---
 
 <!-- source: https://support.hypernode.com/en/best-practices/security/how-to-recover-a-hacked-magento-shop/ -->
@@ -20,7 +21,7 @@ In many cases, Magereport.com would tell you if your shop has been hacked! Mager
 
 You may also get alerted some other way, perhaps via a central agency such as the NCSC, or your local equivalent.
 
-On Hypernode we also provide a [Malware scanner](https://support.hypernode.com/en/best-practices/security/how-to-scan-your-hypernode-for-malware), based on [Yara](http://yara.readthedocs.io/) with an [extra set of signatures to detect magento directed malware](https://github.com/gwillem/magento-malware-scanner). Every night an audit on new or changed files will be performed and when the scanner hits a possible infected file, it will notify Hypernode's abuse department. We will check if it is a false-positive and if not; we'll send you a warning message by email.
+On Hypernode we also provide a [Malware scanner](../../best-practices/security/how-to-scan-your-hypernode-for-malware.md), based on [Yara](http://yara.readthedocs.io/) with an [extra set of signatures to detect magento directed malware](https://github.com/gwillem/magento-malware-scanner). Every night an audit on new or changed files will be performed and when the scanner hits a possible infected file, it will notify Hypernode's abuse department. We will check if it is a false-positive and if not; we'll send you a warning message by email.
 
 ## What to do When your Shop is Hacked
 
@@ -50,7 +51,7 @@ In most cases this will be:
 - Install all the relevant patches, for both Magento and any plugins.
 - Upgrade your Magento to the latest version.
 - Configure brute force protection.
-- Run a scan using the [Magento corediff scanner](https://support.hypernode.com/en/hypernode/tools/how-to-use-magento-corediff-on-hypernode). If any clearly suspicious files are found, move them to a non reachable directory (like `/data/web/hacked/`) for later analysis, remove them from your website, and restore a trusted copy of the affected files.
+- Run a scan using the [Magento corediff scanner](../../hypernode-platform/tools/how-to-use-magento-corediff-on-hypernode.md). If any clearly suspicious files are found, move them to a non reachable directory (like `/data/web/hacked/`) for later analysis, remove them from your website, and restore a trusted copy of the affected files.
 
 ### Throw the Hacker Out
 
@@ -59,7 +60,7 @@ An intruder most likely has left one or more backdoors. These could be separate 
 To avoid recurring hacking incidents, your code and database should be thoroughly clean. The only trustworthy way to accomplish this, is to remove everything and recover from a (known clean) backup or git checkout. Establish which files were changed and go back to the latest clean version. For example, do a `git diff origin/<old-release`>. Do not trust any git checkout on the server, as that could have been compromised as well.
 
 If you do not have a backup or version control, success is not guaranteed. But you could try to find
-suspicious and/or recently modified files. And you could compare with a new Magento installation to see if core files have been modified. You may also use [a historical back-up](https://support.hypernode.com/en/hypernode/backups/how-to-restore-your-hypernode-from-a-backup) to restore (parts) of your Hypernode to a trusted copy.
+suspicious and/or recently modified files. And you could compare with a new Magento installation to see if core files have been modified. You may also use [a historical back-up](../../hypernode-platform/backups/how-to-restore-your-hypernode-from-a-snapshot.md) to restore (parts) of your Hypernode to a trusted copy.
 
 ## Need help?
 

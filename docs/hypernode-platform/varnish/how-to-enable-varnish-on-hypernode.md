@@ -7,7 +7,7 @@ redirect_from:
 
 # How to enable Varnish on Hypernode
 
-Customers with a Trial, Pelican M (or up), Falcon S (or up) or Eagle plan can use Varnish to boost the performance of their application. After enabling Varnish, you still need to configure both Varnish and your application. We have [support documentation per application](https://support.hypernode.com/en/hypernode/varnish/how-to-enable-varnish-on-hypernode#Configure-Varnish-on-your-application) available to guide you through the process:
+Customers with a Trial, Pelican M (or up), Falcon S (or up) or Eagle plan can use Varnish to boost the performance of their application. After enabling Varnish, you still need to configure both Varnish and your application. We have [support documentation per application](../varnish/how-to-enable-varnish-on-hypernode.md#configure-varnish-on-your-application) available to guide you through the process:
 
 ## Enable Varnish 4.0 or 6.0
 
@@ -27,14 +27,14 @@ At Hypernode it’s possible to enable Varnish 4.0 or 6.0 via the Control Panel,
 - Click on "Varnish"
 - Use the switch to enable Varnish
 
-**Configure Varnish 6.0 via the [hypernode-systemctl tool](https://support.hypernode.com/knowledgebase/hypernode-systemctl-cli-tool/)**
+**Configure Varnish 6.0 via the [hypernode-systemctl tool](../tools/how-to-use-the-hypernode-systemctl-cli-tool.md)**
 
 `hypernode-systemctl settings varnish_version 6.0`
 
 **Or if you want to switch to Varnish 4.0**
 `hypernode-systemctl settings varnish_version 4.0`
 
-**Enable Varnish via the [hypernode-systemctl tool](https://support.hypernode.com/knowledgebase/hypernode-systemctl-cli-tool/)**
+**Enable Varnish via the [hypernode-systemctl tool](../tools/how-to-use-the-hypernode-systemctl-cli-tool.md)**
 
 `hypernode-systemctl settings varnish_enabled true`
 
@@ -48,7 +48,7 @@ Since the introduction of \*\*[hypernode-manage-vhosts](https://changelog.hypern
 
 The last step will be configuring Varnish on your application. Below you can find our available documentation for configuring Varnish on the application you’re using:
 
-- [How to configure Varnish for Magento 1](https://support.hypernode.com/en/ecommerce/magento-1/how-to-configure-varnish-for-magento-1-x)
-- [How to configure Varnish for Magento 2](https://support.hypernode.com/en/ecommerce/magento-2/how-to-configure-varnish-for-magento-2-x)
-- [How to configure Varnish for Shopware 5](https://support.hypernode.com/en/support/solutions/articles/48001207016-how-to-configure-varnish-for-shopware-5)
-- [How to configure Varnish for Shopware 6](https://support.hypernode.com/en/support/solutions/articles/48001200525-how-to-configure-varnish-for-shopware-6)
+- [How to configure Varnish for Magento 1](../../ecommerce-applications/magento-1/how-to-configure-varnish-for-magento-1-x.md)
+- [How to configure Varnish for Magento 2](../../ecommerce-applications/magento-2/how-to-configure-varnish-for-magento-2-x.md)
+- [How to configure Varnish for Shopware 5](../../ecommerce-applications/shopware-5/how-to-configure-varnish-for-shopware-5.md)
+- [How to configure Varnish for Shopware 6](../../ecommerce-applications/shopware-6/how-to-configure-varnish-for-shopware-6.md)

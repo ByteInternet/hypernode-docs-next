@@ -6,6 +6,7 @@ myst:
       storefront(s).
 redirect_from:
   - /en/ecommerce/magento-1/how-to-create-a-robots-txt-for-your-magento-1-shop/
+  - /knowledgebase/create-robots-txt-magento1/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-1/how-to-create-a-robots-txt-for-your-magento-1-shop/ -->

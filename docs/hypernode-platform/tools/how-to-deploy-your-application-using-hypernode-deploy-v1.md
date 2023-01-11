@@ -18,7 +18,7 @@ Before starting, make sure you have the following requirements setup correctly:
 - (Access to) a Hypernode
 - A Github account
 
-Make sure to [create a new SSH key pair](https://support.hypernode.com/en/hypernode/ssh/how-to-use-ssh-keys-on-hypernode) as a deployment key, and [add this to your Hypernode via the Control Panel](https://support.hypernode.com/en/services/control-panel/how-to-add-keys-to-the-ssh-keymanager). We'll use this SSH key in the deployment process to upload your application to the Hypernode.
+Make sure to [create a new SSH key pair](../ssh/how-to-use-ssh-keys-on-hypernode.md) as a deployment key, and [add this to your Hypernode via the Control Panel](../../services/control-panel/how-to-add-keys-to-the-ssh-key-manager.md). We'll use this SSH key in the deployment process to upload your application to the Hypernode.
 
 ## Configure your Deployment SSH key pair in Github
 

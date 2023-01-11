@@ -5,6 +5,7 @@ myst:
       users) and which credentials to use to make a FTP/SFTP connection.
 redirect_from:
   - /en/hypernode/ftp/how-to-configure-ftp-sftp-on-hypernode/
+  - /knowledgebase/configuring-ftp/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/ftp/how-to-configure-ftp-sftp-on-hypernode/ -->
@@ -17,7 +18,7 @@ NB: We strongly recommend using SSH or SFTP for file transfers. FTP is an inhere
 
 ## Managing FTP
 
-**NB: The FTP users created with the instructions below can also be used for SFTP. More information about this can be found**[**here**](<https://support.hypernode.com/en/hypernode/ftp/how-to-configure-ftp-sftp-on-hypernode#SFTP-(SSH-File-Transfer-Protocol)>)**.**
+**NB: The FTP users created with the instructions below can also be used for SFTP. More information about this can be found**[**here**](#sftp-ssh-file-transfer-protocol)**.**
 
 ### Adding FTP Users
 
@@ -163,15 +164,15 @@ You can login with the default app user credentials. The below instructions will
 
 #### Generate an SSH Keypair
 
-Start by generating a keypair (a private and a public key). This can be done through a **Terminal** (Linux and Mac OSX have this program pre-installed) or through **PuTTY**. How to do this is covered in this [article](https://support.hypernode.com/knowledgebase/use-ssh-keys-on-hypernode/).
+Start by generating a keypair (a private and a public key). This can be done through a **Terminal** (Linux and Mac OSX have this program pre-installed) or through **PuTTY**. How to do this is covered in this [article](../ssh/how-to-use-ssh-keys-on-hypernode.md).
 
 #### Add Your Public Key to Your Hypernode
 
 When you have generated the keypair you need to add your public key to your Hypernode.
 
-Service Panel users can use the SSH Keymanager in the [Service panel.](https://support.hypernode.com/en/hypernode/ssh/how-to-use-ssh-keys-on-hypernode#Service-Panel-Users%3A-Add-Public-Key-to-the-SSH-Keymanager-2)
+Service Panel users can use the SSH Keymanager in the [Service panel](../ssh/how-to-use-ssh-keys-on-hypernode.md#service-panel-users-add-public-key-to-the-ssh-keymanager).
 
-Control Panel users also have access to an SSH Keymanager via their Control panel. How this works is explained in [this article](https://support.hypernode.com/en/services/control-panel/how-to-add-keys-to-the-ssh-keymanager).
+Control Panel users also have access to an SSH Keymanager via their Control panel. How this works is explained in [this article](../../services/control-panel/how-to-add-keys-to-the-ssh-key-manager.md).
 
 Alternatively you can also add the public key to the the `~/.ssh/authorized_keys` file.
 

@@ -42,7 +42,7 @@ If you log in via [my.hypernode.com](https://auth.hypernode.com/), please use th
 - You'll now see an overview of your current plan on the left and the new plan on the right:
   ![](_res/tkmbOB9hsfJ0SfLR-TNCFtKqzRNgC6bvmA.png)
 - Select the desired plan and the type of environment, Development or Production.
-- Select an add-on. Read more about our two SLA levels [here](https://support.hypernode.com/en/about/support/emergency-support-outside-office-hours-#Hypernode-Emergency-Service-Costs).
+- Select an add-on. Read more about our two SLA levels [here](../support/emergency-support-outside-office-hours.md).
 - Optional: schedule the plan change for a specific date and time.
 - Agree with terms and conditions and click Change to this plan. Your plan will be changed immediately. (or on the scheduled date and time)
 - Warnings, if applicable, will be shown on the left:
@@ -75,7 +75,7 @@ When upgrading or downgrading a Hypernode plan, we first create a second node, m
 
 Right before the migration is finished, we email the technical contact the new IP address.
 
-If you think you might switch between Professional/Falcon and Excellence/Eagle plans in the future, we recommend you to move your domain(s) to Hypernode so we can handle the DNS of your domains to avoid downtime. Or, use the DNS settings as explained in [this article](https://support.hypernode.com/knowledgebase/dns-settings-hypernode/).
+If you think you might switch between Professional/Falcon and Excellence/Eagle plans in the future, we recommend you to move your domain(s) to Hypernode so we can handle the DNS of your domains to avoid downtime. Or, use the DNS settings as explained in [this article](../../hypernode-platform/dns/how-to-manage-your-dns-settings-for-hypernode.md).
 
 Make also sure to keep a list of payment providers, firewalls, local DNS servers and other services that depend on the IP address of the Hypernode, so you can quickly change the IP address if needed.
 

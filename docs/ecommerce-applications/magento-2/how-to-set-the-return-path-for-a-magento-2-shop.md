@@ -6,6 +6,8 @@ myst:
       so in Magento 2.
 redirect_from:
   - /en/ecommerce/magento-2/how-to-set-the-return-path-for-a-magento-2-shop/
+  - /en/ecommerce/magento-2/workaround-return-path-email-bug-in-magento-2/
+  - /knowledgebase/set-return-path-email-sent-from-magento-shop/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-set-the-return-path-for-a-magento-2-shop/ -->

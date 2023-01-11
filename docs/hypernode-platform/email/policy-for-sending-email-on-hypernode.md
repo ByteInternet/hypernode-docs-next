@@ -5,6 +5,7 @@ myst:
       email platform that filters spam and infected emails. Read here about its policies. '
 redirect_from:
   - /en/hypernode/email/policy-for-sending-email-on-hypernode/
+  - /knowledgebase/hypernode-email-policy/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/email/policy-for-sending-email-on-hypernode/ -->

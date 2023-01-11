@@ -36,7 +36,7 @@ app@yqc2sw-example-magweb-cmbl:~$ mailq
 --- 3 Kbytes in 3 Requests.
 ```
 
-In this use case there are three emails in the queue and one of them will not be send because the the DNS is not setup correctly. How to set up your DNS for outgoing email can be found in this [article](https://support.hypernode.com/en/hypernode/email/how-to-set-up-your-dns-for-outgoing-email). When the required DNS record is added to the domain DNS you are able to force a retry to send this email. This can be done from the Command Line Interface as the **app** user with:
+In this use case there are three emails in the queue and one of them will not be send because the the DNS is not setup correctly. How to set up your DNS for outgoing email can be found in this [article](how-to-set-up-your-dns-for-outgoing-email.md). When the required DNS record is added to the domain DNS you are able to force a retry to send this email. This can be done from the Command Line Interface as the **app** user with:
 
 ```
 app@yqc2sw-example-magweb-cmbl:~$ **/usr/sbin/sendmail -q**

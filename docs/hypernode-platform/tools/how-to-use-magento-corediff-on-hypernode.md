@@ -38,4 +38,4 @@ In the example above, you can see that the file */data/web/magento2/app/Mage.php
 
 ## Cleaning up malicious code
 
-If you do end up finding malicious code, we advise you to follow our guide on recovering [a hacked magento shop](https://support.hypernode.com/en/best-practices/security/how-to-recover-a-hacked-magento-shop).
+If you do end up finding malicious code, we advise you to follow our guide on recovering [a hacked magento shop](../../best-practices/security/how-to-recover-a-hacked-magento-shop.md).

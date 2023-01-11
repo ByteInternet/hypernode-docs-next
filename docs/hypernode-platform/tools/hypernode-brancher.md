@@ -23,7 +23,7 @@ Hypernode Brancher is a mutable and temporary copy of your Hypernode. It’s bas
 
 If you wish to get a more recent state on the Brancher node, you can create a new backup on your Hypernode using `hypernode-systemctl create_backup`. Note that this requires SLA Standard to be enabled on your Hypernode.
 
-Read more about our [backup policy here](https://support.hypernode.com/en/hypernode/backups/hypernode-backup-policy).
+Read more about our [backup policy here](../backups/hypernode-backup-policy.md).
 
 ## Why should I use it?
 

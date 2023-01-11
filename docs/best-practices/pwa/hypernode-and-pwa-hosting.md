@@ -43,6 +43,6 @@ A PWA is made up of service workers, which can run in the background. To avoid t
 
 ## Hypernode and PWA
 
-Hypernode is PWA ready. Although Hypernode is managed hosting, our customers have the freedom to change the NGINX configuration in order to make Hypernode fully compatible with Magento Progressive Web Apps. [Let's Encrypt](https://support.hypernode.com/knowledgebase/use-lets-encrypt-hypernode/) can be used to set up a secure connection.
+Hypernode is PWA ready. Although Hypernode is managed hosting, our customers have the freedom to change the NGINX configuration in order to make Hypernode fully compatible with Magento Progressive Web Apps. [Let's Encrypt](../../hypernode-platform/ssl/how-to-use-lets-encrypt-on-hypernode.md) can be used to set up a secure connection.
 
 We have noticed a few curious customers are already testing Magento Progressive Web Applications. Would you like to try it as well? Please share your successes and do not hesitate to involve us when you run into challenges!

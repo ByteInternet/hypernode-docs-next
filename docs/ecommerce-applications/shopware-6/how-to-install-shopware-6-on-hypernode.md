@@ -5,6 +5,7 @@ myst:
       latest version of Shopware 6 as easy as possible. '
 redirect_from:
   - /en/ecommerce/shopware/how-to-install-shopware-6-on-hypernode/
+  - /knowledgebase/how-to-install-shopware-6-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/shopware/how-to-install-shopware-6-on-hypernode/ -->

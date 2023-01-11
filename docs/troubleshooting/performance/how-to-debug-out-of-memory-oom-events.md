@@ -75,9 +75,9 @@ If you receive emails about OOM(Out-of-Memory) events regularly, there are vario
 
 ### Reducing Memory Usage
 
-By reducing the memory usage of software running on your Hypernode, more memory will be available for visitors and for running [periodic tasks](https://support.hypernode.com/knowledgebase/configure-cronjobs-on-hypernode/). One of the main culprits of memory usage is MySQL. MySQL will allocate more memory when it needs this for running large queries but will not free it afterward. This means MySQL memory will only increase over time and not go down again. A simple way to deal with this is to periodically restart MySQL using the `hypernode-servicectl restart mysql` command.
+By reducing the memory usage of software running on your Hypernode, more memory will be available for visitors and for running [periodic tasks](../../hypernode-platform/tools/how-to-use-periodic-tasks-cronjobs-on-hypernode.md). One of the main culprits of memory usage is MySQL. MySQL will allocate more memory when it needs this for running large queries but will not free it afterward. This means MySQL memory will only increase over time and not go down again. A simple way to deal with this is to periodically restart MySQL using the `hypernode-servicectl restart mysql` command.
 
-If you are using a [basic staging environment](https://support.hypernode.com/knowledgebase/using-a-basic-staging-environment-magento2/) on your Hypernode, some memory will always be allocated to your staging environment. As such, it might be beneficial to replace this with a separate [Development Hypernode](https://support.hypernode.com/knowledgebase/development-plans-for-your-magento-shop/).
+If you are using a [basic staging environment](../../ecommerce-applications/magento-2/how-to-set-up-a-basic-staging-environment-for-magento-2.md) on your Hypernode, some memory will always be allocated to your staging environment. As such, it might be beneficial to replace this with a separate [Development Hypernode](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md).
 
 ### Reducing Memory Requirements
 
@@ -85,7 +85,7 @@ Some tasks in Magento use up a lot of memory, sometimes more than is available o
 
 One way to deal with this is to run smaller tasks, ending the process earlier and freeing up this memory again. By not stacking your cronjobs and by running smaller imports instead of a gigantic bulk import, you can reduce a memory peak to several memory bumps instead, which will have a reduced impact on your system.
 
-Another way to ensure less memory is needed is by reducing file sizes. As Magento often loads images into memory to resize those, [optimizing images](https://support.hypernode.com/knowledgebase/magento-image-optimization-howto/) to take up less disk space means these also use up less memory when Magento works on these files.
+Another way to ensure less memory is needed is by reducing file sizes. As Magento often loads images into memory to resize those, [optimizing images](../../best-practices/performance/how-to-optimize-your-images.md) to take up less disk space means these also use up less memory when Magento works on these files.
 
 ### Upgrade to a Larger Plan
 

@@ -118,7 +118,7 @@ When you can successfully request your sitemap.xml, add it to your `robots.txt`:
 Sitemap: http://www.example.com/sitemap.xml
 ```
 
-You can add the sitemap manually or use the generated robots.txt Magento 2 provides. If you use the generated robots.txt, keep in mind all manual changes will be overwritten when you save your changes in the Magento admin. For configuring a `robots.txt` in Magento 2, have a look at [this article](https://support.hypernode.com/en/ecommerce/magento-2/how-to-create-a-robots-txt-for-magento-2-x).
+You can add the sitemap manually or use the generated robots.txt Magento 2 provides. If you use the generated robots.txt, keep in mind all manual changes will be overwritten when you save your changes in the Magento admin. For configuring a `robots.txt` in Magento 2, have a look at [this article](../../ecommerce-applications/magento-2/how-to-create-a-robots-txt-for-magento-2-x.md).
 
 ## Troubleshooting
 

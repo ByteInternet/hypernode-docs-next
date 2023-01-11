@@ -11,13 +11,13 @@ redirect_from:
 
 # Billing FAQ for the Control Panel
 
-**Please note that this FAQ only applies to Control Panel customers that log in via [my.hypernode.com](https://my.hypernode.com/). If you use the Service Panel and log in via service.byte.nl please see [this article](https://support.hypernode.com/en/about/billing/billing-faq-hypernode-by-byte).**
+**Please note that this FAQ only applies to Control Panel customers that log in via [my.hypernode.com](https://my.hypernode.com/). If you use the Service Panel and log in via service.byte.nl please see [this article](billing-faq-for-the-service-panel.md).**
 
 Every first of the month, Hypernode sends an invoice to customers who placed an order in the previous month or whose plans renew in the following month. The invoices are sent digitally to the Billing contact on the first of the month. You can easily find all invoices that have been sent in the Control Panel.
 
 ## What Are the Available Payment Methods?
 
-Our Control Panel supports two different payment methods: credit card and SEPA Direct Debit. Please see our [Supported Payment Methods in the Control Panel](https://support.hypernode.com/en/about/billing/supported-payment-methods-in-the-control-panel) article for more information.
+Our Control Panel supports two different payment methods: credit card and SEPA Direct Debit. Please see our [Supported Payment Methods in the Control Panel](supported-payment-methods-in-the-control-panel.md) article for more information.
 
 ## How to Edit Billing Info
 
@@ -46,7 +46,7 @@ If you log in via [my.hypernode.com](https://auth.hypernode.com/), please use th
 - You'll now see an overview of your current plan on the left and the new plan on the right:
   ![](_res/tkmbOB9hsfJ0SfLR-TNCFtKqzRNgC6bvmA.png)
 - Select the desired plan and the type of environment, Development or Production.
-- Select an add-on. Read more about our two SLA levels [here](https://support.hypernode.com/en/about/support/emergency-support-outside-office-hours-#Hypernode-Emergency-Service-Costs).
+- Select an add-on. Read more about our two SLA levels [here](../support/emergency-support-outside-office-hours.md).
 - Agree with terms and conditions and click **Change** to change this plan. Your plan will be changed immediately.
 - Warnings, if applicable, will be shown on the left.
 

@@ -5,6 +5,7 @@ myst:
       article we explain how to generate and configure Robot.txt on Magento 2.x.
 redirect_from:
   - /en/ecommerce/magento-2/how-to-create-a-robots-txt-for-magento-2-x/
+  - /knowledgebase/create-robots-txt-magento-2/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-create-a-robots-txt-for-magento-2-x/ -->

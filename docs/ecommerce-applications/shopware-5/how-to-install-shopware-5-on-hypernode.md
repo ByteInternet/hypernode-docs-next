@@ -5,6 +5,7 @@ myst:
       latest version of Shopware 5 as easy as possible. '
 redirect_from:
   - /en/ecommerce/shopware/how-to-install-shopware-5-on-hypernode/
+  - /knowledgebase/how-to-install-shopware-5-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/shopware/how-to-install-shopware-5-on-hypernode/ -->
@@ -31,7 +32,7 @@ hypernode-systemctl settings php_version 7.2
 
 ## Add the Shopware Nginx Config File
 
-To be able to host Shopware on Hypernode you need to add an nginx config file so the server knows where to find the Shopware installation. You can add the `server.shopware` config file according to our [documentation](https://support.hypernode.com/knowledgebase/how-to-host-shopware-on-hypernode/#Configuring_Hypernode_for_Shopware)
+To be able to host Shopware on Hypernode you need to add an nginx config file so the server knows where to find the Shopware installation. You can add the `server.shopware` config file according to our [documentation](how-to-host-shopware-on-hypernode.md#configuring-hypernode-for-shopware).
 
 ## Two Ways to Install Shopware 5
 

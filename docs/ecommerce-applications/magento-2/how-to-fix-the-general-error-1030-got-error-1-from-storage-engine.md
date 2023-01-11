@@ -15,7 +15,7 @@ redirect_from:
 
 In some very rare occassions an up- or downgrade results in some of your categories and/or product not showing on the frontend of your webshop. When this happens you will usually come across an error like the one below in `/data/web/magento2/var/report/1234567890`:
 
-```nginx
+```console
 app@83f0vz-jesper-magweb-cmbl:/data/web/magento2/var/report$ cat 191158599534
 {"0":"SQLSTATE[HY000]: General error: 1030 Got error 1 from storage engine, query was: SELECT `main_table`.*, count(main_table.value) AS `count` FROM (SELECT `main_table`.`category_id` AS `value` FROM `catalog_category_product_index_store1` AS `main_table`\n INNER JOIN `search_tmp_5fbf5581f1df68_75800387` AS `entities` ON main_table.product_id  = entities.entity_id\n INNER JOIN `catalog_category_entity` A
 ```
