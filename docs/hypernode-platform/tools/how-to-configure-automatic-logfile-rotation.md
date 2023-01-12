@@ -5,6 +5,7 @@ myst:
       that automatically rotates log files, which helps to avoid disk space issues.
 redirect_from:
   - /en/hypernode/tools/how-to-configure-automatic-logfile-rotation/
+  - /en/support/solutions/articles/48001185227-how-to-configure-automatic-logfile-rotation-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-configure-automatic-logfile-rotation/ -->
