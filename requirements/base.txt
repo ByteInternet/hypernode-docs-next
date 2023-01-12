@@ -9,6 +9,7 @@ mdformat-myst==0.1.5
 mdformat-frontmatter==0.4.1
 sphinx-notfound-page==0.8.3
 sphinx-sitemap==2.4.0
+GitPython==3.1.30
 
 # hypernode/ requirements
 beautifulsoup4==4.11.1

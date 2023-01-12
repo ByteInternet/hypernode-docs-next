@@ -14,7 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     container: quay.io/hypernode/deploy:3-php8.1-node18
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      # Declares the repository safe and not under dubious ownership.
+      - name: Add repository to git safe directories
+        run: git config --global --add safe.directory $GITHUB_WORKSPACE
       - uses: actions/cache@v2
         with:
           path: /tmp/composer-cache

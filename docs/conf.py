@@ -4,6 +4,7 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 import os
+import sys
 
 # -- Path setup --------------------------------------------------------------
 
@@ -14,12 +15,13 @@ import os
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+sys.path.append(os.path.abspath("../"))
 
 
 # -- Project information -----------------------------------------------------
 
 project = "Docs"
-copyright = "2022, Hypernode"
+copyright = "2023, Hypernode"
 author = "Hypernode"
 
 # The full version, including alpha/beta/rc tags
@@ -41,6 +43,7 @@ extensions = [
     "myst_parser",
     "sphinx_copybutton",
     "notfound.extension",
+    "hypernode.sphinx.extensions.updated_at",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
