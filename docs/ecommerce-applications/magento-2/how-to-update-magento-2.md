@@ -3,6 +3,7 @@ myst:
   html_meta:
     description: Does your Magento 2 version need an upgrade? This article explains
       how to upgrade to the latest Magento 2 version.
+    title: How to update Magento 2? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-2/how-to-update-magento-2/
 ---

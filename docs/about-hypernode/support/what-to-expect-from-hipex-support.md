@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: 'Learn how to submit support tickets to Hipex, reach the company
+      by phone, and report urgent issues outside of business hours. '
+    title: Hipex Ticket Portal | Support | Hypernode
+---
+
 # Hipex ticket portal
 
 With collaboration between Hypernode and Hipex we will move to one support team. To provide the best service and support we have to say goodbye to some tools like Hipex Zendesk ticket system. With saying goodbye to Zendesk we will say goodbye to [support.hipex.io](https://support.hipex.io). This tool can't be used anymore because we migrate the ticket system from Hipex to Hypernode. From now on we use Hypernodes ticket system to deliver the best support of both worlds. To open up a new customer portal is in the backlog but not on any planning yet. You're more than welcome to send us a feature request via [Hypernode Uservoice](https://hypernode.uservoice.com/).

@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Hypernode sends out different kinds of emails to spread information.
-      In this article you can find which ones we send and why.
+    description: Hypernode sends ServiceMails, ProductMails and NewsMails to customers.
+      All personal information is kept private according to our Privacy Policy.
+    title: Types of Emails Sent by Hypernode | Hypernode
 redirect_from:
   - /en/about/about-us/what-kind-of-emails-does-hypernode-send/
 ---

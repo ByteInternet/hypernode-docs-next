@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Starting over and in need of a fresh Magento 1 installation? Follow
-      the steps in this article to install a Magento 1 installation on Hypernode.
+    description: Although Magento 1 has been End of Life since June 30 2020, it is
+      still possible to host your Magento 1 store at Hypernode by using OpenMage.
+    title: How to install Magento 1 on Hypernode?
 redirect_from:
   - /en/ecommerce/magento-1/how-to-install-magento-1-on-hypernode/
 ---

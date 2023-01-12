@@ -1,9 +1,10 @@
 ---
 myst:
   html_meta:
-    description: "It's often difficult to find the exact cause of a spam run. Use\
-      \ this article to find out what happened and how to prevent spam runs from your\
-      \ website. "
+    description: 'All plans have the option to send emails from the website. Abusers
+      use this to advertise products, we call this a spam run. Read tje most common
+      reasons here. '
+    title: Policy for sending emails on Hypernode
 redirect_from:
   - /en/hypernode/email/spam-run-via-your-website/
 ---

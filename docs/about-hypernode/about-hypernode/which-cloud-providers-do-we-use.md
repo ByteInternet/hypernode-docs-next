@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: The Hypernode platform is developed independently from a specific
-      cloud provider, which allows us to choose only the best. Read here which providers
-      we use.
+    description: Hypernode uses a range of cloud providers to host its advanced hosting
+      platform, including Combell OpenStack, DigitalOcean, and Amazon Cloud Services.
+    title: Cloud Providers used by Hypernode | Hypernode
 redirect_from:
   - /en/about/about-us/which-cloud-providers-do-we-use/
 ---

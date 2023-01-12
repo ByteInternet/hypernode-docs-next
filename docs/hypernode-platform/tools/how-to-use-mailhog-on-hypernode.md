@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Debugging outgoing mail issues could require you to inspect all outgoing
-      mails from a webshop. MailHog is an email testing tool for it, which we explain
-      here.
+    description: 'MailHog is an email testing tool for developers to catch all these
+      emails in a single mailbox. Learn how to use MailHog on Hypernode. '
+    title: How to use Mailhog on Hypernode?
 redirect_from:
   - /en/hypernode/tools/how-to-use-mailhog-on-hypernode/
   - /knowledgebase/how-to-use-mailhog-on-hypernode/

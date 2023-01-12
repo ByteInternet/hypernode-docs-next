@@ -2,7 +2,8 @@
 myst:
   html_meta:
     description: All Hypernodes support Blackfire, an amazing tool to find performance
-      bottlenecks in Magento. Read here how to use it on Hypernode.
+      bottlenecks in Magento. It is similar to New Relic, but suited for troubleshooting.
+    title: Use Blackfire on Hypernode to find performance issues
 redirect_from:
   - /en/best-practices/performance/how-to-use-blackfire-on-hypernode-to-find-performance-issues/
   - /knowledgebase/profiling-magento-blackfire/

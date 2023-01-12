@@ -1,9 +1,10 @@
 ---
 myst:
   html_meta:
-    description: Using a multistore in Shopware will allow you to address customers
-      in different languages and use different currencies. Check out how to set it
-      up here.
+    description: You want to use a single Shopware installation for several domains
+      or shops. This can be realised by adding as much language and/or sub shops as
+      you need.
+    title: How to set up a multistore in Shopware 5? | Hypernode
 redirect_from:
   - /en/ecommerce/shopware/how-to-setup-a-multistore-in-shopware/
 ---

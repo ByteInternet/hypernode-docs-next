@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'Your trial gives you 14 days of free testing on our Hypernode platform.
-      Find out how to get started and test all features on the platform in this article. '
+    description: With your free trial you have 14 days to test your shops’ performance
+      on Hypernode. After 2 weeks your trial will expire automatically.
+    title: How to start a Hypernode trial?
 redirect_from:
   - /en/getting-started/how-to-order/how-to-get-started-with-your-hypernode-trial/
 ---

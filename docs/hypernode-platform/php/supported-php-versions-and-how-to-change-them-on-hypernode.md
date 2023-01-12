@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'On Hypernode you can choose from a range of PHP versions. Check
-      out which ones and how to change them here. '
+    description: On Hypernode you can choose from a range of PHP versions. Check out
+      which ones and how to change them here.
+    title: Support PHP versions and how to change them on Hypernode
 redirect_from:
   - /en/hypernode/php/supported-php-versions-and-how-to-change-them-on-hypernode/
   - /knowledgebase/php-versions-magento-shop-hypernode/

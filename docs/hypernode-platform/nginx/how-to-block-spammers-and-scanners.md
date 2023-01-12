@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: It is increasingly common for spammers to crawl your site and a slow
-      site for real visitors. Here are some strategies for finding and blocking them.
+    description: It is increasingly common for spammers to crawl your site and it
+      can be hard to trace them down. Here are some strategies for finding and blocking
+      them.
+    title: How to block spammers and scanners? | Hypernode
 redirect_from:
   - /en/support/solutions/articles/48001165533-how-to-block-spammers-and-scanners/
 ---

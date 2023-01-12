@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: "For security and usability, the Hypernode Control Panel's features\
-      \ are available to users based on the role assigned to the individual user. "
+    description: Get the best performance out of your Hypernode installation with
+      our comprehensive guide to different Control Panel scenarios.
+    title: Different Control Panel scenarios | Hypernode
 redirect_from:
   - /en/services/control-panel/different-control-panel-scenarios/
 ---

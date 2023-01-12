@@ -1,9 +1,10 @@
 ---
 myst:
   html_meta:
-    description: Hypernode recommends serving your site only over HTTPS traffic for
-      more safety and a better search index optimization. Read how to do so in this
-      article.
+    description: 'We recommend serving your site only over HTTPS traffic. This is
+      safer and is better for search index optimization. Configure your shop with
+      these steps. '
+    title: How to configure your shop to only use https? | Hypernode
 redirect_from:
   - /en/hypernode/nginx/how-to-configure-your-shop-to-only-use-https/
   - /knowledgebase/configuring-shop-use-https/

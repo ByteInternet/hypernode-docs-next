@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: How to set up your DNS when you want to use Office365 on a domain
-      that is hosted at Hypernode
+    description: When you want to use Office365 and your domain is registered with
+      Hypernode or hosted on our name servers, you will need to set up your DNS correctly
+      to do so.
+    title: How to set up your DNS for Office 365? | Hypernode
 redirect_from:
   - /en/best-practices/email/how-to-set-up-your-dns-for-using-office365/
 ---

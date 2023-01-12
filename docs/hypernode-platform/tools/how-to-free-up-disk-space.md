@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'When your disk is full, you can try to free up disk space on your
-      Hypernode before having to upgrade. Check out how to do so here. '
+    description: Is your disk full? Before upgrading to a bigger plan you can use
+      these suggestions to free up disk space on your Hypernode.
+    title: How to free up disk space on your Hypernode?
 redirect_from:
   - /en/hypernode/tools/how-to-free-up-disk-space/
 ---

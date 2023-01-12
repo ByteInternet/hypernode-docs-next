@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: We take the security of our servers very serious. This policy offers
-      a way to safely report possible security issues to us.
+    description: We ensure the security and privacy of Hypernode's users by responsibly
+      disclosing any vulnerabilities found in our systems.
+    title: Responsible Disclosure Policy | Security | Hypernode
 redirect_from:
   - /en/about/security/responsible-disclosure-policy/
 ---

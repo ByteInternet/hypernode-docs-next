@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: Rewriting trailing slash for a better result in search engines requires
-      some Nginx configuration. In this article we explain how to rewrite them.
+    description: 'Search engines don’t like duplicate content. To rewrite trailing
+      slashes some additional Nginx configuration is required. Follow these steps
+      to rewrite them. '
+    title: How to rewrite a trailing slash for SEO? | Hypernode
 redirect_from:
   - /en/hypernode/nginx/how-to-rewrite-a-trailing-slash-for-seo-purposes/
 ---

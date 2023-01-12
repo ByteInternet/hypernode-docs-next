@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Some shop owners prefer a domain name starting with www, others prefer
-      without. Many constructions are possible. Check out how to redirect from or
-      to WWW here.
+    description: 'Some shop owners prefer a domain name starting with www, others
+      prefer without. Read how to redirect from or to WWW in this article. '
+    title: How to redirect from or to www? | Hypernode
 redirect_from:
   - /en/hypernode/nginx/how-to-redirect-from-or-to-www/
   - /knowledgebase/redirect-from-or-to-www/

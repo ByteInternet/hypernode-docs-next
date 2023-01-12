@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Read what payment methods are supported for the Hypernode Control
-      Panel here
+    description: We support Credit Card, SEPA Direct Debit, and SEPA Direct Debit
+      through iDeal as payment options. Learn how to add these payment methods
+    title: Payment Methods in the Control Panel | Hypernode
 redirect_from:
   - /en/about/billing/supported-payment-methods-in-the-control-panel/
 ---

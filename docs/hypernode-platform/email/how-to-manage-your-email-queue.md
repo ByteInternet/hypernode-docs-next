@@ -2,8 +2,8 @@
 myst:
   html_meta:
     description: If you are sending email through the Hypernode and your application
-      you will want to know how you can manage your email queue. Find out how to do
-      this here.
+      you will want to know how you can manage your email queue.
+    title: How to manage your email queue? | Hypernode
 redirect_from:
   - /en/hypernode/email/how-to-manage-your-email-queue/
 ---

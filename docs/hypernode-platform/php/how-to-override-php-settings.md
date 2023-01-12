@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: To use certain software inside your Magento shop, new PHP settings
-      are required. 'Max_execution_time' for example. Here's how to override default
-      PHP settings.
+    description: 'Sometimes you want to use software inside your Magento shop, that
+      require some other settings for PHP.  Find out how to override PHP settings. '
+    title: How to override PHP settings? | Hypernode
 redirect_from:
   - /en/hypernode/php/how-to-override-php-settings/
 ---

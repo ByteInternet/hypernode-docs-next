@@ -1,9 +1,10 @@
 ---
 myst:
   html_meta:
-    description: To optimize the built-in Magento search option, you can tweak this
-      or us and external search engine. In this article, we explain the different
-      possibilities.
+    description: Improve Magento search speed and relevancy with ElasticSearch or
+      Sphinx Search. Out-of-box integration on Hypernode Pelican, Falcon and Eagle
+      plans.
+    title: How to improve your Magento search? | Hypernode
 redirect_from:
   - /en/best-practices/performance/how-to-improve-your-magento-search/
   - /knowledgebase/how-to-improve-your-magento-search/

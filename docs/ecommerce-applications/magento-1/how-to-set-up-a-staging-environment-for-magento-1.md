@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: A staging environment is very useful to test your shop. In this article
-      we explain how to set up a staging environment on Hypernode for a Magento 1
-      shop.
+    description: This article explains how you set up a staging environment on Hypernode
+      for a Magento 1 shop. Follow the steps mentioned in this article.
+    title: How to set up a staging environment for Magento 1? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-1/how-to-set-up-a-staging-environment-for-magento-1/
 ---

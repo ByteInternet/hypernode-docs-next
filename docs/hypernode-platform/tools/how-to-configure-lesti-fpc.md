@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Using Lesti::FPC for Full Page Caching on Hypernode is recommended,
-      as it is faster than using the default file caching mechanism. Read here how
-      to do so
+    description: 'In this article we will explain how to configure Lesti::FPC and
+      how to use it on Hypernode. '
+    title: How to Configure Lesti::FPC? | Hypernode
 redirect_from:
   - /en/hypernode/tools/how-to-configure-lesti-fpc/
 ---

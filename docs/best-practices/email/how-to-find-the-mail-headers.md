@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: If you have an issue with sending or receiving email, you can use
-      the mail header to see where the email went and discover what might be going
-      wrong.
+    description: Learn how to find and read email headers in common email clients
+      such as Outlook, Thunderbird, Mac Mail and Gmail.
+    title: How to find Mail Headers? | Hypernode
 redirect_from:
   - /en/best-practices/email/how-to-find-the-mail-headers/
 ---

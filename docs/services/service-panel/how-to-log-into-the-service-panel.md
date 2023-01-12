@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: This guide will explain how you can log in to the Service Panel and
-      what to do if you don't have access to your data anymore.
+    description: Logging into the Hypernode Service Panel is simple. Follow our step-by-step
+      guide to learn how to access your service.
+    title: How to log into the Service Panel? | Hypernode
 redirect_from:
   - /en/about/support/how-to-log-into-the-service-panel/
 ---

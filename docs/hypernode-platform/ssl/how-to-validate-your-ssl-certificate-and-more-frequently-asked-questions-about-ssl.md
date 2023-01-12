@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: Read here how to validate your SSL certificate and more frequently
-      asked question about SSL. Only available in Dutch.
+    description: 'At Hypernode you can request various SSL certificates via the Service
+      Panel. Learn more about how to validate your certificate and other questions
+      about SSL. '
+    title: How to validate your SSL certificate? | SSL FAQ | Hypernode
 redirect_from:
   - /en/hypernode/ssl/how-to-validate-your-ssl-certificate-and-more-frequently-asked-questions-about-ssl/
 ---

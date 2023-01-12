@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Magento log cleaning helps to keep your Magento shop fast by cleaning
-      and optimizing your database(s). Find instructions on cleaning your Magento
-      1.x logs here.
+    description: Magento log cleaning helps you keep your Magento shop fast by cleaning
+      and optimizing your database(s). Learn how to enable Log Cleaning in Magento.
+    title: How to clean Magento 1 logs? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-1/how-to-clean-the-magento-1-x-logs/
   - /knowledgebase/magento-log-cleaning/

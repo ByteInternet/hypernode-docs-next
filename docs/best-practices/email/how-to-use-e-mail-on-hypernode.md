@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: For setting up e-mail on your Hypernode we advice our customers to
-      use Gsuite (Google) or Office365 (Microsoft) as they are more specialized in
-      e-mail.
+    description: For setting up e-mail we advice our customers to use Gsuite or Office365.
+      Unfortunately, we no longer offer email plans on the Control Panel.
+    title: 'How to use email on Hypernode? '
 redirect_from:
   - /en/hypernode/email/how-to-use-e-mail-on-hypernode/
 ---

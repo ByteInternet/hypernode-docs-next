@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'Administrative changes can be done through the Service Panel (or
-      via a letter) due to security reasons. Read how to change customer details here. '
+    description: Manage your Hypernode account information quickly and easily. Change
+      your email address, password or payment details in the Service Panel.
+    title: Change your account details? | Service Panel | Hypernode
 redirect_from:
   - /en/about/billing/how-to-change-your-customer-details-and-other-questions/
 ---

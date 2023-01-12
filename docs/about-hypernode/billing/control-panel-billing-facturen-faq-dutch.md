@@ -1,4 +1,10 @@
 ---
+myst:
+  html_meta:
+    description: This FAQ covers billing and invoicing questions for customers who
+      are migrated from the old Dutch legacy platform (Service Panel) to the new Control
+      Panel.
+    title: Billing and Invoicing FAQ for Dutch Customers | Hypernode
 redirect_from:
   - /en/about/billing/migration-faq/
 ---

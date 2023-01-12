@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Hypernode offers DMARC (Domain-based Message Authentication, Reporting
-      and Conformance) for Service Panel users. Read how to configure it in this article.
+    description: With SPF and DKIM you indicate which mail is real and which is fake.
+      With DMARC you then indicate what the recipient of the mail should do.
+    title: How to use DMARC? | Hypernode
 redirect_from:
   - /en/best-practices/email/how-to-use-dmarc/
 ---

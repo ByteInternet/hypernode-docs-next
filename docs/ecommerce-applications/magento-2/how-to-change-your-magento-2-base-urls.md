@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: There are several ways to configure the base_url settings of your
-      Magento 2 shop. Find detailed instructions on the different ways here.
+    description: There are several ways to change the Base URL of your Magento 2.x
+      storefronts. In this article we provide you with instructions for each of these
+      ways.
+    title: How to change the base url in Magento 2? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-2/how-to-change-your-magento-2-base-urls/
 ---

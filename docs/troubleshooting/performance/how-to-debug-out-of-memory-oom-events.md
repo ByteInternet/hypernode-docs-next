@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: When processes on your Hypernode require more memory than is available,
-      there is a risk of downtime. This article explains more about the Linux oom-killer.
+    description: Out of memory errors can be difficult to debug. Learn how to troubleshoot
+      and resolve out of memory events on your Hypernode with our easy-to-follow guide.
+    title: How to debug out of memory events? | Hypernode
 redirect_from:
   - /en/troubleshooting/performance/how-to-debug-out-of-memory-oom-events/
 ---

@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: Sender Policy Framework, SPF, is a technique used to fight spam.
-      Find out here how to set it up for Hypernode.
+    description: SPF or Sender Policy Framework is a technique used to fight spam.
+      You can define which mail servers are allowed to send email for that particular
+      domain.
+    title: How to set up your SPF records? | Hypernode
 redirect_from:
   - /en/hypernode/dns/how-to-set-up-your-spf-records-for-hypernode/
   - /knowledgebase/using-spf-hypernode/

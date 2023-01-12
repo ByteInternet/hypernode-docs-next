@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Find an overview of the consequences and ways to fix things, when
-      receiving a warning that one of the extensions in your Magento shop is vulnerable
-      here.
+    description: One of your Magento extensions is vulnerable, it means there is a
+      bug that can be exploited by hackers. Learn what steps to take to fix the issue.
+    title: 'Your Magento Extensions is Vulnerable: What to Do | Hypernode'
 redirect_from:
   - /en/about/security/one-of-your-magento-extensions-is-vulnerable/
 ---

@@ -1,4 +1,9 @@
 ---
+myst:
+  html_meta:
+    description: 'If you want to make a copy of your Hypernode to another Hypernode,
+      whether it’s a development node or not, here’s a guide on how to do it. '
+    title: How to copy your Hypernode to another Hypernode?
 redirect_from:
   - /en/hypernode/tools/how-to-copy-your-hypernode-to-another-hypernode/
 ---

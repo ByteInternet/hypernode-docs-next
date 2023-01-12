@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: This article explains how you can configure Varnish for your Hypernode
-      in order to boost your Magento 2.x shop.
+    description: Varnish is a complex technique that needs some experience to set
+      it up. This article explains how you can configure Varnish 4 or 6 for your Hypernode.
+    title: How to configure Varnish for Magento 2? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-2/how-to-configure-varnish-for-magento-2-x/
 ---

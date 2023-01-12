@@ -1,9 +1,10 @@
 ---
 myst:
   html_meta:
-    description: MySQL uses serveral files for journaling transactions, ibdata1 for
-      example, which can grow quickly and is hard to remove. Read here how to free
-      up disk space.
+    description: 'As a result of how MySQL stores data, a ibdata1 file can grow very
+      large and removing it can cause data loss/corruption. Learn how to free disk
+      space. '
+    title: How to free disk space from MySQL ibdata1? | Hypernode
 redirect_from:
   - /en/hypernode/mysql/how-to-free-disk-space-from-mysql-ibdata1/
   - /knowledgebase/free-diskspace-ibdata1/

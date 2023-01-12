@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'This article explains how to install SSL certificates on your Hypernode
-      when you have order them via hypernode.com. '
+    description: 'This article explains how to install SSL certificates on your Hypernode.
+      An SSL certificate keeps online interactions and transactions private. '
+    title: How to use SSL certificates when ordered via Hypernode?
 redirect_from:
   - /en/hypernode/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-com/
 ---

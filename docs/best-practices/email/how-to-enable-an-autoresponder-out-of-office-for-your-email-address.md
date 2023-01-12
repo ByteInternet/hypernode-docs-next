@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Read how you can create an autoresponder for your email address in
-      this article
+    description: Learn how to enable an autoresponder for your email address using
+      Hypernode's Service Panel. Read our step-by-step guide.
+    title: How to Enable an Autoresponder | Service Panel | Hypernode
 redirect_from:
   - /en/best-practices/email/how-to-enable-an-autoresponder-out-of-office-for-your-email-address/
 ---

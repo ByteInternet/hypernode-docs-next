@@ -1,9 +1,10 @@
 ---
 myst:
   html_meta:
-    description: 'On Hypernode you can order and transfer ownership of a plan to the
-      customer. This means a different account will be charged for the subscription.
-      The steps are:'
+    description: Hypernode lets you order a server with the click of a button. Get
+      the most out of your hosting and easily transfer ownership with our fast and
+      secure setup.
+    title: Order a Hypernode and transfer the ownership | Hypernode
 redirect_from:
   - /en/services/control-panel/how-to-order-a-hypernode-and-transfer-ownership-to-a-customer/
 ---

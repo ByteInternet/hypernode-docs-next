@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: The Service Panel works with a central login, which enables users
-      to easily manage multiple plans. This article explains different scenarios.
+    description: Get the best performance out of your Hypernode installation with
+      our comprehensive guide to different service panel scenarios.
+    title: Different Service Panel scenarios | Hypernode
 redirect_from:
   - /en/about/support/different-service-panel-scenarios/
 ---

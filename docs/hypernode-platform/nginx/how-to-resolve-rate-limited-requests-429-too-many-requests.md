@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: This article explains the differences between rate limiting methods
-      and show you how to find which one applies and if needed, how to override them.
+    description: This article will explain the differences between the different rate-limiting
+      methods, how to find which rate-limiting method applies and how to override
+      them.
+    title: How to Resolve 429 Too Many Requests | Rate Limited Requests
 redirect_from:
   - /en/hypernode/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests/
   - /knowledgebase/resolving-429-many-requests/

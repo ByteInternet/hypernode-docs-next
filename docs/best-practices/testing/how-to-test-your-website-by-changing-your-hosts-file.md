@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'In this article, we explain how to adjust the hosts file of the
-      following operating systems: Windows 10, 8 & 7, Linux and Mac OS X.'
+    description: This is extremely useful if you want to test your shop without changing
+      the DNS settings for your domain. Learn more.
+    title: Test your website by changing your Hosts File | Hypernode
 redirect_from:
   - /en/best-practices/testing/how-to-test-your-website-by-changing-your-hosts-file/
 ---

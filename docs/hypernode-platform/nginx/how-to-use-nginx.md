@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'Using Nginx instead of Apache increases performance and allows more
-      visitors. Read here how to use Nginx on Hypernode. '
+    description: 'At Hypernode we’ve taken great care to tweak the Nginx server for
+      optimal performance and usability. Find out how to use Nginx. '
+    title: How to use NGINX? | Hypernode
 redirect_from:
   - /en/hypernode/nginx/how-to-use-nginx/
 ---

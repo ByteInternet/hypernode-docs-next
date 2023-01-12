@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'Find out how to manage your DNS settings on Hypernode in order to
-      avoid downtime when up- or downgrading here. '
+    description: This article explains three ways to handle your DNS. Please decide
+      for yourself the best option for your specific situation.
+    title: How to manage your DNS settings on a Hypernode?
 redirect_from:
   - /en/hypernode/dns/how-to-manage-your-dns-settings-for-hypernode/
   - /knowledgebase/dns-settings-hypernode/

@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: After you have copied your shop to Hypernode and tested its functionalities,
-      it's time to go live. Follow these steps for a smooth transition.
+    description: You have copied your shop to Hypernode and tested its functionality.
+      Now is the time to go live with your Hypernode. Follow these steps!
+    title: How to go live with your Hypernode? | Testing
 redirect_from:
   - /en/best-practices/testing/how-to-go-live-with-your-hypernode/
   - /knowledgebase/go-live-with-your-hypernode/

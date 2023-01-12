@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Follow the steps in this article to install a Magento 2 installation
-      on Hypernode. It will only take you 5-10 minutes.
+    description: Learn how to install Magento 2 on Hypernode. It requires preferably
+      a Falcon M hosting plan or bigger and will take only 5-10 minutes.
+    title: How to install Magento 2 on Hypernode?
 redirect_from:
   - /en/ecommerce/magento-2/how-to-install-magento-2-on-hypernode/
   - /knowledgebase/installing-magento-on-hypernode/

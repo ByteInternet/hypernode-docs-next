@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: Sometimes spam and abuse comes from specific countries. You could
-      block these countries, if needed. This article explains how to block them specifically.
+    description: A lot of spam and abuse comes from specific countries. If you don’t
+      do business there, you could block these countries. This article explains how
+      to.
+    title: How to block your webshop for specific countries? | Hypernode
 redirect_from:
   - /en/hypernode/nginx/how-to-block-your-webshop-for-specific-countries/
 ---

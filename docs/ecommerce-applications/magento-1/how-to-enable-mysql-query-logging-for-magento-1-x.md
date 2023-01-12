@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: When debugging performance issues, it might be useful to log all
-      database queries to a log file. Find out here how to enable MySQL Query logging
-      for Magento 1.
+    description: Sometimes when debugging complex performance issues, it can be useful
+      to log all database queries to a log file. Learn how to do this in Magento 1.
+    title: How to enable MySQL query logging for Magento 1? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-1/how-to-enable-mysql-query-logging-for-magento-1-x/
 ---

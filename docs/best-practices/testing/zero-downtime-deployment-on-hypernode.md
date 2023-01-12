@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: In this article, we explain the ideal process of moving new code
-      from a development environment to production without experiencing downtime.
+    description: On Hypernode, zero downtime deployment is supported. We offer our
+      customers full flexibility with their deployment processes.
+    title: Zero downtime deployment on Hypernode | Testing
 redirect_from:
   - /en/best-practices/testing/zero-downtime-deployment-on-hypernode/
 ---

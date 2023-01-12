@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'In this article, we explain how to preven spam from being sent from
-      your name or email address. Only available in Dutch. '
+    description: Minimize the chance of someone sending spam using your name and email
+      address and learn what Hypernode can and cannot do to help you.
+    title: Prevent spam being sent from your name or email address
 redirect_from:
   - /en/best-practices/email/how-to-prevent-spam-being-sent-from-your-name-or-email-address/
 ---

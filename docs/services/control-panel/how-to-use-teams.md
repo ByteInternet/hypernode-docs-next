@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'In this article, we explain how to manage teams on the Hypernode
-      control panel. You can invite developers, merchants or an agency. '
+    description: Learn how to use Hypernode's Control Panel to create and manage Teams.
+      Allocate resources and roles, and quickly add new members with ease.
+    title: How to use teams? | Control Panel | Hypernode
 redirect_from:
   - /en/services/control-panel/how-to-use-teams/
 ---

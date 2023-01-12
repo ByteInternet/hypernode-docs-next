@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'Development Hypernodes are by default configured to offer a Basic
-      Authentication challenge to all visitors. Read all about it in this article. '
+    description: 'Development Hypernodes are configured to offer a Basic Authentication
+      challenge to all visitors. Read everything about this basic Authentication. '
+    title: Enable basic authentication on Hypernode development plans
 redirect_from:
   - /en/hypernode/nginx/basic-authentication-on-hypernode-development-plans/
   - /knowledgebase/basic-authentication-on-development-plans/

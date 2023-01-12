@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: A staging environment is very useful to test your shop. In this article
-      we explain how to set up a staging environment on Hypernode for a Shopware 6
-      shop.
+    description: This article explains how you can set up a staging environment on
+      Hypernode for a Shopware 6 shop. Learn everything you need to know!
+    title: How to use a staging environment with Shopware 6?
 redirect_from:
   - /en/ecommerce/shopware/how-to-use-a-basic-staging-environment-with-shopware-6/
 ---

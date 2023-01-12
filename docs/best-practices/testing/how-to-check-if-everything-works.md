@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Find out here how to check if everything in your shop is working
-      as it should, before changing the DNS settings of your original domain to Hypernode.
+    description: Before changing the DNS settings of your original domain to Hypernode,
+      it’s important to first check if everything in your shop is working as it should.
+    title: How to check if everything works on your Hypernode? | Testing
 redirect_from:
   - /en/best-practices/testing/how-to-check-if-everything-works/
 ---
