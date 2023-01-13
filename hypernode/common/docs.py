@@ -1,9 +1,10 @@
 import os.path
 from pathlib import Path
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
 import mdformat
 import yaml
+from frontmatter import Frontmatter
 
 from hypernode.common.settings import DOCS_DIR
 
@@ -18,6 +19,21 @@ def get_all_docs() -> List[Path]:
         for file in markdown_files:
             result.append(Path(root) / file)
     return result
+
+
+def read_doc(path: Path) -> Tuple[dict, str, str]:
+    with open(path, mode="r") as f:
+        contents = f.read()
+        fm = Frontmatter.read(contents)
+        if not fm["attributes"]:
+            fm["attributes"] = {}
+        if not fm["body"]:
+            fm["body"] = contents
+        return (
+            fm["attributes"],
+            fm["body"],
+            contents,
+        )
 
 
 def write_doc(path: Path, contents: str, frontmatter: Optional[dict]) -> None:

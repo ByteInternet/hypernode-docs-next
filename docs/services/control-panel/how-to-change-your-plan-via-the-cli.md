@@ -1,4 +1,9 @@
 ---
+myst:
+  html_meta:
+    description: 'Need to upgrade or downgrade your Hypernode plan? Learn how to use
+      the Hypernode command line interface (CLI) to easily change your hosting plan. '
+    title: How to change your plan via the CLI? | Hypernode
 redirect_from:
   - /en/services/control-panel/how-to-change-your-plan-via-the-cli/
 ---

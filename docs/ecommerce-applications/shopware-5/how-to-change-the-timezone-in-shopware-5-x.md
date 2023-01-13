@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: This article describes how to change the timezone in Shopware 5.x
-      on a Hypernode.
+    description: In order to change the timezone for the order and such you will need
+      to install an additional module. More information about this can be found via
+      this article.
+    title: How to change the timezone in Shopware 5? | Hypernode
 redirect_from:
   - /en/support/solutions/articles/48001170559-how-to-change-the-timezone-in-shopware-5-x/
 ---

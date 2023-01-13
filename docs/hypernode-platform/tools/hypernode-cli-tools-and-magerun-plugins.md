@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: This page offers an overview of all tools available on Hypernodes
-      and hypernode-vagrant to Hypernode users to make your life as a developer easier.
+    description: 'Hypernode provides many tools to make your life as a developer easier.
+      Get a look on all tools available on Hypernode. '
+    title: How to Hypernode CLI tools and Magerun plugins?
 redirect_from:
   - /en/hypernode/tools/hypernode-cli-tools-and-magerun-plugins/
   - /knowledgebase/hypernode-cli-tools-magerun-plugins/

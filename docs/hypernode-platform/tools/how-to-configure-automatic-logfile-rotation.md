@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: This article explains how to use hypernode-auto-logrotate, a tool
-      that automatically rotates log files, which helps to avoid disk space issues.
+    description: 'The hypernode-auto-logrotate is a command line tool that automatically
+      rotates log files. Learn how to configure Automatic Logfile Rotation. '
+    title: How to configure automatic logfile rotation? | Hypernode
 redirect_from:
   - /en/hypernode/tools/how-to-configure-automatic-logfile-rotation/
   - /en/support/solutions/articles/48001185227-how-to-configure-automatic-logfile-rotation-on-hypernode/

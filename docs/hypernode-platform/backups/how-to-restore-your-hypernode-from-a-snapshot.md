@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'Find detailed guidelines on how to restore your Hypernode from a
-      backup here, if needed after a mistake. We restore backups with snapshots. '
+    description: To restore your Hypernode from a snapshot, instant or an older backup,
+      please follow the instructions mentioned in this article.
+    title: How to restore your Hypernode from a snapshot? | Backups
 redirect_from:
   - /en/hypernode/backups/how-to-restore-your-hypernode-from-a-backup/
   - /knowledgebase/restore-hypernode-backup/

@@ -1,9 +1,10 @@
 ---
 myst:
   html_meta:
-    description: To ensure the highest possible stability, our experts monitor your
-      Hypernode 24 hours a day, 7 days a week. Read more about our monitoring in this
-      article.
+    description: Our experts monitor your Hypernode 24/7 and are ready to intervene
+      if needed to ensure the highest possible stability. Learn more about our Monitoring
+      here!
+    title: 24/7 Monitoring and Alerting | Support | Hypernode
 redirect_from:
   - /en/about/support/24-7-monitoring-and-alerting/
 ---

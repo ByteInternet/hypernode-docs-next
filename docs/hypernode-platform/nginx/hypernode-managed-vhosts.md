@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: A Hypernode Managed Vhost system is a configuration allowing you
-      to setup multiple domainnames with an own independant configuration. Reall all
-      about it here.
+    description: Learn all about The Hypernode Managed Vhosts (HMV). The system is
+      an easy to use, yet powerful, system of configuring Nginx on Hypernode.
+    title: How to enable and manage Hypernode Vhosts?
 redirect_from:
   - /en/hypernode/nginx/hypernode-managed-vhosts/
 ---

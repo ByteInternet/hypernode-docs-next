@@ -1,4 +1,9 @@
 ---
+myst:
+  html_meta:
+    description: This article will explain how you can setup the latest version of
+      WooCommerce on Hypernode as easy as possible.
+    title: How to install WooCommerce on Hypernode?
 redirect_from:
   - /en/support/solutions/articles/48001213397-how-to-install-woocommerce-on-hypernode/
 ---

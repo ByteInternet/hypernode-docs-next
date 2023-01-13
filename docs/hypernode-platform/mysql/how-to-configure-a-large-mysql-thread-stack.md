@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: For Hypernodes we have a set of MySQL related opt-in settings to
-      facilitate some flexibility (because it is not possible to change root-owned
-      MySQL related config files.)
+    description: 'In this article we will explain how to configure a large MySQL thread_stack
+      in detail. '
+    title: How to configure a large MySQL thread stack? | Hypernode
 redirect_from:
   - /en/hypernode/mysql/how-to-configure-a-large-mysql-thread-stack/
 ---

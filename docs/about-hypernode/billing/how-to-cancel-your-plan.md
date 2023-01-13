@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'You can cancel your Hypernode subscription anytime you want. Read
-      more about how to do so in this article. '
+    description: Learn how to cancel your Hypernode plan or domain in the Control
+      Panel, including tips for outstanding invoices and undoing cancellations.
+    title: How to Cancel Your Hypernode Plan | Hypernode
 redirect_from:
   - /en/about/billing/how-to-cancel-your-hypernode-plan/
 ---

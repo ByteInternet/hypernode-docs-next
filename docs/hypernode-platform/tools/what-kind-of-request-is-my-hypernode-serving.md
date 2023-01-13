@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Here are a few handy helpers you can use on Hypernode to get a quick
+      overview of what kind of requests a Hypernode is currently serving.
+    title: What kind of request is my Hypernode serving?
+---
+
 # What kind of requests is my Hypernode serving
 
 There are a few handy helpers you can use on Hypernode to get a quick overview of what kind of requests a Hypernode is currently serving.

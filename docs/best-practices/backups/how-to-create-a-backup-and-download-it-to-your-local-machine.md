@@ -1,4 +1,9 @@
 ---
+myst:
+  html_meta:
+    description: Learn how to create and download a backup of your Hypernode application
+      and database to your local machine. This can be done with SSH access.
+    title: Create and Download a Backup to Your Local Machine
 redirect_from:
   - /en/support/solutions/articles/48001208755-how-to-create-a-backup-and-download-it-to-your-local-machine/
 ---

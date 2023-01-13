@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: If you get the dreaded “Invalid form key” error while logging in
-      or working in the admin, something is wrong with your setup. Read here how to
-      fix this.
+    description: Are you getting an invalid form key error? Learn how to debug and
+      fix this common issue with the help of Hypernode's step-by-step guide.
+    title: How to fix invalid form key error? | Hypernode
 redirect_from:
   - /en/troubleshooting/performance/how-to-fix-invalid-form-key-error/
 ---

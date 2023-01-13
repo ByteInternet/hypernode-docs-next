@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Use the MySQL Slow Logs in the Control Panel to find out what's causing
-      the delay in your database queries to prevent performance issues on your Hypernode.
+    description: Learn how to use the Hypernode Control Panel to quickly and easily
+      identify slow queries in your MySQL database.
+    title: Use MySQL slow queries in the Control Panel | Hypernode
 redirect_from:
   - /en/support/solutions/articles/48001154919-how-to-use-the-mysql-slow-queries-in-the-control-panel/
 ---

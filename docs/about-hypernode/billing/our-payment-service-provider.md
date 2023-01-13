@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: In our Control Panel we use Chargebee as our payment service provider
-      and Stripe as the payment gateway.
+    description: 'We use Chargebee as our payment service provider to securely process
+      transactions and accept credit and debit payments as well as SEPA Direct Debit. '
+    title: Hypernode's Payment Service Provider | Hypernode
 redirect_from:
   - /en/about/billing/our-payment-service-provider/
 ---

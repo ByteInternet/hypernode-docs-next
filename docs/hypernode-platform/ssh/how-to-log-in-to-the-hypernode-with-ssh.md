@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'To access a new Hypernode, you need to use an SSH client. This tutorial
-      shows how to log in to the Hypernode with PuTTY or Terminal using SSH. '
+    description: This tutorial shows how to log in to the Hypernode with PuTTY (for
+      Windows users) or Terminal (Linux and Mac OSX) using SSH.
+    title: How to log into a Hypernode with SSH?
 redirect_from:
   - /en/hypernode/ssh/how-to-log-in-to-the-hypernode-with-ssh/
   - /knowledgebase/login-hypernode-ssh/

@@ -1,9 +1,10 @@
 ---
 myst:
   html_meta:
-    description: If you want to work with a different timezone setting or show a different
-      timezone setting to your customers, check out how change the timezone on Magento
-      1.x.
+    description: Because Hypernode is hosted in the Cloud, the system timezone is
+      set to UTC. Magento 1 should operate on the same timezone as the server. Learn
+      how!
+    title: How to set Magento 1 to the UTC timezone? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-1/how-to-set-magento-1-x-to-the-utc-timezone/
 ---

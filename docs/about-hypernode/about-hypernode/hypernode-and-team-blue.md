@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: Hypernode is part of team.blue, a leading digital enabler for companies
-      and entrepreneurs.
+    description: 'Hypernode is part of team.blue, a $1 billion valuation tech company
+      that offers digital tools like hosting and email to over 1.2 million customers
+      across Europe. '
+    title: Hypernode is part of team.blue | Hypernode
 redirect_from:
   - /en/about/about-us/hypernode-and-team-blue/
 ---

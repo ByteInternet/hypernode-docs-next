@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'Learn all about GEO-Blocking regulations and its most important
-      rules in this article. '
+    description: The Geo-blocking Regulation is aimed to boost cross-border online
+      sales in the EU. Learn the rules for merchants and customers here.
+    title: Geo-Blocking Regulation| Security | Hypernode
 redirect_from:
   - /en/about/security/what-you-need-to-know-about-the-geo-blocking-regulation/
 ---

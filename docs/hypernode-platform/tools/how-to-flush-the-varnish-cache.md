@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Flushing the Varnish cache can be done using the Magento backend
-      panel, but if needed, you might want to be able to flush the cache from the
-      command line.
+    description: 'You can flush the cache for a single domain, a specific URL or just
+      the cache as a whole. Use the following steps. '
+    title: How to flush the Varnish cache? | Hypernode
 redirect_from:
   - /en/support/solutions/articles/48000982378-how-to-flush-the-varnish-cache/
 ---

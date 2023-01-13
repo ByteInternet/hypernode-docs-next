@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: 'Having statistics on the top 10 visitors could be very usefull.
-      Read here how you can easily use the Nginx access logging to find out. '
+    description: 'To find the top 10 visitors of your Magento shop, you can easily
+      use the Nginx access logging tot get these statistics. Read all about it in
+      this article. '
+    title: Find the top 10 visitors by parsing the NGINX access logs
 redirect_from:
   - /en/hypernode/nginx/how-to-find-the-the-top-10-visitors-by-parsing-the-nginx-access-logs/
 ---

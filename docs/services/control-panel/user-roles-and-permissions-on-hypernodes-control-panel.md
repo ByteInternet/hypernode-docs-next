@@ -1,9 +1,10 @@
 ---
 myst:
   html_meta:
-    description: For security and usability, the Hypernode Control Panel's features
-      are available to users based on the role assigned to the individual user. Read
-      more here.
+    description: 'Hypernode offers a comprehensive user control panel that allows
+      you to easily manage user roles and permissions. Learn all about user roles
+      and permissions. '
+    title: User roles and permissions | Control Panel | Hypernode
 redirect_from:
   - /en/services/control-panel/user-roles-and-permissions-on-hypernodes-control-panel/
 ---

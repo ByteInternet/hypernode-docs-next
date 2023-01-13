@@ -1,9 +1,10 @@
 ---
 myst:
   html_meta:
-    description: "Get errors like these when trying to perform HTTP requests: \"Parsing\
-      \ WSDL: Couldn't load from '': failed to load external entity\"? Here's how\
-      \ to Fix SOAP errors."
+    description: If you get this error, some configuration or error is with withholding
+      the Magento installation from connecting to its API endpoint. Learn how to revolve
+      it.
+    title: How to fix SOAP error in Magento 1? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-1/how-to-fix-soap-error-parsing-wsdl-couldn-t-load-from-failed-to-load-external-entity/
   - /knowledgebase/soap-error-parsing-wsdl-couldnt-load-failed-load-external-entity/

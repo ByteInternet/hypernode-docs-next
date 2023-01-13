@@ -1,4 +1,9 @@
 ---
+myst:
+  html_meta:
+    description: Get premium protection for your Magento shop with Hypernode. Learn
+      how they implement changes to block security threats in under 4 hours.
+    title: How Hypernode protects your Magento Shop | Security
 redirect_from:
   - /en/support/solutions/articles/48001158433-how-hypernode-protects-your-magento-shop/
 ---

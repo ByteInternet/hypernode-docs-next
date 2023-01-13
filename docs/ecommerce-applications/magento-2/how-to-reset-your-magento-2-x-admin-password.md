@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: If you are unable to login to your Magento 2.x shop, you have several
-      methods to retrieve a new password to log in. Check out here how to reset your
-      password.
+    description: If you are unable to login to your Magento 2 shop, you have several
+      methods to retrieve a new password to log back in. Find them here!
+    title: How to reset your Magento 2 admin password? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-2/how-to-reset-your-magento-2-x-admin-password/
 ---

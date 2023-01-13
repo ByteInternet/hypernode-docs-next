@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'In this article, you find detailed guidelines on how to link your
-      domain to your Hypernode. '
+    description: 'Need help connecting your domain to your Hypernode? Our step-by-step
+      guide will walk you through the process in the Control Panel. '
+    title: How to link your domain to your Hypernode? | Control Panel
 redirect_from:
   - /en/best-practices/usage/how-to-link-your-domain-to-your-hypernode/
 ---

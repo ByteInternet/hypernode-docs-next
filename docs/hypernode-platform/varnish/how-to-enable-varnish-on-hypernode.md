@@ -1,4 +1,9 @@
 ---
+myst:
+  html_meta:
+    description: 'After enabling Varnish, you need to configure both Varnish and your
+      application. Per application we have a guide to walk you through the process. '
+    title: How to enable Varnish on Hypernode?
 redirect_from:
   - /en/hypernode/varnish/how-to-enable-varnish-on-hypernode/
 ---

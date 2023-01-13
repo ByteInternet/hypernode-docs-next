@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'Read all frequently asked questions about billing and their answers
-      within this article. '
+    description: Learn about Hypernode's invoicing process and payment options for
+      customers using the legacy Service Panel.
+    title: FAQ on Service Panel Billing | Hypernode
 redirect_from:
   - /en/about/billing/billing-faq-for-the-service-panel/
 ---

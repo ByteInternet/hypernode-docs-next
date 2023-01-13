@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: This article explains how to set MySQL variables globally on Hypernode
-      by configuring the initStaments in the env.php file
+    description: You can set MySQL variables for Magento by editing the initStatements.
+      This way the variables won’t get lost after a MySQL restart or an upgrade.
+    title: How to set MySQL variables globally for Magento 2 | Hypernode
 redirect_from:
   - /en/support/solutions/articles/48001208261-how-to-set-mysql-variables-globally-on-hypernode/
 ---

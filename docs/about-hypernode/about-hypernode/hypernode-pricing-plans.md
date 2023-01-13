@@ -1,7 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Which hosting plans and pricing does Hypernode offer.
+    description: Learn about Hypernode's Managed Cloud Hosting and Managed Dedicated
+      Hosting and its pricing. Prices start at €109 per month.
+    title: Hypernode Pricing & Plans | Hypernode
 redirect_from:
   - /en/support/solutions/articles/48001228422-hypernode-pricing-plans/
 ---

@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: This article explains which steps you need to take if you choose
-      to transfer your domain from Hypernode to another provider.
+    description: Moving your domain to a different provider doesn't have to be difficult.
+      With the Service Panel, you can easily transfer your domain in a few simple
+      steps.
+    title: How to transfer your domain to another provider? | Service Panel
 redirect_from:
   - /en/services/domains/how-to-transfer-your-domain-name-to-another-provider/
 ---

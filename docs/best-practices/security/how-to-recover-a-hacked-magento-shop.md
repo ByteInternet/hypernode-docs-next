@@ -1,9 +1,10 @@
 ---
 myst:
   html_meta:
-    description: Unfortunately webshops get hacked, often due to outdated Magento
-      versions, or plugins. This article explains how to recover a hacked shop on
-      Hypernode.
+    description: Our tool Magereport will tell you if there are any known security
+      issues with your shop. This article explains how to recover a hacked Magento
+      shop.
+    title: How to recover a hacked Magento shop? | Security | Hypernode
 redirect_from:
   - /en/best-practices/security/how-to-recover-a-hacked-magento-shop/
   - /knowledgebase/recover-a-hacked-magento-shop/

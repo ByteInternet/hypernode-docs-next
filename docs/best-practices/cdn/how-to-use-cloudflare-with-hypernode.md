@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Hypernodes are fully configured and support Cloudflare out of the
-      box. Read here how to use them.
+    description: Learn how to configure Cloudflare on your Hypernode to improve website
+      performance, reduce network latency, and block threats.
+    title: How to Use Cloudflare | Hypernode
 redirect_from:
   - /en/best-practices/cdn/how-to-use-cloudflare-with-hypernode/
 ---

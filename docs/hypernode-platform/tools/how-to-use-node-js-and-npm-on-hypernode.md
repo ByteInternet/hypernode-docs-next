@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: This article explains how you can install node.js and NPM on a Hypernode
-      and how to use this.
+    description: This article explains how to use and install other versions of Node.js
+      and also how to install NPM packages on Hypernode.
+    title: How to Use Node.js and NPM on Hypernode?
 redirect_from:
   - /en/hypernode/tools/how-to-use-node-js-and-npm-on-hypernode/
 ---

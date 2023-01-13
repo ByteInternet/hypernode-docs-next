@@ -2,7 +2,8 @@
 myst:
   html_meta:
     description: Hypernode offers a staging environment so it can be used as a sandbox
-      for your Akeneo PIM project.
+      for your Akeneo 4 or 5 PIM project. Learn more in this article!
+    title: How to use a basic staging environment with Akeneo 4 and 5?
 redirect_from:
   - /en/support/solutions/articles/48001183489-how-to-use-a-basic-staging-environment-with-akeneo-4-and-5/
 ---

@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'In this article, we provide you with a detailed roadmap about how
-      you can use PHPMyAdmin and how to create a database dump. '
+    description: This article will explain how you can use PHPMyAdmin and how to create
+      a database dump.
+    title: How to use PHPMyAdmin? | Hypernode
 redirect_from:
   - /en/hypernode/mysql/how-to-use-phpmyadmin/
   - /knowledgebase/use-phpmyadmin/

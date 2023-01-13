@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: 'Within this article you can find snippets, which can be used for
-      the removal of your Magento 1.x installation. '
+    description: Although Magento 1 has been End of Life, it is still possible to
+      host your Magento 1 store at Hypernode by using OpenMage. Learn how in this
+      article.
+    title: How to remove your Magento 1 installation? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-1/how-to-remove-your-magento-1-x-installation/
 ---

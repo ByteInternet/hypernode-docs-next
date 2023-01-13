@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Hypernode offers several optimizations which improve the load times
-      and stability of your shop. Find detailed instructions on the different optimizations
-      here.
+    description: Learn what additional configurations you can make to optimise your
+      Magento shop post-migration, ordered by priority and estimated time spend.
+    title: Optimise the performance of your Magento shop | Hypernode
 redirect_from:
   - /en/best-practices/performance/how-to-optimize-the-performance-of-your-magento-shop/
 ---

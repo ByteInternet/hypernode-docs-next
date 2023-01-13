@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'When Magento is trying to store more data in the Redis Cache than
-      possible, this error appears "OOM command not allowed when used memory > ‘maxmemory’". '
+    description: Learn how to solve this Redis Error that appears if Magento is trying
+      to store more data in the Redis cache then possible.
+    title: How to Solve Redis Out-of-Memory Error? | Hypernode
 redirect_from:
   - /en/hypernode/tools/how-to-solve-redis-error-oom-command-not-allowed-when-used-memory-maxmemory-/
 ---

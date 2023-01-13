@@ -1,3 +1,12 @@
+---
+myst:
+  html_meta:
+    description: Configure your CI/CD pipeline with Hypernode Deploy. Get up and running
+      quickly with easy-to-follow steps and secure credentials to ensure your data
+      is safe.
+    title: How to configure CI/CD on Hypernode?
+---
+
 # Configure CI/CD
 
 There are many CI/CD pipelines available, but it's probably best to stick with the pipeline system that's tied with your VCS (version control system), like [Github Actions][1] for Github, [Gitlab CI][2] for Gitlab and [Bitbucket Pipelines][3] for Bitbucket.

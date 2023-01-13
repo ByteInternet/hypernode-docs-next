@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: 'When experiencing a business-critical disruption on your web shop,
-      you can use our Hypernode Emergency Support service for help. '
+    description: If you are experiencing a business-critical disruption on your web
+      shop outside of office hours, you can access our Hypernode Emergency Support
+      Service.
+    title: Emergency Service | Urgent Support | Hypernode
 redirect_from:
   - /en/about/support/emergency-support-outside-office-hours-/
 ---

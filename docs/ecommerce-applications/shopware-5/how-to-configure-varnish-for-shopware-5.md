@@ -2,7 +2,9 @@
 myst:
   html_meta:
     description: Shopware 5 applications can greatly benefit from Varnish caching.
-      On the client side, pages load faster, while on the server side, the load decreases.
+      Hypernode supports Varnish as a caching layer and configuration is actually
+      quite simple.
+    title: How to configure Varnish for Shopware 5? | Hypernode
 redirect_from:
   - /en/support/solutions/articles/48001207016-how-to-configure-varnish-for-shopware-5/
 ---

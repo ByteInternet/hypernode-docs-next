@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'An overview of Hypernode security policies and information security
-      certification can be found in this article. '
+    description: At Hypernode, we prioritize the security of our servers and hosting
+      platform. Our security policies and procedures are based on ISO 27001:2013 certification.
+    title: Security Statement - Protecting Your Data | Hypernode
 redirect_from:
   - /en/about/security/hypernode-security-statement/
 ---

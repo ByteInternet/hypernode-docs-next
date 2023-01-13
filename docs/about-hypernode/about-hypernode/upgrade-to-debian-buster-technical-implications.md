@@ -1,4 +1,9 @@
 ---
+myst:
+  html_meta:
+    description: Hypernode upgraded all systems from Ubuntu Xenial to Debian Buster
+      OS. Check the Hypernode changelog for the most up to date information.
+    title: Debian Buster Upgrade Implications | Hypernode
 redirect_from:
   - /en/about/about-us/upgrade-to-debian-buster-technical-implications/
 ---

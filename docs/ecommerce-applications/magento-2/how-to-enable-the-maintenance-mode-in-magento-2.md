@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: Maintenance mode is a shortcut to serve a temporary error notification
-      to all customers. Find here how to enable it in Magento 2.
+    description: Shop owners want to perform upgrades, install extensions or do the
+      necessary maintenance on a shop. For this you use Maintenance Mode in Magento
+      2.
+    title: How to enable maintenance mode in Magento 2? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-2/how-to-enable-the-maintenance-mode-in-magento-2/
 ---

@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: So your webshop seems to be significantly slower than it used to
-      be and you have no idea what's going on. In this article you will find some
-      initial checks.
+    description: Does your website have slow loading times? Hypernode can help you
+      quickly identify the cause of the problem.
+    title: How to check why my site is slow? | Hypernode
 redirect_from:
   - /en/troubleshooting/performance/how-to-check-why-my-site-is-slow/
 ---

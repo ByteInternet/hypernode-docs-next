@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'You can use include statement in Nginx to avoid duplicate configurations
-      for multiple locations. In this article we explain the different options for
-      you. '
+    description: In Nginx you can use the include statement to avoid duplicate configuration
+      for multiple locations. In this article we describe some options.
+    title: Create a reusable config to include in custom snippets?
 redirect_from:
   - /en/hypernode/nginx/how-to-create-a-reusable-config-to-include-in-custom-snippets/
   - /knowledgebase/create-reusable-config-for-custom-snippets/

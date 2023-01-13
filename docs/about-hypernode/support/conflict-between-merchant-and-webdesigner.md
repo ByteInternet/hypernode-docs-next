@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: What to do when a conflict arises between a Registrant (domain name
-      holder) and the web designer / developer (Contractor and / or Technical administrator)?
+    description: If a conflict arises between a merchant and a web designer/developer,
+      Hypernode is unable to mediate the situation.Please reach out to Hypernode for
+      advice.
+    title: Handling Merchant and Web Designer Conflicts | Hypernode
 redirect_from:
   - /en/about/support/conflict-between-merchant-and-webdesigner/
 ---

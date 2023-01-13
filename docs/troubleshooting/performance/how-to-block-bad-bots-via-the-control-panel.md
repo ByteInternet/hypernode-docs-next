@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: A lot of bot traffic has a negative impact on the performance of
-      your webshop.  Hypernode offers you the possibility to block bad bots in your
-      control panel.
+    description: "Protect your website from bad bots and malicious requests with Hypernode's\
+      \ Control Panel. "
+    title: How to block bad bots via the Control Panel? | Hypernode
 redirect_from:
   - /en/services/control-panel/block-bad-bots-via-the-control-panel/
 ---

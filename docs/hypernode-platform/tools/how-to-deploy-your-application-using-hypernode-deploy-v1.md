@@ -1,4 +1,9 @@
 ---
+myst:
+  html_meta:
+    description: 'This guide will walk you through the process of setting up a continues
+      integration and delivery/deployment pipeline for a Magento 2 shop. '
+    title: How to deploy your application using Hypernode Deploy?
 redirect_from:
   - /en/support/solutions/articles/48001219280-how-to-deploy-your-application-using-hypernode-deploy-v1/
 ---

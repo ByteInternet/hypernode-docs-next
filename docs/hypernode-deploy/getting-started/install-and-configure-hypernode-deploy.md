@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: 'With Hypernode Deploy, you can create and configure an optimized
+      Hypernode environment. Learn how to install and configure Hypernode Deploy. '
+    title: How to install and configure Hypernode Deploy?
+---
+
 # Install and Configure Hypernode Deploy
 
 The first step is to create and configure a `deploy.php` file which can be used by Hypernode Deploy to determine what tasks need to be executed to prepare the application for deployment and of course to what stages/servers the application needs to be deployed to.

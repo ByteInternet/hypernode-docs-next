@@ -1,4 +1,9 @@
 ---
+myst:
+  html_meta:
+    description: 'Want to schedule an upgrade or dowgrade? Use this guide to schedule
+      to a different plan via the Control Panel. '
+    title: 'Schedule an up or downgrade? | Control Panel | Hypernode '
 redirect_from:
   - /en/services/control-panel/how-to-schedule-an-up-or-downgrade/
 ---

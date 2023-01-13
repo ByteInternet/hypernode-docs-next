@@ -1,9 +1,10 @@
 ---
 myst:
   html_meta:
-    description: If you are unable to login to your Magento shop, you have several
-      methods to retrieve a new password to log back in. Check out here how to reset
-      your password.
+    description: If you are unable to log in to your Magento 1 shop, you have several
+      methods to retrieve a new password to log back in. All methods can be found
+      in this article.
+    title: How to reset your Magento 1 admin password? | Hypernode
 redirect_from:
   - /en/support/solutions/articles/48000970831-how-to-reset-your-magento-1-x-admin-password/
 ---

@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: "Clean URL's are less intimidating to visitors and have a positive\
-      \ effect on search index optimization (SEO) as well. Find out how to enable\
-      \ them here. "
+    description: To make use of clean URLs in Magento 1, all you need to do is adjust
+      the Search Engines Optimization setting in the backend. Follow these steps!
+    title: How to enable clean urls for Magento 1? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-1/how-to-enable-clean-url-s-for-magento-1/
 ---

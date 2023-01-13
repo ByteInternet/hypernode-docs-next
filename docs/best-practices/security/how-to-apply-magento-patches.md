@@ -1,9 +1,10 @@
 ---
 myst:
   html_meta:
-    description: Every now and then Magento issues a new patch to increase the security
-      of their software. In this article we explain how you can install them on your
-      webshop.
+    description: Learn how to apply Magento patches for optimal protection. Check
+      your shop with MageReport and ensure your webshop is not vulnerable to malicious
+      parties.
+    title: How to apply Magento patches? | Security | Hypernode
 redirect_from:
   - /en/best-practices/security/how-to-deploy-magento-patches/
 ---
