@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: A list of security researchers we have worked with, that responsibly
-      disclosed vulnerabilities to us.
+    description: Thank you to the individuals and organizations who have responsibly
+      disclosed vulnerabilities to Hypernode. These people helped keep our systems
+      secure.
+    title: Security Hall of Fame | Hypernode
 redirect_from:
   - /en/about/security/hall-of-fame/
 ---

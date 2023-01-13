@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: New Relic is a profiling tool that explains what happens "behind
-      the scenes". Find here how you can use it to determine the performance bottleneck
-      of your shop.
+    description: Get a clear overview of pagespeed, transactions, error rates, slow
+      queries and more. Easily customizable, and set alerts for performance thresholds.
+    title: How to find performance bottlenecks with New Relic?
 redirect_from:
   - /en/best-practices/performance/how-to-find-your-performance-bottleneck-with-new-relic/
   - /knowledgebase/new-relic-performance-management/

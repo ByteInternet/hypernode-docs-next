@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'In this article we guide you through the steps of setting up the
-      latest version of Shopware 5 as easy as possible. '
+    description: Shopware 5 requires a Hypernode Professional S hosting plan or larger.
+      We explain how you can setup the latest version of Shopware 5 on Hypernode.
+    title: 'How to install Shopware 5 on Hypernode? '
 redirect_from:
   - /en/ecommerce/shopware/how-to-install-shopware-5-on-hypernode/
   - /knowledgebase/how-to-install-shopware-5-on-hypernode/

@@ -1,4 +1,10 @@
 ---
+myst:
+  html_meta:
+    description: Since composer is overall a heavy process it requires quite some
+      resources, specifically memory in this case. Here we discuss the causes and
+      workarounds.
+    title: How to handle composer memory issues? | Hypernode
 redirect_from:
   - /en/support/solutions/articles/48001186354-how-to-handle-composer-memory-issues/
 ---

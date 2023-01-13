@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'Within this article you can find snippets, which can be used for
-      the removal of your Magento 2.x installation. '
+    description: The snippets in this article can be used to remove your Magento 2.x
+      installation(s).
+    title: How to remove your Magento 2 installation? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-2/how-to-remove-your-magento-2-x-installation/
   - https://support.hypernode.com/knowledgebase/remove-magento-installation/

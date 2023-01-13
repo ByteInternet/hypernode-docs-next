@@ -1,4 +1,10 @@
 ---
+myst:
+  html_meta:
+    description: PM2 is a porcess manager which keeps your application running as
+      a deamon. In this article we’ll cover the installation and configuration process
+      of PM2.
+    title: How to install and configure PM2 on Hypernode?
 redirect_from:
   - /en/support/solutions/articles/48001208544-installation-and-configuration-of-pm2/
 ---

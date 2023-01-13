@@ -1,4 +1,10 @@
 ---
+myst:
+  html_meta:
+    description: 2FA adds an extra layer of security to your Hypernode account. Follow
+      our easy guide to get started with two-factor authentication and keep your website
+      safe.
+    title: How to use 2FA on the Control Panel? | Hypernode
 redirect_from:
   - /en/services/control-panel/how-to-use-2fa-on-the-control-panel/
 ---

@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'Follow this article to set up automatic image optimization for a
-      faster shop on Hypernode in only a couple of minutes. '
+    description: Optimize your shop's speed with automatic image optimization using
+      Hypernode. Learn how to quickly reduce image size-on-disk without losing quality.
+    title: How to optimise your images? | Hypernode
 redirect_from:
   - /en/best-practices/performance/how-to-optimize-your-images/
   - /knowledgebase/magento-image-optimization-howto/

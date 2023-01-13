@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: HeidiSQL is a reliable tool designed for web developers using the
-      MySQL server, Microsoft SQL databases and PostgreSQL. Find here how to use it
-      on Hypernode.
+    description: Learn how to use HeidiSQL on Hypernode for efficient database management.
+      Easily browse, edit, and export data and tables with this reliable tool.
+    title: How to use HeidiSQL | Hypernode
 redirect_from:
   - /en/best-practices/database/how-to-use-heidisql-on-hypernode/
 ---

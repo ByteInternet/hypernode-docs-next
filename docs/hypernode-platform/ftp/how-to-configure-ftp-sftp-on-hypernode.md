@@ -3,6 +3,7 @@ myst:
   html_meta:
     description: In this article we’ll explain how you can configure FTP/SFTP (create/delete
       users) and which credentials to use to make a FTP/SFTP connection.
+    title: How to Configure FTP/SFTP on Hypernode
 redirect_from:
   - /en/hypernode/ftp/how-to-configure-ftp-sftp-on-hypernode/
   - /knowledgebase/configuring-ftp/

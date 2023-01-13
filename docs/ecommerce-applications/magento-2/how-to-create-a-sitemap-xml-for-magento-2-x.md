@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Find detailed guidelines on how to create a sitemap.xml for Magento
-      2.x versions here.
+    description: This article explains how to enable a sitemap.xml in Magento 2 and
+      how to configure NGINX to Use the Same Sitemap for All Storefronts.
+    title: How to create a sitemap xml for Magento 2? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-2/how-to-create-a-sitemap-xml-for-magento-2-x/
 ---

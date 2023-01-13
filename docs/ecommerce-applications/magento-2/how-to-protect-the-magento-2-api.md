@@ -1,4 +1,9 @@
 ---
+myst:
+  html_meta:
+    description: Hypernode has protected unauthorized access for specific API methods
+      for all our customers. Not hosted on Hypernode? Follow these instructions!
+    title: How to protect the Magento 2 API? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-2/how-to-protect-the-magento-2-api/
 ---

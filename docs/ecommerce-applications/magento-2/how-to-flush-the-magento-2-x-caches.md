@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'There are different ways to flush your Magento 2.x caches, via the
-      commandline or the backend for example. Read instructions per way in this article. '
+    description: There are multiple ways to flush your caches in Magento 2.x. Learn
+      how to flush your cache via the Magento backend or the Commandline.
+    title: How to flush Magento 2 caches? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-2/how-to-flush-the-magento-2-x-caches/
   - /knowledgebase/magento-cache-management/

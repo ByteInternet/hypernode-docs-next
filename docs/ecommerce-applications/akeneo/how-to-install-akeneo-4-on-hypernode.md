@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: This article describes how to install Akeneo 4 on your Hypernode.
-      Installing Akeneo 4 can be done by using our Pre-Install or you can install
-      Akeneo 4 manually.
+    description: Install Akeneo 4 on a separate Hypernode instance or on the same
+      Hypernode as your Magento or Shopware installation. Learn more!
+    title: How to install Akeneo 4 on Hypernode?
 redirect_from:
   - /en/ecommerce/akeneo/how-to-install-akeneo-4-on-hypernode/
   - /knowledgebase/installing-akeneo-4/

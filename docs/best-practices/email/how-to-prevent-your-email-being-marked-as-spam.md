@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Sometimes messages sent from a Hypernode are marked as spam by external
-      spam filters. Follow these steps in this article to fix any misconfigurations.
+    description: Follow our step-by-step guide on checking SPF records, return-path,
+      and if your Hypernode is listed on a blacklist.
+    title: How to prevent your emails being marked as spam | Hypernode
 redirect_from:
   - /en/best-practices/email/how-to-prevent-your-email-being-marked-as-spam/
 ---

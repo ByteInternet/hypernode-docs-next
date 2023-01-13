@@ -1,4 +1,9 @@
 ---
+myst:
+  html_meta:
+    description: Transferring your domain away from Hypernode is easy. Follow our
+      step-by-step guide to complete the process quickly and securely.
+    title: How to transfer your domain away from Hypernode?
 redirect_from:
   - /en/services/domains/how-to-transfer-your-domain-away-from-hypernode/
 ---

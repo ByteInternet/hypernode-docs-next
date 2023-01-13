@@ -1,4 +1,9 @@
 ---
+myst:
+  html_meta:
+    description: This article will explain how to configure Redis on your Shopware
+      6 shop on Hypernode and how to work with redis-cli.
+    title: How to configure Redis for Shopware 6?
 redirect_from:
   - /en/support/solutions/articles/48001200521-how-to-configure-redis-for-shopware-6/
 ---

@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'To protect your Magento shop, you can use a password in Nginx. Read
-      about restricing access to a directory, specific domain or more in this article. '
+    description: 'Keep your shop secure, by learning how to protect your Magento store
+      with a Password in Nginx. '
+    title: Protect a Magento store with a password in NGINX | Hypernode
 redirect_from:
   - /en/hypernode/nginx/how-to-protect-your-magento-store-with-a-password-in-nginx/
   - /knowledgebase/protect-a-directory-with-a-password-in-nginx/

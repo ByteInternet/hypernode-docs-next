@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'You can add SSH Keys to your Hypernode via the Control Panel. Find
-      out the steps to add SSH Keys in this article. '
+    description: 'You can add SSH Keys to your Hypernode(s) via the Control Panel.
+      Following our comprehensive guide to add an SSH key to one Hypernode. '
+    title: How to add keys to the SSH key manager? Hypernode
 redirect_from:
   - /en/services/control-panel/how-to-add-keys-to-the-ssh-keymanager/
 ---

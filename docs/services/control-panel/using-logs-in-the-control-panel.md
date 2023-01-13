@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: This article explains how to use the logs in the Control Panel to
-      get a better understanding of actions you or others have performed.
+    description: Learn how to use logs in the Hypernode control panel. Discover why
+      they're essential and how to view them, set up automated log downloads, and
+      more.
+    title: How to use logs in the Control Panel? | Hypernode
 redirect_from:
   - /en/services/control-panel/using-logs-in-the-control-panel/
 ---

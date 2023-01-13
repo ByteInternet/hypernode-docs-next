@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: This article describes how to install Akeneo 3 on your Hypernode.
-      Installing Akeneo 3 can be done by using our Pre-Install or you can install
-      Akeneo 3 manually.
+    description: Install Akeneo 3 on a separate Hypernode instance or on the same
+      Hypernode as your Magento or Shopware installation. Learn more!
+    title: How to install Akeneo 3 on Hypernode?
 redirect_from:
   - /en/ecommerce/akeneo/how-to-install-akeneo-3-on-hypernode/
 ---

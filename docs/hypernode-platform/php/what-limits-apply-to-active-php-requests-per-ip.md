@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Hypernodes uses Nginx and PHP-FPM for processing and serving PHP
-      pages causing a few limitations to PHP requests per IP. Read all about the details
-      here.
+    description: 'The amount of workers available on a Hypernode depends on how many
+      available CPU cores the server has. Learn what limits apply to active PHP requests. '
+    title: What limits apply to active PHP requests per IP? | Hypernode
 redirect_from:
   - /en/support/solutions/articles/48000967652-what-limits-apply-to-active-php-requests-per-ip/
 ---

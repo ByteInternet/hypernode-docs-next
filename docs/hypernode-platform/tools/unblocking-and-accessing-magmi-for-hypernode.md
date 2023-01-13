@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Magmi, the Magento mass importer, is an alternative product importer
-      offering better performance than the default. Here's how to unblock and access
-      it.
+    description: 'To unblock Magmi, the Magento mass importer, and offer secure access
+      to it for your users and/or developers, use our extensive documentation here. '
+    title: How to unblock and access Magmi for Hypernode?
 redirect_from:
   - /en/hypernode/tools/unblocking-and-accessing-magmi-for-hypernode/
   - /knowledgebase/unblocking-and-accessing-magmi-for-hypernode/

@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'When things go wrong, you want to restore the appropriate database
-      table, files or directories from the backup. We offer this with snapshots. '
+    description: Easily restore files, directories, and database tables with Hypernode's
+      daily snapshots. Depending on your SLA, you get additional backup options.
+    title: Hypernode Backup Policy | Secure and Automated
 redirect_from:
   - /en/hypernode/backups/hypernode-backup-policy/
 ---

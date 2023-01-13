@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: 'This article describes how to fix the "General error: 1030 Got error
-      1 from storage engine" on your Hypernode.'
+    description: You can simply follow the instructions in this article to make sure
+      that all the categories and products will be visible again on the frontend of
+      your webshop.
+    title: How to fix the general error 1030 in Magento 2? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-2/how-to-fix-the-general-error-1030-got-error-1-from-storage-engine/
 ---

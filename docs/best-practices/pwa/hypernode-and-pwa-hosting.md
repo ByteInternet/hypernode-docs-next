@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Progressive Web Apps (PWA) are a hot item and are considered the
-      future of web development. Read about its advantages, challenges and hosting
-      requirements here.
+    description: Discover the future of web development with Progressive Web Apps
+      (PWAs) & how Hypernode supports Magento PWAs for enhanced mobile web experience.
+    title: Hypernode and PWA Hosting
 redirect_from:
   - /en/best-practices/pwa/hypernode-and-pwa-hosting/
 ---

@@ -1,9 +1,10 @@
 ---
 myst:
   html_meta:
-    description: 'The patch SUPEE 8788 and release 1.9.3 fix about 17 issues, of which
-      some are highly critical. In this article you find guidelines to install the
-      patch. '
+    description: Install Magento patch SUPEE 8788 to fix critical vulnerabilities
+      that allow remote code execution, preventing hackers from taking control of
+      your store.
+    title: How to install Magento patch SUPEE 8788 and release 1.9.3?
 redirect_from:
   - /en/best-practices/security/how-to-install-magento-patch-supee-8788-and-release-1-9-3/
 ---

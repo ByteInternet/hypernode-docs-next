@@ -1,4 +1,10 @@
 ---
+myst:
+  html_meta:
+    description: Our built-in Web Application Firewall is designed specifically to
+      protect your application against known vulnerabilities and endpoints that often
+      see abuse.
+    title: How to use a Cloud firewall on Hypernode? | Security
 redirect_from:
   - /en/best-practices/security/how-to-use-a-cloud-firewall-on-hypernode/
 ---

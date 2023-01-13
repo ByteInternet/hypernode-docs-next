@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: In this article, you can read about setting up smart 404 handlings
-      on Hypernode.
+    description: Servers are configured so requests for non-existing files are routed
+      through the Magento index. We explain how to reduce load by discarding expensive
+      404s.
+    title: How to set up smart 404 handling for Magento 2? | Hypernode
 redirect_from:
   - /en/best-practices/performance/how-to-set-up-smart-404-handling/
 ---

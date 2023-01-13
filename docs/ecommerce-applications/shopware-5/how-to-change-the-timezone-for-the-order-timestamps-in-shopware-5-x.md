@@ -1,4 +1,9 @@
 ---
+myst:
+  html_meta:
+    description: The solution is quite simpel. There is a free plugin for Shopware
+      5 which allows you to correct the timestamps of the orders.
+    title: Change the timezone for order timestamps in Shopware 5
 redirect_from:
   - /en/support/solutions/articles/48001166328-how-to-change-the-timezone-for-the-order-timestamps-in-shopware-5-x/
 ---

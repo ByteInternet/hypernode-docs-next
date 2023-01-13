@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: PageSpeed Booster is a reverse proxy which uses many static optimisation
-      techniques to greatly increase the pagespeed score and performance of your website.
+    description: Learn how to enable PageSpeed Booster, a reverse proxy that increases
+      page speed and performance on Hypernode. Requirements included.
+    title: How to enable the PageSpeed Booster? | Hypernode
 redirect_from:
   - /en/best-practices/performance/how-to-enable-pagespeed-booster/
 ---

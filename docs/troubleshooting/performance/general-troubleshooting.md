@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Need to debug a problem? Hypernode has many possibilities to analyse
-      a suspicious or unwanted situation. Learn where to look and reach a conclusion
-      fast.
+    description: 'Hypernode provides the best performance for your Magento webshop.
+      Get insights on how to troubleshoot general issues. '
+    title: Performance | General Troubleshooting | Hypernode
 redirect_from:
   - /en/troubleshooting/performance/general-troubleshooting/
 ---

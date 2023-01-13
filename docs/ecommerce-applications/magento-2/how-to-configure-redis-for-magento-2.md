@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Redis is a caching method which can increase the speed of the back-
-      and frontend of your shop. Here's how to configure it on Magento 2 and how redis-cli
-      works.
+    description: This article will explain how to configure Redis on your Magento
+      2 shop on Hypernode and how to work with redis-cli.
+    title: How to configure Redis for Magento 2? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-2/how-to-configure-redis-for-magento-2/
   - /knowledgebase/configure-sessions-redis-magento2/

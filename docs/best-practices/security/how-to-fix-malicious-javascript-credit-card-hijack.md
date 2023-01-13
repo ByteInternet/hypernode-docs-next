@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: The hack Creditcard Hijack is malicious code in Magento that allows
-      hackers to intercept financial data. This article explains more and tells you
-      how to fix it.
+    description: "Learn how to fix the malicious Credit Card Hijack in Magento and\
+      \ protect your customers' financial data. "
+    title: How to fix malicious Javascript Credit Card Hijacks? | Hypernode
 redirect_from:
   - /en/best-practices/security/how-to-fix-malicious-javascript-credit-card-hijack/
 ---

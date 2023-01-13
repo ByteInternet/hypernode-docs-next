@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'On Hypernode you can transfer ownership. This means a different
-      account will be charged for the subscription. Read here how to do this. '
+    description: Learn how to transfer ownership of a Hypernode in the Control Panel.
+      This guide provides step-by-step instructions on how to securely transfer ownership.
+    title: How to transfer ownership of a Hypernode? | Control Panel
 redirect_from:
   - /en/services/control-panel/transfer-ownership/
 ---

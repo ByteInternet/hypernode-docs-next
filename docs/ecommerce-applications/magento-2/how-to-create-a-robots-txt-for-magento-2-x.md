@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Using a robots.txt is essential to handle bots and crawlers. In this
-      article we explain how to generate and configure Robot.txt on Magento 2.x.
+    description: In this article we explain how to configure your Hypernode to serve
+      a robots.txt for one or multiple storefronts in Magento 2.
+    title: How to create robots.txt for Magento 2? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-2/how-to-create-a-robots-txt-for-magento-2-x/
   - /knowledgebase/create-robots-txt-magento-2/

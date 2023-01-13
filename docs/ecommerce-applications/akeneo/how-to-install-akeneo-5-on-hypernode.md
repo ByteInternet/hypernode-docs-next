@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'Akeneo 5 preferably requires a Hypernode Professional M hosting
-      plan or larger. You can either choose to install it on a seperate Hypernode
-      instance or on the same Hypernode as your Magento or Shopware installation. '
+    description: Install Akeneo 5 on a separate Hypernode instance or on the same
+      Hypernode as your Magento or Shopware installation. Learn more!
+    title: How to install Akeneo 5 on Hypernode?
 redirect_from:
   - /en/ecommerce/akeneo/how-to-install-akeneo-5-on-hypernode/
 ---

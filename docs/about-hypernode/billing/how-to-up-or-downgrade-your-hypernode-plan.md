@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'When dealing with visitor peaks, during holidays for example, you
-      might want to take precautions and upgrade a bigger Hypernode plan. Read here
-      how to do so. '
+    description: Learn how to easily upgrade or downgrade your Hypernode hosting plan
+      based on your needs and usage. You only pay for what you use.
+    title: Upgrade or downgrade a Hypernode Plan | Hypernode
 redirect_from:
   - /en/about/billing/how-to-up-or-downgrade-your-hypernode-plan/
 ---

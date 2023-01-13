@@ -1,4 +1,9 @@
 ---
+myst:
+  html_meta:
+    description: 'With Composer, you can easily install, update or remove dependencies.
+      Read here how to use Composer 2 on our Hypernode platform. '
+    title: How to use Componsor 2 on Hypernode?
 redirect_from:
   - /en/support/solutions/articles/48001184546-how-to-use-composer-2-on-your-hypernode/
 ---

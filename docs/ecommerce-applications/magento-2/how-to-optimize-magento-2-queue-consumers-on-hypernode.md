@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: If your Magento 2 Cron is stuck or long-running this could be because
-      of a default setting in Magento 2 causing the consumers to never end. Here's
-      the fix.
+    description: 'If your Magento 2 Cron is stuck or long-running this could be because
+      of a default setting in Magento 2 causing the consumers to never end. '
+    title: How to optimize Magento 2 queue consumers? | Hypernode
 redirect_from:
   - /en/support/solutions/articles/48001186343-how-to-optimize-magento-2-queue-consumers-on-hypernode/
 ---

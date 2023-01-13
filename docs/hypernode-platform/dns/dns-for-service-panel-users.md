@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: DNS is a protocol that translates domain names to IP addresses on
-      the internet. Read here how you can configure the DNS for your domain name at
-      Hypernode.
+    description: You can edit the DNS setting for your domain names in the Service
+      Panel (Instellingen => DNS). It takes 24 hours for a DNS change to be implemented.
+    title: How to manage your DNS as a Service Panel user?
 redirect_from:
   - /en/support/solutions/articles/48001153093-dns-for-service-panel-users/
 ---

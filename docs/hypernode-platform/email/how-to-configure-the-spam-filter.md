@@ -2,8 +2,9 @@
 myst:
   html_meta:
     description: Spam is unsolicited email, usually with a commercial content. If
-      you receive a lot of spam, we at Hypernode recommend you to configure a spam
-      filter.
+      you receive a lot of spam in your email box, we recommend you to configure a
+      spam filter.
+    title: How to configure your email spam filter? | Hypernode
 redirect_from:
   - /en/best-practices/email/how-to-configure-the-spam-filter/
 ---

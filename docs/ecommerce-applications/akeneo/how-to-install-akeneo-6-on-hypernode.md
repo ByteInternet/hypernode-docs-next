@@ -1,4 +1,9 @@
 ---
+myst:
+  html_meta:
+    description: Install Akeneo 6 on a separate Hypernode instance or on the same
+      Hypernode as your Magento or Shopware installation. Learn more!
+    title: How to install Akeneo 6 on Hypernode?
 redirect_from:
   - /en/support/solutions/articles/48001220118-how-to-install-akeneo-6-on-hypernode/
 ---

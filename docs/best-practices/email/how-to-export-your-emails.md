@@ -1,9 +1,10 @@
 ---
 myst:
   html_meta:
-    description: In this article we explain how you can export your  email with a
-      number of common email clients (such as Outlook and Mac Mail) and our own webmail
-      application.
+    description: Learn how to export your emails from various email clients such as
+      Byte Webmail, Outlook, Mozilla Thunderbird and Mac Mail. Follow our step-by-step
+      guide.
+    title: How to Export your Emails? | Hypernode
 redirect_from:
   - /en/best-practices/email/how-to-export-your-emails/
 ---

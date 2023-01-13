@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: In this article, we explain how to use 2FA for the Control Panel.
-      Not available yet.
+    description: Protect your Service Panel with two-factor authentication (2FA).
+      Learn how to set up 2FA on Hypernode and keep your data secure.
+    title: How to use 2FA on the Service Panel? | Hypernode
 redirect_from:
   - /en/services/service-panel/how-to-use-2fa-for-the-service-panel/
 ---

@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: "Long running processes might indicate: the site benefiting from\
-      \ an index (SQL), inefficient or erroneous code (PHP), or a deadlock. Here's\
-      \ how to identify them."
+    description: Learn how to quickly identify and stop long-running processes on
+      Hypernode with our easy-to-follow guide.
+    title: How to idfentify and stop long running processes? | Hypernode
 redirect_from:
   - /en/troubleshooting/performance/how-to-identify-and-stop-long-running-processes/
 ---

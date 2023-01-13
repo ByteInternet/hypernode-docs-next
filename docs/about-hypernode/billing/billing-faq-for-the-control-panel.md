@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Every first of the month, we send an invoice to our customers. You
-      can easily find all invoices that have been sent in the Control Panel.
+    description: Find answers to frequently asked billing questions for the Control
+      Panel, including payment methods, changing plans, and adding VAT numbers.
+    title: Billing Control Panel FAQ | Hypernode
 redirect_from:
   - /en/about/billing/billing-faq-for-the-control-panel/
 ---

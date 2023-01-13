@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: A 502 Bad Gateway error indicates there has been an internal error
-      within PHP, which resulted in the site not being rendered. Check out how to
-      solve it here.
+    description: 'A 502 Bad Gateway error indicates there has been an internal error
+      within PHP. Learn how to resolve 502 Gateway errors. '
+    title: How to resolve 502 Gateway errors? | Hypernode
 redirect_from:
   - /en/hypernode/php/how-to-resolve-502-gateway-errors/
 ---

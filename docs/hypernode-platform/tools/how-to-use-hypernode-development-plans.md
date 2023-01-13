@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'Hypernode offers its customers discounted development plans of all
-      the regular Hypernode plans for development and testing. Read more about these
-      plans here. '
+    description: 'Development Plans can be used for development and testing. Use this
+      guide on how to use Hypernode Development Plans. '
+    title: How to use Hypernode Development Plans?
 redirect_from:
   - /en/hypernode/tools/how-to-use-hypernode-development-plans/
   - /knowledgebase/development-plans-for-your-magento-shop/

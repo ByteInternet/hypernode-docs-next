@@ -1,9 +1,10 @@
 ---
 myst:
   html_meta:
-    description: To avoid outgoing mail being detected as spam, you can change the
-      mail return-path for your outgoing email to a valid address. Here's how to do
-      so in Magento 2.
+    description: To avoid outgoing email being detected as spam in Magento 2, you
+      should change the email return-path for your outgoing email to a valid email
+      address.
+    title: How to set the return path for Magento 2? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-2/how-to-set-the-return-path-for-a-magento-2-shop/
   - /en/ecommerce/magento-2/workaround-return-path-email-bug-in-magento-2/

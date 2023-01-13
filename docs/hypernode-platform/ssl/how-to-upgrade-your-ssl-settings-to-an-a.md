@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: Many developers validate their SSL setting on Hypernode with Qualys
-      SSL labs. This article explains how to get an A+ rating for your SSL configuration.
+    description: Developers use the Qualys SSL labs server test to validate the SSL
+      settings on their node. Learn how to get an A+ rating for your Hypernode SSL
+      configuration.
+    title: How to Upgrade Your SSL Settings to an A+? | Hypernode
 redirect_from:
   - /en/hypernode/ssl/how-to-upgrade-your-ssl-settings-to-an-a-plus/
 ---

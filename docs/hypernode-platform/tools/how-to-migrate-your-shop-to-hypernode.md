@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: 'Congratulations on your new Hypernode! Find out how to migrate your
-      shop to Hypernode for testing on this page. '
+    description: 'If you have a brand new Hypernode, the first step is to migrate
+      your shop to Hypernode. There are several ways to achieve this, read them here. '
+    title: How to migrate your shop to Hypernode?
 redirect_from:
   - /en/hypernode/tools/how-to-migrate-your-shop-to-hypernode/
   - /knowledgebase/migrating-your-magento-to-hypernode/

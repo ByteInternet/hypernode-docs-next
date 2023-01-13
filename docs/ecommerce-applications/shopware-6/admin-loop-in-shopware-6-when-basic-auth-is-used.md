@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: When you want to use Shopware 6 on a Hypernode with basic auth you
+      need to take into account that Shopware overwrites the Authorization header.
+    title: How to prevent an admin loop in Shopware 6 on Hypernode?
+---
+
 # Admin loop in Shopware 6 when basic auth is used
 
 On a Hypernode dev plan basic auth is enabled out of the box. You can also configure Nginx to put your site or parts of your site behind basic auth on a production plan. When you want to use Shopware 6 on a Hypernode with basic auth you need to take into account that Shopware overwrites the Authorization header.
