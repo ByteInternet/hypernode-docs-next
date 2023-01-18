@@ -64,6 +64,15 @@
   <!--[if lt IE 9]>
     <script src="{{ pathto('_static/js/html5shiv.min.js', 1) }}"></script>
   <![endif]-->
+
+  {%- if theme_analytics_id %}
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','{{ theme_analytics_id }}');</script>
+  {%- endif %}
+
   {%- if not embedded %}
   {# XXX Sphinx 1.8.0 made this an external js-file, quick fix until we refactor the template to inherert more blocks directly from sphinx #}
     {%- if sphinx_version_info >= (1, 8) -%}
@@ -248,22 +257,9 @@
       });
   </script>
 
-  {#- Do not conflict with RTD insertion of analytics script #}
-  {%- if not READTHEDOCS %}
-    {%- if theme_analytics_id %}
-    <!-- Theme Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ theme_analytics_id }}"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', '{{ theme_analytics_id }}', {
-          'anonymize_ip': {{ 'true' if theme_analytics_anonymize_ip|tobool else 'false' }},
-      });
-    </script>
-
-    {%- endif %}
+  {%- if theme_analytics_id %}
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDL826"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   {%- endif %}
 
   {%- block footer %} {% endblock %}
