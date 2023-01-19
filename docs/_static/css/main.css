@@ -851,6 +851,11 @@ li.wy-breadcrumbs-aside a {
   content: "•";
   padding-left: 5px;
 }
+@media (max-width: 420px) {
+  .article-meta {
+    font-size: 12px;
+  }
+}
 
 /* article meta end */
 /* footer */
