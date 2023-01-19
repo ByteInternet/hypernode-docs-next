@@ -10,7 +10,7 @@ redirect_from:
 
 <!-- source: https://support.hypernode.com/en/getting-started/how-to-order/how-to-get-started-with-your-hypernode-trial/ -->
 
-# How to Get Started With Your Hypernode Trial
+# How to Get Started With Your Hypernode Trial!
 
 You have reached this page because you ordered a trial or paid plan on our Hypernode platform. Welcome!
 
