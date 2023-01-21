@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+.PHONY: build
+
+build:
+	python3 -m venv venv
+	venv/bin/pip install -r requirements/development.txt
+	bash -c 'source venv/bin/activate; bin/build_manpage'
+	mv docs/_build/man/docs.1 docs/_build/man/hypernode.3
+
+override_dh_usrlocal:
+
+%:
+	dh $@
