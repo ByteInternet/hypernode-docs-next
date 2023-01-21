@@ -1,4 +1,5 @@
 import os.path
+import re
 from pathlib import Path
 from typing import List
 
@@ -21,6 +22,8 @@ def get_path_for_doc(doc: Path) -> str:
     )
     path = path.replace("/./", "/")
     path = path.replace("/index.html", "/")
+    base_url = os.getenv("DOCS_BASE_URL", "/")
+    path = re.sub(r"^/", base_url, path)
     return path
 
 
