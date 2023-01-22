@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+
+pushd docs
+make man
+echo "manpage located at $(realpath _build/man/docs.1)"
+popd
