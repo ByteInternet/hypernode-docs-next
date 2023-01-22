@@ -1,0 +1,3 @@
+# https://www.debian.org/doc/manuals/maint-guide/dother.en.html#install
+
+docs/_build/man/hypernode.3 /usr/local/man/man3/

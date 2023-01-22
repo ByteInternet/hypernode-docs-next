@@ -66,3 +66,48 @@ Then deploy to your local Hypernode Docker:
 docker run --rm -it --env SSH_PRIVATE_KEY="$(cat ~/.ssh/yourdeploykey | base64)" -v ${PWD}:/build quay.io/hypernode/deploy:latest hypernode-deploy build -vvv  # First build the artifact
 docker run --rm -it --env SSH_PRIVATE_KEY="$(cat ~/.ssh/yourdeploykey | base64)" -v ${PWD}:/build quay.io/hypernode/deploy:latest hypernode-deploy deploy docker -vvv  # Then perform the deploy
 ```
+
+## Building the manpage deb
+
+The docs are also packaged as a debian package named `hndocsnext` so that on a Hypernode you can run `man hypernode` (or `hypernode-manual`) and page through a `manpage` version of the Hypernode docs. To build that debian package on a Debian machine you can run these commands:
+```
+# First create the cow environment
+export ARCH=amd64
+export DIST=buster
+apt-get install debhelper cowbuilder git-buildpackage
+cowbuilder --create --distribution buster --architecture amd64 --basepath /var/cache/pbuilder/base-$DIST-amd64.cow --mirror http://ftp.debian.org/debian/ --components=main
+
+# We need to make sure our build process can use networking in order to pip install the requirements
+echo "USENETWORK=yes" > ~/.pbuilderrc
+
+# Then clone the repository and build the .deb
+git clone https://github.com/ByteInternet/hypernode-docs-next
+cd hypernode-docs-next
+gbp buildpackage --git-pbuilder --git-dist=$DIST --git-arch=$ARCH --git-ignore-branch -us -uc -sa --git-ignore-new
+```
+
+Then after building the Deb you could install it with dpkg. For example:
+```
+dpkg -i ../hndocsnext_20230121.173551_all.deb
+```
+
+And test it out with:
+```
+man hypernode
+```
+
+To inspect the contents of the deb archive you can run:
+```
+# dpkg -L hndocsnext
+/.
+/usr
+/usr/local
+/usr/local/man
+/usr/local/man/man3
+/usr/local/man/man3/hypernode.3
+/usr/share
+/usr/share/doc
+/usr/share/doc/hndocsnext
+/usr/share/doc/hndocsnext/README.md
+/usr/share/doc/hndocsnext/changelog.gz
+```
