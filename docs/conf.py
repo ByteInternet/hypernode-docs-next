@@ -44,6 +44,7 @@ extensions = [
     "sphinx_copybutton",
     "notfound.extension",
     "hypernode.sphinx.extensions.updated_at",
+    "sphinxcontrib.mermaid",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
