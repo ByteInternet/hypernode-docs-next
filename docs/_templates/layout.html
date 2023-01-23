@@ -222,8 +222,14 @@
         {%- else %}
         <div class="rst-content">
         {%- endif %}
-          <div role="main" class="document main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+          <div role="main" class="document main-content" itemscope="itemscope" itemtype="https://schema.org/Article">
           {%- block document %}
+          {%- if updated_at %}
+            <div class="article-meta article-meta--updated" itemprop="dateModified">Updated {{ updated_at }}</div>
+           {%- endif %}
+           {%- if created_at %}
+            <div class="article-meta" itemprop="dateCreated">Created {{ created_at }}</div>
+           {%- endif %}
            <div itemprop="articleBody">
              {% block body %}{% endblock %}
            </div>
@@ -231,7 +237,7 @@
              <div class="articleComments">
                {%- block comments %}{% endblock %}
              </div>
-           {%- endif%}
+           {%- endif %}
           </div>
           {%- endblock %}
           {% include "footer.html" %}
