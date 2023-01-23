@@ -100,7 +100,7 @@ npm install less
 
 ### Install Yarn
 
-*To install yarn, a more recent version of nodejs is required, so [follow the instructions and download and unpack a newer version of nodejs](../../hypernode-platform/tools/how-to-use-node-js-and-npm-on-hypernode.md#using-an-newer-version-of-node-js) first.*
+*To install yarn, a more recent version of nodejs is required, so [follow the instructions and download and unpack a newer version of nodejs](how-to-use-node-js-and-npm-on-hypernode.md#using-an-newer-version-of-node-js) first.*
 
 ```nginx
 npm install yarn
