@@ -58,7 +58,7 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - run: mkdir -p $HOME/.ssh
       - name: deploy to acceptance
-        run: hypernode-deploy deploy acceptance -vvv
+        run: hypernode-deploy deploy acceptance -vvv --reuse-brancher
         env:
           HYPERNODE_API_TOKEN: ${{ secrets.HYPERNODE_API_TOKEN }}
       - name: Get brancher hostname
