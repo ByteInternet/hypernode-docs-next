@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
 
 import multiprocessing
-import os
 import re
 from glob import glob
 from typing import List
 
 import requests
 
-PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DOCS_DIR = os.path.join(PROJECT_DIR, "docs")
+from hypernode.common.settings import DOCS_DIR
+
 FAKE_DOMAINS = [
     "example.com",
     "yourdomain.com",
