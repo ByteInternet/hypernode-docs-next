@@ -27,5 +27,6 @@ def get_path_for_doc(doc: Path) -> str:
 def main():
     for doc in get_all_docs():
         for redirect in get_redirects_from_doc(doc):
+            redirect = redirect.rstrip("/")
             doc_path = get_path_for_doc(doc)
-            print("rewrite ^{}$ {} permanent;".format(redirect, doc_path))
+            print("rewrite ^{}/?$ {} permanent;".format(redirect, doc_path))
