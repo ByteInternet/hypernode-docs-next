@@ -7,6 +7,7 @@ myst:
 redirect_from:
   - /en/hypernode/tools/unblocking-and-accessing-magmi-for-hypernode/
   - /knowledgebase/unblocking-and-accessing-magmi-for-hypernode/
+  - /knowledgebase/securing-access-to-magmi/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/unblocking-and-accessing-magmi-for-hypernode/ -->
