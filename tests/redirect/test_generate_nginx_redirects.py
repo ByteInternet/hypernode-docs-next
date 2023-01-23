@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from unittest.mock import call
 
 from hypernode.common.settings import DOCS_DIR
 from hypernode.redirect.generate_nginx_redirects import (
@@ -18,16 +19,19 @@ class TestMain(HypernodeTestCase):
             module + "get_all_docs", return_value=[DOCS_DIR / "index.html"]
         )
         self.get_redirects_from_doc = self.set_up_patch(
-            module + "get_redirects_from_doc", return_value=["/old-url/"]
+            module + "get_redirects_from_doc",
+            return_value=["/old-url/", "/en/another-url"],
         )
 
     def test_main_prints_rewrites(self):
         main()
 
-        expected_output = """
-rewrite ^/old-url/$ / permanent;
-        """.strip()
-        self.print.assert_called_once_with(expected_output)
+        self.print.assert_has_calls(
+            [
+                call("rewrite ^/old-url/?$ / permanent;"),
+                call("rewrite ^/en/another-url/?$ / permanent;"),
+            ]
+        )
 
 
 class TestGetPathForDoc(HypernodeTestCase):
