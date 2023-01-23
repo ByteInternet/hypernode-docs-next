@@ -47,7 +47,8 @@ A user can have different roles between teams. Each role is defined by a set of 
 | Can manage bots                                       |                          | ✅             | ✅         | ✅         |
 | Can add and remove team members                       |                          |               | ✅         | ✅         |
 | Can change roles within the team                      |                          |               | ✅         | ✅         |
-| Can remove Hypernodes and change the name of the team |                          |               | ✅         | ✅         |
+| Can remove Hypernodes |                          |               | ✅         | ✅         |
+| Can rename the team |                          |               | ✅         | ✅         |
 | Can change the plan                                   |                          |               | ✅         | ✅         |
 | Can delete the team                                   |                          |               |           | ✅         |
 | Can add Hypernodes to a team                          |                          |               |           | ✅         |
