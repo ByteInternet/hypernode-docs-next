@@ -3,16 +3,13 @@ import re
 from pathlib import Path
 from typing import List
 
-from frontmatter import Frontmatter
-
-from hypernode.common.docs import get_all_docs
+from hypernode.common.docs import get_all_docs, read_doc
 from hypernode.common.settings import DOCS_DIR
 
 
 def get_redirects_from_doc(doc: Path) -> List[str]:
-    fm = Frontmatter.read_file(doc)
-    attributes = fm["attributes"] or {}
-    return attributes.get("redirect_from", [])
+    fm, _, _ = read_doc(doc)
+    return fm.get("redirect_from", [])
 
 
 def get_path_for_doc(doc: Path) -> str:
