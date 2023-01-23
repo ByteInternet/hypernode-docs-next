@@ -6,6 +6,7 @@ myst:
     title: What to do if your DNS is misconfigured? | Hypernode
 redirect_from:
   - /en/hypernode/dns/your-dns-is-misconfigured/
+  - /knowledgebase/www-domain-misconfigured/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/dns/your-dns-is-misconfigured/ -->
