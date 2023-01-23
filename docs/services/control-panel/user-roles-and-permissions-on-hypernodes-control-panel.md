@@ -26,35 +26,35 @@ A user can have different roles between teams. Each role is defined by a set of 
 
 ## Permissions
 
-|                                       |                          |               |           |           |
-| ------------------------------------- | ------------------------ | ------------- | --------- | --------- |
+|                                       |              |               |           |           |
+| ------------------------------------- | ------------ | ------------- | --------- | --------- |
 | **Permissions**                       | **Merchant** | **Developer** | **Admin** | **Owner** |
-| See the team                          | ✅          | ✅             | ✅         | ✅         |
-| See the Hypernodes in the team        | ✅          | ✅             | ✅         | ✅         |
-| See the logs                          | ✅          | ✅             | ✅         | ✅         |
-| See the SSH keys that have been added | ✅          | ✅             | ✅         | ✅         |
-| See the linked SSL certificate        | ✅          | ✅             | ✅         | ✅         |
-| See the allowlist                     | ✅          | ✅             | ✅         | ✅         |
-| Manage the allowlist                  |             | ✅             | ✅         | ✅         |
-| Manage SSL certificates               |             | ✅             | ✅         | ✅         |
-| Add SSH keys                          |             | ✅             | ✅         | ✅         |
-| Request to restore backups            |             | ✅             | ✅         | ✅         |
-| Attach backups                        |             | ✅             | ✅         | ✅         |
-| Create backups                        |             | ✅             | ✅         | ✅         |
-| Enable Varnish                        |             | ✅             | ✅         | ✅         |
-| Change the PHP version                |             | ✅             | ✅         | ✅         |
-| Manage monitoring                     |             | ✅             | ✅         | ✅         |
-| Manage bots                           |             | ✅             | ✅         | ✅         |
-| Add or remove team members            |             |               | ✅         | ✅         |
-| Change roles within the team          |             |               | ✅         | ✅         |
-| Rename the team                       |             |               | ✅         | ✅         |
-| Remove Hypernodes from the team       |             |               | ✅         | ✅         |
-| Change plan                           |             |               | ✅         | ✅         |
-| Add Hypernodes to the team            |             |               |           | ✅         |
-| Delete the team                       |             |               |           | ✅         |
-| Transfer Hypernode ownership          |             |               |           | ✅         |
-| Change payment details                |             |               |           | ✅         |
-| View invoices                         |             |               |           | ✅         |
+| See the team                          | ✅            | ✅             | ✅         | ✅         |
+| See the Hypernodes in the team        | ✅            | ✅             | ✅         | ✅         |
+| See the logs                          | ✅            | ✅             | ✅         | ✅         |
+| See the SSH keys that have been added | ✅            | ✅             | ✅         | ✅         |
+| See the linked SSL certificate        | ✅            | ✅             | ✅         | ✅         |
+| See the allowlist                     | ✅            | ✅             | ✅         | ✅         |
+| Manage the allowlist                  |              | ✅             | ✅         | ✅         |
+| Manage SSL certificates               |              | ✅             | ✅         | ✅         |
+| Add SSH keys                          |              | ✅             | ✅         | ✅         |
+| Request to restore backups            |              | ✅             | ✅         | ✅         |
+| Attach backups                        |              | ✅             | ✅         | ✅         |
+| Create backups                        |              | ✅             | ✅         | ✅         |
+| Enable Varnish                        |              | ✅             | ✅         | ✅         |
+| Change the PHP version                |              | ✅             | ✅         | ✅         |
+| Manage monitoring                     |              | ✅             | ✅         | ✅         |
+| Manage bots                           |              | ✅             | ✅         | ✅         |
+| Add or remove team members            |              |               | ✅         | ✅         |
+| Change roles within the team          |              |               | ✅         | ✅         |
+| Rename the team                       |              |               | ✅         | ✅         |
+| Remove Hypernodes from the team       |              |               | ✅         | ✅         |
+| Change plan                           |              |               | ✅         | ✅         |
+| Add Hypernodes to the team            |              |               |           | ✅         |
+| Delete the team                       |              |               |           | ✅         |
+| Transfer Hypernode ownership          |              |               |           | ✅         |
+| Change payment details                |              |               |           | ✅         |
+| View invoices                         |              |               |           | ✅         |
 
 ## How to Assign Roles
 
