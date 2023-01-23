@@ -6,13 +6,16 @@ myst:
     title: How to protect the Magento 2 API? | Hypernode
 redirect_from:
   - /en/ecommerce/magento-2/how-to-protect-the-magento-2-api/
+  - /knowledgebase/protecting-the-magento-2-api/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-protect-the-magento-2-api/ -->
 
 # How to Protect the Magento 2 API
 
-**The Magento team released security update**[**Magento 2.0.3**](https://magento.com/security/patches/magento-203-security-update)\*\*on March 30th 2017. This release contains a security fix that restricts access to anonymous web APIs.\*\*\*\*[Read more.](https://magento.com/security/best-practices/restricting-access-anonymous-web-apis)\*\***We recommend you to**[**update your Magento**](how-to-update-magento-2.md)**version to Magento 2.0.3 instead of blocking the API.**
+```{note}
+The Magento team released security update [Magento 2.0.3](https://magento.com/security/patches/magento-203-security-update) on March 30th 2017. This release contains a security fix that restricts access to anonymous web APIs. [Read more.](https://magento.com/security/best-practices/restricting-access-anonymous-web-apis) We recommend you to [update your Magento](how-to-update-magento-2.md) version to Magento 2.0.3 instead of blocking the API.
+```
 
 In March 2016, Paul Bosselaar and others discovered that the Magento 2 API by default discloses information that can be considered private:
 
@@ -40,9 +43,9 @@ If you need to allow one or more of these URLs to be accessable, you can easily 
 
 Modify the lines of the following block:
 
-```
+```nginx
 location ~ ^/(pub/)?(rest|soap)(/.+)?/V1/(products|store/storeViews|store/storeConfigs)/?$ {
-        return https://support.hypernode.com/knowledgebase/protecting-the-magento-2-api/;
+    return https://support.hypernode.com/knowledgebase/protecting-the-magento-2-api/;
 }
 ```
 
@@ -50,11 +53,12 @@ When full access to the API is needed, the easiest way to do this is done with `
 
 If you do not require the API, it is recommended to block it entirely. Edit the file `/data/web/nginx/server.magento2api`, remove all lines and add
 
-```
-location ~ ^/(pub/)?(rest|soap)/ {    return 403;
+```nginx
+location ~ ^/(pub/)?(rest|soap)/ {
+    return 403;
 }
 ```
 
-## I 'm Not a Hypernode User
+## I'm Not a Hypernode User
 
 You will need to do some extra work yourself. First, contact your hosting provider and ask them to help you. Otherwise you can block the API using .htaccess in case of Apache. Perhaps the Nginx rules above might work, but we do not provide support on them for non-Hypernode environments. Good luck!
