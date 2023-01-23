@@ -48,37 +48,37 @@ All Hypernode plan codes can also be found in the below table.
 |                      |                        |           |          |         |          |                    |
 | -------------------- | ---------------------- | --------- | -------- | ------- | -------- | ------------------ |
 | **Product code**     | **Name**               | **Price** | **CPUs** | **RAM** | **Disk** | **Provider**       |
-| FALCON_XS_202203     | Falcon XS              | €99       | 2        | 4 GB    | 44 GB    | Combell OpenStack  |
-| FALCON_XS_202203DEV  | Falcon XS Development  | €75       | 2        | 4 GB    | 44 GB    | Combell OpenStack  |
-| FALCON_S_202203      | Falcon S               | €139      | 2        | 8 GB    | 44 GB    | Combell OpenStack  |
-| FALCON_S_202203DEV   | Faclon S Development   | €99       | 2        | 8 GB    | 44 GB    | Combell OpenStack  |
-| FALCON_M_202203      | Falcon M               | €186      | 3        | 16 GB   | 62 GB    | Combell OpenStack  |
-| FALCON_M_202203DEV   | Falcon M Development   | €119      | 3        | 16 GB   | 62 GB    | Combell OpenStack  |
-| FALCON_L_202203      | Falcon L               | €305      | 5        | 24 GB   | 138 GB   | Combell OpenStack  |
-| FALCON_L_202203DEV   | Falcon L Development   | €199      | 5        | 24 GB   | 138 GB   | Combell OpenStack  |
-| FALCON_XL_202203     | Falcon XL              | €549      | 8        | 32 GB   | 286 GB   | Combell OpenStack  |
-| FALCON_XL_202203DEV  | Falcon XL Development  | €385      | 8        | 32 GB   | 286 GB   | Combell OpenStack  |
-| FALCON_2XL_202203    | Falcon 2XL             | €849      | 12       | 48 GB   | 606 GB   | Combell OpenStack  |
-| FALCON_2XL_202203DEV | Falcon 2XL Development | €629      | 12       | 48 GB   | 606 GB   | Combell OpenStack  |
-| FALCON_3XL_202203    | Faclon 3XL             | €1235     | 16       | 64 GB   | 901 GB   | Combell OpenStack  |
-| FALCON_3XL_202203DEV | Falcon 3XL Development | €889      | 16       | 64 GB   | 901 GB   | Combell OpenStack  |
-| FALCON_4XL_202203    | Falcon 4XL             | €1799     | 18       | 80 GB   | 1206 GB  | Combell OpenStack  |
-| FALCON_4XL_202203DEV | Falcon 4XL Development | €1435     | 18       | 80 GB   | 1206 GB  | Combell OpenStack  |
-| FALCON_5XL_202203    | Falcon 5XL             | €2699     | 20       | 96 GB   | 1812 GB  | Combell OpenStack  |
-| FALCON_5XL_202203DEV | Falcon 5XL Development | €2095     | 20       | 96 GB   | 1812GB   | Combell OpenStack  |
-| EAGLE_M_202203       | Eagle M                | €519      | 4        | 8 GB    | 250 GB   | Amazon (Frankfurt) |
-| EAGLE_M_202203DEV    | Eagle M Development    | €425      | 4        | 8 GB    | 250 GB   | Amazon (Frankfurt) |
-| EAGLE_L_202203       | Eagle L                | €939      | 8        | 16 GB   | 500 GB   | Amazon (Frankfurt  |
-| EAGLE_L_202203DEV    | Eagle L                | €790      | 8        | 16 GB   | 500 GB   | Amazon (Frankfurt) |
-| EAGLE_XL_202203      | Eagle XL               | €1659     | 16       | 32 GB   | 750 GB   | Amazon (Frankfurt) |
-| EAGLE_XL_202203DEV   | Eagle XL Development   | €1360     | 16       | 32 GB   | 750 GB   | Amazon (Frankfurt) |
-| EAGLE_2XL_202203     | Eagle 2XL              | €3019     | 36       | 72 GB   | 1000 GB  | Amazon (Frankfurt) |
-| EAGLE_2XL_202203DEV  | Eagle 2XL Development  | €2575     | 36       | 72 GB   | 1000 GB  | Amazon (Frankfurt) |
-| EAGLE_3XL_202203     | Eagle 3XL              | €4579     | 40       | 160 GB  | 1000 GB  | Amazon (Frankfurt) |
-| EAGLE_3XL_202203DEV  | Eagle 3XL Development  | €3975     | 40       | 160 GB  | 1000 GB  | Amazon (Frankfurt) |
-| EAGLE_4XL_202203     | Eagle 4XL              | €7289     | 64       | 256 GB  | 1000 GB  | Amazon (Frankfurt) |
-| EAGLE_4XL_202203DEV  | Eagle 4XL Development  | €6195     | 64       | 256 GB  | 1000 GB  | Amazon (Frankfurt) |
-| EAGLE_5XL_202203     | Eagle 5XL              | €10199    | 96       | 384 GB  | 1000 GB  | Amazon (Frankfurt) |
-| EAGLE_5XL_202203DEV  | Eagle 5XL Development  | €8849     | 96       | 384 GB  | 1000 GB  | Amazon (Frankfurt) |
-| EAGLE_6XL_202203     | Eagle 6XL              | €25999    | 128      | 1952 GB | 1000 GB  | Amazon (Frankfurt) |
-| EAGLE_6XL_202203DEV  | Eagle 6XL Development  | €20999    | 128      | 1952 GB | 1000 GB  | Amazon (Frankfurt) |
+| FALCON_XS_202203     | Falcon XS              | €109      | 2        | 4 GB    | 44 GB    | Combell OpenStack  |
+| FALCON_XS_202203DEV  | Falcon XS Development  | €85       | 2        | 4 GB    | 44 GB    | Combell OpenStack  |
+| FALCON_S_202203      | Falcon S               | €155      | 2        | 8 GB    | 44 GB    | Combell OpenStack  |
+| FALCON_S_202203DEV   | Faclon S Development   | €109      | 2        | 8 GB    | 44 GB    | Combell OpenStack  |
+| FALCON_M_202203      | Falcon M               | €205      | 3        | 16 GB   | 62 GB    | Combell OpenStack  |
+| FALCON_M_202203DEV   | Falcon M Development   | €129      | 3        | 16 GB   | 62 GB    | Combell OpenStack  |
+| FALCON_L_202203      | Falcon L               | €335      | 5        | 24 GB   | 138 GB   | Combell OpenStack  |
+| FALCON_L_202203DEV   | Falcon L Development   | €219      | 5        | 24 GB   | 138 GB   | Combell OpenStack  |
+| FALCON_XL_202203     | Falcon XL              | €605      | 8        | 32 GB   | 286 GB   | Combell OpenStack  |
+| FALCON_XL_202203DEV  | Falcon XL Development  | €425      | 8        | 32 GB   | 286 GB   | Combell OpenStack  |
+| FALCON_2XL_202203    | Falcon 2XL             | €935      | 12       | 48 GB   | 606 GB   | Combell OpenStack  |
+| FALCON_2XL_202203DEV | Falcon 2XL Development | €695      | 12       | 48 GB   | 606 GB   | Combell OpenStack  |
+| FALCON_3XL_202203    | Falcon 3XL             | €1359     | 16       | 64 GB   | 901 GB   | Combell OpenStack  |
+| FALCON_3XL_202203DEV | Falcon 3XL Development | €979      | 16       | 64 GB   | 901 GB   | Combell OpenStack  |
+| FALCON_4XL_202203    | Falcon 4XL             | €1979     | 18       | 80 GB   | 1206 GB  | Combell OpenStack  |
+| FALCON_4XL_202203DEV | Falcon 4XL Development | €1579     | 18       | 80 GB   | 1206 GB  | Combell OpenStack  |
+| FALCON_5XL_202203    | Falcon 5XL             | €2969     | 20       | 96 GB   | 1812 GB  | Combell OpenStack  |
+| FALCON_5XL_202203DEV | Falcon 5XL Development | €2305     | 20       | 96 GB   | 1812GB   | Combell OpenStack  |
+| EAGLE_M_202203       | Eagle M                | €569      | 4        | 8 GB    | 250 GB   | Amazon (Frankfurt) |
+| EAGLE_M_202203DEV    | Eagle M Development    | €469      | 4        | 8 GB    | 250 GB   | Amazon (Frankfurt) |
+| EAGLE_L_202203       | Eagle L                | €1035     | 8        | 16 GB   | 500 GB   | Amazon (Frankfurt  |
+| EAGLE_L_202203DEV    | Eagle L                | €869      | 8        | 16 GB   | 500 GB   | Amazon (Frankfurt) |
+| EAGLE_XL_202203      | Eagle XL               | €1825     | 16       | 32 GB   | 750 GB   | Amazon (Frankfurt) |
+| EAGLE_XL_202203DEV   | Eagle XL Development   | €1499     | 16       | 32 GB   | 750 GB   | Amazon (Frankfurt) |
+| EAGLE_2XL_202203     | Eagle 2XL              | €3319     | 36       | 72 GB   | 1000 GB  | Amazon (Frankfurt) |
+| EAGLE_2XL_202203DEV  | Eagle 2XL Development  | €2835     | 36       | 72 GB   | 1000 GB  | Amazon (Frankfurt) |
+| EAGLE_3XL_202203     | Eagle 3XL              | €5035     | 40       | 160 GB  | 1000 GB  | Amazon (Frankfurt) |
+| EAGLE_3XL_202203DEV  | Eagle 3XL Development  | €4375     | 40       | 160 GB  | 1000 GB  | Amazon (Frankfurt) |
+| EAGLE_4XL_202203     | Eagle 4XL              | €8019     | 64       | 256 GB  | 1000 GB  | Amazon (Frankfurt) |
+| EAGLE_4XL_202203DEV  | Eagle 4XL Development  | €6815     | 64       | 256 GB  | 1000 GB  | Amazon (Frankfurt) |
+| EAGLE_5XL_202203     | Eagle 5XL              | €11219    | 96       | 384 GB  | 1000 GB  | Amazon (Frankfurt) |
+| EAGLE_5XL_202203DEV  | Eagle 5XL Development  | €9735     | 96       | 384 GB  | 1000 GB  | Amazon (Frankfurt) |
+| EAGLE_6XL_202203     | Eagle 6XL              | €28599    | 128      | 1952 GB | 1000 GB  | Amazon (Frankfurt) |
+| EAGLE_6XL_202203DEV  | Eagle 6XL Development  | €23099    | 128      | 1952 GB | 1000 GB  | Amazon (Frankfurt) |
