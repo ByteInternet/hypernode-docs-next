@@ -706,6 +706,7 @@ code.docutils.literal.notranslate.literal {
 .permissions-table__row div.permissions-table__permission {
   justify-content: flex-start;
   padding-left: 10px;
+  text-align: center;
 }
 @media (max-width: 420px) {
   .permissions-table__row div.permissions-table__permission {

@@ -717,6 +717,7 @@ code.docutils.literal.notranslate {
         &.permissions-table__permission {
             justify-content: flex-start;
             padding-left: 10px;
+            text-align: center;
 
             @media (max-width: $breakpoint-mobile) {
                 grid-column: 1 / span 5;
