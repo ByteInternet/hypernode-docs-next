@@ -10,4 +10,5 @@ Package: hndocsnext
 Section: doc
 Architecture: all
 Depends: ${misc:Depends}
+Pre-Depends: man-db
 Description: Hypernode docs in manpage form. Run 'man hypernode'.
