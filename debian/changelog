@@ -1,6 +1,65 @@
-hndocsnext (20230121.173551) UNRELEASED; urgency=medium
+hndocsnext (20230124.142001) UNRELEASED; urgency=medium
 
   [ Rick van de Loo ]
   * Initial packaging
 
- -- Rick van de Loo <vdloo@desktop>  Sat, 21 Jan 2023 17:35:51 +0200
+  [ Timon de Groot ]
+  * docs: Add created_at and updated_at variables to articles
+
+  [ Rick van de Loo ]
+  * fix dead link nodejs install in yarn instructions
+
+  [ Niutoseq ]
+  * adding styling to update_at and create_at
+  * adding mobile fontsize
+
+  [ Alexander Grooff ]
+  * feat: script to find dead links
+
+  [ Rick van de Loo ]
+  * use relative path for nodejs install link
+
+  [ Timon de Groot ]
+  * Simplify internal link
+  * Fix link and formatting of how-to-use-node-js-and-npm-on-hypernode.md
+  * Add tests for generate_nginx_redirects.py
+  * pre-commit: Update repos and run isort with black profile
+  * Create LICENSE.txt
+  * redirect: Make the trailing slash optional
+  * docs: Add redirect_from url to the m2 api protection page
+
+  [ Cipriano Groenendal ]
+  * Wrap long line into two
+
+  [ Timon de Groot ]
+  * doc: Add redirect_from to your-dns-is-misconfigured.md
+  * docs: Fix markdown formatting
+
+  [ Alexander Grooff ]
+  * feat: reuse brancher on PR
+
+  [ Timon de Groot ]
+  * docs: Add redirect_from to magmi doc
+
+  [ Lianne van Looij ]
+  * Updated mentioned prices to new prices jan 2023
+
+  [ Cipriano Groenendal ]
+  * Cleanup permission table
+
+  [ Timon de Groot ]
+  * docs: Improve PM2 installation doc
+
+  [ Alexander Grooff ]
+  * fix: use existing settings
+
+  [ Timon de Groot ]
+  * Set theme-color to Hypernode primary color
+  * docs: Fix markdown formatting
+  * extensions: Add sphinxcontrib-mermaid
+
+  [ Rick van de Loo ]
+  * pre-depend on the man-db package
+  * add git to build deps for manpage
+
+ -- Hypernode team <hypernode@byte.nl>  Tue, 24 Jan 2023 14:20:09 +0000
