@@ -687,6 +687,61 @@ code.docutils.literal.notranslate {
 
 /* notes (admonition notes) end */
 
+/* permission table RWD */
+.permission-table {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.permissions-table__row {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+
+    & div {
+        width: 100%;
+        height: 35px;
+        font-size: 0.85em;
+        display: flex;
+        align-items: center;
+
+        &.fa-check-circle {
+            justify-content: center;
+            color: var(--message-success);
+        }
+
+        &.permissions-table__header {
+            justify-content: center;
+        }
+
+        &.permissions-table__permission {
+            justify-content: flex-start;
+            padding-left: 10px;
+
+            @media (max-width: $breakpoint-mobile) {
+                grid-column: 1 / span 5;
+                justify-content: center;
+            }
+        }
+
+        &.permissions-table__header {
+            font-weight: 700;
+            font-size: 0.70em;
+        }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.permissions-table__row:nth-child(2n) {
+    background: #F5F6F8;
+}
+
+/* permission table RWD end */
+
+
 /* breadcrumb */
 
 .wy-side-nav-search img {

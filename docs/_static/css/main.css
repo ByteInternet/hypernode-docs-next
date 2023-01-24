@@ -706,6 +706,56 @@ code.docutils.literal.notranslate.literal {
 }
 
 /* notes (admonition notes) end */
+/* permission table RWD */
+.permission-table {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.permissions-table__row {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+.permissions-table__row div {
+  width: 100%;
+  height: 35px;
+  font-size: 0.85em;
+  display: flex;
+  align-items: center;
+}
+.permissions-table__row div.fa-check-circle {
+  justify-content: center;
+  color: var(--message-success);
+}
+.permissions-table__row div.permissions-table__header {
+  justify-content: center;
+}
+.permissions-table__row div.permissions-table__permission {
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+@media (max-width: 420px) {
+  .permissions-table__row div.permissions-table__permission {
+    grid-column: 1/span 5;
+    justify-content: center;
+  }
+}
+.permissions-table__row div.permissions-table__header {
+  font-weight: 700;
+  font-size: 0.7em;
+}
+@media (max-width: 420px) {
+  .permissions-table__row {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.permissions-table__row:nth-child(2n) {
+  background: #F5F6F8;
+}
+
+/* permission table RWD end */
 /* breadcrumb */
 .wy-side-nav-search img {
   background-color: transparent;
