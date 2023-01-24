@@ -7,6 +7,7 @@
 
 build:
 	python3 -m venv venv
+	venv/bin/pip install wheel
 	venv/bin/pip install -r requirements/development.txt
 	bash -c 'source venv/bin/activate; bin/build_manpage'
 	mv docs/_build/man/docs.1 docs/_build/man/hypernode.3
