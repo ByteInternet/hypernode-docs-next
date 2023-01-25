@@ -15,8 +15,6 @@ redirect_from:
 
 All Hypernodes support Blackfire, an amazing tool to find performance bottlenecks in Magento. It is similar to New Relic, but much better suited for troubleshooting.
 
-**Hypernode customers can get a 20% discount on the Premium plan. Contact**[**support@hypernode.com**](mailto:support@hypernode.com)**for a coupon code.**
-
 ## How to Activate Blackfire
 
 First, signup for an account. Start with the free version, which includes a wealth of information. In your account tab, you will see this:
