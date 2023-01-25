@@ -13,7 +13,7 @@ redirect_from:
 
 # How to Restore Your Hypernode From a Snapshot
 
-**Some hands-on experience is required! If you have never used the command line, please contact**[**one of our partners**](https://www.hypernode.com/partners/)**to get some assistance.**
+**Some hands-on experience is required! If you have never used the command line, please contact **[**one of our partners**](https://www.hypernode.com/partners/)** to get some assistance.**
 
 To restore your Hypernode from a backup use the steps below.
 
