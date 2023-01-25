@@ -73,6 +73,7 @@ jobs:
   deploy_production:
     needs: build
     runs-on: ubuntu-latest
+    concurrency: production
     environment:
       name: production
       url: https://docs.hypernode.io
