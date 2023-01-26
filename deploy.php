@@ -44,6 +44,19 @@ task('python:build_documentation', static function () {
     run('ln -s docs/_build/html pub');
 });
 
+# Install NPM packages from package.json
+task('npm:prepare', static function () {
+    run('npm install');
+});
+
+# Build static assets for production using gulp
+task('assets:compile', static function () {
+    run('ls -l ./docs/_static/css');
+    run('whoami');
+    run('chmod -R 755 docs/_static');
+    run('npx gulp buildProd');
+});
+
 # HMV configuration for when this is running in a docker
 task('deploy:hmv_docker', static function () use (&$DOCKER_HOST, &$DOCKER_WEBROOT) {
     if (test('[ -f /etc/hypernode/is_docker ]')) {
@@ -68,6 +81,8 @@ task('deploy:nginx_redirects', static function () {
 });
 
 $configuration = new Configuration();
+$configuration->addBuildTask('npm:prepare');
+$configuration->addBuildTask('assets:compile');
 $configuration->addBuildTask('python:venv:create');
 $configuration->addBuildTask('python:venv:requirements');
 $configuration->addBuildTask('python:build_documentation');
