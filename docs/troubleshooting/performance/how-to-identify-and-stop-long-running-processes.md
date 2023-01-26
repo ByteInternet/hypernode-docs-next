@@ -3,9 +3,10 @@ myst:
   html_meta:
     description: Learn how to quickly identify and stop long-running processes on
       Hypernode with our easy-to-follow guide.
-    title: How to idfentify and stop long running processes? | Hypernode
+    title: How to identify and stop long running processes? | Hypernode
 redirect_from:
   - /en/troubleshooting/performance/how-to-identify-and-stop-long-running-processes/
+  - /knowledgebase/identifying-and-stopping-long-running-processes/
 ---
 
 <!-- source: https://support.hypernode.com/en/troubleshooting/performance/how-to-identify-and-stop-long-running-processes/ -->
@@ -18,7 +19,7 @@ Long running processes can indicate that the the site might benefit from an inde
 
 To identify long running SQL processes you can use the tool `Mytop`. `Mytop` displays the running mysql processes in real time. To identify a long running SQL process with `Mytop`, you can run the following command to inspect the duration of your SQL processes:
 
-```nginx
+```bash
 mytop
 ```
 
@@ -26,7 +27,7 @@ The output will look like something like this:
 
 ![](_res/Mqt7Zm-GL7QmGG-mXSb9kQdGcaL1NA6UQA.png)Alternatively you can request the processlist from MySQL yourself by using the commands:
 
-```nginx
+```bash
 mysql -Be 'SHOW FULL PROCESSLIST;'
 ```
 
@@ -34,13 +35,13 @@ The outcome will look like this (screenshot includes the commands that been used
 
 Once you’ve identified the long running process(es) you can kill them with the command `kill` and it’s ID number. The example below shows how we kill the longest running query:
 
-```nginx
+```bash
 kill 47630
 ```
 
 If that doesn’t work, there is a more aggressive method of killing using the `-9` flag. This instructs the kernel to kill the process without running any cleanup handling and instantly stops a process:
 
-```nginx
+```bash
 kill -9 47630
 ```
 
@@ -52,7 +53,7 @@ And the outcome will be:
 
 To identify a long running PHP process you can run the following command to inspect the duration of your FPM processes in real time:
 
-```nginx
+```bash
 livefpm
 ```
 
@@ -69,7 +70,7 @@ By typing several ID numbers after the kill command you can kill multiple long r
 
 To find long running shell processes you can use this command:
 
-```nginx
+```bash
 ps --sort etime -A -o etime,pid,user,args | grep php | grep -vE 'php-fpm|\-\-mode daemon|grep'
 ```
 
@@ -78,6 +79,6 @@ The output will look something like this:
 
 Like SQL and FPM processes you can kill long running SSH processes with the command `kill` and the process ID:
 
-```nginx
+```bash
 kill -9 22123
 ```
