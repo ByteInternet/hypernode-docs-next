@@ -9,22 +9,30 @@ window.addEventListener('load', function() {
 
         onFirstAction: function(user_preferences, cookie) {
             // callback triggered only once on the first accept/reject action
+            location.reload();
         },
         onAccept: function () {
             if (cc.allowedCategory('analytics')) {
                 gtag('consent', 'update', {
                     'analytics_storage': 'granted'
                 });
+                document.cookie = "cc_analytics=1";
+            } else {
+                document.cookie = "cc_analytics=0";
             }
 
             if (cc.allowedCategory('targeting')) {
                 gtag('consent', 'update', {
                     'ad_storage': 'granted'
                 });
+                document.cookie = "cc_targeting=1";
+            } else {
+                document.cookie = "cc_targeting=0";
             }
         },
         onChange: function (cookie, changed_categories) {
             // callback triggered when user changes preferences after consent has already been given
+            location.reload();
         },
 
         gui_options: {
