@@ -5,7 +5,9 @@ myst:
       based on your needs and usage. You only pay for what you use.
     title: Upgrade or downgrade a Hypernode Plan | Hypernode
 redirect_from:
+  - /knowledgebase/upgrade-or-downgrade-your-hypernode-plan/
   - /en/about/billing/how-to-up-or-downgrade-your-hypernode-plan/
+  - /en/about/billing/up-or-downgrade-your-hypernode-plan/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/billing/how-to-up-or-downgrade-your-hypernode-plan/ -->
