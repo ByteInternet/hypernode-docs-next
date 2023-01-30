@@ -24,6 +24,8 @@
   --message-info: #074E8A;
   --message-info-bg: #E7F2F8;
   --message-info-text: #063b67;
+  --cc-btn-primary-bg: var(--primary-blue);
+  --cc-btn-secondary-text: var(--primary-blue);
 }
 
 /*# sourceMappingURL=colors.css.map */
