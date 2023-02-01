@@ -119,7 +119,8 @@ source ~/.profile
 ### Download Akeneo 6
 
 ```bash
-mkdir ~/akeneocd ~/akeneo
+mkdir ~/akeneo
+cd ~/akeneo
 COMPOSER_MEMORY_LIMIT=-1 composer2 create-project akeneo/pim-community-standard
 
 ```
