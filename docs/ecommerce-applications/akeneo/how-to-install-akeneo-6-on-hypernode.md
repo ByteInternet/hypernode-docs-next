@@ -133,7 +133,8 @@ mysql -e "create database akeneo_pim;"
 ### Composer update
 
 ```bash
-cd ~/akeneo/pim-community-standardrm composer.lock
+cd ~/akeneo/pim-community-standard
+rm composer.lock
 composer2 update
 ```
 
