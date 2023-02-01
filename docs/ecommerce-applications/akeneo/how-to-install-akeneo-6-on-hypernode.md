@@ -12,7 +12,7 @@ redirect_from:
 
 # How to Install Akeneo 6 on Hypernode
 
-Akeneo 6 preferably requires a Hypernode Pelican L, Falcon M, Eagle M hosting plan or larger. You can either choose to install it on a seperate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 8.0, PHP 8.09 and Elasticsearch 7.x**, so it won’t affect your shop negatively. Installing Akeneo version 6.x may take up to 15 minutes.
+Akeneo 6 preferably requires a Hypernode Pelican L, Falcon M, Eagle M hosting plan or larger. You can either choose to install it on a seperate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 8.0, PHP 8.0 and Elasticsearch 7.x**, so it won’t affect your shop negatively. Installing Akeneo version 6.x may take up to 15 minutes.
 
 ## Enable managed_vhosts
 
@@ -67,7 +67,7 @@ hypernode-systemctl settings mysql_version 8.0
 
 ## Upgrade Your PHP Version to 8.0
 
-Before installing Akeneo, make sure your [PHP version](../../hypernode-platform/php/supported-php-versions-and-how-to-change-them-on-hypernode.md#changing-the-php-version-you-use-on-hypernode) is changed to `PHP 7.4`.
+Before installing Akeneo, make sure your [PHP version](../../hypernode-platform/php/supported-php-versions-and-how-to-change-them-on-hypernode.md#changing-the-php-version-you-use-on-hypernode) is changed to `PHP 8.0`.
 
 ```bash
 hypernode-systemctl settings php_version 8.0
@@ -121,8 +121,8 @@ source ~/.profile
 ```bash
 mkdir ~/akeneo
 cd ~/akeneo
-COMPOSER_MEMORY_LIMIT=-1 composer2 create-project akeneo/pim-community-standard
-
+wget https://download.akeneo.com/pim-community-standard-v6.0-latest-icecat.tar.gz
+tar -zxvf pim-community-standard-v6.0-latest-icecat.tar.gz
 ```
 
 ### Create a Database
@@ -158,18 +158,17 @@ cp /data/web/akeneo/pim-community-standard/.env /data/web/akeneo/pim-community-s
 NO_DOCKER=true make prod
 ```
 
+### Create a Symlink
+
+```bash
+ln -s /data/web/akeneo/pim-community-standard/public /data/web/akeneo_public
+```
 ### Create an Administrator User
 
 Fill in the form with a Username, Password, First name, Last name, Email and local code.
 
 ```bash
 bin/console pim:user:create
-```
-
-### Create a Symlink
-
-```bash
-ln -s /data/web/akeneo/pim-community-standard/public /data/web/akeneo_public
 ```
 
 ## Setting up the job queue daemon
