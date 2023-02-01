@@ -18,7 +18,7 @@ Customers with a Trial, Pelican M (or up), Falcon S (or up) or Eagle plan can us
 
 At Hypernode it’s possible to enable Varnish 4.0 or 6.0 via the Control Panel, Service Panel or CLI. The Varnish version needed depends on the application version you’re running.
 
-**Enable Varnish via the[Control Panel](https://auth.hypernode.com/)**
+**Enable Varnish via the [Control Panel](https://auth.hypernode.com/)**
 
 - Click on "Hypernodes"
 - Click on "Caching"
