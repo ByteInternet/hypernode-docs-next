@@ -36,9 +36,9 @@ When you opt for using different domains for each storefront then it will be rel
 set $storecode "example_storecode";
 ```
 
-#### **Multistore in Combination with Varnish**
-
-\***Attention**, If you have a multistore, with hypernode-manage-vhost enabled ANDyou are using Varnish. You'd have to add a `varnish.storecode` file with the same content to your vhost configuration as well. You could simply copy the **server.storecode**like: `cp server.storecode varnish.storecode`
+```{note}
+If you have a multistore, with hypernode-manage-vhost enabled AND you are using Varnish. You'd have to prefix the file with `varnish` instead of `server`, like `varnish.storecode`. This way these multistore requests will go through varnish and will then be rewritten accordingly with the `varnish.storecode` configuration.
+```
 
 ### Using Subdirectories
 
@@ -67,7 +67,6 @@ Next to the correct Nginx configuration you will also need to create the subdire
 ```bash
 ln -s /data/web/public /data/web/public/fr
 ln -s /data/web/public /data/web/public/nl
-
 ```
 
 ### Using a Combination of Different Domains and Subdirectories
@@ -103,7 +102,6 @@ Last but not least you will also need to create the subdirectories in the webroo
 ```bash
 ln -s /data/web/public /data/web/public/fr
 ln -s /data/web/public /data/web/public/nl
-
 ```
 
 ## Example Setup
