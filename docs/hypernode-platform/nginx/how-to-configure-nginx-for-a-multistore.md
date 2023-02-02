@@ -37,7 +37,9 @@ set $storecode "example_storecode";
 ```
 
 ```{note}
-If you have a multistore, with hypernode-manage-vhost enabled AND you are using Varnish. You'd have to prefix the file with `varnish` instead of `server`, like `varnish.storecode`. This way these multistore requests will go through varnish and will then be rewritten accordingly with the `varnish.storecode` configuration.
+If you have a multistore, with hypernode-manage-vhost enabled AND you are using Varnish.
+You'd have to prefix the file with `varnish` instead of `server`, like `varnish.storecode`.
+This way these multistore requests will go through varnish and will then be rewritten accordingly with the `varnish.storecode` configuration.
 ```
 
 ### Using Subdirectories
