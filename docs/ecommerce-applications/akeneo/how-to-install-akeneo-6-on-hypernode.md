@@ -12,7 +12,7 @@ redirect_from:
 
 # How to Install Akeneo 6 on Hypernode
 
-Akeneo 6 preferably requires a Hypernode Pelican L, Falcon M, Eagle M hosting plan or larger. You can either choose to install it on a seperate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 8.0, PHP 8.1 and Elasticsearch 7.x**, so it won’t affect your shop negatively. Installing Akeneo version 6.x may take up to 15 minutes.
+Akeneo 6 preferably requires a Hypernode Pelican L, Falcon M, Eagle M hosting plan or larger. You can either choose to install it on a seperate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 8.0, PHP 8.09 and Elasticsearch 7.x**, so it won’t affect your shop negatively. Installing Akeneo version 6.x may take up to 15 minutes.
 
 ## Enable managed_vhosts
 
@@ -65,12 +65,12 @@ After that upgrade from MySQL 5.7 to MySQL 8.0
 hypernode-systemctl settings mysql_version 8.0
 ```
 
-## Upgrade Your PHP Version to 8.1
+## Upgrade Your PHP Version to 8.0
 
-Before installing Akeneo, make sure your [PHP version](../../hypernode-platform/php/supported-php-versions-and-how-to-change-them-on-hypernode.md#changing-the-php-version-you-use-on-hypernode) is changed to `PHP 8.1`.
+Before installing Akeneo, make sure your [PHP version](../../hypernode-platform/php/supported-php-versions-and-how-to-change-them-on-hypernode.md#changing-the-php-version-you-use-on-hypernode) is changed to `PHP 7.4`.
 
 ```bash
-hypernode-systemctl settings php_version 8.1
+hypernode-systemctl settings php_version 8.0
 ```
 
 ## Enable PHP-APCU
