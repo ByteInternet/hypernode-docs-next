@@ -35,6 +35,7 @@ If it is desired to transfer the entire account, it is important to determine in
 ### Option 2.1: The new owner is allowed to see the current account details (invoices, logs etc)
 
 In this case, we advise you to change the name and e-mail address in your customer account and update the company details in the billing portal. Below you can find the steps that need to be taken:
+
 1. Log in to the Control Panel.
 1. Click on your username in the top right.
 1. Select Billing portal from the menu.
@@ -42,7 +43,7 @@ In this case, we advise you to change the name and e-mail address in your custom
 1. After that, please click on your username in the top right in the Control Panel again
 1. Select Account Settings from the menu.
 1. Change the required information on this page
-1. After this you are done and the account is transferred. 
+1. After this you are done and the account is transferred.
 1. We do advise you to let the new owner change (if applicable) the Control Panel password after this change.
 
 ### Option 2.2: The new owner is NOT allowed to see the correct account details (invoices, logs etc)
