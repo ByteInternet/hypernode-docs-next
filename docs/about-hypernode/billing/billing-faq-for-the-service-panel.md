@@ -44,10 +44,6 @@ In short, the changes in legislation make the invoicing, administration and fili
 
 The rules apply to individuals, not to companies. If possible, we therefore advise you to use your company name and company details or if you have a Dutch address, use them.
 
-## How Can I Edit My Account Details?
-
-For more information about editing your account details please see [this article](../../services/service-panel/how-to-change-your-customer-details-and-other-questions.md).
-
 ## What Do I Pay Extra Costs For?
 
 At Hypernode you pay for a hosting plan, domain registration and any add-ons (such as SSL). For more information, see the product pages for Hypernode hosting and / or Add-ons
