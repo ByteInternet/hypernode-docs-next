@@ -28,8 +28,8 @@ Now go to your GitHub project and go to **Settings -> Environments**.
 
 1. Create a new environment called `production`, if it doesn't exist yet.
 1. Click the `production` environment and click `Add secret`.
-1. Set the name of the secret to `SSH_PRIVATE_KEY`.
-1. Set the value of the secret to the base64-encoded private key we generated earlier.
+1. Set the **Name** to `SSH_PRIVATE_KEY`.
+1. Set the **Value** to the base64-encoded private key we generated earlier.
 1. Click **Add secret**.
 
 ### Configuring the acceptance environment
