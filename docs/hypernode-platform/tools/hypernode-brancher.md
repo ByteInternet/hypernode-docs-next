@@ -100,13 +100,13 @@ The appname specified in the request url is the appname on which the Brancher no
 
 Once the Brancher node becomes available, you can control it via the `/v2/app/<appname>-eph123456` endpoint just like a regular Hypernode.
 
-### Hypernode-deploy
+### Hypernode Deploy
 
-Hypernode-deploy is our recommended way of deploying your webshop to Hypernode. which makes it easier for you to manage your application’s codebase. This platform is fully integrated with Hypernode Brancher, which makes it a breeze for you to try out upgrade scenarios, or pushes to the Staging environment.
+Hypernode Deploy is our recommended way of deploying your webshop to Hypernode. which makes it easier for you to manage your application’s codebase. This platform is fully integrated with Hypernode Brancher, which makes it a breeze for you to try out upgrade scenarios, or pushes to the Staging environment.
 
-Once you set up your Hypernode to make use of Hypernode-deploy, you can run your tests against a Brancher node with just a single command. This will then run against your fresh Branched version of the Node, making sure that your tests are passing before deploying to production.
+Once you set up your Hypernode to make use of Hypernode Deploy, you can run your tests against a Brancher node with just a single command. This will then run against your fresh Branched version of the Node, making sure that your tests are passing before deploying to production.
 
-You can use Brancher in your Hypernode-deploy deploy.php file like this:
+You can use Brancher in your Hypernode Deploy `deploy.php` file like this:
 
 ```php
 <?php
@@ -120,51 +120,73 @@ $testStage = $configuration->addStage('test', 'example.com');
 // We use an automatically created Brancher node based on the parent for the 'test' stage.
 // In your testing pipeline, you can simply use the 'test' stage to push changes to the Brancher server,
 // and run your tests. Cancel it when your tests fail or after your tests pass to incur minimal costs.
-$testStage->addBrancherServer('appname')
-    ->setSettings(['cron_enabled' => false, 'supervisor_enabled' => false]);
+$testStage->addBrancherServer('example')
+    ->setSettings(['clear_services' => ['cron', 'supervisor']);
 
 return $configuration;
 ```
 
-This will automatically create a Brancher node based on the parent Hypernode and push to it, allowing you to test the changes before making them on the production Hypernode.
+This will automatically create a Brancher node based on the parent Hypernode and push to it, allowing you to test the changes before making them on the production Hypernode. In this example, we also clear services `cron` and `supervisor`, which means that the `cron` and `supervisor` configurations found on `example` will not be actively present on the Brancher instance.
+
+```{note}
+There's an alias `hypernode-brancher` for the command `hypernode-systemctl brancher`, this might save you some keystrokes :).
+```
 
 ### Hypernode-systemctl brancher
 
-You can use the command hypernode-systemctl brancher tool to quickly interact with the Hypernode API in a validated and controlled manner. Creating a Brancher node goes like this:
+You can use the command hypernode-systemctl brancher tool to quickly interact with the Hypernode API in a validated and controlled manner.
+
+#### Creating a Brancher node
 
 ```console
 $ hypernode-systemctl brancher --create
-Brancher App created for app 'testalex'. See hypernode-systemctl brancher --list for the progress
-app_name: testalex-eph123456
-parent: testalex
-Host: testalex-eph123456.hypernode.io
+Brancher App created for app 'example'. See hypernode-systemctl brancher --list for the progress
+app_name: example-eph123456
+parent: example
+Host: example-eph123456.hypernode.io
+Labels: None
+Services with data to be cleared: cron
 IP: will become available in a couple of minutes
 ```
 
-You can then list the available Brancher nodes:
+In the above example you see the details of the created Brancher instance. The output also contains the given labels and services to be cleared, which have the respective defaults of `None` and `cron`.
+
+To apply one or more label(s) to the Brancher instance, you can specify one or more `--label` options when creating the instance:
+
+```console
+$ hypernode-systemctl brancher --create --label my_brancher_instance --label 'user=johndoe'
+```
+
+To override the services that are cleared by default, pass the `--clear-services` option:
+
+```console
+$ hypernode-systemctl brancher --create --clear-services cron elasticsearch mysql supervisor
+```
+
+#### Listing available Brancher nodes
 
 ```console
 $ hypernode-systemctl brancher --list
 +--------------------+----------------+---------------------------------+---------+
 |        Name        |       IP       |               Host              | Minutes |
 +--------------------+----------------+---------------------------------+---------+
-| testalex-ephjopv59 |  83.217.88.80  | testalex-ephjopv59.hypernode.io |   4592  |
-| testalex-ephw4zcjr | 185.111.198.18 | testalex-ephw4zcjr.hypernode.io |   4345  |
-| testalex-ephsbuos6 | 37.72.165.123  | testalex-ephsbuos6.hypernode.io |   1866  |
+| example-ephjopv59  |  83.217.88.80  | example-ephjopv59.hypernode.io  |   4592  |
+| example-ephw4zcjr  | 185.111.198.18 | example-ephw4zcjr.hypernode.io  |   4345  |
+| example-ephsbuos6  | 37.72.165.123  | example-ephsbuos6.hypernode.io  |   1866  |
 +--------------------+----------------+---------------------------------+---------+
 ```
 
-Finally, you can delete it:
+#### Deleting a brancher node
 
 ```console
 $ hypernode-systemctl brancher --delete
-Brancher App 'testalex-eph123456' deleted. See hypernode-systemctl brancher --list for the list of remaining brancher apps.
+Brancher App 'example-eph123456' deleted. See hypernode-systemctl brancher --list for the list of remaining brancher apps.
 ```
 
 And with some creativity you can come up with a one-liner to remove all active Brancher nodes:
 
 ```console
 $ hypernode-systemctl brancher --list | awk '{print$2}' | grep -eph | xargs -n1 hypernode-systemctl brancher --delete
-Brancher App 'testalex-eph123456' deleted. See hypernode-systemctl brancher --list for the list of remaining brancher apps.
-Brancher App 'testalex-eph234567' deleted. See hypernode-systemctl brancher --list for the list of remaining brancher apps.
+Brancher App 'example-eph123456' deleted. See hypernode-systemctl brancher --list for the list of remaining brancher apps.
+Brancher App 'example-eph234567' deleted. See hypernode-systemctl brancher --list for the list of remaining brancher apps.
 ```
