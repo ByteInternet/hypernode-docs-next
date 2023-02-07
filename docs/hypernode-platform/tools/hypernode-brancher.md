@@ -128,13 +128,13 @@ return $configuration;
 
 This will automatically create a Brancher node based on the parent Hypernode and push to it, allowing you to test the changes before making them on the production Hypernode. In this example, we also clear services `cron` and `supervisor`, which means that the `cron` and `supervisor` configurations found on `example` will not be actively present on the Brancher instance.
 
-```{note}
-There's an alias `hypernode-brancher` for the command `hypernode-systemctl brancher`, this might save you some keystrokes :).
-```
-
 ### Hypernode-systemctl brancher
 
 You can use the command hypernode-systemctl brancher tool to quickly interact with the Hypernode API in a validated and controlled manner.
+
+```{note}
+There's an alias `hypernode-brancher` for the command `hypernode-systemctl brancher`, this might save you some keystrokes :).
+```
 
 #### Creating a Brancher node
 
