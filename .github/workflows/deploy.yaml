@@ -37,6 +37,7 @@ jobs:
         with:
           name: deployment-build
           path: build/build.tgz
+          retention-days: 5
 
   deploy_acceptance:
     needs: build
