@@ -20,6 +20,9 @@
   {{- metatags }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#063b67" />
+  {%- if meta_robots %}
+  <meta name="robots" content="{{ meta_robots }}">
+  {%- endif %}
   {%- block htmltitle %}
   <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
   {%- endblock -%}
