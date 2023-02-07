@@ -100,6 +100,15 @@ The appname specified in the request url is the appname on which the Brancher no
 
 Once the Brancher node becomes available, you can control it via the `/v2/app/<appname>-eph123456` endpoint just like a regular Hypernode.
 
+To specify `labels` and/or `clear_services` in the API call, you can set the header `Content-Type: application/json` with a content body like:
+
+```json
+{
+  "labels": ["some_label"],
+  "clear_services": ["cron", "elasticsearch", "mysql", "supervisor"]
+}
+```
+
 ### Hypernode Deploy
 
 Hypernode Deploy is our recommended way of deploying your webshop to Hypernode. which makes it easier for you to manage your application’s codebase. This platform is fully integrated with Hypernode Brancher, which makes it a breeze for you to try out upgrade scenarios, or pushes to the Staging environment.
@@ -121,12 +130,15 @@ $testStage = $configuration->addStage('test', 'example.com');
 // In your testing pipeline, you can simply use the 'test' stage to push changes to the Brancher server,
 // and run your tests. Cancel it when your tests fail or after your tests pass to incur minimal costs.
 $testStage->addBrancherServer('example')
+    ->setLabels(['stage=test'])
     ->setSettings(['clear_services' => ['cron', 'supervisor']);
 
 return $configuration;
 ```
 
-This will automatically create a Brancher node based on the parent Hypernode and push to it, allowing you to test the changes before making them on the production Hypernode. In this example, we also clear services `cron` and `supervisor`, which means that the `cron` and `supervisor` configurations found on `example` will not be actively present on the Brancher instance.
+This will automatically create a Brancher node based on the parent Hypernode and push to it, allowing you to test the changes before making them on the production Hypernode.
+
+In this example, we also set the label `stage=test` and the setting `clear_services` with value `cron` and `supervisor`, which means that the `cron` and `supervisor` configurations found on `example` will not be actively present on the Brancher instance.
 
 ### Hypernode-systemctl brancher
 
