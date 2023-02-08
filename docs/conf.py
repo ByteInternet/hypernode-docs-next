@@ -44,6 +44,7 @@ extensions = [
     "sphinx_copybutton",
     "notfound.extension",
     "hypernode.sphinx.extensions.updated_at",
+    "hypernode.sphinx.extensions.meta_robots",
     "sphinxcontrib.mermaid",
 ]
 
@@ -79,6 +80,9 @@ html_show_sphinx = False
 html_show_sourcelink = False
 
 sitemap_url_scheme = "{link}"
+
+if os.getenv("DOCS_INDEX_FOLLOW", 0):
+    html_meta_robots = "index, follow"
 
 if os.getenv("DOCS_BASE_URL"):
     html_baseurl = os.getenv("DOCS_BASE_URL")
