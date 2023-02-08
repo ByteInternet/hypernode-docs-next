@@ -1,4 +1,4 @@
-hndocsnext (20230124.142001) UNRELEASED; urgency=medium
+hndocsnext (20230208.082003) UNRELEASED; urgency=medium
 
   [ Rick van de Loo ]
   * Initial packaging
@@ -62,4 +62,70 @@ hndocsnext (20230124.142001) UNRELEASED; urgency=medium
   * pre-depend on the man-db package
   * add git to build deps for manpage
 
- -- Hypernode team <hypernode@byte.nl>  Tue, 24 Jan 2023 14:20:09 +0000
+  [ Timon de Groot ]
+  * ci: Set production deploy concurrency
+
+  [ Rick van de Loo ]
+  * pip install wheel in debian packaging
+
+  [ TomKetels ]
+  * Update how-to-restore-your-hypernode-from-a-snapshot.md
+
+  [ rednaslaarom ]
+  * I've removed the line for the coupon code for Blackfire.
+
+  [ Timon de Groot ]
+  * docs: Update how-to-identify-and-stop-long-running-processes.md
+  * docs: Add cookie consent popup
+  * cookieconsent-init: Set specific consent cookies
+  * Update how-to-up-or-downgrade-your-hypernode-plan.md
+  * docs: Set cookieconsent button colors
+
+  [ Rick van de Loo ]
+  * add missing space how to enable varnish docs
+
+  [ RensZuurbier ]
+  * Split cmd-line in 2 separate lines
+  * PHP_Version should be 8.1
+
+  [ Rick van de Loo ]
+  * update isort to fix poetry config invalid
+
+  [ RensZuurbier ]
+  * 1 line 2 lines story
+
+  [ Lianne van Looij ]
+  * Updated opening hours support
+
+  [ Alexander Grooff ]
+  * Revert "Updated opening hours support"
+  * Revert "Revert "Updated opening hours support""
+
+  [ Timon de Groot ]
+  * Update how-to-configure-nginx-for-a-multistore.md
+  * Revert "PHP_Version should be 8.1"
+  * Update how-to-configure-nginx-for-a-multistore.md
+  * ci: Set build artifact retention
+
+  [ Lianne van Looij ]
+  * Added scenario's and how to transfer ssl/domains
+
+  [ Alexander Grooff ]
+  * chore: apply mdformat
+
+  [ Lianne van Looij ]
+  * Added how to change account settings
+  * chore: apply mdformat
+
+  [ Timon de Groot ]
+  * docs: Update Brancher documentation
+  * docs/brancher: Move note to the right heading
+
+  [ Lianne van Looij ]
+  * Delete article
+  * Removed link to old article
+
+  [ Timon de Groot ]
+  * docs/brancher: Add label/clear_services examples to hnapi / hndeploy
+
+ -- Hypernode team <hypernode@byte.nl>  Wed, 08 Feb 2023 08:20:11 +0000
