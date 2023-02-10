@@ -31,7 +31,7 @@ If it is not possible to change the name servers at your domain provider you can
 
 ## How Does DNS Work at Hypernode?
 
-You can find the DNS settings in our Control Panel. To do this, log in to the [Control Panel](https://my.hypernode.com) go to the 'Domains' tab and choose the domain you want to manage the DNS for. Then click 'DNS manager'. 
+You can find the DNS settings in our Control Panel. To do this, log in to the [Control Panel](https://my.hypernode.com) go to the 'Domains' tab and choose the domain you want to manage the DNS for. Then click 'DNS manager'.
 
 When you order a domain in our panel we have a list of standard DNS set up:
 
