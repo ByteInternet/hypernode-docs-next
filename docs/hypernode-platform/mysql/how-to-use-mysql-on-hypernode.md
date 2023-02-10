@@ -49,7 +49,7 @@ Port 3306 is fire-walled on all Hypernodes to prevent hackers and bruteforces fr
 
 First check which IP addresses have been whitelisted already, if any.
 
-```nginx
+```bash
 hypernode-systemctl whitelist get
 ```
 
@@ -57,7 +57,7 @@ hypernode-systemctl whitelist get
 
 To add more values to your whitelists you can run the following. Please note that descriptions are optional:
 
-```nginx
+```bash
 hypernode-systemctl whitelist add database 1.2.3.4 --description "my description"
 ```
 
@@ -65,18 +65,18 @@ hypernode-systemctl whitelist add database 1.2.3.4 --description "my description
 
 To remove values from your whitelists you can run the following:
 
-```nginx
+```bash
 hypernode-systemctl whitelist remove database 1.2.3.4
 ```
 
-### Whitelist via Your Service Panel
+### Whitelist via the Control Panel
 
-Only our Service Panel users have the option to whitelist an IP via the Service Panel.
+It's also possible to whitelist an IP address via the Control Panel
 
-1. Log on to your [Service Panel](https://auth.byte.nl).
+1. Log on to the [Control Panel](https://my.hypernode.com).
 1. Select your Hypernode.
-1. Go to `Instellingen` > `Externe database toegang`.
-1. Add the IP addresses to the firewall whitelist.
+1. Select `Allowlist` from the menu.
+1. Add the IP addresses to the database allowlist.
 
 ## How to Connect to MySQL
 
