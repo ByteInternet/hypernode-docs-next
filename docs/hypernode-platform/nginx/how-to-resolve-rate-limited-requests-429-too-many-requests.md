@@ -34,6 +34,7 @@ Both methods are implemented using [NginX's limit_req module](http://nginx.org/e
 You can quickly determine which method of Rate Limiting was the cause of the request being 429'd since each time any of the rate-limiting methods are hit, a message with be logged in the Nginx error log.
 
 To look for rate limiting messages in the error log, you can run the following command:
+
 ```bash
 $ grep limiting.requests /var/log/nginx/error.log
 2020/06/07 13:33:37 [error] 7492#7492: *1590769 limiting requests, excess: 0.072 by zone "bots", client: 203.0.113.104, server: example.hypernode.io, request: "GET /api/ HTTP/2.0", host: "example.hypernode.io"
@@ -87,6 +88,7 @@ The keywords are separated by `|` characters since it is a regular expression.
 ### Allowlisting Additional User Agents
 
 To extend the allowlist, first determine what user agent you wish to add. Use the access log files to see what bots get blocked and which user agent identification it uses. To find the user agent, you can use the following command:
+
 ```bash
   $ pnl --today --fields time,status,remote_addr,request,user_agent --filter status=429
 2020-06-07T13:33:37+00:00       429     203.0.113.104   GET /api/ HTTP/2.0       SpecialSnowflakeCrawler 3.1.4
@@ -186,8 +188,8 @@ geo $conn_limit_map {
     default $ratelimit_request_url;
 }
 ```
-You can also combine this with a regular allowlist, and exclude IP Addresses as described above.
 
+You can also combine this with a regular allowlist, and exclude IP Addresses as described above.
 
 ### How to Serve a Custom Static Error Page to Rate Limited IP Addresses
 
