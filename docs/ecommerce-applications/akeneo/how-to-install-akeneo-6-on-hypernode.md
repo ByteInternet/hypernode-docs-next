@@ -163,6 +163,7 @@ NO_DOCKER=true make prod
 ```bash
 ln -s /data/web/akeneo/pim-community-standard/public /data/web/akeneo_public
 ```
+
 ### Create an Administrator User
 
 Fill in the form with a Username, Password, First name, Last name, Email and local code.
