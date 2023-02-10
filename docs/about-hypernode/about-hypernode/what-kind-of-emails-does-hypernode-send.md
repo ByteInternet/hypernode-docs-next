@@ -30,6 +30,10 @@ Once a month we send subscribers a NewsMail. Our NewsMail is an interesting mix 
 
 The NewsMail also keeps you informed of what is happening behind the scenes of our company. If you no longer wish to receive our NewsMail, you can unsubscribe at any time.
 
+## Manage your email preferences in the Control Panel
+
+All emails (except the Service Mail) have a unsubscribe option at the bottom of the emails. However you are also able to manage you email preferences in the Control Panel in your [Account Settings](https://my.hypernode.com/account-settings/) page. Here you can see to what emails you are subscribed and if you want to unsubscibe. If you want to change the settings, please click 'Manage email preferences'. In order for you to change your e-mail preferences, we need to send you an e-mail with a link to our Hubspot E-mail Preferences page.
+
 ## Privacy Policy
 
 We take all necessary measures to keep your data private. Not because we are legally bound to do so, but because we care. We use your email address and other personal information solely to maintain our customer relationship with you. Your personal details will never be lent, rented or sold by Hypernode to third parties, nor made public in any other way, unless the law prescribes this. You can read our complete Privacy Policy on [our website](https://www.hypernode.com/assets/documents/Privacy-Policy-Hypernode.pdf).
