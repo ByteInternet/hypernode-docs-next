@@ -41,7 +41,49 @@ host = mysqlmaster.example.hypernode.io
   - Define views and triggers.
 - If you want to use a GUI to work on your database we recommend using a local GUI (Such as [HeidiSQL](../../best-practices/database/how-to-use-heidisql-on-hypernode.md) on Windows) instead of an online GUI ([PHPMyAdmin](../mysql/how-to-use-phpmyadmin.md)).
 
-## Whitelisting Your IP Address
+
+## How to Connect to MySQL
+
+### Use the Command Line Shell on the Production Node
+
+Because we’ve provided a `~/.my.cnf`, you’re all set to go.
+
+Just type `mysql` and you’re in.
+
+```bash
+mysql
+```
+
+### Use the Command Line Shell From a Remote Host
+
+Use your credentials to connect like so:
+
+```bash
+mysql --host=mysqlmaster.example.hypernode.io --user=app --password=mypassword
+```
+
+Please note you will need to add the remote host's IP address to the allowlist first, as described below
+
+### Using HeidiSQL/PHPMyAdmin to Connect to MySQL
+
+Read the following articles on how to use both HeidiSQL and PHPMyAdmin for Hypernode:
+
+- Using [HeidiSQL](../../best-practices/database/how-to-use-heidisql-on-hypernode.md
+- Using [PHPMyAdmin](../mysql/how-to-use-phpmyadmin.md)
+
+### Using an SSH Tunnel to Circumvent Firewalls
+
+If you are blocked by a firewall, you can create a temporary tunnel between the remote MySQL service and your local computer.
+
+Use this command:
+
+```bash
+ssh -NL 3306:mysqlmaster:3306 app@example.hypernode.io
+```
+
+Voila, now your Hypernode database is reachable through localhost port 3306!
+
+## Allowlisting Your IP Address
 
 Port 3306 is firewalled on all Hypernodes to prevent hackers and bruteforces from connecting to your MySQL instance. That's why if you want to externally connect to MySQL on the Hypernode, you’ll need to add the remote IP address to the allowlist first.
 
@@ -77,47 +119,6 @@ It's also possible to whitelist an IP address via the Control Panel
 1. Select your Hypernode.
 1. Select `Allowlist` from the menu.
 1. Add the IP addresses to the database allowlist.
-
-## How to Connect to MySQL
-
-### Use the Command Line Shell on the Production Node
-
-Because we’ve provided a `~/.my.cnf`, you’re all set to go.
-
-Just type `mysql` and you’re in.
-
-```bash
-mysql
-```
-
-### Use the Command Line Shell From a Remote Host
-
-Use your credentials to connect like so:
-
-```bash
-mysql --host=mysqlmaster.example.hypernode.io --user=app --password=mypassword
-```
-
-Please note you will need to add the remote host's IP address to the allowlist first, as described above.
-
-### Using HeidiSQL/PHPMyAdmin to Connect to MySQL
-
-Read the following articles on how to use both HeidiSQL and PHPMyAdmin for Hypernode:
-
-- Using [HeidiSQL](../../best-practices/database/how-to-use-heidisql-on-hypernode.md
-- Using [PHPMyAdmin](../mysql/how-to-use-phpmyadmin.md)
-
-### Using an SSH Tunnel to Circumvent Firewalls
-
-If you are blocked by a firewall, you can create a temporary tunnel between the remote MySQL service and your local computer.
-
-Use this command:
-
-```bash
-ssh -NL 3306:mysqlmaster:3306 app@example.hypernode.io
-```
-
-Voila, now your Hypernode database is reachable through localhost port 3306!
 
 ## Creating a MySQL Back-Up
 
