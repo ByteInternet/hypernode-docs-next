@@ -1,0 +1,21 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "hostRequirements": {
+    "cpus": 1
+  },
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "python3 -m pip install -r requirements/development.txt",
+  "postCreateCommand": "",
+  "customizations": {
+    "codespaces": {
+      "openFiles": []
+    },
+    "vscode": {
+      "extensions": [
+        "bierner.markdown-mermaid",
+        "davidanson.vscode-markdownlint",
+        "ms-python.python"
+      ]
+    }
+  }
+}
