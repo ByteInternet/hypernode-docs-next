@@ -152,16 +152,6 @@ You should consider using Magerun (see above), but you could use HeidiSQL to cre
 
 ## Using MySQL
 
-### How to Upgrade the MySQL Version
-
-Hypernode offers several version of MySQL to be able to meet te requirements of several Magento, Shopware and Akeneo versions. For example, if you want to install Magento 2.4, you'd have to run MySQL 5.7 or 8.0.
-
-To upgrade your MySQL version you can use [the hypernode-systemctl tool](../tools/how-to-use-the-hypernode-systemctl-cli-tool.md#mysql) through the command line.
-
-```bash
-hypernode-systemctl settings mysql_version --value 5.7
-```
-
 ### How to Create a New Database
 
 To create a new database, we’ll login using the MySQL client and create the database using the command line.
