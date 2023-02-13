@@ -164,4 +164,4 @@ DKIM and DMARC are techniques that use a combination of private and public keys 
 When you link your domain to your Hypernode, you mark your domain as being in use on a Hypernode.
 
 This way we know which domains are used on a node that is being migrated or upgraded, so we are able to take action. When you sync a domain, we automatically add a CNAME- and A-record that points to your Hypernode to the DNS. If the IP address of the Hypernode has changed, we correct this by updating the DNS records of the domain(s) on our name servers.
-You can read how to do this [here](/services/control-panel/how-to-link-your-domain-to-your-hypernode.html#link-and-sync-your-domain-to-your-hypernode).
+You can read how to do this [here](../../services/control-panel/how-to-link-your-domain-to-your-hypernode.md#link-and-sync-your-domain-to-your-hypernode).
