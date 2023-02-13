@@ -21,11 +21,11 @@ Your MySQL credentials are stored in the homedir of application user.
 
 You find them in the file `.my.cnf` located in `/data/web`.
 
-```nginx
+```bash
 cat ~/.my.cnf
 ```
 
-```nginx
+```ini
 [client]
 user = app
 password = JlogA1Sws6XMHmAj7QlP9vpfjlprtpE5
@@ -49,7 +49,7 @@ Port 3306 is fire-walled on all Hypernodes to prevent hackers and bruteforces fr
 
 First check which IP addresses have been whitelisted already, if any.
 
-```bash
+```console
 hypernode-systemctl whitelist get
 ```
 
@@ -57,7 +57,7 @@ hypernode-systemctl whitelist get
 
 To add more values to your whitelists you can run the following. Please note that descriptions are optional:
 
-```bash
+```console
 hypernode-systemctl whitelist add database 1.2.3.4 --description "my description"
 ```
 
@@ -65,7 +65,7 @@ hypernode-systemctl whitelist add database 1.2.3.4 --description "my description
 
 To remove values from your whitelists you can run the following:
 
-```bash
+```console
 hypernode-systemctl whitelist remove database 1.2.3.4
 ```
 
@@ -86,7 +86,7 @@ Because we’ve provided a `~/.my.cnf`, you’re all set to go.
 
 Just type `mysql` and you’re in.
 
-```nginx
+```console
 mysql
 ```
 
@@ -94,7 +94,7 @@ mysql
 
 Use your credentials to connect like so:
 
-```nginx
+```console
 mysql --host=mysqlmaster.example.hypernode.io --user=app --password=mypassword
 ```
 
@@ -111,7 +111,7 @@ If you are blocked by a firewall, you can tunnel the remote MySQL service to you
 
 Use this command:
 
-```nginx
+```console
 ssh -NL 3306:mysqlmaster:3306 app@example.hypernode.io
 ```
 
@@ -123,7 +123,7 @@ Voila, now your Hypernode database is reachable through localhost port 3306!
 
 Use the following command using SSH:
 
-```nginx
+```console
 magerun db:dump -n -c gz -s @stripped
 ```
 
@@ -156,7 +156,7 @@ Hypernode offers several version of MySQL to be able to meet te requirements of 
 
 To upgrade your MySQL version you can use[the hypernode-systemctl tool](../tools/how-to-use-the-hypernode-systemctl-cli-tool.md#mysql) through the command line.
 
-```nginx
+```console
 hypernode-systemctl settings mysql_version --value 5.7
 ```
 
@@ -164,8 +164,8 @@ hypernode-systemctl settings mysql_version --value 5.7
 
 To create a new database, we’ll login using the MySQL client and drop the database using the command line.
 
-```nginx
->DATABASE="new_database"
+```bash
+DATABASE="new_database"
 mysql -e "CREATE DATABASE IF NOT EXISTS $DATABASE"
 ```
 
@@ -184,7 +184,7 @@ To prevent incorrect deletion of database that are still in use, ensure yourself
 
 When you are 100% sure it is safe to delete the database, issue the following command:
 
-```nginx
+```bash
 DATABASE="old_database"
 mysql -e "DROP DATABASE $DATABASE"
 ```
@@ -198,7 +198,7 @@ If you truncate a database table, all records are removed but the table structur
 
 After you ensured yourself it is safe to delete all records of the table, use the following command:
 
-```nginx
+```bash
 DATABASE="magento"
 TABLE="core_url_rewrite"
 mysql "$DATABASE" -e "TRUNCATE TABLE $TABLE"
@@ -208,37 +208,31 @@ mysql "$DATABASE" -e "TRUNCATE TABLE $TABLE"
 
 Login to your MySQL server via the following command:
 
-```nginx
+```console
 mysql
 ```
 
-This will get you into the MySQL prompt. Select the database which holds user accounts, here it’s called mysql;
+This will get you into the MySQL prompt. Now change the password for a given user account using this command:
 
-```nginx
-use mysql;
-```
-
-Now change the password for a given user account using this command:
-
-```nginx
+```mysql
 update user set password=PASSWORD('newpassword') where user='username';
 ```
 
 Let’s assume here that your username is ‘trial’ and your new password is ‘hypernode’. Your actual command would look like this:
 
-```nginx
+```mysql
 update user set password=PASSWORD('hypernode') where user='trial';
 ```
 
 Now your password is changed in the database, but they haven’t filtered into memory yet. Change that by typing:
 
-```nginx
+```mysql
 flush privileges;
 ```
 
 Your password has been updated. There’s no need to restart the MySQL demon. Exit the MySQL with
 
-```nginx
+```mysql
 exit;
 ```
 
@@ -250,7 +244,7 @@ exit;
 
 You can upgrade the MySQL version on your Hypernode from 5.6 to 5.7 with the following command:
 
-```nginx
+```bash
 hypernode-systemctl settings mysql_version 5.7
 ```
 
@@ -260,31 +254,25 @@ You can then check with `livelog` when the process has finished and your MySQL v
 
 Login to your MySQL server via the following command
 
-```nginx
+```console
 mysql
 ```
 
-This will get you into the MySQL prompt. Select the database which holds user accounts, here it’s called mysql;
+This will get you into the MySQL prompt. Now change the password for a given user account using this command, in this case the `app` user:
 
-```nginx
-use mysql;
-```
-
-Now change the password for a given user account using this command, in this case the `app` user:
-
-```nginx
+```mysql
 update user set authentication_string=password('newpassword') where user='app';
 ```
 
 Now your password is changed in the database, but they haven’t filtered into memory yet. Change that by typing:
 
-```nginx
+```mysql
 flush privileges;
 ```
 
 Your password has been updated. There’s no need to restart the MySQL demon. Exit the MySQL with
 
-```nginx
+```mysql
 exit;
 ```
 
@@ -296,7 +284,7 @@ Remember to update your `~/.my.cnf` with your new password so you could easily l
 
 Before you can upgrade to MySQL 8.0 you first need to upgrade the MySQL version to 5.7 and wait for this process to finish. Once You can upgrade the MySQL version on your Hypernode from 5.7 to 8.0 with the following command:
 
-```nginx
+```console
 hypernode-systemctl settings mysql_version 8.0
 ```
 
