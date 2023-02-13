@@ -49,7 +49,7 @@ Port 3306 is firewalled on all Hypernodes to prevent hackers and bruteforces fro
 
 First check which IP addresses have been whitelisted already, if any.
 
-```console
+```bash
 hypernode-systemctl whitelist get
 ```
 
@@ -57,7 +57,7 @@ hypernode-systemctl whitelist get
 
 To add more values to your allowlist you can run the following. Please note that descriptions are optional:
 
-```console
+```bash
 hypernode-systemctl whitelist add database 203.0.113.4 --description "my description"
 ```
 
@@ -65,7 +65,7 @@ hypernode-systemctl whitelist add database 203.0.113.4 --description "my descrip
 
 To remove IP addresses from your allowlists you can run the following:
 
-```console
+```bash
 hypernode-systemctl whitelist remove database 203.0.113.4
 ```
 
@@ -86,7 +86,7 @@ Because we’ve provided a `~/.my.cnf`, you’re all set to go.
 
 Just type `mysql` and you’re in.
 
-```console
+```bash
 mysql
 ```
 
@@ -94,7 +94,7 @@ mysql
 
 Use your credentials to connect like so:
 
-```console
+```bash
 mysql --host=mysqlmaster.example.hypernode.io --user=app --password=mypassword
 ```
 
@@ -113,7 +113,7 @@ If you are blocked by a firewall, you can create a temporary tunnel between the 
 
 Use this command:
 
-```console
+```bash
 ssh -NL 3306:mysqlmaster:3306 app@example.hypernode.io
 ```
 
@@ -125,7 +125,7 @@ Voila, now your Hypernode database is reachable through localhost port 3306!
 
 Use the following command using SSH:
 
-```console
+```bash
 magerun db:dump -n -c gz -s @stripped
 ```
 
@@ -158,7 +158,7 @@ Hypernode offers several version of MySQL to be able to meet te requirements of 
 
 To upgrade your MySQL version you can use [the hypernode-systemctl tool](../tools/how-to-use-the-hypernode-systemctl-cli-tool.md#mysql) through the command line.
 
-```console
+```bash
 hypernode-systemctl settings mysql_version --value 5.7
 ```
 
@@ -214,7 +214,7 @@ How you change the database password depends on what version of MySQL you are ru
 
 Login to your MySQL server via the following command:
 
-```console
+```bash
 mysql
 ```
 
@@ -234,7 +234,7 @@ exit;
 
 Login to your MySQL server via the following command
 
-```console
+```bash
 mysql
 ```
 
@@ -256,7 +256,7 @@ Remember to update your `~/.my.cnf` with your new password so you could easily l
 
 Login to your MySQL server via the following command
 
-```console
+```bash
 mysql
 ```
 
@@ -282,7 +282,7 @@ Remember to update your `~/.my.cnf` with your new password so you could easily l
 
 You can upgrade the MySQL version on your Hypernode from 5.6 to 5.7 with the following command:
 
-```console
+```bash
 hypernode-systemctl settings mysql_version 5.7
 ```
 
@@ -294,7 +294,7 @@ You can then check with `livelog` when the process has finished and your MySQL v
 
 Before you can upgrade to MySQL 8.0 you first need to upgrade the MySQL version to 5.7 and wait for this process to finish. Once that is done, you can upgrade the MySQL version on your Hypernode from 5.7 to 8.0 with the following command:
 
-```console
+```bash
 hypernode-systemctl settings mysql_version 8.0
 ```
 
