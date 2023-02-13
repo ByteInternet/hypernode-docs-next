@@ -41,7 +41,6 @@ host = mysqlmaster.example.hypernode.io
   - Define views and triggers.
 - If you want to use a GUI to work on your database we recommend using a local GUI (Such as [HeidiSQL](../../best-practices/database/how-to-use-heidisql-on-hypernode.md) on Windows) instead of an online GUI ([PHPMyAdmin](../mysql/how-to-use-phpmyadmin.md)).
 
-
 ## How to Connect to MySQL
 
 ### Use the Command Line Shell on the Production Node
@@ -68,7 +67,7 @@ Please note you will need to add the remote host's IP address to the allowlist f
 
 Read the following articles on how to use both HeidiSQL and PHPMyAdmin for Hypernode:
 
-- Using [HeidiSQL](../../best-practices/database/how-to-use-heidisql-on-hypernode.md
+- Using [HeidiSQL](../../best-practices/database/how-to-use-heidisql-on-hypernode.md)
 - Using [PHPMyAdmin](../mysql/how-to-use-phpmyadmin.md)
 
 ### Using an SSH Tunnel to Circumvent Firewalls
@@ -182,7 +181,7 @@ To prevent incorrect deletion of database that are still in use, ensure yourself
 
 - The database is not used anymore by checking it’s content.
 - The database is not defined in your application configuration anymore.
-  (IE: Check the `local.xml`, `env.php`, and/or your `wp-config.php).
+  (IE: Check the configuration in you `local.xml`, `env.php`, `wp-config.php`, etc).
 - You created a backup to ensure yourself you are able to restore the database if necessary.
 
 When you are 100% sure it is safe to delete the database, issue the following command:
