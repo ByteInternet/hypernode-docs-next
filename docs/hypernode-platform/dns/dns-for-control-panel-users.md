@@ -1,7 +1,8 @@
 ---
 myst:
   html_meta:
-    description: You can edit the DNS setting for your domain names in the Control Panel(Instellingen => DNS). It takes 24 hours for a DNS change to be implemented.
+    description: You can edit the DNS setting for your domain names in the Control
+      Panel(Instellingen => DNS). It takes 24 hours for a DNS change to be implemented.
     title: How to manage your DNS as a Control Panel user?
 redirect_from:
   - /en/support/solutions/articles/48001153093-dns-for-service-panel-users/
