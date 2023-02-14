@@ -119,10 +119,7 @@ source ~/.profile
 ### Download Akeneo 6
 
 ```bash
-mkdir ~/akeneo
-cd ~/akeneo
-wget https://download.akeneo.com/pim-community-standard-v6.0-latest-icecat.tar.gz
-tar -zxvf pim-community-standard-v6.0-latest-icecat.tar.gz
+composer2 create-project akeneo/pim-community-standard:"^6.0" akeneo
 ```
 
 ### Create a Database
@@ -184,7 +181,6 @@ Before we start using Supervisor we first need to enable it on the Hypernode.
 
 ```bash
 hypernode-systemctl settings supervisor_enabled True
-
 ```
 
 #### Create a configuration file for Supervisor
