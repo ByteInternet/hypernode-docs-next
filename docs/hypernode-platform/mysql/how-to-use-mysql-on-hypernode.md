@@ -13,7 +13,7 @@ redirect_from:
 
 # How to Use Mysql on Hypernode
 
-This article explains how to use MySQL on Hypernode, from finding your credentials, whitelisting your IP address to using PHPMyAdmin.
+This article explains how to use MySQL on Hypernode, from finding your credentials, allowlisting your IP address, to using PHPMyAdmin.
 
 ## Finding Your Credentials
 
@@ -21,11 +21,11 @@ Your MySQL credentials are stored in the homedir of application user.
 
 You find them in the file `.my.cnf` located in `/data/web`.
 
-```nginx
+```bash
 cat ~/.my.cnf
 ```
 
-```nginx
+```ini
 [client]
 user = app
 password = JlogA1Sws6XMHmAj7QlP9vpfjlprtpE5
@@ -35,48 +35,11 @@ host = mysqlmaster.example.hypernode.io
 ## What You Should Know
 
 - There is no predefined database, so you should create your own.
-- The `app`user is the local superuser. This means you can (among other things):
-  - Can create your own databases;
-  - Create users;
+- The `app` user is the local superuser. This means you can (among other things):
+  - Create your own databases;
+  - Create users and manage passwords;
   - Define views and triggers.
-- If you want to use a GUI to work on your database we recommend using a local GUI ([HeidiSQL](../../best-practices/database/how-to-use-heidisql-on-hypernode.md)) instead of an online GUI ([PHPMyAdmin](../mysql/how-to-use-phpmyadmin.md)).
-
-## Whitelisting Your IP Address
-
-Port 3306 is fire-walled on all Hypernodes to prevent hackers and bruteforces from connecting to your MySQL instance. That's why if you want to externally connect to MySQL on the Hypernode, you’ll need to add a whitelisting entry first.
-
-### Whitelist via the hypernode-systemctl CLI Tool
-
-First check which IP addresses have been whitelisted already, if any.
-
-```nginx
-hypernode-systemctl whitelist get
-```
-
-### Adding to Whitelist
-
-To add more values to your whitelists you can run the following. Please note that descriptions are optional:
-
-```nginx
-hypernode-systemctl whitelist add database 1.2.3.4 --description "my description"
-```
-
-### Removing From Whitelist
-
-To remove values from your whitelists you can run the following:
-
-```nginx
-hypernode-systemctl whitelist remove database 1.2.3.4
-```
-
-### Whitelist via Your Service Panel
-
-Only our Service Panel users have the option to whitelist an IP via the Service Panel.
-
-1. Log on to your [Service Panel](https://auth.byte.nl).
-1. Select your Hypernode.
-1. Go to `Instellingen` > `Externe database toegang`.
-1. Add the IP addresses to the firewall whitelist.
+- If you want to use a GUI to work on your database we recommend using a local GUI (Such as [HeidiSQL](../../best-practices/database/how-to-use-heidisql-on-hypernode.md) on Windows) instead of an online GUI ([PHPMyAdmin](../mysql/how-to-use-phpmyadmin.md)).
 
 ## How to Connect to MySQL
 
@@ -86,7 +49,7 @@ Because we’ve provided a `~/.my.cnf`, you’re all set to go.
 
 Just type `mysql` and you’re in.
 
-```nginx
+```bash
 mysql
 ```
 
@@ -94,28 +57,67 @@ mysql
 
 Use your credentials to connect like so:
 
-```nginx
+```bash
 mysql --host=mysqlmaster.example.hypernode.io --user=app --password=mypassword
 ```
+
+Please note you will need to add the remote host's IP address to the allowlist first, as described below
 
 ### Using HeidiSQL/PHPMyAdmin to Connect to MySQL
 
 Read the following articles on how to use both HeidiSQL and PHPMyAdmin for Hypernode:
 
-- Using HeidiSQL
-- Using PHPMyAdmin
+- Using [HeidiSQL](../../best-practices/database/how-to-use-heidisql-on-hypernode.md)
+- Using [PHPMyAdmin](../mysql/how-to-use-phpmyadmin.md)
 
 ### Using an SSH Tunnel to Circumvent Firewalls
 
-If you are blocked by a firewall, you can tunnel the remote MySQL service to your local computer (Mac or Linux).
+If you are blocked by a firewall, you can create a temporary tunnel between the remote MySQL service and your local computer.
 
 Use this command:
 
-```nginx
+```bash
 ssh -NL 3306:mysqlmaster:3306 app@example.hypernode.io
 ```
 
 Voila, now your Hypernode database is reachable through localhost port 3306!
+
+## Allowlisting Your IP Address
+
+Port 3306 is firewalled on all Hypernodes to prevent hackers and bruteforces from connecting to your MySQL instance. That's why if you want to externally connect to MySQL on the Hypernode, you’ll need to add the remote IP address to the allowlist first.
+
+### Allow an IP via the hypernode-systemctl CLI tool
+
+First check which IP addresses have been whitelisted already, if any.
+
+```bash
+hypernode-systemctl whitelist get
+```
+
+### Adding to the Allowlist
+
+To add more values to your allowlist you can run the following. Please note that descriptions are optional:
+
+```bash
+hypernode-systemctl whitelist add database 203.0.113.4 --description "my description"
+```
+
+### Removing From the Allowlist
+
+To remove IP addresses from your allowlists you can run the following:
+
+```bash
+hypernode-systemctl whitelist remove database 203.0.113.4
+```
+
+### Manage the Allowlist via the Control Panel
+
+It's also possible to whitelist an IP address via the Control Panel
+
+1. Log on to the [Control Panel](https://my.hypernode.com).
+1. Select your Hypernode.
+1. Select `Allowlist` from the menu.
+1. Add the IP addresses to the database allowlist.
 
 ## Creating a MySQL Back-Up
 
@@ -123,7 +125,7 @@ Voila, now your Hypernode database is reachable through localhost port 3306!
 
 Use the following command using SSH:
 
-```nginx
+```bash
 magerun db:dump -n -c gz -s @stripped
 ```
 
@@ -150,22 +152,12 @@ You should consider using Magerun (see above), but you could use HeidiSQL to cre
 
 ## Using MySQL
 
-### How to Upgrade the MySQL Version
-
-Hypernode offers several version of MySQL to be able to meet te requirements of several Magento, Shopware and Akeneo versions. For example, if you want to install Magento 2.4, you'd have to run MySQL 5.7 or 8.0.
-
-To upgrade your MySQL version you can use[the hypernode-systemctl tool](../tools/how-to-use-the-hypernode-systemctl-cli-tool.md#mysql) through the command line.
-
-```nginx
-hypernode-systemctl settings mysql_version --value 5.7
-```
-
 ### How to Create a New Database
 
-To create a new database, we’ll login using the MySQL client and drop the database using the command line.
+To create a new database, we’ll login using the MySQL client and create the database using the command line.
 
-```nginx
->DATABASE="new_database"
+```bash
+DATABASE="new_database"
 mysql -e "CREATE DATABASE IF NOT EXISTS $DATABASE"
 ```
 
@@ -179,12 +171,12 @@ To prevent incorrect deletion of database that are still in use, ensure yourself
 
 - The database is not used anymore by checking it’s content.
 - The database is not defined in your application configuration anymore.
-  (IE: Check the `local.xml` and/or your `wp-config.php).`
+  (IE: Check the configuration in you `local.xml`, `env.php`, `wp-config.php`, etc).
 - You created a backup to ensure yourself you are able to restore the database if necessary.
 
 When you are 100% sure it is safe to delete the database, issue the following command:
 
-```nginx
+```bash
 DATABASE="old_database"
 mysql -e "DROP DATABASE $DATABASE"
 ```
@@ -198,49 +190,79 @@ If you truncate a database table, all records are removed but the table structur
 
 After you ensured yourself it is safe to delete all records of the table, use the following command:
 
-```nginx
+```bash
 DATABASE="magento"
 TABLE="core_url_rewrite"
 mysql "$DATABASE" -e "TRUNCATE TABLE $TABLE"
 ```
 
-### Changing Your MySQL 5.6 Password
+## Changing Your Password
+
+How you change the database password depends on what version of MySQL you are running on your Hypernode.
+
+### Changing Your Password on MySQL 5.6
 
 Login to your MySQL server via the following command:
 
-```nginx
+```bash
 mysql
 ```
 
-This will get you into the MySQL prompt. Select the database which holds user accounts, here it’s called mysql;
+This will get you into the MySQL prompt. In this example we change the password for the `app` user to `p4ssw0rd`
 
-```nginx
-use mysql;
-```
-
-Now change the password for a given user account using this command:
-
-```nginx
-update user set password=PASSWORD('newpassword') where user='username';
-```
-
-Let’s assume here that your username is ‘trial’ and your new password is ‘hypernode’. Your actual command would look like this:
-
-```nginx
-update user set password=PASSWORD('hypernode') where user='trial';
-```
-
-Now your password is changed in the database, but they haven’t filtered into memory yet. Change that by typing:
-
-```nginx
-flush privileges;
+```mysql
+SET PASSWORD FOR 'app'@'%' = PASSWORD("p4ssw0rd");
 ```
 
 Your password has been updated. There’s no need to restart the MySQL demon. Exit the MySQL with
 
-```nginx
+```mysql
 exit;
 ```
+
+### Changing Your Password on MySQL 5.7
+
+Login to your MySQL server via the following command
+
+```bash
+mysql
+```
+
+This will get you into the MySQL prompt. In this example we change the password for the `app` user to `p4ssw0rd`
+
+```mysql
+ALTER USER `app` IDENTIFIED BY 'p4ssw0rd';
+```
+
+Your password has been updated. There’s no need to restart the MySQL demon. Exit the MySQL with
+
+```mysql
+exit;
+```
+
+Remember to update your `~/.my.cnf` with your new password so you could easily login your MySQL-CLI without entering the password each time.
+
+### Changing Your Password on MySQL 8.0
+
+Login to your MySQL server via the following command
+
+```bash
+mysql
+```
+
+This will get you into the MySQL prompt. In this example we change the password for the `app` user to `p4ssw0rd`
+
+```mysql
+ALTER USER `app` IDENTIFIED BY 'p4ssw0rd';
+```
+
+Your password has been updated. There’s no need to restart the MySQL demon. Exit the MySQL with
+
+```mysql
+exit;
+```
+
+Remember to update your `~/.my.cnf` with your new password so you could easily login your MySQL-CLI without entering the password each time.
 
 ## How to Upgrade Your MySQL Version
 
@@ -250,53 +272,19 @@ exit;
 
 You can upgrade the MySQL version on your Hypernode from 5.6 to 5.7 with the following command:
 
-```nginx
+```bash
 hypernode-systemctl settings mysql_version 5.7
 ```
 
 You can then check with `livelog` when the process has finished and your MySQL version has been upgraded.
 
-### Changing Your MySQL 5.7 Password
-
-Login to your MySQL server via the following command
-
-```nginx
-mysql
-```
-
-This will get you into the MySQL prompt. Select the database which holds user accounts, here it’s called mysql;
-
-```nginx
-use mysql;
-```
-
-Now change the password for a given user account using this command, in this case the `app` user:
-
-```nginx
-update user set authentication_string=password('newpassword') where user='app';
-```
-
-Now your password is changed in the database, but they haven’t filtered into memory yet. Change that by typing:
-
-```nginx
-flush privileges;
-```
-
-Your password has been updated. There’s no need to restart the MySQL demon. Exit the MySQL with
-
-```nginx
-exit;
-```
-
-Remember to update your `~/.my.cnf` with your new password so you could easily login your MySQL-CLI without entering the password each time.
-
 ### Upgrading to MySQL 8.0
 
 **Please note that once you have upgraded the MySQL version on your Hypernode, you won't be able to downgrade it.**
 
-Before you can upgrade to MySQL 8.0 you first need to upgrade the MySQL version to 5.7 and wait for this process to finish. Once You can upgrade the MySQL version on your Hypernode from 5.7 to 8.0 with the following command:
+Before you can upgrade to MySQL 8.0 you first need to upgrade the MySQL version to 5.7 and wait for this process to finish. Once that is done, you can upgrade the MySQL version on your Hypernode from 5.7 to 8.0 with the following command:
 
-```nginx
+```bash
 hypernode-systemctl settings mysql_version 8.0
 ```
 

@@ -41,9 +41,9 @@ Good to know:
 
 *Options 1 and 2 will prevent DNS downtime.*
 
-*Option 2 has a significant disadvantage: you cannot use SSL with your naked domain. People who visit <https://yourdomain.com/>, will get a certificate warning from the browser.*
+*Option 2 has a significant disadvantage: you cannot use SSL with your naked domain. People who visit <https://example.com/>, will get a certificate warning from the browser.*
 
-*Option 3 is the best in case of an external DNS, and you want to make use of <https://yourdomain.com/>, but you will encounter DNS downtime if the IP address of your Hypernode changes.*
+*Option 3 is the best in case of an external DNS, and you want to make use of <https://example.com/>, but you will encounter DNS downtime if the IP address of your Hypernode changes.*
 
 If you cannot benefit from a dedicated IP on Hypernode, please decide the best way to handle your DNS. We recommend always moving your domains to Hypernode. We've included a detailed explanation of options 1 and 2 below.
 
@@ -63,14 +63,13 @@ Syncing a domain to your Hypernode will immediately change the domain's DNS reco
 1. In your next view, you can **link**\* the domain to your Hypernode.
 1. If you want us to manage your DNS, you can just go to the DNS manager top right corner of your screen.
 1. **Syncing** a domain to your Hypernode will immediately change the DNS records of the domain. Plan this moment carefully when migrating to Hypernode, and make sure content on the original location is no longer used.
-1. On the next page, turn Synchronize DNS with ***appname***.hypernode.io with the slider **on**.
+1. On the next page, turn Synchronize DNS with ***example***.hypernode.io with the slider **on**.
 1. That's it! Hypernode now manages your DNS.
 
 ### What happens at the background?
 
-We will create an A record for domain.com and a CNAME record for [www.domain.com](http://www.domain.com). Other A- and CNAME records for domain.com and [www.domain.com](http://www.domain.com) will be removed. Records for subdomains are not touched, so it’s still possible (and perfectly reasonable) to have a subdomain for your blog on blog.domain.com.
-
-If a domain is linked to a Hypernode, it’s no longer possible to manually change the apex records that point to your Hypernode. We will make a backup of the record we adjust. These show up in the DNS admin as TXT records for __backup__.domain.com. If you unlink your Hypernode, we will put the backup records back. You can delete or change them if you choose to do so.
+We will create an A record for example.com and a CNAME record for [www.example.com](http://www.example.com). Other A- and CNAME records for example.com and [www.example.com](http://www.example.com) will be removed. Records for subdomains are not touched, so it’s still possible (and perfectly reasonable) to have a subdomain for your blog on blog.example.com.
+If a domain is linked to a Hypernode, it’s no longer possible to manually change the apex records that point to your Hypernode.
 
 **Please note:**
 
@@ -79,7 +78,7 @@ If a domain is linked to a Hypernode, it’s no longer possible to manually chan
 
 ## Option 2: Manage an external DNS by pointing your domain to Hypernode by using CNAME and not an A-record
 
-If you cannot transfer your DNS to Hypernode, you can choose to only point the CNAME record to your Hypernode. We do not recommend this option because you cannot use SSL on your naked (also called apex) domain name: yourdomain.com, without the ‘www.’-prefix.
+If you cannot transfer your DNS to Hypernode, you can choose to only point the CNAME record to your Hypernode. We do not recommend this option because you cannot use SSL on your naked (also called apex) domain name: example.com, without the ‘www.’-prefix.
 
 If this is not an issue, the configuration needed can be found below:
 
@@ -88,39 +87,39 @@ If this is not an issue, the configuration needed can be found below:
 - Have a CNAME for your www-domain + an A Record that directs to the dedicated IP address of your Hypernode
 - Have a CNAME for your www-domain + an A record for your apex (also called naked) domain pointing to a redirector that redirects to the www-domain (our wwwizers)
 
-These examples assume you have a site called yourdomain.com and a Hypernode called yourd01.hypernode.io.
+These examples assume you have a site called example.com and a Hypernode called example.hypernode.io.
 
 The recommended way to configure your DNS is to create a CNAME record in your DNS configuration, pointing to Hypernode:
 
 ```
-www.yourdomain.com      CNAME       yourd01.hypernode.io
+www.example.com      CNAME       example.hypernode.io
 ```
 
-This means that [www.yourdomain.com](http://www.yourdomain.com) will point to wherever yourd01.hypernode.io points, and we will make sure that that always points to the correct IP address.
+This means that [www.example.com](http://www.example.com) will point to wherever example.hypernode.io points, and we will make sure that that always points to the correct IP address.
 
 **Please note:** You can also configure your wildcard (\*) domain name to Hypernode.
 
 ```
-*.yourdomain.com      CNAME       yourd01.hypernode.io
+*.example.com      CNAME       example.hypernode.io
 ```
 
 ## Option 3: Manage an external DNS by pointing your domain(s) to Hypernode by using CNAME and not an A-record
 
-Problems arise when people visit your naked (also called apex) domain name: yourdomain.com, without the ‘www.’-prefix. It is not possible to create a CNAME record for your apex domain.
+Problems arise when people visit your naked (also called apex) domain name: example.com, without the ‘www.’-prefix. It is not possible to create a CNAME record for your apex domain.
 
-The preferred way to redirect your apex (or naked) domain when the domain is not managed by Hypernode, is to use the direct IP address of your Hypernode. You can find your IP with the “ping yourname.hypernode.io” command.
+The preferred way to redirect your apex (or naked) domain when the domain is not managed by Hypernode, is to use the direct IP address of your Hypernode. You can find your IP with the `ping example.hypernode.io` command.
 
 Some DNS providers, like [DNSimple](https://dnsimple.com/) or [DNS Made Easy](http://www.dnsmadeeasy.com/), can create ALIAS or ANAME pseudo-records. These behave like CNAME records for apex domains. Unfortunately, they are not widespread yet, so the chances are your provider doesn’t support them.
 
-Another solution is redirecting traffic for the apex domain yourdomain.com to its www-counterpart [www.yourdomain.com](http://www.yourdomain.com). You can use our free wwwizer service for this. Just configure the following A-records for your apex domain, and they will redirect all traffic for you.
+Another solution is redirecting traffic for the apex domain example.com to its www-counterpart [www.example.com](http://www.example.com). You can use our free wwwizer service for this. Just configure the following A-records for your apex domain, and they will redirect all traffic for you.
 
 ```
 # Add both for redundancy!
-yourdomain.com A 46.21.232.141
-yourdomain.com A 46.21.233.172
+example.com A 46.21.232.141
+example.com A 46.21.233.172
 ```
 
-**Please note**: Note that if you make use of the wwwizer redirect servers, people that visit <https://yourdomain.com> directly will get an error message, either indicating that there is no https available or a plain connection refused error. The wwwizers work as a forwarding service to the direct IP address of the Hypernode. This way, we can manage any IP changes for you. That is the advantage. The disadvantage is that these records do not cooperate with SSL and that, therefore the certificate does not work correctly on the domain name without the [www](http://www).
+**Please note**: Note that if you make use of the wwwizer redirect servers, people that visit <https://example.com> directly will get an error message, either indicating that there is no https available or a plain connection refused error. The wwwizers work as a forwarding service to the direct IP address of the Hypernode. This way, we can manage any IP changes for you. That is the advantage. The disadvantage is that these records do not cooperate with SSL and that, therefore the certificate does not work correctly on the domain name without the www.
 
 ### Let's Encrypt and Wwwizers
 
@@ -158,8 +157,8 @@ You can read how this works [in this article](../nginx/how-to-redirect-from-or-t
 
 ## Shop on a subdomain?
 
-If you host your shop on a subdomain (for example, shop.yourdomain.com), and you don’t want to be available on [www.shop.yourdomain.com](http://www.shop.yourdomain.com), you can forget all about the wwwizer service, and there’s no need to add the two IP addresses in your A records as explained above. Simply create a CNAME-record pointing to your Hypernode, and it will work:
+If you host your shop on a subdomain (for example, shop.example.com), and you don’t want to be available on [www.shop.example.com](http://www.shop.example.com), you can forget all about the wwwizer service, and there’s no need to add the two IP addresses in your A records as explained above. Simply create a CNAME-record pointing to your Hypernode, and it will work:
 
 ```
-shop.yourdomain.com      CNAME       yourd01.hypernode.io
+shop.example.com      CNAME       example.hypernode.io
 ```
