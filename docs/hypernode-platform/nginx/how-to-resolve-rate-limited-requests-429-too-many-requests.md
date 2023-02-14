@@ -35,11 +35,10 @@ You can quickly determine which method of Rate Limiting was the cause of the req
 
 To look for rate limiting messages in the error log, you can run the following command:
 
-```bash
+```console
 $ grep limiting.requests /var/log/nginx/error.log
 2020/06/07 13:33:37 [error] 7492#7492: *1590769 limiting requests, excess: 0.072 by zone "bots", client: 203.0.113.104, server: example.hypernode.io, request: "GET /api/ HTTP/2.0", host: "example.hypernode.io"
 2020/06/07 13:33:37 [error] 7492#7492: *1590770 limiting connections by zone "zoneperip", client: 198.51.100.69, server: example.hypernode.io, request: "POST /admin/ HTTP/2.0", host: "example.hypernode.io"
-
 ```
 
 A log entry where rate limit is applied to user-agents and requests per second (based on the `bots` zone):
@@ -89,7 +88,7 @@ The keywords are separated by `|` characters since it is a regular expression.
 
 To extend the allowlist, first determine what user agent you wish to add. Use the access log files to see what bots get blocked and which user agent identification it uses. To find the user agent, you can use the following command:
 
-```bash
+```console
   $ pnl --today --fields time,status,remote_addr,request,user_agent --filter status=429
 2020-06-07T13:33:37+00:00       429     203.0.113.104   GET /api/ HTTP/2.0       SpecialSnowflakeCrawler 3.1.4
 2020-06-07T13:35:37+00:00       429     203.0.113.104   GET /api/ HTTP/2.0       SpecialSnowflakeCrawler 3.1.4
@@ -97,7 +96,7 @@ To extend the allowlist, first determine what user agent you wish to add. Use th
 
 In the example above you can see that a bot with the User Agent `SpecialSnowflakeCrawler 3.1.4` triggered the ratelimiter.  As it contains the word ‘crawler’, it matches the second regular expression and is labeled as a bot. Since the allowlist line overrules the denylist line, the best way to allow this bot is to add their user agent to the allowlist instead of removing ‘crawler’ from the blacklist:
 
-```
+```nginx
 map $http_user_agent $limit_bots {
     default '';
     ~*(specialsnowflakecrawler|google|bing|heartbeat|uptimerobot|shoppimon|facebookexternal|monitis.com|Zend_Http_Client|magereport.com|SendCloud/|Adyen|ForusP|contentkingapp|node-fetch|Hipex) '';
@@ -135,7 +134,6 @@ geo $conn_limit_map {
     default $remote_addr;
     198.51.100.69 '';
 }
-
 ```
 
 In this example, we have excluded the IP address **198.51.100.69** by setting an empty value in the form of `''`.
@@ -147,7 +145,6 @@ geo $conn_limit_map {
     default $remote_addr;
     198.51.100.0/24 '';
 }
-
 ```
 
 ### Disable per IP Rate Limiting
@@ -160,7 +157,6 @@ For debugging purposes, however, it could be helpful to disable the per-IP conne
 geo $conn_limit_map {
     default '';
 }
-
 ```
 
 **Warning: Only use this setting for debugging purposed! Using this setting on production Hypernodes is highly discouraged, as your shop can be easily taken offline by a single IP using slow and/or flood attacks.**
@@ -178,7 +174,6 @@ if ($request_uri ~ ^\/(.*)\/rest\/V1\/example-call\/(.*) ) {
 if ($request_uri ~ ^\/elasticsearch.php$ ) {
     set $ratelimit_request_url '';
 }
-
 ```
 
 In the example above, the URLs `*/rest/V1/example-call/*` and `/elasticsearch.php` are the ones that have to be excluded. You now have to use the `$ratelimit_request` variable as a default value in the file `/data/web/nginx/http.ratelimit` (see below) to exclude these URLs from the rate limiter and make sure that bots and crawlers will still be rate limited based on their User Agent.
@@ -201,7 +196,6 @@ location = /ratelimited.html {
     root /data/web/public;
     internal;
 }
-
 ```
 
 This snippet will serve a custom static file called `ratelimited.html` to IP addresses that are using too many PHP workers.
