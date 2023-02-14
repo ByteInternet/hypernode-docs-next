@@ -1,7 +1,7 @@
 ---
 myst:
   html_meta:
-    description: 'Which TLD's does Hypernode offer'
+    description: Which TLD's does Hypernode offer
     title: Extension Specific Info per Domain | Hypernode
 redirect_from:
   - /en/services/domains/which-tlds-does-hypernode-offer/
@@ -9,10 +9,12 @@ redirect_from:
 
 <!-- source: https://support.hypernode.com/en/services/domains/which-tlds-does-hypernode-offer/ -->
 
+# Which TLDs does Hypernode offer
+
 ## Extension Table
 
 | Extension  | Price per year | Price per 5 years | Setup Cost |
-|------------|----------------|-------------------|------------|
+| ---------- | -------------- | ----------------- | ---------- |
 | .AMSTERDAM | €59.99         | €274.95           |            |
 | .AT        | €34.95         | €134.99           |            |
 | .BE        | €29.95         | €109.99           |            |
@@ -56,4 +58,5 @@ redirect_from:
 | .US        | €19.99         | €109.99           |            |
 
 ## How to order
-Go to this page on how to order your domains in the Control Panel. 
+
+Go to this page on how to order your domains in the Control Panel.
