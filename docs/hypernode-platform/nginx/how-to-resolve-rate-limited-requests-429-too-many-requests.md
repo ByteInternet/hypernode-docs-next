@@ -37,20 +37,20 @@ To look for rate limiting messages in the error log, you can run the following c
 
 ```console
 $ grep limiting.requests /var/log/nginx/error.log
-2020/06/07 13:33:37 [error] 7492#7492: *1590769 limiting requests, excess: 0.072 by zone "bots", client: 203.0.113.104, server: example.hypernode.io, request: "GET /api/ HTTP/2.0", host: "example.hypernode.io"
-2020/06/07 13:33:37 [error] 7492#7492: *1590770 limiting connections by zone "zoneperip", client: 198.51.100.69, server: example.hypernode.io, request: "POST /admin/ HTTP/2.0", host: "example.hypernode.io"
+2020/06/07 13:33:37 [error] limiting requests, excess: 0.072 by zone "bots", client: 203.0.113.104, server: example.hypernode.io, request: "GET /api/ HTTP/2.0", host: "example.hypernode.io"
+2020/06/07 13:33:37 [error] limiting connections by zone "zoneperip", client: 198.51.100.69, server: example.hypernode.io, request: "POST /admin/ HTTP/2.0", host: "example.hypernode.io"
 ```
 
 A log entry where rate limit is applied to user-agents and requests per second (based on the `bots` zone):
 
 ```
-2020/06/07 13:33:37 [error] 7492#7492: *1590769 limiting requests, excess: 0.072 by zone "bots", client: 203.0.113.104, server: example.hypernode.io, request: "GET /api/ HTTP/2.0", host: "example.hypernode.io"
+2020/06/07 13:33:37 [error] limiting requests, excess: 0.072 by zone "bots", client: 203.0.113.104, server: example.hypernode.io, request: "GET /api/ HTTP/2.0", host: "example.hypernode.io"
 ```
 
 A log entry where the rate limit is applied per IP address (based on the `zoneperip` zone):
 
 ```
-2020/06/07 13:33:37 [error] 7492#7492: *1590770 limiting connections by zone "zoneperip", client: 198.51.100.69, server: example.hypernode.io, request: "POST /admin/ HTTP/2.0", host: "example.hypernode.io"
+2020/06/07 13:33:37 [error] limiting connections by zone "zoneperip", client: 198.51.100.69, server: example.hypernode.io, request: "POST /admin/ HTTP/2.0", host: "example.hypernode.io"
 ```
 
 **Note: Per IP rate limiting only applies to requests handled by PHP and not to the static content.**
