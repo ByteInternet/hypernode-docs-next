@@ -1,3 +1,11 @@
 *.swp
 _build
 *.pyc
+.idea
+.venv
+pub
+.ssh
+.vscode
+*.css.map
+deployment-report.json
+build/

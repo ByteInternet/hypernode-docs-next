@@ -1,13 +1,23 @@
+---
+myst:
+  html_meta:
+    description: "Cronjobs are periodic tasks that run in the background of your Hypernode.\
+      \ We'll help you to set up and use these periodic tasks. "
+    title: How to Use Periodic Tasks or Cronjobs on Hypernode?
+redirect_from:
+  - /en/hypernode/tools/how-to-use-periodic-tasks-cronjobs-on-hypernode/
+  - /knowledgebase/configure-cronjobs-on-hypernode/
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-periodic-tasks-cronjobs-on-hypernode/ -->
+
 # How to Use Periodic Tasks (Cronjobs) on Hypernode
 
 Cronjobs are periodic tasks that run in the background of your Hypernode. They can be used for all sorts of maintenance, such as cleaning up logs or importing new products. In fact, Magento makes extensive use of cronjobs.
 
 If you need some help to get the timing settings right, check [crontab guru](https://crontab.guru/) and [cronjob time predictor](https://cronjob.xyz/) these little helpers can assist you configuring cron jobs.
 
-
-Setting up Cron Jobs
---------------------
+## Setting up Cron Jobs
 
 ### Enabling the Magento 1.x Cron
 
@@ -19,6 +29,7 @@ This is recommended for every installation! Log in using SSH and run `crontab -e
 # MAILTO=your@email.com # Uncomment to receive the error output on your own email address
 */5 * * * * flock -n ~/.cron.lock php /data/web/public/cron.php
 ```
+
 After adding the cronjob, press **CTRL+X**, **Y** and then **ENTER** to save the cronjob into your crontab.
 
 ### Enabling the Magento 2 Cron
@@ -28,11 +39,12 @@ To configure the cron for Magento 2 you'll have to run the commando below. The c
 ```nginx
 bin/magento cron:install
 ```
+
 Magento 2 uses another mechanism for scheduling tasks. That’s why the Magento 2 cron needs to run every minute instead of every 5 minutes. More information can be found in [the Magento 2 documentation](http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html).
 
 #### Magento 2.4. Cron
 
-**Please note:**the `update/cron.php` file has been removed in Magento 2.4.0, if this file exists on your installation, it can be safely removed.
+\*\*Please note:\*\*the `update/cron.php` file has been removed in Magento 2.4.0, if this file exists on your installation, it can be safely removed.
 
 Any reference to `update/cron.php` and `bin/magento setup:cron:run` can also be removed from the crontab.
 
@@ -54,9 +66,10 @@ For most cases, cronjob syntax is actually quite easy. See the [full documentati
 # Run a job on the first day of the month at 3:20
 20 3 1 * * flock -n ~/.myjob.lock php /data/web/mycron.php
 ```
+
 ### Stopping Cronjobs After a Timeout Period
 
-To avoid cronjobs running for hours, blocking all other crontasks to be executed by Magento,  you can make use of the `timeout` utility.
+To avoid cronjobs running for hours, blocking all other crontasks to be executed by Magento, you can make use of the `timeout` utility.
 
 This tool can be given a “max execution time” and will stop the running task when this time period has exeeded.
 
@@ -66,6 +79,7 @@ For example:
 # Run a daily job at 3:20 in the night and kill after 120 seconds
 20 3 * * * timeout 120 php /data/web/mycron.php
 ```
+
 ### Cron Deadlock Protection
 
 Our system will automatically add `flock` to your cron commands. This will prevent many problems, for example when multiple concurrent imports cause a database deadlock. If you do not want our auto flock (not recommended!) you can add `# noflock` to your command, like this:
@@ -74,6 +88,7 @@ Our system will automatically add `flock` to your cron commands. This will preve
 # Run a command that does not care whether it is already running
 * * * * * php /data/web/mycron.php # noflock
 ```
+
 ### Cron Jitter (Sleep) Added to Cronjobs
 
 Our automation will add a cron jitter (`sleep xx;`) to all the cronjobs in your cron commands. This will make sure that not all cronjobs on our platform will run at the exact same time. For example, if your Hypernode has `sleep 34;` added to the cron commands, it means that the command will be started 34 seconds after the time that is set in your cron task. This should not cause any issues since the crons still run every x time, they'll just run 34 seconds later. However, if you really want your crons to run on the exact minute then you can disable the sleep by adding `#nosleep` at the end of the cron command. More information about this setting can be found in [this changelog](https://changelog.hypernode.com/changelog/release-7220-configurable-innodb_buffer_pool-size-cron-jitter-and-more/).
@@ -82,19 +97,17 @@ Our automation will add a cron jitter (`sleep xx;`) to all the cronjobs in your 
 
 When you use `crontab -e` for the first time, you’ll be asked which editor you want to use. If you’d like to change your editor after your initial choice, please use the `select-editor` command. If you want to temporarily change your editor, you can do this by exporting the `EDITOR` variable: export `EDITOR=vim; crontab -e`
 
-Recommendations
----------------
+## Recommendations
 
-* Idem-potency: When you write your own cron script, make sure the script is idempotent. When a script should only be run after a certain time or when a new import file is present, always make sure to exit the script when the conditions are not met. This avoids things breaking down when people run cron scripts manually to debug cron issues.
-* Time is always based on UTC (= GMT). This might differ from your local time: Dutch time is UTC+1 in winter and UTC+2 in summer. Or use this [handy converter](http://www.timeanddate.com/worldclock/))
-* Do not run the Magento crons using `wget` or `curl`, as this is slow, might give partial results, and occupies webslots for real visitors). See above how to invoke the non-HTTP Magento cron.
-* Do not run the same cron simultaneously on multiple hosts, as results are unpredictable. When migrating, do not forget to disable the old crons.
-* Be carefull when using day of month and day of week together. Using `Dom` and `Dow` without wildcards makes this an `OR` condition and not an `AND`, running the job more often then you’d expect.
-* Cron does not deal with seconds so you can’t have cron job’s going off in any time period dealing with seconds. Like a cronjob going off every 30 seconds.
-* Monitor your cronjobs! You can do this by checking the exitcode and or the mail that is sent, or using a third party monitor. A free third party cron monitoring tool is [healthchecks.io](https://healthchecks.io/)
+- Idem-potency: When you write your own cron script, make sure the script is idempotent. When a script should only be run after a certain time or when a new import file is present, always make sure to exit the script when the conditions are not met. This avoids things breaking down when people run cron scripts manually to debug cron issues.
+- Time is always based on UTC (= GMT). This might differ from your local time: Dutch time is UTC+1 in winter and UTC+2 in summer. Or use this [handy converter](http://www.timeanddate.com/worldclock/))
+- Do not run the Magento crons using `wget` or `curl`, as this is slow, might give partial results, and occupies webslots for real visitors). See above how to invoke the non-HTTP Magento cron.
+- Do not run the same cron simultaneously on multiple hosts, as results are unpredictable. When migrating, do not forget to disable the old crons.
+- Be carefull when using day of month and day of week together. Using `Dom` and `Dow` without wildcards makes this an `OR` condition and not an `AND`, running the job more often then you’d expect.
+- Cron does not deal with seconds so you can’t have cron job’s going off in any time period dealing with seconds. Like a cronjob going off every 30 seconds.
+- Monitor your cronjobs! You can do this by checking the exitcode and or the mail that is sent, or using a third party monitor. A free third party cron monitoring tool is [healthchecks.io](https://healthchecks.io/)
 
-Debugging Cron Issues
----------------------
+## Debugging Cron Issues
 
 For new users, cron can be difficult to work with, as it’s hard finding out wat is causing cron not to run or to end before finishing the job. This section gives you some tips and tricks to debug cron issues.
 
@@ -129,6 +142,7 @@ We monitor cron extensively, but to ensure yourself, `grep` in the process list 
 ```nginx
 ps -ef | grep -i cron
 ```
+
 ### Verify the Cron Command From Your Logs
 
 When a cronjob ran, a log entry is written to `/var/log/syslog`. Retrieve the cron command from the logs and check whether the command can be run on the commandline to avoid typo’s or badly copied example cronjobs.
@@ -148,6 +162,7 @@ To fix, cleanup the old lockfiles by removing them:
 ```nginx
 rm ~/.a6fe0d58.lock
 ```
+
 This will remove the file, effectively removing the lock set on the file as well.
 
 ### Test If the Cron Has Ever Run Since You Configured It
@@ -157,6 +172,7 @@ To get a history of all cron actions, like editing, updating and listing the cro
 ```nginx
 grep -i cron /var/log/syslog
 ```
+
 This will generate a huge list of all jobs cron has run including editting, listing and removing the cronjob.
 
 To verify whether it has run, grep for all cronjobs that are run by user app and check if your cronjob has ever run:
@@ -164,6 +180,7 @@ To verify whether it has run, grep for all cronjobs that are run by user app and
 ```nginx
 grep -i cron /var/log/syslog | grep '(app)'
 ```
+
 ### Verify Whether Your `PATH` Variable and Other Environment Variables Are Set Correctly
 
 Cron does not automatically source environment and or shell settings from `.bashrc`, `.profile` etc.
@@ -175,11 +192,13 @@ If you want to use these settings you’d have to source the corresponding setti
 ```nginx
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 ```
+
 Or alternatively if you want all the settings you use in the shell, source your `bashrc` file prior to executing:
 
 ```nginx
 */5 * * * * source /data/web/.bashrc && cp $HOME/somefile $HOME/public/exports
 ```
+
 You can set things like `MAILTO=`, `SHELL=` or `PATH=` and other environment variables the shell uses.
 
 For example:
@@ -189,6 +208,7 @@ IMPORTFILE="/data/web/public/some-very-long-import-file-in-cvs-format.products-f
 DESTINATION="/data/web/public/some/very/long/path/in/the/magento/directory`
 */5 * * * * cp $IMPORTFILE $DESTINATION/
 ```
+
 ### Verify Whether Your Locations Are Setup Correctly
 
 Verify the correct path in cron arguments.
@@ -259,6 +279,7 @@ ${COMMAND} | log
 EXITCODE="$?"
 echo "Cron job \'${COMMAND}\' finished with exit code ${EXITCODE}" | log
 ```
+
 Save it as `~/bin/debug-cron` and make it executable with `chmod +x ~/bin/debug-cron`
 
 Now you can debug your cron issues using the following syntax:
@@ -266,4 +287,5 @@ Now you can debug your cron issues using the following syntax:
 ```nginx
 */5 * * * * flock -n ~/.a6fe0d58.lock -c '/data/web/bin/debug-cron php -f /data/web/public/cron.php'
 ```
+
 To check the output and run/stop time of the cronjob, check the logfiles in `/data/web/public/var/log/crons`

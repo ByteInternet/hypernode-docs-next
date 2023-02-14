@@ -1,0 +1,27 @@
+name: Detect renamed docs
+
+on:
+  pull_request:
+
+jobs:
+  detect_renamed_docs:
+    runs-on: ubuntu-latest
+    name: Detect renamed docs
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Get changed files
+        id: changed_files
+        run: |
+          result="$(python3 ci/bin/detect_rewrites.py ${{ github.event.pull_request.base.sha }} ${{github.event.pull_request.head.sha}})"
+          echo "$result"
+          echo "CHANGED_FILES<<EOF" >> $GITHUB_OUTPUT
+          echo "$result" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+        shell: bash
+      - name: Comment hostname on PR
+        if: ${{ steps.changed_files.outputs.CHANGED_FILES }}
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: "${{ steps.changed_files.outputs.CHANGED_FILES }}"

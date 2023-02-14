@@ -1,9 +1,20 @@
-sphinx==4.5.0
-sphinx_rtd_theme==1.0.0
-myst-parser==0.17.2
+# docs/ requirements
+sphinx==5.3.0
+sphinx_rtd_theme==1.1.1
+myst-parser==0.18.1
 mdit-py-plugins
-sphinx-copybutton==0.5.0
-python-slugify==6.1.2
+sphinx-copybutton==0.5.1
+mdformat==0.7.16
+mdformat-myst==0.1.5
+mdformat-frontmatter==0.4.1
+sphinx-notfound-page==0.8.3
+sphinx-sitemap==2.4.0
+GitPython==3.1.30
+sphinxcontrib-mermaid==0.7.1
 
+# hypernode/ requirements
 beautifulsoup4==4.11.1
 markdownify==0.11.2
+python-slugify==6.1.2
+pyyaml==5.1
+frontmatter==3.0.7

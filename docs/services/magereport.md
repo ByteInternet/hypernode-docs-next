@@ -1,9 +1,20 @@
+---
+myst:
+  html_meta:
+    description: This table of contents gives you a summary of all Hypernode platform
+      knowledge base articles that include information about the MageReport.
+    title: MageReport | Hypernode Services
+redirect_from:
+  - /en/services/magereport/
+---
+
 # Magereport
 
 ```{toctree}
-:caption: 'Table of Contents'
-:maxdepth: 1
-:glob:
-
+---
+caption: Table of Contents
+maxdepth: 1
+glob:
+---
 magereport/*
 ```

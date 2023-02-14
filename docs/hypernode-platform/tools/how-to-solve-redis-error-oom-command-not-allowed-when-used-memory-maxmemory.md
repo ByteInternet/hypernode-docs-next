@@ -1,11 +1,20 @@
+---
+myst:
+  html_meta:
+    description: Learn how to solve this Redis Error that appears if Magento is trying
+      to store more data in the Redis cache then possible.
+    title: How to Solve Redis Out-of-Memory Error? | Hypernode
+redirect_from:
+  - /en/hypernode/tools/how-to-solve-redis-error-oom-command-not-allowed-when-used-memory-maxmemory-/
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-solve-redis-error-oom-command-not-allowed-when-used-memory-maxmemory-/ -->
+
 # How to Solve Redis Error "OOM command not allowed when used memory > ‘maxmemory’"
 
-This error appears if Magento is trying to store more data in the Redis cache then possible. 
+This error appears if Magento is trying to store more data in the Redis cache then possible.
 
-
-Verifying Memory Usage of Your Redis Instance
----------------------------------------------
+## Verifying Memory Usage of Your Redis Instance
 
 You can get more insights of the Redis memory on your Hypernode by running the command below.
 
@@ -17,8 +26,8 @@ used_memory_human:331.51M
 total_system_memory_human:5.83G
 maxmemory_human:896.00M
 ```
-Fix It
-------
+
+## Fix It
 
 The quick fix will be to flush the Redis cache so there is plenty of Redis memory available again. You can do this by running `redis-cli flushall`
 
@@ -36,7 +45,8 @@ db0:keys=59253,expires=1117,avg_ttl=81268890
 db1:keys=13608,expires=904,avg_ttl=82515590
 db2:keys=144,expires=144,avg_ttl=199414742
 ```
-This will give you some insights in the Redis databases you've configured, the keys and whether they have an expire or not. In the above example a huge amount of the Redis keys don't have an expire set. This means that those keys won't ever expire and be removed from the Redis cache to make place for new keys. As a result the cache will be at greater risk to reach its maximum. 
+
+This will give you some insights in the Redis databases you've configured, the keys and whether they have an expire or not. In the above example a huge amount of the Redis keys don't have an expire set. This means that those keys won't ever expire and be removed from the Redis cache to make place for new keys. As a result the cache will be at greater risk to reach its maximum.
 
 Once these keys and expires are greatly out of balance like the above example you could force an expire to your keys by adding the following snippet to your Redis config in your `env.php`.
 
@@ -45,6 +55,7 @@ Once these keys and expires are greatly out of balance like the above example yo
 'auto_expire_pattern' => '/^[a-zA-Z0-9._-]/',
 'lifetimelimit' => '57600'
 ```
+
 This should give most of the keys an expire which should either prevent or at least delay the Redis memory from reaching its limits.
 
 If you store both the Magento caches (FPC and cache) and the sessions in Redis, moving the sessions from memory to files or the database could be a solution, but this can cause an increase in load times.

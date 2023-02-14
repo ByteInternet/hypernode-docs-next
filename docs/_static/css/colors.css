@@ -1,4 +1,5 @@
 :root {
+  --blue: #005dab;
   --primary-blue: #063b67;
   --secondary-blue: #074e8a;
   --text-blue: #063b67;
@@ -6,18 +7,25 @@
   --light-blue-clear: #F8FCFF;
   --aqua: #51B3DB;
   --primary-orange: #FF7101;
-  --light-orange: #FF8201;
+  --hover-orange: #FF8201;
+  --light-orange: #f2a557;
   --grey: #F5F6F8;
   --grey-border: #D9E7F3;
   --light-grey-sidebar: #E5EAF0;
   --message-success: #4bb52d;
   --message-success-bg: #E3F6CF;
+  --message-success-text: #0D3D00;
   --message-danger: #D10000;
   --message-danger-bg: #FAE5E8;
-  --message-warning: #FF8E6E;
+  --message-danger-text: #6A0000;
+  --message-warning: #DC7500;
   --message-warning-bg: #FFF1ED;
-  --message-info: #368EC4;
+  --message-warning-text: #9C3900;
+  --message-info: #074E8A;
   --message-info-bg: #E7F2F8;
+  --message-info-text: #063b67;
+  --cc-btn-primary-bg: var(--primary-blue);
+  --cc-btn-secondary-text: var(--primary-blue);
 }
 
 /*# sourceMappingURL=colors.css.map */

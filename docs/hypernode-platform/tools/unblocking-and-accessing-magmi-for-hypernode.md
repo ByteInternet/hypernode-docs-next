@@ -1,25 +1,35 @@
+---
+myst:
+  html_meta:
+    description: 'To unblock Magmi, the Magento mass importer, and offer secure access
+      to it for your users and/or developers, use our extensive documentation here. '
+    title: How to unblock and access Magmi for Hypernode?
+redirect_from:
+  - /en/hypernode/tools/unblocking-and-accessing-magmi-for-hypernode/
+  - /knowledgebase/unblocking-and-accessing-magmi-for-hypernode/
+  - /knowledgebase/securing-access-to-magmi/
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/tools/unblocking-and-accessing-magmi-for-hypernode/ -->
+
 # Unblocking and Accessing Magmi for Hypernode
 
 Magmi, the [Magento mass importer](http://magmi.org/), is an alternative product importer offering better performance over the default Magento importer. This makes it a very powerful yet also dangerous tool as it effectively offers full access to your Magento database.
 
-
-Offering Secure Access to Magmi
--------------------------------
+## Offering Secure Access to Magmi
 
 We have noticed a number of our customers have installed Magmi without properly securing their Magmi installation, opening up their shop to being exploited by nefarious actors. For this reason, all Hypernodes now block access to Magmi by default, which is probably how you ended up at this article.
 
-Unblocking Magmi
-----------------
+## Unblocking Magmi
 
 To unblock Magmi and offer **secure** access to it for your users and/or developers, use the following steps:
 
-* Log in to your Hypernode using SSH and open the file `/data/web/nginx/magmi.conf` in your favourite editor.
-* Hash out (uncomment) the default `location` block at the top of the file which triggers redirection to this support article.
+- Log in to your Hypernode using SSH and open the file `/data/web/nginx/magmi.conf` in your favourite editor.
+- Hash out (uncomment) the default `location` block at the top of the file which triggers redirection to this support article.
 
 Then pick one of the snippets that applies to your wishes and save it as `server.magmi` or in your `/data/web/nginx/magmi.conf` config file.
 
-*NB: If you don’t want to update IP addresses in all config files with every change of IP address, you can choose to use**[include files](https://support.hypernode.com/knowledgebase/create-reusable-config-for-custom-snippets/).*
+*NB: If you don’t want to update IP addresses in all config files with every change of IP address, you can choose to use*\*[include files](../nginx/how-to-create-a-reusable-config-to-include-in-custom-snippets.md).\*
 
 ### Protect Your Magmi Installation With HTTP Basic Authentication
 
@@ -35,11 +45,13 @@ location ~* /magmi($|/) {
     }
 }
 ```
-Don’t forget to [create a user](https://support.hypernode.com/knowledgebase/protect-a-directory-with-a-password-in-nginx/):
 
-```nginx
-tpasswd -c /data/web/nginx/magmi.htpasswd exampleuser
+Don’t forget to [create a user](../nginx/how-to-protect-your-magento-store-with-a-password-in-nginx.md):
+
+```bash
+htpasswd -c /data/web/nginx/magmi.htpasswd exampleuser
 ```
+
 ### Protect Your Magmi Installation With an IP Whitelist
 
 Use this snippet if you want your Magmi to be available from just a selected set of IP addresses.
@@ -54,6 +66,7 @@ location ~* /magmi($|/) {
     }
 }
 ```
+
 Be sure to replace `a.b.c.d` with the IP address you wish to whitelist.
 
 *NB: You can add as many* `*allow*` *directives as you would like.*
@@ -71,12 +84,12 @@ location ~* /magmi($|/) {
     }
 }
 ```
-HTTPS Only
-----------
+
+## HTTPS Only
 
 We strongly recommend enforcing HTTPS-only on Magmi because of the possibility of entering database passwords or transferring other sensitive information.
 
-If you haven’t [enforced HTTPS across your whole site](https://support.hypernode.com/knowledgebase/redirect-all-http-traffic-to-https-in-nginx/), you can enforce it for Magmi by adding the following line inside the `location` block:
+If you haven’t [enforced HTTPS across your whole site](../nginx/how-to-configure-your-shop-to-only-use-https.md), you can enforce it for Magmi by adding the following line inside the `location` block:
 
 ```nginx
 if ($scheme = http) {

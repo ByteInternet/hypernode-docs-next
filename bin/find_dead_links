@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+
+import multiprocessing
+import re
+from glob import glob
+from typing import List
+
+import requests
+
+from hypernode.common.settings import DOCS_DIR
+
+FAKE_DOMAINS = [
+    "example.com",
+    "yourdomain.com",
+    "example.hypernode.io",
+    "hypernode.local",
+    "127.0.0.1",
+]
+
+
+def get_links(md_file: str) -> List[str]:
+    with open(md_file) as f:
+        content = f.read()
+    return re.findall(r"\[.*\]\((http.+?)\)", content)
+
+
+def is_link_is_dead(link: str) -> bool:
+    try:
+        resp = requests.get(link, timeout=5)
+    except Exception as e:
+        print(f"Couldn't get {link}: {e}")
+        return True
+    dead = resp.status_code in [404, 500, 502, 503, 504]
+    if dead:
+        print(f"Dead link: {link}")
+    return dead
+
+
+def main():
+    links = []
+    for md_file in glob(f"{DOCS_DIR}/**/*.md", recursive=True):
+        for link in get_links(md_file):
+            if not any(fake_domain in link for fake_domain in FAKE_DOMAINS):
+                links.append(link)
+    links = list(set(links))
+    print(f"Found {len(links)} unique links")
+    # Loop over links in a multiprocessing pool
+    with multiprocessing.Pool(4) as p:
+        p.map(is_link_is_dead, links)
+
+
+if __name__ == "__main__":
+    main()

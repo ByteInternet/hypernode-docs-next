@@ -1,42 +1,54 @@
+---
+myst:
+  html_meta:
+    description: Learn all about The Hypernode Managed Vhosts (HMV). The system is
+      an easy to use, yet powerful, system of configuring Nginx on Hypernode.
+    title: How to enable and manage Hypernode Vhosts?
+redirect_from:
+  - /en/hypernode/nginx/hypernode-managed-vhosts/
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/hypernode-managed-vhosts/ -->
+
 # Hypernode Managed Vhosts
 
 The Hypernode Managed Vhosts (HMV) system is an easy to use, yet powerful, system of configuring Nginx on Hypernode. A vhost is a configuration that allows you to setup multiple domainnames, each with it's own, independent, configuration. With it, you can easily host a Wordpress blog on a subdomain, and a Magento on your main domain, set up HTTPS for both automatically, and efficiently redirect visitors to your www-domain.
 
 The main advantage of HMV is that it separates your Nginx config into a global folder, containing configuration for all server blocks, and domain specific configs, giving you more control and reducing unexpected side-effects of domain specific configurations.
 
+## Enabling Managed Vhosts
 
-Enabling Managed Vhosts
------------------------
-
-The Hypernode Managed Vhosts (HMV) system is currently enabled by default on all new booted Hypernodes. 
+The Hypernode Managed Vhosts (HMV) system is currently enabled by default on all new booted Hypernodes.
 
 However if you have a Hypernode created before 01-05-2020 your Hypernode may still be running in 'legacy' mode. To enable the HMV you can run the command:
 
-`hypernode-systemctl settings managed_vhosts_enabled True`. 
+`hypernode-systemctl settings managed_vhosts_enabled True`.
 
 This will convert your current legacy config into the HMV config. It will also convert all currently active vhosts into managed vhosts.
 
-Please note that while switching to HMV is very easy, there are a few things to check after switching to make sure everything works, as not every setting is automatically transferred. 
+Please note that while switching to HMV is very easy, there are a few things to check after switching to make sure everything works, as not every setting is automatically transferred.
 
 Run `hypernode-manage-vhosts --list` to get an overview of your current configuration and use the list below to check if it's correct. Not everything will apply to your Hypernode.
 
-* Make sure your domain is the default server instead of the Hypernode. You can do this by running the following command:
+- Make sure your domain is the default server instead of the Hypernode. You can do this by running the following command:
 
 `hypernode-manage-vhosts www.example.com --default-server`
-* Configure the vhosts to only use HTTPS. If you already have an SSL certificate configured and you don't want to use Let's Encrypt, use this command:
+
+- Configure the vhosts to only use HTTPS. If you already have an SSL certificate configured and you don't want to use Let's Encrypt, use this command:
 
 `hypernode-manage-vhosts www.example.com --https --force-https --ssl-noclobber`
 
 This will make sure you won't overwrite the existing SSL certificate.
 
-If you do want to configure Let's Encrypt for the vhost you can use this command: 
+If you do want to configure Let's Encrypt for the vhost you can use this command:
 
 `hypernode-manage-vhosts www.example.com --https --force-https`
-* If you make use of Varnish, make sure to enable Varnish for the specific vhosts:
+
+- If you make use of Varnish, make sure to enable Varnish for the specific vhosts:
 
 `hypernode-manage-vhosts www.example.com --varnish`
-* Want to redirect all traffic over www? Set up your naked domains to be wwwizers, with this command:
+
+- Want to redirect all traffic over www? Set up your naked domains to be wwwizers, with this command:
 
 `hypernode-manage-vhosts --type wwwizer [example.com](//example.com)`
 
@@ -44,10 +56,9 @@ Please make sure to also double check your custom Nginx configurations, as these
 
 You can always use `hypernode-manage-vhosts --help` to get more information on the different configurations.
 
-Managing Vhosts
----------------
+## Managing Vhosts
 
-Once the Hypernode Managed Vhosts (HMV) system is enabled, you can start defining and configuring your vhosts. On new booted Hypernodes there will be one vhosts by default: example.hypernode.io. 
+Once the Hypernode Managed Vhosts (HMV) system is enabled, you can start defining and configuring your vhosts. On new booted Hypernodes there will be one vhosts by default: example.hypernode.io.
 
 ### Adding Vhosts
 
@@ -57,7 +68,7 @@ Important: Simply creating the folder [www.example.com](http://www.example.com) 
 
 Please note that defining the vhosts '[www.example.com](http://www.example.com)', does not automatically add 'example.com' as a vhost. You will have to manually define a vhost for this. Since most people simply want their 'example.com' to redirect to '[www.example.com](http://www.example.com)', you can simply use the --type wwwizer argument to set this up. This will configure the vhost to redirect all traffic to the www-version of the domain.
 
-***We highly advise against using symlinks in your vhost configuration as this may lead to issues at a later date in in your nginx config.**
+\***We highly advise against using symlinks in your vhost configuration as this may lead to issues at a later date in in your nginx config.**
 
 ### Removing Vhosts
 
@@ -71,7 +82,7 @@ Once a vhost is configured, you cannot change the template used to create it. Th
 
 ### Listing Vhosts
 
-To list all configured vhosts you can run the command: 
+To list all configured vhosts you can run the command:
 
 `hypernode-manage-vhosts --list`
 
@@ -85,8 +96,7 @@ Sometimes you have to use a different webroot, for example when you're running m
 
 Please take not that the webroot option is not used for the built-in staging for your vhost, that will still point to */data/web/staging* by default.
 
-Let’s Encrypt and Hypernode Managed Vhosts
-------------------------------------------
+## Let’s Encrypt and Hypernode Managed Vhosts
 
 **Please note: If you want to use Let’s Encrypt and have the Hypernode Managed Vhosts (HMV) system enabled, you need to configure LE during the creation of the vhost. Using the old method with *dehydrated* won't work!**
 
@@ -98,14 +108,13 @@ If so, it will give the following output:
 
 `managed_vhosts_enabled is set to value True`
 
-If you want to request a LE certificate you need to add the  `--https` flag with the HMV-command.
+If you want to request a LE certificate you need to add the `--https` flag with the HMV-command.
 
 `hypernode-manage-vhosts www.example.com --https --force-https`
 
 This command will not only request a LE Certificate but because of the `--force-https`flag it will also redirects all traffic for that specific vhost to HTTPS.
 
-Varnish and Hypernode Managed Vhosts
-------------------------------------
+## Varnish and Hypernode Managed Vhosts
 
 Using Varnish in combination with Varnish works slightly different with HMV enabled. Of course Varnish needs to be enables with the **systemctl** tool. `hypernode-systemctl settings varnish_enabled True`
 
@@ -115,8 +124,7 @@ Once you the command is processed you could list all the vhost to check if Varni
 
 To disable Varnish for a vhost, use the following command: `hypernode-manage-vhosts example.com --disable-varnish`
 
-Managing Configuration Files
-----------------------------
+## Managing Configuration Files
 
 ### Vhost-specific configuration
 
@@ -131,8 +139,7 @@ Even when using the Hypernode Managed Vhosts (HMV) system, it's still possible t
 
 If you have multiple vhosts, and want to share configuration between them, without placing this in the global context, you can do so using symlinks. Simply remove a domain specific folder and replace it with a symlink to another domain's folder.
 
-Troubleshooting
----------------
+## Troubleshooting
 
 If you are running into issues (e.g. SSL or other configuration errors) with Hypernode Managed Vhosts, we recommend running this command first:
 

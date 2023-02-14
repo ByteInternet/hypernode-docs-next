@@ -1,4 +1,16 @@
+---
+myst:
+  html_meta:
+    description: 'Struggling with the “Front Controller Reached 100 Router Match Iterations”
+      error? Our expert guides will help you diagnose, troubleshoot and solve this
+      issue. '
+    title: Solve “Front Controller Reached 100 Router Match Iterations”
+redirect_from:
+  - /en/troubleshooting/performance/how-to-solve-the-front-controller-reached-100-router-match-iterations-error/
+---
+
 <!-- source: https://support.hypernode.com/en/troubleshooting/performance/how-to-solve-the-front-controller-reached-100-router-match-iterations-error/ -->
+
 # How to solve the “Front Controller Reached 100 Router Match Iterations” Error
 
 This error appears when a corruption in the cache arises, caused by a bug in Magento.

@@ -1,4 +1,15 @@
+---
+myst:
+  html_meta:
+    description: 'You can speed up your Magento shop by Tuning Gzip Compression. Read
+      how, in this article. '
+    title: How to speed up a Magento shop by tuning GZIP compression?
+redirect_from:
+  - /en/hypernode/nginx/how-to-speed-up-your-magento-shop-by-tuning-gzip-compression/
+---
+
 <!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-speed-up-your-magento-shop-by-tuning-gzip-compression/ -->
+
 # How to Speed up Your Magento Shop by Tuning Gzip Compression
 
 On Hypernodes, GZIP Compression is already configured to compress responses larger than 1000 bytes.
@@ -9,9 +20,7 @@ Nginx already applies compression on requests proxied through PHP-FPM, so you sh
 
 **This is an advanced topic. For 90% of the Hypernode users the current GZIP settings will suffice.**
 
-
-Optimizing GZIP Compression to Your Own Needs
----------------------------------------------
+## Optimizing GZIP Compression to Your Own Needs
 
 On the Hypernode you can check `/etc/nginx/nginx.conf` to see the current configuration for Hypernodes:
 
@@ -24,6 +33,7 @@ gzip_proxied any;
 gzip_types text/xml text/plain text/css text/js
 application/xml application/javascript application/json;
 ```
+
 These settings are static as we carefully picked these settings. In most of the scenario’s these settings are all you need and no additional tuning is necessary.
 
 There are however [several options available that you can tune](http://nginx.org/en/docs/http/ngx_http_gzip_module.html).
@@ -42,7 +52,7 @@ Setting a higher compression level will cost more CPU cycles, so setting this le
 
 Nginx uses compression when the response length is larger then 1000 bytes. Unfortunately the ‘gzip_min_length’ directive is not overridable.
 
-We’ve ran tests that showed that values < 850-950 actually caused a /decrease/ in speed, as the gain from compressing such small files is relatively small, and the time taken for compressing the files is actually greater than the time saved in transfer. As such, we would not recommend to change this setting.
+We’ve ran tests that showed that values \< 850-950 actually caused a /decrease/ in speed, as the gain from compressing such small files is relatively small, and the time taken for compressing the files is actually greater than the time saved in transfer. As such, we would not recommend to change this setting.
 
 ### Adding a Vary Header When Compression Is Used
 
@@ -55,6 +65,7 @@ So for example you create a nginx config file `/data/web/nginx/server.encoding` 
 ```nginx
 gzip_vary on;
 ```
+
 Nginx will only add this header when compression is being used, which will depend on the `gzip_min_length` setting.
 
 Another way of adding this header is by manually adding a vary header:
@@ -62,6 +73,7 @@ Another way of adding this header is by manually adding a vary header:
 ```nginx
 add_header Vary Accept-Encoding;
 ```
+
 ### Adding GZIP Types
 
 By default static content ie. javascript, css, xml and html is configured to make use of compression.
@@ -86,6 +98,7 @@ application/xml
 application/rss+xml
 application/xml+rss;
 ```
+
 ### Adding GZIP for Images or Other Binary Files
 
 Images, media files and other binary formats are not recommended to be gzipped as they often already use compression mechanisms.
@@ -118,6 +131,7 @@ Another way of testing whether GZIP is working correctly is by using `curl`:
 curl --compressed -v 2>&1 >/dev/null | grep -E 'Accept-Encoding|Content-Encoding'
 > Accept-Encoding: deflate, gzip
 ```
+
 When GZIP is correctly configured, when using `curl --compressed`, the response headers should show `gzip` as accepted encoding format.
 
 ### How to Make GZIP Adjustments

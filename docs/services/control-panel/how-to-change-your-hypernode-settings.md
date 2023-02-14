@@ -1,16 +1,25 @@
+---
+myst:
+  html_meta:
+    description: 'The Control Panel offers an overview of your Hypernode’s statistics
+      and settings. Read how these settings can easily be adjusted via the command
+      line. '
+    title: How to change your Hypernode settings | Control Panel
+redirect_from:
+  - /en/support/solutions/articles/48001155575-how-to-change-your-hypernode-settings/
+---
+
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001155575-how-to-change-your-hypernode-settings/ -->
+
 # How to Change Your Hypernode Settings
 
 The Control Panel offers an overview of your Hypernode’s statistics and settings. These settings can easily be adjusted via the command line. This article offers an in-depth explanation of these values.
 
-
-How to Change These Settings
-----------------------------
+## How to Change These Settings
 
 The settings below can be configured through our hypernode-systemctl tool. The hypernode-systemctl tool allows you to set certain values for your Hypernode via the command line interface. In the past we asked you to contact support or to go to your Service Panel to change a setting. The hypernode-systemctl tool saves valuable time and makes developing and maintaining a Magento shop even more easier.
 
-The Settings in the Control Panel
----------------------------------
+## The Settings in the Control Panel
 
 ### Uses floating IP
 
@@ -30,7 +39,7 @@ Indicates whether the MySQL tmp directory is located in the `/data/` directory o
 
 ### Blackfire enabled
 
-Indicates whether Blackfire is enabled. Check out [this article](https://support.hypernode.com/en/best-practices/performance/how-to-use-blackfire-on-hypernode-to-find-performance-issues) on how to set up Blackfire.
+Indicates whether Blackfire is enabled. Check out [this article](../../best-practices/performance/how-to-use-blackfire-on-hypernode-to-find-performance-issues.md) on how to set up Blackfire.
 
 ### Blackfire server token
 
@@ -60,7 +69,7 @@ Indicates whether FTP is completely blocked or not in favour of SFTP. For more i
 
 ### New Relic enabled
 
-Indicates whether New Relic is enabled. Check out [this article](https://support.hypernode.com/en/best-practices/performance/how-to-find-your-performance-bottleneck-with-new-relic) on how to set up New Relic.
+Indicates whether New Relic is enabled. Check out [this article](../../best-practices/performance/how-to-find-your-performance-bottleneck-with-new-relic.md) on how to set up New Relic.
 
 ### Modern SSH config enabled
 
@@ -74,4 +83,4 @@ Indicates whether this node will have the Mozilla Modern SSL configuration confi
 
 Indicates if this node has a return-path set. When you send emails from your Magento shop with no return-path set, the return-path will default to noreply@hypernode.io. This email address may be recognised as a spam address by spam filters, as it is a very generic email used on all Hypernodes without same email configuration.
 
-Check out [this article](https://support.hypernode.com/en/ecommerce/magento-2/how-to-set-the-return-path-for-a-magento-2-shop) for more information.
+Check out [this article](../../ecommerce-applications/magento-2/how-to-set-the-return-path-for-a-magento-2-shop.md) for more information.
