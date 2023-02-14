@@ -12,7 +12,7 @@ redirect_from:
 
 # How to Install Akeneo 6 on Hypernode
 
-Akeneo 6 preferably requires a Hypernode Pelican L, Falcon M, Eagle M hosting plan or larger. You can either choose to install it on a seperate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 8.0, PHP 8.09 and Elasticsearch 7.x**, so it won’t affect your shop negatively. Installing Akeneo version 6.x may take up to 15 minutes.
+Akeneo 6 preferably requires a Hypernode Pelican L, Falcon M, Eagle M hosting plan or larger. You can either choose to install it on a seperate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 8.0, PHP 8.0 and Elasticsearch 7.x**, so it won’t affect your shop negatively. Installing Akeneo version 6.x may take up to 15 minutes.
 
 ## Enable managed_vhosts
 
@@ -67,7 +67,7 @@ hypernode-systemctl settings mysql_version 8.0
 
 ## Upgrade Your PHP Version to 8.0
 
-Before installing Akeneo, make sure your [PHP version](../../hypernode-platform/php/supported-php-versions-and-how-to-change-them-on-hypernode.md#changing-the-php-version-you-use-on-hypernode) is changed to `PHP 7.4`.
+Before installing Akeneo, make sure your [PHP version](../../hypernode-platform/php/supported-php-versions-and-how-to-change-them-on-hypernode.md#changing-the-php-version-you-use-on-hypernode) is changed to `PHP 8.0`.
 
 ```bash
 hypernode-systemctl settings php_version 8.0
@@ -119,10 +119,7 @@ source ~/.profile
 ### Download Akeneo 6
 
 ```bash
-mkdir ~/akeneo
-cd ~/akeneo
-COMPOSER_MEMORY_LIMIT=-1 composer2 create-project akeneo/pim-community-standard
-
+composer2 create-project akeneo/pim-community-standard:"^6.0" akeneo
 ```
 
 ### Create a Database
@@ -134,22 +131,21 @@ mysql -e "create database akeneo_pim;"
 ### Composer update
 
 ```bash
-cd ~/akeneo/pim-community-standard
-rm composer.lock
+cd ~/akeneo
 composer2 update
 ```
 
 ### Configure Your .env File
 
-Edit the values of your MySQL user, password, host and Elasticsearch host in `/data/web/akeneo/pim-community-standard.env`
+Edit the values of your MySQL user, password, host and Elasticsearch host in `/data/web/akeneo/.env`
 
 ```bash
-sed -i "s/APP_DATABASE_PASSWORD=akeneo_pim/APP_DATABASE_PASSWORD=$(cat ~/.my.cnf | grep password | awk '{print$NF}')/" /data/web/akeneo/pim-community-standard/.env
-sed -i "s/APP_DATABASE_USER=akeneo_pim/APP_DATABASE_USER=$(cat ~/.my.cnf | grep user | awk '{print$NF}')/" /data/web/akeneo/pim-community-standard/.env
-sed -i "s/APP_DATABASE_HOST=mysql/APP_DATABASE_HOST=mysqlmaster/" /data/web/akeneo/pim-community-standard/.env
-sed -i "s/APP_INDEX_HOSTS=elasticsearch:9200/APP_INDEX_HOSTS=localhost:9200/" /data/web/akeneo/pim-community-standard/.env
+sed -i "s/APP_DATABASE_PASSWORD=akeneo_pim/APP_DATABASE_PASSWORD=$(cat ~/.my.cnf | grep password | awk '{print$NF}')/" /data/web/akeneo/.env
+sed -i "s/APP_DATABASE_USER=akeneo_pim/APP_DATABASE_USER=$(cat ~/.my.cnf | grep user | awk '{print$NF}')/" /data/web/akeneo/.env
+sed -i "s/APP_DATABASE_HOST=mysql/APP_DATABASE_HOST=mysqlmaster/" /data/web/akeneo/.env
+sed -i "s/APP_INDEX_HOSTS=elasticsearch:9200/APP_INDEX_HOSTS=localhost:9200/" /data/web/akeneo/.env
 
-cp /data/web/akeneo/pim-community-standard/.env /data/web/akeneo/pim-community-standard/.env.local
+cp /data/web/akeneo/.env /data/web/akeneo/.env.local
 ```
 
 ### Launch Akeneo 6
@@ -158,18 +154,18 @@ cp /data/web/akeneo/pim-community-standard/.env /data/web/akeneo/pim-community-s
 NO_DOCKER=true make prod
 ```
 
+### Create a Symlink
+
+```bash
+ln -s /data/web/akeneo/public /data/web/akeneo_public
+```
+
 ### Create an Administrator User
 
 Fill in the form with a Username, Password, First name, Last name, Email and local code.
 
 ```bash
 bin/console pim:user:create
-```
-
-### Create a Symlink
-
-```bash
-ln -s /data/web/akeneo/pim-community-standard/public /data/web/akeneo_public
 ```
 
 ## Setting up the job queue daemon
@@ -184,7 +180,6 @@ Before we start using Supervisor we first need to enable it on the Hypernode.
 
 ```bash
 hypernode-systemctl settings supervisor_enabled True
-
 ```
 
 #### Create a configuration file for Supervisor
@@ -193,7 +188,7 @@ Create a file in the configuration directory of supervisor: ~/supervisor/akeneod
 
 ```ini
 [program:akeneo_queue_daemon]
-command=php /data/web/akeneo/pim-community-standard/bin/console messenger:consume ui_job import_export_job data_maintenance_job --env=prod
+command=php /data/web/akeneo/bin/console messenger:consume ui_job import_export_job data_maintenance_job --env=prod
 autostart=false
 autorestart=true
 stderr_logfile=/data/web/akeneo_daemon.err.log
@@ -219,11 +214,11 @@ supervisorctl start akeneo_queue_daemon
 Configure your crons by adding these scripts to your crontab file as recommended by Akeneo:
 
 ```bash
-30 1 * * * php /data/web/akeneo/pim-community-standard/bin/console pim:versioning:refresh
-30 2 * * * php /data/web/akeneo/pim-community-standard/bin/console pim:versioning:purge –more-than-days 90
-1 * * * * php /data/web/akeneo/pim-community-standard/bin/console akeneo:connectivity-audit:update-data
-20 0 1 * * php /data/web/akeneo/pim-community-standard/bin/console akeneo:batch:purge-job-execution
-0 1 * * * php /data/web/akeneo/pim-community-standard/bin/console pim:asset:send-expiration-notification
-30 4 * * * php /data/web/akeneo/pim-community-standard/bin/console pim:volume:aggregate
-* * * * * php /data/web/akeneo/pim-community-standard/bin/console akeneo:batch:job-queue-consumer-daemon
+30 1 * * * php /data/web/akeneo/bin/console pim:versioning:refresh
+30 2 * * * php /data/web/akeneo/bin/console pim:versioning:purge –more-than-days 90
+1 * * * * php /data/web/akeneo/bin/console akeneo:connectivity-audit:update-data
+20 0 1 * * php /data/web/akeneo/bin/console akeneo:batch:purge-job-execution
+0 1 * * * php /data/web/akeneo/bin/console pim:asset:send-expiration-notification
+30 4 * * * php /data/web/akeneo/bin/console pim:volume:aggregate
+* * * * * php /data/web/akeneo/bin/console akeneo:batch:job-queue-consumer-daemon
 ```
