@@ -99,7 +99,7 @@ The steps include:
 - Configure SSL and DNS
 - Configuring Varnish
 - Modifying your Varnish VCL configuration
-- Add the user agent **PSB**to the [allowlist for the ratelimiter](../../hypernode-platform/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests.md#whitelisting-additional-user-agents) in `~/nginx/http.ratelimit` file
+- Add the user agent **PSB**to the [allowlist for the ratelimiter](../../hypernode-platform/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests.md#allowlisting-additional-user-agents) in `~/nginx/http.ratelimit` file
 - Turn off ESI Block Parsing
 - Add PageSpeed Booster as Flush Target
 
