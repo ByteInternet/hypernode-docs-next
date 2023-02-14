@@ -64,7 +64,7 @@ To setup PageSpeed Booster on your development environment you'll need a unique 
    `hypernode-manage-vhosts psb.example.com --https --force-https --varnish`
 1. Now point the DNS to the PageSpeed Booster instance with the records you got at the PageSpeed Booster page in your Control Panel.
 1. Make sure Varnish is enabled on the server: hypernode-systemctl settings varnish_enabled.
-1. Add the user agent **PSB**to the [allowlist for the ratelimiter](../../hypernode-platform/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests.md#whitelisting-additional-user-agents) in\*\*~/nginx/http.ratelimit\*\* file.
+1. Add the user agent **PSB**to the [allowlist for the ratelimiter](../../hypernode-platform/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests.md#allowlisting-additional-user-agents) in\*\*~/nginx/http.ratelimit\*\* file.
 1. Disable the [basic-authentication](../../hypernode-platform/nginx/basic-authentication-on-hypernode-development-plans.md#disable-the-basic-authentication) on the development Hypernode.
 
 ### Configuring Varnish
