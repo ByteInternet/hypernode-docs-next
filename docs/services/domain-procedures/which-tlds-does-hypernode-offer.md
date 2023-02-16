@@ -11,6 +11,8 @@ redirect_from:
 
 # Which TLDs does Hypernode offer
 
+At Hypernode you can order multiple exotic and new TLD domains. View which extensions we can register for you in the extension overview. 
+
 ## Extension Table
 
 | Extension  | Price per year | Price per 5 years | Setup Cost |
@@ -59,4 +61,4 @@ redirect_from:
 
 ## How to order
 
-Go to this page on how to order your domains in the Control Panel.
+Go to [this page](/services/domain-procedures/how-to-use-domains-in-the-control-panel.html#registering-a-new-domain) on how to order your domains in the Control Panel.
