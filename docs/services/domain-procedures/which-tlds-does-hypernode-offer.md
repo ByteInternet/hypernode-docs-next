@@ -61,4 +61,4 @@ At Hypernode you can order multiple exotic and new TLD domains. View which exten
 
 ## How to order
 
-Go to [this page](/services/domain-procedures/how-to-use-domains-in-the-control-panel.md#registering-a-new-domain) on how to order your domains in the Control Panel.
+Go to [this page](how-to-use-domains-in-the-control-panel.md#registering-a-new-domain) on how to order your domains in the Control Panel.
