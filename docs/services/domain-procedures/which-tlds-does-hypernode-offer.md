@@ -11,7 +11,7 @@ redirect_from:
 
 # Which TLDs does Hypernode offer
 
-At Hypernode you can order multiple exotic and new TLD domains. View which extensions we can register for you in the extension overview. 
+At Hypernode you can order multiple exotic and new TLD domains. View which extensions we can register for you in the extension overview.
 
 ## Extension Table
 
