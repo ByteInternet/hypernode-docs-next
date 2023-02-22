@@ -50,7 +50,7 @@ There are three different roles you can assign to members to members of your tea
 
 ### Inviting a Member
 
-All users can add a developer to their team. To add a new developer:
+To add a new developer:
 
 1. Log into the Hypernode Control Panel.
 1. From the sidebar on the left, click **Teams**.
