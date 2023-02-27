@@ -65,7 +65,7 @@ You can order a new domain very easy via your Control Panel. Please follow the s
 
 ## How to transfer you domain to Hypernode
 
-You can start the transfer of your domain in your Control Panel. Instructions on how to do this can be found in [this article](<>)
+You can start the transfer of your domain in your Control Panel. Instructions on how to do this can be found in [this article](how-to-use-domains-in-the-control-panel.md#transfer-an-existing-domain-to-hypernode)
 
 Every TLD has it's own procedure when it transfers from one provider to another. For example, a .com TLD has a 60 day freeze after the registration.
 You can read more information about the transfer procedure for a specific TLD on [this page](extension-specific-info-per-domain.md).
