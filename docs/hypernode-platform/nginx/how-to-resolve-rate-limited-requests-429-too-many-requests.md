@@ -70,7 +70,7 @@ Some bots are default exempt from rate limitings, like Google, Bing, and several
 ```nginx
 map $http_user_agent $limit_bots {
     default '';
-    ~*(google|bing|heartbeat|uptimerobot|shoppimon|facebookexternal|monitis.com|Zend_Http_Client|magereport.com|SendCloud/|Adyen|ForusP|contentkingapp|node-fetch|Hipex|xCore) '';
+    ~*(google|bing|heartbeat|uptimerobot|shoppimon|facebookexternal|monitis.com|Zend_Http_Client|magereport.com|SendCloud/|Adyen|ForusP|contentkingapp|node-fetch|Hipex|xCore|Mollie) '';
     ~*(http|crawler|spider|bot|search|Wget|Python-urllib|PHPCrawl|bGenius|MauiBot|aspiegel) 'bot';
     }
 ```
