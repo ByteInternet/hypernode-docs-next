@@ -47,7 +47,7 @@ This way these multistore requests will go through varnish and will then be rewr
 Another option is to use subdirectories instead. Once you have added the required vhost you need to add a `server.storecode` file to the specific vhost directory (`/data/web/nginx/example.com/`) with the following content:
 
 ```nginx
-location ~ ^/(?<uri_prefix>(nl|fr)) {
+location ~ ^/(?<uri_prefix>(nl|fr))l {
     if ($uri_prefix = fr) {
         set $storecode "be_fr";
     }
@@ -60,6 +60,12 @@ location ~ ^/(?<uri_prefix>(nl|fr)) {
         echo_exec @phpfpm;
     }
 }
+```
+
+In addition to the `server.storecode` you need to add a `server.slash` to enforce a trailing slash after the country code to prevent potentially other matches. In this example with `/fr` and `/nl` you'll need the following content:
+
+```nginx
+rewrite ^/(nl|fr)$ $1/ permanent;
 ```
 
 In the example above we have used the subdirectories `/fr` and `/nl`.
@@ -84,7 +90,7 @@ set $storecode "example_storecode";
 Or use the following snippet to point the subdirectory for a specific domain to the intended storefront:
 
 ```nginx
-location ~ ^/(?<uri_prefix>(nl|fr)) {
+location ~ ^/(?<uri_prefix>(nl|fr))/ {
     if ($uri_prefix = fr) {
         set $storecode "be_fr";
     }
@@ -97,6 +103,12 @@ location ~ ^/(?<uri_prefix>(nl|fr)) {
         echo_exec @phpfpm;
     }
 }
+```
+
+In addition to the `server.storecode` you need to add a `server.slash` to enforce a trailing slash after the country code to prevent potentially other matches. In this example with `/fr` and `/nl` you'll need the following content:
+
+```nginx
+rewrite ^/(nl|fr)$ $1/ permanent;
 ```
 
 Last but not least you will also need to create the subdirectories in the webroot folder (normally this would be `/data/web/public`) using symlinks like below:
