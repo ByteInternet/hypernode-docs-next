@@ -34,6 +34,12 @@ The NewsMail also keeps you informed of what is happening behind the scenes of o
 
 All emails (except the Service Mail) have a unsubscribe option at the bottom of the emails. However you are also able to manage you email preferences in the Control Panel in your [Account Settings](https://my.hypernode.com/account-settings/) page. Here you can see to what emails you are subscribed and if you want to unsubscibe. If you want to change the settings, please click 'Manage email preferences'. In order for you to change your e-mail preferences, we need to send you an e-mail with a link to our Hubspot E-mail Preferences page.
 
+![Screenshot 2023-03-17 at 09 57 16](https://user-images.githubusercontent.com/121667008/225858862-ae7cedcd-5cb3-42e7-a363-cb8f507811f4.png)
+
+![Screenshot 2023-03-17 at 09 57 26](https://user-images.githubusercontent.com/121667008/225858885-afab9711-9fba-46aa-bf68-b6d46b5345cb.png)
+
+
+
 ## Privacy Policy
 
 We take all necessary measures to keep your data private. Not because we are legally bound to do so, but because we care. We use your email address and other personal information solely to maintain our customer relationship with you. Your personal details will never be lent, rented or sold by Hypernode to third parties, nor made public in any other way, unless the law prescribes this. You can read our complete Privacy Policy on [our website](https://www.hypernode.com/assets/documents/Privacy-Policy-Hypernode.pdf).
