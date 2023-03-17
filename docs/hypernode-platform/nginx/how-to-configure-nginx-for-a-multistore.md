@@ -47,7 +47,7 @@ This way these multistore requests will go through varnish and will then be rewr
 Another option is to use subdirectories instead. Once you have added the required vhost you need to add a `server.storecode` file to the specific vhost directory (`/data/web/nginx/example.com/`) with the following content:
 
 ```nginx
-location ~ ^/(?<uri_prefix>(nl|fr))l {
+location ~ ^/(?<uri_prefix>(nl|fr))/ {
     if ($uri_prefix = fr) {
         set $storecode "be_fr";
     }
