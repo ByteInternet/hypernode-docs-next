@@ -45,7 +45,7 @@ This will show you a list of all the available backups, when they were created a
 
 If you have an [SLA Standard](../../hypernode-platform/backups/hypernode-backup-policy.md#sla-standard) you can attach this backup directly by providing the Backup ID to the `hypernode-systemctl attach_backups` command, as shown in the example below:
 
-```terminal
+```session
 app@xiobly-example-magweb-cmbl:~$ hypernode-systemctl list_backups
 Backup ID                             Type      Created at                 Expires at
 fbe78356-1d19-42ad-9fe2-f9e433ec8021  periodic  2023-02-22T16:17:40+01:00  2023-03-22T16:17:40+01:00
@@ -71,10 +71,10 @@ If you have an SLA Basic and need to access an older snapshot, you can request i
 1. Click Backups in the sidebar to go to the backup page.
 1. Fill in and submit the form.
 
-Our support team will now manually attach the backup to your Hypernode, and inform you when it has become available. Please note that [a fee may apply](./hypernode-backup-policy.html#requesting-older-snapshots) for customers with an SLA Basic.
+Our support team will now manually attach the backup to your Hypernode, and inform you when it has become available. Please note that [a fee may apply](./hypernode-backup-policy.md#requesting-older-snapshots) for customers with an SLA Basic.
 
 ```{important}
-Our support team is only available during business hours (Amsterdam/Netherlands time). If you need an older snapshot to be attached manually outside of business hours, please file an [Hypernode Emergency Support Request](../../about-hypernode/support/emergency-support-outside-office-hours.html)
+Our support team is only available during business hours (Amsterdam/Netherlands time). If you need an older snapshot to be attached manually outside of business hours, please file an [Hypernode Emergency Support Request](../../about-hypernode/support/emergency-support-outside-office-hours.md)
 ```
 
 ## Restore a Database From a Snapshot
@@ -95,7 +95,7 @@ While attaching a snapshot to your Hypernode does not require any resources, cre
 
 It's possible to create a dump of the database snapshot and import this into the production database straight away. Please note this will overwrite all data in your production database, so exercise caution before running these commands. Consider making a backup of your production database first, or importing the data to a secondary database and changing your configuration to use that database instead. We also advise to set your site to maintenance mode and disabling crons while importing, to prevent corruption or crashes.
 
-In the example below we import the `example_preinstall` database from the backup instance into the production database with the same name. If you wish to import the backup into a different database, simply change the second `example_preinstall` in the example command. Please note that you will have to [create this database](../../hypernode-platform/mysql/how-to-use-mysql-on-hypernode.html#how-to-create-a-new-database) yourself before you can import to it.
+In the example below we import the `example_preinstall` database from the backup instance into the production database with the same name. If you wish to import the backup into a different database, simply change the second `example_preinstall` in the example command. Please note that you will have to [create this database](../../hypernode-platform/mysql/how-to-use-mysql-on-hypernode.md#how-to-create-a-new-database) yourself before you can import to it.
 
 ```bash
 mysqldump -P 3307 example_preinstall | mysql example_preinstall
