@@ -45,7 +45,7 @@ This will show you a list of all the available backups, when they were created a
 
 If you have an [SLA Standard](../../hypernode-platform/backups/hypernode-backup-policy.md#sla-standard) you can attach this backup directly by providing the Backup ID to the `hypernode-systemctl attach_backups` command, as shown in the example below:
 
-```session
+```console
 app@xiobly-example-magweb-cmbl:~$ hypernode-systemctl list_backups
 Backup ID                             Type      Created at                 Expires at
 fbe78356-1d19-42ad-9fe2-f9e433ec8021  periodic  2023-02-22T16:17:40+01:00  2023-03-22T16:17:40+01:00
