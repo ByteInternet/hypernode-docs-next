@@ -12,18 +12,18 @@ redirect_from:
 
 # How to Restrict Access to Your Admin Area
 
-It is very important to restrict access to your Magento admin panel. Hypernodes do have a [Fail2Ban](../../best-practices/security/how-to-protect-magento-against-brute-force-attacks.md), but if your password has been leaked, hackers will have access to all your data and your customers data with all the consequences that entails. One of the best ways to restrict access is by limiting the IP address that can even access the admin section.
+It is very important to restrict access to your Application's admin panel. Hypernodes do have a [Fail2Ban](../../best-practices/security/how-to-protect-magento-against-brute-force-attacks.md), but if your password has been leaked hackers can use it to gain access to all your (customer) data. One of the best ways to restrict access is by limiting the IP address that can even access the admin section.
 
-The snippet below will restrict access to the admin panel to 80.113.31.106 and 81.114.32.107. All other IP's will be denied. Replace the IP addresses with your IP address(es), if you don't know your current network IP, just visit [icanhazip.com](http://icanhazip.com).
-
-First create a file in '/data/web/nginx/' folder. And name the file to /data/web/nginx/**server.magentobackend** or whatever you use as admin backend name and use the following snippet.
+The snippet below will restrict access to the admin panel on `/magentobackend/` to `198.51.100.16` and the `233.252.0.0/24` range. All other IP's will be blocked. You can simply place this configuration in a file in '/data/web/nginx/' folder, called `server.adminbackend`.
 
 ```nginx
 location ~ ^/(index\.php/)?magentobackend/? {
-allow 80.113.31.106;
-allow 81.114.32.107;
-deny all;
-rewrite / /index.php break;
-echo_exec @phpfpm;
+  allow 198.51.100.168;
+  allow 233.252.0.0/24;
+
+  deny all;
+
+  rewrite / /index.php break;
+  echo_exec @phpfpm;
 }
 ```
