@@ -12,7 +12,7 @@ redirect_from:
 # How to Restore Your Hypernode From a Snapshot
 
 ```{important}
-	Snapshots are only available for the Hypernode **Falcon** and **Eagle** products. For Pelican and Jackal products, please use the [External Backups](./how-to-restore-your-hypernode-from-external-backups).
+Snapshots are only available for the Hypernode **Falcon** and **Eagle** products. For Pelican and Jackal products, please use the [External Backups](./how-to-restore-your-hypernode-from-external-backups).
 ```
 
 **Some hands-on experience is required! If you have never used the command line, please contact **[**one of our partners**](https://www.hypernode.com/partners/)** to get some assistance.**
