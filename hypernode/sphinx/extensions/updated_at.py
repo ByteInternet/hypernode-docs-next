@@ -1,18 +1,21 @@
 import os.path
 from datetime import datetime
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import git
 from git.exc import GitCommandError
 from sphinx import errors
-from sphinx.application import Sphinx
+
+if TYPE_CHECKING:
+    from sphinx.application import Sphinx
 
 
 class PageContextHandler:
     def __init__(self) -> None:
         self.git = git.Git(os.path.realpath(os.path.dirname(__file__) + "../../"))
 
-    def execute(self, app: Sphinx, pagename: str, templatename, context, doctree):
+    def execute(self, app: "Sphinx", pagename: str, templatename, context, doctree):
         page_path = Path(app.confdir) / (pagename + ".md")
         if not os.path.exists(page_path):
             return
@@ -44,7 +47,7 @@ class PageContextHandler:
             )
 
 
-def setup(app: Sphinx):
+def setup(app: "Sphinx"):
     page_context_handler = PageContextHandler()
     app.add_config_value("updated_at_fmt", "%b %d, %Y", "html")
     app.add_config_value("created_at_fmt", "%b %d, %Y", "html")

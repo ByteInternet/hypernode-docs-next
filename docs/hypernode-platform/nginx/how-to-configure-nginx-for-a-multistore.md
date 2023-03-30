@@ -20,7 +20,7 @@ The main Magento documentation on configuring multiple storefronts can be found 
 
 ## Setting Up Your Multistore
 
-There is multiple scenarios possible to set up your Magento multistore. You can choose between te following options:
+There are multiple ways to set up your Magento multistore. You can choose between the following options:
 
 - Using different domains (e.g. example.com and example.net etc.)
 - Using subdirectories (e.g. example.com/en/ and example.com/fr/ etc.)
@@ -130,7 +130,7 @@ First add the following vhosts using the information from the [Hypernode Managed
 - [www.example.nl](http://www.example.nl)
 - [www.example.be](http://www.example.be)
 
-Once the vhosts you have been created, you can create a `server.storecode` file in `/data/web/nginx/www.example.com` with the below content:
+Once the vhosts have been created, you can create a `server.storecode` file in `/data/web/nginx/www.example.com` with the below content:
 
 ```nginx
 set $storecode "default";
