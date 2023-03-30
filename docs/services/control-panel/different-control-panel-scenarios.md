@@ -12,8 +12,6 @@ redirect_from:
 
 # Different Control Panel Scenarios
 
-**Please note that this FAQ only applies to Control Panel users that log in via my.hypernode.com. If you use the Service Panel and log in via service.byte.nl please see our [Different Service Panel Scenarios article](../../services/service-panel/different-service-panel-scenarios.md).**
-
 For security and usability, the Hypernode Control Panel's features are available to users based on the role assigned to the individual user. Each user invited to a team is assigned a role within the team.
 
 A user can have different roles between teams. Each role is defined by a set of permissions.
