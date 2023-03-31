@@ -7,8 +7,6 @@ myst:
 redirect_from:
 ---
 
-<!-- source: https://support.hypernode.com/en/about/billing/waarom-facturatie-vanuit-hypernode-ipv-hipex/ -->
-
 # Waarom factureren jullie nu vanuit Hypernode in plaats van Hipex?
 
 Vanaf januari 2022 hebben [Hipex en Hypernode de handen ineen geslagen.](https://www.hypernode.com/nl/blog/hypernode-en-hipex-slaan-handen-ineen/)
