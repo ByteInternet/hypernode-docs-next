@@ -45,6 +45,7 @@ extensions = [
     "notfound.extension",
     "hypernode.sphinx.extensions.updated_at",
     "hypernode.sphinx.extensions.meta_robots",
+    "hypernode.sphinx.extensions.github_actions_logging",
     "sphinxcontrib.mermaid",
 ]
 
