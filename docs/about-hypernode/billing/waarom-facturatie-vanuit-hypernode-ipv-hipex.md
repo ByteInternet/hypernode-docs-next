@@ -4,7 +4,6 @@ myst:
     description: Wij gaan per 1 april 2023 alle Hipex klanten factureren uit naam
       van Hypernode B.V.
     title: Waarom factureren jullie nu vanuit Hypernode in plaats van Hipex?
-redirect_from:
 ---
 
 # Waarom factureren jullie nu vanuit Hypernode in plaats van Hipex?
