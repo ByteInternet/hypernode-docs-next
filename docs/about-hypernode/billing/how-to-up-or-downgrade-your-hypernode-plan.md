@@ -18,19 +18,6 @@ Many webshops deal with visitor peaks, for example during the Christmas season. 
 
 A big advantage of our Hypernode plans is that you can up- or downgrade your plan at any time! You are not bound to contract terms, you only pay for what you use.
 
-## Up- and Downgrading Your Hosting Plan for Service Panel Users
-
-When you log in via [service.byte.nl](https://auth.byte.nl/)please follow the steps below to up- or downgrade your hosting plan:
-
-- Log in to the Service Panel. After logging in, you'll see a list of all your Hypernode plans.
-- Click on the domain or Hypernode you want to up- or downgrade.
-- Click on **Pakketbeheer**in the tab **Administratief**.
-- Click on **Wijzigen**next to **Pakkettype**.
-- You'll now see an overview of your current plan. Next to your current plan, you'll see the specs of the new plan in the column 'pakket'.
-- After selecting the right plan in the right column, scroll down to agree with terms and conditions and click **Pakket aanpassen**. Your plan will be changed immediately.
-
-Please note only the Contracting party or Technical Party (when they're a Hypernode partner) can change the plan.
-
 ## Up- and Downgrading Your Hosting Plan for Control Panel Users
 
 If you log in via [my.hypernode.com](https://auth.hypernode.com/), please use the steps below to change your plan via the Control Panel:
