@@ -1,5 +1,12 @@
-# Stappenplan mailboxen verhuizen naar Vimexx
+---
+myst:
+  html_meta:
+    description: Hier kun je lezen hoe je jouw emailbox
+    naar Vimexx kunt migreren
+    title: Stappenplan mailboxen verhuizen naar Vimexx
+---
 
+# Stappenplan mailboxen verhuizen naar Vimexx
 
 **Let op:** Indien je zelfstandig je e-mail verhuist naar Vimexx zonder gebruik te maken van de verhuisservice dan kunnen wij geen verantwoordelijkheid nemen voor eventuele problemen die daaruit voorkomt.
 
@@ -7,7 +14,7 @@ Hieronder vind je de stappenplan hoe je de verhuisservice kunt aanvragen, en hoe
 
 ## Stappenplan in het kort:
 
-1. [Maak een account aan bij V](https://www.vimexx.nl/registe)imexx.
+1. [Maak een account aan bij Vimexx](https://www.vimexx.nl/registe).
 1. Bestel een webhosting plus pakket via dez[e link (ook al g](https://www.vimexx.nl/cart/add/hosting/114)ebruik je het alleen voor mail).
 1. Vraag de [verhuisservice aan.](https://www.vimexx.nl/help/verhuisservice-aanvraag-indienen#Verhuizing_starten)
 1. Selecteer ‘Domein + Mail’in onder Wat wil je verhuizen?, ook al wil je alleen je e-mail verhuizen.
@@ -71,7 +78,7 @@ Zodra je het hosting pakket hebt besteld kun je de verhuisservice aanvragen: <ht
 
 Specifiek kun je deze vinden onder ‘Mijn Hostings’in het Vimexx klantenpaneel.
 
-![Screenshot 1](https://user-images.githubusercontent.com/121667008/233336264-964f3ed4-fdf0-4eb1-a48a-498ab7012feb.png)
+![](_res/Screenshot 1.png)
 
 4. **Het invullen van het verhuisservice aanvraag formulier**
 1. Selecteer eerst ‘Domein toevoegen’en vul hier het domeinnaam in van de e-mail adressen die je wilt verhuizen. Dit kunnen er meerdere zijn:
@@ -89,11 +96,11 @@ Specifiek kun je deze vinden onder ‘Mijn Hostings’in het Vimexx klantenpanee
 
 5. **Na het aanvragen van de verhuisservice**
 
-Afhankelijk van de drukte kan het enkele dagen duren voordat je verzoek wordt opgepakt. Een medewerker van Vimexx zal vervolgens ervoor zorgen dat alles verhuisd wordt en je hiervan op de hoogte brengen. Je kunt ten alle tijden hier de status van je ticket(s) inzien:https[://my.vimexx.nl/ticket](https://my.vimexx.nl/ticket)
+Afhankelijk van de drukte kan het enkele dagen duren voordat je verzoek wordt opgepakt. Een medewerker van Vimexx zal vervolgens ervoor zorgen dat alles verhuisd wordt en je hiervan op de hoogte brengen. Je kunt ten alle tijden hier de status van je ticket(s) inzien: [https://my.vimexx.nl/ticket](https://my.vimexx.nl/ticket)
 
 6. **Na de migratie**
 
-Nadat je bevestiging hebt ontvangen dat de verhuizing is afgerond, ontvang je verdere instructies van Vimexx. In de meeste gevallen dien je nu een aantal DNS records te wijzigen op ons Service Pa[nel, dit gaat als v](https://service.byte.nl/)olgt. Ze de volgende stappen hoe verder:
+Nadat je bevestiging hebt ontvangen dat de verhuizing is afgerond, ontvang je verdere instructies van Vimexx. In de meeste gevallen dien je nu een aantal DNS records te wijzigen op ons [Service Panel](https://service.byte.nl/) volgt. Ze de volgende stappen hoe verder:
 
 7. **Log in bij DirectAdmin op het Vimexx klantenpaneel**
 
