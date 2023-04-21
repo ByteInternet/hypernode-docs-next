@@ -12,8 +12,6 @@ redirect_from:
 
 # Billing FAQ for the Control Panel
 
-**Please note that this FAQ only applies to Control Panel customers that log in via [my.hypernode.com](https://my.hypernode.com/). If you use the Service Panel and log in via service.byte.nl please see [this article](billing-faq-for-the-service-panel.md).**
-
 Every first of the month, Hypernode sends an invoice to customers who placed an order in the previous month or whose plans renew in the following month. The invoices are sent digitally to the Billing contact on the first of the month. You can easily find all invoices that have been sent in the Control Panel.
 
 ## What Are the Available Payment Methods?
