@@ -19,7 +19,7 @@ We will run PM2 in combination with a program called supervisord to make sure th
 
 ## Installing PM2
 
-PM2 can be installed in various ways. In this article we'll install the process manager globally for the app user. We'll also create an alias for PM2, so that the program will not spawn the PM2 daemon on the fly. We don't want that to happen, because we want PM2 to run in the foreground so that it can be managed by supervisord.
+PM2 can be installed in various ways. In this article we'll install the process manager globally for the app user. We'll be running PM2 daemonless by using `pm2-runtime` instead of `pm2`. We don't want that to happen, because we want PM2 to be managed by supervisord.
 
 ```console
 app@abbt5w-example-magweb-cmbl:~$ # Set NPM prefix to ~/.npm
@@ -34,8 +34,6 @@ app@abbt5w-example-magweb-cmbl:~$ npm install --quiet -g pm2
 added 181 packages from 200 contributors in 7.411s
 app@abbt5w-example-magweb-cmbl:~$ # Add user NPM prefix bin directory to PATH
 app@abbt5w-example-magweb-cmbl:~$ echo 'export PATH="$PATH:$HOME/.npm/bin"' >> ~/.bashrc
-app@abbt5w-example-magweb-cmbl:~$ # Create pm2 alias to skip creation of PM2 daemon on the fly
-app@abbt5w-example-magweb-cmbl:~$ echo 'alias pm2="pm2 --no-daemon"' >> ~/.bashrc
 app@abbt5w-example-magweb-cmbl:~$ # Reload bash config
 app@abbt5w-example-magweb-cmbl:~$ source ~/.bashrc
 app@abbt5w-example-magweb-cmbl:~$ # Check if pm2 program can be found
@@ -89,10 +87,24 @@ Now that we have PM2 installed, supervisor available and an application to run, 
 
 ```ini
 [program:pm2_my_application]
-command=/data/web/.npm/bin/pm2 --no-daemon --interpreter=python3 start /data/web/my_application/main.py
+directory=/data/web/my_application
+command=/data/web/.npm/bin/pm2-runtime --interpreter=python3 start main.py
 autostart=true
 autorestart=true
 ```
+
+````{note}
+In this example, we try to run a Python application, so we specify the interpreter.
+Most likely, you're running a Node.js application. In that case you don't need to specify the `--interpreter` option, for example:
+
+  ```ini
+  [program:pm2_my_application]
+  directory=/data/web/my_application
+  command=/data/web/.npm/bin/pm2-runtime start main.js
+  autostart=true
+  autorestart=true
+  ```
+````
 
 For more information about options and configuration of PM2 and supervisor, please see the following links:
 
@@ -102,14 +114,6 @@ For more information about options and configuration of PM2 and supervisor, plea
 Now we're almost done, we only need to execute a few commands to load the supervisord configuration and start the PM2 process manager.
 
 ```console
-app@abbt5w-example-magweb-cmbl:~$ # Make sure no pm2 background daemon is running
-app@abbt5w-example-magweb-cmbl:~$ pm2 kill
-pm2 launched in no-daemon mode (you can add DEBUG="*" env variable to get more messages)
-2022-02-04T11:58:30: PM2 log: Launching in no daemon mode
-2022-02-04T11:58:30: PM2 error: [PM2][WARN] No process found
-2022-02-04T11:58:30: PM2 log: [PM2] [v] All Applications Stopped
-2022-02-04T11:58:30: PM2 log: PM2 successfully stopped
-2022-02-04T11:58:30: PM2 log: [PM2] [v] PM2 Daemon Stopped
 app@abbt5w-example-magweb-cmbl:~$ # Reload supervisor config files
 app@abbt5w-example-magweb-cmbl:~$ supervisorctl reread
 pm2_my_application: available
