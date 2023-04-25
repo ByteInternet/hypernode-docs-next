@@ -9,8 +9,6 @@ redirect_from:
   - /knowledgebase/profiling-magento-blackfire/
 ---
 
-<!-- source: https://support.hypernode.com/en/best-practices/performance/how-to-use-blackfire-on-hypernode-to-find-performance-issues/ -->
-
 # How to Use Blackfire on Hypernode to Find Performance Issues
 
 All Hypernodes support Blackfire, an amazing tool to find performance bottlenecks in Magento. It is similar to New Relic, but much better suited for troubleshooting.
@@ -19,15 +17,15 @@ All Hypernodes support Blackfire, an amazing tool to find performance bottleneck
 
 First, signup for an account. Start with the free version, which includes a wealth of information. In your account tab, you will see this:
 
-![](_res/Sv3H3WBgTnIO3PGwgr5RgBCFRpcAvYrOlg.png)
+![](_res/blackfire_settings.png)
 
 ## Activate via the hypernode-systemctl tool
 
 You can activate Blackfire via the hypernode-systemctl tool. First you need to enable it, then add your Server ID and Server Token.
 
-- `hypernode-systemctl settings blackfire_enabled`: boolean - Indicates whether Blackfire is enabled on your node.
-- `hypernode-systemctl settings blackfire_server_id`: string - The Blackfire Service ID for your Blackfire setup.
-- `hypernode-systemctl settings blackfire_server_token`: string - The Blackfire Server Token for your Blackfire setup.
+- `hypernode-systemctl settings blackfire_enabled`: **boolean** - Indicates whether Blackfire is enabled on your node.
+- `hypernode-systemctl settings blackfire_server_id`: **string** - The Blackfire Service ID for your Blackfire setup.
+- `hypernode-systemctl settings blackfire_server_token`: **string** - The Blackfire Server Token for your Blackfire setup.
 
 ## Activate via Your Control Panel
 
@@ -37,16 +35,6 @@ You can activate Blackfire via the hypernode-systemctl tool. First you need to e
 1. Click the **Blackfire** tab
 1. Enter your Blackfire Server ID and Blackfire Server Token and click **Save**.
 1. Now select **Enable Blackfire** to enable Blackfire
-
-## **Please take into account that it takes a most 10 minutes for our system to actually create the account. Grab a cup of coffee and relax!**
-
-## Activate via Your Service Panel
-
-1. Log in to your [Service Panel](https://auth.byte.nl/login/)
-1. Select the Hypernode from the overview
-1. Go to **Instellingen**and then **Blackfire**
-1. Select **Enable**, enter your Service ID and Server Token
-1. Save your input by clicking **Opslaan.**
 
 **Please take into account that it takes a most 10 minutes for our system to actually create the account. Grab a cup of coffee and relax!**
 
@@ -66,7 +54,7 @@ For more information, check [the Blackfire documentation](https://blackfire.io/d
 
 If you want to use Varnish in combination with Blackfire, some additional configuration in your VCL is required like described on the website of [Blackfire](https://blackfire.io/docs/integrations/proxies/varnish). This is quite an expert level change and requires enough experience with varnish to manually edit your VCL. Do note the "Authorized IPs" section on top of the following snippet. If you don't add the correct IP you will get an error:
 
-"*Are you authorized to profile this page? No probe response, missing PHP extension or invalid signature for relaying agent.*"
+> *Are you authorized to profile this page? No probe response, missing PHP extension or invalid signature for relaying agent.*
 
 ```vcl
 acl profile {
@@ -104,10 +92,10 @@ You can find the extended instructions in [the Blackfire documentation](https://
 
 Profiling an HTTP request can be done on the command line thanks to the blackfire utility. The easiest way to profile an HTTP request is to use the curl sub-command of the blackfire utility. You can run this command on the command line of your Hypernode.
 
-```
+```bash
 blackfire curl http://example.com/
 ```
 
-\*\*\*\*\*If you'd like to profile an HTTP request via the CLI on your Hypernode, make sure to whitelist `127.0.0.1`in your .vcl.
-
-Also please note that you can only profile live applications with a paid plan of Blackfire, for more info click [here](https://support.blackfire.io/en/articles/1455348-hack-edition-users-cannot-profile-non-local-http-applications).
+```{note}
+If you'd like to profile an HTTP request via the CLI on your Hypernode, make sure to whitelist `127.0.0.1` in your .vcl.
+```
