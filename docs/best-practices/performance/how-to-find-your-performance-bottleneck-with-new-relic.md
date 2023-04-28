@@ -45,7 +45,7 @@ Enter New Relic 'app name'~$ hypernode-systemctl settings new_relic_app_name 'ap
 
 ### Activation Via the Control Panel
 
-1. Log in on the [Hypernode Dashboard](https://auth.hypernode.com)
+1. Log in on the [Hypernode Control Panel](https://my.hypernode.com)
 1. Select your Hypernode (name.hypernode.io) under *My Hypernodes* and click on the Details button
 1. Hover over the *Hypernodes* button and go to *Monitoring* in the side menu
 1. Click on the *New Relic* option.
