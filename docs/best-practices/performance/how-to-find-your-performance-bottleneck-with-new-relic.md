@@ -38,29 +38,14 @@ Before you can activate New Relic at Hypernode you need to [create an account](h
 SSH to your Hypernode and use these commands to enable New Relic:
 
 ```nginx
-Enable New Relic: ~$ hypernode-systemctl settings new_relic_enabled --value 'True'
-Enter New Relic licence key: ~$ hypernode-systemctl settings new_relic_secret --value 'licence key'
-Enter New Relic 'app name'~$ hypernode-systemctl settings new_relic_app_name --value 'app name'
+Enable New Relic: ~$ hypernode-systemctl settings new_relic_enabled 'True'
+Enter New Relic licence key: ~$ hypernode-systemctl settings new_relic_secret 'licence key'
+Enter New Relic 'app name'~$ hypernode-systemctl settings new_relic_app_name 'app name'
 ```
-
-### Activation Via the Service Panel
-
-First create a New Relic account via the Byte Service Panel. Then activate New Relic at Hypernode. Follow the next steps:
-
-1. Log in on the [Service Panel](https://service.byte.nl/protected/)
-1. Select your Hypernode.
-1. Click on the *Instellingen* tab.
-1. Click on the *New Relic* option.
-1. Click on the link, you will be forwarded to New Relic
-1. Create an account, you will set an app name and receive a license key.
-1. Enter the license key and the app name set at New Relic in your Service Panel to activate New Relic
-1. Login to the New Relic dashboard to see statistics
-
-**Please take into account that it takes a most 10 minutes for our system to actually create the account. Grab a cup of coffee and relax!**
 
 ### Activation Via the Control Panel
 
-1. Log in on the [Control Panel](https://auth.hypernode.com)
+1. Log in on the [Hypernode Dashboard](https://auth.hypernode.com)
 1. Select your Hypernode (name.hypernode.io) under *My Hypernodes* and click on the Details button
 1. Hover over the *Hypernodes* button and go to *Monitoring* in the side menu
 1. Click on the *New Relic* option.
