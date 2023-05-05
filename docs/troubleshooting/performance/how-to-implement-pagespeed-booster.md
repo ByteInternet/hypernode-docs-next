@@ -99,7 +99,7 @@ if (beresp.http.content-type ~ "text") {
 Change it to:
 
 ```vcl
-if (!beresp.http.X-Percolate && beresp.http.content-type ~ "text") {
+if (!beresp.http.X-Psb && beresp.http.content-type ~ "text") {
     set beresp.do_esi = true;
 }
 ```
@@ -115,11 +115,11 @@ if (resp.http.Cache-Control !~ "private" && req.url !~ "^/(pub/)?(media|static)/
 }
 ```
 
-We'll change the configuration fragment to check if the `X-Percolate` header is present, by using a condition.
+We'll change the configuration fragment to check if the `X-Psb` header is present, by using a condition.
 
 ```vcl
 # Not letting browser to cache non-static files.
-if (!req.http.X-Percolate && resp.http.Cache-Control !~ "private" && req.url !~ "^/(pub/)?(media|static)/") {
+if (!req.http.X-Psb && resp.http.Cache-Control !~ "private" && req.url !~ "^/(pub/)?(media|static)/") {
     set resp.http.Pragma = "no-cache";
     set resp.http.Expires = "-1";
     set resp.http.Cache-Control = "no-store, no-cache, must-revalidate, max-age=0";
