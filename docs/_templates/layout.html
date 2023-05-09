@@ -191,9 +191,13 @@
       {%- endif %}
 
       {%- include "searchbox.html" %}
-      <a href="https://auth.hypernode.com/login/" target="_blank" class="btn btn-orange wy-side-nav__login">
-        Log in
-      </a>
+      <div class="wy-side-nav-search__menu-items">
+        <a class="wy-side-nav-search__menu-item" href="https://api.docs.hypernode.io/">API Docs</a>
+        <a class="current wy-side-nav-search__menu-item" href="https://docs.hypernode.io/">Docs</a>
+        <a href="https://auth.hypernode.com/login/" target="_blank" class="btn btn-orange wy-side-nav__login">
+          Log in
+        </a>
+      </div>
       {%- endblock %}
     </div>
     {% include "breadcrumbs.html" %}
