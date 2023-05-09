@@ -6,6 +6,7 @@ myst:
     title: Control Panel | Hypernode Services
 redirect_from:
   - /en/services/control-panel/
+  - /en/services/service-panel/
 ---
 
 # Control Panel

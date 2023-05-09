@@ -1,11 +1,14 @@
-from sphinx.application import Sphinx
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from sphinx.application import Sphinx
 
 
-def page_context_handler(app: Sphinx, pagename: str, templatename, context, doctree):
+def page_context_handler(app: "Sphinx", pagename: str, templatename, context, doctree):
     context["meta_robots"] = app.config.html_meta_robots
 
 
-def setup_sphinx(app: Sphinx):
+def setup_sphinx(app: "Sphinx"):
     app.add_config_value("html_meta_robots", "noindex, nofollow", "html")
     app.connect("html-page-context", page_context_handler)
 
@@ -16,5 +19,5 @@ def setup_sphinx(app: Sphinx):
     }
 
 
-def setup(app: Sphinx):
+def setup(app: "Sphinx"):
     return setup_sphinx(app)
