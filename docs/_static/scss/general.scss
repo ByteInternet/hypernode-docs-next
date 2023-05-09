@@ -75,6 +75,10 @@ section {
         position: relative;
         top: 10px;
         padding: 0 15px 0 30px;
+
+        @media (max-width: $breakpoint-mobile) {
+            top: 0;
+        }
     }
     .search-icon{
         position: relative;
@@ -84,6 +88,10 @@ section {
 
         @media (max-width: $breakpoint-portrait) {
             left: -83px;
+        }
+        @media (max-width: $breakpoint-mobile) {
+            top: -27px;
+            left: -149px;
         }
     }
 }

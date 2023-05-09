@@ -110,6 +110,11 @@ section {
   top: 10px;
   padding: 0 15px 0 30px;
 }
+@media (max-width: 420px) {
+  #rtd-search-form input.main-search-bar__input {
+    top: 0;
+  }
+}
 #rtd-search-form .search-icon {
   position: relative;
   width: 13px;
@@ -119,6 +124,12 @@ section {
 @media (max-width: 768px) {
   #rtd-search-form .search-icon {
     left: -83px;
+  }
+}
+@media (max-width: 420px) {
+  #rtd-search-form .search-icon {
+    top: -27px;
+    left: -149px;
   }
 }
 
