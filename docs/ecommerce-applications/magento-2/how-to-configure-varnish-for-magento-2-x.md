@@ -217,3 +217,94 @@ If you ever need to restart Varnish you can use the following systemctl command 
 ```console
 $ hypernode-servicectl restart varnish
 ```
+
+## Performance improvement
+
+The default Nginx + Varnish configuration is already optimized for performance. However, there are some additional tweaks you can do to improve the performance of your Varnish setup.
+
+One of which is to bypass /static and /media requests from Varnish. The benefits of doing this are:
+
+- Asset requets don't go through from `nginx -> varnish -> nginx`
+- Lower load on nginx and varnish
+- Lower amount of logs written to disk for both nginx and varnish
+
+This can be done by adding the following to your Nginx configuration:
+
+```{code-block} nginx
+---
+caption: server.magento2.conf
+---
+# Static content block:
+location /static/ {
+    expires max;
+
+    # Remove signature of the static files that is used to overcome the browser cache
+    location ~ ^/static/version {
+        rewrite ^/static/(version\d*/)?(.*)$ /static/$2 last;
+    }
+
+    # Magento 2 recommends adding the .html, .json and .webmanifest extensions too, but those are resources fetched with
+    # XHR method, which should be managed in user space and not system wide.
+    #location ~* \.(ico|jpg|jpeg|png|gif|svg|svgz|webp|avif|avifs|js|css|swf|eot|ttf|otf|woff|woff2|html|json|webmanifest)$ {
+    location ~* \.(ico|jpg|jpeg|png|gif|svg|svgz|webp|avif|avifs|js|css|swf|eot|ttf|otf|woff|woff2)$ {
+        add_header Cache-Control "public";
+        add_header X-Frame-Options "SAMEORIGIN";
+        expires +1y;
+
+        if (!-f $request_filename) {
+            rewrite ^/static/(version\d*/)?(.*)$ /static.php?resource=$2 last;
+        }
+    }
+
+    location ~* \.(zip|gz|gzip|bz2|csv|xml)$ {
+        add_header Cache-Control "no-store";
+        add_header X-Frame-Options "SAMEORIGIN";
+        expires    off;
+
+        if (!-f $request_filename) {
+            rewrite ^/static/(version\d*/)?(.*)$ /static.php?resource=$2 last;
+        }
+    }
+
+    if (!-f $request_filename) {
+        rewrite ^/static/(version\d*/)?(.*)$ /static.php?resource=$2 last;
+    }
+    add_header X-Frame-Options "SAMEORIGIN";
+}
+
+# Media content block:
+location /media/ {
+    try_files $uri $uri/ /get.php?$args;
+
+    location ~ ^/media/theme_customization/.*\.xml {
+        deny all;
+    }
+
+    location ~* \.(ico|jpg|jpeg|png|gif|svg|svgz|webp|avif|avifs|js|css|swf|eot|ttf|otf|woff|woff2)$ {
+        add_header Cache-Control "public";
+        add_header X-Frame-Options "SAMEORIGIN";
+        expires +1y;
+        try_files $uri $uri/ /get.php?$args;
+    }
+
+    location ~* \.(zip|gz|gzip|bz2|csv|xml)$ {
+        add_header Cache-Control "no-store";
+        add_header X-Frame-Options "SAMEORIGIN";
+        expires    off;
+        try_files $uri $uri/ /get.php?$args;
+    }
+
+    add_header X-Frame-Options "SAMEORIGIN";
+}
+
+location ~* ^/(static|get)\.php$ {
+    echo_exec @phpfpm;
+}
+
+# If you don't include handlers.conf in public.magento2.conf or staging.magento2.conf, uncomment the following line:
+#include handlers.conf;
+```
+
+```{tip}
+If you don't need static asset generation on your environment, you can also leave out all the if statements in the `/static` block.
+```
