@@ -38,13 +38,6 @@ $ hypernode-systemctl settings varnish_version 6.0
 $ hypernode-systemctl settings varnish_enabled true
 ```
 
-**Enable Varnish via the [Service Panel](https://service.byte.nl/)**
-
-- Log in on the Service Panel
-- Go to the tab "Instellingen"
-- Click on "Varnish"
-- Use the switch to enable Varnish
-
 **Enable Varnish via the [Control Panel](https://auth.hypernode.com/)**
 
 - Click on "Hypernodes"
