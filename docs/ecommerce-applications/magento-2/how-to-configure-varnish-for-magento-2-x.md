@@ -184,12 +184,6 @@ X-Magento-Cache-Control: max-age=86400, public, s-maxage=86400
 X-Magento-Cache-Debug: MISS
 ```
 
-## VCL Tip
-
-In our experience the by default generated .vcl from your Magento backend often doesn't work very well. You can check this for example by running `varnishhist`, this will show you a graph with the HITS, (`|`) and MISSES (`#`). So if you're seeing a lot of MISSES (`#`) you could use **[this .vcl](https://gist.github.com/hn-support/f4d29af73d76d0f7879a2fa9d10d8411)**. We found out that this .vcl is often performing quite well.
-
-\*\***please note that this is just another standard .vcl, if this doesn't work either or you have specific requirements you should contact a Varnish implementation specialist.**
-
 ## Troubleshooting
 
 - If you are receiving `Permission denied` errors while running `varnishadm` or other Varnish CLI commands, and you have just activated Varnish, close any existing ssh sessions, and log back in to reload your updated permissions.
