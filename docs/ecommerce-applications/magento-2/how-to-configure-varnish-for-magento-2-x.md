@@ -224,7 +224,7 @@ The default Nginx + Varnish configuration is already optimized for performance. 
 
 One of which is to bypass /static and /media requests from Varnish. The benefits of doing this are:
 
-- Asset requets don't go through from `nginx -> varnish -> nginx`
+- Asset requests don't go through from `nginx -> varnish -> nginx`
 - Lower load on nginx and varnish
 - Lower amount of logs written to disk for both nginx and varnish
 
