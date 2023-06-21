@@ -20,6 +20,10 @@ This saves time and resources, and it allows users to test and develop their app
 
 Overall, Hypernode Brancher is a valuable addition to the Hypernode toolset, and it can help users improve the reliability and performance of their applications.
 
+```{note}
+Hypernode Brancher is currently only available for Hypernodes on the Falcon plan. If you want to see Brancher support for the Eagle plans, please let us know by contacting support@hypernode.com.
+```
+
 ## What is Hypernode Brancher?
 
 Hypernode Brancher is an extra service that runs alongside our core product Hypernode.
