@@ -72,8 +72,8 @@ If you want to flush the Varnish cache from the Magento backend, you need to add
 To do this, run the following command:
 
 ```console
-$ cd /data/web/magento2;
-$ bin/magento setup:config:set --http-cache-hosts=127.0.0.1:6081;
+$ cd /data/web/magento2
+$ bin/magento setup:config:set --http-cache-hosts=127.0.0.1:6081
 ```
 
 Now when you flush your caches in cache management, your varnish full_page cache will be flushed too.
