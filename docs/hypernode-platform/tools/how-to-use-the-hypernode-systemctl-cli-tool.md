@@ -24,11 +24,13 @@ To see which values you can set and which values they are allowed to have take a
 - `blackfire_enabled`: a great tool to find performance bottlenecks in Magento
 - `blackfire_server_token`
 - `blackfire_server_id`
+- `composer_version`: Change the Composer version
 - `disable_optimizer_switch`
 - `elasticsearch_enabled`: Enable Elasticsearch
 - `elasticsearch_version`: Change the Elasticsearch version
 - `enable_ioncube`: Only enable this if you really have to, as Ioncube is a performance killer
 - `firewall_block_ftp_enabled`: indicates whether FTP (which is unsafe) is completely blocked or not
+- `magerun2_version`: Change the N98 Magerun version
 - `mailhog_enabled`: Enable the Mailhog feature
 - `managed_vhosts_enabled`: Enable the managed_vhosts nginx configuration
 - `modern_ssh_config_enabled`
@@ -38,18 +40,22 @@ To see which values you can set and which values they are allowed to have take a
 - `mysql_tmp_on_data_enabled`
 - `mysql_ft_min_word_len`
 - `mysql_enable_large_thread_stack`
+- `nodejs_version`: Change the Node version
 - `openvpn_enabled`: Enables [OpenVPN](https://community.hypernode.io/#/Documentation/hypernode-vpn/README?) for secure database connections
+- `opensearch_enabled`: Enable OpenSearch
+- `opensearch_version`: Change the OpenSearch version
 - `override_sendmail_return_path`: Override the return-path (Due to the bug in Magento 2)
 - `password_auth`: indicates whether password authentication for the Hypernode is allowed instead of only SSH keys.
 - `permissive_memory_management`: Configure [memory management policy](https://changelog.hypernode.com/release-5946-configurable-memory-management-policy-and-rss-bruteforce-detection/) (OOM kills)
 - `php_version`: Change the PHP version
 - `php_apcu_enabled`: Enable the PHP-apcu
 - `redis_persistent_instance`
+- `redis_version`: Change the Redis version
 - `rabbitmq_enabled`: a popular open source message broker
 - `supervisor_enabled`
 - `unixodbc_enabled`
 - `varnish_enabled`: Enable Varnish
-- `varnish_version`
+- `varnish_version`: Change the Varnish version
 - `varnish_secret`
 - `varnish_esi_ignore_https`
 
@@ -83,6 +89,11 @@ Indicates whether `use_index_extensions` and `mrr` are turned off. If turned off
 
 - `elasticsearch_enabled`: Enable Elasticsearch
 - `elasticsearch_version`: Change the Elasticsearch version
+
+### OpenSearch
+
+- `opensearch_enabled`: Enable OpenSearch
+- `opensearch_version`: Change the OpenSearch version
 
 ### Enabled IonCube
 
