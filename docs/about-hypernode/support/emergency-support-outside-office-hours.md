@@ -17,7 +17,7 @@ Are you experiencing a business-critical disruption on your web shop? You can ac
 
 ## During Office Hours
 
-During office hours (from 9:00 AM – 6 PM CEST) you can request Hypernode Emergency Support by email (support@hypernode.com) or telephone (+31 (0)20 521 6226).
+During office hours (from 9:00 AM – 6 PM CE(S)T) you can request Hypernode Emergency Support by email (support@hypernode.com) or telephone (+31 (0)20 521 6226).
 
 **If you send in a request during office hours, your request will be picked up by our Support Team free of charge. This also means the steps below do not apply.**
 
