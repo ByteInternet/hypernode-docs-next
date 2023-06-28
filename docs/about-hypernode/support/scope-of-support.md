@@ -9,8 +9,6 @@ redirect_from:
   - /en/about/support/scope-of-support/
 ---
 
-<!-- source: https://support.hypernode.com/en/about/support/scope-of-support/ -->
-
 # Scope of Support
 
 This document outlines the scope and limitations of support for our Hypernode platform and all related products. We strive to provide great support to attain the highest level of customer satisfaction. We also believe that clearly defining the scope of support provides clarity for our support team, but most importantly for our customers.
@@ -19,7 +17,7 @@ We will always try to be helpful, but certain changes can only be made by the cu
 
 ## Support Availability
 
-1. From Monday to Friday during office hours (from 8:00 AM – 6:00 PM CE(S)T) you can request support regarding technical, financial or sales questions by email (support@hypernode.com) and / or telephone (+31 (0)20 521 6226).
+1. From Monday to Friday during office hours (from 9:00 AM – 6:00 PM CE(S)T) you can request support regarding technical, financial or sales questions by email (support@hypernode.com) and / or telephone (+31 (0)20 521 6226).
 1. Hypernode primarily provides support in Dutch and English. If you contact us in a different language, we’ll do our best to translate your message and will reply in English.
 
 ## Server & Application Support
