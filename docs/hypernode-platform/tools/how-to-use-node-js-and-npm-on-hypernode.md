@@ -8,8 +8,6 @@ redirect_from:
   - /en/hypernode/tools/how-to-use-node-js-and-npm-on-hypernode/
 ---
 
-<!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-node-js-and-npm-on-hypernode/ -->
-
 # How to Use Node.js and NPM on Hypernode
 
 This article explains how to use and install other versions of Node.js and also how to install NPM packages on Hypernode.
@@ -54,7 +52,11 @@ Let's install some packages.
 
 When your `PATH` is set up correctly, after the installation with `npm install`, you should immediately be able to use the newly installed tool.
 
-To find the latest command line tool installed, run: `ls -ltr /data/web/node_modules/.bin | tail -1`
+To find the latest command line tool installed, run:
+
+```bash
+ls -ltr /data/web/node_modules/.bin | tail -1
+```
 
 ### Install Gulp
 
@@ -74,18 +76,6 @@ npm install grunt grunt-cli
 npm install sass
 ```
 
-### Install Compass
-
-```bash
-npm install compass
-```
-
-When your Hypernode is using the OS [Debian Buster](https://changelog.hypernode.com/changelog/release-7351-new-hypernodes-will-be-booted-on-debian-buster/) then the aforementioned method will not be applicable. Instead you can use the following command to install compass
-
-```bash
-gem install --user-install compass
-```
-
 Next you need to set the correct path so you don't have to type the absolute path to access compass each time. You can do s with the command:
 
 ```bash
@@ -100,15 +90,11 @@ npm install less
 
 ### Install Yarn
 
-*To install yarn, a more recent version of nodejs is required, so [follow the instructions and download and unpack a newer version of nodejs](#using-a-newer-version-of-nodejs) first.*
-
 ```bash
 npm install yarn
 ```
 
-## **Using a newer version of Node.js**
-
-### **Install a newer version of Node.js**
+## Using an unsupported Node.js version
 
 If you want to use a more recent version, it is very easy to install the latest version of Node.js yourself.
 
@@ -124,30 +110,21 @@ In this example we use version v14.17.6 but the installation process is the same
 - Then, get the precompiled package from the Node.js website and unpack it in our directory:
   ```bash
   wget https://nodejs.org/dist/v14.17.6/node-v14.17.6-linux-x64.tar.xz -O /tmp/node.txz
-  cd ~/.node && tar xvfJ /tmp/node.txz -C . --strip-components=1
+  tar xvfJ /tmp/node.txz -C ~/.node --strip-components=1
   rm /tmp/node.txz
   ```
 
-That’s it, you now have a precompiled node installation in `~/node`.
+To be able to run this manually installed version when you run `node`, you need to add `~/.node/bin` to your `PATH` variable, so that your shell knows where it should look when you type `node`.
 
-### Configure a Manually Installed Node.js
-
-To run the manually installed executables, you need to change your `PATH` variable to make sure your node is located by the Bash shell before the pre-installed version.
-
-To do this, run the following command to add the locations to your PATH:
+To do this, run the following commands to add the locations to your `PATH` variable:
 
 ```bash
-export PATH="/data/web/node_modules/.bin:/data/web/.node/bin:$PATH"
-```
-
-Or to make the settings permanent, add it to your `~/.profile`:
-
-```bash
-echo 'export PATH="/data/web/node_modules/.bin:/data/web/.node/bin:$PATH"' >> ~/.profile
+export PATH="/data/web/.node/bin:$PATH"
+echo 'export PATH="/data/web/.node/bin:$PATH"' >> ~/.profile
 ```
 
 Both the installations (the already installed or the precompiled self-downloaded version) use `/data/web/node_modules` as their location to install new packages to when using npm.
 
 ## Troubleshooting
 
-- When using npm search, so much memory is used that on Hypernode Grow plans, your shell will get killed, and you’ll be automagically logged out of your Hypernode due to our out of memory protection.
+- When using npm search, so much memory is used that on smaller Hypernode plans, your shell will get killed, and you’ll be automagically logged out of your Hypernode due to our out of memory protection.

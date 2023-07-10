@@ -38,13 +38,6 @@ $ hypernode-systemctl settings varnish_version 6.0
 $ hypernode-systemctl settings varnish_enabled true
 ```
 
-**Enable Varnish via the [Service Panel](https://service.byte.nl/)**
-
-- Log in on the Service Panel
-- Go to the tab "Instellingen"
-- Click on "Varnish"
-- Use the switch to enable Varnish
-
 **Enable Varnish via the [Control Panel](https://auth.hypernode.com/)**
 
 - Click on "Hypernodes"
@@ -54,7 +47,7 @@ $ hypernode-systemctl settings varnish_enabled true
 
 ## Configure Varnish on the Vhost
 
-Since the introduction of \*\*[hypernode-manage-vhosts](https://changelog.hypernode.com/changelog/release-7166-hypernode-manage-vhosts-enabled-by-default/)\*\*Hypernode may work somewhat different than you might be used to. With HMV enabled, it requires one more step to configure Varnish for your shop/vhost. Remember, for each domain, there should be a vhost created. You can list an overview of all configured vhosts with `hypernode-manage-vhosts --list`. While you do that, note that there is a column, "varnish". By default this is set to "False". Which means that Varnish isn't configured for this vhost. You can configure Varnish for the vhost by running the following command:
+Since the introduction of [hypernode-manage-vhosts](https://changelog.hypernode.com/changelog/release-7166-hypernode-manage-vhosts-enabled-by-default/) Hypernode may work somewhat different than you might be used to. With HMV enabled, it requires one more step to configure Varnish for your shop/vhost. Remember, for each domain, there should be a vhost created. You can list an overview of all configured vhosts with `hypernode-manage-vhosts --list`. While you do that, note that there is a column, "varnish". By default this is set to "False". Which means that Varnish isn't configured for this vhost. You can configure Varnish for the vhost by running the following command:
 
 ```console
 $ hypernode-manage-vhosts EXAMPLE.COM --varnish
@@ -79,8 +72,8 @@ If you want to flush the Varnish cache from the Magento backend, you need to add
 To do this, run the following command:
 
 ```console
-$ cd /data/web/magento2;
-$ bin/magento setup:config:set --http-cache-hosts=127.0.0.1:6081;
+$ cd /data/web/magento2
+$ bin/magento setup:config:set --http-cache-hosts=127.0.0.1:6081
 ```
 
 Now when you flush your caches in cache management, your varnish full_page cache will be flushed too.
@@ -191,12 +184,6 @@ X-Magento-Cache-Control: max-age=86400, public, s-maxage=86400
 X-Magento-Cache-Debug: MISS
 ```
 
-## VCL Tip
-
-In our experience the by default generated .vcl from your Magento backend often doesn't work very well. You can check this for example by running `varnishhist`, this will show you a graph with the HITS, (`|`) and MISSES (`#`). So if you're seeing a lot of MISSES (`#`) you could use **[this .vcl](https://gist.github.com/hn-support/f4d29af73d76d0f7879a2fa9d10d8411)**. We found out that this .vcl is often performing quite well.
-
-\*\***please note that this is just another standard .vcl, if this doesn't work either or you have specific requirements you should contact a Varnish implementation specialist.**
-
 ## Troubleshooting
 
 - If you are receiving `Permission denied` errors while running `varnishadm` or other Varnish CLI commands, and you have just activated Varnish, close any existing ssh sessions, and log back in to reload your updated permissions.
@@ -229,4 +216,95 @@ If you ever need to restart Varnish you can use the following systemctl command 
 
 ```console
 $ hypernode-servicectl restart varnish
+```
+
+## Performance improvement
+
+The default Nginx + Varnish configuration is already optimized for performance. However, there are some additional tweaks you can do to improve the performance of your Varnish setup.
+
+One of which is to bypass /static and /media requests from Varnish. The benefits of doing this are:
+
+- Asset requests don't go through from `nginx -> varnish -> nginx`
+- Lower load on nginx and varnish
+- Lower amount of logs written to disk for both nginx and varnish
+
+This can be done by adding the following to your Nginx configuration:
+
+```{code-block} nginx
+---
+caption: server.magento2.conf
+---
+# Static content block:
+location /static/ {
+    expires max;
+
+    # Remove signature of the static files that is used to overcome the browser cache
+    location ~ ^/static/version {
+        rewrite ^/static/(version\d*/)?(.*)$ /static/$2 last;
+    }
+
+    # Magento 2 recommends adding the .html, .json and .webmanifest extensions too, but those are resources fetched with
+    # XHR method, which should be managed in user space and not system wide.
+    #location ~* \.(ico|jpg|jpeg|png|gif|svg|svgz|webp|avif|avifs|js|css|swf|eot|ttf|otf|woff|woff2|html|json|webmanifest)$ {
+    location ~* \.(ico|jpg|jpeg|png|gif|svg|svgz|webp|avif|avifs|js|css|swf|eot|ttf|otf|woff|woff2)$ {
+        add_header Cache-Control "public";
+        add_header X-Frame-Options "SAMEORIGIN";
+        expires +1y;
+
+        if (!-f $request_filename) {
+            rewrite ^/static/(version\d*/)?(.*)$ /static.php?resource=$2 last;
+        }
+    }
+
+    location ~* \.(zip|gz|gzip|bz2|csv|xml)$ {
+        add_header Cache-Control "no-store";
+        add_header X-Frame-Options "SAMEORIGIN";
+        expires    off;
+
+        if (!-f $request_filename) {
+            rewrite ^/static/(version\d*/)?(.*)$ /static.php?resource=$2 last;
+        }
+    }
+
+    if (!-f $request_filename) {
+        rewrite ^/static/(version\d*/)?(.*)$ /static.php?resource=$2 last;
+    }
+    add_header X-Frame-Options "SAMEORIGIN";
+}
+
+# Media content block:
+location /media/ {
+    try_files $uri $uri/ /get.php?$args;
+
+    location ~ ^/media/theme_customization/.*\.xml {
+        deny all;
+    }
+
+    location ~* \.(ico|jpg|jpeg|png|gif|svg|svgz|webp|avif|avifs|js|css|swf|eot|ttf|otf|woff|woff2)$ {
+        add_header Cache-Control "public";
+        add_header X-Frame-Options "SAMEORIGIN";
+        expires +1y;
+        try_files $uri $uri/ /get.php?$args;
+    }
+
+    location ~* \.(zip|gz|gzip|bz2|csv|xml)$ {
+        add_header Cache-Control "no-store";
+        add_header X-Frame-Options "SAMEORIGIN";
+        expires    off;
+        try_files $uri $uri/ /get.php?$args;
+    }
+
+    add_header X-Frame-Options "SAMEORIGIN";
+}
+
+location ~* ^/(static|get)\.php$ {
+    echo_exec @phpfpm;
+}
+
+# If you don't include handlers.conf in public.magento2.conf or staging.magento2.conf, uncomment the following line:
+#include handlers.conf;
+```
+
+```{tip}
+If you don't need static asset generation on your environment, you can also leave out all the if statements in the `/static` block.
 ```

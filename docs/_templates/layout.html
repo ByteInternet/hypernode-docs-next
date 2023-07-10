@@ -191,9 +191,13 @@
       {%- endif %}
 
       {%- include "searchbox.html" %}
-      <a href="https://auth.hypernode.com/login/" target="_blank" class="btn btn-orange wy-side-nav__login">
-        Log in
-      </a>
+      <div class="wy-side-nav-search__menu-items">
+        <a class="wy-side-nav-search__menu-item" href="https://api.docs.hypernode.io/">API Docs</a>
+        <a class="current wy-side-nav-search__menu-item" href="https://docs.hypernode.io/">Docs</a>
+        <a href="https://auth.hypernode.com/login/" target="_blank" class="btn btn-orange wy-side-nav__login">
+          Log in
+        </a>
+      </div>
       {%- endblock %}
     </div>
     {% include "breadcrumbs.html" %}
@@ -277,9 +281,9 @@
           <img src="https://static.hypernode.com/img/icons-multi-color/chat-bot.svg">
           <h4>Join our<br>Feedback Group</h4>
           <ul class="aside-tile__feedback-list">
-            <li><i class="fa fa-check-circle"></i>test new features ahead</li>
-            <li><i class="fa fa-check-circle"></i>get a gift after each session</li>
-            <li><i class="fa fa-check-circle"></i>have an impact on the product</li>
+            <li><i class="fa fa-check-circle"></i>Experience new features first</li>
+            <li><i class="fa fa-check-circle"></i>Get a gift after each session</li>
+            <li><i class="fa fa-check-circle"></i>Join product decision making</li>
           </ul>
           <p><a class="ahref-orange" href="https://forms.gle/ocQjMzhghMkUzkB19" target="_blank">read more</a></p>
         </div>

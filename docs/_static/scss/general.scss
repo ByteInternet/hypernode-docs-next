@@ -70,6 +70,32 @@ section {
     scroll-margin-top: 120px;
 }
 
+#rtd-search-form {
+    input.main-search-bar__input {
+        position: relative;
+        top: 10px;
+        padding: 0 15px 0 30px;
+
+        @media (max-width: $breakpoint-mobile) {
+            top: 0;
+        }
+    }
+    .search-icon{
+        position: relative;
+        width: 13px;
+        top: -18px;
+        left: -132px;
+
+        @media (max-width: $breakpoint-portrait) {
+            left: -83px;
+        }
+        @media (max-width: $breakpoint-mobile) {
+            top: -27px;
+            left: -149px;
+        }
+    }
+}
+
 .wy-grid-for-nav {
     display: grid;
     grid-template-columns: 300px 900px 300px;
@@ -216,11 +242,11 @@ section {
     top: 0;
     height: 60px;
     display: grid;
-    grid-template-columns: 300px 900px 300px;
+    grid-template-columns: 300px 1fr 300px;
     justify-content: center;
     align-items: center;
 
-    div {
+    .search-bar-container {
         width: 300px;
 
         @media (max-width: $breakpoint-portrait) {
@@ -236,7 +262,7 @@ section {
 
     @media (max-width: $breakpoint-laptop) {
         display: grid;
-        grid-template-columns: 300px 700px 200px;
+        grid-template-columns: 300px 1fr 300px;
         justify-content: center;
     }
 
@@ -245,7 +271,7 @@ section {
     }
 
     @media (max-width: $breakpoint-width1200) {
-        grid-template-columns: 300px 1fr 100px;
+        grid-template-columns: 300px 1fr 300px;
         justify-content: flex-start;
     }
 
@@ -717,8 +743,7 @@ code.docutils.literal.notranslate {
 
 /* notes (admonition notes) end */
 
-/* breadcrumb */
-
+/* header*/
 .wy-side-nav-search img {
     background-color: transparent;
     position: relative;
@@ -744,6 +769,10 @@ code.docutils.literal.notranslate {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &:hover {
+        color: #fff;
+    }
 
     @media (max-width: $breakpoint-mobile){
         grid-area: 1 / span 1;
@@ -773,6 +802,39 @@ code.docutils.literal.notranslate {
     }
 }
 
+.wy-side-nav-search__menu-items {
+    display: flex;
+    column-gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    padding-right: 20px;
+    a {
+        font-size: 13px;
+        &.wy-side-nav-search__menu-item {
+            color: #fff;
+            height: 97%;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+
+            &:hover {
+                border-bottom: 2px solid var(--primary-orange);
+            }
+
+            &.current {
+                border-bottom: 2px solid var(--primary-orange);
+            }
+
+            @media (max-width: $breakpoint-portrait) {
+               display: none;
+            }
+        }
+    }
+  }
+/*header end*/
+
+/* breadcrumbs*/
 .wy-breadcrumbs {
     max-width: 1461px;
     margin: auto;
