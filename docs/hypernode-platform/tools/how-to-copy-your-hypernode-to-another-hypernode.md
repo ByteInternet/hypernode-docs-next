@@ -18,23 +18,23 @@ If you wish to make a copy of your Hypernode to another Hypernode, whether it's 
 
 ## 2. SSH Access
 
-To receive SSH access from <new-appname>.hypernode.io to <old-appname>.hypernode.io make a SSH keypair on <new-appname>.hypernode.io and place this public key in the **authorized_keys** on <old-appname>.hypernode.io
+To receive SSH access from new-appname.hypernode.io to old-appname.hypernode.io make a SSH keypair on new-appname.hypernode.io and place this public key in the **authorized_keys** on old-appname.hypernode.io
 
 You can make an SSH keypair like this:
 
 ```bash
-ssh app@<new-appname>.hypernode.io
+ssh app@new-appname.hypernode.io
 ssh-keygen
 ```
 
-Press "Enter" several times and you have your keypair. Copy your public key from id_rsa.pub and place they key in <old-appname>.hypernode.io `/data/web/.ssh/authorized_keys`.
+Press "Enter" several times and you have your keypair. Copy your public key from id_rsa.pub and place they key in old-appname.hypernode.io `/data/web/.ssh/authorized_keys`.
 
 ## 3. Import
 
-Login <new-appname>.hypernode.io. Now you're able to run the **hypernode-importer** with only one command:
+Login new-appname.hypernode.io. Now you're able to run the **hypernode-importer** with only one command:
 
 ```bash
-hypernode-importer --user app --host <old-appname>.hypernode.io --path /data/web/magento2  # (please check the right path to the Magento 2 folder)
+hypernode-importer --user app --host old-appname.hypernode.io --path /data/web/magento2  # (please check the right path to the Magento 2 folder)
 ```
 
 ## 4. Base-URLS
