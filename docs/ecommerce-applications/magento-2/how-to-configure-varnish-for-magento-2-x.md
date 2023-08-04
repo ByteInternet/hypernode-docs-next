@@ -73,7 +73,7 @@ To do this, run the following command:
 
 ```console
 $ cd /data/web/magento2
-$ bin/magento setup:config:set --http-cache-hosts=127.0.0.1:6081
+$ bin/magento setup:config:set --http-cache-hosts=varnish:6081
 ```
 
 Now when you flush your caches in cache management, your varnish full_page cache will be flushed too.
@@ -111,6 +111,20 @@ backend default {
 ```
 
 Make sure you change this to the aforementioned configuration (without the health_check probe), since this will break on our Nginx configuration and will therefore result in a `503 Guru Meditation` error.
+
+**Note:** If you are using a cluster setup, you need to add some additional configuration to your vcl.
+The `acl purge` block inside your vcl should contain the private ip range of your cluster.
+You can find your private ip range using the `hypernode-cluster-info` command on one of your cluster nodes.
+
+As example, our private ip range is `192.168.1.0/24`. 
+You can add this to the `acl purge` block. It should like something similar as the example below:
+
+```
+acl purge {
+    "localhost";
+    "192.168.1.0/24";
+}
+```
 
 ## Import Your VCL into the Varnish Daemon
 

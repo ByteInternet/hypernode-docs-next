@@ -40,6 +40,22 @@ Please follow Shopware's [documentation about configuring Shopware 5 to work wit
 
 Copy the VCL configuration from [Shopware's documentation](https://developers.shopware.com/sysadmins-guide/varnish-setup/) and save it on your Hypernode, for example at `/data/web/shopware5.vcl`.
 
+**Note:** If you are using a cluster setup, you need to add some additional configuration to your vcl.
+The `acl purgers` block inside your vcl should contain the private ip range of your cluster.
+You can find your private ip range using the `hypernode-cluster-info` command on one of your cluster nodes.
+
+As example, our private ip range is `192.168.1.0/24`. 
+You can add this to the `acl purgers` block. It should like something similar as the example below:
+
+```vcl
+acl purgers {
+    "127.0.0.1";
+    "localhost";
+    "::1";
+    "192.168.1.0/24";
+}
+```
+
 Now we can load in the configuration with the following command:
 
 `varnishadm vcl.load shopware5_debug /data/web/shopware5.vcl`
