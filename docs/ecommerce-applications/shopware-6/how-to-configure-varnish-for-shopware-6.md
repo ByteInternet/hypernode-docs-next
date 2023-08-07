@@ -1,13 +1,16 @@
----
+______________________________________________________________________
+
 myst:
-  html_meta:
-    description: Shopware 6 applications can greatly benefit from Varnish caching.
-      Hypernode supports Varnish as a caching layer and configuration is actually
-      quite simple.
-    title: How to configure Varnish for Shopware 6?
+html_meta:
+description: Shopware 6 applications can greatly benefit from Varnish caching.
+Hypernode supports Varnish as a caching layer and configuration is actually
+quite simple.
+title: How to configure Varnish for Shopware 6?
 redirect_from:
-  - /en/support/solutions/articles/48001200525-how-to-configure-varnish-for-shopware-6/
----
+
+- /en/support/solutions/articles/48001200525-how-to-configure-varnish-for-shopware-6/
+
+______________________________________________________________________
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001200525-how-to-configure-varnish-for-shopware-6/ -->
 
@@ -96,7 +99,7 @@ To actually use Varnish you need to implement a varnish config file, a .vcl. If 
 The `acl purgers` block inside your vcl should contain the private ip range of your cluster.
 You can find your private ip range using the `hypernode-cluster-info` command on one of your cluster nodes.
 
-As example, our private ip range is `192.168.1.0/24`. 
+As example, our private ip range is `192.168.1.0/24`.
 You can add this to the `acl purgers` block. It should like something similar as the example below:
 
 ```vcl

@@ -1,12 +1,15 @@
----
+______________________________________________________________________
+
 myst:
-  html_meta:
-    description: Varnish is a complex technique that needs some experience to set
-      it up. This article explains how you can configure Varnish 4 or 6 for your Hypernode.
-    title: How to configure Varnish for Magento 2? | Hypernode
+html_meta:
+description: Varnish is a complex technique that needs some experience to set
+it up. This article explains how you can configure Varnish 4 or 6 for your Hypernode.
+title: How to configure Varnish for Magento 2? | Hypernode
 redirect_from:
-  - /en/ecommerce/magento-2/how-to-configure-varnish-for-magento-2-x/
----
+
+- /en/ecommerce/magento-2/how-to-configure-varnish-for-magento-2-x/
+
+______________________________________________________________________
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-configure-varnish-for-magento-2-x/ -->
 
@@ -116,7 +119,7 @@ Make sure you change this to the aforementioned configuration (without the healt
 The `acl purge` block inside your vcl should contain the private ip range of your cluster.
 You can find your private ip range using the `hypernode-cluster-info` command on one of your cluster nodes.
 
-As example, our private ip range is `192.168.1.0/24`. 
+As example, our private ip range is `192.168.1.0/24`.
 You can add this to the `acl purge` block. It should like something similar as the example below:
 
 ```
