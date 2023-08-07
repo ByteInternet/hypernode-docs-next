@@ -1,16 +1,13 @@
-______________________________________________________________________
-
+---
 myst:
-html_meta:
-description: Shopware 6 applications can greatly benefit from Varnish caching.
-Hypernode supports Varnish as a caching layer and configuration is actually
-quite simple.
-title: How to configure Varnish for Shopware 6?
+  html_meta:
+    description: Shopware 6 applications can greatly benefit from Varnish caching.
+      Hypernode supports Varnish as a caching layer and configuration is actually
+      quite simple.
+    title: How to configure Varnish for Shopware 6?
 redirect_from:
-
-- /en/support/solutions/articles/48001200525-how-to-configure-varnish-for-shopware-6/
-
-______________________________________________________________________
+  - /en/support/solutions/articles/48001200525-how-to-configure-varnish-for-shopware-6/
+---
 
 <!-- source: https://support.hypernode.com/en/support/solutions/articles/48001200525-how-to-configure-varnish-for-shopware-6/ -->
 
