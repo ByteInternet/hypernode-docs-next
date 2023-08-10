@@ -90,7 +90,7 @@ Go to [Shopware's Reverse Http Cache documentation](https://developer.shopware.c
 
 ## Step Four: Implement a .vcl Into Varnish
 
-To actually use Varnish you need to implement a varnish config file, a .vcl. If you're on Shopware >= 6.4, fetch the [Varnish configuration from their documentation](https://developer.shopware.com/docs/guides/hosting/infrastructure/reverse-http-cache#configure-varnish) (copy the code block starting with *vcl 4.0;*). Otherwise, you can use the `.vcl` from our [Github](https://gist.github.com/hn-support/29efb2e58b18ff2ef0f25363bd02dbe9), or you can create your own.
+To actually use Varnish you need to implement a varnish config file, a .vcl. If you're on Shopware >= 6.4, fetch the [Varnish configuration from their documentation](https://developer.shopware.com/docs/guides/hosting/infrastructure/reverse-http-cache#configure-varnish) (copy the code block starting with *vcl 4.0;*). Or you can create your own.
 
 So, the steps to implement the Varnish configuration into Varnish are:
 
