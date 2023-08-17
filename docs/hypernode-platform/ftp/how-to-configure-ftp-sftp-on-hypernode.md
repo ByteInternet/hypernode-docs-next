@@ -106,16 +106,6 @@ To remove values from your whitelists you can run the following:
 hypernode-systemctl whitelist remove ftp 1.2.3.4
 ```
 
-### Via Your Service Panel
-
-Customers who log in via [service.byte.nl](http://service.byte.nl) can whitelist an IP via the Service Panel by following the steps below:
-
-1. Log on to your [Service Panel](http://service.byte.nl).
-1. Select the Hypernode.
-1. Go to ‘Instellingen’.
-1. Select ‘Externe FTP toegang’.
-1. Add IP address and description.
-
 ### Via Your Control Panel
 
 Customers who log in via [my.hypernode.com](https://my.hypernode.com) can allow an IP via the Control Panel by following the steps below:
