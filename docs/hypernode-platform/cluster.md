@@ -1,7 +1,8 @@
 ---
 myst:
   html_meta:
-    description: Hypernode clusters allow you to scale your setup to your needs, both horizontally and vertically.
+    description: Hypernode clusters allow you to scale your setup to your needs, both
+      horizontally and vertically.
     title: Cluster | Hypernode platform
 ---
 
