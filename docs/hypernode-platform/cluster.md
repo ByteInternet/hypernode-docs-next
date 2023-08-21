@@ -13,6 +13,10 @@ and that the server is as fast as possible. However, if you have a lot of traffi
 cluster setup. This is a setup where you have multiple servers, each with their own task. This way, you can scale your setup to
 your needs.
 
+Hypernode Cluster is available for both cloud and dedicated nodes. Dedicated nodes benefit extra from a cluster setup, as they
+are more prone to going down because of  hardware failures. With a cluster setup, you can make sure that your setup stays up
+even if one of your servers fails.
+
 ## Cluster vs single server
 
 Choosing between a single server setup and a cluster setup is a trade-off between performance and flexibility. A single server
