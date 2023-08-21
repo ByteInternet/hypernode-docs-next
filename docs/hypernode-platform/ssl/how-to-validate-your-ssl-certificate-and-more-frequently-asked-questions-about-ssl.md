@@ -38,7 +38,7 @@ The costs for an SSL certificate consist of two aspects: the costs for the actua
 
 The certificate costs you pay for an SSL certificate that you order via Hypernode, is the purchase prise we pay at our supplier. We arrange the entire SSL application for you. You do not have to do anything more than to order the certificate in your Service Panel. Only with EV-SSL you still have to take care of a number of things (as explained [here](#what-kind-of-certificates-can-i-order-via-hypernode)).
 
-In the background, the certificate is requested with the correct data, the validation is done (place file, perform validation), the certificate is retrieved and safely stored in the right place. We ensure that your SSL certificate works properly, even if you change your plan. All you have to take care of is to install the SSL on the right Hypernode (which can be done with [one click](../ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-nl.md#install-the-ssl-certificate-on-your-hypernode)).
+In the background, the certificate is requested with the correct data, the validation is done (place file, perform validation), the certificate is retrieved and safely stored in the right place. We ensure that your SSL certificate works properly, even if you change your plan. All you have to take care of is to link the SSL certificate to the right Hypernode (which can be done with [one click](../ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-com.md#link-a-third-party-ssl-certificate-to-a-hypernode)).
 
 ### Your SSL Certificate Is Automatically Renewed
 
@@ -82,7 +82,7 @@ So first make sure that you have ordered a Presence plan, even if your domain is
 
 ## How Do I Order an SSL Certificate?
 
-You can request an SSL certificate via our Service Panel. You can order this as an add-on to a Presence package. You can find out how to do that [here](../ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-nl.md#buy-an-ssl-certificate-via-hypernode-recommended).
+You can order an SSL certificate in the Control Panel. You can find out how to do that [here](../ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-com.md#buy-an-ssl-certificate-via-hypernode-recommended).
 
 ## How Can I Link the SSL Certificate to the Hypernode?
 
@@ -114,4 +114,4 @@ Make sure there are no more redirects to the HTTPS version of your site.
 
 ## Can I Use My Own SSL Certificate?
 
-You can also use a (custom) SSL certificate you purchased elsewhere on a Hypernode. You can find out how to install this on your Hypernode [here](../ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-nl.md#add-a-custom-ssl-certificate).
+You can also use a (custom) SSL certificate you purchased elsewhere on a Hypernode. You can find out how to install this on your Hypernode [here](../ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-com.md#add-a-third-party-ssl-certificate-to-your-account).

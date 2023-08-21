@@ -138,4 +138,4 @@ HTTP/1.1 200 0.79 secs: 14856 bytes ==> /vogelbekdier.html
 
 ## Troubleshooting
 
-If your Varnish setup is not working over SSL, check [this article](../../hypernode-platform/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-nl.md#redirecting-to-https-when-using-varnish).
+If your Varnish setup is not working over SSL, check [this article](../../hypernode-platform/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-com.md#redirecting-to-https-when-using-varnish).
