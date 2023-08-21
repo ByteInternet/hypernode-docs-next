@@ -22,7 +22,6 @@ Although Varnish is extremely awesome when it get's to speeding up websites, Var
 
 - [Enable Varnish for Magento 1.x](#enable-varnish-for-magento-1x)
   - [All Customers: Via the hypernode-systemctl CLI Tool](#all-customers-via-the-hypernode-systemctl-cli-tool)
-  - [Dutch Customers: Via Your Service Panel](#dutch-customers-via-your-service-panel)
   - [International Customers: Via Your Control Panel](#international-customers-via-your-control-panel)
 - [Install Turpentine](#install-turpentine)
   - [Configure Turpentine](#configure-turpentine)
@@ -38,10 +37,6 @@ Before installing Turpentine we recommend enabling Varnish on your Hypernode usi
 ### All Customers: Via the hypernode-systemctl CLI Tool
 
 Activating Varnish and set which version to use on your Hypernode can be done via the [hypernode-systemctl tool](../../hypernode-platform/tools/how-to-use-the-hypernode-systemctl-cli-tool.md).
-
-### Dutch Customers: Via Your Service Panel
-
-Only *Dutch customers* can also easily activate Varnish via their [Service Panel](https://service.byte.nl/). Go to `Instellingen` and change Varnish to `Actief`. Once you’ve changed this setting and enabled Varnish in Magento, Varnish will store all information in it’s own cache. Only when Varnish needs data that hasn’t been cached it will connect with the server.
 
 ### International Customers: Via Your Control Panel
 
