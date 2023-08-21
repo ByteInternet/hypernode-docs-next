@@ -225,6 +225,31 @@ Brancher App 'example-eph123456' deleted. See hypernode-systemctl brancher --lis
 Brancher App 'example-eph234567' deleted. See hypernode-systemctl brancher --list for the list of remaining brancher apps.
 ```
 
+##### Example cleanup script
+
+To prevent long running Hypernode Brancher nodes from accumulating, you can use the following script to clean up old Brancher nodes. This is configured to delete all Brancher nodes that have been running for more than 4 hours:
+
+```bash
+MAX_MINUTES_ALIVE=240
+LONG_RUNNING_BRANCHERS=$(hypernode-systemctl brancher --list --machine-readable | jq -r '.[] | select (.minutes>='"${MAX_MINUTES_ALIVE}"') | .name')
+
+if [ -z "${LONG_RUNNING_BRANCHERS}" ]; then
+    echo "No long running Brancher nodes found"
+    exit 0
+fi
+
+for BRANCHER in ${LONG_RUNNING_BRANCHERS}; do
+    echo "Deleting Brancher node ${BRANCHER}"
+    hypernode-systemctl brancher --delete "${BRANCHER}"
+done
+```
+
+You can convert this to a single line if you're into that:
+
+```bash
+hypernode-systemctl brancher --list --machine-readable | jq -r '.[] | select (.minutes>=240) | .name' | xargs -n1 --no-run-if-empty hypernode-systemctl brancher --delete
+```
+
 ## Brancher Install Hook
 
 While it's already very valuable to be able to create a running copy of your Hypernode, it is a very common use case to make some configuration changes.
