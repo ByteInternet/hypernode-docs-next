@@ -23,20 +23,7 @@ The development plans come ready-to-go. You don’t have to worry about web stac
 
 ## Converting a Development Plan to a Production Plan
 
-When you’re done developing you can convert to a regular production node at the click of a button in your Service Panel (service.byte.nl) or Control Panel (my.hypernode.com).
-
-### Upgrading Your Development Plan for Service Panel Users
-
-When you log in via [service.byte.nl](https://auth.byte.nl/)please follow the steps below to upgrade your development plan:
-
-- Log in to the Service Panel. After logging in, you'll see a list of all your Hypernode plans.
-- Click on the domain or Hypernode you want to upgrade.
-- Click on **Pakketbeheer**in the tab **Administratief**.
-- Click on **Wijzigen**next to **Pakkettype**.
-- You'll now see an overview of your current plan. Next to your current plan, you'll see the specs of the new plan in the column Pakket.
-- After selecting the right plan in the right column (don't forget to select **Production**at Uitvoering), scroll down to agree with terms and conditions and click **Pakket aanpassen**. Your plan will be changed immediately.
-
-Please note only the Contracting party or Technical Party (when they're a Hypernode partner) can change the plan
+When you’re done developing you can convert to a regular production node at the click of a button in Control Panel (my.hypernode.com).
 
 ### Upgrading Your Development Plan for Control Panel Users
 
