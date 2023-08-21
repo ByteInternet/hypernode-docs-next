@@ -24,10 +24,6 @@ You can find more in-depth information in [this article about SSL on Hypernode](
 
 Please check out [this article](../ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-com.md) for the different SSL options when you use the Hypernode Control Panel.
 
-## How to Use SSL Certificates via Hypernode.nl
-
-Please check out [this article](../ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-nl.md) for the different SSL options when you use the Byte Service Panel.
-
 ## Order Let’s Encrypt Certificates
 
 ### On Hypernodes With Hypernode Managed Vhosts Enabled

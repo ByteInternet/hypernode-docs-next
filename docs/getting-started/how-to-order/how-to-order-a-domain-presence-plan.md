@@ -53,6 +53,6 @@ A complete list of extensions we offer can be found [here](https://www.byte.nl/d
 
 You can read a detailed description of the step-by-step plan [here](../../services/domain-procedures/how-to-use-domains-in-the-control-panel.md#transfer-an-existing-domain-to-hypernode).
 
-**How can I order a SSL certificate?**
+**How can I order an SSL certificate?**
 
-You can read a detailed description of the step-by-step plan [here](../../hypernode-platform/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-nl.md#order-an-ssl-certificate).
+You can read a detailed description of the step-by-step plan [here](../../hypernode-platform/ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-com.md#buy-an-ssl-certificate-via-hypernode-recommended).
