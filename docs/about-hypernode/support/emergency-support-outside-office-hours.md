@@ -25,8 +25,7 @@ During office hours (from 9:00 AM – 6 PM CE(S)T) you can request Hypernode Eme
 
 ### Step 1 Send a Request to the Hypernode Emergency Service Team
 
-- **Basic SLA** Via the online form on [hypernode-emergency.com](http://hypernode-emergency.com)
-- **Standard SLA** Via chat on [hypernode-emergency.com](http://hypernode-emergency.com)
+ Via the online form on [hypernode-emergency.com](http://hypernode-emergency.com)
 
 ### Step 2 The Request is Sent to the On Duty Hero
 
