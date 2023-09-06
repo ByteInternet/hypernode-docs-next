@@ -48,7 +48,8 @@ To see which values you can set and which values they are allowed to have take a
 - `password_auth`: indicates whether password authentication for the Hypernode is allowed instead of only SSH keys.
 - `permissive_memory_management`: Configure [memory management policy](https://changelog.hypernode.com/release-5946-configurable-memory-management-policy-and-rss-bruteforce-detection/) (OOM kills)
 - `php_version`: Change the PHP version
-- `php_apcu_enabled`: Enable the PHP-apcu
+- `php_apcu_enabled`: Enable the php-apcu module
+- `php_amqp_enabled`: Enable the php-amqp module
 - `redis_persistent_instance`
 - `redis_version`: Change the Redis version
 - `rabbitmq_enabled`: a popular open source message broker
