@@ -1,4 +1,4 @@
-hndocsnext (20230208.082003) UNRELEASED; urgency=medium
+hndocsnext (20230921.104418) UNRELEASED; urgency=medium
 
   [ Rick van de Loo ]
   * Initial packaging
@@ -127,5 +127,249 @@ hndocsnext (20230208.082003) UNRELEASED; urgency=medium
 
   [ Timon de Groot ]
   * docs/brancher: Add label/clear_services examples to hnapi / hndeploy
+  * docs: Add docs for GitHub Actions and Gitlab CI
+  * Apply suggestions from code review
+  * docs/hndeploy: Add note about CI container image
+  * ci: Report changed pages
+  * ci: Only allow index, follow for production
 
- -- Hypernode team <hypernode@byte.nl>  Wed, 08 Feb 2023 08:20:11 +0000
+  [ Lianne van Looij ]
+  * Update what-kind-of-emails-does-hypernode-send.md
+
+  [ Cipriano Groenendal ]
+  * Use example.com and example.hypernode.io
+
+  [ Lianne van Looij ]
+  * Updated DNS article to Control Panel
+
+  [ Cipriano Groenendal ]
+  * Update how-to-resolve-rate-limited-requests-429-too-many-requests.md
+  * chore: mdformat
+  * chore: mdformat
+
+  [ RensZuurbier ]
+  * replace_create_project_with_wget_link
+
+  [ Cipriano Groenendal ]
+  * chore: mdformat
+  * Update how-to-use-mysql-on-hypernode.md
+
+  [ Lianne van Looij ]
+  * chore: apply mdformat
+
+  [ Cipriano Groenendal ]
+  * Update how-to-use-mysql-on-hypernode.md
+
+  [ Timon de Groot ]
+  * Fix incorrect internal URL
+
+  [ Nick ]
+  * Updated the PNL command with 'ua' (line 36).
+
+  [ Alexander Grooff ]
+  * feat: codespaces template
+
+  [ Cipriano Groenendal ]
+  * Update how-to-use-mysql-on-hypernode.md
+  * Update how-to-use-mysql-on-hypernode.md
+  * Update how-to-use-mysql-on-hypernode.md
+
+  [ Lianne van Looij ]
+  * Delete old article for SP (2FA)
+
+  [ Cipriano Groenendal ]
+  * chore: mdformat
+  * Remove duplicate bit
+  * Update inbound links
+  * Use correct language indicators
+  * Clear up examples
+
+  [ Timon de Groot ]
+  * Use composer to install akeneo with version
+
+  [ Lianne van Looij ]
+  * New doc: Domain extensions
+
+  [ Timon de Groot ]
+  * Remove pim-community-standard directory naming
+  * Fix document name and add heading
+
+  [ Lianne van Looij ]
+  * Update which-tlds-does-hypernode-offer.md
+
+  [ Timon de Groot ]
+  * ci: Use docs.hypernode.io for Brancher instances
+  * Fix formatting for doc
+
+  [ Lianne van Looij ]
+  * Update which-tlds-does-hypernode-offer.md
+  * Update which-tlds-does-hypernode-offer.md
+
+  [ rednaslaarom ]
+  * Sentence removed
+
+  [ Timon de Groot ]
+  * Update Hypernode Docker article
+
+  [ Cipriano Groenendal ]
+  * Add Swapnil Kothawade
+  * chore: mdformat
+
+  [ Lianne van Looij ]
+  * Updated TLD article with extra info
+  * chore:apply mdformat
+  * Added missing link to TLD article
+
+  [ Cipriano Groenendal ]
+  * Update default allowlist
+
+  [ Rick van de Loo ]
+  * replace dealer4dealer user agent with xcore
+  * whitelist Mollie in default bots docs
+
+  [ Timon de Groot ]
+  * akeneo6: Simplify article
+
+  [ Lianne van Looij ]
+  * Removed SP specific info from SSH article
+
+  [ Timon de Groot ]
+  * brancher: Add documentation for the Brancher install hook
+
+  [ dvd2david ]
+  * Update how-to-configure-nginx-for-a-multistore.md
+
+  [ RensZuurbier ]
+  * update-trailing-slash
+  * adding-trailing-slash-v2
+
+  [ Lianne van Looij ]
+  * Delete how to autoresponder
+  * Delete conflict between merchant and webdesigner
+  * Updated different control panel scenarios
+  * chore: apply mdformat
+  * Email preferences screenshots
+
+  [ Niutoseq ]
+  * adding feedback group tile to docs
+
+  [ Timon de Groot ]
+  * ci: Report sphinx build errors to Github Actions workflow summary
+
+  [ Cipriano Groenendal ]
+  * Update how-to-restrict-access-to-your-admin-area.md
+  * Update how-to-restrict-access-to-your-admin-area.md
+  * chore: mdformat
+
+  [ Lianne van Looij ]
+  * Created Hipex-Hypernode Billing FAQ
+  * chore: apply mdformat
+  * Update waarom-facturatie-vanuit-hypernode-ipv-hipex.md
+
+  [ Timon de Groot ]
+  * Update waarom-facturatie-vanuit-hypernode-ipv-hipex.md
+
+  [ Lianne van Looij ]
+  * Updated billing article - missed a header
+
+  [ Henk Valk ]
+  * Update how-to-configure-redis-for-magento-2.md
+
+  [ Hypernode Support ]
+  * Update path were to set sitemap magento 2
+
+  [ Timon de Groot ]
+  * Change PM2 documentation
+
+  [ Lianne van Looij ]
+  * Delete Service Panel specific document
+  * Delete how to login to Service Panel
+  * Removed SP specific info in how to cancel
+  * Removed SP specific info
+  * Deleting billing FAQ for SP
+  * Delete  how-to-block-bad-bots-via-the-SP
+  * Updated Supported PHP versions
+
+  [ Timon de Groot ]
+  * Remove unnecessary service panel reference
+  * Remove service-panel.md
+  * Improve blackfire doc
+
+  [ Henk Valk ]
+  * Update how-to-find-your-performance-bottleneck-with-new-relic.md
+
+  [ Rick van de Loo ]
+  * fix login link control panel in newrelic doc
+
+  [ Niutoseq ]
+  * fixing commit
+  * fixing mobile search bar
+  * changing the text in right panel on Tom request
+
+  [ Timon de Groot ]
+  * Apply updated documentation formatting
+  * magento2/varnish: Remove mention of service panel
+  * magento2/varnish: Remove weird * characters around hmv link
+  * magento2/varnish: Remove VCL tip
+  * magento2/varnish: Add performance improvement section
+  * Update docs/ecommerce-applications/magento-2/how-to-configure-varnish-for-magento-2-x.md
+
+  [ Cipriano Groenendal ]
+  * Update security-hall-of-fame.md
+  * Fix link
+
+  [ Timon de Groot ]
+  * tools/nodejs: Update documentation
+  * magento2/varnish: Remove unnecessary bash semicolons
+  * platform/brancher: Add note about Falcon/Eagle availability
+  * Update docs/hypernode-platform/tools/hypernode-brancher.md
+  * support: Update office hours in docs
+
+  [ Erwin Romkes ]
+  * Update how-to-use-the-hypernode-systemctl-cli-tool.md
+
+  [ Cipriano Groenendal ]
+  * Create incident-response-policy.md
+  * Add Arthur Sjouw
+
+  [ dvd2david ]
+  * Update how-to-copy-your-hypernode-to-another-hypernode.md
+
+  [ timhipex ]
+  * Update how-to-set-magento-2-x-to-the-utc-timezone.md
+
+  [ Rolf van de Bovenkamp ]
+  * Updated how-to-configure-varnish-for-shopware-6 removed hypernode VCL because it is outdated
+
+  [ reggysupport ]
+  * Deleted old Service Panel part on how-to-configure-ftp-sftp-on-hypernode.md
+  * Delete dns-for-service-panel-users.md
+  * Delete old Service Panel topic - Update how-to-configure-varnish-for-magento-1-x.md
+  * Delete how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-nl.md
+  * Deleted old Service Panel topic - Update how-to-use-hypernode-development-plans.md
+
+  [ dvd2david ]
+  * Update how-to-configure-ftp-sftp-on-hypernode.md
+
+  [ Alexander Grooff ]
+  * docs: general cluster documentation
+  * chore: mdformat
+  * docs: mention both cloud + dedicated work
+
+  [ Timon de Groot ]
+  * Remove old references to SSL hypernode.nl article
+
+  [ Alexander Grooff ]
+  * docs: brancher cleanup script
+
+  [ dvd2david ]
+  * Update emergency-support-outside-office-hours.md
+
+  [ Rick van de Loo ]
+  * format the emergency-support doc
+  * add php-amqp to docs
+
+  [ Timon de Groot ]
+  * Update magento 2 installation php version note
+
+ -- Hypernode team <hypernode@byte.nl>  Thu, 21 Sep 2023 10:44:49 +0000
