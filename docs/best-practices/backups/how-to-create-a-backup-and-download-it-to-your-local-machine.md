@@ -36,7 +36,7 @@ If your application is in another folder you need to replace "/data/web/magento2
 
 In this step you'll create a dump of your database, and zip that dump into a .zip file. To do this you need to know the name of the database.
 
-- `mysqldump database > /data/web/backup_hypernode/database_[date].sql`
+- `mysqldump --single-transaction database > /data/web/backup_hypernode/database_[date].sql`
 - `zip -ry /data/web/backup_hypernode/database_backup_[date].zip /data/web/backup_hypernode/database_[date].sql`
 
 ### Zip Both Backups into a Single .zip File
