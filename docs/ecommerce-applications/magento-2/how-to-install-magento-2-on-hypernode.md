@@ -20,7 +20,7 @@ Installing Magento 2 will take only 5-10 minutes (add 15 minutes if you want the
 
 ## Upgrade Your PHP Version
 
-**Before installing Magento,**[**change your PHP version**](../../hypernode-platform/php/supported-php-versions-and-how-to-change-them-on-hypernode.md#changing-the-php-version-you-use-on-hypernode)**to php7.1 or higher**
+**Before installing Magento, [change your PHP version](../../hypernode-platform/php/supported-php-versions-and-how-to-change-them-on-hypernode.md#changing-the-php-version-you-use-on-hypernode) to 8.1 or higher**
 
 Some vendor libraries are not compatible with older PHP version anymore, causing errors during the installation.
 
