@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    description: Learn how to change the owner of a domain in the Control Panel.
-      This guide provides step-by-step instructions on how to securely change the owner.
+    description: Learn how to change the owner of a domain in the Control Panel. This
+      guide provides step-by-step instructions on how to securely change the owner.
     title: How to change the owner of a domain? | Control Panel
     keywords: hypernode, domains, transfer owner, change owner, domain owner
 ---
@@ -23,8 +23,6 @@ To change the owner of the domain you need to follow these steps:
 1. Click the orange button **Change the owner**
 1. The new owner receives a confirmation email and can then accept the request.
 
-
-
 ## “You cannot transfer with a Hypernode” notification
 
 If you see the notification and cannot click the button, it means you have a Hypernode linked to this domain. First, you need to unlink a domain. To do so follow the steps below.
@@ -34,7 +32,6 @@ If you see the notification and cannot click the button, it means you have a Hyp
 1. Press “unlink it” in the notification. It will redirect you to the page with the linked Hypernode.
 1. In the list, check the circle next to the “Unlink” option and press Save
 1. Follow the steps from point 1. Change the owner of the domain
-
 
 ### Option 2
 

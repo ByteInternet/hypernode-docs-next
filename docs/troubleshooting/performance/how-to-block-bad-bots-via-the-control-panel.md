@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    description: "Protect your website from bad bots and malicious requests with Hypernode's
-      Control Panel. "
+    description: "Protect your website from bad bots and malicious requests with Hypernode's\
+      \ Control Panel. "
     title: How to block bad bots via the Control Panel? | Hypernode
 redirect_from:
   - /en/services/control-panel/block-bad-bots-via-the-control-panel/

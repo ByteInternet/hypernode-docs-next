@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    description: "Read in this article how you can both block user agents, as referrer
-      sites. We've got you. "
+    description: "Read in this article how you can both block user agents, as referrer\
+      \ sites. We've got you. "
     title: How to block user agents and referrer sites? | Hypernode
 redirect_from:
   - /en/hypernode/nginx/how-to-block-user-agents-and-referrer-sites/
