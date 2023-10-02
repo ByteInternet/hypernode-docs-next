@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    description: "Use Let's Encrypt for free SSL certificates. Want to know more about\
-      \ how to use let's Encrypt on Hypernode? "
+    description: "Use Let's Encrypt for free SSL certificates. Want to know more about
+       how to use let's Encrypt on Hypernode? "
     title: How to use Let’s Encrypt on Hypernode?
 redirect_from:
   - /en/hypernode/ssl/how-to-use-let-s-encrypt-on-hypernode/

@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    description: "Cronjobs are periodic tasks that run in the background of your Hypernode.\
-      \ We'll help you to set up and use these periodic tasks. "
+    description: "Cronjobs are periodic tasks that run in the background of your Hypernode.
+       We'll help you to set up and use these periodic tasks. "
     title: How to Use Periodic Tasks or Cronjobs on Hypernode?
 redirect_from:
   - /en/hypernode/tools/how-to-use-periodic-tasks-cronjobs-on-hypernode/
