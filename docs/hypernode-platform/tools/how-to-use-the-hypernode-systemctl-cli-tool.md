@@ -50,6 +50,8 @@ To see which values you can set and which values they are allowed to have take a
 - `php_version`: Change the PHP version
 - `php_apcu_enabled`: Enable the php-apcu module
 - `php_amqp_enabled`: Enable the php-amqp module
+- `php_xdebug_enabled`: Enable Xdebug for [remote debugging](../php/remote-debugging.md)
+- `php_xdebug_cloud_key`: Set the Xdebug cloud key for [remote debugging](../php/remote-debugging.md)
 - `redis_persistent_instance`
 - `redis_version`: Change the Redis version
 - `rabbitmq_enabled`: a popular open source message broker
