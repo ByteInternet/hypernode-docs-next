@@ -9,7 +9,7 @@ myst:
 
 # How to change the financial owner of the domain in the Control Panel
 
-As well as [transferring ownership of the Hypernode](https://docs.hypernode.com/services/control-panel/how-to-transfer-ownership-of-a-hypernode-in-the-control-panel.html) you can now also change the domain's owner.
+As well as [transferring ownership of the Hypernode](./how-to-transfer-ownership-of-a-hypernode-in-the-control-panel.md) you can now also change the domain's owner.
 
 *Note that the new owner is required to have a valid payment method to accept the transfer, they have the option to do so at this step in case they do not have a valid payment method on their account.*
 
@@ -46,7 +46,7 @@ The option is visible only for the owner of the email that’s going to change. 
 
 ## I don’t want to unlink a domain
 
-If you want to transfer domain without unlinking it from the Hypernode, you can transfer it together with the Hypernode. To do this, [follow the steps for transferring Hypernode](https://docs.hypernode.com/services/control-panel/how-to-transfer-ownership-of-a-hypernode-in-the-control-panel.html).
+If you want to transfer domain without unlinking it from the Hypernode, you can transfer it together with the Hypernode. To do this, [follow the steps for transferring Hypernode](./how-to-transfer-ownership-of-a-hypernode-in-the-control-panel.md).
 
 ## I want to cancel the request to change the owner
 
