@@ -5,7 +5,7 @@ myst:
       Hypernode from your local machine.
     title: Remote Debugging | Hypernode
     keywords: hypernode, remote, debugging, xdebug, phpstorm, php, remote debugging,
-      varnish
+      varnish, xdebug cloud
 ---
 
 # Remote Debugging
@@ -20,15 +20,39 @@ Debugging traffic will be routed to the PHP-FPM instance which has been configur
 
 To enable remote debugging, you first have to enable the Xdebug setting:
 
+### Enable Xdebug
+
 ```console
 app@abcdef-example-magweb-cmbl:~$ hypernode-systemctl settings php_xdebug_enabled True --block
 ```
 
-After that, you need to open a reverse SSH tunnel so that Xdebug on the Hypernode can communicate with PhpStorm on your local machine:
+### Setting up the connection
+
+To connect your IDE to Xdebug on the Hypernode, you can either set up a reverse SSH tunnel or you can set up [Xdebug cloud](https://xdebug.cloud/).
+The latter is a paid service, but it’s very easy to set up and saves you the hassle of setting up a reverse SSH tunnel.
+
+**Xdebug cloud**
+
+Make sure you have an active Xdebug cloud subscription and key, then run the following command:
+
+```console
+app@abcdef-example-magweb-cmbl:~$ hypernode-systemctl settings php_xdebug_cloud_key <your-key> --block
+```
+
+Also make sure you configure your IDE to connect to Xdebug cloud:
+
+- [PhpStorm](https://xdebug.cloud/docs#phpstorm)
+- [Visual Studio Code](https://xdebug.cloud/docs#vscode)
+
+**Reverse SSH tunnel**
+
+If you're not using Xdebug cloud, you need to open a reverse SSH tunnel so that Xdebug on the Hypernode can communicate with PhpStorm on your local machine:
 
 ```console
 $ ssh -R 9003:localhost:9003 app@example.hypernode.io -N
 ```
+
+### Configure PhpStorm
 
 Then you open up your PhpStorm project and go to your *File -> Settings -> PHP -> Servers*. Click the *+* button to add a server and fill *Name* and *Host* with the full domain name of the site you want to debug (for example www.shop.com). Then check the box *Use path mappings* and click on the right column next to your project root. Here you can fill in the absolute path of the application on the remote server, for example:
 
@@ -47,6 +71,8 @@ app@abcdef-example-magweb-cmbl:~$ realpath apps/magento2.komkommer.store/current
 Finally click the *Start Listening for PHP Debug Connections* button. Now your debug environment is ready to go.
 
 ![](_res/phpstorm-listen-for-debug.png)
+
+### Start debugging
 
 To start debugging, make sure you have the Xdebug helper extension enabled in your browser:
 
