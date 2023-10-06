@@ -92,6 +92,22 @@ Go to [Shopware's Reverse Http Cache documentation](https://developer.shopware.c
 
 To actually use Varnish you need to implement a varnish config file, a .vcl. If you're on Shopware >= 6.4, fetch the [Varnish configuration from their documentation](https://developer.shopware.com/docs/guides/hosting/infrastructure/reverse-http-cache#configure-varnish) (copy the code block starting with *vcl 4.0;*). Or you can create your own.
 
+**Note:** If you are using a cluster setup, you need to add some additional configuration to your vcl.
+The `acl purgers` block inside your vcl should contain the private ip range of your cluster.
+You can find your private ip range using the `hypernode-cluster-info` command on one of your cluster nodes.
+
+As example, our private ip range is `192.168.1.0/24`.
+You can add this to the `acl purgers` block. It should like something similar as the example below:
+
+```vcl
+acl purgers {
+    "127.0.0.1";
+    "localhost";
+    "::1";
+    "192.168.1.0/24";
+}
+```
+
 So, the steps to implement the Varnish configuration into Varnish are:
 
 - Create a file on your node, for example: **data/web/shopware6.vcl** with the Varnish config
