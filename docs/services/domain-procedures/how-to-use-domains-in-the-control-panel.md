@@ -65,4 +65,4 @@ Follow the steps below:
 1. Check if everything is correct and place your order.
 1. Go to the DNS Manager and add, edit or delete records as needed:
    ![](_res/mHz-v7hbGSLEdArIOUUsYHCp7ASiuO3Fjw.png)
-1. Assign our nameservers (**nsa.byte.nl**, **nsb.byte.nl**, **nsc.byte.nl**) to your domain name through your domain registrar. The DNS records set in the Control Panel will not be active until after you've updated your nameservers.
+1. Assign our nameservers (**ns1.hypernode.com**, **ns2.hypernode.com**, **ns3.hypernode.com**) to your domain name through your domain registrar. The DNS records set in the Control Panel will not be active until after you've updated your nameservers.
