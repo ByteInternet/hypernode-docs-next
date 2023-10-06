@@ -14,6 +14,7 @@ myst:
 ```{note}
 This feature is accessible only for the Owners of the domains. To check if you’re the owner go to Control Panel > Domains > choose a domain you want to check. If you are the Owner, your e-mail will appear next to the status of the domain.
 ```
+
 ![](_res/AGDaewwtgvcvere.png)
 
 ## How to change legal owner (WHOIS) details in the Control Panel?
