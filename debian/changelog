@@ -1,4 +1,4 @@
-hndocsnext (20230921.104418) UNRELEASED; urgency=medium
+hndocsnext (20231006.080328) UNRELEASED; urgency=medium
 
   [ Rick van de Loo ]
   * Initial packaging
@@ -372,4 +372,30 @@ hndocsnext (20230921.104418) UNRELEASED; urgency=medium
   [ Timon de Groot ]
   * Update magento 2 installation php version note
 
- -- Hypernode team <hypernode@byte.nl>  Thu, 21 Sep 2023 10:44:49 +0000
+  [ Cipriano Groenendal ]
+  * Update backup documentation
+  * Fix links and format
+  * Fix highlighter
+  * Fix layout
+
+  [ Timon de Groot ]
+  * Add doc on remote debugging
+
+  [ Nick ]
+  * Update how-to-create-a-backup-and-download-it-to-your-local-machine.md
+
+  [ Niutoseq ]
+  * adding new docs about changing domain owner
+
+  [ Timon de Groot ]
+  * docs/remote-debugging: Add xdebug cloud docs
+  * Apply suggestions from code review
+
+  [ Niutoseq ]
+  * adding docs about changing WHOIS owner
+  * adding generat note instead of plain text
+  * correct dot
+  * dot change
+  * mdformat doc
+
+ -- Hypernode team <hypernode@byte.nl>  Fri, 06 Oct 2023 08:03:32 +0000
