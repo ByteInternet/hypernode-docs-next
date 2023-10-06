@@ -12,7 +12,7 @@ myst:
 As well as [transferring ownership of the Hypernode](./how-to-transfer-ownership-of-a-hypernode-in-the-control-panel.md) you can now also change the domain's owner.
 
 ```{note}
-Note that the new owner is required to have a valid payment method to accept the transfer, they have the option to do so at this step in case they do not have a valid payment method on their account
+Note that the new owner is required to have a valid payment method to accept the transfer, they have the option to do so at this step in case they do not have a valid payment method on their account.
 ```
 
 ## Change the owner of the domain
