@@ -6,7 +6,7 @@ myst:
     title: What overloaded CPU/RAM or disk means and how to prevent that? | Hypernode
 ---
 
-# What overloaded CPU/RAM or disk means and how to prevent that?
+# What overloaded server means and how to prevent that?
 
 ```{note}
 To ensure a smooth user experience, we're rolling out this feature in stages.
