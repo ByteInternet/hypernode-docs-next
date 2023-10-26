@@ -1,13 +1,13 @@
 ---
 myst:
   html_meta:
-    description: In the Control Panel you can check the health status of each of your Hypernode, which consist of CPU, RAM and disk usage.
+    description: In the Control Panel you can check the health status of each of your
+      Hypernode, which consist of CPU, RAM and disk usage.
     title: What overloaded CPU/RAM or disk means and how to prevent that? | Hypernode
 ---
 
-
-
 # What overloaded CPU/RAM or disk means and how to prevent that?
+
 ```{note}
 To ensure a smooth user experience, we're rolling out this feature in stages.
 Initially, it will be available to customers with fewer than 60 servers on their account. This phased approach allows us to fine-tune performance and provide a seamless improvement for all.
@@ -43,9 +43,11 @@ When customers encounter delays or lag when browsing your website or making tran
 Search engines like Google consider page speed as a ranking factor. An overloaded CPU or Disk usage leading to slow website performance can result in lower search engine rankings, reducing your online store's visibility to potential customers.
 
 ### Security Risks
+
 When CPU is overloaded it may become less responsive to security threats, making it more susceptible to attacks. This can lead to data breaches, potentially damaging your reputation and customer trust.
 
 ## How to fix overloaded CPU, RAM or Disk usage?
+
 ![](_res/Afggaaweg52315SAAfftwmcf9.png)
 
 ### Optimize data and file management
@@ -79,6 +81,5 @@ Distribute traffic across multiple servers to prevent overloading a single CPU.
 ### Failover and Redundancy
 
 Consider implementing failover and redundancy solutions to ensure that your online store remains accessible even in the event of server issues. This can be done by making a cluster setup from your single Hypernode.
-
 
 By managing your server's CPU, RAM and disk usage effectively, you can help ensure that your online store runs smoothly, delivers a positive user experience, and maintains reliable service for your customers.
