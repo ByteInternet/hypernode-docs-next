@@ -52,7 +52,7 @@ sass docs/_static/scss:docs/_static/css
 
 ## Deployment
 
-Deploys automatically after merging branchers to master. 
+Deploys automatically after merging branchers to master.
 
 ### Deploy with Hypernode Deploy
 
