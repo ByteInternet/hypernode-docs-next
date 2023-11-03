@@ -86,7 +86,9 @@ location ~ \.php$ {
 
 **This step is only necessary if you're on Shopware >= 6.4.**
 
-Go to [Shopware's Reverse Http Cache documentation](https://developer.shopware.com/docs/guides/hosting/infrastructure/reverse-http-cache) to configure Shopware to take Varnish into account.
+Go to [Shopware's Reverse Http Cache documentation](https://developer.shopware.com/docs/guides/hosting/infrastructure/reverse-http-cache) to configure Shopware to take Varnish into account. 
+
+For the correct hosts: `[ "http://varnish" ]`, use localhost or varnish on port 6081, for instance: hosts: `[ "http://127.0.0.1:6081" ]`.
 
 ## Step Four: Implement a .vcl Into Varnish
 
