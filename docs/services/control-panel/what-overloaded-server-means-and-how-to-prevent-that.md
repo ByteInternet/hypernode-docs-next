@@ -8,11 +8,6 @@ myst:
 
 # What overloaded server means and how to prevent that?
 
-```{note}
-To ensure a smooth user experience, we're rolling out this feature in stages.
-Initially, it will be available to customers with fewer than 60 servers on their account. This phased approach allows us to fine-tune performance and provide a seamless improvement for all.
-```
-
 In the Control Panel you can check the health status of each of your Hypernode, which consist of CPU, RAM and disk usage. When some of your metrics are red it means the resource is overloaded and some actions might be required to keep your server working properly.
 ![](_res/fghacc456Asvvbtrrrsawfbh.png)
 
