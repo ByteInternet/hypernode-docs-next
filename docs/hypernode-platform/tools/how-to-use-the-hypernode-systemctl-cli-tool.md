@@ -56,6 +56,9 @@ To see which values you can set and which values they are allowed to have take a
 - `redis_version`: Change the Redis version
 - `rabbitmq_enabled`: a popular open source message broker
 - `supervisor_enabled`
+- `tideways_enabled`: Enable [Tideways](https://tideways.com)
+- `tideways_api_key`: The API key for your application
+- `tideways_sample_rate`: Configure the amount of tracing data collected with the [sampling Rate](https://support.tideways.com/documentation/setup/configuration/sampling.html) configuration.
 - `unixodbc_enabled`
 - `varnish_enabled`: Enable Varnish
 - `varnish_version`: Change the Varnish version
