@@ -101,6 +101,7 @@ storefront:
         # Redis Storage for the HTTP cache tags
         redis_url: "redis://redismaster:6379"
 ```
+
 To assist you further, modify the following settings:
 
 `http://varnish` to `http://varnish:6081`
@@ -108,7 +109,8 @@ To assist you further, modify the following settings:
 
 Also, set `SHOPWARE_HTTP_CACHE_ENABLED=1` in your `.env` file.
 
-For the correct Varnish VCL configuration and additional settings, refer to the docs: [Shopware's Reverse Http Cache documentation](https://developer.shopware.com/docs/guides/hosting/infrastructure/reverse-http-cache).
+For the correct Varnish VCL configuration and additional settings, refer to the docs: [Shopware's Reverse Http Cache documentation](https://developer.shopware.com/docs/guides/hosting/infrastructure/reverse-http-cache)
+
 
 ## Step Four: Implement a .vcl Into Varnish
 
