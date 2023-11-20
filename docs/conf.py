@@ -87,7 +87,13 @@ if os.getenv("DOCS_INDEX_FOLLOW", 0):
 
 if os.getenv("DOCS_BASE_URL"):
     html_baseurl = os.getenv("DOCS_BASE_URL")
-    extensions.append("sphinx_sitemap")  # Only generate sitemap when we have a base url
+    # Only generate sitemap when we have a base url
+    extensions.extend(
+        [
+            "sphinx_sitemap",
+            "hypernode.sphinx.extensions.json_sitemap",
+        ]
+    )
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
