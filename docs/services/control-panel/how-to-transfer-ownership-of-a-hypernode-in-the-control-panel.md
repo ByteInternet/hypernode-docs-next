@@ -10,7 +10,7 @@ redirect_from:
 
 <!-- source: https://support.hypernode.com/en/services/control-panel/transfer-ownership/ -->
 
-# How to transfer ownership of a Hypernode in the Control Panel
+# How to Transfer Ownership of a Hypernode in the Control Panel
 
 You can easily transfer ownership of a Hypernode. This means a different account will be charged for the Hypernode subscription. You also have the option to retain admin access after the transfer.
 
