@@ -7,7 +7,7 @@ myst:
     keywords: hypernode, domains, transfer owner, change owner, domain owner
 ---
 
-# How to change the financial owner of the domain in the Control Panel
+# How to Change the Financial Owner of the Domain in the Control Panel
 
 As well as [transferring ownership of the Hypernode](./how-to-transfer-ownership-of-a-hypernode-in-the-control-panel.md) you can now also change the domain's owner.
 

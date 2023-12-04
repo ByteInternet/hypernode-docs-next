@@ -6,7 +6,7 @@ myst:
     title: What overloaded CPU/RAM or disk means and how to prevent that? | Hypernode
 ---
 
-# What overloaded server means and how to prevent that?
+# What Overloaded Server Means and How to Prevent That?
 
 In the Control Panel you can check the health status of each of your Hypernode, which consist of CPU, RAM and disk usage. When some of your metrics are red it means the resource is overloaded and some actions might be required to keep your server working properly.
 ![](_res/fghacc456Asvvbtrrrsawfbh.png)

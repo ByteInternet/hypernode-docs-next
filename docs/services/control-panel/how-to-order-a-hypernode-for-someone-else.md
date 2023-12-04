@@ -6,7 +6,7 @@ myst:
     title: How to order Hypernode for someone else? | Hypernode
 ---
 
-# How to order a Hypernode for someone else?
+# How to Order a Hypernode for Someone Else?
 
 This feature is available only for agencies and provides a more efficient and convenient way to meet your clients’ needs. Upon acceptance of the invitation, the client immediately becomes the new owner of the Hypernode responsible for the payment.
 
