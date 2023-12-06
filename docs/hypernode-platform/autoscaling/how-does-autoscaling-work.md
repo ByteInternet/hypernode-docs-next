@@ -2,7 +2,7 @@
 myst:
   html_meta:
     description: Learn how autoscaling dynamically adjusts server resources based on CPU usage metrics, allowing efficient workload management without manual intervention. Configure thresholds, durations, and understand the workflow for seamless autoscaling on Hypernode.
-    title: How does Autoscaling work?? | Hypernode
+    title: How does Autoscaling work? | Hypernode
 ---
 
 # How does Autoscaling work?
@@ -34,6 +34,9 @@ If the server remains overloaded post-autoscaling, the next autoscaling trigger 
 
 This approach selects the longer duration between user-defined settings or the fallback duration before initiating the next autoscaling event. It ensures adequate time for evaluating resource changes on CPU performance.
 To halt continued autoscaling behavior, simply turn off the autoscaling feature in your control panel. This prevents subsequent autoscaling triggers after the initial action.
+
+### Enabling Autoscaling
+For detailed steps on enabling Autoscaling, please refer to our documentation: [How to enable Autoscaling?](how-to-enable-autoscaling.md)
 
 
 ### Supported providers:
