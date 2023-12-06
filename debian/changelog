@@ -1,4 +1,4 @@
-hndocsnext (20231006.080328) UNRELEASED; urgency=medium
+hndocsnext (20231121.092150) UNRELEASED; urgency=medium
 
   [ Rick van de Loo ]
   * Initial packaging
@@ -398,4 +398,32 @@ hndocsnext (20231006.080328) UNRELEASED; urgency=medium
   * dot change
   * mdformat doc
 
- -- Hypernode team <hypernode@byte.nl>  Fri, 06 Oct 2023 08:03:32 +0000
+  [ Martijn ]
+  * Add additional varnish documentation for cluster setups
+  * mdformat files
+  * Fix wrong mdformat
+
+  [ Burak ]
+  * Update how-to-use-domains-in-the-control-panel.md
+
+  [ Niutoseq ]
+  * new doc about metrics in cp
+  * formatting doc
+  * changing the title
+
+  [ Niutah ]
+  * Update README.md
+  * Update README.md
+  * removing whitespace
+
+  [ Niuta Godlewska ]
+  * removing the note
+
+  [ Erwin Romkes ]
+  * Add Tideway settings
+
+  [ Timon de Groot ]
+  * Add json sitemap generator
+  * Update docs/hypernode-platform/tools/how-to-use-the-hypernode-systemctl-cli-tool.md
+
+ -- Hypernode team <hypernode@byte.nl>  Tue, 21 Nov 2023 09:21:54 +0000
