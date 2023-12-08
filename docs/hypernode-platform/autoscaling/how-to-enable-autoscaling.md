@@ -7,18 +7,17 @@ myst:
 
 # How to Enable Autoscaling?
 
-### What is Autoscaling?
+## What is Autoscaling?
 
 Vertical autoscaling in other words means upgrading your plan automatically when your server needs it, so you don’t need to worry about constant monitoring.
 
 Your plan will be upgraded to the next possible plan within the same provider, increasing your resources while keeping the disk size the same. The upgrade is effective for 24h, after which your Hypernode will return to your regular plan. For more technical overview you can check our docs [How Autoscaling Works](how-does-autoscaling-work.md).
 
-### How to enable Autoscaling?
+## How to enable Autoscaling?
 
 You can enable Autoscaling two ways: in the Control Panel or directly via command line.
 
 ### How to enable Autoscaling in the Control Panel?
-
 
 You can start using autoscaling by:
 
