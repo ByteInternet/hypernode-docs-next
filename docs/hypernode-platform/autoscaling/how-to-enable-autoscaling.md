@@ -1,7 +1,8 @@
 ---
 myst:
   html_meta:
-    description: Step-by-step instructions on enabling Autoscaling through the Control Panel or command line
+    description: Step-by-step instructions on enabling Autoscaling through the Control
+      Panel or command line
     title: How to enable Autoscaling? | Hypernode
 ---
 
@@ -22,9 +23,9 @@ You can enable Autoscaling two ways: in the Control Panel or directly via comman
 You can start using autoscaling by:
 
 1. Log in to [Control Panel](https://my.hypernode.com).
-2. Navigate to Hypernodes > Autoscaling.
-3. Enable autoscaling.
-4. Optionally configure the conditions.
+1. Navigate to Hypernodes > Autoscaling.
+1. Enable autoscaling.
+1. Optionally configure the conditions.
 
 After enabling Autoscaling feature, expect a 5min grace period before Autoscaling takes effect.
 
@@ -45,18 +46,22 @@ To enable autoscaling via the CLI, you can run the following command:
 `hypernode-systemctl autoscaling --enable`
 
 ### Manage autoscaling tresholds via the CLI
+
 If you have enabled autoscaling, you can configure the thresholds when it is being autoscaled.
 This tresholds does have a default value:
+
 - autoscale_trigger_load_percentage **default: 70**
 - autoscale_trigger_load_avg_minutes **default: 15**
 
 If you want to change the default settings, you can use the commands below:
+
 ```
 hypernode-systemctl settings autoscale-trigger-load-percentage 80
 hypernode-systemctl settings autoscale-trigger-load-avg-minutes 50
 ```
 
 ### Disable autoscaling via the CLI
+
 If you want to disable autoscaling via the CLI, you can run `hypernode-systemctl autoscaling --disable`.
 
 **Please note:** if you enable autoscaling the next time, the last configured settings will be used.
