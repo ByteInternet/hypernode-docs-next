@@ -8,6 +8,7 @@ jobs:
   cleanup:
     runs-on: ubuntu-latest
     container: quay.io/hypernode/deploy:3-php8.1-node18
+    environment: acceptance
     steps:
       - uses: actions/checkout@v2
       - name: Dump env
