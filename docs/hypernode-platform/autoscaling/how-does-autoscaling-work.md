@@ -15,7 +15,7 @@ Vertical autoscaling is triggered once the conditions are met from the configure
 - **CPU Load Threshold:** CPU load that is continuously monitored by the autoscaling agent. The percentage value you see is the actual load divided by the number of CPUs you have. For example, if your actual load is 2, but you have 4 CPUs, your CPU load percentage is 50%. The default setting is 70%.
 - **Minimum Duration in Minutes:** Minimum amount of time the server is overloaded before autoscaling gets triggered. We monitor your CPU load every minute; autoscaling will be triggered once the CPU load condition is met for the minimum amount of time set in the Control Panel. The default setting is 15 minutes.
 
-### Autoscaling workflow
+## Autoscaling workflow
 To minimize downtime during the process, we employ a live volume swapping method. We install a new Hypernode without copying the data over the network to the new hosting environment. Next, we detach the volume using the API and mount it on the new machine before adjusting the DNS.
 
 The feature is available on the cloud plans (OpenStack and AWS).
