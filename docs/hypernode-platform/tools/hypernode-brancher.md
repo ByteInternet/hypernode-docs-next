@@ -1,12 +1,15 @@
----
+______________________________________________________________________
+
 myst:
-  html_meta:
-    description: 'Hypernode Brancher is a powerful tool that allows users to create
-      and manage temporary servers based on their production Hypernode. Learn more. '
-    title: Hypernode Brancher | Everything you need to know
+html_meta:
+description: 'Hypernode Brancher is a powerful tool that allows users to create
+and manage temporary servers based on their production Hypernode. Learn more. '
+title: Hypernode Brancher | Everything you need to know
 redirect_from:
-  - /en/support/solutions/articles/48001227297-hypernode-brancher/
----
+
+- /en/support/solutions/articles/48001227297-hypernode-brancher/
+
+______________________________________________________________________
 
 # Hypernode Brancher
 
@@ -106,7 +109,6 @@ You are entitled to a complimentary allocation of 400 minutes for each Hypernode
 you will not be charged for your Brancher minutes usage until it surpasses the threshold of **400 minutes per month
 per Hypernode**, applicable throughout the year 2024. We value your usage and aim to ensure you enjoy the benefits of our
 service without incurring additional costs within this specified limit.
-
 
 ## How do I use it?
 
