@@ -100,6 +100,14 @@ This fetches the hostname of the Brancher node, and leaves a comment on the pull
 
 ![](_res/UxUAfHUX6Vko63WFZAuFzs4qZ9ITqdunWA.png)
 
+### Free Usage Allowance: First 400 Minutes per Hypernode
+
+You are entitled to a complimentary allocation of 400 minutes for each Hypernode. This means
+you will not be charged for your Brancher minutes usage until it surpasses the threshold of **400 minutes per month
+per Hypernode**, applicable throughout the year 2024. We value your usage and aim to ensure you enjoy the benefits of our
+service without incurring additional costs within this specified limit.
+
+
 ## How do I use it?
 
 You can use Brancher in three (and soon four) different ways: via our Hypernode API, Hypernode Deploy or the `hypernode-systemctl brancher` CLI tool.
