@@ -17,11 +17,11 @@ For some shops FTP/SFTP usage is required to access an external data supplier. F
 
 ## Difference between FTP and SFTP
 
-File Transfer Protocol (FTP) and Secure File Transfer Protocol (SFTP) are both widely used for transferring files, but they differ significantly in terms of security. 
+File Transfer Protocol (FTP) and Secure File Transfer Protocol (SFTP) are both widely used for transferring files, but they differ significantly in terms of security.
 
-1. Security: SFTP encrypts both commands and data, providing a secure channel for file transfer. FTP, on the other hand, sends data in plain text, making it susceptible to unauthorized access.
-2. Authentication: SFTP uses encrypted authentication channels, while FTP sends your username and password in plain text, which are easily intercepted and stolen.
-3. Data Integrity: SFTP ensures data integrity by using a secure channel. In contrast, FTP lacks built-in mechanisms for data integrity, potentially leading to data corruption, or malware injection, during transfer.
+- Security: SFTP encrypts both commands and data, providing a secure channel for file transfer. FTP, on the other hand, sends data in plain text, making it susceptible to unauthorized access.
+- Authentication: SFTP uses encrypted authentication channels, while FTP sends your username and password in plain text, which are easily intercepted and stolen.
+- Data Integrity: SFTP ensures data integrity by using a secure channel. In contrast, FTP lacks built-in mechanisms for data integrity, potentially leading to data corruption, or malware injection, during transfer.
 
 NB: We strongly recommend using SSH or SFTP for file transfers. FTP is an inherently unsafe protocol, and should only be used for syncing data with suppliers that can’t be done through the Magento API.
 
