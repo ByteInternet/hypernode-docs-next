@@ -15,6 +15,14 @@ redirect_from:
 
 For some shops FTP/SFTP usage is required to access an external data supplier. For these customers we’ve added the feature to add and remove FTP/SFTP users on your Hypernode. In this article we’ll explain how you can configure FTP/SFTP (create/delete users) and which credentials to use to make a FTP/SFTP connection.
 
+## Difference between FTP and SFTP
+
+File Transfer Protocol (FTP) and Secure File Transfer Protocol (SFTP) are both widely used for transferring files, but they differ significantly in terms of security.
+
+- Security: SFTP encrypts both commands and data, providing a secure channel for file transfer. FTP, on the other hand, sends data in plain text, making it susceptible to unauthorized access.
+- Authentication: SFTP uses encrypted authentication channels, while FTP sends your username and password in plain text, which are easily intercepted and stolen.
+- Data Integrity: SFTP ensures data integrity by using a secure channel. In contrast, FTP lacks built-in mechanisms for data integrity, potentially leading to data corruption, or malware injection, during transfer.
+
 NB: We strongly recommend using SSH or SFTP for file transfers. FTP is an inherently unsafe protocol, and should only be used for syncing data with suppliers that can’t be done through the Magento API.
 
 ## Managing FTP
