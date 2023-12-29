@@ -72,7 +72,7 @@ magerun2 --root-dir=/data/web/magento2 db:dump --strip="@stripped" --stdout | my
 
 Now to use the staging environment, we need to change the base URL's to use the ports for the staging environment. This way your site is accessible through the same URL's as the production shop but will be using different ports. We change the HTTP port to 8888 and the HTTPS port to 8443.
 
-`**`Please note the we often see conflicts when the unsecure and the secure Base-URLs are not the same. So either set both Base-URLs to HTTP -> 8888 or both URLs to HTTPS -> 8443. For example:
+Please note the we often see conflicts when the unsecure and the secure Base-URLs are not the same. So either set both Base-URLs to HTTP -> 8888 or both URLs to HTTPS -> 8443. For example:
 
 ```nginx
 | id | code    | unsecure_baseurl                       | secure_baseurl                         |
@@ -89,13 +89,13 @@ OR:
 ```
 
 Use the following command to change the ports of your staging shop, but use your own domains. You can do this for a single storefront or for all of them.
-This way, if your live shop is `[https://www.example.com/](https://www.example.com/%60)`, your staging environment will be accessible on `[https://www.example.com:8443/](https://www.example.com:8443/%60)`
+This way, if your live shop is `https://www.example.com/`, your staging environment will be accessible on `https://www.example.com:8443/`
 
 #### Change the Base URL's for a Single Storefront Using Magerun
 
 ```nginx
 cd /data/web/staging
-export SHOPHOST="mynode.hypernode.io"
+export SHOPHOST="example.hypernode.io"
 magerun2 --root-dir=/data/web/magento2_staging config:store:set web/unsecure/base_url http://$SHOPHOST:8888/
 magerun2 --root-dir=/data/web/magento2_staging config:store:set web/secure/base_url https://$SHOPHOST:8443/
 magerun2 --root-dir=/data/web/magento2_staging cache:flush
@@ -122,7 +122,7 @@ A big thank you to our partner [Experius](https://www.experius.nl/) for providin
 
 #### Manually Change the Base URL's of Your Storefronts
 
-If you want to set the base URL's manually, check [our documentation](../magento-1/how-to-change-the-base-url-in-magento-1-x.md) on changing your base URL's for Magento 1. Do you have a Magento 2 shop, please check [this article](how-to-change-your-magento-2-base-urls.md) on changing base URL's.
+If you want to set the base URL's manually, check [this article](how-to-change-your-magento-2-base-urls.md) on changing base URL's.
 
 ### Step Seven: Change All References in Your Staging Directory
 
@@ -139,7 +139,7 @@ Keep in mind:
 - Regenerate your sitemap as it may still contain links to your live site.
 - Change all custom links and references that are in your staging installation pointing to the production install.
 
-Now you should be able to reach your Magento 2 staging environment on <http://mynode.hypernode.io:8888>
+Now you should be able to reach your Magento 2 staging environment on `http://example.hypernode.io:8888`
 
 For additional configuration and troubleshooting refer to the [Magento 1 staging environment article](../magento-1/how-to-set-up-a-staging-environment-for-magento-1.md)
 
@@ -151,11 +151,11 @@ For example. Your live Base-URL `https://www.example.com` and your staging envir
 
 If you want to use Varnish for the staging URL make sure to use an unique domain so both domains have their own cache. To do this you can either use the Hypernode domain, or create a subdomain for yourself. For example:
 
-live: [https://www.example.com/](https://example.com/)
+live: `https://www.example.com/`
 
-staging: <https://APPNAME.hypernode.io:8443/>
+staging: `https://example.hypernode.io:8443/`
 
-or: [https://staging.example.com:8443/](https://staging.example.com/%3C.code%3E)
+or: `https://staging.example.com:8443/`
 
 In the example above the domain for the staging environment is always different than the one from the live environment and therefor the Varnish cache won't get mixed up.
 
