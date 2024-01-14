@@ -21,8 +21,9 @@ sys.path.append(os.path.abspath("../"))
 # -- Project information -----------------------------------------------------
 
 project = "Docs"
-copyright = "2023, Hypernode"
+copyright = "2024, Hypernode"
 author = "Hypernode"
+version = "https://docs.hypernode.com/"
 
 # The full version, including alpha/beta/rc tags
 release = "dev"
@@ -47,6 +48,7 @@ extensions = [
     "hypernode.sphinx.extensions.meta_robots",
     "hypernode.sphinx.extensions.github_actions_logging",
     "sphinxcontrib.mermaid",
+    "rst2pdf.pdfbuilder",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -94,6 +96,10 @@ if os.getenv("DOCS_BASE_URL"):
             "hypernode.sphinx.extensions.json_sitemap",
         ]
     )
+
+pdf_documents = [
+    ("index", "hypernode_documentation", "Hypernode Documentation", "by Hypernode"),
+]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
