@@ -25,7 +25,23 @@ File Transfer Protocol (FTP) and Secure File Transfer Protocol (SFTP) are both w
 
 NB: We strongly recommend using SSH or SFTP for file transfers. FTP is an inherently unsafe protocol, and should only be used for syncing data with suppliers that can’t be done through the Magento API.
 
-## Managing FTP
+## Managing FTP Users in Control Panel
+
+To manage FTP users in the Control Panel, follow these steps:
+
+- **Navigate to Hypernode:** Go to the Hypernode you want to manage FTP accounts for. In the side menu, locate and click on the "FTP" menu item.
+- **View Existing Users:** If you already have existing users created via the CLI tool, they will be listed on this page. If no FTP users exist, you will see a form to create a new one.
+- **Fill Out the Form:** In the form, you can specify the FTP username, password, and home directory for a new user.
+- **Delete Existing User:** n the user list, you can click the "trash" icon in the row to delete the user.
+
+**Important Points to Note:**
+
+- If you create a new user with an existing username, the existing user will be overwritten with the new password and home directory.
+- Home directories should start with '/' and must exist on your Hypernode.
+- The same rules apply to the CLI tool, and these instructions are equivalent.
+
+
+## Managing FTP through CLI
 
 **NB: The FTP users created with the instructions below can also be used for SFTP. More information about this can be found**[**here**](#sftp-ssh-file-transfer-protocol)**.**
 
