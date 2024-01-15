@@ -36,7 +36,7 @@ To manage FTP users in the Control Panel, follow these steps:
 
 ```{admonition} Important Points to Note:
 ---
-class: tip
+class: note
 ---
 - If you create a new user with an existing username, the existing user will be overwritten with the new password and home directory.
 - Home directories should start with '/' and must exist on your Hypernode.
