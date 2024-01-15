@@ -40,7 +40,6 @@ To manage FTP users in the Control Panel, follow these steps:
 - Home directories should start with '/' and must exist on your Hypernode.
 - The same rules apply to the CLI tool, and these instructions are equivalent.
 
-
 ## Managing FTP through CLI
 
 **NB: The FTP users created with the instructions below can also be used for SFTP. More information about this can be found**[**here**](#sftp-ssh-file-transfer-protocol)**.**
