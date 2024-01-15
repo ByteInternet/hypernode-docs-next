@@ -29,10 +29,10 @@ NB: We strongly recommend using SSH or SFTP for file transfers. FTP is an inhere
 
 To manage FTP users in the Control Panel, follow these steps:
 
-- **Navigate to Hypernode:** Go to the Hypernode you want to manage FTP accounts for. In the side menu, locate and click on the "FTP" menu item.
-- **View Existing Users:** If you already have existing users created via the CLI tool, they will be listed on this page. If no FTP users exist, you will see a form to create a new one.
-- **Fill Out the Form:** In the form, you can specify the FTP username, password, and home directory for a new user.
-- **Delete Existing User:** In the user list, you can click the "trash" icon in the row to delete the user.
+1. **Navigate to Hypernode:** Go to the Hypernode you want to manage FTP accounts for. In the side menu, locate and click on the "FTP" menu item.
+1. **View Existing Users:** If you already have existing users created via the CLI tool, they will be listed on this page. If no FTP users exist, you will see a form to create a new one.
+1. **Fill Out the Form:** In the form, you can specify the FTP username, password, and home directory for a new user.
+1. **Delete Existing User:** In the user list, you can click the "trash" icon in the row to delete the user.
 
 **Important Points to Note:**
 
