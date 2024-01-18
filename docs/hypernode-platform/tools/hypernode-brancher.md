@@ -1,15 +1,12 @@
---- 
-
+---
 myst:
-html_meta:
-description: 'Hypernode Brancher is a powerful tool that allows users to create
-and manage temporary servers based on their production Hypernode. Learn more. '
-title: Hypernode Brancher | Everything you need to know
+  html_meta:
+    description: 'Hypernode Brancher is a powerful tool that allows users to create
+      and manage temporary servers based on their production Hypernode. Learn more. '
+    title: Hypernode Brancher | Everything you need to know
 redirect_from:
-
-- /en/support/solutions/articles/48001227297-hypernode-brancher/
-
---- 
+  - /en/support/solutions/articles/48001227297-hypernode-brancher/
+---
 
 # Hypernode Brancher
 
