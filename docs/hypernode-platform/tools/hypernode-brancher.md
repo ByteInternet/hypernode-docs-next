@@ -102,8 +102,8 @@ This fetches the hostname of the Brancher node, and leaves a comment on the pull
 
 ### Free Usage Allowance: First 400 Minutes per Hypernode
 
-All Combell Openstack and AWS plans (Falcons and Eagles) include 400 complimentary Brancher minutes for each Hypernode 
-as part of the base package. This means you will not be charged for your Brancher minutes usage until it surpasses the 
+All Combell Openstack and AWS plans (Falcons and Eagles) include 400 complimentary Brancher minutes for each Hypernode
+as part of the base package. This means you will not be charged for your Brancher minutes usage until it surpasses the
 threshold of 400 minutes per month per Hypernode. We aim to ensure that you enjoy the benefits of our service without
 incurring additional costs within this specified limit.
 
