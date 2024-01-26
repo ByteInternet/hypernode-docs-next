@@ -29,7 +29,7 @@ Slack App configuration example:
 1. Navigate to your profile menu in the top right corner and click [Alerts manager](https://my.hypernode.com/alerts-manager/)
 1. Choose category of alerts you want to configure.
 1. Choose which Hypernodes you want to receive alerts about.
-   1. **All Hypernodes** - All Hypernodes you’re linked to, which means you can be the owner, admin or developer to see the Hypernode here. Any new Hypernode you’re linked to will be automatically added to all Hypernodes.
+   1. **All Hypernodes** - All Hypernodes you’re linked to, which means you can be the owner, admin or developer to see the Hypernode here. Any new Hypernode you’re linked to will be automatically added to this list.
    1. **Include** - You will receive alerts only about Hypernodes included in your filter.
    1. **Exclude** - You will receive alerts about all Hypernodes except the ones that you exclude. For example you have 50 Hypernodes and you exclude yourhypernode, you will get alert about the rest 49.
 1. Copy paste Slack Webhook and save your alert.
