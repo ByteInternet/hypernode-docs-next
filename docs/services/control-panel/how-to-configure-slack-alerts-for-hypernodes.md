@@ -16,7 +16,10 @@ For your convenience we recommend starting by generating Slack Webhook. All you 
 Slack App configuration example:
 
 **Slack App icon:**
-![](_res/Hypernode-logo-alerts.jpg)
+[![Hypernode-logo](_res/Hypernode-logo-alerts.jpg)](_res/HY-600-600.jpg)
+
+**Background colour:** #063b67
+
 **Slack App name:** Hypernode Alerts
 
 **Workspace:** MyWorkspace
@@ -39,6 +42,7 @@ Slack App configuration example:
 ## How to change existing Slack alerts?
 
 To remove or overwrite an existing alert filter, delete the current alert and create a new one with the desired configuration.
+
 ![](_res/delete-alert.gif)
 
 ## Tips
@@ -46,9 +50,11 @@ To remove or overwrite an existing alert filter, delete the current alert and cr
 ### Examples of emails sent
 
 Check the tooltip in the checkbox card to see what emails are include in each category
+
 ![](_res/aagfwegWtrwEavSVfdwfawe.png)
 
 ### Use exclude
 
-If you have multiple Hypernodes and don’t want to include all of them, just exclude the ones you don’t want to receive alerts from. Save your time and your mouse :%29
+If you have multiple Hypernodes and don’t want to include all of them, just exclude the ones you don’t want to receive alerts from. Save your time and your mouse :)
+
 ![](_res/feAFawEtGAbvFDdgddsaas.png)
