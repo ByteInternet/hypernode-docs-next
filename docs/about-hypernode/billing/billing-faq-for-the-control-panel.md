@@ -22,22 +22,22 @@ Our Control Panel supports two different payment methods: credit card and SEPA D
 
 - Log in to the [Control Panel](https://my.hypernode.com/).
 - Click on your username in the top right.
-- Select **Billing portal**from the menu.
-- Click **Billing & Shipping Addresses**to edit your billing info.
+- Select **Billing portal** from the menu.
+- Click **Billing & Shipping Addresses** to edit your billing info.
 
 ## How to See the Billing History
 
 - Log in to the [Control Panel](https://my.hypernode.com/).
 - Click on your username in the top right.
-- Select **Billing portal**from the menu.
-- Click **Billing History**to see your invoices.
+- Select **Billing portal** from the menu.
+- Click **Billing History** to see your invoices.
 
 ## How to Change Your Plan
 
 If you log in via [my.hypernode.com](https://auth.hypernode.com/), please use the steps below to change your plan via the Control Panel:
 
 - Log into your Control Panel via [my.hypernode.com](http://my.hypernode.com)
-- There are two ways to go the **Change plan**page:
+- There are two ways to go the **Change plan** page:
   - Go to the**Change plan** page by selecting it from the sidebar on the left. Move your mouse over **Hypernodes** to make the menu appear:
     ![](_res/YqbbPnc1vfVsic4Kn0_vQRU6kipJ9FLviw.png)
   - Or click **Change your plan** in the Hypernode overview:
@@ -53,7 +53,7 @@ If you log in via [my.hypernode.com](https://auth.hypernode.com/), please use th
 
 - Log in to the [Control Panel](https://my.hypernode.com/).
 - Click on your username in the top right.
-- Select **Billing portal**from the menu.
+- Select **Billing portal** from the menu.
 - In the Billing portal, select your current plan.
 - Then click on **Cancel subscription**.
 - The next screen confirms when your subscription will end. Please submit the reason of your cancellation as your feedback is valuable to us.
@@ -78,7 +78,7 @@ If you need to update the PO Number and don't want to change your plan, please c
 
 - Log in to the [Control Panel](https://my.hypernode.com/).
 - Click on your username in the top right.
-- Select **Billing portal**from the menu.
+- Select **Billing portal** from the menu.
 - In the Billing portal, select **Billing & Shipping Addresses**.
 - Select your address.
 - Fill in your VAT number in the VAT Reg # field.

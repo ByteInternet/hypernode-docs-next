@@ -51,7 +51,7 @@ Let’s start with defining a `sitemap.xml` for your webshop:
 Now fill in the required information:
 
 - Filename: `sitemap.xml`
-- Path: `/pub/sitemaps/`
+- Path: `/sitemaps/`
 - In case you have multiple store views, select the corresponding store view
 - Select `Save & Generate`
 
