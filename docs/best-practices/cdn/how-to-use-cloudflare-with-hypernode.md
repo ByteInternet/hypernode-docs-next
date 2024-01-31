@@ -24,7 +24,7 @@ You always connect to the server closest to your location, reducing network late
 
 Cloudflare blocks threats, limits abusive bots and crawlers from wasting your bandwidth and server resources and offers an extensive caching suite comparable with Varnish, but without all the complexity in configuration. Using Cloudflare can reduce the amount of requests done on your Hypernode considerably. This is especially useful for high-traffic websites.
 
-**Please note: Cloudflare is not 100% waterproof. Unfortunately, using Cloudflare might still leave you vulnerable to a certain extend. An example of such vulnerabilities can be found**[**here**](https://blog.christophetd.fr/bypassing-cloudflare-using-internet-wide-scan-data/)**.**
+**Please note: Cloudflare is not 100% waterproof. Unfortunately, using Cloudflare might still leave you vulnerable to a certain extend. An example of such vulnerabilities can be found** [**here**](https://blog.christophetd.fr/bypassing-cloudflare-using-internet-wide-scan-data/)**.**
 
 ## Configuring Cloudflare
 
