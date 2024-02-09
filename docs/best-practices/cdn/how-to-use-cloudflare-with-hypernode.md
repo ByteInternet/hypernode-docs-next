@@ -85,3 +85,15 @@ Our tests with Railgun on Hypernodes showed a performance gain of just a few mil
 As we do not support Railgun (yet), we’ve seen some implementations running the Railgun daemon on a separate server. Doing so is not recommended as it will make all HTTP requests from Cloudflare arrive from the same remote IP.
 
 When someone is trying to brute force your server or in case of an attack, our protection mechanisms will block the attacker. When you use Railgun, our mechanisms will not block the remote IP but block the IP of the Railgun daemon instead, blocking all traffic coming from Cloudflare and therefore block all visitors to your shop.
+
+## 520 Errors From Cloudflare
+
+It can happen that Cloudflare returns a 520 error stating "Web server is returning an unknown error".
+
+This can be caused by your request headers being too big. You can fix this issue by adding the following config.
+
+```nginx
+# $ cat /data/web/nginx/http.buffers
+large_client_header_buffers 4 16k;
+http2_max_field_size 16k;
+```
