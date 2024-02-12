@@ -48,12 +48,6 @@ Cloudflare provides [a very large knowledge base](https://support.cloudflare.com
 
 For using Cloudflare with Magento, please check [the article on their knowledge base](https://support.cloudflare.com/hc/en-us/articles/203904600-Using-CloudFlare-with-Magento) and their [Page Rules and Magento optimization article](https://www.cloudflare.com/features-page-rules/optimize-magento/).
 
-## Extensions for Cloudflare
-
-There are several extensions that provide Cloudflare integration for Magento.
-
-Cloudflare itself provides only an extension for [Magento 2](https://www.cloudflare.com/integrations/magento/), that is still in beta.
-
 ## Using SSL With Cloudflare
 
 Cloudflare offers SSL offloading. You can upload your SSL certificates to Cloudflare to make use of SSL. If you choose to do this, always manually order your SSL certificates so you can use the same certificate on both the Cloudflare servers and the Hypernode.
