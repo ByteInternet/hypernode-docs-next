@@ -22,11 +22,11 @@ More information about DNS settings for your webshop on Hypernode technology, fo
 
 Please note that Hypernode cannot provide uptime guarantees for external DNS. Your SLA does not apply in this case. When a domain name is registered externally, please keep in mind that Hypernode has no influence on the functioning of the DNS. If you don't want to transfer your domain name to Hypernode, changing the name servers to the Byte name servers is a good second option. You will need a Presence plan to be able to manage your DNS from the Service Panel. When you have the DNS set up correctly you can ask your domain name provider to change the name servers to the Byte name servers:
 
-nsa.byte.nl
+ns1.hypernode.com
 
-nsb.byte.nl
+ns2.hypernode.com
 
-nsc.byte.nl
+ns3.hypernode.com
 
 If it is not possible to change the name servers at your domain provider you can find how to direct your domain to your Hypernode [here](how-to-manage-your-dns-settings-for-hypernode.md#option-2-manage-an-external-dns-by-pointing-your-domain-to-hypernode-by-using-cname-and-not-an-a-record).
 
