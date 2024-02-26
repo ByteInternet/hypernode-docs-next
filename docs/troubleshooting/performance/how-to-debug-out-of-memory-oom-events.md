@@ -30,14 +30,14 @@ This configurable setting can be set using the [hypernode-api](https://community
 
 If you want to enable or disable this setting, you can do so with the command below. But before you do, read[this changelog](https://changelog.hypernode.com/changelog/release-5874-better-out-of-memory-pattern-detection-for-preventive-non-essential-process-slaying/) for an in-depth explanation of what the setting exactly entails.
 
-```nginx
-$ hypernode-systemctl settings permissive_memory_management --value True
+```bash
+hypernode-systemctl settings permissive_memory_management --value True
 ```
 
 To disable this setting, use the following command:
 
-```nginx
-$ hypernode-systemctl settings permissive_memory_management --value False
+```bash
+hypernode-systemctl settings permissive_memory_management --value False
 ```
 
 Note that even though this setting can give you some more leeway in regards to memory utilization on Hypernode and gives you the option to decide whether you value keeping the site online at the cost of killing non-essential processes early versus trading some risk in terms of stability for increasing the chance of memory hungry one-off processes to complete if you notice structural Out Of Memory messages in your kern.log that often indicates a real problem in the shop or that it might be time to upgrade.
@@ -98,8 +98,8 @@ On smaller Hypernodes or Hypernodes with databases with big datasets, over time,
 
 If you have a Hypernode which is occasionally low on memory due to dormant MySQL caches building up after a while, it might be an intelligent move to periodically check if the server is below a certain memory-free threshold and then restart the MySQL service. To facilitate that, we have placed a script in `/usr/local/bin/release_mysql_cached_memory` on every Hypernode that users can configure to run in a cron if they have this problem.
 
-```nginx
-app@levkcl-appname-magweb-cmbl:~$ cat /usr/local/bin/release_mysql_cached_memory
+```console
+app@abcdef-example-magweb-cmbl:~$ cat /usr/local/bin/release_mysql_cached_memory
 #!/bin/bash
 read -r -d '' USAGE <&2 echo "Invalid action. $USAGE"; exit 1
 esac
@@ -126,9 +126,8 @@ fi
 
 You can configure this script with a cron like:
 
-```nginx
+```text
 * * * * * /usr/local/bin/release_mysql_cached_memory -m 1024 -c 30
-
 ```
 
 Then when the system reaches a configurable low watermark of memory available, MySQL will automatically be restarted to free up some RAM. The second argument specifies a cooldown in minutes for how long there should be at least between any MySQL restart. Of course, you don’t want to restart your database too often in a production environment.

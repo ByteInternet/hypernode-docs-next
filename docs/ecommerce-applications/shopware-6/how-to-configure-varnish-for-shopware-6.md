@@ -115,13 +115,11 @@ So, the steps to implement the Varnish configuration into Varnish are:
 - Activate the loaded config, **shopware6**: `varnishadm vcl.use shopware6`
 
 ```console
-app@j6yt8m-example-magweb-cmbl:~$ varnishadm vcl.load shopware6 /data/web/shopware6.vcl
+app@abcdef-example-magweb-cmbl:~$ varnishadm vcl.load shopware6 /data/web/shopware6.vcl
 VCL compiled.
-
-app@j6yt8m-example-magweb-cmbl:~$ varnishadm vcl.list
+app@abcdef-example-magweb-cmbl:~$ varnishadm vcl.list
 available  auto/cold          0 boot
 available  auto/warm          0 shopware6
-
-app@j6yt8m-example-magweb-cmbl:~$ varnishadm vcl.use shopware6
+app@abcdef-example-magweb-cmbl:~$ varnishadm vcl.use shopware6
 VCL 'shopware6' now active
 ```

@@ -18,7 +18,7 @@ Redis is a caching method which can increase the speed of the backend and fronte
 
 Add the following line to the .env file:
 
-```bash
+```text
 REDIS_URL=redis://localhost:6379/1
 ```
 
@@ -26,7 +26,7 @@ REDIS_URL=redis://localhost:6379/1
 
 Create the file "**config/packages/framework.yml**" with the following content:
 
-```nginx
+```yaml
 framework:
     cache:
         app: cache.adapter.redis
@@ -36,6 +36,6 @@ framework:
 
 Now flush the Shopware cache, either via the backend or via the CLI by running:
 
-```nginx
+```bash
 bin/console cache:clear
 ```

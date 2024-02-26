@@ -41,23 +41,23 @@ To deny access to everybody except certain addresses to a specific directory or 
 
 ```nginx
 location ^~ /myadmin {
-allow 1.2.3.4;
-deny all;
-   rewrite / /index.php break;
-   echo_exec @phpfpm;
+    allow 1.2.3.4;
+    deny all;
+    rewrite / /index.php break;
+    echo_exec @phpfpm;
 }
 ```
 
 ## Denying access to your staging environment
 
-If you want to allow only a specific ip address to your staging area, you can add the following snippet to a `staging.whitelist`, replacing yourdomain.hypernode.io with your base-url and YOURIP with the desired ip address.
+If you want to allow only a specific ip address to your staging area, you can add the following snippet to a `staging.whitelist`, replacing `yourdomain.hypernode.io` with your base-url and `YOURIP` with the desired ip address.
 
 ```nginx
 if ($http_host ~ "yourdomain.hypernode.io:8443")  {
-  set $block_me_now A;
+    set $block_me_now A;
 }
 if ($remote_addr != YOURIP) {
-  set $block_me_now "${block_me_now}B";
+    set $block_me_now "${block_me_now}B";
 }
 if ($block_me_now = AB) {
     return 403;

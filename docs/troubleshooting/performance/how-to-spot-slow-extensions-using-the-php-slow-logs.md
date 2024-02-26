@@ -40,15 +40,15 @@ One should note that the active function or module is not always the source of d
 
 On Hypernode, the slow PHP log is enabled for you and can be found in `/var/log/php-fpm/php-slow.log`. To enable this on your own system, add these lines to the PHP-FPM `pool.conf`:
 
-```nginx
+```ini
 slowlog = /var/log/php-fpm/php-slow.log
 request_slowlog_timeout = 10s
 ```
 
 If you have a high-traffic but slow shop, this file will likely contain hundreds of traces. So to extract useful conclusions from this data, some parsing is required. On Hypernode there is a handy utility at your service, for Magento you can use the following format: `hypernode-fpm-slow-modules3 --cms *(Magento version)*` which will find non-core Magento extensions in the traces. For cms you have to specify if its either Magento 1 `*(magento_1)*` or Magento 2 `*(magento_2)*` in the command:
 
-```nginx
-$ hypernode-fpm-slow-modules3 --cms magento_2
+```console
+app@abcdef-example-magweb-cmbl:~$ hypernode-fpm-slow-modules3 --cms magento_2
 23-Jun-2020 08:03:03 Fooman_PdfCustomiserPicking
 23-Jun-2020 08:12:30 Amasty_Shopby
 23-Jun-2020 09:13:14 Mage_Sales
@@ -65,8 +65,8 @@ $ hypernode-fpm-slow-modules3 --cms magento_2
 
 If this, again, yields a long list, you can produce a summary like this:
 
-```nginx
-$ hypernode-fpm-slow-modules3 --cms magento_2 | cut -b22- | sort | uniq -c | sort -nr
+```console
+app@abcdef-example-magweb-cmbl:~$ hypernode-fpm-slow-modules3 --cms magento_2 | cut -b22- | sort | uniq -c | sort -nr
      51 Aschroder_SMTPPro
      43 Mage_Sales
      15 Nexcessnet_Turpentine

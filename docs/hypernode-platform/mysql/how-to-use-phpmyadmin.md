@@ -53,20 +53,20 @@ When you want to use phpMyAdmin via another domain, via another URL, or you want
 
 ```nginx
 location /dbadmin/ {
-  # Only allow IP addresses defined in /data/web/include.whitelist
-  include /etc/nginx/app/include.whitelist;
+    # Only allow IP addresses defined in /data/web/include.whitelist
+    include /etc/nginx/app/include.whitelist;
 
-  # Uncomment to secure phpMyAdmin with additional basic_auth
-  # include /etc/nginx/app/include.basic_auth;
+    # Uncomment to secure phpMyAdmin with additional basic_auth
+    # include /etc/nginx/app/include.basic_auth;
 
-  # For static files, alias this location to PMA files on disk
-   alias /usr/share/phpmyadmin/;
+    # For static files, alias this location to PMA files on disk
+    alias /usr/share/phpmyadmin/;
 
-try_files $uri $uri/ /dbadmin/index.php last;
+    try_files $uri $uri/ /dbadmin/index.php last;
 
-location ~ \.php$ {
-echo_exec @phpfpm;
-}
+    location ~ \.php$ {
+        echo_exec @phpfpm;
+    }
 }
 ```
 
@@ -90,9 +90,8 @@ If you want to fully disable phpMyAdmin, create the following snippet as `/data/
 ```nginx
 ## Block PHPMyAdmin
 if ($request_uri ~ ^/phpmyadmin ) {
-        return 403;
+    return 403;
 }
-
 ```
 
 ## Troubleshooting PHPMyAdmin
@@ -103,7 +102,7 @@ This is probably because you redirect ALL traffic over HTTPS. Try using PHPMyAdm
 
 - **I'm receiving an error while dumping the database**
 
-Most of the time this happens when a database is large and you exceed the `max_execution_time` or `memory_limit` in php. If this happens try [dumping your database on the command line](how-to-use-mysql-on-hypernode.md#creating-a-mysql-back-up)
+Most of the time this happens when a database is large, and you exceed the `max_execution_time` or `memory_limit` in php. If this happens try [dumping your database on the command line](how-to-use-mysql-on-hypernode.md#creating-a-mysql-back-up)
 
 - **My phpMyAdmin does not show any images**
 

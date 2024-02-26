@@ -51,7 +51,7 @@ sensible-editor /data/web/nginx/server.blacklist
 and paste the following snippet:
 
 ```nginx
-if ($http_referer ~* (seo|referrer|redirect|babes|click|girl|jewelry|love|organic|poker|porn|sex|teen|video|webcam) ) {
+if ($http_referer ~* (seo|referrer|redirect|babes|click|girl|jewelry|love|organic|poker|porn|sex|teen|video|webcam)) {
     return 405;
 }
 ```

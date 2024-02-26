@@ -73,11 +73,11 @@ Not optimising images properly results in extremely slow loading time. Quick loa
 
 Hypernode is cloud-based hosting, which means your IP can change. To make sure your visitors can still reach your Magento shop after a configuration change, you’ll need to redirect your storefronts using a CNAME. With `n98-magerun` or `n98-magerun2` you can find which storefronts are configured in in your webshop:
 
-```nginx
+```bash
 n98-magerun sys:store:config:base-url:list
 ```
 
-```nginx
+```bash
 magerun2 sys:store:config:base-url:list
 ```
 

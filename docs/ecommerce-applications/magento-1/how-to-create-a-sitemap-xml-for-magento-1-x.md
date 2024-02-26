@@ -54,9 +54,8 @@ When you want to use a different sitemap per storefront some additional configur
 - Create a sitemap directory and a directory for your storefront:
 
   ```bash
-  for CODE in $(n98-magerun sys:store:list --format csv | sed 1d | cut -d "," -f 2 )
-  do
-  mkdir -p /data/web/public/sitemaps/$CODE
+  for CODE in $(n98-magerun sys:store:list --format csv | sed 1d | cut -d "," -f 2 ); do
+    mkdir -p /data/web/public/sitemaps/$CODE
   done
   ```
 

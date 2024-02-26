@@ -25,7 +25,7 @@ It is strongly recommended to use separate databases for your staging environmen
 
 ### Step One: Copy Your Magento2 Directory to a Staging Content Directory
 
-```nginx
+```bash
 rsync -va --delete --delete-excluded \
 --exclude /var/report/ \
 --exclude /var/session/ \
@@ -33,37 +33,33 @@ rsync -va --delete --delete-excluded \
 --exclude \*.sql \
 --exclude \*.zip \
 /data/web/magento2/ /data/web/magento2_staging/
-
 ```
 
 ### Step Two: Recreate Symlinks for the Staging Public Directory
 
-```nginx
+```bash
 cd ~
 rm -rf /data/web/staging && ln -s /data/web/magento2_staging/pub /data/web/staging
 ```
 
 ### Step Three: Create a Staging Database
 
-```nginx
+```bash
 mysql -e 'create database if not exists staging'
-
 ```
 
 ### Step Four: Edit Your di.xml and env.php to Use MySQL and Redis Databases Separate From the Production Databases
 
-```nginx
+```bash
 sensible-editor /data/web/magento2_staging/app/etc/env.php
-
 ```
 
 Now at least change your MySQL database to staging and your Redis databases for cache and FPC to another one that is not in use by the production. (for example: 3 and 4)
 
 ### Step Five: Dump the Production Database Into the Staging Database
 
-```nginx
+```bash
 magerun2 --root-dir=/data/web/magento2 db:dump --strip="@stripped" --stdout | mysql staging
-
 ```
 
 ### Step Six: Change the Base URL's of Your Staging Environment
@@ -74,18 +70,22 @@ Now to use the staging environment, we need to change the base URL's to use the 
 
 Please note the we often see conflicts when the unsecure and the secure Base-URLs are not the same. So either set both Base-URLs to HTTP -> 8888 or both URLs to HTTPS -> 8443. For example:
 
-```nginx
+```text
++----+---------+----------------------------------------+----------------------------------------+
 | id | code    | unsecure_baseurl                       | secure_baseurl                         |
 +----+---------+----------------------------------------+----------------------------------------+
-| 1  | default | http://www.example.com:8888/      | http://www.example.com:8888/
-
+| 1  | default | http://www.example.com:8888/           | http://www.example.com:8888/           |
++----+---------+----------------------------------------+----------------------------------------+
 ```
 
 OR:
 
-```nginx
-| 1 | default | https://www.example.com:8443/ | https://www.example.com:8443/
-
+```text
++----+---------+----------------------------------------+----------------------------------------+
+| id | code    | unsecure_baseurl                       | secure_baseurl                         |
++----+---------+----------------------------------------+----------------------------------------+
+| 1  | default | https://www.example.com:8443/          | https://www.example.com:8443/          |
++----+---------+----------------------------------------+----------------------------------------+
 ```
 
 Use the following command to change the ports of your staging shop, but use your own domains. You can do this for a single storefront or for all of them.
@@ -93,13 +93,12 @@ This way, if your live shop is `https://www.example.com/`, your staging environm
 
 #### Change the Base URL's for a Single Storefront Using Magerun
 
-```nginx
+```bash
 cd /data/web/staging
 export SHOPHOST="example.hypernode.io"
 magerun2 --root-dir=/data/web/magento2_staging config:store:set web/unsecure/base_url http://$SHOPHOST:8888/
 magerun2 --root-dir=/data/web/magento2_staging config:store:set web/secure/base_url https://$SHOPHOST:8443/
 magerun2 --root-dir=/data/web/magento2_staging cache:flush
-
 ```
 
 #### Change the Base URL's for All Storefronts Using a Script
@@ -108,10 +107,9 @@ If you have many storefronts, that all should be changed it's easier to use [our
 
 To use this script:
 
-```nginx
+```bash
 wget https://gist.githubusercontent.com/hn-support/d7a6fdd89bd78ebd7a03982605743616/raw/77837096d4a325b3f863609cd8282531faf0fe4a/change_magento2_staging_baseurls.py
 python change_magento2_staging_baseurls.py
-
 ```
 
 #### Change the Base URLS' for All Your Storefronts Via MySQL
@@ -126,7 +124,9 @@ If you want to set the base URL's manually, check [this article](how-to-change-y
 
 ### Step Seven: Change All References in Your Staging Directory
 
-**If your media directory is stored in `/data/web/staging`, make sure first not to overwrite this folder with a symlink**
+```{note}
+If your media directory is stored in `/data/web/staging`, make sure first not to overwrite this folder with a symlink
+```
 
 Keep in mind:
 
@@ -174,9 +174,9 @@ $ hypernode-manage-vhosts --list
 +---------------------------------+------------+----------------+-------+-------------+---------+--------------+
 ```
 
-To be able to reach the new staging environment you need to change the webroot of the vhost to whatever folder you like. In this case let's create a folder called **/data/web/example_staging/**. You can change the webroot in the nginx-folder that has been created by creating the vhost, in this case: **/data/web/nginx/staging.example.com/public.magento2.conf**. The webroot is set in the first uncommented line of the file:
+To be able to reach the new staging environment you need to change the webroot of the vhost to whatever folder you like. In this case let's create a folder called `/data/web/example_staging/`. You can change the webroot in the nginx-folder that has been created by creating the vhost, in this case: `/data/web/nginx/staging.example.com/public.magento2.conf`. The webroot is set in the first uncommented line of the file:
 
-```nginx
+```bash
 root /data/web/public;
 ```
 

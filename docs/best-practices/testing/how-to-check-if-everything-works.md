@@ -31,7 +31,7 @@ A bigger checklist is available [on the Github account](https://gist.github.com/
 - [Test if your cronjobs work](../../hypernode-platform/tools/how-to-use-periodic-tasks-cronjobs-on-hypernode.md).
 - Test if all caching mechanisms using Memcached are replaced with Redis:
 
-```nginx
+```bash
 grep -Ri memcache /data/web/public/app/etc
 ```
 
