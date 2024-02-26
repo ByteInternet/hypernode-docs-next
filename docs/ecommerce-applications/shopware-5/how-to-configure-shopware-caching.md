@@ -38,7 +38,7 @@ When making adjustments to the configuration, e.g. installing or updating extens
 
 You can flush the Shopware cache by one single command from the shell:
 
-```nginx
+```bash
 cd /data/web/public
 php bin/console sw:cache:clear
 ```
@@ -52,17 +52,16 @@ Or by following the steps below in the backend:
 
 We recommend to configure a cronjob that runs the cache warmer daily at 06:00 to make sure the performance is always optimal.
 
-```nginx
+```text
 # HTTP Cache Warmer
 0 6 * * * * flock -n ~/. php /data/web/public/bin/console sw:warm:http:cache
-
 ```
 
 **Run cache warmer**
 
 After flushing the cache, it's recommended to run the cache warmer manually. This can be done by the following command.
 
-```nginx
+```bash
 cd /data/web/public
 php bin/console sw:warm:http:cache
 ```

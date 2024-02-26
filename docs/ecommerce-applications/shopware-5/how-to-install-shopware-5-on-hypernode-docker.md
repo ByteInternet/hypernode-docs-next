@@ -21,19 +21,16 @@ Before you can start a Docker container make sure that Docker is running. Next y
 
 After you've chosen the image you need to pull the image to your local machine. Once the image is pulled, you can start a Docker container from that image. Use the format below and if needed change the name "hypernode-buster-docer-php7.4-mysql57" to your right version.
 
-```nginx
+```bash
 docker pull docker.hypernode.com/byteinternet/hypernode-buster-docker-php74-mysql57:latest
 docker run -p 222:22 -p 8080:80 -p 8025:8025 docker.hypernode.com/byteinternet/hypernode-buster-docker-php74-mysql57:latest
-
 ```
 
 This will expose port 222 on the container and port 8080 on the localhost. In this example you should use the following command to connect to the container:
 
-```nginx
+```bash
 # Login as app user
-
 ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -p 222 app@127.0.0.1
-
 ```
 
 The password is `insecure_docker_ssh_password`.
@@ -46,9 +43,8 @@ Create a **server.shopware** in \*\*/data/web/nginx/\*\*with the content of this
 
 Run the command below to create the database "shopware_5".
 
-```nginx
+```bash
 mysql -e 'create database if not exists shopware_5'
-
 ```
 
 ## Step Four - Download Shopware

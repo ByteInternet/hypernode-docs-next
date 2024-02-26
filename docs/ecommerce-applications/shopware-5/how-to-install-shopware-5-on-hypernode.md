@@ -27,7 +27,7 @@ Shopware 5 requires a Hypernode Professional S hosting plan or larger. This arti
 
 The latest version of Shopware 5 need at least PHP version 7.2 to be able to run. So the first thing to do is upgrade your PHP version to 7.2 with the following command:
 
-```nginx
+```bash
 hypernode-systemctl settings php_version 7.2
 ```
 
@@ -43,7 +43,7 @@ There are two ways to install Shopware 5: either by using the pre-install or doi
 
 On Hypernode we offer an easy way to install Shopware 5 using one of our pre-install images. Use the following command to install Shopware 5.
 
-```nginx
+```bash
 hypernode-systemctl preinstall shopware_5
 ```
 
@@ -51,19 +51,18 @@ hypernode-systemctl preinstall shopware_5
 
 Download the latest Shopware 5 version to the public folder from the [Shopware website](https://www.shopware.com/en/download/#shopware-5) by right clicking on "Download for free" click on "Copy Link Address" and paste the link after the `wget` command below.
 
-```nginx
+```bash
 cd ~/public/
 wget https://releases.shopware.com/install_5.6.2_6cadc5c14bad4ea8839395461ea42dbc359e9666.zip
 Unzip the downloaded .zip file
 unzip install_5.6.2_6cadc5c14bad4ea8839395461ea42dbc359e9666.zip
-
 ```
 
 ## Install Shopware 5
 
 Before you proceed with the installation you need to create a database for Shopware. In this example we name it "shopware", of course you can name it however you seem fit.
 
-```nginx
+```bash
 echo "create database shopware" | mysql
 ```
 
@@ -88,6 +87,6 @@ If you'd like you could install demo data as well. To do this you'll need to log
 
 To install the default cronjob for Shopware 5 run crontab -e and add the following line:
 
-```nginx
+```text
 */10 * * * * php /data/web/public/bin/console sw:cron:run
 ```

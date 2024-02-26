@@ -61,31 +61,26 @@ Therefor we use the `config:store:set` functionality in `n98-magerun2`.
 
 To do this, login on your Hypernode using SSH and navigate to your Magento 2 directory:
 
-```nginx
+```bash
 cd ~/magento2
 ```
 
-Then, get an overview of the current base URL settings:
+Then, get an overview of the current base URL settings. This will print out a list of your storefronts and their URL configuration:
 
-```nginx
-n98-magerun2 sys:store:config:base-url:list
-```
-
-This will print out a list of your storefronts and their URL configuration:
-
-```nginx
+```console
+app@abcdef-example-magweb-cmbl:~$ n98-magerun2 sys:store:config:base-url:list
 Magento Stores - Base URLs
 
 +----+---------+------------------------------+------------------------------+
-| id | code | unsecure_baseurl | secure_baseurl |
+| id | code    | unsecure_baseurl             | secure_baseurl               |
 +----+---------+------------------------------+------------------------------+
-| 1 | default | http://support.hypernode.io/ | http://support.hypernode.io/ |
+| 1  | default | http://support.hypernode.io/ | http://support.hypernode.io/ |
 +----+---------+------------------------------+------------------------------+
 ```
 
 Next run magerun2 and set the base URLs:
 
-```nginx
+```bash
 cd /data/web/magento2
 export SHOPHOST="mynode.hypernode.io"
 magerun2 --root-dir=/data/web/magento2 config:store:set web/unsecure/base_url https://$SHOPHOST/
@@ -106,7 +101,7 @@ If you want to change your base URL for use with SSL, we created [a handy python
 
 To use it, download the script, make it executable and run it:
 
-```nginx
+```bash
 cd /data/web/public
 wget https://gist.githubusercontent.com/hn-support/0c76ebb5615a5be789997db2ae40bcdd/raw -O change-baseurls.py
 chmod +x change-baseurls.py
@@ -115,6 +110,6 @@ chmod +x change-baseurls.py
 
 Now check your base URLs using Magerun:
 
-```nginx
+```bash
 n98-magerun2 sys:store:config:base-url:list
 ```

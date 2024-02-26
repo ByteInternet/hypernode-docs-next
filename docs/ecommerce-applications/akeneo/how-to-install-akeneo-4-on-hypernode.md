@@ -104,7 +104,7 @@ If you don't want to use the pre-install image, than follow the steps below to m
 
 ## Install Node.js v10.16
 
-```nginx
+```bash
 hypernode-systemctl settings nodejs_version 10
 ```
 

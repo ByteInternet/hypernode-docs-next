@@ -25,16 +25,14 @@ Currently when visiting the Magento 2 Web Setup Wizard, a 404 error is thrown.
 
 To reach the Magento web wizard use the following command:
 
-```nginx
+```bash
 ln -s /data/web/magento2/setup /data/web/public/setup
-
 ```
 
 ## Deconfigure the Web Setup Wizard
 
 After updating your Magento we recommend you to remove the symlink because it is a vulnerability to have it publicly accessible. Use the following command to remove the public file:
 
-```nginx
+```bash
 unlink /data/web/public/setup
-
 ```
