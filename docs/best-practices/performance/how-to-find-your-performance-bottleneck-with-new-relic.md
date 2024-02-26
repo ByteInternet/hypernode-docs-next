@@ -37,10 +37,13 @@ Before you can activate New Relic at Hypernode you need to [create an account](h
 
 SSH to your Hypernode and use these commands to enable New Relic:
 
-```nginx
-Enable New Relic: ~$ hypernode-systemctl settings new_relic_enabled 'True'
-Enter New Relic licence key: ~$ hypernode-systemctl settings new_relic_secret 'licence key'
-Enter New Relic 'app name'~$ hypernode-systemctl settings new_relic_app_name 'app name'
+```bash
+# Enable New Relic
+hypernode-systemctl settings new_relic_enabled 'True'
+# Enter New Relic licence key
+hypernode-systemctl settings new_relic_secret 'licence key'
+# Enter New Relic 'app name'
+hypernode-systemctl settings new_relic_app_name 'app name'
 ```
 
 ### Activation Via the Control Panel
@@ -66,7 +69,7 @@ This error appears when the native Magento New Relic extension is installed in y
 
 In some very rare cases, when you have enabled a huge amount of extensions, or use code with an extraordinary amount of recursion, the detailed tracing might add some overhead to your sites performance. In that case, you should disable trace details by putting these lines in `/data/web/public/.user.ini`:
 
-```nginx
+```ini
 [newrelic]
 newrelic.transaction_tracer.detail = 0
 ```
@@ -79,7 +82,7 @@ We already changed the maximum nesting level for this extension from 500 to 5000
 
 As a quickfix it is possible temporary change the value from 5000 to something bigger. This will not fix the issue as the cause is still there, but it will remove the error message. To do this create a `.user.ini` file in `/data/web/public` with the following setting:
 
-```nginx
+```ini
 [newrelic]
 newrelic.special.max_nesting_level=10000
 ```

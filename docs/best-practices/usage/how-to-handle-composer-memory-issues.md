@@ -21,8 +21,8 @@ You could face two different memory related issues while running composer proces
 
 Composer is a really heavy process which requires a lot of memory. So it may happen that you're trying to run a composer command which will eventually be canceled due to a lack of PHP memory. The error you'll see will look like this:
 
-```nginx
-app@3nljr6-example-magweb-cmbl:~/magento2$ composer require weberinformatics/spreadsheet-product-master
+```console
+app@abcdef-example-magweb-cmbl:~/magento2$ composer require weberinformatics/spreadsheet-product-master
 Using version ^1.0 for weberinformatics/spreadsheet-product-master
 
 ./composer.json has been updated
@@ -43,8 +43,8 @@ Once you face an error like the above you can work your way around it. All you h
 
 If you don't get the PHP memory error, or have already fixed that issue, you could face an overall memory shortage while running composer since composer is just requires a lot of resources. In this case the oom-killer could be triggered and will kill the composer process or your SSH-session which breaks the composer process. For example, this could look like this
 
-```nginx
-app@3nljr6-example-magweb-cmbl:~/magento2$ php -d memory_limit=-1 composer require weberinformatics/spreadsheet-product-master
+```console
+app@abcdef-example-magweb-cmbl:~/magento2$ php -d memory_limit=-1 composer require weberinformatics/spreadsheet-product-master
 Using version ^1.0 for weberinformatics/spreadsheet-product-master
 ./composer.json has been updated
 Loading composer repositories with package information

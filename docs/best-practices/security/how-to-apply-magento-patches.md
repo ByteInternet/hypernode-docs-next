@@ -47,22 +47,11 @@ Download the patch(es) you need via the [Magento downloads page](http://magento.
 
 ### Step 4: Apply the Patch
 
-Navigate to your Magento folder:
+Let’s assume here that the patch name is: `patch_supee-5994.sh` . The commands to run would look like this:
 
-```nginx
-cd example.nl
-```
-
-After this, the command BASH will apply the patch you just downloaded:
-
-```nginx
- bash NAME_PATCH
-```
-
-Let’s assume here that the patch name is: `patch_supee-5994.sh` . Your actual command would look like this:
-
-```nginx
- bash patch_supee-5994.sh
+```console
+app@abcdef-example-magweb-cmbl:~$ cd magento
+app@abcdef-example-magweb-cmbl:~/magento$ bash patch_supee-5994.sh
 ```
 
 ### Step 5: Clear Your Cache
@@ -75,10 +64,10 @@ Don’t forget to check your shop for vulnerabilities after patching and flushin
 
 ### Step 7: Clean up the Patch
 
-After testing your shop, it’s highly advised to remove the patch file. This will help keep the webfolder nice and tidy (no unnecessary files)
+After testing your shop, it’s highly advised to remove the patch file (for example `patch_supee-5994.sh`). This will help keep the webfolder nice and tidy (no unnecessary files)
 
-```nginx
- rm NAME_PATCH
+```bash
+rm patch_supee-5994.sh
 ```
 
 ## FAQ
@@ -101,20 +90,15 @@ Yes you can. You can scan your site with [MageReport.com](http://www.magereport.
 
 Every check that’s been installed can easily be found in the content of your shop. More specifically it’s logged in `app/etc/applied.patches.list` . So you use the command ‘grep’ to access the list:
 
-```nginx
-  grep '|' app/etc/applied.patches.list
-```
-
-The output will look like this:
-
-```nginx
+```console
+app@abcdef-example-magweb-cmbl:~$ grep '|' app/etc/applied.patches.list
 -e 2015-04-14 08:34:22 UTC | SUPEE-5344 | EE_1.14.1.0 | v1 | a5c9abcb6a387aabd6b33ebcb79f6b7a97bbde77 | Thu Feb 5 19:14:49 2015 +0200 | v1.14.1.0..HEAD
 ```
 
 In this example only SUPEE-5344 has been applied. When you uninstalled a patch, you’ll see this:
 
-```nginx
- -e 2015-04-14 15:21:48 UTC | SUPEE-5344 | EE_1.14.1.0 | v1 | a5c9abcb6a387aabd6b33ebcb79f6b7a97bbde77 | Thu Feb 5 19:14:49 2015 +0200 | v1.14.1.0..HEAD | REVERTED
+```text
+-e 2015-04-14 15:21:48 UTC | SUPEE-5344 | EE_1.14.1.0 | v1 | a5c9abcb6a387aabd6b33ebcb79f6b7a97bbde77 | Thu Feb 5 19:14:49 2015 +0200 | v1.14.1.0..HEAD | REVERTED
 ```
 
 **Magereport keeps saying security patch 6482 isn’t installed**

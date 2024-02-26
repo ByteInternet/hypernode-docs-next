@@ -27,8 +27,7 @@ Notably: the patch contains binary characters. So you should probably not open i
 
 [Magereport](https://www.magereport.com/) checks for the following static assets that should have been removed:
 
-```nginx
-
+```text
 /skin/adminhtml/default/default/media/flex.swf
 /skin/adminhtml/default/default/media/uploader.swf
 /skin/adminhtml/default/default/media/uploaderSingle.swf
@@ -36,7 +35,7 @@ Notably: the patch contains binary characters. So you should probably not open i
 
 It also checks for the following files that have been modified:
 
-```nginx
+```text
 /js/mage/adminhtml/uploader/instance.js should contain "fustyFlowFactory"
 /skin/adminhtml/default/default/boxes.css should contain "background:url(images/blank.gif) repeat;"
 ```
