@@ -41,7 +41,7 @@ For example, some settings may be set within a PHP script using `ini_set()`, whe
 
 With a few easy steps, you can override php settings when running in PHP-FPM mode. PHP not only loads the `php.ini` file itself, but it also scans for INI files in each directory; First in the directory the executed script is loaded in, and keeps looking in higher up directories until it reaches the `~/public/` directory.
 
-\*\*Please note:\*\*This would mean, for example, if you were to create the .user.ini within the `~/public/dir1/` directory, the changes are applied to the PHP scripts that are installed in that particular directory only.
+**Please note:** This would mean, for example, if you were to create the .user.ini within the `~/public/dir1/` directory, the changes are applied to the PHP scripts that are installed in that particular directory only.
 
 Any subsequent PHP installations such as WordPress in a `~/public/blog/` directory, will not be affected by the changes in this `.user.ini` If you wish to change the settings for both directories, you'll have to install two separate `.user.ini` files, or place the `.user.ini` file in your `~/public/` directory. This will affect all PHP scripts running on your Hypernode.
 
@@ -51,7 +51,7 @@ More info can be found on the[PHP documentation page](http://php.net/manual/en/c
 
 In this example we'll show you how to increase the `max_execution_time` in PHP. If you've created a `.user.ini` file in the right directory, all you need to do is open up your `.user.ini` file and add the following line:
 
-```nginx
+```ini
 max_execution_time = 3600
 ```
 

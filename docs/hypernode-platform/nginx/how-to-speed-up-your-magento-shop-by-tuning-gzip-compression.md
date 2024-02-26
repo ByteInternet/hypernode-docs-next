@@ -76,13 +76,13 @@ add_header Vary Accept-Encoding;
 
 ### Adding GZIP Types
 
-By default static content ie. javascript, css, xml and html is configured to make use of compression.
+By default, static content i.e. javascript, css, xml and html is configured to make use of compression.
 
 If you want to add more content types that should be compressed using GZIP, extend the gzip_types setting with the mimetypes you want to be gzipped.
 
 For example:
 
-```nginx
+```text
 gzip_types
 text/plain
 text/css
@@ -127,9 +127,8 @@ One lesson learned after hours of debugging is not to make use of the website `c
 
 Another way of testing whether GZIP is working correctly is by using `curl`:
 
-```nginx
+```bash
 curl --compressed -v 2>&1 >/dev/null | grep -E 'Accept-Encoding|Content-Encoding'
-> Accept-Encoding: deflate, gzip
 ```
 
 When GZIP is correctly configured, when using `curl --compressed`, the response headers should show `gzip` as accepted encoding format.

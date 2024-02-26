@@ -21,7 +21,7 @@ Debugging outgoing mail issues could require you to inspect all outgoing mail fr
 
 To install MailHog on a Hypernode, MailHog first needs to be enabled. This can be done using the following command through the CLI.
 
-```nginx
+```bash
 hypernode-systemctl settings mailhog_enabled True
 ```
 
@@ -33,7 +33,7 @@ After the setting is changed and the node is updated, all mail sent from the Hyp
 
 To access MailHog we need to link the `8025` port on the Hypernode to our own `8025` port. This can be done using a SSH connection. Enter the following command on the CLI on your local computer.
 
-```nginx
+```bash
 ssh app@appname.hypernode.io -L 8025:localhost:8025
 ```
 
@@ -43,7 +43,7 @@ This will forward `localhost:8025` (where MailHog is running) to our local `8025
 
 If HMV ([Hypernode Managed Vhosts](../nginx/hypernode-managed-vhosts.md)) is enabled on your Hypernode, you can easily create a vhost for MailHog by using the command below which also enables Basic Authentication.
 
-```nginx
+```bash
 hypernode-manage-vhosts mailhog.example.hypernode.io --https --force-https --type mailhog
 ```
 
@@ -53,7 +53,7 @@ After you've whitelisted your IP-address in ~/nginx/mailhog.example.hypernode.io
 
 If you are using a development node, MailHog can keep running. If you used MailHog to test something on the production node, it needs to be turned off after use. Luckily this is as easy as turning MailHog on. Using the following command.
 
-```nginx
+```bash
 hypernode-systemctl settings mailhog_enabled False
 ```
 

@@ -20,27 +20,27 @@ To facilitate some type of flexibility regarding these settings anyway we have a
 
 On a Hypernode you can enable the larger `thread_stack` by running this command:
 
-```nginx
-$ hypernode-systemctl settings mysql_enable_large_thread_stack --value True
+```bash
+hypernode-systemctl settings mysql_enable_large_thread_stack True
 ```
 
 You can then check the progress of your change by running:
 
-```nginx
+```bash
 hypernode-log  # or 'livelog' for an auto-updating variant of that command
 ```
 
 Once the setting has been activated you will see the configuration file change on disk:
 
-```nginx
+```bash
 # Before
-$ cat /etc/mysql/conf.d/mysql-master.cnf | grep thread
+cat /etc/mysql/conf.d/mysql-master.cnf | grep thread
 thread_cache_size       = 256
 innodb_read_io_threads          = 8
 innodb_write_io_threads         = 8
 
 # After
-$ cat /etc/mysql/conf.d/mysql-master.cnf | grep thread
+cat /etc/mysql/conf.d/mysql-master.cnf | grep thread
 thread_cache_size       = 256
 thread_stack                    = 512K
 innodb_read_io_threads          = 8
@@ -49,15 +49,15 @@ innodb_write_io_threads         = 8
 
 You might need to restart MySQL to load the new configuration:
 
-```nginx
-$ hypernode-servicectl restart mysql
+```bash
+hypernode-servicectl restart mysql
 ```
 
 To check the size of your active `thread_stack` you can run this MySQL query:
 
-```nginx
+```bash
 # Before
-$ mysql -e "SHOW GLOBAL VARIABLES LIKE 'thread_stack';"
+mysql -e "SHOW GLOBAL VARIABLES LIKE 'thread_stack';"
 +---------------+--------+
 | Variable_name | Value  |
 +---------------+--------+
@@ -65,7 +65,7 @@ $ mysql -e "SHOW GLOBAL VARIABLES LIKE 'thread_stack';"
 +---------------+--------+
 
 # After
-$ mysql -e "SHOW GLOBAL VARIABLES LIKE 'thread_stack';"
+mysql -e "SHOW GLOBAL VARIABLES LIKE 'thread_stack';"
 +---------------+--------+
 | Variable_name | Value  |
 +---------------+--------+
@@ -85,7 +85,7 @@ In Shopware the [search index & keywords tables](https://developers.shopware.com
 
 If you encounter these types of errors:
 
-```nginx
+```text
 SQLSTATE[HY000]: General error: 1436 Thread stack overrun: 180608 bytes used of a 196608 byte stack, and 16000 bytes needed. Use 'mysqld --thread_stack=#' to specify a bigger stack.
 ```
 

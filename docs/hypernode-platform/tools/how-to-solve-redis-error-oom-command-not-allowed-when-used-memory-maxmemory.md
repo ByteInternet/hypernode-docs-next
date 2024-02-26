@@ -18,9 +18,8 @@ This error appears if Magento is trying to store more data in the Redis cache th
 
 You can get more insights of the Redis memory on your Hypernode by running the command below.
 
-```nginx
-redis-cli info | grep memory_human
-
+```console
+app@abcdef-example-magweb-cmbl:~$ redis-cli info | grep memory_human
 # Memory
 used_memory_human:331.51M
 total_system_memory_human:5.83G
@@ -37,9 +36,8 @@ To prevent this you can try using compression on the Redis data, but most of the
 
 You can inspect your keys with the command below
 
-```nginx
-redis-cli info keyspace
-
+```console
+app@abcdef-example-magweb-cmbl:~$ redis-cli info keyspace
 # Keyspace
 db0:keys=59253,expires=1117,avg_ttl=81268890
 db1:keys=13608,expires=904,avg_ttl=82515590
@@ -50,7 +48,7 @@ This will give you some insights in the Redis databases you've configured, the k
 
 Once these keys and expires are greatly out of balance like the above example you could force an expire to your keys by adding the following snippet to your Redis config in your `env.php`.
 
-```nginx
+```php
 'auto_expire_lifetime' => '84600',
 'auto_expire_pattern' => '/^[a-zA-Z0-9._-]/',
 'lifetimelimit' => '57600'
