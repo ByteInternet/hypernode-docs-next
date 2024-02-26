@@ -18,7 +18,7 @@ There could be tons of reasons why the shop is suddenly a lot slower than expect
 
 ## Check if the Caches Are Enabled
 
-```nginx
+```bash
 # Quickly check if caches are enabled, run this command from Magento root folder
 magerun cache:list #Magento 1 version
 magerun2 cache:list #Magento 2 version
@@ -28,7 +28,7 @@ If the caches are enabled proceed to the second check.
 
 If not enable the caches.
 
-```nginx
+```bash
 # To enable all caches, run this command from Magento root folder
 magerun cache:enable #Magento 1 version
 magerun2 cache:enable #Magento 2 version
@@ -38,7 +38,7 @@ Now wait for a bit to see if the high load is dropping with the command `htop`.
 
 ## Check if Magento 2.x Is Running in Production Mode
 
-```nginx
+```bash
 # To check whether Magento 2.x runs in Application Mode 'production', run the following command from the Magento root folder
 magerun2 sys:info
 ```
