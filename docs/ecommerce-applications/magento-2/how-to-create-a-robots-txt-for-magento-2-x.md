@@ -74,7 +74,7 @@ cp /data/web/magento2/robots.txt /data/web/magento2/robots/robots_shop_nl.txt
 
 ```bash
 for storefront in $( n98-magerun2 sys:store:list --format=csv | sed 1d | cut -d, -f2 ); do
-  cp /data/web/magento2/robots.txt /data/web/magento2/robots/robots_${storefront}.txt
+    cp /data/web/magento2/robots.txt /data/web/magento2/robots/robots_${storefront}.txt
 done
 ```
 
@@ -82,12 +82,12 @@ done
 
 ```nginx
 location @robots_fallback {
-  root /data/web/magento2/robots;
+    root /data/web/magento2/robots;
 }
 
 location = /robots.txt {
-  alias /data/web/magento2/robots/robots_$storecode.txt;
-  error_page 404 = @robots_fallback;
+    alias /data/web/magento2/robots/robots_$storecode.txt;
+    error_page 404 = @robots_fallback;
 }
 ```
 
@@ -101,7 +101,7 @@ curl -v https://www.example.com/robots.txt
 
 - Allow full access to all directories and pages:
 
-```bash
+```text
 User-agent:*
 Disallow:
 ```

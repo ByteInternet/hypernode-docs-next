@@ -29,7 +29,7 @@ Instead of placing a `maintenance.flag` file in the webroot, Magento 2 looks for
 
 To do this, log in on your Hypernode, and create the maintenance flag:
 
-```nginx
+```bash
 touch /data/web/magento2/var/.maintenance.flag
 ```
 
@@ -39,13 +39,13 @@ If you site is set to maintenance mode **ON**, an error message will be shown to
 
 To allow your developers access to the Magento 2 site while in maintenance mode, add the IP addresses to the var/.maintenance.ip file. This will allow a comma-separated list of IP addresses access to your shop:
 
-```nginx
+```bash
 echo 1.2.3.4 1.2.3.5 1.2.4.5 >> /data/web/magento2/var/.maintenance.ip
 ```
 
 Alternatively you can do this using the bin/magento cli tool:
 
-```nginx
+```bash
 cd ~/magento2
 chmod +x bin/magento
 bin/magento maintenance:enable --ip=1.2.3.4 --ip=2.3.4.5
@@ -53,7 +53,7 @@ bin/magento maintenance:enable --ip=1.2.3.4 --ip=2.3.4.5
 
 When the IP addresses are set in the `.maintenance.ip` file, you can use `n98-magerun` to achieve the same:
 
-```nginx
+```bash
 n98-magerun2 sys:maintenance --on
 n98-magerun2 sys:maintenance --off
 ```
@@ -74,20 +74,20 @@ It is not recommended to change files in the default directory as this can cause
 
 Magento 2:
 
-```nginx
+```bash
 cd /data/web/magento2/errors
 cp -rv default custom/
 ```
 
 Next copy the `local.xml.sample` to `local.xml`:
 
-```nginx
+```bash
 cp local.xml.sample local.xml
 ```
 
 Now change `<skin>default</skin>` to `<skin>custom</skin>` in both `local.xml` and `design.xml` to activate the custom skin we just created:
 
-```nginx
+```bash
 editor local.xml design.xml
 ```
 

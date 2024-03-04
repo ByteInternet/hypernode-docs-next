@@ -48,7 +48,6 @@ The password is ‘*insecure_docker_ssh_password*’.
 **Checker whether or not you're are in the Docker environment**
 
 ```console
-# This file does not exist on real Hypernodes
 app@e4b7d958e69c:~$ ls /etc/hypernode/is_docker
 /etc/hypernode/is_docker
 ```
@@ -281,7 +280,6 @@ ssh -A root@172.17.0.2
 4. Double-check you are in the Docker environment and not the real Hypernode:
 
 ```console
-# This file does not exist on real Hypernodes
 app@e4b7d958e69c:~$ ls /etc/hypernode/is_docker
 /etc/hypernode/is_docker
 ```

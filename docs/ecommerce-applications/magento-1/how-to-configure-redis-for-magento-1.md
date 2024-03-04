@@ -26,7 +26,7 @@ Want to know how to configure Redis in Magento 2? Have a look at [this article](
 
 Open your local.xml file and paste the next lines of code after the tag:
 
-```nginx
+```xml
    <cache>
        <backend>Cm_Cache_Backend_Redis</backend>
        <backend_options>
@@ -49,9 +49,8 @@ Open your local.xml file and paste the next lines of code after the tag:
 
 Flush your cache after making these adjustments:
 
-```nginx
+```bash
 n98-magerun cache:flush
-
 ```
 
 ## Download the Redis Extension From Collin Mollenhour from Github for Magento Versions Older than 1.8.x
@@ -72,33 +71,32 @@ On Hypernode you can use the redis-cli command to get more information out of th
 
 - Flush all keys in all databases:
 
-```nginx
+```bash
 n98-magerun cache:flush
-
 ```
 
 - Flush all keys in database 0 or database 1 respectively:
 
-```nginx
+```bash
 redis-cli flushall
 ```
 
 - Flush all keys in database 0 or database 1 respectively:
 
-```nginx
+```bash
 redis-cli -n 0 flushdb
 redis-cli -n 1 flushdb
 ```
 
 - Check how much Redis Cache you're currently using
 
-```nginx
+```bash
 redis-cli info | grep used_memory_human
 ```
 
 - List all stored keys
 
-```nginx
+```bash
 redis-cli --scan
 ```
 
@@ -134,7 +132,7 @@ This way sessions are stored in-memory, making the shop faster and use less IO t
 
 First install the Redis sessions plugin from Gordon Lesti to enable session storage in Redis:
 
-```
+```bash
 modman clone https://github.com/colinmollenhour/Cm_RedisSession
 ```
 
@@ -142,10 +140,11 @@ modman clone https://github.com/colinmollenhour/Cm_RedisSession
 
 To save your sessions for Magento add/change the following settings in your local.xml:
 
-```
-<session_save>db</session_save>
+```xml
+    ...
+    <session_save>db</session_save>
 	<redis_session>
-		<host>redismaster</host>
+        <host>redismaster</host>
         <port>6379</port>
         <password></password>
         <timeout>2.5</timeout>
@@ -163,13 +162,14 @@ To save your sessions for Magento add/change the following settings in your loca
         <bot_lifetime>7200</bot_lifetime>
         <disable_locking>0</disable_locking>
         <min_lifetime>60</min_lifetime>
-		<max_lifetime>2592000</max_lifetime>
-   	</redis_session></code></pre>
+        <max_lifetime>2592000</max_lifetime>
+   	</redis_session>
+    ...
 ```
 
 Now flush your cache:
 
-```
+```bash
 rm -rf /data/web/public/var/cache/* redis-cli flushall
 ```
 
@@ -181,13 +181,15 @@ To enable the second Redis instance for sessions you run the command: `hypernode
 
 After enabling the second Redis instance you need to update the `/data/web/public/app/etc/local.xml` file and change the port value to `6378` instead of the default `6379`. Furthermore you need to add the following line to your crontab:
 
-`* * * * * redis-cli -p 6378 bgsave`
+```text
+* * * * * redis-cli -p 6378 bgsave
+```
 
 ### Test Whether Your Sessions Are Stored in Redis
 
 To verify whether your configuration is working properly, first clear your session store:
 
-```
+```bash
 rm /data/web/public/var/session/*
 ```
 
@@ -195,7 +197,7 @@ Now open the site in your browser and hit `F5` a few times or log in to the admi
 
 If all is well, no additional sessions files should be written to `/data/web/var/sessions`, but instead to the Redis database:
 
-```
+```bash
 redis-cli -n 2 keys \*
 ```
 
@@ -209,8 +211,8 @@ In some cases we see that when Redis reaches the configured limit and tries to e
 
 A temporary solution is to flush the Redis cache, you can do this by using the flushall command:
 
-```nginx
- redis-cli flushall
+```bash
+redis-cli flushall
 ```
 
 This will flush out all available Redis databases. Please keep in mind that this is only a temporary solution. The underlying cause is in the code of your application and needs to be permanently resolved.

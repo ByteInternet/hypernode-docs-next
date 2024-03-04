@@ -33,7 +33,7 @@ It is strongly recommended to use separate databases for your staging environmen
 
 ### Step one: Copy your Shopware files to the staging directory
 
-```nginx
+```bash
 rsync -va --delete --delete-excluded \
 --exclude /var/cache/ \
 /data/web/public/ /data/web/staging/
@@ -41,43 +41,43 @@ rsync -va --delete --delete-excluded \
 
 ### Step two: Create a staging database
 
-```nginx
+```bash
 mysql -e 'create database if not exists staging'
 ```
 
 ### Step three: Connect your file system to the database
 
-```nginx
+```bash
 editor /data/web/staging/.env
 ```
 
-Make sure to change the 'DB_DATABASE' value to your staging database: DB_DATABASE="staging"
+Make sure to change the `DB_DATABASE` value to your staging database: `DB_DATABASE="staging"`
 
 ### Step four: Dump the production database and import into the staging database
 
-```nginx
+```bash
 mysqldump shopware | mysql staging
 ```
 
 ### Step five: Redirect domains to your staging environment
 
-To redirect requests to the staging environment, you need the following snippet. Create a `/data/web/nginx/http.staging_redir_mapping` file containing:
+To redirect requests to the staging environment, you need the following snippet. Create a `/data/web/nginx/http.staging_redir_mapping.conf` file containing:
 
 ```nginx
 map $http_host $staging_site {
-hostnames;
-dehault 0;
-example.com 1;
+    hostnames;
+    dehault 0;
+    example.com 1;
 }
 ```
 
 Next, create a snippet to redirect all sites mapped as staging_site to the staging environment.
 
-To do this, create a /data/web/nginx/server.staging_redir file containing:
+To do this, create a `/data/web/nginx/server.staging_redir.conf` file containing:
 
 ```nginx
 if ($staging_site = 1) {
-return 301 http://$http_host:8888$request_uri;
+    return 301 http://$http_host:8888$request_uri;
 }
 ```
 
@@ -85,9 +85,11 @@ Now all traffic for domains that are mapped as staging_domain, will be redirecte
 
 ### Step six: Change the SHOP_URL in /data/web/staging/.env
 
-`editor /data/web/staging/.env`
+```bash
+editor /data/web/staging/.env
+```
 
-Make sure you edit the value of SHOP_URL to your Hypernode-URL: SHOP_URL=`http://APPNAME.hypernode.io:8888/`
+Make sure you edit the value of `SHOP_URL` to your Hypernode URL: `SHOP_URL=http://APPNAME.hypernode.io:8888/`
 
 ### Step seven: Change the URL in the 's_core_shop' table for your staging database
 
@@ -95,8 +97,8 @@ Now to use the staging environment, we need to change the base URLs to use the p
 
 Please note to check which ID is relevant for your URL with the `select * from s_core_shops;`
 
-```nginx
-mysql
+```mysql
+$ mysql
 > use staging
 > select * from s_core_shops;
 > update s_core_shops set host = 'APPNAME.hypernode.io:8888' where id = 1;

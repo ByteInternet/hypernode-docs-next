@@ -19,7 +19,7 @@ Magento comes standard with sections for administrative purposes, like `/admin` 
 
 MageReport gives insight in the vulnerability of your shop by checking these URL’s:
 
-```nginx
+```text
 /index.phprss/catalog/notifystock/ (yes, without the slash)
 /admin
 /downloader
@@ -65,16 +65,16 @@ Create a file called `nginx/server.downloader` that contains:
 
 ```nginx
 location /downloader/ {
-  allow x.x.x.x;
-  deny all;
+    allow x.x.x.x;
+    deny all;
 
-  location ~ \.php$ {
-    echo_exec @phpfpm;
-  }
+    location ~ \.php$ {
+        echo_exec @phpfpm;
+    }
 }
 ```
 
-Replace x.x.x.x with the IP addresses you want to allow.
+Replace `x.x.x.x` with the IP addresses you want to allow.
 
 And do the same for `nginx/server.rss`:
 
@@ -139,7 +139,7 @@ If you are on your own, you could use these measures (a subset of our own IPS).
 
 First, install fail2ban. Add this snippet to `/etc/fail2ban/jail.local`:
 
-```nginx
+```ini
 [hn-nginx-retry-ban]
 # Only ban after multiple retries.
 # Use this for "soft" bad behaviour.
@@ -152,7 +152,7 @@ maxretry = 10
 
 And this in `/etc/fail2ban/filter.d/hn-nginx-retry-ban.conf`:
 
-```nginx
+```ini
 [Definition]
 # Use this for "soft" bad behaviour, as the source will only be banned after multiple retries.
 failregex = ^&lt;HOST&gt; .+"POST \S+wp-login.php

@@ -33,7 +33,7 @@ You’re shop is hosted somewhere else? See below for instructions
 
 Several API methods that might leak confidential data are protected by default:
 
-```
+```text
 V1/products
 V1/store/storeViews
 V1/store/storeConfigs

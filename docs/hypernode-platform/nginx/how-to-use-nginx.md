@@ -85,7 +85,7 @@ Additionally, the Nginx website provides [some rules of thumb as well.](https://
 
 To find `.htaccess` files that deny access to custom directories, use the following command:
 
-```nginx
+```bash
 find /data/web/public -type f -name .htaccess -exec grep -q 'Deny from all' {} \; -exec echo {} \;
 ```
 
@@ -110,19 +110,19 @@ The rewrite rules below should be added to a file called server.rewrites in the 
 They are used when you want to rewrite within the same domain. For example, to rewrite all URLs in the format of/invoice/345232.pdf to /invoice.php?id=345232, you would use this rewrite line:
 
 ```nginx
- rewrite ^/invoice/(\d+).pdf$ /invoice.php?id=$1 break;
+rewrite ^/invoice/(\d+).pdf$ /invoice.php?id=$1 break;
 ```
 
-This will handle the rewrite internally so it is transparent for browsers and search engines.
+This will handle the rewrite internally, so it is transparent for browsers and search engines.
 
 ## External redirects
 
 If you have moved content between domains or want to signal (for example, to search engines) that something has moved, you should use an external redirect.
 
-For example, you want every URL starting with /fr to redirect to <http://yourshop.fr:>
+For example, you want every URL starting with `/fr` to redirect to <http://yourshop.fr:>
 
 ```nginx
- rewrite ^/fr/(.*)$ http://yourshop.fr/$1 permanent;
+rewrite ^/fr/(.*)$ http://yourshop.fr/$1 permanent;
 ```
 
 This will also maintain subfolders and query strings (such as <http://yourshop.com/fr/subfolder?arguments>).

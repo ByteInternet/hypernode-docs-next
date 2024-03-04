@@ -88,7 +88,6 @@ location ~* /magmi($|/) {
         echo_exec @phpfpm;
     }
 }
-
 ```
 
 Make sure you only include files from `/etc/nginx/app` and **NOT** from `/data/web/nginx`!

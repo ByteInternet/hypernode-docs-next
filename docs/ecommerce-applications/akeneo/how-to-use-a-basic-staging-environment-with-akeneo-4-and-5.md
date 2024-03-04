@@ -22,7 +22,7 @@ Create a vhost for your staging environment.
 hypernode-manage-vhosts staging.example.hypernode.io --force-https --https --type akeneo4
 ```
 
-## Split the Nnginx Configuration for Production and Staging
+## Split the Nginx Configuration for Production and Staging
 
 Edit the `~/nginx/staging.example.hypernode.io/server.akeneo4.conf` and change to:
 

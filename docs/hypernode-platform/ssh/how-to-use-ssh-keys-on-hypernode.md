@@ -117,13 +117,14 @@ The first step is to generate a keypair. You can do this by using the next bash 
 
 You’ll get the following output:
 
-```nginx
+```console
+app@abcdef-example-magweb-cmbl:~$ ssh-keygen -b 4096
 Generating public/private rsa key pair.
-Enter file in which to save the key (/home/users/username/.ssh/id_rsa):
+Enter file in which to save the key (/Users/username/.ssh/id_rsa):
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
-Your identification has been saved in /home/users/username/.ssh/id_rsa.
-Your public key has been saved in /home/users/username/.ssh/id_rsa.pub.
+Your identification has been saved in /Users/username/.ssh/id_rsa.
+Your public key has been saved in /Users/username/.ssh/id_rsa.pub.
 ```
 
 This command will ask you to give the files a name. Name it whatever you like or keep default and enter a passphrase. Two files will now be created; `id_rsa` and `id_rsa.pub` (unless you gave it a different name). The file `id_rsa` is your **private key** and the file `id_rsa.pub` is your **public key.**
@@ -136,25 +137,32 @@ When generating the keypair the files will be placed in the exact folder from wh
 
 The next part is to create a config file in which you enable forwarding. You can use this command (**make sure you are in the `.ssh` folder)**:
 
-`editor config`
+```bash
+editor config
+```
 
 Put in the next information:
 
-`Host *`
-
-`ForwardAgent yes`
+```text
+Host *
+ForwardAgent yes
+```
 
 This will make sure you can use your ForwardAgent
 
 ### Use an SSH-agent
 
-When using an SSH keypair it’s recommended you use an ssh-agent to store your keypair credentials. By doing this you can connect to your Hypernode and from there connect to a different machine. This works because of your ssh-agent. It stores your SSH session and therefore you can use this to connect to different machines on the fly. Add your key to your agent by using the next command:
+When using an SSH keypair it’s recommended you use an ssh-agent to store your keypair credentials. By doing this you can connect to your Hypernode and from there connect to a different machine. This works because of your ssh-agent. It stores your SSH session, and therefore you can use this to connect to different machines on the fly. Add your key to your agent by using the next command:
 
-`ssh-add id_rsa`
+```bash
+ssh-add ~/.ssh/id_rsa
+```
 
 You can check if your key is really in your agent by using the following command:
 
-`ssh-add -L`
+```bash
+ssh-add -L
+```
 
 ### Add Public Key to Your Hypernode
 
@@ -206,4 +214,6 @@ If you want to add SSH users you can also edit the `~/.ssh/authorized_keys` file
 
 After doing this you can use the following command to connect to Hypernode:
 
-`ssh app@myname.hypernode.io`
+```bash
+ssh app@myname.hypernode.io
+```

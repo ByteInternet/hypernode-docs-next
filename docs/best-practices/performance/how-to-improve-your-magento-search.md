@@ -71,12 +71,12 @@ When adjusting the Sphinx settings, you should make use the following informatio
 - If your shop is using too much memory, the `searchd` daemon can crash due to OOM. To resolve this upgrade to a bigger Hypernode, or improve the memory print of your webshop.
 - The `searchd`daemon is started from the Magento backend, but in case of a server reboot, memory issues or an otherwise very busy server the process kan be killed, causing an interruption in your search functionality. To circumvent these issues, add a cron that checks if the daemon is running and starts it if it’s not:
   - For Magento 1:
-  ```nginx
+  ```text
   @reboot chronic flock -E 0 -n ~/.sphinx.lock /usr/bin/searchd --config /data/web/public/var/sphinx/sphinx.conf --nodetach 2>&1 >> /tmp/search.log
   * * * * * chronic flock -E 0 -n ~/.sphinx.lock /usr/bin/searchd --config /data/web/public/var/sphinx/sphinx.conf --nodetach 2>&1 >> /tmp/search.log
   ```
   - For Magento 2:
-  ```nginx
+  ```text
   @reboot chronic flock -E 0 -n ~/.sphinx.lock /usr/bin/searchd --config /data/web/magento2/var/sphinx/sphinx.conf --nodetach 2>&1 >> /tmp/search.log
   * * * * * chronic flock -E 0 -n ~/.sphinx.lock /usr/bin/searchd --config /data/web/magento2/var/sphinx/sphinx.conf --nodetach 2>&1 >> /tmp/search.log
   ```
@@ -84,7 +84,7 @@ When adjusting the Sphinx settings, you should make use the following informatio
 
 ```nginx
 location = /shell/filename.php {
- echo_exec @phpfpm;
+    echo_exec @phpfpm;
 }
 ```
 

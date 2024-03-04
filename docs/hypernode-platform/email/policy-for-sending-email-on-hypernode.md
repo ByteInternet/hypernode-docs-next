@@ -79,7 +79,7 @@ There are many [Magento email extensions](https://www.magentocommerce.com/magent
 
 By looking at mail headers it is possible to verify whether emails were rate limited: all emails include a x-byte-ratelimited header:
 
-```nginx
+```text
 X-Byte-Mail-Received-Via: smtp-auth
 X-Byte-Domain-ID: 1
 X-Byte-Mail-Received-Via: mail-in-forward

@@ -1,4 +1,4 @@
-hndocsnext (20231121.092150) UNRELEASED; urgency=medium
+hndocsnext (20240226.125510) UNRELEASED; urgency=medium
 
   [ Rick van de Loo ]
   * Initial packaging
@@ -426,4 +426,106 @@ hndocsnext (20231121.092150) UNRELEASED; urgency=medium
   * Add json sitemap generator
   * Update docs/hypernode-platform/tools/how-to-use-the-hypernode-systemctl-cli-tool.md
 
- -- Hypernode team <hypernode@byte.nl>  Tue, 21 Nov 2023 09:21:54 +0000
+  [ Demian Delwig ]
+  * Updated spaces
+
+  [ Niuta Godlewska ]
+  * adding new doc how to order for someone else
+  * format doc
+
+  [ Niutah ]
+  * Update how-to-order-hypernode-for-someone-else.md
+  * Rename how-to-order-hypernode-for-someone-else.md to how-to-order-a-hypernode-for-someone-else.md
+
+  [ Niuta Godlewska ]
+  * rename few titles to capitalized-each-word
+
+  [ alejandro ]
+  * feat(autoscaling documentation): Article on how does autoscaling work: purpose, config params, triggering process, workflow, continued autoscaling process and supported providers
+  * feat(autoscaling documentation): add how to enable autoscaling
+
+  [ ikidnapmyself ]
+  * change h3 to h2 for SEO compliance and github actions build check
+  * change h3 to h2 for SEO compliance and github actions build check
+  * apply comments
+
+  [ Martijn ]
+  * Docs: manage autoscaling via CLI
+
+  [ alejandro ]
+  * fix: md formatting
+  * fix: add autoscaling in hypernode-platform doctree
+
+  [ Timon de Groot ]
+  * ci: Set environment for cleanup action
+
+  [ ikidnapmyself ]
+  * change existing autoscaling docs with alejandro's version
+  * fix header hierarchy
+  * mdformat
+
+  [ Timon de Groot ]
+  * docs: Add how to install laravel doc
+
+  [ ikidnapmyself ]
+  * add difference between FTP & SFTP
+  * delete double Asterisk
+  * finalise wording for SFTP - FTP diff
+  * fix mdformat
+
+  [ Cipriano Groenendal ]
+  * Update how-to-set-up-a-basic-staging-environment-for-magento-2.md
+
+  [ ikidnapmyself ]
+  * managing FTP users in CP
+  * delete empty line
+  * fix typo
+  * unordered list to ordered list
+  * semantic block for important points
+
+  [ Burak ]
+  * Update how-to-configure-ftp-sftp-on-hypernode.md
+
+  [ ikidnapmyself ]
+  * 400 mins free brancher allowance
+  * mdformat
+  * fix "Document or section may not begin with a transition"
+  * fix myst header
+  * iza's wording adjustment
+  * mdformat changes
+
+  [ Niuta Godlewska ]
+  * add slack alert docs
+  * run mdformat
+  * changing list to sublist
+  * mdformat again
+
+  [ Niutah ]
+  * change wording
+
+  [ Niuta Godlewska ]
+  * smallen the image
+  * correct logo and wording
+
+  [ Demian Delwig ]
+  * Updated sitemap path creation
+  * Updated how to use cloudflare with hypernode space
+
+  [ Alessandro Aussems ]
+  * Add Solution For Cloudflare 520 Errors
+  * Add Newline To End Of File
+
+  [ lex.codes ]
+  * Removed depracted extension from how-to-use-cloudflare-with-hypernode.md
+
+  [ Timon de Groot ]
+  * Update hypernode-pricing-plans.md
+  * docs/best-practices: Replace nginx code block with appropriate syntax
+  * docs/ecommerce-applications: Replace nginx code block with appropriate syntax
+  * docs/hypernode-platform: Replace nginx code block with appropriate syntax
+  * docs/services: Replace nginx code block with appropriate syntax
+  * docs/troubleshooting: Replace nginx code block with appropriate syntax
+  * docs/conf: Enable PHP inline highlighting
+  * docs/static: Change pygments block prompt color
+
+ -- Hypernode team <hypernode@byte.nl>  Mon, 26 Feb 2024 12:55:24 +0000

@@ -20,9 +20,8 @@ Adding an HTTP header to one single file is relatively easy. Simply create a `se
 
 ```nginx
 location /info.html {
-  add_header "Some Header Name" "Some value";
+    add_header "Some Header Name" "Some value";
 }
-
 ```
 
 ## Add HTTP Header to Multiple Files/Location
@@ -31,17 +30,15 @@ You often wish to add an HTTP header to multiple files, for instance, all the im
 
 ```nginx
 location ~* (.+\.(jpg|jpeg|gif|css|png|js|ico|html|xml|txt))$ {
-  add_header Pragma public;
-  add_header Cache-Control "public";
+    add_header Pragma public;
+    add_header Cache-Control "public";
 }
-
 ```
 
 It is possible to add HTTP headers to **all** files by not defining any location or file. For example:
 
 ```nginx
 add_header Pragma public;
-
 ```
 
 If you want to override, for example, the /media/ location but also other used locations in `/etc/nginx/magentoX.conf`, you must use another regex than the already defined location block in our Magento Nginx configs:
@@ -50,7 +47,7 @@ Use the following in the `/data/web/nginx/server.headers` configuration file:
 
 ```nginx
 location ~* ^/media/.*\.(css|js|png|gif|txt)$ {
-add_header Access-Control-Allow-Origin "https://www.example.com";
+    add_header Access-Control-Allow-Origin "https://www.example.com";
 }
 ```
 

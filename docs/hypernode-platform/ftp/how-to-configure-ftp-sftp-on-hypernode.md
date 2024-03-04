@@ -51,13 +51,13 @@ class: note
 
 The first step is to create a FTP user on your Hypernode. This is done through the `hypernode-ftp add` command. The syntax of this command is as follows:
 
-```nginx
+```bash
 hypernode-ftp add --username USER --homedir DIRECTORY
 ```
 
 For example if you want to create user `bob` with homedir `/data/web/`:
 
-```nginx
+```bash
 hypernode-ftp add --username bob --homedir /data/web/
 ```
 
@@ -67,13 +67,13 @@ You will be asked for a password, and after adding a password the user is create
 
 If you want to delete a FTP user you can use the `hypernode-ftp remove` command. The syntax of this command is as follows:
 
-```nginx
+```bash
 hypernode-ftp remove --username USER
 ```
 
 We could delete the bob user by using the command like this:
 
-```nginx
+```bash
 hypernode-ftp remove --username bob
 ```
 
@@ -81,14 +81,14 @@ hypernode-ftp remove --username bob
 
 If you want to check which FTP users are enabled you can use the `hypernode-ftp list` command. This command returns a list of all available users and their particular homedir:
 
-```nginx
+```text
 Users found:
 bob /data/web
 ```
 
 Or in case you did not add any FTP users yet:
 
-```nginx
+```text
 No users in FTPasswd file
 ```
 
@@ -102,7 +102,7 @@ You can easily whitelist IP addresses via the command line.
 
 To see which whitelists are currently set you can run the following:
 
-```nginx
+```bash
 hypernode-systemctl whitelist get
 ```
 
@@ -110,7 +110,7 @@ You will see all IP’s whitelisted per type (external database access, FTP and 
 
 If you want to specify a specific whitelist you can run the following:
 
-```nginx
+```bash
 hypernode-systemctl whitelist get ftp
 ```
 
@@ -118,7 +118,7 @@ hypernode-systemctl whitelist get ftp
 
 To add more values to your whitelists you can run the following. Please note that descriptions are optional:
 
-```nginx
+```bash
 hypernode-systemctl whitelist add ftp 1.2.3.4 --description "my description"
 ```
 
@@ -128,7 +128,7 @@ Note that you can whitelist either single IP addresses (e.g. 1.2.3.4) or whole r
 
 To remove values from your whitelists you can run the following:
 
-```nginx
+```bash
 hypernode-systemctl whitelist remove ftp 1.2.3.4
 ```
 

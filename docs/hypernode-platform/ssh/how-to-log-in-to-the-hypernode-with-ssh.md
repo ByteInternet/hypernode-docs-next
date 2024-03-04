@@ -50,13 +50,13 @@ If you ordered your Hypernode plan or trial via Hypernode.com, you received your
 
 Use the following command to connect to Hypernode:
 
-```nginx
+```bash
 ssh app@name.hypernode.io
 ```
 
 Where `name` is the name you have chosen when you ordered the Hypernode. If the name of your node is example.hypernode.io the command would be like this:
 
-```nginx
+```bash
 ssh app@example.hypernode.io
 ```
 
@@ -72,7 +72,7 @@ It is possible that you ban your own IP through fail2ban because of extensive te
 
 You can easily whitelist IP addresses via the command line. First, run the following to check if any IP’s are already whitelisted:
 
-```nginx
+```bash
 hypernode-systemctl whitelist get waf
 ```
 
@@ -80,7 +80,7 @@ hypernode-systemctl whitelist get waf
 
 To add more values to your whitelists you can run the following. Please note that descriptions are optional:
 
-```nginx
+```bash
 hypernode-systemctl whitelist add waf 1.2.3.4 --description "my description"
 ```
 
@@ -88,7 +88,7 @@ hypernode-systemctl whitelist add waf 1.2.3.4 --description "my description"
 
 To remove values from your whitelists you can run the following:
 
-```nginx
+```bash
 hypernode-systemctl whitelist remove waf 1.2.3.4
 ```
 

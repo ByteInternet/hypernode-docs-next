@@ -108,6 +108,9 @@ html_css_files = [
     "css/main.css",
 ]
 html_js_files = ["js/app.js"]
+highlight_options = {
+    "php": {"startinline": True},  # We often have php snippets without the <?php tag
+}
 
 notfound_no_urls_prefix = True
 

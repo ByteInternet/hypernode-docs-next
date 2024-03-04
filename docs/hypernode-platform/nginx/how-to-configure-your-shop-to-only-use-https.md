@@ -64,8 +64,11 @@ Don’t forget to [add the cron to renew your certificates](../ssl/how-to-use-le
 
 If your SSL certificates are linked to your Hypernode, or you ordered Let’s Encrypt certificates, we can change the base URLs to use only HTTPS. To make this easier, we created a little Python script that changes all your base URLs to HTTPS:
 
-```nginx
-## Download the script wget -O change_baseurls.py https://gist.githubusercontent.com/hn-support/0c76ebb5615a5be789997db2ae40bcdd/raw/ ## Execute to change the base URLs to HTTPSpython change_baseurls.py
+```bash
+# Download the script
+wget -O change_baseurls.py https://gist.githubusercontent.com/hn-support/0c76ebb5615a5be789997db2ae40bcdd/raw/
+## Execute to change the base URLs to HTTPS
+python change_baseurls.py
 ```
 
 ## Routing All Traffic Over SSL Using Nginx
@@ -78,8 +81,12 @@ This is why we must configure this in Nginx, so the redirect does not use unnece
 
 Run the following command to add the configuration to Nginx that routes all traffic over HTTPS:
 
+Create the following file at `/data/web/nginx/public.ssl_redirect.conf`:
+
 ```nginx
-echo 'if ($scheme = http) { return 301 https://$host$request_uri; }' >> /data/web/nginx/public.ssl_redirect
+if ($scheme = http) {
+    return 301 https://$host$request_uri;
+}
 ```
 
 **Please note that if you have [Hypernode Managed Vhosts](hypernode-managed-vhosts.md) enabled, you can skip this.**

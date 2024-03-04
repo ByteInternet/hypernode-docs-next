@@ -45,12 +45,12 @@ location * {
 }
 
 location / {
-  # If the requested page is a file that doesn't exist, serve
-  # app.php instead, and let it be executed using phpfpm.
-  if (!-f $request_filename){
-      rewrite ^(.*)$ /app.php/ break;
-      echo_exec @phpfpm;
-  }
+    # If the requested page is a file that doesn't exist, serve
+    # app.php instead, and let it be executed using phpfpm.
+    if (!-f $request_filename){
+        rewrite ^(.*)$ /app.php/ break;
+        echo_exec @phpfpm;
+    }
 }
 
 location ~ \.php$ {

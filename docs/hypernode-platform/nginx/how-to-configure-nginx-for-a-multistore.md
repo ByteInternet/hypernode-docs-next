@@ -122,8 +122,8 @@ ln -s /data/web/public /data/web/public/nl
 
 Below you can find an example setup where all the above options have been combined.
 
-```bash
-  Magento Stores - Base URLs
+```text
+Magento Stores - Base URLs
 +----+---------+------------------------------------+--------------------+
 | id | code    | unsecure_baseurl           | secure_baseurl             |
 +----+---------+------------------------------------+--------------------+

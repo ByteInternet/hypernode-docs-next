@@ -56,8 +56,8 @@ This tresholds does have a default value:
 If you want to change the default settings, you can use the commands below:
 
 ```
-hypernode-systemctl settings autoscale-trigger-load-percentage 80
-hypernode-systemctl settings autoscale-trigger-load-avg-minutes 50
+hypernode-systemctl settings autoscale_trigger_load_percentage 80
+hypernode-systemctl settings autoscale_trigger_load_avg_minutes 50
 ```
 
 ### Disable autoscaling via the CLI

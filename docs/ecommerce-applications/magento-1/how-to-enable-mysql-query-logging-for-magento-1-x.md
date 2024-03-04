@@ -26,7 +26,7 @@ To turn on Magento's own query logging mechanism, edit `/data/web/public/lib/Var
 
 Now look for the line containing `$_debug` and change `false` to `true`:
 
-```nginx
+```php
 protected $_debug = true;
 ```
 
