@@ -16,6 +16,7 @@ redirect_from:
 This tutorial shows how to create a keypair and use PuTTY (for Windows users) or Terminal (Linux and Mac OSX) to log in to your Hypernode.
 
 ## For Windows Users (PuTTY)
+
 To generate an SSH keypair and connect to your Hypernode, you’ll need to use three different programs; PuTTY, PuTTYgen and Pageant. Download these programs from the [PuTTY website](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). Follow the next steps.
 
 ### Generate the Keypair With PuTTYgen
@@ -44,7 +45,6 @@ After you have created a key pair, make sure you add your public key to your Hyp
    ![](_res/Kgtdsbhwrt4357-sdfhsrtewccGG.png)
 1. Click **Add SSH key** to add the key to the Hypernode.
 1. Repeat the above steps if you would like to add more keys.
-
 
 A couple of things to keep in mind:
 
@@ -177,7 +177,6 @@ After you have created a key pair, make sure you add your public key to your Hyp
    ![](_res/Kgtdsbhwrt4357-sdfhsrtewccGG.png)
 1. Click **Add SSH key** to add the key to the Hypernode.
 1. Repeat the above steps if you would like to add more keys.
-
 
 A couple of things to keep in mind:
 
