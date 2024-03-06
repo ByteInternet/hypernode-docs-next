@@ -80,6 +80,7 @@ To create a whitelist based on two components: URL and IP address.
 In the **nginx** file named **whitelist-development-exception.conf**, you should do the following:
 
 First, disable the following nginx configuration:
+
 ```nginx
 geo $development_exceptions {
     default "Development restricted area";
@@ -89,6 +90,7 @@ geo $development_exceptions {
 ```
 
 Then, add the following nginx configuration to the same file:
+
 ```nginx
 map $request_uri $uri_whitelist {
     default 0; # all other URIs are blocked
@@ -108,6 +110,7 @@ map $uri_whitelist$ip_whitelist $development_exceptions {
     "11" "off";  # On URI whitelist and on IP whitelist
 }
 ```
+
 - We define **$uri_whitelist** that checks if the request URI contains a path that should be whitelisted. If so, we set it to 1, otherwise to 0.
 - We use a geo directive to define **$ip_whitelist**, which checks if the visitor's IP address is whitelisted. If so, we set it to 1, otherwise to 0.
 - We combine **$uri_whitelist** and **$ip_whitelist** in a new map that defines **$development_exceptions**. Depending on whether the IP address or URI path is whitelisted, access without basic auth is allowed ("off").
