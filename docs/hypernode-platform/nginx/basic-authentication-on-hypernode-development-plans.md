@@ -74,6 +74,47 @@ geo $development_exceptions {
 
 Please note that Google and Bing are still blocked when everyone else is allowed.
 
+## Whitelisting Based on IP and URL
+
+To create a whitelist based on two components: URL and IP address.
+In the **nginx** file named **whitelist-development-exception.conf**, you should do the following:
+
+First, disable the following nginx configuration:
+
+```nginx
+geo $development_exceptions {
+    default "Development restricted area";
+    # 1.2.3.4/32 "off"; # disables basic auth for 1.2.3.4/32
+    0.0.0.0/0 "off"; # Everything is allowed.
+}
+```
+
+Then, add the following nginx configuration to the same file:
+
+```nginx
+map $request_uri $uri_whitelist {
+    default 0; # all other URIs are blocked
+    ~*/adyen/webhook* 1; # example URI for adyen whitelist
+    ~*/adyen/process/json* 1; # example URI for adyen whitelist
+}
+
+geo $ip_whitelist {
+    default 0;
+    # 1.2.3.4 1; # IP address whitelist
+}
+
+map $uri_whitelist$ip_whitelist $development_exceptions {
+    "00" "Development restricted area";  # Not on URI whitelist and not on IP whitelist
+    "01" "off";  # Not on URI whitelist, but on IP whitelist
+    "10" "off";  # On URI whitelist, but not on IP whitelist
+    "11" "off";  # On URI whitelist and on IP whitelist
+}
+```
+
+- We define `$uri_whitelist` that checks if the request URI contains a path that should be whitelisted. If so, we set it to 1, otherwise to 0.
+- We use a geo directive to define `$ip_whitelist`, which checks if the visitor's IP address is whitelisted. If so, we set it to 1, otherwise to 0.
+- We combine `$uri_whitelist` and `$ip_whitelist` in a new map that defines `$development_exceptions`. Depending on whether the IP address or URI path is whitelisted, access without basic auth is allowed ("off").
+
 ## Troubleshooting
 
 - Google Pagespeed analysis uses the Google bot user agent and can therefore not be used on development nodes.
