@@ -187,6 +187,8 @@ Start by generating a keypair (a private and a public key). This can be done thr
 
 When you have generated the keypair you need to add your public key to your Hypernode.
 
+Service Panel users can use the SSH Keymanager in the [Service panel](../ssh/how-to-use-ssh-keys-on-hypernode.md#service-panel-users-add-public-key-to-the-ssh-keymanager).
+
 Control Panel users also have access to an SSH Keymanager via their Control panel. How this works is explained in [this article](../../services/control-panel/how-to-add-keys-to-the-ssh-key-manager.md).
 
 Alternatively you can also add the public key to the the `~/.ssh/authorized_keys` file.
