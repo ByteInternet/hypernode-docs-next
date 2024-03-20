@@ -35,9 +35,9 @@ If you follow these guidelines when reporting an issue to us, we commit to:
 
 We accept reports for vulnerabilities in any of the following:
 
-- All systems and services running under the byte.nl, hypernode.nl, hypernode.com and magereport.com domains, and any of its subdomains.
+- All systems and services running under the byte.nl, hypernode.nl, hypernode.com, hipex.nl, hipex.io and magereport.com domains, and any of its subdomains.
 - All systems and services running in the 194.150.225.0/25 ip range.
-- Any published code on our [ByteInternet GitHub](https://github.com/ByteInternet)[Hypernode GitHub](https://github.com/Hypernode)[hn-support GitHub gists](https://gist.github.com/hn-support), or in our documentation.
+- Any published code on our [ByteInternet GitHub](https://github.com/ByteInternet), [Hypernode GitHub](https://github.com/Hypernode), [HipexBV GitHub](https://github.com/HipexBV), [hn-support GitHub gists](https://gist.github.com/hn-support), or in our documentation.
 - Any vulnerabilities on our clusterhosting environment, and on the Hypernode vagrant / docker setup, or generic Hypernode vulnerabilities, are also welcome.
 
 ## Out of Scope
@@ -61,11 +61,11 @@ Things we do not wish to receive from you are the following:
 
 ## How to report a security vulnerability
 
-If you believe you’ve found a security vulnerability in one of our products or platforms please send it to us by emailing security@hypernode.com. Please include the following details with your report:
+If you believe you’ve found a security vulnerability in one of our products or platforms please send it to us by emailing disclosure@nl.team.blue. Please include the following details with your report:
 
 - Description of the location and potential impact of the vulnerability
 - A detailed description of the steps required to reproduce the vulnerability (POC scripts, screenshots, and compressed screen captures are all helpful to us)
 - If you saw any customer data, or confidential information, during your research, please inform us of this as well.
 - Your name/handle and a link for recognition in our Hall of Fame.
 
-If you’d like to encrypt the information, please use our PGP-key: (ID: 9AD3B600, Fingerprint: 0DDE A4A1 50C5 B642 1EBB 1F5B FDE7 0F88 9AD3 B600)
+If you’d like to encrypt the information, please use our [PGP-key](https://pgp.mit.edu/pks/lookup?search=0x4FDDF9236D0E2A2E&op=index&rel=noopener): (ID: 6D0E2A2E, Fingerprint: 5CF5 61BE C0AA AE11 8164 6576 4FDD F923 6D0E 2A2E).
