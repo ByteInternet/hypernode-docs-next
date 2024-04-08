@@ -116,6 +116,7 @@ According to the [Magento Documentation](https://devdocs.magento.com/guides/v2.3
 
 According to the [Magento Documentation](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html#php), Magento 2.4 supports PHP 7.4 only, and PHP 7.3 is not tested or recommended. However, many Magento users are reporting that Magento 2.4 also works with PHP 7.2 and 7.3. Of course we always advise to follow the official supported versions advertised by Magento, and any module in use on your webshop.
 
+- 8.3 (Officially supported starting in version 2.4.7)
 - 8.2 (Officially supported starting in version 2.4.6)
 - 8.1 (Officially supported starting in version 2.4.4)
 - 7.4 (Supported until 2.4.4)
