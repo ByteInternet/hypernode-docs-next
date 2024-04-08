@@ -27,8 +27,8 @@ On Hypernode you can choose from a range of PHP versions:
 - **PHP 7.3** (EOL, No updates since 6 Dec 2021)
 - **PHP 7.2** (EOL, No updates since 10 Nov 2020)
 - **PHP 7.1** (EOL, No updates since 1 Dec 2019)
-- **PHP 7.0**(EOL, No updates since 3 Dec 2018, deprecated)
-- **PHP 5.6**(EOL, No updates since 31 Dec 2018, deprecated, we strongly recommend you to upgrade, will likely be phased out by us somewhere in 2022)
+- **PHP 7.0** (EOL, No updates since 3 Dec 2018, deprecated)
+- **PHP 5.6** (EOL, No updates since 31 Dec 2018, deprecated, we strongly recommend you to upgrade, will likely be phased out by us somewhere in 2022)
 
 You can easily switch the PHP version of your Hypernode, but please thoroughly test a PHP change before implementing it on a live environment!
 
