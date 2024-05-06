@@ -4,7 +4,11 @@ myst:
     description: Install Akeneo 7 on a separate Hypernode instance or on the same
       Hypernode as your Magento or Shopware installation. Learn more!
     title: How to install Akeneo 7 on Hypernode?
+redirect_from:
+  - /en/support/solutions/articles/48001220118-how-to-install-akeneo-7-on-hypernode/
 ---
+
+<!-- source: https://support.hypernode.com/en/support/solutions/articles/48001220118-how-to-install-akeneo-7-on-hypernode/ -->
 
 # How to Install Akeneo 7 on Hypernode
 
