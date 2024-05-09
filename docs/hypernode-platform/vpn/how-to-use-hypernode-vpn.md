@@ -13,7 +13,7 @@ redirect_from:
 Hypernode-vpn offers a secure way of directly connecting to your database from any location.
 Using [OpenVPN](https://openvpn.net/).
 
-### How it works
+## How it works
 
 Our Hypernode-vpn solution implements a standard OpenVPN TLS tunnel to the Hypernode.
 Which can be used to talk to the MySQL database securely.
