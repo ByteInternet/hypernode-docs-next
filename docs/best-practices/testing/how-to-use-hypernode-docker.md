@@ -1,13 +1,12 @@
 ---
 myst:
   html_meta:
-    description: 'Docker image can be used to set up a fast and easy local development environment for Hypernode.
- See intstructions that guide you through the process. '
+    description: 'Docker image can be used to set up a fast and easy local development
+      environment for Hypernode. See intstructions that guide you through the process. '
     title: How to use hypernode docker?
 redirect_from:
   - /en/hypernode/hypernode-docker/how-to-use-hypernode-docker/
 ---
-
 
 # Usage of hypernode-docker
 
@@ -26,6 +25,7 @@ We have tested usage of the Hypernode Docker image on Apple silicon ourselves an
 ### The Debian Buster hypernode-docker
 
 Starting the container
+
 ```
 docker pull docker.hypernode.com/byteinternet/hypernode-buster-docker:latest
 docker run docker.hypernode.com/byteinternet/hypernode-buster-docker:latest
@@ -34,6 +34,7 @@ docker run docker.hypernode.com/byteinternet/hypernode-buster-docker:latest
 Now with the introduction of Debian Buster we have also made it so that for some of the possible configurations we have provided a pre-built image so it is not necessary anymore to [manually install a different MySQL](https://github.com/ByteInternet/hypernode-docker/issues/33) for example than what would be in the default box.
 
 These are the URLs of the containers with specific configurations:
+
 ```
 docker pull docker.hypernode.com/byteinternet/hypernode-buster-docker-php56-mysql56:latest
 docker pull docker.hypernode.com/byteinternet/hypernode-buster-docker-php70-mysql56:latest
@@ -66,6 +67,7 @@ docker pull docker.hypernode.com/byteinternet/hypernode-buster-docker-php82-mysq
 ### Logging into the container
 
 Get the IP address
+
 ```bash
 # Find the container ID
 docker ps
@@ -74,6 +76,7 @@ docker inspect -f '{{ .NetworkSettings.IPAddress }}' <the container ID>
 ```
 
 Log in to the container:
+
 ```bash
 # SSH into the machine using the retrieved IP address. Example:
 ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null app@172.17.0.2
@@ -96,6 +99,7 @@ bash /etc/my_init.d/60_restart_services.sh
 If you only want to restart a specific service, inspect the `restart_services.sh` script and kill the screen for the service you want to restart. Then run the corresponding screen command to start the service again.
 
 ## See our excellent Documentation!
+
 <!--
 [Starting the container](Documentation/starting-the-container.md)
 
