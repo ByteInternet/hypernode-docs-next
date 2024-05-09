@@ -35,19 +35,19 @@ PATCH: https://api.hypernode.com/v1/app/<your_app_name>/
 - `mysql_disable_stopwords`: boolean - [Opt-in disable stopwords for MyISAM Search Indexes](https://support.hypernode.com/changelog/release-6079-opt-in-disable-stopwords-for-myisam-search-indexes/).
 - `mysql_enable_explicit_defaults_for_timestamp`: boolean - Opt-in enable explicit defaults for timestamp. As of MySQL 8.0 [this is the default](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp), but for MySQL 5.6 and 5.7 it might be desirable to enable this. In some cases it can be that because of this setting Magento 2 will detect that there is a change in the database structure while there isn't on deploy. Enabling this setting might prevent issues.
 - `mysql_enable_large_thread_stack`: boolean - [Opt-in enable large mysql thread_stack](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_stack).
-  This setting allows you to change the MySQL thread_stack from the default of `192k` to `512k`. We've seen that in some cases this setting can sometimes prevent some issues in Shopware shops with complex queries. Also see [this changelog](https://support.hypernode.com/changelog/release-7083-opt-in-large-mysql-thread_stack/).
+  This setting allows you to change the MySQL thread_stack from the default of `192k` to `512k`. We've seen that in some cases this setting can sometimes prevent some issues in Shopware shops with complex queries. Also see [this changelog](https://hypernode.com/changelog/release-7083-opt-in-large-mysql-thread_stack/).
 - `redis_persistent_instance`: boolean - Indicates whether another Redis instance will be started which can be used for
-  sessions instead of caching. Please note that this might require some changes on your end. For more information about this setting see [this changelog](https://support.hypernode.com/changelog/experimental-changes-redis-sessions-aws-performance/).
+  sessions instead of caching. Please note that this might require some changes on your end. For more information about this setting see [this changelog](https://hypernode.com/changelog/experimental-changes-redis-sessions-aws-performance/).
 - `firewall_block_ftp_enabled`: boolean - Indicates whether FTP is completely blocked or not in favour of SFTP. For
-  more information about this setting see [this changelog](https://support.hypernode.com/changelog/release-5340-block-ftp-access-sftp-used-systems-tweaks/).
+  more information about this setting see [this changelog](https://hypernode.com/changelog/release-5340-block-ftp-access-sftp-used-systems-tweaks/).
 - `disable_optimizer_switch`: boolean - Indicates whether `use_index_extensions` and `mrr` are turned off. If turned off
   this can improve performance due to an issue in PHP 5.6 related to Multi-Range Read Optimization. For more information about
-  this setting see [this changelog](https://support.hypernode.com/changelog/release-5340-block-ftp-access-sftp-used-systems-tweaks/).
+  this setting see [this changelog](https://hypernode.com/changelog/release-5340-block-ftp-access-sftp-used-systems-tweaks/).
 - `blackfire_enabled`: boolean - Indicates whether BlackFire is enabled on your node.
 - `blackfire_server_id`: - string - The BlackFire server id for your blackfire setup.
 - `blackfire_server_token`: string - The BlackFire server token for your blackfire setup.
-- `openvpn_enabled`: boolean - Enable or disable [OpenVPN for secure connections](/Documentation/hypernode-vpn/README.md)
-- `varnish_esi_ignore_https`: boolean - Enable or disable [Varnish Edge Side Includes over HTTPS](https://support.hypernode.com/changelog/release-4560-varnish-edge-side-includes-https/)
+- `openvpn_enabled`: boolean - Enable or disable [OpenVPN for secure connections](../vpn/how-to-use-hypernode-vpn.md)
+- `varnish_esi_ignore_https`: boolean - Enable or disable [Varnish Edge Side Includes over HTTPS](https://hypernode.com/changelog/release-4560-varnish-edge-side-includes-https/)
 - `permissive_memory_management`: boolean - Indicates whether we should maintain a strict or permissive Out Of Memory policy. If enabled user level processes won't be killed preventively as quickly. Note that this can actually cause more OOM situations overall depending on the memory footprint of your shop.
 - `varnish_version`: ("4.0") - Which varnish version to use for your node.
 - `varnish_enabled`: boolean - Indicates whether Varnish should be used for this node or not.
