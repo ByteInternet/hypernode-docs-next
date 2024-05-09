@@ -34,20 +34,19 @@ free to contact our support department at support@hypernode.com.
 
 ### Whitelisting
 
-Whitelisting allows you to add IP's for specific purposes. To find out how to use this have a look at [the documentation
-for this endpoint](/Documentation/hypernode-api/whitelisting/README.md).
+Whitelisting allows you to add IP's for specific purposes. To find out how to use this have a look at [the documentation for this endpoint](whitelisting.md).
 
 ### Hypernode settings
 
 This endpoint allows you to set settings for your Hypernode. For example, you can set your `php_version` or blackfire
-tokens here. To find out how to use this have a look at [the documentation for this endpoint](/Documentation/hypernode-api/settings/README.md).
+tokens here. To find out how to use this have a look at [the documentation for this endpoint](settings.md).
 
 ### Chargebee SSO URL
 
 This endpoint allows you to retireve the SSO URL for Chargebee. If you are a customer which registered via Chargebee you
 will be able to retrieve the login URL for Chargebee which you can then use to login and manage your subscriptions.
-For more information about this endpoint have a look at [this endpoint's documentation](/Documentation/hypernode-api/chargebee/SSO/README.md).
+For more information about this endpoint have a look at [this endpoint's documentation](chargebee-sso.md).
 
 ### Perform preinstall
 
-This endpoint allows you to perform a preinstall of magento or akeneo on your Hypernode. For more information about this endpoint have a look at [this enpoint's documentation](/Documentation/hypernode-api/preinstall/README.md).
+This endpoint allows you to perform a preinstall of magento or akeneo on your Hypernode. For more information about this endpoint have a look at [this enpoint's documentation](preinstall.md).
