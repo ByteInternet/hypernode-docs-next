@@ -1,3 +1,14 @@
+---
+myst:
+  html_meta:
+    description: 'Hypernode-vpn offers a secure way of directly connecting to your database from any location.
+ See intstructions that guide you through the process. '
+    title: How to use hypernode-vpn?
+redirect_from:
+  - /en/hypernode/vpn/how-to-use-hypernode-vpn/
+---
+
+
 # Hypernode-vpn documentation
 Hypernode-vpn offers a secure way of directly connecting to your database from any location.
 Using [OpenVPN](https://openvpn.net/).
