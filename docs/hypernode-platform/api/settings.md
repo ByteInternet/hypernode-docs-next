@@ -46,7 +46,7 @@ PATCH: https://api.hypernode.com/v1/app/<your_app_name>/
 - `blackfire_enabled`: boolean - Indicates whether BlackFire is enabled on your node.
 - `blackfire_server_id`: - string - The BlackFire server id for your blackfire setup.
 - `blackfire_server_token`: string - The BlackFire server token for your blackfire setup.
-- `openvpn_enabled`: boolean - Enable or disable [OpenVPN for secure connections](../vpn/how-to-use-hypernode-vpn.md)
+- `openvpn_enabled`: boolean - Enable or disable [OpenVPN for secure connections](../vpn/hypernode-vpn.md)
 - `varnish_esi_ignore_https`: boolean - Enable or disable [Varnish Edge Side Includes over HTTPS](https://hypernode.com/changelog/release-4560-varnish-edge-side-includes-https/)
 - `permissive_memory_management`: boolean - Indicates whether we should maintain a strict or permissive Out Of Memory policy. If enabled user level processes won't be killed preventively as quickly. Note that this can actually cause more OOM situations overall depending on the memory footprint of your shop.
 - `varnish_version`: ("4.0") - Which varnish version to use for your node.
