@@ -4,7 +4,7 @@ myst:
     description: Learn about available endpoints for whitelisting for Hypernode-API.
     title: Whitelisting | Hypernode
 redirect_from:
-   - /#/Documentation/hypernode-api/whitelisting/README
+  - /#/Documentation/hypernode-api/whitelisting/README
 ---
 
 # Hypernode-API whitelisting
