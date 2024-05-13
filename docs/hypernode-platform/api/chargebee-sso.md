@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: Learn about Chargbee SSO endpoints for Hypernode-API.
     title: Chargbee SSO | Hypernode
+redirect_from:
+  - /#/Documentation/hypernode-api/chargebee/SSO/README
 ---
 
 # Chargebee SSO URL endpoint

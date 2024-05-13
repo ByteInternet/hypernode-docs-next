@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: Learn how to authenticate the Hypernode-API with your systems.
     title: Hypernode-API | Hypernode
+redirect_from:
+  - /#/Documentation/hypernode-api/README
 ---
 
 # Welcome to the Hypernode-API (beta)

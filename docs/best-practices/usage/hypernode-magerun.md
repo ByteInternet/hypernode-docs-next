@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: This article explains different addons for hypernode-magerun command.
     title: Hypernode Magerun Addons
+redirect_from:
+  - /hypernode-magerun/#/
 ---
 
 # Hypernode Magerun Addons

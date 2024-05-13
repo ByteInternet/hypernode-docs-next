@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: Learn about available endpoints for settings for Hypernode-API.
     title: Settings | Hypernode
+redirect_from:
+   - /#/Documentation/hypernode-api/settings/README
 ---
 
 # Hypernode-API settings

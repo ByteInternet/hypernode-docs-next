@@ -3,6 +3,8 @@ myst:
   html_meta:
     description: Learn about available endpoints for logbook for Hypernode-API.
     title: Hypernode API Logbook | Hypernode
+redirect_from:
+  - /#/Documentation/hypernode-api/flows/README
 ---
 
 # Hypernode API Logbook
