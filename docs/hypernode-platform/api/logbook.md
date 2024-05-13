@@ -2,10 +2,10 @@
 myst:
   html_meta:
     description: Learn about available endpoints for logbook for Hypernode-API.
-    title: Logbook | Hypernode
+    title: Hypernode API Logbook | Hypernode
 ---
 
-# Hypernode-API Logbook
+# Hypernode API Logbook
 
 The following endpoints are available:
 
