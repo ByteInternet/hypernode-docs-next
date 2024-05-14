@@ -2,7 +2,7 @@
 myst:
   html_meta:
     description: 'Hypernode-vpn offers a secure way of directly connecting to your
-      database from any location. See intstructions that guide you through the process. '
+      database from any location. See instructions that guide you through the process. '
     title: How to use hypernode-vpn?
 redirect_from:
   - /#/Documentation/hypernode-vpn/README
