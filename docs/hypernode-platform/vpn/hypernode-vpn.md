@@ -5,7 +5,8 @@ myst:
       database from any location. See intstructions that guide you through the process. '
     title: How to use hypernode-vpn?
 redirect_from:
-  - /#//Documentation/hypernode-vpn/README
+  - /#/Documentation/hypernode-vpn/README
+  - /Documentation/hypernode-vpn/README
 ---
 
 # Hypernode-vpn documentation

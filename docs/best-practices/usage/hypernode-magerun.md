@@ -5,6 +5,7 @@ myst:
     title: Hypernode Magerun Addons
 redirect_from:
   - /hypernode-magerun/#/
+  - /hypernode-magerun/
 ---
 
 # Hypernode Magerun Addons
