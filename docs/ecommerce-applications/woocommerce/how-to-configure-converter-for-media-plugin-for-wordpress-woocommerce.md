@@ -9,7 +9,7 @@ redirect_from:
 
 <!-- source: https://support.hypernode.com/en/ecommerce/woocommerce/how-to-configure-converter-for-media-plugin-for-wordpress-woocommerce/ -->
 
-# How to Configure "Converter for Media – Optimize images | Convert WebP & AVIF" Plugin on Hypernode
+# How to Configure Converter for Media – Optimize images Convert WebP & AVIF Plugin on Hypernode
 
 For the WordPress/WooCommerce plugin [Converter for Media – Optimize images | Convert WebP & AVIF](https://nl.wordpress.org/plugins/webp-converter-for-media/), an adjustment is required in your Hypernode NGINX configuration. To make it easier for you, follow the instructions below to get the plugin working correctly on Hypernode.
 
@@ -23,6 +23,7 @@ hmv --list
 ```
 
 Running this command will give you an output like this:
+
 ```console
 +-------------------+----------+----------------+-------+-------------+---------+--------------+
 |     servername    |   type   | default_server | https | force_https | varnish |  ssl_config  |
@@ -32,9 +33,11 @@ Running this command will give you an output like this:
 ```
 
 As you can see, the type is incorrect because it needs to be set to WordPress. To change this, use the following command:
+
 ```bash
 hmv --type wordpress --https test.hypernode.io
 ```
+
 After running this command, your VHOSTS will be set to WordPress. Make sure to replace `test.hypernode.io` with your actual domain name.
 
 ## Update NGINX configuration for the plugin

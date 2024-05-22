@@ -34,12 +34,15 @@ crontab -e
 ```
 
 Add the following line to your crontab file to set up a cron job that runs every minute:
+
 ```console
 * * * * * wget -q -O - 'https://yourdomain.hypernode.io/wp-cron.php?doing_wp_cron' >/dev/null 2>&1
 ```
+
 Replace `https://yourdomain.hypernode.io` with the actual URL of your WordPress site.
 
 Explanation of the Cron Job Command
+
 - `* * * * *`: Specifies the interval for the cron job. In this case, it is set to run every minute. You can adjust this based on your needs.
 - `wget -q -O - 'https://yourdomain.hypernode.io/wp-cron.php?doing_wp_cron'`: Uses wget to make a web request to the WordPress cron URL, triggering any scheduled tasks.
 - `>/dev/null 2>&1`: Discards any output from the command, preventing it from filling up your server logs.

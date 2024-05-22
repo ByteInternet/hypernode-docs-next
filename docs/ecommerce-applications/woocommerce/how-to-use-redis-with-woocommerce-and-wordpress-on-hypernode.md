@@ -22,6 +22,7 @@ There are several plugins available for Redis. The two most commonly used are [R
 Due to the complexity of the cache module in "W3 Total Cache" and the possibility that you may already be using other cache plugins, we recommend the "Redis Object Cache" plugin.
 
 ## How to Install Redis Object Cache
+
 Redis is already active on the server on port 6379.
 
 Next, install the Redis Object Cache plugin via the WordPress Dashboard or using Composer. For detailed installation instructions, please refer to the standard installation procedure for WordPress plugins.
