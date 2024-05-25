@@ -1,8 +1,12 @@
 ---
 myst:
   html_meta:
-    description: Learn how to configure the "Converter for Media – Optimize images | Convert WebP & AVIF" plugin on your Hypernode server. Follow step-by-step instructions to verify your VHOST type, update NGINX configuration, and test the plugin for optimal performance and compatibility with WordPress/WooCommerce.
-    title: How to Configure "Converter for Media – Optimize images | Convert WebP & AVIF" Plugin on Hypernode
+    description: Learn how to configure the "Converter for Media – Optimize images
+      | Convert WebP & AVIF" plugin on your Hypernode server. Follow step-by-step
+      instructions to verify your VHOST type, update NGINX configuration, and test
+      the plugin for optimal performance and compatibility with WordPress/WooCommerce.
+    title: How to Configure "Converter for Media – Optimize images | Convert WebP
+      & AVIF" Plugin on Hypernode
 redirect_from:
   - /en/ecommerce/woocommerce/how-to-configure-converter-for-media-plugin-for-wordpress-woocommerce/
 ---

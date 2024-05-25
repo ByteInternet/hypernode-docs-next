@@ -1,7 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Learn how to replace the default WordPress cron with a cron job on Hypernode to improve performance, schedule tasks precisely, and mitigate DDoS attacks.
+    description: Learn how to replace the default WordPress cron with a cron job on
+      Hypernode to improve performance, schedule tasks precisely, and mitigate DDoS
+      attacks.
     title: How to Set Up a Real Cron Job for WordPress/WooCommerce on Hypernode
 redirect_from:
   - /en/ecommerce/woocommerce/how-to-set-up-a-cron-job-for-wordpress-woocommerce-on-hypernode/

@@ -1,7 +1,9 @@
 ---
 myst:
   html_meta:
-    description: How to enhance your WordPress/WooCommerce site's performance using Redis. Discover the benefits of Redis, recommended plugins, and step-by-step installation instructions.
+    description: How to enhance your WordPress/WooCommerce site's performance using
+      Redis. Discover the benefits of Redis, recommended plugins, and step-by-step
+      installation instructions.
     title: How to Use Redis with WooCommerce and WordPress on Hypernode
 redirect_from:
   - /en/ecommerce/woocommerce/how-to-use-redis-with-woocommerce-and-wordpress-on-hypernode/
