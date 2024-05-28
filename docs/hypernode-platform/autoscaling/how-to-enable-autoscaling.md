@@ -26,6 +26,7 @@ You can start using autoscaling by:
 1. Navigate to Hypernodes > Autoscaling.
 1. Enable autoscaling.
 1. Optionally configure the conditions.
+1. You can specify the timeframe in which autoscaling should occur, or keep "any time" checkbox enabled to let autoscaling happen at any time.
 
 After enabling Autoscaling feature, expect a 5min grace period before Autoscaling takes effect.
 
