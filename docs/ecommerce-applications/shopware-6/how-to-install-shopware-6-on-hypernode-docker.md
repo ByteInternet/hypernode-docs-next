@@ -46,8 +46,7 @@ location /recovery/install {
 }
 
 location /recovery/update/ {
-    location /recovery/update/assets {
-    }
+    location /recovery/update/assets {}
     if (!-e $request_filename){
         rewrite . /recovery/update/index.php last;
     }
@@ -61,7 +60,7 @@ location ~ \.php$ {
 
 Download the latest Shopware 6 version from the [Shopware](https://www.shopware.com/en/download/#shopware-6%22%3EShopware) website by right clicking on “Download for free” and click on “Copy Link Address”. Now paste the link after the `wget` command like below.
 
-```nginx
+```bash
 mkdir /data/web/shopware
 cd /data/web/shopware
 wget https://www.shopware.com/en/Download/redirect/file/install_6.1.3_1582123990.zip
@@ -72,7 +71,6 @@ unzip install_6.1.3_1582123990.zip
 # Enable secure document root
 rm -rf /data/web/public
 ln -s /data/web/shopware/public/ /data/web/public
-
 ```
 
 ## Install Shopware 6

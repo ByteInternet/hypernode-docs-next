@@ -16,7 +16,7 @@ redirect_from:
 A lot of spam and abuse comes from specific countries. If you don't do business there, you could block these countries altogether. This article explains how to block them. First some considerations:
 
 - Country detection is 99,8% accurate (according to MaxMind, the supplier of the geo database).
-- It is generally better to servce a static page, than to enforce a hard block. Static pages consume almost no resources and can be used to explain alternative ways to contact your organisation.
+- It is generally better to serve a static page, than to enforce a hard block. Static pages consume almost no resources and can be used to explain alternative ways to contact your organisation.
 
 If you want to block, say, Russia and China, create the files `http.countries_map` and `server.countries_block` in the `/nginx` folder on your Hypernode. In these files you can use the following configuration:
 
@@ -50,8 +50,8 @@ if ($block_country = yes) {
 
 We have implemented a `block_attack` functionality in the hypernode-systemctl CLI tool as well. To list the possible values you can run this on your Hypernode:
 
-```nginx
-app@pup1l6-vdloo-magweb-cmbl:~$ hypernode-systemctl block_attack --help
+```console
+app@abcdef-example-magweb-cmbl:~$ hypernode-systemctl block_attack --help
 usage: hypernode-systemctl block_attack BlockChinaBruteForce
 
 The possible values are:
@@ -80,22 +80,22 @@ optional arguments:
 
 If for example you would then want to block all requests from China because you noticed some suspicious traffic from `CN` IPs in `hypernode-fpm-status`, then you can run:
 
-```nginx
-app@pup1l6-vdloo-magweb-cmbl:~$ hypernode-systemctl block_attack BlockChinaBruteForce
+```console
+app@abcdef-example-magweb-cmbl:~$ hypernode-systemctl block_attack BlockChinaBruteForce
 Block attack job posted, see hypernode-log (or livelog) for job progress
 ```
 
 After `hypernode-log` or `livelog` reports the newly posted `block_attack` job as finished the new rule should be deployed.
 
-```nginx
-app@pup1l6-vdloo-magweb-cmbl:~$ hypernode-log  | grep block_attack | tail -n 1
+```console
+app@abcdef-example-magweb-cmbl:~$ hypernode-log | grep block_attack | tail -n 1
 block_attack                    2019-01-10T15:34:29Z    2019-01-10T15:34:31Z    success     4/4     finished
 ```
 
 The newly deployed Nginx rule will then be in the `/data/web/nginx` directory:
 
 ```nginx
-app@pup1l6-vdloo-magweb-cmbl:~$ cat nginx/server.block_cn
-#Placed by Hypernode automation on 2019-01-11 12:18
+app@abcdef-example-magweb-cmbl:~$ cat nginx/server.block_cn
+# Placed by Hypernode automation on 2019-01-11 12:18
 if ($geoip_country_code = CN) { return 403; }
 ```

@@ -18,31 +18,31 @@ Supervisor enables you to use programs that need to run all the time on your Hyp
 
 Before we start using Supervisor we first need to enable it on the Hypernode.
 
-```nginx
+```bash
 hypernode-systemctl settings supervisor_enabled True
 ```
 
 To test if Supervisor is properly running the following command should open Supervisor.
 
-```nginx
+```bash
 supervisorctl
 ```
 
 To store the long running programs we create a folder on the Hypernode.
 
-```nginx
+```bash
 mkdir /data/web/long_running
 ```
 
 In this folder we create a program that we want to keep running no matter what. For this example we create a simple Python program that will crash every 10 seconds.
 
-```nginx
+```bash
 nano /data/web/long_running/supervisortest.py
 ```
 
 And the contents of our test program.
 
-```nginx
+```python
 #!/usr/bin/env python3
 
 from time import sleep
@@ -58,28 +58,28 @@ if __name__ == "__main__":
 
 We can test if our test program works.
 
-```nginx
+```bash
 python3 /data/web/long_running/supervisortest.py
 ```
 
 If our program works we can add it to Supervisor. To do this we add a config file in the folder `/data/web/supervisor`. This file needs to have the `*.conf` extension.
 
-```nginx
+```bash
 mkdir -p /data/web/supervisor
 nano /data/web/supervisor/supervisortest.conf
 ```
 
 We need a name for the program and a command for Supervisor to run, so we fill the config file with the following content.
 
-```nginx
+```ini
 [program:supervisor_test_program]
 command=/usr/bin/python3 /data/web/long_running/supervisortest.py
 ```
 
 Supervisor does not yet know about the programs existence. For Supervisor to run the program we add it to Supervisor.
 
-```nginx
-app@abbrdk-appname-magweb-cmbl:~$ supervisorctl
+```console
+app@abcdef-example-magweb-cmbl:~$ supervisorctl
 supervisor> reread
 supervisor_test_program: available
 supervisor> avail

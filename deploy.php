@@ -23,6 +23,9 @@ task('deploy:disable_public', function () {
 
 # Create the venv
 task('python:venv:create', static function () {
+    if (test('[ -d .venv ]')) {
+        return;
+    }
     run('mkdir -p .hypernode');
     run('virtualenv -p python3 .venv');
     run('echo export PYTHONPATH=$(pwd) >> .venv/bin/activate');
@@ -41,7 +44,7 @@ task('python:generate_redirects', static function () {
 # Build the documentation
 task('python:build_documentation', static function () {
     run('source .venv/bin/activate && bin/build_docs');
-    run('ln -s docs/_build/html pub');
+    run('ln -sf docs/_build/html pub');
 });
 
 # HMV configuration for when this is running in a docker
@@ -119,7 +122,7 @@ $dockerStage = $configuration->addStage('docker', $DOCKER_HOST);
 $dockerStage->addServer($DOCKER_HOST);
 
 $testingStage = $configuration->addStage("acceptance", "docs");
-$testingStage->addBrancherServer("hntestgroot")
+$testingStage->addBrancherServer("docs")
     ->setLabels(['stage=acceptance', 'ci_ref=' . (\getenv('GITHUB_HEAD_REF') ?: 'none')]);
 
 return $configuration;

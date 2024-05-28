@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    description: "Cronjobs are periodic tasks that run in the background of your Hypernode.\
-      \ We'll help you to set up and use these periodic tasks. "
+    description: "Cronjobs are periodic tasks that run in the background of your Hypernode.
+      We'll help you to set up and use these periodic tasks. "
     title: How to Use Periodic Tasks or Cronjobs on Hypernode?
 redirect_from:
   - /en/hypernode/tools/how-to-use-periodic-tasks-cronjobs-on-hypernode/
@@ -23,7 +23,7 @@ If you need some help to get the timing settings right, check [crontab guru](htt
 
 This is recommended for every installation! Log in using SSH and run `crontab -e` and add the following lines:
 
-```nginx
+```text
 # Run the Magento cron every 5 minutes, skip if previous run is still
 # busy, and mail any output to my@email.com
 # MAILTO=your@email.com # Uncomment to receive the error output on your own email address
@@ -36,7 +36,7 @@ After adding the cronjob, press **CTRL+X**, **Y** and then **ENTER** to save the
 
 To configure the cron for Magento 2 you'll have to run the commando below. The cron will automatically be added to the crontab.
 
-```nginx
+```bash
 bin/magento cron:install
 ```
 
@@ -44,7 +44,7 @@ Magento 2 uses another mechanism for scheduling tasks. That’s why the Magento 
 
 #### Magento 2.4. Cron
 
-\*\*Please note:\*\*the `update/cron.php` file has been removed in Magento 2.4.0, if this file exists on your installation, it can be safely removed.
+**Please note:** the `update/cron.php` file has been removed in Magento 2.4.0, if this file exists on your installation, it can be safely removed.
 
 Any reference to `update/cron.php` and `bin/magento setup:cron:run` can also be removed from the crontab.
 
@@ -52,17 +52,17 @@ Any reference to `update/cron.php` and `bin/magento setup:cron:run` can also be 
 
 For most cases, cronjob syntax is actually quite easy. See the [full documentation](https://help.ubuntu.com/community/CronHowto) or use these examples.
 
-```nginx
+```text
 # Run an hourly job at 10 minutes past the hour
 10 * * * * flock -n ~/.myjob.lock php /data/web/mycron.php
 ```
 
-```nginx
+```text
 # Run a daily job at 3:20 in the night
 20 3 * * * flock -n ~/.myjob.lock php /data/web/mycron.php
 ```
 
-```nginx
+```text
 # Run a job on the first day of the month at 3:20
 20 3 1 * * flock -n ~/.myjob.lock php /data/web/mycron.php
 ```
@@ -75,7 +75,7 @@ This tool can be given a “max execution time” and will stop the running task
 
 For example:
 
-```nginx
+```text
 # Run a daily job at 3:20 in the night and kill after 120 seconds
 20 3 * * * timeout 120 php /data/web/mycron.php
 ```
@@ -84,7 +84,7 @@ For example:
 
 Our system will automatically add `flock` to your cron commands. This will prevent many problems, for example when multiple concurrent imports cause a database deadlock. If you do not want our auto flock (not recommended!) you can add `# noflock` to your command, like this:
 
-```nginx
+```text
 # Run a command that does not care whether it is already running
 * * * * * php /data/web/mycron.php # noflock
 ```
@@ -139,7 +139,7 @@ You can kill the process (with PID 2) by using this command:
 
 We monitor cron extensively, but to ensure yourself, `grep` in the process list to verify whether the daemon is really running:
 
-```nginx
+```bash
 ps -ef | grep -i cron
 ```
 
@@ -159,7 +159,7 @@ Sometimes when a cronjob crashes, the locks are not cleaned up successfully. Thi
 
 To fix, cleanup the old lockfiles by removing them:
 
-```nginx
+```bash
 rm ~/.a6fe0d58.lock
 ```
 
@@ -169,7 +169,7 @@ This will remove the file, effectively removing the lock set on the file as well
 
 To get a history of all cron actions, like editing, updating and listing the cron files, all jobs of all users etc, you can easily grep for cron in syslog:
 
-```nginx
+```bash
 grep -i cron /var/log/syslog
 ```
 
@@ -177,7 +177,7 @@ This will generate a huge list of all jobs cron has run including editting, list
 
 To verify whether it has run, grep for all cronjobs that are run by user app and check if your cronjob has ever run:
 
-```nginx
+```bash
 grep -i cron /var/log/syslog | grep '(app)'
 ```
 
@@ -189,13 +189,13 @@ You can’t use predefined shell environment settings like `$PATH`, `$HOME`, `$U
 
 If you want to use these settings you’d have to source the corresponding settings file accordingly by adding it to your cronjob:
 
-```nginx
+```text
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 ```
 
 Or alternatively if you want all the settings you use in the shell, source your `bashrc` file prior to executing:
 
-```nginx
+```text
 */5 * * * * source /data/web/.bashrc && cp $HOME/somefile $HOME/public/exports
 ```
 
@@ -203,7 +203,7 @@ You can set things like `MAILTO=`, `SHELL=` or `PATH=` and other environment var
 
 For example:
 
-```nginx
+```text
 IMPORTFILE="/data/web/public/some-very-long-import-file-in-cvs-format.products-from-some-website.cvs"
 DESTINATION="/data/web/public/some/very/long/path/in/the/magento/directory`
 */5 * * * * cp $IMPORTFILE $DESTINATION/
@@ -241,7 +241,7 @@ If you only want to receive a mail when the jobs fails, use `chronic`. This love
 
 If you want to debug cron timing issues, use a wrapper that logs all issues to log files:
 
-```
+```bash
 #!/bin/bash
 # This script is a debug utility for cronjobs as explained in:
 # - https://support.hypernode.com/knowledgebase/configure-cronjobs-on-hypernode/
@@ -284,7 +284,7 @@ Save it as `~/bin/debug-cron` and make it executable with `chmod +x ~/bin/debug-
 
 Now you can debug your cron issues using the following syntax:
 
-```nginx
+```text
 */5 * * * * flock -n ~/.a6fe0d58.lock -c '/data/web/bin/debug-cron php -f /data/web/public/cron.php'
 ```
 

@@ -47,7 +47,7 @@ Dedicated servers are stand-alone servers that do not have a virtual layer on to
 
 ### Pricing
 
-Hypernode Dedicated Hosting plans are named **Jackal** and start at € 499,- a month. The pricing is based on the resources you need. Dedicated servers are always booted with [Herzner](https://www.hetzner.com/).
+Hypernode Dedicated Hosting plans are named **Jackal** and start at € 499,- a month. The pricing is based on the resources you need. Dedicated servers are always booted with [Hetzner](https://www.hetzner.com/).
 
 [An overview of our Dedicated hosting plans can be found here.](https://www.hypernode.com/en/dedicated-hosting/#pricing-table)
 

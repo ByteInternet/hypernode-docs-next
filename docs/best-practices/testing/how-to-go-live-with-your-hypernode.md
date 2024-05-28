@@ -29,11 +29,11 @@ This will prevent data being changed while performing a last synchronization to 
 
 To do this, log in on your Hypernode, and create the maintenance flag:
 
-```nginx
+```bash
 touch /data/web/magento2/var/.maintenance.flag
 ```
 
-If you site is set to maintenance mode **ON**, an error message will be shown to all visitors of your site:
+If your site is set to maintenance mode **ON**, an error message will be shown to all visitors of your site:
 
 ![](_res/nAME95-m0uhW1R-CkD6ZFuFQZZGMR7BY0Q.png)
 
@@ -41,7 +41,7 @@ If you site is set to maintenance mode **ON**, an error message will be shown to
 
 Final synchronisation of files and database, using the Hypernode importer on Hypernode:
 
-```nginx
+```bash
 hypernode-importer --host ssh.yourdomain.com --user yourdomain.com --path yourdomain.com
 ```
 
@@ -77,11 +77,10 @@ The Hypernode Managed Vhosts (HMV) system is currently enabled by default on all
 
 Check if you have HMV enabled by running this command:
 
-`hypernode-systemctl settings managed_vhosts_enabled`
-
-If so, it will give the following output:
-
-`managed_vhosts_enabled is set to value True`
+```console
+app@abcdef-example-magweb-cmbl:~$ hypernode-systemctl settings managed_vhosts_enabled
+managed_vhosts_enabled is set to value True
+```
 
 If this is not enabled, skip the part below.
 
@@ -107,19 +106,17 @@ There are 3 ways to handle your DNS. Only customers who have access to the Servi
 
 Good to know:
 
-\*Option 1 and 2 will prevent DNS downtime.
-
-*Option 2 has an important disadvantage: your cannot use SSL in combination with your naked domain. People that directly visit <https://yourdomain.com/>, will get a certificate warning from the browser.*
-
-*Option 3 is the best option in case of an external DNS and you want to make use of <https://yourdomain.com/>, but you will encounter DNS downtime if the IP address of your Hypernode changes.*
+- Option 1 and 2 will prevent DNS downtime.
+- Option 2 has an important disadvantage: your cannot use SSL in combination with your naked domain. People that directly visit <https://yourdomain.com/>, will get a certificate warning from the browser.
+- Option 3 is the best option in case of an external DNS and you want to make use of <https://yourdomain.com/>, but you will encounter DNS downtime if the IP address of your Hypernode changes.
 
 As there are situations you cannot benefit from a dedicated IP on Hypernode, please decide for yourself what is the best way to handle DNS. Our recommendation is always to move your domains to Hypernode if possible.
 
 ### Setting up DNS records to send mail from your Hypernode
 
-Please follow [this article](../../hypernode-platform/email/how-to-set-up-your-dns-for-outgoing-email.md) on how to setup your DNS to send mail from your Hypernode.
+Please follow [this article](../../hypernode-platform/email/how-to-set-up-your-dns-for-outgoing-email.md) on how to set up your DNS to send mail from your Hypernode.
 
-Note that **4**different DNS records have to added or adjusted.
+Note that **4** different DNS records have to be added or adjusted.
 
 ### SPF Records (For Experts)
 
@@ -127,7 +124,7 @@ If you have previously configured SPF, you should also update your the SPF polic
 
 The following example allows mail from both your mail exchangers and all your Hypernode nodes:
 
-```nginx
+```text
 mydomain.com TXT v=spf1 mx:mydomain.com include:spf.appname.hypernode.io ~all
 ```
 

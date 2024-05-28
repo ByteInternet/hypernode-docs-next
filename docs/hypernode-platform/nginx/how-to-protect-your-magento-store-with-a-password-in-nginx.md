@@ -21,11 +21,11 @@ To restrict access to the preview-directory using users and passwords specified 
 
 ```nginx
 location ^~ /preview/ {
-  auth_basic "Restricted area";
-  auth_basic_user_file /data/web/nginx/htpasswd;
-  location ~ \.php$ {
-    echo_exec @phpfpm;
-  }
+    auth_basic "Restricted area";
+    auth_basic_user_file /data/web/nginx/htpasswd;
+    location ~ \.php$ {
+        echo_exec @phpfpm;
+    }
 }
 ```
 
@@ -33,7 +33,7 @@ location ^~ /preview/ {
 
 How to create or update a htpasswd file? This command will ask you for a password and save it to the password database:
 
-```nginx
+```bash
 htpasswd -c /data/web/nginx/htpasswd exampleuser
 ```
 
@@ -43,11 +43,11 @@ Create a file called `server.basicauth` in `/data/web/nginx` with the following 
 
 ```nginx
 if ($http_host = "domainwithbasicauth.com") {
-set $auth_basic Restricted;
+    set $auth_basic Restricted;
 }
 
 if ($http_host != "domainwithbasicauth.com") {
-set $auth_basic off;
+    set $auth_basic off;
 }
 
 auth_basic $auth_basic;
@@ -58,7 +58,7 @@ This will only restrict access to domainwithbasicauth.com with basic authenticat
 
 Creating a user and a password can be done with the following command:
 
-```nginx
+```bash
 htpasswd -c /data/web/nginx/htpasswd exampleuser
 ```
 
@@ -84,8 +84,8 @@ auth_basic "login required";
 auth_basic_user_file /data/web/nginx/htpasswd;
 
 location ~ ^/backendurl {
-satisfy all;
-rewrite / /index.php break;
-echo_exec @phpfpm;
+    satisfy all;
+    rewrite / /index.php break;
+    echo_exec @phpfpm;
 }
 ```

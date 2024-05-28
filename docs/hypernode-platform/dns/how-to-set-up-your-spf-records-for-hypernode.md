@@ -139,13 +139,13 @@ The best generators we’ve found so far are the one on[spfwizard.net](https://w
 
 Although there are multiple online web-based tools to lookup your SPF record, the easiest is on the command line using the `dig` utility:
 
-```nginx
- dig -t TXT +short example.com
+```bash
+dig -t TXT +short example.com
 ```
 
 Which in this case returns 2 TXT records, of which one is the SPF record:
 
-```nginx
+```text
 "v=spf1 -all"
 ```
 

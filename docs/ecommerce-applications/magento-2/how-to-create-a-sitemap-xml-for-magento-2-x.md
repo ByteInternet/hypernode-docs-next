@@ -115,7 +115,7 @@ location /sitemap.xml {
 
 When you can successfully request your sitemap.xml, add it to your `robots.txt`:
 
-```bash
+```text
 Sitemap: http://www.example.com/sitemap.xml
 ```
 

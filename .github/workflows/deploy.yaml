@@ -20,11 +20,11 @@ jobs:
       # Declares the repository safe and not under dubious ownership.
       - name: Add repository to git safe directories
         run: git config --global --add safe.directory $GITHUB_WORKSPACE
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: /tmp/composer-cache
           key: ${{ runner.os }}-composer
-      - uses: webfactory/ssh-agent@v0.5.4
+      - uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Set env for production build

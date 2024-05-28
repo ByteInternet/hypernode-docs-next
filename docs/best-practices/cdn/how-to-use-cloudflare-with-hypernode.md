@@ -24,7 +24,7 @@ You always connect to the server closest to your location, reducing network late
 
 Cloudflare blocks threats, limits abusive bots and crawlers from wasting your bandwidth and server resources and offers an extensive caching suite comparable with Varnish, but without all the complexity in configuration. Using Cloudflare can reduce the amount of requests done on your Hypernode considerably. This is especially useful for high-traffic websites.
 
-**Please note: Cloudflare is not 100% waterproof. Unfortunately, using Cloudflare might still leave you vulnerable to a certain extend. An example of such vulnerabilities can be found**[**here**](https://blog.christophetd.fr/bypassing-cloudflare-using-internet-wide-scan-data/)**.**
+**Please note: Cloudflare is not 100% waterproof. Unfortunately, using Cloudflare might still leave you vulnerable to a certain extend. An example of such vulnerabilities can be found** [**here**](https://blog.christophetd.fr/bypassing-cloudflare-using-internet-wide-scan-data/)**.**
 
 ## Configuring Cloudflare
 
@@ -47,12 +47,6 @@ To setup Cloudflare for your shop, use the following steps:
 Cloudflare provides [a very large knowledge base](https://support.cloudflare.com/hc/en-us) for dealing with a wide variety of issues and optimizations.
 
 For using Cloudflare with Magento, please check [the article on their knowledge base](https://support.cloudflare.com/hc/en-us/articles/203904600-Using-CloudFlare-with-Magento) and their [Page Rules and Magento optimization article](https://www.cloudflare.com/features-page-rules/optimize-magento/).
-
-## Extensions for Cloudflare
-
-There are several extensions that provide Cloudflare integration for Magento.
-
-Cloudflare itself provides only an extension for [Magento 2](https://www.cloudflare.com/integrations/magento/), that is still in beta.
 
 ## Using SSL With Cloudflare
 
@@ -85,3 +79,15 @@ Our tests with Railgun on Hypernodes showed a performance gain of just a few mil
 As we do not support Railgun (yet), we’ve seen some implementations running the Railgun daemon on a separate server. Doing so is not recommended as it will make all HTTP requests from Cloudflare arrive from the same remote IP.
 
 When someone is trying to brute force your server or in case of an attack, our protection mechanisms will block the attacker. When you use Railgun, our mechanisms will not block the remote IP but block the IP of the Railgun daemon instead, blocking all traffic coming from Cloudflare and therefore block all visitors to your shop.
+
+## 520 Errors From Cloudflare
+
+It can happen that Cloudflare returns a 520 error stating "Web server is returning an unknown error".
+
+This can be caused by your request headers being too big. You can fix this issue by adding the following config.
+
+```nginx
+# $ cat /data/web/nginx/http.buffers
+large_client_header_buffers 4 16k;
+http2_max_field_size 16k;
+```

@@ -70,9 +70,9 @@ Some bots are default exempt from rate limitings, like Google, Bing, and several
 ```nginx
 map $http_user_agent $limit_bots {
     default '';
-    ~*(google|bing|heartbeat|uptimerobot|shoppimon|facebookexternal|monitis.com|Zend_Http_Client|magereport.com|SendCloud/|Adyen|ForusP|contentkingapp|node-fetch|Hipex) '';
+    ~*(google|bing|heartbeat|uptimerobot|shoppimon|facebookexternal|monitis.com|Zend_Http_Client|magereport.com|SendCloud/|Adyen|ForusP|contentkingapp|node-fetch|Hipex|xCore|Mollie) '';
     ~*(http|crawler|spider|bot|search|Wget|Python-urllib|PHPCrawl|bGenius|MauiBot|aspiegel) 'bot';
-    }
+}
 ```
 
 **Note: do not remove the heartbeat entry! As this will break the monitoring of your Hypernode**
@@ -89,7 +89,7 @@ The keywords are separated by `|` characters since it is a regular expression.
 To extend the allowlist, first determine what user agent you wish to add. Use the access log files to see what bots get blocked and which user agent identification it uses. To find the user agent, you can use the following command:
 
 ```console
-  $ pnl --today --fields time,status,remote_addr,request,user_agent --filter status=429
+app@abcdef-example-magweb-cmbl:~$ pnl --today --fields time,status,remote_addr,request,user_agent --filter status=429
 2020-06-07T13:33:37+00:00       429     203.0.113.104   GET /api/ HTTP/2.0       SpecialSnowflakeCrawler 3.1.4
 2020-06-07T13:35:37+00:00       429     203.0.113.104   GET /api/ HTTP/2.0       SpecialSnowflakeCrawler 3.1.4
 ```

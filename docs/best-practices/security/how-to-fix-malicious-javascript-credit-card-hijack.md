@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    description: "Learn how to fix the malicious Credit Card Hijack in Magento and\
-      \ protect your customers' financial data. "
+    description: "Learn how to fix the malicious Credit Card Hijack in Magento and
+      protect your customers' financial data. "
     title: How to fix malicious Javascript Credit Card Hijacks? | Hypernode
 redirect_from:
   - /en/best-practices/security/how-to-fix-malicious-javascript-credit-card-hijack/

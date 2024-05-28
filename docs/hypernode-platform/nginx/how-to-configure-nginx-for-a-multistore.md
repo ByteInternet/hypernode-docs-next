@@ -20,7 +20,7 @@ The main Magento documentation on configuring multiple storefronts can be found 
 
 ## Setting Up Your Multistore
 
-There is multiple scenarios possible to set up your Magento multistore. You can choose between te following options:
+There are multiple ways to set up your Magento multistore. You can choose between the following options:
 
 - Using different domains (e.g. example.com and example.net etc.)
 - Using subdirectories (e.g. example.com/en/ and example.com/fr/ etc.)
@@ -47,7 +47,7 @@ This way these multistore requests will go through varnish and will then be rewr
 Another option is to use subdirectories instead. Once you have added the required vhost you need to add a `server.storecode` file to the specific vhost directory (`/data/web/nginx/example.com/`) with the following content:
 
 ```nginx
-location ~ ^/(?<uri_prefix>(nl|fr)) {
+location ~ ^/(?<uri_prefix>(nl|fr))/ {
     if ($uri_prefix = fr) {
         set $storecode "be_fr";
     }
@@ -60,6 +60,12 @@ location ~ ^/(?<uri_prefix>(nl|fr)) {
         echo_exec @phpfpm;
     }
 }
+```
+
+In addition to the `server.storecode` you need to add a `server.slash` to enforce a trailing slash after the country code to prevent potentially other matches. In this example with `/fr` and `/nl` you'll need the following content:
+
+```nginx
+rewrite ^/(nl|fr)$ $1/ permanent;
 ```
 
 In the example above we have used the subdirectories `/fr` and `/nl`.
@@ -84,7 +90,7 @@ set $storecode "example_storecode";
 Or use the following snippet to point the subdirectory for a specific domain to the intended storefront:
 
 ```nginx
-location ~ ^/(?<uri_prefix>(nl|fr)) {
+location ~ ^/(?<uri_prefix>(nl|fr))/ {
     if ($uri_prefix = fr) {
         set $storecode "be_fr";
     }
@@ -99,6 +105,12 @@ location ~ ^/(?<uri_prefix>(nl|fr)) {
 }
 ```
 
+In addition to the `server.storecode` you need to add a `server.slash` to enforce a trailing slash after the country code to prevent potentially other matches. In this example with `/fr` and `/nl` you'll need the following content:
+
+```nginx
+rewrite ^/(nl|fr)$ $1/ permanent;
+```
+
 Last but not least you will also need to create the subdirectories in the webroot folder (normally this would be `/data/web/public`) using symlinks like below:
 
 ```bash
@@ -110,8 +122,8 @@ ln -s /data/web/public /data/web/public/nl
 
 Below you can find an example setup where all the above options have been combined.
 
-```bash
-  Magento Stores - Base URLs
+```text
+Magento Stores - Base URLs
 +----+---------+------------------------------------+--------------------+
 | id | code    | unsecure_baseurl           | secure_baseurl             |
 +----+---------+------------------------------------+--------------------+
@@ -130,7 +142,7 @@ First add the following vhosts using the information from the [Hypernode Managed
 - [www.example.nl](http://www.example.nl)
 - [www.example.be](http://www.example.be)
 
-Once the vhosts you have been created, you can create a `server.storecode` file in `/data/web/nginx/www.example.com` with the below content:
+Once the vhosts have been created, you can create a `server.storecode` file in `/data/web/nginx/www.example.com` with the below content:
 
 ```nginx
 set $storecode "default";

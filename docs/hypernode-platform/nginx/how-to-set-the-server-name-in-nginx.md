@@ -32,16 +32,16 @@ To do this, first make sure no `server_name` is set already in any configuration
 
 ```nginx
 map $host $custom_server_name {
- hostnames;
-   .example.nl example.nl;
-   .example.net example.net;
-   .example.com example.com;
+    hostnames;
+    .example.nl example.nl;
+    .example.net example.net;
+    .example.com example.com;
 }
 ```
 
 This way for each domain used in Magento, the `server_name` is set to the given name in the mapping.
 
-Using the “.” at the beginning of the hostname string, makes sure both example.nl and \*.example.com will be used in the mapping.
+Using the `.` at the beginning of the hostname string, makes sure both `example.nl` and `*.example.com` will be used in the mapping.
 
 ## External Resources
 

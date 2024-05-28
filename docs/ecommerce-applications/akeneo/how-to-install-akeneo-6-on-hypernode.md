@@ -27,23 +27,25 @@ hypernode-systemctl settings managed_vhosts_enabled True
 If your Magento or Shopware installation already points to `example.hypernode.io`, you can create a managed_vhost for your Akeneo installation on a subdomain, for example `akeneo.example.hypernode.io`. The command below will also install Let’s Encrypt and force your domain to use HTTPS.
 
 ```bash
-hypernode-manage-vhosts akeneo.example.hypernode.io --type akeneo4 --https --force-https
+hypernode-manage-vhosts akeneo.example.hypernode.io --type generic-php --https --force-https --webroot /data/web/akeneo/public
 ```
 
 The file `server.akeneo.conf` will be created and the nginx configuration will look like this:
 
 ```nginx
-root /data/web/akeneo_public;
+root /data/web/akeneo/public;
+
 include /etc/nginx/handlers.conf;
+include /etc/nginx/phpmyadmin.conf;
+
+index index.php index.html;
 
 location / {
-    # If the requested page is a file that doesn't exist, serve
-    # index.php instead, and let it be executed using phpfpm.
-    try_files $uri /index.html /index.php;
+    try_files $uri /index.php$is_args$args;
+}
 
-    location ~ \.php$ {
-        echo_exec @phpfpm;
-    }
+location ~ \.php$ {
+    echo_exec @phpfpm;
 }
 ```
 
@@ -53,7 +55,7 @@ location / {
 
 It's important to follow these steps in order since you *cannot* upgrade straight from **MySQL 5.6** to **MySQL 8.0**.
 
-First you’ll have to to upgrade MySQL 5.6 to 5.7 by running the commando:
+First you’ll have to upgrade MySQL 5.6 to 5.7 by running the commando:
 
 ```bash
 hypernode-systemctl settings mysql_version 5.7
@@ -119,20 +121,13 @@ source ~/.profile
 ### Download Akeneo 6
 
 ```bash
-composer2 create-project akeneo/pim-community-standard:"^6.0" akeneo
+composer create-project akeneo/pim-community-standard:"^6.0" akeneo
 ```
 
 ### Create a Database
 
 ```bash
 mysql -e "create database akeneo_pim;"
-```
-
-### Composer update
-
-```bash
-cd ~/akeneo
-composer2 update
 ```
 
 ### Configure Your .env File
@@ -188,7 +183,8 @@ Create a file in the configuration directory of supervisor: ~/supervisor/akeneod
 
 ```ini
 [program:akeneo_queue_daemon]
-command=php /data/web/akeneo/bin/console messenger:consume ui_job import_export_job data_maintenance_job --env=prod
+directory=/data/web/akeneo
+command=php bin/console messenger:consume ui_job import_export_job data_maintenance_job --env=prod
 autostart=false
 autorestart=true
 stderr_logfile=/data/web/akeneo_daemon.err.log

@@ -38,6 +38,15 @@ ecommerce-applications/*
 
 ```{toctree}
 ---
+caption: Frameworks
+maxdepth: 2
+glob:
+---
+framework/*
+```
+
+```{toctree}
+---
 caption: Hypernode Deploy
 maxdepth: 2
 glob:

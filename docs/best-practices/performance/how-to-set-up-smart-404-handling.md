@@ -21,8 +21,8 @@ Most Magento servers are configured so that requests for non-existing files are 
 
 Check the amount of 404s on your site that are processed by PHP. On Hypernode, you can run this command:
 
-```nginx
- parse-nginx-log --yesterday --php --filter status=404 --fields duration,request,referer
+```bash
+parse-nginx-log --yesterday --php --filter status=404 --fields duration,request,referer
 ```
 
 This will give you a list of requests for non-existing objects and their referrers. Plus the time (in seconds) spent on handling these useless requests.
@@ -39,52 +39,46 @@ So the trick is: have the server send a static 404 instead of starting Magento t
 
 Use this, if you know the exact URLs that give 404s.
 
-On Hypernode, create these configuration files:
+Create the `force404.conf` file:
+
+```bash
+touch /data/web/nginx/force404.conf
+```
+
+Create the following file at `/data/web/nginx/http.force404.conf`
 
 ```nginx
-
-touch ~/nginx/force404.txt
-cat > ~/nginx/http.force404 << \EOM
 map $uri $force404 {
-default 0;
-include app/force404.txt;
+    default 0;
+    include app/force404.conf;
 }
-EOM
-
 ```
 
 And now the real magic: generate a list of all static 404 assets, based on yesterday’s traffic.
 
-```nginx
- parse-nginx-log --php --yesterday --filter status=404 --fields request |\
-    egrep '^(GET|POST)' | cut -f2 -d' ' | cut -d'?' -f1 | sort | uniq |\
-    egrep -i '.(jpg|png|css|js)$' | while read uri; do echo "$uri 1;";
-    done > ~/nginx/force404.txt
+```bash
+parse-nginx-log --php --yesterday --filter status=404 --fields request |\
+    grep -E '^(GET|POST)' | cut -f2 -d' ' | cut -d'?' -f1 | sort | uniq |\
+    grep -Ei '.(jpg|png|css|js)$' | while read uri; do echo "$uri 1;";
+    done > /data/web/nginx/force404.conf
 ```
 
-Have a look at this file. Are you happy? Then activate the static 404:
+Have a look at this file. Are you happy? Then activate the static 404 by creating the following file at `/data/web/nginx/server.force404.conf`:
 
 ```nginx
- cat > ~/nginx/server.force404 << \EOM
 if ($force404) {
     return 404;
 }
-EOM
-
 ```
 
 ### Solution 2: Discard 404s Under Specific Folder
 
-If you do not know the specific URLs but want to disable PHP processing for a specific part of your URL namespace (say /mymedia), you can use this snippet:
+If you do not know the specific URLs but want to disable PHP processing for a specific part of your URL namespace (say `/mymedia`), you can create the following configuration at `/data/web/nginx/server.disable_php_processing_for_mymedia.conf`:
 
 ```nginx
-
-cat > ~/nginx/server.disable-php-processing-for-mymedia << \EOM
 location ^~ /mymedia {
-try_files $uri =404;
+    try_files $uri =404;
 }
-EOM
-
 ```
 
 You should make sure there are indeed no .php files under this folder, otherwise the webserver will happily serve them as plaintext (along with your precious code).
@@ -93,8 +87,8 @@ You should make sure there are indeed no .php files under this folder, otherwise
 
 Monitor your access logs for the desired behaviour:
 
-```nginx
- tail -f /var/log/nginx/access.log | parse-nginx-log --filter status=404 --fields request_time,handler,request
+```bash
+tail -f /var/log/nginx/access.log | parse-nginx-log --filter status=404 --fields request_time,handler,request
 ```
 
 It should show you no PHP handler, and a near-zero request time. Celebrate another bunch of saved CPU cycles and a performance gain of your shop!

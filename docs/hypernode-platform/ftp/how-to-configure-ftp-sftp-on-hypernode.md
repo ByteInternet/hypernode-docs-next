@@ -15,23 +15,49 @@ redirect_from:
 
 For some shops FTP/SFTP usage is required to access an external data supplier. For these customers we’ve added the feature to add and remove FTP/SFTP users on your Hypernode. In this article we’ll explain how you can configure FTP/SFTP (create/delete users) and which credentials to use to make a FTP/SFTP connection.
 
+## Difference between FTP and SFTP
+
+File Transfer Protocol (FTP) and Secure File Transfer Protocol (SFTP) are both widely used for transferring files, but they differ significantly in terms of security.
+
+- Security: SFTP encrypts both commands and data, providing a secure channel for file transfer. FTP, on the other hand, sends data in plain text, making it susceptible to unauthorized access.
+- Authentication: SFTP uses encrypted authentication channels, while FTP sends your username and password in plain text, which are easily intercepted and stolen.
+- Data Integrity: SFTP ensures data integrity by using a secure channel. In contrast, FTP lacks built-in mechanisms for data integrity, potentially leading to data corruption, or malware injection, during transfer.
+
 NB: We strongly recommend using SSH or SFTP for file transfers. FTP is an inherently unsafe protocol, and should only be used for syncing data with suppliers that can’t be done through the Magento API.
 
-## Managing FTP
+## Managing FTP Users in Control Panel
 
-**NB: The FTP users created with the instructions below can also be used for SFTP. More information about this can be found**[**here**](#sftp-ssh-file-transfer-protocol)**.**
+To manage FTP users in the Control Panel, follow these steps:
+
+1. **Navigate to Hypernode:** Go to the Hypernode you want to manage FTP accounts for. In the side menu, locate and click on the "FTP" menu item.
+1. **View Existing Users:** If you already have existing users created via the CLI tool, they will be listed on this page. If no FTP users exist, you will see a form to create a new one.
+1. **Fill Out the Form:** In the form, you can specify the FTP username, password, and home directory for a new user.
+1. **Delete Existing User:** In the user list, you can click the "trash" icon in the row to delete the user.
+
+```{admonition} Important Points to Note:
+---
+class: note
+---
+- If you create a new user with an existing username, the existing user will be overwritten with the new password and home directory.
+- Home directories should start with '/' and must exist on your Hypernode.
+- The same rules apply to the CLI tool, and these instructions are equivalent.
+```
+
+## Managing FTP through CLI
+
+**NB: The FTP users created with the instructions below can also be used for SFTP. More information about this can be found **[**here**](#sftp-ssh-file-transfer-protocol)**.**
 
 ### Adding FTP Users
 
 The first step is to create a FTP user on your Hypernode. This is done through the `hypernode-ftp add` command. The syntax of this command is as follows:
 
-```nginx
+```bash
 hypernode-ftp add --username USER --homedir DIRECTORY
 ```
 
 For example if you want to create user `bob` with homedir `/data/web/`:
 
-```nginx
+```bash
 hypernode-ftp add --username bob --homedir /data/web/
 ```
 
@@ -41,13 +67,13 @@ You will be asked for a password, and after adding a password the user is create
 
 If you want to delete a FTP user you can use the `hypernode-ftp remove` command. The syntax of this command is as follows:
 
-```nginx
+```bash
 hypernode-ftp remove --username USER
 ```
 
 We could delete the bob user by using the command like this:
 
-```nginx
+```bash
 hypernode-ftp remove --username bob
 ```
 
@@ -55,14 +81,14 @@ hypernode-ftp remove --username bob
 
 If you want to check which FTP users are enabled you can use the `hypernode-ftp list` command. This command returns a list of all available users and their particular homedir:
 
-```nginx
+```text
 Users found:
 bob /data/web
 ```
 
 Or in case you did not add any FTP users yet:
 
-```nginx
+```text
 No users in FTPasswd file
 ```
 
@@ -76,7 +102,7 @@ You can easily whitelist IP addresses via the command line.
 
 To see which whitelists are currently set you can run the following:
 
-```nginx
+```bash
 hypernode-systemctl whitelist get
 ```
 
@@ -84,7 +110,7 @@ You will see all IP’s whitelisted per type (external database access, FTP and 
 
 If you want to specify a specific whitelist you can run the following:
 
-```nginx
+```bash
 hypernode-systemctl whitelist get ftp
 ```
 
@@ -92,7 +118,7 @@ hypernode-systemctl whitelist get ftp
 
 To add more values to your whitelists you can run the following. Please note that descriptions are optional:
 
-```nginx
+```bash
 hypernode-systemctl whitelist add ftp 1.2.3.4 --description "my description"
 ```
 
@@ -102,19 +128,9 @@ Note that you can whitelist either single IP addresses (e.g. 1.2.3.4) or whole r
 
 To remove values from your whitelists you can run the following:
 
-```nginx
+```bash
 hypernode-systemctl whitelist remove ftp 1.2.3.4
 ```
-
-### Via Your Service Panel
-
-Customers who log in via [service.byte.nl](http://service.byte.nl) can whitelist an IP via the Service Panel by following the steps below:
-
-1. Log on to your [Service Panel](http://service.byte.nl).
-1. Select the Hypernode.
-1. Go to ‘Instellingen’.
-1. Select ‘Externe FTP toegang’.
-1. Add IP address and description.
 
 ### Via Your Control Panel
 
@@ -170,8 +186,6 @@ Start by generating a keypair (a private and a public key). This can be done thr
 #### Add Your Public Key to Your Hypernode
 
 When you have generated the keypair you need to add your public key to your Hypernode.
-
-Service Panel users can use the SSH Keymanager in the [Service panel](../ssh/how-to-use-ssh-keys-on-hypernode.md#service-panel-users-add-public-key-to-the-ssh-keymanager).
 
 Control Panel users also have access to an SSH Keymanager via their Control panel. How this works is explained in [this article](../../services/control-panel/how-to-add-keys-to-the-ssh-key-manager.md).
 

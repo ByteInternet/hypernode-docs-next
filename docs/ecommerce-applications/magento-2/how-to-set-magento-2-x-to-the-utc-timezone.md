@@ -45,7 +45,7 @@ If Magento does not support the UTC timezone, then select its equivalent GMT Sta
 1. Make sure the `Store View` is set to: `Default Config`
 1. Go to `General` -> `General`
 1. Scroll down to `Locale Options`
-1. Select `GMT (UTC)` next to `Timezone`
+1. Select `Coordinated Universal Time (UTC)` next to `Timezone`
 
 ### Set the Default Website Scopes to Your Preferred Timezones
 

@@ -28,7 +28,7 @@ Most issues will result from specific people or external systems interacting wit
 
 To see live, ongoing requests on your Hypernode, type `livefpm` and you will see a continuous overview like this:
 
-```nginx
+```text
 24769 BUSY   0.2s DE 54.93.108.145   POST www.site.nl/index.php/api/soap/index/   (Picqer Magento Integration (picqer.com))
 24227 IDLE   0.1s DE 54.93.108.145   GET  www.site.nl/api/soap?wsdl   (Picqer Magento Integration (picqer.com))
 24762 BUSY   0.1s NL 37.139.5.130    GET  www.site.nl/index.php/api/soap/index/?wsdl=1   (None)
@@ -42,8 +42,8 @@ There is a wealth of information on past requests available. Hypernode uses exte
 
 See the help for `pnl`:
 
-```nginx
-$ pnl --help
+```console
+app@abcdef-example-magweb-cmbl:~$ pnl --help
 usage: hypernode-parse-nginx-log [-h] [--fields FIELDS] [--php] [--bots]
                                  [--format FORMAT] [--list-fields]
                                  [--filter FILTER] [--verbose]
@@ -84,109 +84,109 @@ You can use the following fields for filtering or output:
 
 See live hits as they happen, but only those who are handled by PHP (`tal` is short for `tail -f /var/log/nginx/access.log`):
 
-```console
-$ tal | pnl --php
+```bash
+tal | pnl --php
 ```
 
 Parse multiple log files, possibly gzipped:
 
-```console
-$ zcat -f /var/log/nginx/access.log* | pnl
+```bash
+zcat -f /var/log/nginx/access.log* | pnl
 ```
 
 See all bots today with their user agents:
 
-```console
-$ pnl --today --bots --fields status,duration,ip,req,ua
+```bash
+pnl --today --bots --fields status,duration,ip,req,ua
 ```
 
 See all HTTP 500 hits.
 
-```console
-$ pnl --today --filter status=500
+```bash
+pnl --today --filter status=500
 ```
 
 See how many times a particular HTTP status code was returned today (formatted in a nice table).
 
-```console
-$ pnl --today --fields status | sort | uniq -c | sort -nk2 | \
+```bash
+pnl --today --fields status | sort | uniq -c | sort -nk2 | \
     awk 'BEGIN { print "Status Amount";print "------ ------" };{ printf "%-6s %s\n", $2, $1 }'
 ```
 
 See a distribution of all 502 (bad gateway) hits over all logfiles.
 
-```console
-$ for log in `ls -t /var/log/nginx/access.log*`; \
-    do echo -n "$log: "; \
+```bash
+for log in `ls -t /var/log/nginx/access.log*`; do \
+    echo -n "$log: "; \
     zcat -f $log | pnl --filter status=502 | wc -l; \
-    done
+done
 ```
 
 See whether bot traffic has increased over the last few days
 
-```console
-$ for log in `ls -t /var/log/nginx/access.log*`; \
-    do echo -n "$log: "; \
+```bash
+for log in `ls -t /var/log/nginx/access.log*`; do\
+    echo -n "$log: "; \
     zcat -f $log | pnl --php --bots | wc -l; \
-    done
+done
 ```
 
 See all 404 hits that were handled by Magento in yesterday’s log (so you can make static placeholders)
 
-```console
-$ pnl --yesterday --php \
+```bash
+pnl --yesterday --php \
     --filter status=404 --fields request | egrep ^GET | cut -f2 -d' ' |\
      cut -d'?' -f1 | sort | uniq -c | sort -n
 ```
 
 See all pageviews from China
 
-```console
-$ pnl --php --yesterday --filter country=CN
+```bash
+pnl --php --yesterday --filter country=CN
 ```
 
 Or all pageviews not from the Netherlands:
 
-```console
-$ pnl --php --today --filter 'country!=NL'
+```bash
+pnl --php --today --filter 'country!=NL'
 ```
 
 Check all bot pageviews (and user agents) and sort on frequency
 
-```console
-$ pnl --yesterday --bots --php --fields ua | sort | uniq -c | sort -n
+```bash
+pnl --yesterday --bots --php --fields ua | sort | uniq -c | sort -n
 ```
 
 See all Android hits
 
-```console
-$ pnl --yesterday --filter ua~Android \
+```bash
+pnl --yesterday --filter ua~Android \
     --fields status,country,ua
 ```
 
 How many PHP requests were there yesterday?
 
-```console
-$ pnl --yesterday --php | wc -l
+```bash
+pnl --yesterday --php | wc -l
 ```
 
 How many unique IPs were served yesterday?
 
-```console
-$ pnl --yesterday --fields remote_addr | sort | uniq | wc -l
+```bash
+pnl --yesterday --fields remote_addr | sort | uniq | wc -l
 ```
 
 Find all IPs that used multiple user agents today
 
-```console
-$ pnl --today --fields remote_addr,user_agent | sort | uniq |\
+```bash
+pnl --today --fields remote_addr,user_agent | sort | uniq |\
     cut -d' ' -f1 | sort | uniq -c | sort -n | grep -v ' 1 '
 ```
 
 Calculate total outbound traffic for yesterday (in this case, 20GB):
 
 ```console
-$ pnl --yesterday --fields body_bytes_sent | awk '{s+=$1} END {printf "%.0f\n", s}'
+app@abcdef-example-magweb-cmbl:~$ pnl --yesterday --fields body_bytes_sent | awk '{s+=$1} END {printf "%.0f\n", s}'
 20726556545
 ```
 
@@ -209,8 +209,8 @@ For debugging PHP issues, these files are useful:
 
 You can check whether PHP failed, because the webserver will give a HTTP 502 Bad Gateway error. Check whether these errors have occurred:
 
-```console
-$ pnl --yesterday --php --filter status=502
+```bash
+pnl --yesterday --php --filter status=502
 ```
 
 ### Headers Already Sent
@@ -245,8 +245,8 @@ With `hypernode-postsuper` you can clear items from the mail queue. Details can 
 
 Verify starting of your cron tasks:
 
-```nginx
-$ grep CRON /var/log/syslog | tail
+```bash
+grep CRON /var/log/syslog | tail
 ```
 
 If you have installed the excellent [Aoe_Scheduler](https://github.com/AOEpeople/Aoe_Scheduler) module, it will also keep a Magento specific cron log in `public/var/log/cron.log`.
@@ -278,7 +278,7 @@ As an the `app` user you have the capability of restarting or reloading a select
 The command can be executed as `hypernode-servicectl` or `/usr/bin/hypernode-servicectl`. The `help` menu displays the available options.
 
 ```console
-$ hypernode-servicectl --help
+app@abcdef-example-magweb-cmbl:~$ hypernode-servicectl --help
 usage: hypernode-servicectl [-h] [--version] [action] [service [service ...]]
 
 Control Hypernode services
@@ -299,12 +299,13 @@ More information on this handy command can be found in this [Hypernode Changelog
 First, check whether any slow queries are running right now by running `mytop`. If there are many queries, type ‘o’ to reverse the order and show longest running queries on top. If there’s a particular long running query, type ‘f’ and then the id to view the full query. If you want to abort it, type ‘k’ and then the query id to kill it. Warning: generally only do this for SELECT queries. Killing other queries might corrupt your data. Second, examine recent slow queries by running`less /var/log/mysql/mysql-slow.log`. Once you have find a suspect (for example, a query that takes longer than 2 seconds), you can prefix your querie with the `EXPLAIN` keyword to find where the bottleneck is. For example:
 
 ```console
-mysql> explain SELECT `main_table`.* FROM `catalogsearch_query` AS `main_table` ORDER BY updated_at DESC LIMIT 5;
+app@abcdef-example-magweb-cmbl:~$ mysql
+> explain SELECT `main_table`.* FROM `catalogsearch_query` AS `main_table` ORDER BY updated_at DESC LIMIT 5;
 
 +----+-------------+------------+------+---------------+------+---------+------+------+----------------+
-| id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
+| id | select_type | table      | type | possible_keys | key  | key_len | ref  | rows | Extra          |
 +----+-------------+------------+------+---------------+------+---------+------+------+----------------+
-| 1 | SIMPLE | main_table | ALL | NULL | NULL | NULL | NULL | 2159 | Using filesort |
+| 1  | SIMPLE      | main_table | ALL  | NULL          | NULL | NULL    | NULL | 2159 | Using filesort |
 +----+-------------+------------+------+---------------+------+---------+------+------+----------------+
 1 row in set (0.00 sec)
 ```

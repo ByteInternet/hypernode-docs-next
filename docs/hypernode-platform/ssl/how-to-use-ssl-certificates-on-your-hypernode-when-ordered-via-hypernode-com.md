@@ -128,13 +128,10 @@ If your SSL certificates are linked to your Hypernode, or you ordered Let’s En
 
 To use this:
 
-```nginx
+```bash
 ## Download the script
-
 wget -O change_baseurls.py https://gist.githubusercontent.com/hn-support/0c76ebb5615a5be789997db2ae40bcdd/raw/
-
 ## Execute to change the base URLs to HTTPS
-
 python change_baseurls.py
 ```
 
@@ -146,7 +143,7 @@ You can easily force your entire shop to go over HTTPS using a simple redirect.
 
 To redirect all traffic from HTTP to HTTPS, open the `server.rewrites` with your editor:
 
-```nginx
+```bash
 editor /data/web/nginx/server.rewrites
 ```
 
@@ -170,15 +167,11 @@ If you want to redirect your domain to both https and www, add this snippet to `
 
 ```nginx
 if ($http_host ~* "^(?!www\.).*$") {
-
     return 301 https://www.$http_host$request_uri;
-
 }
 
 if ($scheme = http) {
-
     return 301 https://$host$request_uri;
-
 }
 ```
 
@@ -223,7 +216,7 @@ After configuring your shop to only use HTTPS, please do not forget to check HTT
 
 Log into your Hypernode with SSH and run the following command:
 
-```nginx
+```bash
 openssl req -new -newkey rsa:2048 -nodes -keyout myserver.key -out myserver.csr
 ```
 
@@ -233,9 +226,9 @@ This will begin the process of generating two files: the Private-Key file for th
 
 Enter the requested information:
 
-\*\*- Common Name (CN):\*\*The fully-qualified domain name, or URL, you want to secure.
+**- Common Name (CN):** The fully-qualified domain name, or URL, you want to secure.
 
-If you are requesting a Wildcard certificate, add an asterisk (\*) to the left of the common name where you want the wildcard, for example \*.mydomain.com.
+If you are requesting a Wildcard certificate, add an asterisk (\*) to the left of the common name where you want the wildcard, for example `*.mydomain.com`.
 
 **- Organization (O):** The legally-registered name for your business. If you are enrolling as an individual, enter the certificate requestor's name.
 
@@ -243,9 +236,9 @@ If you are requesting a Wildcard certificate, add an asterisk (\*) to the left o
 
 **- City or Locality (L):** Name of the city where your organization is registered/located. Do not abbreviate.
 
-\*\*- State or Province (S):\*\*Name of the state or province where your organization is located. Do not abbreviate.
+**- State or Province (S):** Name of the state or province where your organization is located. Do not abbreviate.
 
-\*\*- Country (C):\*\*The two-letter International Organization for Standardization (ISO) format country code for where your organization is legally registered.
+**- Country (C):** The two-letter International Organization for Standardization (ISO) format country code for where your organization is legally registered.
 
 **Note:** If you do not want to enter a password for this SSL, you can leave the Passphrase field blank.
 

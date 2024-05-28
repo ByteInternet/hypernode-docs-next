@@ -50,7 +50,11 @@ or after changes compile scss once:
 sass docs/_static/scss:docs/_static/css
 ```
 
-## Deploying the docs with Hypernode Deploy
+## Deployment
+
+Deploys automatically after merging branchers to master.
+
+### Deploy with Hypernode Deploy
 
 To deploy to a local Hypernode Docker environment:
 ```

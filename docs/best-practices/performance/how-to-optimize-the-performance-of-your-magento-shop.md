@@ -60,18 +60,18 @@ We offer an [extended list of user agents](https://gist.github.com/hn-support/b7
 
 To do this, download the block list and the generator script and save the output of the generator script as `/data/web/nginx/server.botblocker`:
 
-```nginx
-## Get the blocklist files
+```bash
+# Get the blocklist files
 wget -O blocklist.txt  https://gist.githubusercontent.com/hn-support/b70d33d870981f5d6109b58900379643/raw
 wget https://gist.githubusercontent.com/hn-support/b70d33d870981f5d6109b58900379643/raw/825215d9e9a7abd92b0f110b67ba0bc1f7a9fd93/generate_nginx_blocklist.sh
 
-## Set executable bit on blocklist generation script
+# Set executable bit on blocklist generation script
 chmod +x generate_nginx_blocklist.sh
 
-## Edit the user agent list
+# Edit the user agent list
 editor blocklist.txt
 
-## Generate configuration
+# Generate configuration
 ./generate_nginx_blocklist.sh
 ```
 
@@ -151,18 +151,16 @@ More information can be found [in our article about creating reusable config](..
 
 In this example your Magmi is accessible through `https://www.example.nl/magmi`.
 
-First create a whitelist:
+First create a whitelist in `/data/web/nginx/include.whitelist`:
 
 ```nginx
-cat <<EOF > /data/web/nginx/include.whitelist
 allow 1.2.3.4;
 allow 2.3.4.5;
 allow 6.6.6.6;
 deny all;
-EOF
 ```
 
-Then save the folling snippet as `/data/web/nginx/magmi.conf`:
+Then save the following snippet as `/data/web/nginx/magmi.conf`:
 
 ```nginx
 location ~* /magmi($|/) {

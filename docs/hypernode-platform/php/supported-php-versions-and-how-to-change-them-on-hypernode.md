@@ -19,13 +19,16 @@ On Hypernode you can choose from a range of PHP versions. Check out which ones a
 
 On Hypernode you can choose from a range of PHP versions:
 
+- **PHP 8.3** (Fully supported)\*
+- **PHP 8.2** (Fully supported)\*
 - **PHP 8.1** (Fully supported)\*
-- **PHP 7.4** (Fully supported)
-- **PHP 7.3** (Security updates only since 6 Dec 2020)
+- **PHP 8.0** (EOL, No updates since 26 Nov 2023)
+- **PHP 7.4** (EOL, No updates since 28 Nov 2022)
+- **PHP 7.3** (EOL, No updates since 6 Dec 2021)
 - **PHP 7.2** (EOL, No updates since 10 Nov 2020)
 - **PHP 7.1** (EOL, No updates since 1 Dec 2019)
-- **PHP 7.0**(EOL, No updates since 3 Dec 2018, deprecated)
-- **PHP 5.6**(EOL, No updates since 31 Dec 2018, deprecated, we strongly recommend you to upgrade, will likely be phased out by us somewhere in 2022)
+- **PHP 7.0** (EOL, No updates since 3 Dec 2018, deprecated)
+- **PHP 5.6** (EOL, No updates since 31 Dec 2018, deprecated, we strongly recommend you to upgrade, will likely be phased out by us somewhere in 2022)
 
 You can easily switch the PHP version of your Hypernode, but please thoroughly test a PHP change before implementing it on a live environment!
 
@@ -35,13 +38,13 @@ You can easily switch the PHP version of your Hypernode, but please thoroughly t
 
 There are several methods to see what version you're using on Hypernode. The fastest method is to run the following command through the command line:
 
-```nginx
+```bash
 php -v
 ```
 
 If you can't easily access the command line, you can place a file named 'phpinfo.php' in /data/web/public, containing the following code:
 
-```nginx
+```php
 <?php
 phpinfo();
 ```
@@ -58,35 +61,23 @@ The easiest way to switch is by using the [hypernode-systemctl tool](../tools/ho
 
 To see what version your Hypernode is configured with, you can run the following command:
 
-```nginx
+```bash
 hypernode-systemctl settings php_version
 ```
 
 To see what versions are available, you can use this command:
 
-```nginx
+```bash
 hypernode-systemctl settings php_version list
 ```
 
 To upgrade to another version simply provide the version like so:
 
-```nginx
+```bash
 hypernode-systemctl settings php_version 8.1
 ```
 
 Afterwards you can use the livelog command to track progress of the upgrade.
-
-### Via the Service Panel
-
-You can also switch the PHP version of a Hypernode via the Service Panel (service.byte.nl)
-
-1. Log in to your Service Panel.
-1. Select your Hypernode by clicking the app name.
-1. Go to tab **Instellingen**.
-1. Click the **PHP.**
-1. Choose a PHP version.
-
-Afterwards you can navigate back to 'Hypernode Log' option, to track progress of the upgrade.
 
 ### Via your Control Panel
 
@@ -125,8 +116,10 @@ According to the [Magento Documentation](https://devdocs.magento.com/guides/v2.3
 
 According to the [Magento Documentation](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html#php), Magento 2.4 supports PHP 7.4 only, and PHP 7.3 is not tested or recommended. However, many Magento users are reporting that Magento 2.4 also works with PHP 7.2 and 7.3. Of course we always advise to follow the official supported versions advertised by Magento, and any module in use on your webshop.
 
-- 8.1 (Will be officially supported starting in version 2.4.4)
-- 7.4 (Official)
+- 8.3 (Officially supported starting in version 2.4.7)
+- 8.2 (Officially supported starting in version 2.4.6)
+- 8.1 (Officially supported starting in version 2.4.4)
+- 7.4 (Supported until 2.4.4)
 - 7.3 (Not recommended)
 - 7.2 (Reported by Community)
 

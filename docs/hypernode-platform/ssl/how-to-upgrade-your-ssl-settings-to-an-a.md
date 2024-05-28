@@ -39,7 +39,7 @@ The Hypernode Managed Vhosts (HMV) system is currently enabled by default on all
 
 When you have different vhosts configured, you also need to enable the SSL config **per vhost**. You do this by running this command:
 
-```nginx
+```bash
 hypernode-manage-vhosts example.com --ssl-config modern
 ```
 
@@ -67,7 +67,7 @@ This will make sure all subdomains will redirect to SSL when a HTTP connection i
 
 Verifying SSL settings and headers is easily done using curl:
 
-```nginx
+```bash
 curl -v https://example.com/ 2>&1 > /dev/null
 ```
 

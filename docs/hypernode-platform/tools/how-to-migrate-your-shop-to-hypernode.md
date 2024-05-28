@@ -28,9 +28,8 @@ Before importing your shop, make sure your [vhost](../nginx/hypernode-managed-vh
 
 If your vhost isn't the right `type`, you should chance the type of the vhost. You can achieve this by the following command:
 
-```nginx
+```bash
 hypernode-manage-vhosts example.com --type TYPE
-
 ```
 
 ## Option 1: for Service Panel users: Use the Shop Importer on [service.byte.nl](https://service.byte.nl)

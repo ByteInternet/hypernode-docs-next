@@ -16,14 +16,13 @@ redirect_from:
 If you want to protect a directory from being accessed through the web, create a location and deny access to it:
 
 ```nginx
-#Deny access to domain.com/some/location/
+# Deny access to domain.com/some/location/
 location ~ /some/location {
     deny all;
 
-#Deny access to all .php files
+# Deny access to all .php files
     location ~ \.php$ {
         deny all;
     }
 }
-
 ```

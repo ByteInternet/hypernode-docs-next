@@ -22,7 +22,7 @@ Modifying your local hosts file makes your local machine use the IP addresses sp
 
 For example, adding the following line, to your hosts file, will point the records `www.domain.com` and `domain.com` to the ip address `1.2.3.4`:
 
-```nginx
+```text
 1.2.3.4 www.domain.com domain.com
 ```
 

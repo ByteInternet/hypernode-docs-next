@@ -48,7 +48,7 @@ It is strongly recommended to use separate databases for your staging environmen
 
 ### Step One: Copy Your Files to the Staging Directory
 
-```nginx
+```bash
 rsync -va --delete --delete-excluded \
 --exclude /var/report/ \
 --exclude /var/session/ \
@@ -56,29 +56,25 @@ rsync -va --delete --delete-excluded \
 --exclude \*.sql \
 --exclude \*.zip \
 /data/web/public/ /data/web/staging/
-
 ```
 
 ### Step two: Create a staging database
 
-```nginx
+```bash
 mysql -e 'create database if not exists staging'
-
 ```
 
 ### Step Three: Dump the Production Database and Import Into the Staging Database
 
-```nginx
+```bash
 magerun --root-dir=/data/web/public db:dump --strip="@stripped" --stdout | mysql staging
-
 ```
 
 ### Step Four: Edit Your local.xml and fpc.xml to Use MySQL and Redis Databases Separate From the Production Databases.
 
-```nginx
+```bash
 editor /data/web/staging/app/etc/local.xml
 editor /data/web/staging/app/etc/fpc.xml
-
 ```
 
 Now at least change your MySQL database to staging and your Redis databases for cache and FPC to another one that is not in use by the production (for example: 3 and 4).
@@ -87,23 +83,21 @@ Now at least change your MySQL database to staging and your Redis databases for 
 
 **Warning! Changing the base URL's before changing your MySQL database to your staging database will have impact on your production site.**
 
-```nginx
+```bash
 cd /data/web/staging
 export SHOPHOST="mynode.hypernode.io"
 magerun --root-dir=/data/web/staging config:set web/unsecure/base_url http://$SHOPHOST:8888/
 magerun --root-dir=/data/web/staging config:set web/secure/base_url https://$SHOPHOST:8443/
 magerun --root-dir=/data/web/staging cache:flush
-
 ```
 
 If you have many storefronts, that all should be changed it's easier to use [our script](https://gist.github.com/hn-support/faf03c5898f5553b7fd9f4059709aef4)to change the base URL's of your staging environment.
 
 To use this script:
 
-```nginx
+```bash
 wget https://gist.githubusercontent.com/hn-support/faf03c5898f5553b7fd9f4059709aef4/raw/0374d20b7a18cf4d81c9cd713910696dd0710674/change_magento1_staging_baseurls.py
 python change_magento1_staging_baseurls.py
-
 ```
 
 ### Step Six: Change All References in Your Staging Directory Pointing at `/data/web/public` to `/data/web/staging`
@@ -118,9 +112,8 @@ Isolate your staging environment from your production environment by removing al
 
 You can update symlinks using the `ln` tool with the `-f` (force) feature flag:
 
-```nginx
+```bash
 ln -sf /data/web/staging/some_file /data/web/staging/some_other_file
-
 ```
 
 That's all! Now you should be able to reach your staging environment on <http://mynode.hypernode.io:8888>
@@ -134,22 +127,19 @@ If you want to restrict access, you can do so by editing /data/web/nginx/staging
 ```nginx
 allow your.ip.add.ress;
 deny all;
-
 ```
 
 - Restrict by password (called HTTP basic authentication).
 
 ```nginx
 auth_basic "Restricted area";
-  auth_basic_user_file /data/web/htpasswd-staging;
-
+auth_basic_user_file /data/web/htpasswd-staging;
 ```
 
 And run this command to add a Hypernode/Hypernode user for the staging environment:
 
-```nginx
+```bash
 htpasswd -bc /data/web/htpasswd-staging hypernode hypernode
-
 ```
 
 Read more [here](../../hypernode-platform/nginx/how-to-protect-your-magento-store-with-a-password-in-nginx.md) about using HTTP basic authentication on Hypernode.
@@ -180,9 +170,8 @@ We do not recommend to use hardlinks anymore.
 
 To detect earlier created hardlinks, use find:
 
-```nginx
+```bash
 find /data/web/ -type f -links +1
-
 ```
 
 ### External module crashes on different base_url?
@@ -207,9 +196,8 @@ If you created a staging before on the same machine, you might want to do a resy
 
 To cleanup or uninstall your Magento installation use the following magerun command:
 
-```nginx
+```bash
 magerun --root-dir=/data/web/staging uninstall --installationFolder=/data/web/staging --force
-
 ```
 
 This will remove your Magento installation and drops the database as well.
