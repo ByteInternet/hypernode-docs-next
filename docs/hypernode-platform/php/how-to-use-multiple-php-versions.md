@@ -58,7 +58,7 @@ You can do this by using Hypernode managed vhosts (hmv).
 
 You can specify an alternative PHP handler for the desired vhost:
 
-```
+```bash
 hmv <my_vhost> --handler phpfpm83alt
 ```
 
