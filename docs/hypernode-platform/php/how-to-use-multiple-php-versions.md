@@ -4,11 +4,7 @@ myst:
     description: 'Sometimes you want to use multiple PHP versions to test a Magento update as Example. 
     Find out how to enable and use alternative PHP versions. '
     title: How to use Alternative PHP versions? | Hypernode
-redirect_from:
-  - /en/hypernode/php/how-to-use-alternative-php-versions/
 ---
-
-<!-- source: https://support.hypernode.com/en/hypernode/php/how-to-use-alternative-php-versions/ -->
 
 # Enable alternative PHP versions
 Alternative PHP versions are disabled by default. Please contact our support department if you want to make use of this feature. 
