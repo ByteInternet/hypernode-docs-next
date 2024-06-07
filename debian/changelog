@@ -1,4 +1,4 @@
-hndocsnext (20240226.125510) UNRELEASED; urgency=medium
+hndocsnext (20240607.131443) UNRELEASED; urgency=medium
 
   [ Rick van de Loo ]
   * Initial packaging
@@ -528,4 +528,99 @@ hndocsnext (20240226.125510) UNRELEASED; urgency=medium
   * docs/conf: Enable PHP inline highlighting
   * docs/static: Change pygments block prompt color
 
- -- Hypernode team <hypernode@byte.nl>  Mon, 26 Feb 2024 12:55:24 +0000
+  [ Rolf van de Bovenkamp ]
+  *  Change old nameserver from byte to Hypernode
+
+  [ Marvin Sanders ]
+  * change the comand to underscore
+
+  [ Niuta Godlewska ]
+  * remove Service Panel sections, update new SSH keys steps
+  * merge master branch
+  * mdformat
+  * remove notexisting link in other doc
+
+  [ Marvin Sanders ]
+  * added url and IP whitelist
+  * Fix the Markdown
+
+  [ Nick ]
+  * Create Hipex to Hypernode migration 2024 FAQ (Dutch)
+
+  [ Rick van de Loo ]
+  * mdformat basic auth page
+
+  [ Timon de Groot ]
+  * Fix formatting for nginx dev plan basic auth doc
+
+  [ Nick ]
+  * Update Hipex to Hypernode migration 2024 FAQ (Dutch)
+  * Update Hipex to Hypernode migration 2024 FAQ (Dutch)
+  * Update Hipex to Hypernode migration 2024 FAQ (Dutch)
+
+  [ Timon de Groot ]
+  * Fix formatting for hipex to hypernode faq
+
+  [ Burak ]
+  * Revert "DO NOT MERGE BEFORE SSH KEY RELEASE: remove Service Panel sections, update new SSH keys steps"
+  * Revert "Revert "DO NOT MERGE BEFORE SSH KEY RELEASE: remove Service Panel sections, update new SSH keys steps""
+
+  [ Niuta Godlewska ]
+  * recommit
+  * md format
+  * change relative path for images
+
+  [ Cipriano Groenendal ]
+  * Update responsible-disclosure-policy.md
+
+  [ ikidnapmyself ]
+  * delete AWS plans from brancher docs
+
+  [ Willem de Groot ]
+  * Update supported-php-versions-and-how-to-change-them-on-hypernode.md
+
+  [ Rick van de Loo ]
+  * add missing whitespace in php settings page
+
+  [ ikidnapmyself ]
+  * Akeneo 7.x docs
+  * delete 6x ref
+  * fix format
+  * revert redirect_from
+
+  [ Niuta Godlewska ]
+  * trim fix
+  * fix trim
+  * fix trim
+  * mdformat all
+  * fix trim
+  * fix hrefs in settings.md
+  * correct consecutive headers for vpn
+  * correct names, remove duplicated hypernode docker doc
+  * correct url for vpn
+  * correct redirects
+  * md format
+  * delete all api docs so we can just redirect to api.hypernode.com
+  * add redirect urls without hash
+
+  [ Niutah ]
+  * Update docs/hypernode-platform/vpn/hypernode-vpn.md
+
+  [ ikidnapmyself ]
+  * Update cron jobs in accordance with the official documentation
+
+  [ Hritik Kothari ]
+  * Update autoscaling docs
+  * Update docs/hypernode-platform/autoscaling/how-to-enable-autoscaling.md
+
+  [ Martijn ]
+  * Documentation how to use alternative PHP versions
+  * Mark codeblock as bash
+  * Remove redirect_from
+  * Renamed to alternative-php-versions
+  * Fix documents heading start
+
+  [ Timon de Groot ]
+  * Fix formatting for how-to-use-alternative-php-versions.md
+
+ -- Hypernode team <hypernode@byte.nl>  Fri, 07 Jun 2024 13:14:56 +0000
