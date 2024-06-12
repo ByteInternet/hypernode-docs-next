@@ -137,7 +137,7 @@ Edit the values of your MySQL user, password, host and Elasticsearch host in `/d
 ```bash
 sed -i "s/APP_DATABASE_PASSWORD=akeneo_pim/APP_DATABASE_PASSWORD=$(cat ~/.my.cnf | grep password | awk '{print$NF}')/" /data/web/akeneo/.env
 sed -i "s/APP_DATABASE_USER=akeneo_pim/APP_DATABASE_USER=$(cat ~/.my.cnf | grep user | awk '{print$NF}')/" /data/web/akeneo/.env
-sed -i "s/APP_DATABASE_HOST=mysql/APP_DATABASE_HOST=mysqlmaster/" /data/web/akeneo/.env
+sed -i "s/APP_DATABASE_HOST=mysql/APP_DATABASE_HOST=mysqlmaster.YOUR_APP_NAME_HERE.hypernode.io/" /data/web/akeneo/.env
 sed -i "s/APP_INDEX_HOSTS=elasticsearch:9200/APP_INDEX_HOSTS=localhost:9200/" /data/web/akeneo/.env
 
 cp /data/web/akeneo/.env /data/web/akeneo/.env.local
