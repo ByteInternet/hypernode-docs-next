@@ -115,3 +115,12 @@ To inspect the contents of the deb archive you can run:
 /usr/share/doc/hndocsnext/README.md
 /usr/share/doc/hndocsnext/changelog.gz
 ```
+
+## Build as PDF
+
+To build the documentation as a single PDF file, run the following command:
+```
+bin/build_pdf
+```
+
+The built PDF will then be in `docs/_build/pdf/`.

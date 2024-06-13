@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+
+pushd docs
+make pdf
+echo "pdf located at $(realpath _build/pdf/hypernode_documentation.pdf)"
+popd
