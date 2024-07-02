@@ -163,7 +163,7 @@ Note that the status is yellow instead of green. This is because the index was c
 You can configure your created index to expect an amount of zero replicas. That will turn the cluster status back to green. Since Elasticsearch 6`.x` it is not possible to set index level settings in the node configuration, but you can do so during runtime with this command:
 
 ```bash
-$ curl -XPUT 'http://localhost:9200/_all/_settings?preserve_existing=false' -d '{
+$ curl -XPUT -H 'Content-Type: application/json' 'http://localhost:9200/_all/_settings?preserve_existing=false' -d '{
   "index.number_of_replicas" : "0"
   }'
 
