@@ -23,7 +23,7 @@ One of the main pillars of our security policy is our ISO 27001:2013 certificati
 
 Because we work with cloud hosting suppliers around the world, we also need to make sure that your data is safely stored at these suppliers. To ensure this, we only work with ISO 27001:2013 certified hosting companies.
 
-We currently run Hypernodes at 3 different cloud suppliers:
+We currently run Hypernodes at several different hosting suppliers:
 
 - Combell OpenStack (COS)
   - Both [ISO 27001](https://www.combell.com/en/about-combell/iso-27001-quality-label) and [ISO 9001](https://www.combell.com/en/about-combell/iso-9001-quality-label) certified.
@@ -31,9 +31,8 @@ We currently run Hypernodes at 3 different cloud suppliers:
 - Amazon Web Services (AWS)
   - [ISO 9001](https://aws.amazon.com/compliance/iso-9001-faqs/), [ISO 27001](https://aws.amazon.com/compliance/iso-27001-faqs/), [ISO 27017](https://aws.amazon.com/compliance/iso-27017-faqs/), [ISO 27018](https://aws.amazon.com/compliance/iso-27018-faqs/), certified.
   - Datacenter certified with ISO 9001 and ISO 27001.
-- DigitalOcean (DO)
-  - [ISO 27001:2013](https://www.digitalocean.com/trust/certification-reports/) certified.
-  - Datacenter certified with either ISO 27001:2013, or SOC 2 Type II, dependent on physical location.
+- Dedicated (TBBM)
+  - Both ISO 27001 and ISO 9001 certified.
 
 ## Infrastructure Hardening
 
@@ -64,7 +63,7 @@ As your security is only as strong as the weakest link, the safety of our system
 
 E-commerce sites are a prime target for cybercriminals, something we realize like no other. Your Hypernode is designed from the ground up with security in mind. Every precaution has been taken to ensure that your shop’s data stays secure on your Hypernode.
 
-- All Hypernodes run on Debian Buster, a proven secure and stable Operating System.
+- All Hypernodes run on Debian LTS, a proven secure and stable Operating System.
 
 - All Hypernodes are centrally managed and updated automatically several times a week.
 
