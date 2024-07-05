@@ -62,10 +62,10 @@ If you log in via [my.hypernode.com](https://auth.hypernode.com/), please use th
 
 You can cancel your subscription at any time via your Control Panel. The end date of your subscription is always the first of the next month. Example: if you cancel your subscription on the 15th of June, your Hypernode will be no longer available from the 1st of July onwards.
 
+## How to Undo Cancelling Your Plan
 
-## How to Undo Cancel Your Plan
+If you want to undo the cancellation you can do it till the end of the month after cancelling your plan. In order to cancel your cancellation follow the steps below.
 
-If you want to undo the cancellation you can do it till the end of the month after cancelling your plan. In order to cancel your cancellation follow the steps below. 
 - Log in to the [Control Panel](https://my.hypernode.com/).
 - Go to **settings** of the Hypernode you cancelled.
 - At the top of the screen press **Undo cancellation now**
