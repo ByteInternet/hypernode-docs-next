@@ -16,20 +16,14 @@ Customers with Hypernode Pelican, Falcon (formerly known as Professional) and Ea
 
 Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. Don't implement varnish on production nodes without testing Varnish first on a [development node](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) or the [Hypernode Docker](../../best-practices/testing/hypernode-docker.md).
 
-## Enable Varnish 4.0 or 6.0 for Magento 2.x
+## Enable Varnish for Magento 2.x
 
-As Magento 2 supports Varnish out of the box, there is no need for the turpentine extension anymore in Magento 2. Simply follow the steps below to configure Varnish 4.0 or 6.0 for Magento 2.
+As Magento 2 supports Varnish out of the box, there is no need for the turpentine extension anymore in Magento 2. Simply follow the steps below to configure Varnish 4.0, 6.0 or 7.x for Magento 2.
 
-**First configure the Varnish version (4.0 or 6.0) via the [hypernode-systemctl tool](../../hypernode-platform/tools/how-to-use-the-hypernode-systemctl-cli-tool.md)**
-
-```console
-$ hypernode-systemctl settings varnish_version 4.0
-```
-
-**Or if you want to switch to Varnish 6.0**
+**First configure the Varnish version (4.0, 6.0 or 7.x) via the [hypernode-systemctl tool](../../hypernode-platform/tools/how-to-use-the-hypernode-systemctl-cli-tool.md)**
 
 ```console
-$ hypernode-systemctl settings varnish_version 6.0
+$ hypernode-systemctl settings varnish_version 7.x
 ```
 
 **Enable Varnish via the [hypernode-systemctl tool](../../hypernode-platform/tools/how-to-use-the-hypernode-systemctl-cli-tool.md)**
