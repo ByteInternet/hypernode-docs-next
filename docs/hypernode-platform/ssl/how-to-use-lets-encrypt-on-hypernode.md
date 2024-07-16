@@ -109,19 +109,6 @@ dehydrated -c --force
 
 **Be careful not to exceed the ratelimits at Let's Encrypt!**
 
-### Multiple Domains for One Shop
-
-Both `dehydrated` and out config generator now support multidomain certificates. This implicated that if you want to serve both your `www.` and `apex` domain over SSL, you may add both records on the same line in `.dehydrated/domains.txt` to ensure a valid nginx configuration is created for both domains.
-
-Example:
-
-```console
-app@abcdef-example-magweb-cmbl:~$ cat ~/.dehydrated/domains.txt
-example.hypernode.io
-example.com www.example.com test.example.com
-example.nl www.example.nl
-```
-
 ### Configure the Hypernode and Magento to Support Let's Encrypt
 
 After creating certificates you need to update the Nginx configuration. This is done using the script `hypernode-ssl-config-generator`.
