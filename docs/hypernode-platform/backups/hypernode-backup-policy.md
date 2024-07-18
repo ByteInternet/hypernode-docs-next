@@ -1,7 +1,7 @@
 ---
 myst:
   html_meta:
-    description:A complete overview of Hypernode's backup policy, showing the
+    description: A complete overview of Hypernode's backup policy, showing the
       scheme, methods, locations, and frequency backups, and additional services.
     title: Hypernode Backup Policy | Backups
 redirect_from:
