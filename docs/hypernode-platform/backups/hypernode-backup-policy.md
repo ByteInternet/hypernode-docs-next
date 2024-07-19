@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    description: A complete overview of Hypernode's backup policy, showing the
-      scheme, methods, locations, and frequency backups, and additional services.
+    description: A complete overview of Hypernode's backup policy, showing the scheme,
+      methods, locations, and frequency backups, and additional services.
     title: Hypernode Backup Policy | Backups
 redirect_from:
   - /en/hypernode/backups/hypernode-backup-policy/
@@ -12,25 +12,25 @@ redirect_from:
 
 # Hypernode Backup Policy
 
-Hypernode recognizes that the backup of data is critical to the viability and operations of any organization. This documents outlines the measures we take to create safe, secure, and usable backups for our customers to use. 
+Hypernode recognizes that the backup of data is critical to the viability and operations of any organization. This documents outlines the measures we take to create safe, secure, and usable backups for our customers to use.
 
 # Cloud Hosting Backup
 
 On Amazon Web Services (AWS) and Combell OpenStack we use snapshots to create backups. When things go slightly wrong (ie. a product is accidentally deleted), you can go back in time to restore the appropriate database table, files or directories from the snapshot. Snapshots are easy to use, creating them take up less time and there’s no need to upgrade your Hypernode if you don’t have enough disk space.
 
-A snapshot is a saved state of the `/data` device at a given moment in time. We can use this to create a static copy of that given state in time and transform this to a virtual device which we can attach to your Hypernode. Once attached, this device is mounted under `/data/backup` and you can easily restore your files by copying them from this file system. 
+A snapshot is a saved state of the `/data` device at a given moment in time. We can use this to create a static copy of that given state in time and transform this to a virtual device which we can attach to your Hypernode. Once attached, this device is mounted under `/data/backup` and you can easily restore your files by copying them from this file system.
 
 ## Frequency and Retention Times
 
 Snapshots are made every day and saved for 7 days. We also save 1 backup per week for 3 weeks. This means you will have 4 weeks worth of backups.
 
-Snapshots are rotated daily after the creation of a new backup. This implies that the backups that are older than 4 weeks will be automatically removed. 
+Snapshots are rotated daily after the creation of a new backup. This implies that the backups that are older than 4 weeks will be automatically removed.
 
 If you have an SLA Standard for your Hypernode, additional snapshots are available. For details see the SLA Standard section below.
 
 ## Restoring Data
 
-To access the backup snapshots to restore data, you will first need to get the backup attached to your Hypernode. You can do so using the `hypernode-systemctl attach_backup` command. 
+To access the backup snapshots to restore data, you will first need to get the backup attached to your Hypernode. You can do so using the `hypernode-systemctl attach_backup` command.
 As the backup snapshot contains a second MySQL instance running, attaching a snapshot has a minor impact on your resources. For this reason, the backup snapshot while be automatically detached within 24 hours. Please contact Support if you want the snapshot detached earlier.
 
 To restore database and file backups from a snapshot, see [this article](how-to-restore-your-hypernode-from-a-snapshot.md).
@@ -79,7 +79,7 @@ Offsite backups are incremental backups of the `/data` device. Due to the techno
 
 ## Frequency and Retention Times
 
-Offsite backups are created once a day. Daily backups are retained for a minimum of 28 days, and, due to tue use of Incremental backups, a maximum of 42 days. 
+Offsite backups are created once a day. Daily backups are retained for a minimum of 28 days, and, due to the use of Incremental backups, a maximum of 42 days.
 
 Offsite database backups are made every day and saved for 7 days. We also save 1 backup per week for 3 weeks. This means you will have 4 weeks worth of backups.
 
@@ -102,4 +102,3 @@ We recommend to avoid hard-links in your content at all times.
 ## Creating offline backups
 
 Due to security reasons we don't have easy options to just click and download your files/database to your local machine from your Control Panel. If you still want to download the files/database to your local machine for your peace of mind you'd have to do this manually. You can find instructions in our [documentation](../../best-practices/backups/how-to-create-a-backup-and-download-it-to-your-local-machine.md).
-
