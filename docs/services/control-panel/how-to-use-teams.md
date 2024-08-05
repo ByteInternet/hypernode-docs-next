@@ -24,25 +24,27 @@ To create a new team:
 1. From sidebar on the left, click **Teams**.
 1. Click **Create a new Team**.
 1. Give the team a name.
+1. Optional: Invite other members. You can also invite members after creating a team.
 1. Optional: select one or more available Hypernodes that should be handled by your new team. You can also add Hypernodes to your team afterwards.
 1. Click **Create team**.
 
-You will now see the team detail page from which you can invite new members and change the team name. By clicking on Hypernodes on the left you can see which Hypernodes are in this team.
+You will now see the team detail page from which you can invite new members, change linked Hypernodes, and modify the name.
 
 ## Deleting a Team
 
-Please note you can only delete a team if you're the creator of the team.
+Please note you can only delete a team if you're the creator of the team. If you want to leave the team, you can do it by removing yourself from the members from particular team.
 
 1. From sidebar on the left, click **Teams**.
 1. Click on the **trash can** behind the team you want to delete.
-1. Confirm the deletion on the next page.
 
 ## Adding Hypernodes to a Team
 
-There are two ways to add a Hypernode to a team:
+To add Hypernode to an existing team:
 
-1. Upon creation of a team, select one or more Hypernodes to be added to the team.
-1. Add a Hypernode to an existing team by hoovering over **Teams**in the sidebar and then selecting **Hypernodes**. From the dropdown in the bar at the top of the page, select the correct team and then click the **Add/remove from team**button to add Hypernodes.
+1. From sidebar on the left, click **Teams**.
+1. Go to the Team you want to manage.
+1. Click on **Edit linked Hypernodes**.
+1. Select one or more Hypernodes you want to associate with this Team. Keep in mind all members will be able to access this Hypernode depending on their roles.
 
 ## Manage Users in a Team
 
@@ -54,17 +56,18 @@ To add a new developer:
 
 1. Log into the Hypernode Control Panel.
 1. From the sidebar on the left, click **Teams**.
-1. Click **Details** to edit a specific team.
+1. Go to the Team you want to manage.
 1. Click **Invite new member**.
-1. Fill in their email, select the desired role and add a personal message and click **Send invitation**.
+1. Fill in their email, select the desired role, and click **Send invitation**.
 
-An invitation will be sent to the invitee's email address. Once they have accepted the invitation, the owner and inviting member will be notified of this via email. Please note that the new member has access to all settings, except for the up or downgrading of a plan.
+An invitation will be sent to the invitee's email address. Once they have accepted the invitation, the owner and inviting member will be notified of this via email.
 
 ### Revoking Access
 
 1. Log into the Hypernode Control Panel.
 1. From the sidebar on the left, click **Teams**.
-1. Click **Details** to edit a specific team.
+1. Go to the Team you want to manage.
 1. Delete a member by clicking the trash can. Confirm the removal.
+1. Note: If you don't see a trashcan it means you don't have permissions to remove members.
 
 Once you remove someone from a team, you can always use Invite new member to add them back to the team later on. A notification will be sent to the owner if another team member revoked access for another team member.
