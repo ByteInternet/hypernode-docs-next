@@ -34,7 +34,6 @@ To access the backup snapshots to restore data, you will first need to get the b
 As the backup snapshot contains a second MySQL instance running, attaching a snapshot has a minor impact on your resources. For this reason, the backup snapshot while be automatically detached within 24 hours. Please contact Support if you want the snapshot detached earlier.
 
 To restore database and file backups from a snapshot, see [this article](how-to-restore-your-hypernode-from-a-snapshot.md).
-If you are unable to restore this backup yourself, our support engineers are available to restore your Hypernode from a snapshot for you. This means that we restore the appropriate database, files or directories from the backup. This service costs €125,-. Contact Support for more information about this.
 **Please note:** Restoring a snapshot/backup is never completely without risk, Hypernode is not liable for data loss or other discrepancies.
 
 You can always attach the most recent snapshot to your Hypernode for free. Depending on your SLA, attaching older snapshots might come at a fee. For details see the SLA Standard section below.
