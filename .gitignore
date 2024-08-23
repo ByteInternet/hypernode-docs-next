@@ -8,4 +8,6 @@ pub
 .vscode
 *.css.map
 deployment-report.json
+package-lock.json
 build/
+node_modules/
