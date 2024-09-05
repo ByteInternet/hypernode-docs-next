@@ -204,7 +204,6 @@ article: https://support.hypernode.com/en/support/solutions/articles/48000970831
 article: https://support.hypernode.com/en/support/solutions/articles/48000982378-how-to-flush-the-varnish-cache/
 article: https://support.hypernode.com/en/support/solutions/articles/48001153093-dns-for-service-panel-users/
 article: https://support.hypernode.com/en/support/solutions/articles/48001153348-how-to-secure-your-data-using-encryption-and-hashing/
-article: https://support.hypernode.com/en/support/solutions/articles/48001154919-how-to-use-the-mysql-slow-queries-in-the-control-panel/
 article: https://support.hypernode.com/en/support/solutions/articles/48001155575-how-to-change-your-hypernode-settings/
 article: https://support.hypernode.com/en/support/solutions/articles/48001158433-how-hypernode-protects-your-magento-shop/
 article: https://support.hypernode.com/en/support/solutions/articles/48001163357-how-to-block-bad-bots-via-the-service-panel/
