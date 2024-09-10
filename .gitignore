@@ -9,3 +9,4 @@ pub
 *.css.map
 deployment-report.json
 build/
+venv/
