@@ -96,10 +96,8 @@ app@appname.hypernode.io:~$ ls /data/web # See the magento2 directory and the co
 ### Create project from a certain release to /data/web/magento2
 
 ```
-composer create-project --repository-url=https://mage-os.hypernode.com/mirror/ magento/project-community-edition:2.4.7-p2 /data/web/magento2
+composer create-project --repository-url=https://mage-os.hypernode.com/mirror/ magento/project-community-edition /data/web/magento2
 ```
-
-**Important!** Please replace `2.4.7-p2` with the latest Magento 2 version available.
 
 ### Create a Database (In This Example, We Named the Database ‘magento2’, but You Can Name It However You Like)
 
