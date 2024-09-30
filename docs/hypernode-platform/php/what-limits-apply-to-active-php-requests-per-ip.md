@@ -14,7 +14,7 @@ redirect_from:
 
 Hypernodes uses Nginx and PHP-FPM for processing and serving PHP pages. PHP-FPM uses FPM worker threads to process requests from Nginx. The amount of workers that are available on the Hypernode depends on how many available CPU cores the server has. Benchmark tests have concluded that, based on CPU contention and concurrency, the optimal number of workers is defined by the formula `vCPUs * 5`.
 
-When one IP uses up most or all of the available workers, this causes a processing queue and long loading times for PHP generated pages, possibly resulting in error codes being served to visitors. To prevent this from happening, we limit the amount of workers one IP can use. This limit is set at **30 workers per IP**.
+When one IP uses up most or all of the available workers, this causes a processing queue and long loading times for PHP generated pages, possibly resulting in error codes being served to visitors. To prevent this from happening, we limit the amount of workers one IP can use.
 
 ## 30 workers per IP
 
