@@ -21,7 +21,7 @@ You can list, enable and disable the alternative PHP versions on your Hypernode 
 To list the enabled alternative PHP versions, you can use the following command:
 
 ```bash
-hypernode-systemctl settings alternative_php_versions list
+hypernode-systemctl settings alternative_php_versions
 ```
 
 The output will tell you the enabled PHP versions, please note that this does not contain your main system PHP version.
