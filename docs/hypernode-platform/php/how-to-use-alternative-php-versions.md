@@ -21,7 +21,7 @@ You can list, enable and disable the alternative PHP versions on your Hypernode 
 To list the enabled alternative PHP versions, you can use the following command:
 
 ```bash
-hypernode-systemctl settings alternative_php_versions list
+hypernode-systemctl alternative_php_versions list
 ```
 
 The output will tell you the enabled PHP versions, please note that this does not contain your main system PHP version.
@@ -35,7 +35,7 @@ Currently enabled PHP versions are ['8.3', '7.1', '8.0'].
 To enable an alternative PHP version on your Hypernode, you can make use of the `enable` command:
 
 ```bash
-hypernode-systemctl settings alternative_php_versions 8.2
+hypernode-systemctl alternative_php_versions enable 8.2
 ```
 
 The specified PHP version will be enabled and may take some time to complete. You can follow the progress by using `livelog`:
