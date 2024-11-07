@@ -1,4 +1,5 @@
 import os.path
+import re
 from datetime import datetime
 from pathlib import Path
 from typing import TYPE_CHECKING
@@ -37,11 +38,13 @@ class PageContextHandler:
             )
 
         if created:
+            created = re.sub(r"Z$", "+00:00", created)
             context["created_at"] = datetime.fromisoformat(created).strftime(
                 app.config.created_at_fmt
             )
 
         if updated:
+            updated = re.sub(r"Z$", "+00:00", updated)
             context["updated_at"] = datetime.fromisoformat(updated).strftime(
                 app.config.updated_at_fmt
             )
