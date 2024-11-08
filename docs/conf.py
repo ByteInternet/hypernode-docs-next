@@ -5,6 +5,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 import os
 import sys
+from datetime import datetime
 
 # -- Path setup --------------------------------------------------------------
 
@@ -21,7 +22,8 @@ sys.path.append(os.path.abspath("../"))
 # -- Project information -----------------------------------------------------
 
 project = "Docs"
-copyright = "2023, Hypernode"
+current_year = datetime.now().year
+copyright = f"{current_year}, Hypernode"
 author = "Hypernode"
 
 # The full version, including alpha/beta/rc tags
