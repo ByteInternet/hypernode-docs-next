@@ -82,13 +82,10 @@ hypernode-systemctl settings php_version 8.1
 hypernode-systemctl settings php_apcu_enabled True
 ```
 
-## Configure and Enable OpenSearch v2.x
+## Configure and Enable OpenSearch v2.6
 
 ```bash
-hypernode-systemctl settings opensearch_version 2.x
-```
-
-```bash
+hypernode-systemctl settings opensearch_version 2.6
 hypernode-systemctl settings opensearch_enabled True
 ```
 
