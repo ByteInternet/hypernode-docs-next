@@ -19,9 +19,9 @@ On Hypernode you can choose from a range of PHP versions. Check out which ones a
 
 On Hypernode you can choose from a range of PHP versions:
 
-- **PHP 8.3** (Fully supported)\*
-- **PHP 8.2** (Fully supported)\*
-- **PHP 8.1** (Fully supported)\*
+- **PHP 8.3** (Fully supported)
+- **PHP 8.2** (Fully supported)
+- **PHP 8.1** (Fully supported)
 - **PHP 8.0** (EOL, No updates since 26 Nov 2023)
 - **PHP 7.4** (EOL, No updates since 28 Nov 2022)
 - **PHP 7.3** (EOL, No updates since 6 Dec 2021)
@@ -31,8 +31,6 @@ On Hypernode you can choose from a range of PHP versions:
 - **PHP 5.6** (EOL, No updates since 31 Dec 2018, deprecated, we strongly recommend you to upgrade, will likely be phased out by us somewhere in 2022)
 
 You can easily switch the PHP version of your Hypernode, but please thoroughly test a PHP change before implementing it on a live environment!
-
-\*Some things to keep in mind: at this point in time with PHP 8.1 you will not be able to use Ioncube, New Relic or Blackfire. If you test out PHP 8.1 and things don’t work as you expect, you of course can switch back to a previous version.
 
 ## How to Check the PHP Version you Use on Hypernode
 
@@ -138,4 +136,4 @@ According to Magento's Documentation, Magento 1.9.4 supports PHP 5.6, 7.0, 7.1, 
 
 ### Ioncube compatibility
 
-We support Ioncube for PHP 5.6 and PHP 7.x, but this extension is not enabled by default as it is a big performance killer. If you wish to have Ioncube enabled, please manually enable it via [the hypernode-systemctl tool](../tools/how-to-use-the-hypernode-systemctl-cli-tool.md).
+We have support for Ioncube, but this extension is not enabled by default as it is a big performance killer. If you wish to have Ioncube enabled, please manually enable it via [the hypernode-systemctl tool](../tools/how-to-use-the-hypernode-systemctl-cli-tool.md).
