@@ -14,13 +14,13 @@ redirect_from:
 
 Customers with Hypernode Pelican, Falcon (formerly known as Professional) and Eagle (formerly known as Excellence plans can use Varnish to boost their Magento shop. This article explains how you can configure Varnish 4 or 6 for your Hypernode. If you want to know which Varnish version you need to configure, please check the [Magento documentation](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html) first. Do you have a Magento 1 shop, please check [this article](../../ecommerce-applications/magento-1/how-to-configure-varnish-for-magento-1-x.md).
 
-Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. Don't implement varnish on production nodes without testing Varnish first on a [development node](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) or the [Hypernode Docker](../../best-practices/testing/hypernode-docker.md).
+Although Varnish is extremely awesome when it get's to speeding up websites, configuring Varnish is a complex technique that needs some experience to set it up. Don't implement varnish on production nodes without testing Varnish first on a [development node](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) or the [Hypernode Docker](../../best-practices/testing/hypernode-docker.md).
 
 ## Enable Varnish for Magento 2.x
 
 As Magento 2 supports Varnish out of the box, there is no need for the turpentine extension anymore in Magento 2. Simply follow the steps below to configure Varnish 4.0, 6.0 or 7.x for Magento 2.
 
-**First configure the Varnish version (4.0, 6.0 or 7.x) via the [hypernode-systemctl tool](../../hypernode-platform/tools/how-to-use-the-hypernode-systemctl-cli-tool.md)**
+**Firstly, configure the Varnish version (4.0, 6.0 or 7.x) via the [hypernode-systemctl tool](../../hypernode-platform/tools/how-to-use-the-hypernode-systemctl-cli-tool.md)**
 
 ```console
 $ hypernode-systemctl settings varnish_version 7.x
@@ -39,9 +39,9 @@ $ hypernode-systemctl settings varnish_enabled true
 - Select the Hypernode
 - Click on "Enable Varnish"
 
-## Configure Varnish on the Vhost
+## Configure Varnish on the vHost
 
-Since the introduction of [hypernode-manage-vhosts](https://changelog.hypernode.com/changelog/release-7166-hypernode-manage-vhosts-enabled-by-default/) Hypernode may work somewhat different than you might be used to. With HMV enabled, it requires one more step to configure Varnish for your shop/vhost. Remember, for each domain, there should be a vhost created. You can list an overview of all configured vhosts with `hypernode-manage-vhosts --list`. While you do that, note that there is a column, "varnish". By default this is set to "False". Which means that Varnish isn't configured for this vhost. You can configure Varnish for the vhost by running the following command:
+Since the introduction of [hypernode-manage-vhosts](https://changelog.hypernode.com/changelog/release-7166-hypernode-manage-vhosts-enabled-by-default/) Hypernode may work somewhat different than you might be used to. With HMV enabled, it requires one more step to configure Varnish for your shop/vhost. Remember, for each domain, there should be a vHost created. You can list an overview of all configured vHosts with `hypernode-manage-vhosts --list`. While you do that, note that there is a column, "varnish". By default this is set to "False". Which means that Varnish isn't configured for this vHost. You can configure Varnish for the vHost by running the following command:
 
 ```console
 $ hypernode-manage-vhosts EXAMPLE.COM --varnish
@@ -53,10 +53,10 @@ $ hypernode-manage-vhosts EXAMPLE.COM --varnish
 - Navigate to **Stores > Configuration > Advanced > System > Full Page Cache**
 - From the **Caching Application** list, click `Varnish Caching`
 - Enter a TTL value
-- Expand Varnish Configuration and insert the correct information:
+- Expand the Varnish Configuration and insert the correct information:
   - `Backend Host`: 127.0.0.1
   - `Backend Port`: 8080
-- Save your VCL by clicking the button **`Save config`** in the top right
+- Save your VCL by clicking the button **`Save config`** in the top-right corner
 - Click *Export VCL for Varnish 4 or *Export VCL for Varnish 6**
 
 ### Configure Your Backend Servers Through the Commandline
@@ -152,7 +152,7 @@ The VCL you just imported and activated should have the status `active`. If all 
 
 ### The "Boot" profile
 
-To make sure your .vcl stays active even after a restart of Varnish we run a script every 5 minutes which saves the running config to /data/var/varnish/default.vcl which will be used once Varnish restarts. the "boot" profile will check what the last running .vcl was, and use that config in the "boot" profile.
+To make sure your .vcl stays active even after a restart of Varnish, we run a script every 5 minutes which saves the running config to /data/var/varnish/default.vcl which will be used once Varnish restarts. The "boot" profile will check what the last running .vcl was, and use that config in the "boot" profile.
 
 This will mean that your loaded .vcl profile won't be existing the next time you'll look, and that your own .vcl profile is renamed to "boot". This is expected behaviour.
 
@@ -203,7 +203,7 @@ Sometimes while you enable Varnish, or even while Varnish was already enabled an
 
 "*upstream sent too big header while reading response header from upstream*"
 
-This error can 9 out of 10 times be fixed by adding some Nginx config. You can create a file, i.e. **~/nginx/server.header_buffer** with the following content:
+This error can, 9 out of 10 times be fixed by adding some Nginx config. You can create a file, i.e. **~/nginx/server.header_buffer** with the following content:
 
 ```nginx
 fastcgi_buffers 16 16k;
@@ -216,7 +216,7 @@ proxy_busy_buffers_size 256k;
 ### 503 Errors
 
 - There is a bug when Varnish is activated on Magento 2.2.0, resulting in a "503 backend fetch" error. Please see Magento Github issue [10165](https://github.com/magento/magento2/issues/10165). For now, we advise you to either wait with upgrading to Magento 2.2.0 when using Varnish until this bug is fixed or use an adjusted .vcl as a temporary workaround:
-- In Magento 2.4.x (and possibly earlier versions as well) a solution could be to disable the **product_identities_extender** plugin. This is a default Magento plugin which doesn't seem to work properly with Varnish enabled. All credit for this solution goes to [Tree of Information](https://www.treeofinformation.nl/) whom have spend a long time investigting this issue.
+- In Magento 2.4.x (and possibly earlier versions as well) a solution could be to disable the **product_identities_extender** plugin. This is a default Magento plugin which doesn't seem to work properly with Varnish enabled. All credit for this solution goes to [Tree of Information](https://www.treeofinformation.nl/) who have spent a long time investigating this issue.
 
 ### Restart Varnish
 
