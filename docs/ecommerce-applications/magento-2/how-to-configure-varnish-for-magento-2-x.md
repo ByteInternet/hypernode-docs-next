@@ -29,7 +29,7 @@ $ hypernode-systemctl settings varnish_version 7.x
 **Enable Varnish via the [hypernode-systemctl tool](../../hypernode-platform/tools/how-to-use-the-hypernode-systemctl-cli-tool.md)**
 
 ```console
-$ hypernode-systemctl settings varnish_enabled true
+$ hypernode-systemctl settings varnish_enabled True
 ```
 
 **Enable Varnish via the [Control Panel](https://auth.hypernode.com/)**
@@ -49,64 +49,30 @@ $ hypernode-manage-vhosts EXAMPLE.COM --varnish
 
 ## Configure Magento 2.x for Varnish
 
-- Log in to the Magento Admin/Backend as an administrator.
-- Navigate to **Stores > Configuration > Advanced > System > Full Page Cache**
-- From the **Caching Application** list, click `Varnish Caching`
-- Enter a TTL value
-- Expand Varnish Configuration and insert the correct information:
-  - `Backend Host`: 127.0.0.1
-  - `Backend Port`: 8080
-- Save your VCL by clicking the button **`Save config`** in the top right
-- Click *Export VCL for Varnish 4 or *Export VCL for Varnish 6**
+### Configure Magento to use Varnish
 
-### Configure Your Backend Servers Through the Commandline
-
-If you want to flush the Varnish cache from the Magento backend, you need to add the Varnish server in your Magento config to `http-cache-hosts`.
-
-To do this, run the following command:
+The first step is to configure Magento to make use of the Varnish caching backend and to know which Varnish port needs to be used when flushing the cache.
 
 ```console
 $ cd /data/web/magento2
+$ bin/magento config:set system/full_page_cache/caching_application 2
 $ bin/magento setup:config:set --http-cache-hosts=varnish:6081
 ```
 
-Now when you flush your caches in cache management, your varnish full_page cache will be flushed too.
+Now when you flush your caches in cache management, your Varnish full_page cache will be flushed too.
 
-### Test and Upload Your VCL
+### Generating the VCL
 
-After downloading your VCL, check (in notepad or something similar) if the following configuration is present:
+Run the following commands to generate the VCL configuration from Magento. The second command will remove the health check probe, which is not needed for full-page caching.
 
-```vcl
-backend default {
-  .host = "127.0.0.1";
-  .port = "8080";
-}
+In this example, we pass the option `--export-version=6`, change the version number to the Varnish version you're using. As of writing, the following options are supported: 4, 5 and 6. If you're using Varnish 7, you can go with `--export-version=6`.
+
+```console
+$ bin/magento varnish:vcl:generate --export-version=6 --backend-host="127.0.0.1" --access-list localhost > /data/web/magento2.vcl
+$ sed -i -E '/[[:space:]]*\.probe[[:space:]]*=[[:space:]]*\{/,/[[:space:]]*}/d' /data/web/magento2.vcl
 ```
 
-If your VCL checks out, upload it to your Hypernode (using SCP, FTP or FTPS or whichever client you prefer)
-
-#### Remove Health Check Probe from Configuration
-
-**Note:** The default VCL might have the following configuration:
-
-```vcl
-backend default {
-     .host = "localhost";
-     .port = "8080";
-     .first_byte_timeout = 600s;
-     .probe = {
-         .url = "/pub/health_check.php";
-         .timeout = 2s;
-         .interval = 5s;
-         .window = 10;
-         .threshold = 5;
-    }
-}
-```
-
-Make sure you change this to the aforementioned configuration (without the health_check probe), since this will break on our Nginx configuration and will therefore result in a `503 Guru Meditation` error.
-
-**Note:** If you are using a cluster setup, you need to add some additional configuration to your vcl.
+**Note:** If you are using a cluster setup, you need to add some additional configuration to your VCL.
 The `acl purge` block inside your vcl should contain the private ip range of your cluster.
 You can find your private ip range using the `hypernode-cluster-info` command on one of your cluster nodes.
 
@@ -122,11 +88,10 @@ acl purge {
 
 ## Import Your VCL into the Varnish Daemon
 
-Import your VCL into Varnish and save as `mag2`:
+Import your VCL into Varnish and save as `magento2`:
 
 ```console
-$ varnishadm vcl.load mag2 /data/web/default.vcl
-
+$ varnishadm vcl.load magento2 /data/web/magento2.vcl
 ```
 
 The output should say: *your VCL is compiled*. If you receive a `Permission denied` error, and have recently activated Varnish, please close all ssh sessions, and log back in to reload your new permissions.
@@ -134,11 +99,10 @@ The output should say: *your VCL is compiled*. If you receive a `Permission deni
 Now tell Varnish to activate the loaded VCL:
 
 ```console
-$ varnishadm vcl.use mag2
-
+$ varnishadm vcl.use magento2
 ```
 
-In the examples we used the name ‘mag2’ for our VCL, but you can use any name you prefer.
+In the examples we used the name ‘magento2’ for our VCL, but you can use any name you prefer.
 
 ### Test if the Correct VCL is Uploaded
 
