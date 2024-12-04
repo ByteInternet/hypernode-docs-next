@@ -14,7 +14,16 @@ For example, these environments can be:
 
 Hypernode Deploy will need a pair of SSH keys for authentication to the server.
 
-First, we generate an SSH keypair on the production server, copy the public key to the `~/.ssh/authorized_keys` file
+#### Use Bitbucket repository SSH Keys
+
+Bitbucket allows you to create an SSH key from the Repository Settings, you do this by going to **Repository Settings -> Pipelines -> SSH Keys**
+
+1. Under **SSH key** press the **Generate keys** button.
+1. Copy the Public key as showed in the textbox to the `~/.ssh/authorized_keys` file on your host.
+
+#### Generating own pair of SSH Keys
+
+You cangenerate an SSH keypair on the server, copy the public key to the `~/.ssh/authorized_keys` file
 and encode the private key with base64. We'll use this base64-encoded private key later on.
 
 ```console
@@ -27,6 +36,10 @@ LS0tLS1CRUdJTiBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjNCbGJuTnphQzFyWlhrdGRqRUFBQUFB
 Now go to your Bitbucket repository and enable Bitbucket pipelines being going to **Repository settings -> Pipelines -> Settings** and turn on **Enable Pipelines**.
 
 Now go to **Repository settings -> Pipelines -> Repository variables**.
+
+```{note}
+If you used Bitbucket Pipeline SSH Keys as described above, you do not need to add an `SSH_PRIVATE_KEY` environment variable.
+```
 
 1. Create a new variable with name `SSH_PRIVATE_KEY`, mark this variable as Secured.
 1. Set the **Value** to the base64-encoded private key we generated earlier.
