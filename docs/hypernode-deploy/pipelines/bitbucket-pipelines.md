@@ -29,15 +29,15 @@ Now go to your Bitbucket repository and enable Bitbucket pipelines being going t
 Now go to **Repository settings -> Pipelines -> Repository variables**.
 
 1. Create a new variable with name `SSH_PRIVATE_KEY`, mark this variable as Secured.
-2. Set the **Value** to the base64-encoded private key we generated earlier.
-3. Click **Add**.
+1. Set the **Value** to the base64-encoded private key we generated earlier.
+1. Click **Add**.
 
 To add hosts to the Pipeline known hosts go to **Repository settings -> Pipelines -> SSH Keys**
 
 1. Set **Host address** to your hypernode instance (e.g. _appname.hypernode.io_)
-2. Click **Fetch** to fetch the hostname fingerprint
-3. Click **Add Host** to add host to known hosts
-4. Repeat this for all hosts the pipeline will connect to (for example production, staging)
+1. Click **Fetch** to fetch the hostname fingerprint
+1. Click **Add Host** to add host to known hosts
+1. Repeat this for all hosts the pipeline will connect to (for example production, staging)
 
 ## Build
 
