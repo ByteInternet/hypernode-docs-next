@@ -31,6 +31,24 @@ When the deployer runs `bin/magento static-content:deploy` it will require local
 $this->setVariable('static_content_locales', 'nl_NL en_US');
 ```
 
+### Defining custom steps
+
+You potentially need to add custom steps to the deployment, for example to build npm assets or do server actions after deployment.
+
+```php
+task('node:install', static function () {
+    run("npm ci");
+});
+
+task('node:build', static function () {
+    run('npm run build');
+});
+
+// Add builder task to run in the pipeline, use addDeployTask to run on the server
+$configuration->addBuildTask('node:install');
+$configuration->addBuildTask('node:build');
+```
+
 ### Shared Files
 
 Hypernode Deploy deploys to a new folder for every deployment, this way you compare changes, and roll back small releases. There are however some files and folders that need to be present throughout releases. Therefor we have `shared_files` and `shared_folders`. These are symlinked files and folders that are made in a shared directory and get symbolic linked between releases.
