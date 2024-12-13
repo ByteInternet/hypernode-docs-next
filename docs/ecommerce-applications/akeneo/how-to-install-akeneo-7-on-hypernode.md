@@ -82,13 +82,10 @@ hypernode-systemctl settings php_version 8.1
 hypernode-systemctl settings php_apcu_enabled True
 ```
 
-## Configure and Enable OpenSearch v2.x
+## Configure and Enable OpenSearch v2.6
 
 ```bash
-hypernode-systemctl settings opensearch_version 2.x
-```
-
-```bash
+hypernode-systemctl settings opensearch_version 2.6
 hypernode-systemctl settings opensearch_enabled True
 ```
 
@@ -216,10 +213,18 @@ Configure your crons by adding these scripts to your crontab file as recommended
 
 ```bash
 30 1 * * * php /data/web/akeneo/bin/console pim:versioning:refresh
-30 2 * * * php /data/web/akeneo/bin/console pim:versioning:purge –more-than-days 90
+30 2 * * * php /data/web/akeneo/bin/console pim:versioning:purge –more-than-days 90 --no-interaction --force
 1 * * * * php /data/web/akeneo/bin/console akeneo:connectivity-audit:update-data
 20 0 1 * * php /data/web/akeneo/bin/console akeneo:batch:purge-job-execution
-0 1 * * * php /data/web/akeneo/bin/console pim:asset:send-expiration-notification
 30 4 * * * php /data/web/akeneo/bin/console pim:volume:aggregate
-* * * * * php /data/web/akeneo/bin/console akeneo:batch:job-queue-consumer-daemon
+10 * * * * php /data/web/akeneo/bin/console akeneo:connectivity-connection:purge-error
+30 3 * * * php /data/web/akeneo/bin/console akeneo:connectivity-audit:purge-error-count
+15 0 * * * php /data/web/akeneo/bin/console pim:data-quality-insights:schedule-periodic-tasks
+10 * * * * php /data/web/akeneo/bin/console pim:data-quality-insights:prepare-evaluations
+30 * * * * php /data/web/akeneo/bin/console pim:data-quality-insights:evaluations
+5 * * * * php /data/web/akeneo/bin/console akeneo:connectivity-connection:purge-events-api-logs
+4 21 * * 0 php /data/web/akeneo/bin/console akeneo:connectivity-connection:openid-keys:create --no-interaction
+30 0 * * * php /data/web/akeneo/bin/console pim:data-quality-insights:clean-completeness-evaluation-results --no-interaction
+*/10 * * * * php /data/web/akeneo/bin/console pim:job-automation:push-scheduled-jobs-to-queue
+0 */2 * * * php /data/web/akeneo/bin/console akeneo:messenger:doctrine:purge-messages messenger_messages default
 ```

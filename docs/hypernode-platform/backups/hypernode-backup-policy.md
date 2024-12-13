@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Easily restore files, directories, and database tables with Hypernode's
-      daily snapshots. Depending on your SLA, you get additional backup options.
-    title: Hypernode Backup Policy | Secure and Automated
+    description: A complete overview of Hypernode's backup policy, showing the scheme,
+      methods, locations, and frequency backups, and additional services.
+    title: Hypernode Backup Policy | Backups
 redirect_from:
   - /en/hypernode/backups/hypernode-backup-policy/
 ---
@@ -12,25 +12,33 @@ redirect_from:
 
 # Hypernode Backup Policy
 
-On Amazon (AWS) and Combell OpenStack we use snapshots to create backups. When things go slightly wrong (ie. a product is accidentally deleted), you can go back in time to restore the appropriate database table, files or directories from the snapshot. Snapshots are easy to use, take up less time and there’s no need to upgrade your Hypernode if you don’t have enough disk space.
+Hypernode recognizes that the backup of data is critical to the viability and operations of any organization. This documents outlines the measures we take to create safe, secure, and usable backups for our customers to use.
 
-## Retention Times
+# Cloud Hosting Backup
+
+On Amazon Web Services (AWS) and Combell OpenStack we use snapshots to create backups. When things go slightly wrong (ie. a product is accidentally deleted), you can go back in time to restore the appropriate database table, files or directories from the snapshot. Snapshots are easy to use, creating them take up less time and there’s no need to upgrade your Hypernode if you don’t have enough disk space.
+
+A snapshot is a saved state of the `/data` device at a given moment in time. We can use this to create a static copy of that given state in time and transform this to a virtual device which we can attach to your Hypernode. Once attached, this device is mounted under `/data/backup` and you can easily restore your files by copying them from this file system.
+
+## Frequency and Retention Times
 
 Snapshots are made every day and saved for 7 days. We also save 1 backup per week for 3 weeks. This means you will have 4 weeks worth of backups.
 
-Snapshots are rotated daily after the creation of a new backup. This implies that the backups that are older than 4 weeks will be automatically removed. To save storage costs, we do not keep additional backups older than 4 weeks, so please do not wait too long before requesting a backup.
+Snapshots are rotated daily after the creation of a new backup. This implies that the backups that are older than 4 weeks will be automatically removed.
 
-## The Most Recent Snapshot of Your Hypernode
+If you have an SLA Standard for your Hypernode, additional snapshots are available. For details see the SLA Standard section below.
 
-A snapshot is a saved state of the `/data` device at a given moment in time. We can use this to create a static copy of that given state in time and transform this to a virtual device which we can attach to your Hypernode. Once attached, this device is mounted under `/data/backup` and you can easily restore your files by copying them from this file system. To restore database and file backups, see [this article](how-to-restore-your-hypernode-from-a-snapshot.md).
+## Restoring Data
 
-**Everyone can always attach the most recent snapshot to your Hypernode for free**. You can do so by using the following command to attach the latest available snapshot to your node:
+To access the backup snapshots to restore data, you will first need to get the backup attached to your Hypernode. You can do so using the `hypernode-systemctl attach_backup` command.
+As the backup snapshot contains a second MySQL instance running, attaching a snapshot has a minor impact on your resources. For this reason, the backup snapshot while be automatically detached within 24 hours. Please contact Support if you want the snapshot detached earlier.
 
-`hypernode-systemctl attach_backup`
+To restore database and file backups from a snapshot, see [this article](how-to-restore-your-hypernode-from-a-snapshot.md).
+**Please note:** Restoring a snapshot/backup is never completely without risk, Hypernode is not liable for data loss or other discrepancies.
 
-The backup snapshot is automagically detached/unmounted, before the new snapshots are made. There is a second MySQL instance running so you’ll lose some resources while it is attached. Please contact Support if you want the snapshot detached earlier, to save on resources.
+You can always attach the most recent snapshot to your Hypernode for free. Depending on your SLA, attaching older snapshots might come at a fee. For details see the SLA Standard section below.
 
-## Requesting Older Snapshots
+### Requesting Older Snapshots
 
 If you need a less recent snapshot (older than one day) and you don't have SLA Standard, you need to contact Support. Please note we charge a fee for this:
 
@@ -43,9 +51,7 @@ If you need a less recent snapshot (older than one day) and you don't have SLA S
 
 ## SLA Standard
 
-If you have SLA Standard, you get extra snapshots on top of our basic backup policy. This means we create four snapshots per day for your Hypernode. These backups will be saved for 24 hours. Apart from that we'll have a daily snapshot available for the first 7 days.**As a result you always have a snapshot available which is at most six hours old.**
-
-Please be aware that multiple and instant snapshots are not available for Hypernodes hosted on DigitalOcean.
+If you have SLA Standard, you get extra snapshots on top of our basic backup policy. This means we create a total of four snapshots per day for your Hypernode. These extra backups will be saved for 24 hours. Apart from that we'll have a daily snapshot available for the first 7 days. **As a result you always have a snapshot available which is at most six hours old.**
 
 With SLA Standard, you will be able to use the following commands:
 
@@ -58,23 +64,31 @@ With SLA Standard, you will be able to use the following commands:
 - `hypernode-systemctl attach_backup [ID NUMBER]`
   If you don’t specify an ID number, the most recent snapshot will be attached to your Hypernode.
 
-SLA Standard users can also create instant snapshots via the Control Panel (for customers with access to my.hypernode.com)
+SLA Standard users can also create instant snapshots via the Control Panel
 
 1. Log in to the Control Panel and select the Hypernode you want to backup by clicking Go.
 1. Click Backups in the sidebar to go to the backup page.
 1. If you have SLA Standard, you can either select a pre-made backup from the list by clicking Attach Backup. Or you can click Instant Backup to create a snapshot. It will then appear in the list and you can attach it to your Hypernode by clicking the Attach Backup button.
 
-## Restoring Your Hypernode From a Snapshot
+# Offsite backups
 
-You can restore your Hypernode from a snapshot yourself by using [this article](how-to-restore-your-hypernode-from-a-snapshot.md) from our support documentation.
+All Hypernodes, both Dedicated and Cluster hosted, as well as Cloud hosted, make use of off-site backups. Offsite backups allow (partial) restoration of the production environment when it experiences accidental dataloss, or hardware issues. Offsite backups are easy to use, but creation and restoration times are affected by size of the data, amount of modifications to the data, and (available) network bandwidth. It also requires a small amount of diskspace to speed up operations.
 
-Besides attaching the snapshot, which requires you to restore your data yourself, we can also restore your Hypernode from a snapshot for you. This means that we restore the appropriate database, files or directories from the backup. This service costs €125,-. Contact Support for more information about this.
+Offsite backups are incremental backups of the `/data` device. Due to the technology used, this backup is not from a singular moment in time, and as such can be considered a "Fuzzy backup". We also make a `mysqldump` backup of the database, using transactional technology to ensure a proper database backup.
 
-**Please note:** Restoring a snapshot/backup is never completely without risk, Hypernode is not liable for data loss or other discrepancies.
+## Frequency and Retention Times
 
-## Create Your Own Backup and Download it to Your Local Machine
+Offsite backups are created once a day. Daily backups are retained for a minimum of 28 days, and, due to the use of Incremental backups, a maximum of 42 days.
 
-Due to security reasons we don't have easy options to just click and download your files/database to your local machine from your Control Panel. If you still want to download the files/database to your local machine for your peace of mind you'd have to do this manually. You can find instructions in our [documentation](../../best-practices/backups/how-to-create-a-backup-and-download-it-to-your-local-machine.md).
+Offsite database backups are made every day and saved for 7 days. We also save 1 backup per week for 3 weeks. This means you will have 4 weeks worth of backups.
+
+## Restoring Data
+
+To access the offsite backup, you will need assistance of our Support Engineers, see [this article](how-to-restore-your-hypernode-from-external-backups.md).
+If you are unable to restore this backup yourself, our support engineers are available to restore data from your offsite backup for you. This means that we restore the appropriate database, files or directories from the backup. This service costs €125,-. Contact Support for more information about this.
+**Please note:** Restoring a backup is never completely without risk, Hypernode is not liable for data loss or other discrepancies.
+
+# Additional Information
 
 ## Using Hard-Links for Backup Retention
 
@@ -84,12 +98,6 @@ This can result in lots of extra files when downloading a restore, effectively t
 
 We recommend to avoid hard-links in your content at all times.
 
-## Additional Information
+## Creating offline backups
 
-We make use of two backup mechanisms: One for the Hypernodes running on Amazon (AWS) and Combell OpenStack, and another mechanism for backups on DigitalOcean.
-
-Read more about restoring backups on Hypernode in [our restore backups article](how-to-restore-your-hypernode-from-a-snapshot.md).
-
-### Backups on DigitalOcean
-
-At DigitalOcean (and also Combell as extra security) we currently create backups using [Duply](http://duply.net/) and [Duplicity](http://duplicity.nongnu.org/) and push those to an S3 storage bucket at Amazon (AWS).
+Due to security reasons we don't have easy options to just click and download your files/database to your local machine from your Control Panel. If you still want to download the files/database to your local machine for your peace of mind you'd have to do this manually. You can find instructions in our [documentation](../../best-practices/backups/how-to-create-a-backup-and-download-it-to-your-local-machine.md).

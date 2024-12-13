@@ -116,11 +116,11 @@ This command will not only request a LE Certificate but because of the `--force-
 
 ## Varnish and Hypernode Managed Vhosts
 
-Using Varnish in combination with Varnish works slightly different with HMV enabled. Of course Varnish needs to be enables with the **systemctl** tool. `hypernode-systemctl settings varnish_enabled True`
+Using Varnish works slightly differently with HMV enabled. Of course Varnish needs to be enabled with the **systemctl** tool. `hypernode-systemctl settings varnish_enabled True`
 
 But with HMV you need to configure the vhost for Varnish as well. You can do this by adding the `--varnish`flag to you HMV-command. For example: `hypernode-manage-vhosts example.com --varnish`
 
-Once you the command is processed you could list all the vhost to check if Varnish is enabled for that Vhost. The value in the Varnish column should be set to **True**.
+Once the command is processed you could list all the vhosts to check if Varnish is enabled for that vhost. The value in the Varnish column should be set to **True**.
 
 To disable Varnish for a vhost, use the following command: `hypernode-manage-vhosts example.com --disable-varnish`
 

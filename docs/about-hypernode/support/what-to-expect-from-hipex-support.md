@@ -24,7 +24,7 @@ Please use [support@hipex.io](mailto:support@hipex.io) for all your questions/pr
 
 ### Can I reach Hipex by phone?
 
-Yes, you can during office hours you can call us at +31(0)85-888 77 54.
+Yes, you can during office hours you can call us at +31(0)20 521 6226.
 
 ## Outside office hours
 

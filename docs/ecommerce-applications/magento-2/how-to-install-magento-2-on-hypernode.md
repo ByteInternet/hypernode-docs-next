@@ -93,12 +93,10 @@ app@appname.hypernode.io:~$ ls /data/web # See the magento2 directory and the co
 
 ## Install Magento 2 Using the Command Line
 
-### Download and Unzip the Latest Release to /data/web/magento2
+### Create project from a certain release to /data/web/magento2
 
 ```
-mkdir ~/magento2
-cd ~/magento2
-wget -qO- https://magento.mirror.hypernode.com/releases/magento2-latest.tar.gz | tar xfz -
+composer create-project --repository-url=https://mage-os.hypernode.com/mirror/ magento/project-community-edition /data/web/magento2
 ```
 
 ### Create a Database (In This Example, We Named the Database ‘magento2’, but You Can Name It However You Like)
@@ -110,6 +108,7 @@ echo "create database magento2" | mysql
 ### Enable the Magento 2 Management Tool
 
 ```
+cd ~/magento2
 chmod 755 bin/magento
 ```
 

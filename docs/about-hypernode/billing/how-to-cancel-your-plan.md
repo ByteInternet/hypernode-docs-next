@@ -14,26 +14,30 @@ redirect_from:
 
 You can cancel your subscription at any time you want. Your cancellation will be processed automatically
 
-## How to Cancel Your Plan If You Are a Control Panel User
+## How to Cancel Your Plan
 
-- Log into your Control Panel via [my.hypernode.com](http://my.hypernode.com)
-- Hover over your name in the upper right corner and go to the Billing portal
-
-![](_res/6NwyUzGXOzfpv38Tv572P38BUVR-Fk4nnQ.png)
-
-- On the Billing portal, select your current plan.
-- Then click on Cancel subscription.
-
-![](_res/_m2Tv_dKF0Q884I06cNjymK0XM8wvshksw.png)
-
-- The next screen confirms when your subscription will end. Please submit the reason of your cancellation as your feedback is valuable to us.
-- Click on Confirm cancellation to finalise your cancellation.
+- Log in to the [Control Panel](https://my.hypernode.com/).
+- Go to **settings** of the Hypernode you want to cancel.
+- Scroll down to **Cancel my subscription**
+- The next screen confirms that your subscription will end. Please submit the reason of your cancellation as your feedback is valuable to us.
+- Click on **Continue to cancellation** to confirm the ending date of your subscription.
 
 ### Cancellation Per End Date
 
-You can cancel your subscription at any time via your control panel. The end date of your subscription is always the first of the next month. Example: if you cancel your subscription on the 15th of June, your Hypernode will be no longer available from the 1st of July onwards.
+You can cancel your subscription at any time via your Control Panel. The end date of your subscription is always the first of the next month. Example: if you cancel your subscription on the 15th of June, your Hypernode will be no longer available from the 1st of July onwards.
 
-## How to Cancel Your Domain If You Are a Control Panel User
+## How to Undo Cancelling Your Plan
+
+If you want to undo the cancellation you can do it till the end of the month after cancelling your plan. In order to cancel your cancellation follow the steps below.
+
+- Log in to the [Control Panel](https://my.hypernode.com/).
+- Go to **settings** of the Hypernode you cancelled.
+- At the top of the screen press **Undo cancellation now**
+- Your subscription will be revived immediately, subscription will continue and backups won't be destroyed.
+
+![undo cancellation](_res/asdhbrthbq3rwgbqeqrq.png)
+
+## How to Cancel Your Domain
 
 - Log into your Control Panel via [my.hypernode.com](http://my.hypernode.com/)
 - Click on **Domains** in the sidebar.
@@ -41,7 +45,7 @@ You can cancel your subscription at any time via your control panel. The end dat
 ![](_res/J2LXr0iR8Fg8wtsuwv9-NzosfF82clh05A.png)
 
 - Select the domain by clicking it which you want to cancel or transfer.
-- At **Authorisation code** click on **here**.
+- At **Authorisation code** click on **cancel your domain**.
 
 ![](_res/wg0rB2wf96--Cj5X1MZ4p-CHVCwhkY3e2A.png)
 
