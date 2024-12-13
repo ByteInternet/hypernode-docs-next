@@ -5,8 +5,6 @@ myst:
       Redis. Discover the benefits of Redis, recommended plugins, and step-by-step
       installation instructions.
     title: How to Use Redis with WooCommerce and WordPress on Hypernode
-redirect_from:
-  - /en/ecommerce/woocommerce/how-to-use-redis-with-woocommerce-and-wordpress-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/woocommerce/how-to-use-redis-with-woocommerce-and-wordpress-on-hypernode/ -->

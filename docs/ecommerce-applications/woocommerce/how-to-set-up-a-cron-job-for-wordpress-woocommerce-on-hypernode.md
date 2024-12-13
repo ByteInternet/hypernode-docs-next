@@ -5,8 +5,6 @@ myst:
       Hypernode to improve performance, schedule tasks precisely, and mitigate DDoS
       attacks.
     title: How to Set Up a Real Cron Job for WordPress/WooCommerce on Hypernode
-redirect_from:
-  - /en/ecommerce/woocommerce/how-to-set-up-a-cron-job-for-wordpress-woocommerce-on-hypernode/
 ---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/woocommerce/how-to-set-up-a-cron-job-for-wordpress-woocommerce-on-hypernode/ -->
