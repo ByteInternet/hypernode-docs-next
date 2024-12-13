@@ -9,8 +9,6 @@ myst:
       & AVIF" Plugin on Hypernode
 ---
 
-<!-- source: https://support.hypernode.com/en/ecommerce/woocommerce/how-to-configure-converter-for-media-plugin-for-wordpress-woocommerce/ -->
-
 # How to Configure Converter for Media – Optimize images Convert WebP & AVIF Plugin on Hypernode
 
 For the WordPress/WooCommerce plugin [Converter for Media – Optimize images | Convert WebP & AVIF](https://nl.wordpress.org/plugins/webp-converter-for-media/), an adjustment is required in your Hypernode NGINX configuration. To make it easier for you, follow the instructions below to get the plugin working correctly on Hypernode.

@@ -7,8 +7,6 @@ myst:
     title: How to Set Up a Real Cron Job for WordPress/WooCommerce on Hypernode
 ---
 
-<!-- source: https://support.hypernode.com/en/ecommerce/woocommerce/how-to-set-up-a-cron-job-for-wordpress-woocommerce-on-hypernode/ -->
-
 # How to set up a cron job for WordPress/WooCommerce on Hypernode
 
 In this guide, we'll explain how to replace the default WordPress cron job with a cron job on your Hypernode server. This can be useful for low traffic sites, important tasks that need to be run at specific times, mitigating excessive DDoS attacks, or improving high page load times.
@@ -36,7 +34,7 @@ app@abcdef-example-magweb-cmbl ~ $ crontab -e
 Add the following line to your crontab file to set up a cron job that runs every minute:
 
 ```console
-* * * * * wget -q -O - 'https://yourdomain.hypernode.io/wp-cron.php?doing_wp_cron' >/dev/null 2>&1
+* * * * * /usr/bin/chronic wget -q -O - 'https://yourdomain.hypernode.io/wp-cron.php?doing_wp_cron'
 ```
 
 Replace `https://yourdomain.hypernode.io` with the actual URL of your WordPress site.

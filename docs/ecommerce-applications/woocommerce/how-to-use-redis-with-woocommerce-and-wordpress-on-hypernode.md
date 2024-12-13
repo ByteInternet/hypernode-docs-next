@@ -7,8 +7,6 @@ myst:
     title: How to Use Redis with WooCommerce and WordPress on Hypernode
 ---
 
-<!-- source: https://support.hypernode.com/en/ecommerce/woocommerce/how-to-use-redis-with-woocommerce-and-wordpress-on-hypernode/ -->
-
 # How to Use Redis with WooCommerce and WordPress on Hypernode
 
 Remote Dictionary Server (Redis) is an in-memory, persistent, key-value database known as a data structure server. Unlike similar servers, Redis can store and manipulate high-level data types such as lists, maps, sets, and sorted sets.
