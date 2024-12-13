@@ -30,7 +30,7 @@ This code disables the default WordPress cron functionality, allowing you to set
 Next, set up a cron job on your Hypernode server. Log in to your server via SSH and open your crontab file with the following command:
 
 ```bash
-crontab -e
+app@abcdef-example-magweb-cmbl ~ $ crontab -e
 ```
 
 Add the following line to your crontab file to set up a cron job that runs every minute:

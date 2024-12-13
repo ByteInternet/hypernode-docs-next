@@ -23,7 +23,7 @@ Due to the complexity of the cache module in "W3 Total Cache" and the possibilit
 
 ## How to Install Redis Object Cache
 
-Redis is already active on the server on port 6379.
+Redis is already active on the server on port `6379`.
 
 Next, install the Redis Object Cache plugin via the WordPress Dashboard or using Composer. For detailed installation instructions, please refer to the standard installation procedure for WordPress plugins.
 

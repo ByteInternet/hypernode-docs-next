@@ -20,8 +20,7 @@ For the WordPress/WooCommerce plugin [Converter for Media – Optimize images | 
 First, check if your VHOSTS has the correct type by running the following command:
 
 ```bash
-hmv --list
-
+app@abcdef-example-magweb-cmbl ~ $ hmv --list
 ```
 
 Running this command will give you an output like this:
@@ -37,7 +36,7 @@ Running this command will give you an output like this:
 As you can see, the type is incorrect because it needs to be set to WordPress. To change this, use the following command:
 
 ```bash
-hmv --type wordpress --https test.hypernode.io
+app@abcdef-example-magweb-cmbl ~ $ hmv --type wordpress --https test.hypernode.io
 ```
 
 After running this command, your VHOSTS will be set to WordPress. Make sure to replace `test.hypernode.io` with your actual domain name.
@@ -77,7 +76,7 @@ Place the above configuration in `/data/web/server.media.conf.` Once you save th
 To test the configuration, you can use the following command:
 
 ```bash
-➜  ~ curl -IL -H "Accept: image/webp" https://test.hypernode.io/wp-content/upload/test.jpg
+$ curl -IL -H "Accept: image/webp" https://test.hypernode.io/wp-content/upload/test.jpg
 
 HTTP/2 200
 server: nginx
