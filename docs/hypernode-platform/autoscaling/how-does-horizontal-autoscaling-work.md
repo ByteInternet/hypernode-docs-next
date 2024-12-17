@@ -14,10 +14,10 @@ This article explains how Horizontal autoscaling works, what the requirements ar
 
 ## How does it work
 
-With horizontal autoscaling, additional Hypernodes will be added automatically to your main Hypernode at peak times. The extra Hypernodes will be used as PHP fpm workers. 
+With horizontal autoscaling, additional Hypernodes will be added automatically to your main Hypernode at peak times. The extra Hypernodes will be used as PHP fpm workers.
 Since there are no configuration or IP changes needed, Horizontal autoscaling is zero-downtime.
 
-For Horizontal autoscaling you can configure some conditions. If the conditions are met from the configured settings in the Control Panel, Horizontal autoscaling will be triggered. 
+For Horizontal autoscaling you can configure some conditions. If the conditions are met from the configured settings in the Control Panel, Horizontal autoscaling will be triggered.
 You can configure the following conditions:
 
 - **CPU Load Threshold:** CPU load that is continuously monitored by the autoscaling agent. The percentage value you see is the actual load divided by the number of CPUs you have. For example, if your actual load is 2, but you have 4 CPUs, your CPU load percentage is 50%. The default setting is 70%.
@@ -28,7 +28,7 @@ You can configure the following conditions:
 ### Upscaling
 
 Once the configured conditions are met and autoscaling is triggered, we spin up extra Hypernode(s) which meets the extra calculated amount of resources you need.
-We create a snapshot of your main Hypernode and attach that snapshot to the extra provisioned Hypernodes. 
+We create a snapshot of your main Hypernode and attach that snapshot to the extra provisioned Hypernodes.
 All the services, such as MySQL, Elasticsearch and Redis, keep running on your original Hypernode. We add the additional Hypernodes as PHP-fpm workers and will handle the incoming requests.
 The load of the different autoscaling nodes will be balanced from your original Hypernode.
 
@@ -42,9 +42,9 @@ This approach selects the longer duration between user-defined settings or the f
 
 ### Downscaling
 
-If the monitor agent noticed if one Hypernode will be removed, the used resources will stay below the configured thresholds, the downscale operation will be triggered. 
-Downscale will happen by detaching the autoscaling instances from the main Hypernode one by one. 
-After a downscale operation has completed, there will be a cooldown of 15 minutes to monitor the behaviour of the newly available resources before downscale again. 
+If the monitor agent noticed if one Hypernode will be removed, the used resources will stay below the configured thresholds, the downscale operation will be triggered.
+Downscale will happen by detaching the autoscaling instances from the main Hypernode one by one.
+After a downscale operation has completed, there will be a cooldown of 15 minutes to monitor the behaviour of the newly available resources before downscale again.
 If the amount of used resources is still below the configured threshold, another downscale operation will be triggered.
 If there is need for extra resources instead, extra resources will be added again.
 
@@ -117,7 +117,7 @@ Example output if Redis Persistent is enabled:
 redis_persistent_instance is set to value True
 ```
 
-If Redis Persistent instance is not enabled, you can enable the second Redis instance for sessions you run the command: 
+If Redis Persistent instance is not enabled, you can enable the second Redis instance for sessions you run the command:
 
 ```console
 hypernode-systemctl settings redis_persistent_instance --value True
