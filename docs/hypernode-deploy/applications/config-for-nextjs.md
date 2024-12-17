@@ -114,7 +114,7 @@ location /_next/ {
 
 And to save configuration about pm2, add the `ecosystem.config.js` file:
 
-```
+```js
 module.exports = {
     apps: [
       {
