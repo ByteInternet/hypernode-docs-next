@@ -1,4 +1,4 @@
-# Config for Magento 2
+# Config for NextJS
 
 ```{note}
 NextJS is not officially supported on the Hypernode Platform. So please use this at your own risk,.
