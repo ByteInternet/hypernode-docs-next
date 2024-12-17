@@ -6,6 +6,8 @@ myst:
       intervention. Configure thresholds, durations, and understand the workflow for
       seamless autoscaling on Hypernode.
     title: How does vertical Autoscaling work? | Hypernode
+redirect_from:
+  - hypernode-platform/autoscaling/how-does-autoscaling-work
 ---
 
 # How does vertical Autoscaling work?

@@ -32,7 +32,6 @@ We create a snapshot of your main Hypernode and attach that snapshot to the extr
 All the services, such as MySQL, Elasticsearch and Redis, keep running on your original Hypernode. We add the additional Hypernodes as PHP-fpm workers and will handle the incoming requests.
 The load of the different autoscaling nodes will be balanced from your original Hypernode.
 
-
 If the Hypernodes remains overloaded post-autoscaling, the extra needed resources will be added to handle the traffic. The autoscaling trigger is determined based on these criteria.
 The greater of either:
 
@@ -55,20 +54,25 @@ Horizontal autoscaling is available on all the Falcon cloud plans (OpenStack).
 Next to the provider, horizontal autoscaling does have a couple of additional requirements.
 
 ### Supported CMS
+
 Horizontal autoscaling is available for Magento2.
 To make use of Horizontal autoscaling, there are a couple of other requirements the Hypernode and the application should met:
 
-**System requirements:**
 ### Operating system
+
 - The operating system of the Hypernode should be Debian Bookworm
 
 ### Enable and configure Varnish
+
 To make use of Horizontal autoscaling, Varnish should be enabled and configured on the Hypernode.
 You can check if Varnish is enabled on your Hypernode by running
+
 ```console
 hypernode-systemctl settings varnish_enabled
 ```
+
 Example output if Varnish is enabled:
+
 ```console
 varnish_enabled is set to value True
 ```
@@ -76,15 +80,19 @@ varnish_enabled is set to value True
 If Varnish is not enabled, you can [enable Varnish](../varnish/how-to-enable-varnish-on-hypernode.md) by following the documentation
 If varnish is enabled on your Hypernode, your Magento store should also be configured to make use of varnish.
 You can verify if the Varnish host is configured correctly by running the following command from the Magento root:
+
 ```console
 php bin/magento config:show  system/full_page_cache/varnish/backend_host
 ```
+
 The output should show `varnish` as backend. If it is configured as something else (like `localhost` or `127.0.0.1`), you can update it by running which sets the backend host to `varnish` instead.
+
 ```console
 php bin/magento config:set  system/full_page_cache/varnish/backend_host varnish
 ```
 
 Aditionally make sure the IP range `10.0.0.0/24` is set to the `acl_purge` section in the Varnish VCL file. The `acl_purge` section should look something similar:loaded Varnish VCL.
+
 ```console
 acl purge {
     "localhost";
@@ -93,19 +101,24 @@ acl purge {
 ```
 
 ### Enable and configure Redis Persistent
+
 Redis persistent is another requirement before you can make use of Horizontal autoscaling.
 The persistent instance will be used to store the sessions so we can access the same sessions from the Horizontal autoscale Hypernodes.
 
 You can check if Redis Persistent is enabled on your Hypernode by running
+
 ```console
 hypernode-systemctl settings redis_persistent_instance
 ```
+
 Example output if Redis Persistent is enabled:
+
 ```console
 redis_persistent_instance is set to value True
 ```
 
 If Redis Persistent instance is not enabled, you can enable the second Redis instance for sessions you run the command: 
+
 ```console
 hypernode-systemctl settings redis_persistent_instance --value True
 ```
@@ -114,6 +127,7 @@ Make sure Redis session is configured as [described](../../ecommerce-application
 Please notice the Redis host in the setup documentation. The Redis host should be set to `redismaster` instead of `localhost` or `127.0.0.1`.
 
 ### Make sure Elasticsearch/Opensearch configured properly
+
 Please make sure Elasticsearch or Opensearch host is set to `elasticsearchmaster` in the Magento2 configuration file at `<magento_root>/app/etc/env.php`
 More information about [Elasticsearch o Hypernode](../../hypernode-platform/tools/how-to-use-elasticsearch-on-hypernode.md)
 
@@ -131,17 +145,19 @@ hypernode-systemctl settings mysql_version
 ```
 
 Example output if MySQL version is 8.0:
+
 ```console
 mysql_version is set to value 8.0
 ```
+
 If your MySQL version is still set to 5.6, you can concider [upgrade](../mysql/how-to-use-mysql-on-hypernode.md) the MySQL version to a supported version for autoscaling.
 
 After the version validation, please verify the MySQL host is set to `mysqlmaster`. You can verify this by running `cat app/etc/env.php | grep -i mysql | grep -i host` from the magento root.
 You should see something similar to `'host' => 'mysqlmaster',`. If this is not the case please make sure the database connection host is set to `mysqlmaster` instead of `localhost` or `127.0.0.1` in the magento configuration file at `<magento_root>/app/etc/env.php`.
 
 ### Make sure the Hypernode is a production plan
-Unfortunately we don't support Horizontal autoscaling for development plans.
 
+Unfortunately we don't support Horizontal autoscaling for development plans.
 
 ## Enabling Horizontal Autoscaling
 

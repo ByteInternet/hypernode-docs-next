@@ -4,6 +4,8 @@ myst:
     description: Step-by-step instructions on enabling vertical Autoscaling through the Control
       Panel or command line
     title: How to enable vertical Autoscaling? | Hypernode
+redirect_from:
+  - hypernode-platform/autoscaling/how-to-enable-autoscaling
 ---
 
 # How to Enable vertical Autoscaling?
@@ -44,7 +46,10 @@ To allow using autoscaling via the command line, follow the steps below:
 ### Enable vertical autoscaling via the CLI
 
 To enable autoscaling via the CLI, you can run the following command:
-`hypernode-systemctl autoscaling --enable`
+
+```console
+hypernode-systemctl autoscaling --enable
+```
 
 ### Manage vertical autoscaling tresholds via the CLI
 
@@ -56,7 +61,7 @@ This tresholds does have a default value:
 
 If you want to change the default settings, you can use the commands below:
 
-```
+```console
 hypernode-systemctl settings autoscale_trigger_load_percentage 80
 hypernode-systemctl settings autoscale_trigger_load_avg_minutes 50
 ```
