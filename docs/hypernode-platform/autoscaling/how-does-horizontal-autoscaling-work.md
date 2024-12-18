@@ -1,10 +1,7 @@
 ---
 myst:
   html_meta:
-    description: Learn how autoscaling dynamically adjusts server resources based
-      on CPU usage metrics, allowing efficient workload management without manual
-      intervention. Configure thresholds, durations, and understand the workflow for
-      horizontal autoscaling without downtime on Hypernode.
+    description: Learn how autoscaling dynamically adjusts server resources based on CPU usage metrics, allowing efficient workload management without manual intervention. Configure thresholds, durations, and understand the workflow for horizontal autoscaling without downtime on Hypernode.
     title: How does horizontal Autoscaling work? | Hypernode
 ---
 
@@ -91,7 +88,7 @@ The output should show `varnish` as backend. If it is configured as something el
 php bin/magento config:set  system/full_page_cache/varnish/backend_host varnish
 ```
 
-Aditionally make sure the IP range `10.0.0.0/24` is set to the `acl_purge` section in the Varnish VCL file. The `acl_purge` section should look something similar:loaded Varnish VCL.
+Additionally make sure the IP range `10.0.0.0/24` is set to the `acl_purge` section in the Varnish VCL file. The `acl_purge` section should look something similar:loaded Varnish VCL.
 
 ```console
 acl purge {
@@ -150,7 +147,7 @@ Example output if MySQL version is 8.0:
 mysql_version is set to value 8.0
 ```
 
-If your MySQL version is still set to 5.6, you can concider [upgrade](../mysql/how-to-use-mysql-on-hypernode.md) the MySQL version to a supported version for autoscaling.
+If your MySQL version is still set to 5.6, you can consider [upgrade](../mysql/how-to-use-mysql-on-hypernode.md) the MySQL version to a supported version for autoscaling.
 
 After the version validation, please verify the MySQL host is set to `mysqlmaster`. You can verify this by running `cat app/etc/env.php | grep -i mysql | grep -i host` from the magento root.
 You should see something similar to `'host' => 'mysqlmaster',`. If this is not the case please make sure the database connection host is set to `mysqlmaster` instead of `localhost` or `127.0.0.1` in the magento configuration file at `<magento_root>/app/etc/env.php`.
@@ -161,4 +158,4 @@ Unfortunately we don't support Horizontal autoscaling for development plans.
 
 ## Enabling Horizontal Autoscaling
 
-For detailed steps on enabling horizontal Autoscaling, please refer to our documentation: [How to enable vertical Autoscaling?](how-to-enable-vertical-autoscaling.md)
+For detailed steps on enabling horizontal Autoscaling, please refer to our documentation: [How to enable horizontal Autoscaling?](how-to-enable-horizontal-autoscaling.md)
