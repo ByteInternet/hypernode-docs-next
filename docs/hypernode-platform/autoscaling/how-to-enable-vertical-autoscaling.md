@@ -1,8 +1,7 @@
 ---
 myst:
   html_meta:
-    description: Step-by-step instructions on enabling vertical Autoscaling through the Control
-      Panel or command line
+    description: Step-by-step instructions on enabling vertical Autoscaling through the Control Panel or command line
     title: How to enable vertical Autoscaling? | Hypernode
 redirect_from:
   - hypernode-platform/autoscaling/how-to-enable-autoscaling
@@ -14,7 +13,7 @@ redirect_from:
 
 Vertical autoscaling in other words means upgrading your plan automatically when your server needs it, so you don’t need to worry about constant monitoring.
 
-Your plan will be upgraded to the next possible plan within the same provider, increasing your resources while keeping the disk size the same. The upgrade is effective for 24h, after which your Hypernode will return to your regular plan. For more technical overview you can check our docs [How Autoscaling Works](how-does-autoscaling-work.md).
+Your plan will be upgraded to the next possible plan within the same provider, increasing your resources while keeping the disk size the same. The upgrade is effective for 24h, after which your Hypernode will return to your regular plan. For more technical overview you can check our docs [How Autoscaling Works](how-does-vertical-autoscaling-work.md).
 
 ## How to enable vertical Autoscaling?
 

@@ -1,10 +1,7 @@
 ---
 myst:
   html_meta:
-    description: Learn how autoscaling dynamically adjusts server resources based
-      on CPU usage metrics, allowing efficient workload management without manual
-      intervention. Configure thresholds, durations, and understand the workflow for
-      horizontal autoscaling without downtime on Hypernode.
+    description: Learn how autoscaling dynamically adjusts server resources based on CPU usage metrics, allowing efficient workload management without manual intervention. Configure thresholds, durations, and understand the workflow for horizontal autoscaling without downtime on Hypernode.
     title: How does horizontal Autoscaling work? | Hypernode
 ---
 
@@ -95,7 +92,7 @@ The output should show `varnish` as backend. If it is configured as something el
 php bin/magento config:set  system/full_page_cache/varnish/backend_host varnish
 ```
 
-Aditionally make sure the IP range `10.0.0.0/24` is set to the `acl_purge` section in the Varnish VCL file. The `acl_purge` section should look something similar:loaded Varnish VCL.
+Additionally make sure the IP range `10.0.0.0/24` is set to the `acl_purge` section in the Varnish VCL file. The `acl_purge` section should look something similar:loaded Varnish VCL.
 
 ```console
 acl purge {
@@ -166,4 +163,4 @@ Unfortunately we don't support Horizontal autoscaling for development plans.
 
 ## Enabling Horizontal Autoscaling
 
-For detailed steps on enabling horizontal Autoscaling, please refer to our documentation: [How to enable Horizontal Autoscaling?](how-to-enable-horizontal-autoscaling.md)
+For detailed steps on enabling horizontal Autoscaling, please refer to our documentation: [How to enable horizontal Autoscaling?](how-to-enable-horizontal-autoscaling.md)

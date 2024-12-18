@@ -1,8 +1,7 @@
 ---
 myst:
   html_meta:
-    description: Step-by-step instructions on enabling horizontal Autoscaling through the Control
-      Panel
+    description: Step-by-step instructions on enabling horizontal Autoscaling through the Control Panel
     title: How to enable horizontal Autoscaling? | Hypernode
 ---
 
