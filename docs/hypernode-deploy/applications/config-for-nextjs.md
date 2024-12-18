@@ -53,7 +53,6 @@ $configuration->setPlatformConfigurations([
     new PlatformConfiguration\HypernodeSettingConfiguration('nodejs_version', '20'),
 ]);
 
-$configuration->addBuildTask('node:env');
 $configuration->addBuildTask('node:install');
 $configuration->addBuildTask('node:build');
 
