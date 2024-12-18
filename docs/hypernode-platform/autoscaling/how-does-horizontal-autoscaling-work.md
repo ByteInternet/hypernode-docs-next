@@ -1,7 +1,10 @@
 ---
 myst:
   html_meta:
-    description: Learn how autoscaling dynamically adjusts server resources based on CPU usage metrics, allowing efficient workload management without manual intervention. Configure thresholds, durations, and understand the workflow for horizontal autoscaling without downtime on Hypernode.
+    description: Learn how autoscaling dynamically adjusts server resources based
+      on CPU usage metrics, allowing efficient workload management without manual
+      intervention. Configure thresholds, durations, and understand the workflow for
+      horizontal autoscaling without downtime on Hypernode.
     title: How does horizontal Autoscaling work? | Hypernode
 ---
 

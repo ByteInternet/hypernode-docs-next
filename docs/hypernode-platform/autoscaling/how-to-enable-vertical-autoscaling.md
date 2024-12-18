@@ -1,7 +1,8 @@
 ---
 myst:
   html_meta:
-    description: Step-by-step instructions on enabling vertical Autoscaling through the Control Panel or command line
+    description: Step-by-step instructions on enabling vertical Autoscaling through
+      the Control Panel or command line
     title: How to enable vertical Autoscaling? | Hypernode
 redirect_from:
   - hypernode-platform/autoscaling/how-to-enable-autoscaling
