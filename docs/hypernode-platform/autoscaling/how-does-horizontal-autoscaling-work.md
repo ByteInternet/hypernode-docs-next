@@ -1,7 +1,10 @@
 ---
 myst:
   html_meta:
-    description: Learn how autoscaling dynamically adjusts server resources based on CPU usage metrics, allowing efficient workload management without manual intervention. Configure thresholds, durations, and understand the workflow for horizontal autoscaling without downtime on Hypernode.
+    description: Learn how autoscaling dynamically adjusts server resources based
+      on CPU usage metrics, allowing efficient workload management without manual
+      intervention. Configure thresholds, durations, and understand the workflow for
+      horizontal autoscaling without downtime on Hypernode.
     title: How does horizontal Autoscaling work? | Hypernode
 ---
 
@@ -12,7 +15,7 @@ This article explains how Horizontal autoscaling works, what the requirements ar
 ## How does it work
 
 With horizontal autoscaling, additional Hypernodes will be added automatically to your main Hypernode at peak times. The extra Hypernodes will be used as PHP fpm workers.
-Since there are no configuration or IP changes needed, Horizontal autoscaling is zero-downtime.
+Since there's no configuration or IP changes needed, Horizontal autoscaling has zero-downtime.
 
 For Horizontal autoscaling you can configure some conditions. If the conditions are met from the configured settings in the Control Panel, Horizontal autoscaling will be triggered.
 You can configure the following conditions:
@@ -39,21 +42,25 @@ This approach selects the longer duration between user-defined settings or the f
 
 ### Downscaling
 
-If the monitor agent noticed if one Hypernode will be removed, the used resources will stay below the configured thresholds, the downscale operation will be triggered.
+If the monitor agent notices that the used resources are below the configured thresholds, the downscale operation will begin. This will lead to removing the additional servers that are no longer needed.
+
 Downscale will happen by detaching the autoscaling instances from the main Hypernode one by one.
-After a downscale operation has completed, there will be a cooldown of 15 minutes to monitor the behaviour of the newly available resources before downscale again.
+After a downscale operation has been completed, there will be a cooldown of 15 minutes to monitor the behaviour of the newly available resources before downscaling again.
+
 If the amount of used resources is still below the configured threshold, another downscale operation will be triggered.
+
 If there is need for extra resources instead, extra resources will be added again.
 
 ## Horizontal autoscaling requirements
 
 Horizontal autoscaling is available on all the Falcon cloud plans (OpenStack).
+
 Next to the provider, horizontal autoscaling does have a couple of additional requirements.
 
 ### Supported CMS
 
 Horizontal autoscaling is available for Magento2.
-To make use of Horizontal autoscaling, there are a couple of other requirements the Hypernode and the application should met:
+To make use of Horizontal autoscaling, there are a couple of other requirements the Hypernode and the application should meet:
 
 ### Operating system
 
@@ -133,7 +140,7 @@ More information about [Elasticsearch o Hypernode](../../hypernode-platform/tool
 Please make sure RabbitMQ host is set to `rabbitmqmaster` in the Magento2 configuration file at `<magento_root>/app/etc/env.php`
 More information about [RabbitMQ o Hypernode](../../best-practices/database/how-to-run-rabbitmq-on-hypernode.md)
 
-### Make sure we use MySQL 5.7 or higher
+### Make sure to use MySQL 5.7 or higher
 
 The configured MySQL version should be 5.7 or above. You can check the enabled MySQL version by running the following command.
 
@@ -147,9 +154,10 @@ Example output if MySQL version is 8.0:
 mysql_version is set to value 8.0
 ```
 
-If your MySQL version is still set to 5.6, you can consider [upgrade](../mysql/how-to-use-mysql-on-hypernode.md) the MySQL version to a supported version for autoscaling.
+If your MySQL version is still set to 5.6, you can consider [upgrading](../mysql/how-to-use-mysql-on-hypernode.md) the MySQL version to a supported version for autoscaling.
 
 After the version validation, please verify the MySQL host is set to `mysqlmaster`. You can verify this by running `cat app/etc/env.php | grep -i mysql | grep -i host` from the magento root.
+
 You should see something similar to `'host' => 'mysqlmaster',`. If this is not the case please make sure the database connection host is set to `mysqlmaster` instead of `localhost` or `127.0.0.1` in the magento configuration file at `<magento_root>/app/etc/env.php`.
 
 ### Make sure the Hypernode is a production plan
