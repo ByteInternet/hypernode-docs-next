@@ -84,3 +84,5 @@ You need to make some changes in Magento in order to use RabbitMQ. For example i
                 ),
         ),
 ```
+
+Note: Hypernode provisions a non-default user called `hypernode-admin` but you are free to create new users.

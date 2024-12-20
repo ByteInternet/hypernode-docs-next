@@ -169,13 +169,17 @@ More information about [Elasticsearch on Hypernode](../../hypernode-platform/too
 
 Please make sure RabbitMQ host is set to `rabbitmqmaster` in the Magento2 configuration file at `<magento_root>/app/etc/env.php`
 More information about [RabbitMQ o Hypernode](../../best-practices/database/how-to-run-rabbitmq-on-hypernode.md)
-Also make sure to configured RabbitMQ without guest user.
+
+There is a rabbitmq user provisioned by Hypernode called hypernode-admin as a non-default user. But you can also configure RabbitMQ with a new different user of your own.
+But please make sure to configure RabbitMQ without the default guest user.
 
 #### Make sure Database storage is disabled & Remote storage is enabled and configured.
 
 Please make sure to enable remote storage for your application and configure it correctly as only AWS-s3 remote storage drivers are supported.
 
 Make sure that the `remote_storage` key is present in the Magento2 configuration file at `<magento_root>/app/etc/env.php` with the correct config.
+
+More information about [S3 Remote Storage with Magento2](https://experienceleague.adobe.com/en/docs/commerce-operations/configuration-guide/storage/remote-storage/remote-storage-aws-s3)
 
 ## Enabling Horizontal Autoscaling
 
