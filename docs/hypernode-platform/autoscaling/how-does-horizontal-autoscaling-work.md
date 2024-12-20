@@ -67,7 +67,7 @@ We will divide them between Hypernode-specific and Application-specific requirem
 
 #### Make sure the Hypernode is a production plan
 
-Unfortunately we don't support Horizontal autoscaling for development plans.
+For now, we don't support horizontal autoscaling for development plans.
 
 #### Enable and configure Varnish
 
