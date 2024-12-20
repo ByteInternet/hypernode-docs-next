@@ -57,16 +57,19 @@ Horizontal autoscaling is available on all the Falcon cloud plans (OpenStack).
 
 Next to the provider, horizontal autoscaling does have a couple of additional requirements.
 
-### Supported CMS
+We will divide them between Hypernode-specific and Application-specific requirements
 
-Horizontal autoscaling is available for Magento2.
-To make use of Horizontal autoscaling, there are a couple of other requirements the Hypernode and the application should meet:
+### Hypernode Specific Requirements
 
-### Operating system
+#### Operating system
 
 - The operating system of the Hypernode should be Debian Bookworm
 
-### Enable and configure Varnish
+#### Make sure the Hypernode is a production plan
+
+Unfortunately we don't support Horizontal autoscaling for development plans.
+
+#### Enable and configure Varnish
 
 To make use of Horizontal autoscaling, Varnish should be enabled and configured on the Hypernode.
 You can check if Varnish is enabled on your Hypernode by running
@@ -104,7 +107,7 @@ acl purge {
 }
 ```
 
-### Enable and configure Redis Persistent
+#### Enable and configure Redis Persistent
 
 Redis persistent is another requirement before you can make use of Horizontal autoscaling.
 The persistent instance will be used to store the sessions so we can access the same sessions from the Horizontal autoscale Hypernodes.
@@ -130,17 +133,7 @@ hypernode-systemctl settings redis_persistent_instance --value True
 Make sure Redis session is configured as [described](../../ecommerce-applications/magento-2/how-to-configure-redis-for-magento-2.md#configure-magento-2-to-use-redis-as-the-session-store) in our docs
 Please notice the Redis host in the setup documentation. The Redis host should be set to `redismaster` instead of `localhost` or `127.0.0.1`.
 
-### Make sure Elasticsearch/Opensearch configured properly
-
-Please make sure Elasticsearch or Opensearch host is set to `elasticsearchmaster` in the Magento2 configuration file at `<magento_root>/app/etc/env.php`
-More information about [Elasticsearch o Hypernode](../../hypernode-platform/tools/how-to-use-elasticsearch-on-hypernode.md)
-
-### Make sure RabbitMQ configured properly
-
-Please make sure RabbitMQ host is set to `rabbitmqmaster` in the Magento2 configuration file at `<magento_root>/app/etc/env.php`
-More information about [RabbitMQ o Hypernode](../../best-practices/database/how-to-run-rabbitmq-on-hypernode.md)
-
-### Make sure to use MySQL 5.7 or higher
+#### Make sure to use MySQL 5.7 or higher
 
 The configured MySQL version should be 5.7 or above. You can check the enabled MySQL version by running the following command.
 
@@ -160,9 +153,29 @@ After the version validation, please verify the MySQL host is set to `mysqlmaste
 
 You should see something similar to `'host' => 'mysqlmaster',`. If this is not the case please make sure the database connection host is set to `mysqlmaster` instead of `localhost` or `127.0.0.1` in the magento configuration file at `<magento_root>/app/etc/env.php`.
 
-### Make sure the Hypernode is a production plan
+### Application Specific Requirements - Magento2
 
-Unfortunately we don't support Horizontal autoscaling for development plans.
+#### Supported CMS
+
+Horizontal autoscaling is available for Magento2.
+To make use of Horizontal autoscaling, there are a couple of other requirements the application should meet.
+
+#### Make sure Elasticsearch/Opensearch configured properly
+
+Please make sure Elasticsearch or Opensearch host is set to `elasticsearchmaster` in the Magento2 configuration file at `<magento_root>/app/etc/env.php`
+More information about [Elasticsearch o Hypernode](../../hypernode-platform/tools/how-to-use-elasticsearch-on-hypernode.md)
+
+#### Make sure RabbitMQ configured properly
+
+Please make sure RabbitMQ host is set to `rabbitmqmaster` in the Magento2 configuration file at `<magento_root>/app/etc/env.php`
+More information about [RabbitMQ o Hypernode](../../best-practices/database/how-to-run-rabbitmq-on-hypernode.md)
+Also make sure to configured RabbitMQ without guest user.
+
+#### Make sure Database storage is disabled & Remote storage is enabled and configured.
+
+Please make sure to enable remote storage for your application and configure it correctly as only AWS-s3 remote storage drivers are supported.
+
+Make sure that the `remote_storage` key is present in the Magento2 configuration file at `<magento_root>/app/etc/env.php` with the correct config.
 
 ## Enabling Horizontal Autoscaling
 
