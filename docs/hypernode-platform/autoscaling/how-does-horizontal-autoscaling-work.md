@@ -160,7 +160,7 @@ You should see something similar to `'host' => 'mysqlmaster',`. If this is not t
 Horizontal autoscaling is available for Magento 2.4.7 and higher.
 To make use of Horizontal autoscaling, there are a couple of other requirements the application should meet.
 
-#### Make sure Elasticsearch/Opensearch configured properly
+#### Make sure Elasticsearch/Opensearch is configured properly
 
 Please make sure Elasticsearch or Opensearch host is set to `elasticsearchmaster` in the Magento2 configuration file at `<magento_root>/app/etc/env.php`
 More information about [Elasticsearch on Hypernode](../../hypernode-platform/tools/how-to-use-elasticsearch-on-hypernode.md)
