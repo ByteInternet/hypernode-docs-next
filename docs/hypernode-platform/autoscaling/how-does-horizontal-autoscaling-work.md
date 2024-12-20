@@ -157,7 +157,7 @@ You should see something similar to `'host' => 'mysqlmaster',`. If this is not t
 
 #### Supported CMS
 
-Horizontal autoscaling is available for Magento2.
+Horizontal autoscaling is available for Magento 2.4.7 and higher.
 To make use of Horizontal autoscaling, there are a couple of other requirements the application should meet.
 
 #### Make sure Elasticsearch/Opensearch configured properly
