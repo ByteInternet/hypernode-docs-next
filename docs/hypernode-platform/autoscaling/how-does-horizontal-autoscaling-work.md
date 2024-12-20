@@ -163,7 +163,7 @@ To make use of Horizontal autoscaling, there are a couple of other requirements 
 #### Make sure Elasticsearch/Opensearch configured properly
 
 Please make sure Elasticsearch or Opensearch host is set to `elasticsearchmaster` in the Magento2 configuration file at `<magento_root>/app/etc/env.php`
-More information about [Elasticsearch o Hypernode](../../hypernode-platform/tools/how-to-use-elasticsearch-on-hypernode.md)
+More information about [Elasticsearch on Hypernode](../../hypernode-platform/tools/how-to-use-elasticsearch-on-hypernode.md)
 
 #### Make sure RabbitMQ configured properly
 
