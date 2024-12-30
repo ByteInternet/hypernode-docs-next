@@ -57,16 +57,19 @@ Horizontal autoscaling is available on all the Falcon cloud plans (OpenStack).
 
 Next to the provider, horizontal autoscaling does have a couple of additional requirements.
 
-### Supported CMS
+We will divide them between Hypernode-specific and Application-specific requirements
 
-Horizontal autoscaling is available for Magento2.
-To make use of Horizontal autoscaling, there are a couple of other requirements the Hypernode and the application should meet:
+### Hypernode Specific Requirements
 
-### Operating system
+#### Operating system
 
-- The operating system of the Hypernode should be Debian Bookworm
+- The operating system of the Hypernode should be Debian Bookworm. If you would like to upgrade the os of your Hypernode, feel free to contact our support team for help. https://www.hypernode.com/en/contact/
 
-### Enable and configure Varnish
+#### Make sure the Hypernode is a production plan
+
+For now, we don't support horizontal autoscaling for development plans.
+
+#### Enable and configure Varnish
 
 To make use of Horizontal autoscaling, Varnish should be enabled and configured on the Hypernode.
 You can check if Varnish is enabled on your Hypernode by running
@@ -104,7 +107,34 @@ acl purge {
 }
 ```
 
-### Enable and configure Redis Persistent
+#### Make sure to use MySQL 5.7 or higher
+
+The configured MySQL version should be 5.7 or above. You can check the enabled MySQL version by running the following command.
+
+```console
+hypernode-systemctl settings mysql_version
+```
+
+Example output if MySQL version is 8.0:
+
+```console
+mysql_version is set to value 8.0
+```
+
+If your MySQL version is still set to 5.6, you can consider [upgrading](../mysql/how-to-use-mysql-on-hypernode.md) the MySQL version to a supported version for autoscaling.
+
+After the version validation, please verify the MySQL host is set to `mysqlmaster`. You can verify this by running `cat app/etc/env.php | grep -i mysql | grep -i host` from the magento root.
+
+You should see something similar to `'host' => 'mysqlmaster',`. If this is not the case please make sure the database connection host is set to `mysqlmaster` instead of `localhost` or `127.0.0.1` in the magento configuration file at `<magento_root>/app/etc/env.php`.
+
+### Application Specific Requirements - Magento2
+
+#### Supported CMS
+
+Horizontal autoscaling is available for Magento 2.4.7 and higher.
+To make use of Horizontal autoscaling, there are a couple of other requirements the application should meet.
+
+#### Enable and configure Redis Persistent
 
 Redis persistent is another requirement before you can make use of Horizontal autoscaling.
 The persistent instance will be used to store the sessions so we can access the same sessions from the Horizontal autoscale Hypernodes.
@@ -130,39 +160,26 @@ hypernode-systemctl settings redis_persistent_instance --value True
 Make sure Redis session is configured as [described](../../ecommerce-applications/magento-2/how-to-configure-redis-for-magento-2.md#configure-magento-2-to-use-redis-as-the-session-store) in our docs
 Please notice the Redis host in the setup documentation. The Redis host should be set to `redismaster` instead of `localhost` or `127.0.0.1`.
 
-### Make sure Elasticsearch/Opensearch configured properly
+#### Make sure Elasticsearch/Opensearch is configured properly
 
 Please make sure Elasticsearch or Opensearch host is set to `elasticsearchmaster` in the Magento2 configuration file at `<magento_root>/app/etc/env.php`
-More information about [Elasticsearch o Hypernode](../../hypernode-platform/tools/how-to-use-elasticsearch-on-hypernode.md)
+More information about [Elasticsearch on Hypernode](../../hypernode-platform/tools/how-to-use-elasticsearch-on-hypernode.md)
 
-### Make sure RabbitMQ configured properly
+#### Make sure RabbitMQ configured properly
 
 Please make sure RabbitMQ host is set to `rabbitmqmaster` in the Magento2 configuration file at `<magento_root>/app/etc/env.php`
 More information about [RabbitMQ o Hypernode](../../best-practices/database/how-to-run-rabbitmq-on-hypernode.md)
 
-### Make sure to use MySQL 5.7 or higher
+There is a rabbitmq user provisioned by Hypernode called hypernode-admin as a non-default user. But you can also configure RabbitMQ with a new different user of your own.
+But please make sure to configure RabbitMQ without the default guest user.
 
-The configured MySQL version should be 5.7 or above. You can check the enabled MySQL version by running the following command.
+#### Make sure Database storage is disabled & Remote storage is enabled and configured.
 
-```console
-hypernode-systemctl settings mysql_version
-```
+Please make sure to enable remote storage for your application and configure it correctly as only AWS-s3 remote storage drivers are supported.
 
-Example output if MySQL version is 8.0:
+Make sure that the `remote_storage` key is present in the Magento2 configuration file at `<magento_root>/app/etc/env.php` with the correct config.
 
-```console
-mysql_version is set to value 8.0
-```
-
-If your MySQL version is still set to 5.6, you can consider [upgrading](../mysql/how-to-use-mysql-on-hypernode.md) the MySQL version to a supported version for autoscaling.
-
-After the version validation, please verify the MySQL host is set to `mysqlmaster`. You can verify this by running `cat app/etc/env.php | grep -i mysql | grep -i host` from the magento root.
-
-You should see something similar to `'host' => 'mysqlmaster',`. If this is not the case please make sure the database connection host is set to `mysqlmaster` instead of `localhost` or `127.0.0.1` in the magento configuration file at `<magento_root>/app/etc/env.php`.
-
-### Make sure the Hypernode is a production plan
-
-Unfortunately we don't support Horizontal autoscaling for development plans.
+More information about [S3 Remote Storage with Magento2](https://experienceleague.adobe.com/en/docs/commerce-operations/configuration-guide/storage/remote-storage/remote-storage-aws-s3)
 
 ## Enabling Horizontal Autoscaling
 
