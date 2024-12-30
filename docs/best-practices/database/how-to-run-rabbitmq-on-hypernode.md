@@ -76,7 +76,7 @@ You need to make some changes in Magento in order to use RabbitMQ. For example i
         array (
             'amqp' =>
                 array (
-                    'host' => 'localhost',
+                    'host' => 'rabbitmqmaster',
                     'port' => '5672',
                     'user' => 'guest',
                     'password' => 'guest',
