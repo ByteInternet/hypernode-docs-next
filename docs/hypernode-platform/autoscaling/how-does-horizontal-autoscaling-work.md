@@ -63,7 +63,7 @@ We will divide them between Hypernode-specific and Application-specific requirem
 
 #### Operating system
 
-- The operating system of the Hypernode should be Debian Bookworm
+- The operating system of the Hypernode should be Debian Bookworm. If you would like to upgrade the os of your Hypernode, feel free to contact our support team for help. https://www.hypernode.com/en/contact/
 
 #### Make sure the Hypernode is a production plan
 
@@ -107,32 +107,6 @@ acl purge {
 }
 ```
 
-#### Enable and configure Redis Persistent
-
-Redis persistent is another requirement before you can make use of Horizontal autoscaling.
-The persistent instance will be used to store the sessions so we can access the same sessions from the Horizontal autoscale Hypernodes.
-
-You can check if Redis Persistent is enabled on your Hypernode by running
-
-```console
-hypernode-systemctl settings redis_persistent_instance
-```
-
-Example output if Redis Persistent is enabled:
-
-```console
-redis_persistent_instance is set to value True
-```
-
-If Redis Persistent instance is not enabled, you can enable the second Redis instance for sessions you run the command:
-
-```console
-hypernode-systemctl settings redis_persistent_instance --value True
-```
-
-Make sure Redis session is configured as [described](../../ecommerce-applications/magento-2/how-to-configure-redis-for-magento-2.md#configure-magento-2-to-use-redis-as-the-session-store) in our docs
-Please notice the Redis host in the setup documentation. The Redis host should be set to `redismaster` instead of `localhost` or `127.0.0.1`.
-
 #### Make sure to use MySQL 5.7 or higher
 
 The configured MySQL version should be 5.7 or above. You can check the enabled MySQL version by running the following command.
@@ -159,6 +133,32 @@ You should see something similar to `'host' => 'mysqlmaster',`. If this is not t
 
 Horizontal autoscaling is available for Magento 2.4.7 and higher.
 To make use of Horizontal autoscaling, there are a couple of other requirements the application should meet.
+
+#### Enable and configure Redis Persistent
+
+Redis persistent is another requirement before you can make use of Horizontal autoscaling.
+The persistent instance will be used to store the sessions so we can access the same sessions from the Horizontal autoscale Hypernodes.
+
+You can check if Redis Persistent is enabled on your Hypernode by running
+
+```console
+hypernode-systemctl settings redis_persistent_instance
+```
+
+Example output if Redis Persistent is enabled:
+
+```console
+redis_persistent_instance is set to value True
+```
+
+If Redis Persistent instance is not enabled, you can enable the second Redis instance for sessions you run the command:
+
+```console
+hypernode-systemctl settings redis_persistent_instance --value True
+```
+
+Make sure Redis session is configured as [described](../../ecommerce-applications/magento-2/how-to-configure-redis-for-magento-2.md#configure-magento-2-to-use-redis-as-the-session-store) in our docs
+Please notice the Redis host in the setup documentation. The Redis host should be set to `redismaster` instead of `localhost` or `127.0.0.1`.
 
 #### Make sure Elasticsearch/Opensearch is configured properly
 
