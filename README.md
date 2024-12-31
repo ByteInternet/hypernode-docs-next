@@ -42,12 +42,12 @@ open localhost and now you can make changes in style and refresh the page withou
 
 when you're working on scss to compile it automatically run
 ```
-sass --watch docs/_static/scss:docs/_static/css
+npx sass --watch docs/_static/scss:docs/_static/css
 ```
 
-or after changes compile scss once:
+or as a production build:
 ```
-sass docs/_static/scss:docs/_static/css
+npx sass --style compressed --no-source-map docs/_static/scss:docs/_static/css
 ```
 
 ## Deployment
