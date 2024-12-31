@@ -47,6 +47,10 @@ task('python:build_documentation', static function () {
     run('ln -sf docs/_build/html pub');
 });
 
+task('node:build:scss', static function() {
+    run('npx sass --style compressed --no-source-map docs/_static/scss:docs/_static/css');
+});
+
 # HMV configuration for when this is running in a docker
 task('deploy:hmv_docker', static function () use (&$DOCKER_HOST, &$DOCKER_WEBROOT) {
     if (test('[ -f /etc/hypernode/is_docker ]')) {
@@ -71,6 +75,7 @@ task('deploy:nginx_redirects', static function () {
 });
 
 $configuration = new Configuration();
+$configuration->addBuildTask('node:build:scss');
 $configuration->addBuildTask('python:venv:create');
 $configuration->addBuildTask('python:venv:requirements');
 $configuration->addBuildTask('python:build_documentation');
