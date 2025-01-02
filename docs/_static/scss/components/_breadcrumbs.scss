@@ -1,0 +1,58 @@
+@use "../breakpoints" as *;
+
+/* breadcrumbs*/
+.wy-breadcrumbs {
+    max-width: 1500px;
+    padding: 0 21px;
+    margin: auto;
+
+    & li {
+        padding-top: initial;
+    }
+
+    @media (max-width: $breakpoint-landscape) {
+        padding: 0 20px 0 60px;
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        padding: 0 20px 0 65px;
+    }
+}
+
+.wy-breadcrumbs,
+.wy-breadcrumbs li a,
+.wy-breadcrumbs-aside a {
+    font-size: 11px;
+}
+.wy-breadcrumbs li.wy-breadcrumbs-aside {
+    @media (max-width: $breakpoint-portrait) {
+        display: none;
+    }
+}
+
+.wy-breadcrumbs li a:visited {
+    color: var(--light-orange);
+}
+
+li.wy-breadcrumbs-aside a {
+    padding: 10px;
+}
+
+.header {
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 60px;
+    border-bottom: 1px solid var(--grey-border);
+    z-index:20;
+    background-color: white;
+
+    @media (max-width: $breakpoint-mobile) {
+       top: 90px;
+    }
+}
+
+/* header end */
