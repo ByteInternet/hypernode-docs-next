@@ -213,7 +213,7 @@
     background: inherit;
     z-index: 10;
     width: 0;
-    
+
     @media (max-width: $breakpoint-landscape - 1) {
         left: -300px;
     }
@@ -432,7 +432,7 @@
 
         li {
             line-height: 25px;
-    
+
             i {
                 margin-right: 5px;
                 color: var(--message-success);
