@@ -18,12 +18,12 @@ The upgrade is effective as long the extra resources are needed and being used. 
 
 ## Autoscaling in the Control Panel
 
-1. Choose the Hypernode you want to enable autoscaling for and then click on the autoscaling option from the vertical navbar.
-   ![Choose autoscaling - Navbar](_res/autoscaling-navbar.png)
+1. Choose the Hypernode you want to enable autoscaling for and then click on the autoscaling option from the vertical navbar. <br>
+   <img src="_res/autoscaling-navbar.png" width="200" height="200">
 1. If you already enabled vertical autoscaling, you will have to disable it in order to enable horizontal autoscaling for that Hypernode. This is because we only support one type of autoscaling for a Hypernode at a given time.
-1. If you have not enabled vertical or horizontal autoscaling, you will see the following two choices with an option to help you choose. If you are still confused about which type of autoscaling you would like for your Hypernode please click on "Help me choose". And if the additional information is not enough, feel free to [contact support](https://www.hypernode.com/en/contact/) for more info.
+1. If you do not have vertical or horizontal autoscaling enabled, you will see the following two choices with an option to help you choose. If you are still confused about which type of autoscaling you would like for your Hypernode please click on "Help me choose". And if the additional information is not enough, feel free to [contact support](https://www.hypernode.com/en/contact/) for more info.
    ![Choose autoscaling options](./_res/autoscaling-options.png)
-1. Now if you have decided to enable horizontal autoscaling, you can move ahead with the below steps.
+1. If you have decided to enable horizontal autoscaling, you can move ahead with the below steps.
 
 ## Enabling Horizontal autoscaling from the Control Panel
 
