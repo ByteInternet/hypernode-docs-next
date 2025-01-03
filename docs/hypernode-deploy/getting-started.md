@@ -15,4 +15,5 @@ maxdepth: 1
 ---
 getting-started/install-and-configure-hypernode-deploy.md
 getting-started/configure-ci-cd.md
+getting-started/configure-hypernode-settings-on-deployment.md
 ```
