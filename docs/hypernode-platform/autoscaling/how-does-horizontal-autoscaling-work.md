@@ -127,6 +127,14 @@ After the version validation, please verify the MySQL host is set to `mysqlmaste
 
 You should see something similar to `'host' => 'mysqlmaster',`. If this is not the case please make sure the database connection host is set to `mysqlmaster` instead of `localhost` or `127.0.0.1` in the magento configuration file at `<magento_root>/app/etc/env.php`.
 
+#### Make sure supervisor is disabled and that there are no supervisor services configured.
+
+What should we write here?
+
+#### Make sure podman is disabled and that there are no podman services running
+
+What should we write here?
+
 ### Application Specific Requirements - Magento2
 
 #### Supported CMS
