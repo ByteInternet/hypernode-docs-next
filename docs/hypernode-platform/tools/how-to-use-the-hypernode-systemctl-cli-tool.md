@@ -21,49 +21,59 @@ To see which values you can set and which values they are allowed to have take a
 
 `hypernode-systemctl settings --help`
 
-- `blackfire_enabled`: a great tool to find performance bottlenecks in Magento
-- `blackfire_server_token`
-- `blackfire_server_id`
-- `composer_version`: Change the Composer version
-- `disable_optimizer_switch`
-- `elasticsearch_enabled`: Enable Elasticsearch
-- `elasticsearch_version`: Change the Elasticsearch version
-- `enable_ioncube`: Only enable this if you really have to, as Ioncube is a performance killer
-- `firewall_block_ftp_enabled`: indicates whether FTP (which is unsafe) is completely blocked or not
-- `magerun2_version`: Change the N98 Magerun version
-- `mailhog_enabled`: Enable the Mailhog feature
-- `managed_vhosts_enabled`: Enable the managed_vhosts nginx configuration
-- `modern_ssh_config_enabled`
-- `modern_ssl_config_enabled`: Safer SSL and SSH configuration: you can configure Mozilla Modern SSL and enable stricter SSH encryption
-- `mysql_version`: Change the MySQL version (note: once set to 5.7 this can't be reverted)
-- `mysql_disable_stopwords`
-- `mysql_tmp_on_data_enabled`
-- `mysql_ft_min_word_len`
-- `mysql_enable_large_thread_stack`
-- `nodejs_version`: Change the Node version
-- `openvpn_enabled`: Enables [OpenVPN](https://community.hypernode.io/#/Documentation/hypernode-vpn/README?) for secure database connections
-- `opensearch_enabled`: Enable OpenSearch
-- `opensearch_version`: Change the OpenSearch version
-- `override_sendmail_return_path`: Override the return-path (Due to the bug in Magento 2)
-- `password_auth`: indicates whether password authentication for the Hypernode is allowed instead of only SSH keys.
-- `permissive_memory_management`: Configure [memory management policy](https://changelog.hypernode.com/release-5946-configurable-memory-management-policy-and-rss-bruteforce-detection/) (OOM kills)
-- `php_version`: Change the PHP version
-- `php_apcu_enabled`: Enable the php-apcu module
-- `php_amqp_enabled`: Enable the php-amqp module
-- `php_xdebug_enabled`: Enable Xdebug for [remote debugging](../php/remote-debugging.md)
-- `php_xdebug_cloud_key`: Set the Xdebug cloud key for [remote debugging](../php/remote-debugging.md)
-- `redis_persistent_instance`
-- `redis_version`: Change the Redis version
-- `rabbitmq_enabled`: a popular open source message broker
-- `supervisor_enabled`
-- `tideways_enabled`: Enable [Tideways](https://tideways.com)
-- `tideways_api_key`: The API key for your application
-- `tideways_sample_rate`: Configure the amount of tracing data collected with the [sampling rate](https://support.tideways.com/documentation/setup/configuration/sampling.html) configuration.
-- `unixodbc_enabled`
-- `varnish_enabled`: Enable Varnish
-- `varnish_version`: Change the Varnish version
-- `varnish_secret`
-- `varnish_esi_ignore_https`
+| Field | Default Value | Possible Values |
+|-------|-----------------|---------------|
+| **blackfire_enabled**<br/><sub>A great tool to find performance bottlenecks in Magento</sub> | False | True, False |
+| **composer_version**<br/><sub>Change the Composer version</sub> | 2.x | 1.x, 2.2, 2.6, 2.7, 2.x |
+| **datadog_enabled**<br/><sub>Enable Datadog</sub> | False | True, False |
+| **disable_optimizer_switch**<br/><sub>Disable the optimizer switch</sub> | False | True, False |
+| **elasticsearch_enabled**<br/><sub>Enable Elasticsearch</sub> | False | True, False |
+| **elasticsearch_version**<br/><sub>Change the Elasticsearch version</sub> | 7.x | 5.2, 6.x, 7.x |
+| **enable_ioncube**<br/><sub>Only enable this if you really have to, as Ioncube is a performance killer</sub> | False | True, False |
+| **firewall_block_ftp_enabled**<br/><sub>Indicates whether FTP (which is unsafe) is completely blocked or not</sub> | False | True, False |
+| **magerun2_version**<br/><sub>Change the N98 Magerun version</sub> | latest | 3.x, 4.x, 5.x, 6.x, 7.x, latest |
+| **mailhog_enabled**<br/><sub>Enable the Mailhog feature</sub> | False | True, False |
+| **managed_vhosts_enabled**<br/><sub>Enable the managed_vhosts nginx configuration</sub> | True | True, False |
+| **modern_ssh_config_enabled**<br/><sub>Enable modern SSH configuration</sub> | False | True, False |
+| **modern_ssl_config_enabled**<br/><sub>Safer SSL and SSH configuration: you can configure Mozilla Modern SSL and enable stricter SSH encryption</sub> | False | True, False |
+| **mysql_disable_stopwords**<br/><sub>Disable MySQL stopwords</sub> | False | True, False |
+| **mysql_enable_explicit_defaults_for_timestamp**<br/><sub></sub> | False | True, False |
+| **mysql_enable_large_thread_stack**<br/><sub>Enable large thread stacks in MySQL</sub> | False | True, False |
+| **mysql_ft_min_word_len**<br/><sub>Set minimum word length for MySQL full-text searches</sub> | 4 | 4, 2 |
+| **mysql_long_query_time**<br/><sub></sub> | 2 | 2, 5, 10, 15, 30 |
+| **mysql_tmp_on_data_enabled**<br/><sub>Enable temporary data directory on MySQL</sub> | False | True, False |
+| **mysql_version**<br/><sub>Change the MySQL version (note: once set to 5.7 this can't be reverted)</sub> | 8.0 | 5.6, 5.7, 8.0 |
+| **new_relic_browser_monitoring_auto_instrument_enabled**<br/><sub></sub> | True | True, False |
+| **new_relic_distributed_tracing_enabled**<br/><sub></sub> | True | True, False |
+| **new_relic_enabled**<br/><sub></sub> | False | True, False |
+| **nodejs_version**<br/><sub>Change the Node version</sub> | 20 | 6, 10, 16, 18, 20 |
+| **opensearch_auto_create_index**<br/><sub></sub> | True | True, False |
+| **opensearch_enabled**<br/><sub>Enable OpenSearch</sub> | True | True, False |
+| **opensearch_version**<br/><sub>Change the OpenSearch version</sub> | 2.12 | 1.x, 2.6, 2.12 |
+| **openvpn_enabled**<br/><sub>Enables OpenVPN for secure database connections</sub> | False | True, False |
+| **password_auth**<br/><sub>Indicates whether password authentication for the Hypernode is allowed instead of only SSH keys</sub> | True | True, False |
+| **permissive_memory_management**<br/><sub>Configure memory management policy (OOM kills)</sub> | False | True, False |
+| **php_amqp_enabled**<br/><sub>Enable the php-amqp module</sub> | False | True, False |
+| **php_apcu_enabled**<br/><sub>Enable the php-apcu module</sub> | True | True, False |
+| **php_legacy_serialize_precision_enabled**<br/><sub></sub> | True | True, False |
+| **php_version**<br/><sub>Change the PHP version</sub> | 8.3 | 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2, 8.3, 8.4 |
+| **php_xdebug_enabled**<br/><sub>Enable Xdebug for remote debugging</sub> | False | True, False |
+| **rabbitmq_delayed_message_exchange_enabled**<br/><sub></sub> | False | True, False |
+| **rabbitmq_enabled**<br/><sub>A popular open source message broker</sub> | False | True, False |
+| **redis_eviction_policy**<br/><sub></sub> | volatile-lru | noeviction, allkeys-lru, allkeys-lfu, volatile-lru, volatile-lfu, allkeys-random, volatile-random, volatile-ttl |
+| **redis_persistent_eviction_policy**<br/><sub></sub> | allkeys-lru | noeviction, allkeys-lru, allkeys-lfu, volatile-lru, volatile-lfu, allkeys-random, volatile-random, volatile-ttl |
+| **redis_persistent_instance**<br/><sub>Enable Redis persistent instance</sub> | False | True, False |
+| **redis_version**<br/><sub>Change the Redis version</sub> | 7.x | 5.0, 6.x, 7.x |
+| **supervisor_enabled**<br/><sub>Enable Supervisor</sub> | False | True, False |
+| **support_insecure_legacy_tls**<br/><sub></sub> | False | True, False |
+| **tideways_enabled**<br/><sub>Enable Tideways</sub> | False | True, False |
+| **unixodbc_enabled**<br/><sub>Enable UnixODBC</sub> | False | True, False |
+| **varnish_enabled**<br/><sub>Enable Varnish</sub> | False | True, False |
+| **varnish_esi_ignore_https**<br/><sub>Ignore HTTPS for Varnish ESI</sub> | True | True, False |
+| **varnish_http_resp_hdr_len**<br/><sub></sub> | None | 4k, 8k, 16k, 32k, 64k, 128k, 256k |
+| **varnish_http_resp_size**<br/><sub></sub> | None | 4k, 8k, 16k, 32k, 64k, 128k, 256k |
+| **varnish_large_thread_pool_stack**<br/><sub></sub> | False | True, False |
+| **varnish_version**<br/><sub>Change the Varnish version</sub> | 7.x | 4.0, 6.0, 7.x |
 
 ### Checking a Value for a Setting
 
@@ -75,7 +85,7 @@ To see which value a setting has you can run the following:
 
 To set a setting to a certain value you can run the following:
 
-`hypernode-systemctl settings php_version 7.1`
+`hypernode-systemctl settings php_version 8.3`
 
 If an invalid value is provided you will be notified of this during the setting procedure.
 
