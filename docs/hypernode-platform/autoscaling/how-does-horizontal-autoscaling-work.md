@@ -135,6 +135,12 @@ Make sure supervisor is disabled and that there are no supervisor services confi
 
 Make sure podman is disabled and that there are no podman services running.
 
+#### Configure hostnames correctly
+
+The database, cache, session and queue of the application must be configured with correct hostnames instead of `localhost` or `127.0.0.1`. This way the services will be available across multiple hypernodes when the app is autoscaled.
+
+Make sure the env variables (db, cache, session, queue) are not using localhost.
+
 ### Application Specific Requirements - Magento2
 
 #### Supported CMS
