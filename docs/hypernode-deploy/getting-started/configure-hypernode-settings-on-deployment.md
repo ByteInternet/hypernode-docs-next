@@ -1,7 +1,7 @@
 ---
 myst:
   html_meta:
-    description: Configure your Hypernode server on Deploytime to rapidly test upgrades 
+    description: Configure your Hypernode server on Deploytime to rapidly test upgrades
       with service upgrades
     title: Configure Hypernode settings on Deployment
 ---
