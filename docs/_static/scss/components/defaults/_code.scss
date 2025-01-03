@@ -50,15 +50,6 @@ code.docutils.literal.notranslate {
         border-radius: 8px;
         background-color: #292d3e;
         color: #D9E7F3;
-        width: min(900px, calc(100vw - 100px));
-
-        @media (min-width: $breakpoint-laptop) {
-            width: min(900px, calc(100vw - 600px));
-        }
-
-        @media (min-width: $breakpoint-landscape) {
-            width: min(900px, calc(100vw - 400px));
-        }
 
         .c1 {
             color: var(--message-warning);
