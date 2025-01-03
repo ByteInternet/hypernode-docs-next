@@ -5,9 +5,6 @@
 
 @use "../breakpoints" as *;
 
-header {
-    margin-bottom: 60px;
-}
 
 .main-content a {
     color: var(--secondary-blue);
@@ -46,7 +43,8 @@ header {
 }
 
 .rst-content {
-    padding: 20px 50px;
+    max-width: 900px;
+    padding: 0 50px;
 
     @media (max-width: $breakpoint-portrait) {
         padding: 0;
