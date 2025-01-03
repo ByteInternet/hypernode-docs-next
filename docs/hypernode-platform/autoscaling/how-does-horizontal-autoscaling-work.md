@@ -133,7 +133,7 @@ Make sure supervisor is disabled and that there are no supervisor services confi
 
 #### Disable Podman services
 
-Make sure podman is disabled and that there are no podman services running
+Make sure podman is disabled and that there are no podman services running.
 
 ### Application Specific Requirements - Magento2
 
