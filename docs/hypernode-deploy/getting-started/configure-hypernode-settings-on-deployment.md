@@ -6,7 +6,7 @@ myst:
     title: Configure Hypernode settings on Deployment
 ---
 
-# Configure Hypernode Settins on Deployment
+# Configure Hypernode settings on Deployment
 
 Hypernode Deploy allows you to change configrations to the Hypernode server on-the-fly and on deploytime, this is extremely befinitial when doing a MySQL upgrade or NodeJS versions controlled by your source version control.
 
@@ -41,7 +41,7 @@ Lots of applications need a set of cronjob for the application to function corre
 
 For example, start creating the `./etc/cron` folder and putting in the following:
 
-```crontab
+```bash
 * * * * * echo 'Hello world!' >> /data/web/cron.log
 ```
 
