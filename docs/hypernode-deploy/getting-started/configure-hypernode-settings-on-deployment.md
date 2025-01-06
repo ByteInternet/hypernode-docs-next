@@ -39,7 +39,7 @@ $configuration->setPlatformConfigurations([
 
 Lots of applications need a set of cron jobs for the application to function correctly. Instead of having to configure this on the server manually on each change, you can set this up on the Deployment.
 
-For example, start creating the `./etc/cron` folder and putting in the following:
+For example, start creating the `./etc/cron` file and adding the following:
 
 ```bash
 * * * * * echo 'Hello world!' >> /data/web/cron.log
