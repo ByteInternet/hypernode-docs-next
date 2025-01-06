@@ -198,3 +198,7 @@ More information about [S3 Remote Storage with Magento2](https://experienceleagu
 ## Enabling Horizontal Autoscaling
 
 For detailed steps on enabling horizontal Autoscaling, please refer to our documentation: [How to enable horizontal Autoscaling?](how-to-enable-horizontal-autoscaling.md)
+
+## Horizontal Autoscaling Pricing
+
+To know more about the pricing, you can visit our documentation: [Horizontal Autoscaling Pricing](pricing-for-horizontal-autoscaling).
