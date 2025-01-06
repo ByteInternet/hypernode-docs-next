@@ -1,0 +1,33 @@
+.btn,
+.btn-neutral {
+    background: #fff;
+    background-color: #fff!important;
+    border: 1px solid var(--primary-orange);
+    font-weight: 600;
+    font-size: 12px;
+    max-width: 110px;
+    padding: 0 15px;
+    color: var(--primary-orange)!important;
+
+    .fa {
+        display: none;
+    }
+
+    &:visited {
+        color: var(--primary-orange)!important;
+    }
+    &:hover {
+        opacity: 1;
+    }
+}
+.btn:active {
+    padding: 0 15px;
+}
+.rst-content .btn:focus {
+    outline: 0px solid;
+}
+
+.btn-orange {
+    background-color: var(--primary-orange)!important;
+    color: #fff!important;
+}

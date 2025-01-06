@@ -1,0 +1,69 @@
+@use "code";
+@use "buttons";
+@use "notes";
+
+@use "../../breakpoints" as *;
+
+h1,
+h2,
+h3,
+h4,
+span {
+    // TODO: Put on body
+    font-family: 'Montserrat', sans-serif;
+}
+
+span, p, div {
+    // TODO: Put on body
+    color: #404040;
+}
+
+p {
+    @media (max-width: $breakpoint-portrait) {
+        font-size: 17px;
+        line-height: 26px;
+    }
+}
+
+a {
+    text-decoration: none;
+
+    &:hover:not(.logo-title) {
+        // TODO: Make more reusable
+        opacity: 0.7;
+    }
+
+    &:visited {
+        color: var(--primary-blue);
+    }
+
+    &.ahref-blue {
+        text-decoration: underline;
+        color: var(--primary-blue);
+    }
+
+    &.ahref-orange {
+        text-decoration: underline;
+        color: var(--primary-orange);
+    }
+}
+
+h1 {
+    font-size: 40px;
+    line-height: inherit;
+    margin: 40px 0;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 1.2em;
+    margin-top: 40px;
+
+    @media (max-width: $breakpoint-portrait) {
+        font-size: 22px;
+    }
+}
+
+section {
+    scroll-margin-top: 120px;
+}

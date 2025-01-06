@@ -1,0 +1,56 @@
+@use "defaults/module";
+@use "layout";
+@use "article-meta";
+@use "breadcrumbs";
+
+@use "../breakpoints" as *;
+
+
+.main-content a {
+    color: var(--secondary-blue);
+    text-decoration: underline;
+}
+
+.main-content a:visited {
+    opacity: 0.8;
+    color: var(--secondary-blue)!important;
+}
+
+#rtd-search-form {
+    input.main-search-bar__input {
+        position: relative;
+        top: 10px;
+        padding: 0 15px 0 30px;
+
+        @media (max-width: $breakpoint-mobile) {
+            top: 0;
+        }
+    }
+    .search-icon{
+        position: relative;
+        width: 13px;
+        top: -18px;
+        left: -132px;
+
+        @media (max-width: $breakpoint-portrait) {
+            left: -83px;
+        }
+        @media (max-width: $breakpoint-mobile) {
+            top: -27px;
+            left: -149px;
+        }
+    }
+}
+
+.rst-content {
+    max-width: 900px;
+    padding: 0 50px;
+
+    @media (max-width: $breakpoint-portrait) {
+        padding: 0;
+    }
+}
+
+.rst-content p + ul {
+    margin-top: -14px;
+}
