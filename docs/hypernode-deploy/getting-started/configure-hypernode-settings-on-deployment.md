@@ -8,13 +8,13 @@ myst:
 
 # Configure Hypernode settings on Deployment
 
-Hypernode Deploy allows you to change configrations to the Hypernode server on-the-fly and on deploytime, this is extremely befinitial when doing a MySQL upgrade or NodeJS versions controlled by your source version control.
+Hypernode Deploy allows you to change configurations to the Hypernode server on-the-fly and on deploy time, this is extremely beneficial when doing a MySQL upgrade or Node.js versions controlled by your source version control.
 
 Here's a list of changes you can make to the Hypernode:
 
-- Hypernode Systemctl Configration
+- Hypernode Systemctl Configuration
 - Cron Configuration
-- Nginx vhost Configration
+- Nginx vhost Configuration
 - Supervisor Configuration
 - Varnish Configuration
 
@@ -22,7 +22,7 @@ Here's a list of changes you can make to the Hypernode:
 
 You can use Hypernode's systemctl utility to change crucial settings about the Hypernode server. This can also be configured in your deployments. More information about the systemctl utility can be found [here](../../hypernode-platform/tools/how-to-use-the-hypernode-systemctl-cli-tool.md).
 
-You can simply define these setting configuration by using this code in your `deploy.php` file:
+You can simply define these settings configurations by using this code in your `deploy.php` file:
 
 ```php
 $configuration->setPlatformConfigurations([
@@ -37,7 +37,7 @@ $configuration->setPlatformConfigurations([
 
 ## Cron Configuration
 
-Lots of applications need a set of cronjob for the application to function correctly. Instead of having to configure this on the server manually on each change, you can set this up on the Deployment.
+Lots of applications need a set of cron jobs for the application to function correctly. Instead of having to configure this on the server manually on each change, you can set this up on the Deployment.
 
 For example, start creating the `./etc/cron` folder and putting in the following:
 
@@ -45,7 +45,7 @@ For example, start creating the `./etc/cron` folder and putting in the following
 * * * * * echo 'Hello world!' >> /data/web/cron.log
 ```
 
-The contents of this file will be written and get replaced to your crontab as its own block on each deployment, this makes it easy manage and update the crons.
+The contents of this file will be written and get replaced to your crontab as a separate block on each deployment, this makes it easy to manage and update the crons.
 
 Now add the cron configuration to your `deploy.php`
 
@@ -55,9 +55,9 @@ $configuration->setPlatformConfigurations([
 ]);
 ```
 
-## Nginx vhost Configration
+## Nginx vhost Configuration
 
-You can use Hypernode Deploy to apply nginx configurations set to your vhost, you do this by creating a new folder for your nginx configurations in `./etc/nginx` and placing your configs there.
+You can use Hypernode Deploy to apply nginx configurations set up for your vhost, you do this by creating a new folder for your nginx configurations in `./etc/nginx` and placing your configs there.
 
 ```{note}
 All existing nginx configurations will be replaced on first deployment when there's already nginx configurations known for this vhost name.
@@ -85,7 +85,7 @@ $configuration->setPlatformConfigurations([
 
 ## Varnish Configuration
 
-You can update your varnish configuration by adding the file at `etc/varnish.vcl` , and configuring it in `deploy.php` like so:
+You can update your varnish configuration by adding a file at `etc/varnish.vcl` , and configuring it in `deploy.php` like so:
 
 ```php
 $configuration->setPlatformConfigurations([
