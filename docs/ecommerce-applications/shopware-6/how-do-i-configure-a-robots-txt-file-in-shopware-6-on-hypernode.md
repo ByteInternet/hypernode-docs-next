@@ -1,9 +1,6 @@
----
-myst:
-  html_meta:
-    description: Learn how to configure a robots.txt file in Shopware 6 on Hypernode to optimize search engines.
-    title: 'How do I configure a robots.txt file in Shopware 6 on Hypernode? '
----
+______________________________________________________________________
+
+## myst: html_meta: description: Learn how to configure a robots.txt file in Shopware 6 on Hypernode to optimize search engines. title: How do I configure a robots.txt file in Shopware 6 on Hypernode?
 
 <!-- source: https://support.hypernode.com/en/ecommerce/shopware/how-do-i-configure-a-robots-txt-file-in-shopware6-on-hypernode/ -->
 
@@ -15,8 +12,7 @@ A `robots.txt` file allows you to instruct search engine crawlers on which parts
 
 ## Setup for a single robots.txt file without multistore
 
-Create a new text file named `robots.txt` and place this file in the `public` directory of your Shopware 6 installation.
-You can insert the example text below into this file:
+Create a new text file named `robots.txt` and place this file in the `public` directory of your Shopware 6 installation. You can insert the example text below into this file:
 
 ```text
 User-agent: *
