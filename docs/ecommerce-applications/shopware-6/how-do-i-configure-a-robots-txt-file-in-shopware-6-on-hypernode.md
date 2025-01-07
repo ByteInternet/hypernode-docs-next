@@ -1,6 +1,10 @@
-______________________________________________________________________
-
-## myst: html_meta: description: Learn how to configure a robots.txt file in Shopware 6 on Hypernode to optimize search engines. title: How do I configure a robots.txt file in Shopware 6 on Hypernode?
+---
+myst:
+  html_meta:
+    description: Learn how to configure a robots.txt file in Shopware 6 on 
+      Hypernode to optimize search engines.
+    title: How do I configure a robots.txt file in Shopware 6 on Hypernode?
+---
 
 <!-- source: https://support.hypernode.com/en/ecommerce/shopware/how-do-i-configure-a-robots-txt-file-in-shopware6-on-hypernode/ -->
 
