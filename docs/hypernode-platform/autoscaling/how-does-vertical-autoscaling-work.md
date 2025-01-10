@@ -5,10 +5,12 @@ myst:
       on CPU usage metrics, allowing efficient workload management without manual
       intervention. Configure thresholds, durations, and understand the workflow for
       seamless autoscaling on Hypernode.
-    title: How does Autoscaling work? | Hypernode
+    title: How does vertical Autoscaling work? | Hypernode
+redirect_from:
+  - hypernode-platform/autoscaling/how-does-autoscaling-work
 ---
 
-# How does Autoscaling work?
+# How does vertical Autoscaling work?
 
 Vertical autoscaling is triggered once the conditions are met from the configured settings in the Control Panel. You can configure the following:
 
@@ -41,6 +43,6 @@ Simply turn off the autoscaling feature in your control panel. This prevents sub
 
 Regardless of the number of times your Hypernode was autoscaled, you will go back to your initial plan after 24 hours from your initial upgrade.
 
-## Enabling Autoscaling
+## Enabling vertical Autoscaling
 
-For detailed steps on enabling Autoscaling, please refer to our documentation: [How to enable Autoscaling?](how-to-enable-autoscaling.md)
+For detailed steps on enabling Autoscaling, please refer to our documentation: [How to enable vertical Autoscaling?](how-to-enable-vertical-autoscaling.md)
