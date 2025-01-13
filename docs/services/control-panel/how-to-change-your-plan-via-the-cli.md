@@ -45,9 +45,8 @@ Use the command below to see an overview of all products and possible parameters
 
 All Hypernode plan codes can also be found in the below table. For plan pricing, please visit the [pricing page](https://www.hypernode.com/en/plans-and-prices/).
 
-
 |                      |                        |          |         |          |                    |
-|----------------------|------------------------| -------- |---------| -------- | ------------------ |
+| -------------------- | ---------------------- | -------- | ------- | -------- | ------------------ |
 | **Product code**     | **Name**               | **CPUs** | **RAM** | **Disk** | **Provider**       |
 | FALCON_XS_202203     | Falcon XS              | 2        | 4 GB    | 44 GB    | Combell OpenStack  |
 | FALCON_XS_202203DEV  | Falcon XS Development  | 2        | 4 GB    | 44 GB    | Combell OpenStack  |
