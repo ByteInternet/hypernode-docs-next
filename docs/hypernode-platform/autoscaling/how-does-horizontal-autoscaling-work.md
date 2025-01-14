@@ -77,7 +77,7 @@ To make use of Horizontal autoscaling, Varnish should be enabled and configured 
 You can check if Varnish is enabled on your Hypernode by running
 
 ```console
-app@abcdef-hnclusterweb1-magweb-tbbm:~$ hypernode-systemctl settings varnish_enabled
+app@abcdef-example-magweb-cmbl:~$ hypernode-systemctl settings varnish_enabled
 varnish_enabled is set to value True
 ```
 
@@ -102,7 +102,7 @@ acl purge {
 The configured MySQL version should be 5.7 or above. You can check the enabled MySQL version by running the following command.
 
 ```console
-app@abcdef-hnclusterweb1-magweb-tbbm:~$ hypernode-systemctl settings mysql_version
+app@abcdef-example-magweb-cmbl:~$ hypernode-systemctl settings mysql_version
 mysql_version is set to value 8.0
 ```
 
@@ -149,14 +149,14 @@ The persistent instance will be used to store the sessions so we can access the 
 You can check if Redis Persistent is enabled on your Hypernode by running
 
 ```console
-app@abcdef-hnclusterweb1-magweb-tbbm:~$ hypernode-systemctl settings redis_persistent_instance
+app@abcdef-example-magweb-cmbl:~$ hypernode-systemctl settings redis_persistent_instance
 redis_persistent_instance is set to value True
 ```
 
 If Redis Persistent instance is not enabled, you can enable the second Redis instance for sessions you run the command:
 
 ```console
-app@abcdef-hnclusterweb1-magweb-tbbm:~$ hypernode-systemctl settings redis_persistent_instance True
+app@abcdef-example-magweb-cmbl:~$ hypernode-systemctl settings redis_persistent_instance True
 ```
 
 Make sure Redis session is configured as [described](../../ecommerce-applications/magento-2/how-to-configure-redis-for-magento-2.md#configure-magento-2-to-use-redis-as-the-session-store) in our docs
