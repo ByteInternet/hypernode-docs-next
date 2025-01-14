@@ -135,6 +135,10 @@ Make sure supervisor is disabled and that there are no supervisor services confi
 
 Make sure podman is disabled and that there are no podman services running.
 
+#### Disable Rootless Docker
+
+In addition to disabling Podman services, ensure that Rootless Docker is also disabled. 
+
 #### Configure hostnames correctly
 
 The database, cache, session and queue of the application must be configured with correct hostnames instead of `localhost` or `127.0.0.1`. This way the services will be available across multiple hypernodes when the app is autoscaled.
