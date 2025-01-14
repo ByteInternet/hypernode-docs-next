@@ -137,7 +137,7 @@ Make sure podman is disabled and that there are no podman services running.
 
 #### Disable Rootless Docker
 
-In addition to disabling Podman services, ensure that Rootless Docker is also disabled. 
+In addition to disabling Podman services, ensure that Rootless Docker is also disabled.
 
 #### Configure hostnames correctly
 
