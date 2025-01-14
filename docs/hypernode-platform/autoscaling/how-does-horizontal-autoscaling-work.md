@@ -191,9 +191,12 @@ But please make sure to configure RabbitMQ without the default guest user.
 
 Please make sure to enable remote storage for your application and configure it correctly as only AWS-s3 remote storage drivers are supported.
 
-Make sure that the `remote_storage` key is present in the Magento2 configuration file at `<magento_root>/app/etc/env.php` with the correct config.
+#### Make sure database storage is disabled & remote storage is enabled and configured
 
-More information about [S3 Remote Storage with Magento2](https://experienceleague.adobe.com/en/docs/commerce-operations/configuration-guide/storage/remote-storage/remote-storage-aws-s3)
+Remote storage is a requirement for Horizontal autoscaling. This is because the media files should be stored on a remote storage location instead of the local filesystem.
+This way the media files are available across multiple Hypernodes when the app is scaled up, and after scaling down the media files are still available.
+
+Follow our documentation on [remote storage for Magento 2](../../ecommerce-applications/magento-2/how-to-configure-remote-storage-for-magento-2-x) to configure remote storage.
 
 ## Enabling Horizontal Autoscaling
 
