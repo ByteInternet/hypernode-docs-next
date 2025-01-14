@@ -8,4 +8,4 @@ pytest-xdist==2.5.0
 mypy==1.0.0
 flake8==3.9.2
 tox==3.25.0
-inotify==0.2.10
+watchdog

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-import datetime
+import os
 import subprocess
-
-from inotify.adapters import InotifyTree
+from datetime import datetime
+from pathlib import Path
+from time import sleep
 
 
 def build_docs():
@@ -15,54 +16,53 @@ def refresh_assets():
     )
 
 
-def watch_for_changes(debug=False):
-    i = InotifyTree("docs")
+def watch_for_changes():
+    """Watch for changes using watchdog."""
+    from watchdog.events import FileSystemEvent, FileSystemEventHandler
+    from watchdog.observers import Observer
 
-    IGNORED_EVENTS = ["IN_CLOSE_WRITE", "IN_CLOSE_NOWRITE", "IN_ACCESS", "IN_OPEN"]
-    IGNORED_PATHS = ["docs/_build"]
+    class MyHandler(FileSystemEventHandler):
+        def __init__(self):
+            super().__init__()
+            self.last_build = datetime.now()
 
-    last_build = None
+        def on_modified(self, event: FileSystemEvent):
+            cwd = os.getcwd()
+            file_path = Path(event.src_path)
 
-    for event in i.event_gen(yield_nones=False):
-        (_, type_names, path, filename) = event
+            IGNORED_PATHS = ["docs/_build"]
 
-        ignore = False
-        for ignored_event_type in IGNORED_EVENTS:
-            if ignored_event_type in type_names:
-                ignore = True
-                break
+            if event.is_directory:
+                return
 
-        for ignored_path in IGNORED_PATHS:
-            if path.startswith(ignored_path):
-                ignore = True
-                break
+            if file_path.name.isdigit():
+                return
 
-        if (
-            filename.endswith(".swx")
-            or filename.endswith(".swp")
-            or filename.endswith("~")
-        ):
-            ignore = True
+            if (
+                file_path.name.endswith(".swx")
+                or file_path.name.endswith(".swp")
+                or file_path.name.endswith("~")
+            ):
+                return
 
-        if ignore:
-            continue
+            for ignored_path in IGNORED_PATHS:
+                ignored_path = os.path.join(cwd, ignored_path)
+                if str(file_path).startswith(ignored_path):
+                    return
 
-        if last_build:
-            # If build has been triggered in the last 50 ms, skip
-            delta = (datetime.datetime.now() - last_build).microseconds / 1000
-            if delta < 50:
-                continue
+            build_docs()
+            refresh_assets()
 
-        build_docs()
-        refresh_assets()
-        last_build = datetime.datetime.now()
+    event_handler = MyHandler()
+    observer = Observer()
+    observer.schedule(event_handler, path="docs", recursive=True)
+    observer.start()
 
-        if debug:
-            print(
-                "PATH=[{}] FILENAME=[{}] EVENT_TYPES={}".format(
-                    path, filename, type_names
-                )
-            )
+    try:
+        while True:
+            sleep(1)
+    except KeyboardInterrupt:
+        observer.stop()
 
 
 if __name__ == "__main__":
