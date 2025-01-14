@@ -72,12 +72,12 @@ Another way to access the admin interface is via [hypernode-vpn](https://changel
 You can also create your own RabbitMQ users. This can be done by in the RabbitMQ admin interface, as follows:
 
 1. Go to the RabbitMQ admin interface
-2. Click on the `Admin` tab
-3. Click on `Add a user`
-4. Fill in the username and password
-5. Click on `Add user`
-6. Click on the user you just created
-7. Click on `Set permission`
+1. Click on the `Admin` tab
+1. Click on `Add a user`
+1. Fill in the username and password
+1. Click on `Add user`
+1. Click on the user you just created
+1. Click on `Set permission`
 
 ## RabbitMQ and Magento 2
 
