@@ -10,8 +10,6 @@ redirect_from:
   - /knowledgebase/resolving-429-many-requests/
 ---
 
-<!-- source: https://support.hypernode.com/en/hypernode/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests/ -->
-
 # How to Resolve Rate Limited Requests (429 Too Many Requests)
 
 To protect your Hypernode from all kinds of attacks, bots, brute forces, and scriptkiddies causing downtime, we've implemented several layers of rate limiting.
@@ -130,7 +128,7 @@ To prevent a single IP from using all the FPM workers available simultaneously, 
 In some cases, it might be necessary to exclude specific IP addresses from the per IP rate limiting. If you wish to exclude an IP address, you can do so by creating a config file called `/data/web/nginx/http.ratelimit` with the following content:
 
 ```nginx
-geo $conn_limit_map {
+geo $limit_conn_per_ip {
     default $remote_addr;
     198.51.100.69 '';
 }
@@ -141,7 +139,7 @@ In this example, we have excluded the IP address **198.51.100.69** by setting an
 In addition to excluding a single IP address, it is also possible to allow a whole range of IP addresses. You can do this by using the so-called CIDR notation (e.g., 198.51.100.0/24 to whitelist all IP addresses within the range 198.51.100.0 to 198.51.100.255). In that case, you can use the following snippet in `/data/web/nginx/http.ratelimit` instead:
 
 ```nginx
-geo $conn_limit_map {
+geo $limit_conn_per_ip {
     default $remote_addr;
     198.51.100.0/24 '';
 }
@@ -154,7 +152,7 @@ When your shop performance is very poor, it’s possible all your FPM workers ar
 For debugging purposes, however, it could be helpful to disable the per-IP connection limit for all IP’s. With the following snippet in `/data/web/nginx/http.ratelimit` , it is possible to altogether disable IP based rate limiting:
 
 ```nginx
-geo $conn_limit_map {
+geo $limit_conn_per_ip {
     default '';
 }
 ```
@@ -179,7 +177,7 @@ if ($request_uri ~ ^\/elasticsearch.php$ ) {
 In the example above, the URLs `*/rest/V1/example-call/*` and `/elasticsearch.php` are the ones that have to be excluded. You now have to use the `$ratelimit_request` variable as a default value in the file `/data/web/nginx/http.ratelimit` (see below) to exclude these URLs from the rate limiter and make sure that bots and crawlers will still be rate limited based on their User Agent.
 
 ```nginx
-geo $conn_limit_map {
+geo $limit_conn_per_ip {
     default $ratelimit_request_url;
 }
 ```
