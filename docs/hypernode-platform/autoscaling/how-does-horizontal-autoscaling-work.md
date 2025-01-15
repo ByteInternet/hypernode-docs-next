@@ -73,7 +73,14 @@ For now, we don't support horizontal autoscaling for development plans.
 
 #### Enable and configure Varnish
 
-To make use of Horizontal autoscaling, Varnish should be enabled and configured on the Hypernode.
+Varnish is a requirement, because it's essential to deliver cached pages from the load balancer instead of the application servers when scaled up.
+The benefits are:
+
+- Pages in the cache are served faster, because it is one less network hop
+- Saves network bandwidth
+- Saves CPU usage for both load balancer and application servers
+- Page cache is not affected by scaling up or down
+
 You can check if Varnish is enabled on your Hypernode by running
 
 ```console
@@ -99,7 +106,9 @@ acl purge {
 
 #### Make sure to use MySQL 5.7 or higher
 
-The configured MySQL version should be 5.7 or above. You can check the enabled MySQL version by running the following command.
+MySQL 5.7 or higher is a requirement, because those versions support auto negotiation of TLS. TLS is an essential part for horizontal autoscaling, because the application servers will connect to the MySQL instance over the internet instead of wireguard.
+
+You can check the enabled MySQL version by running the following command:
 
 ```console
 app@abcdef-example-magweb-cmbl:~$ hypernode-systemctl settings mysql_version
@@ -116,9 +125,13 @@ You should see something similar to `'host' => 'mysqlmaster',`. If this is not t
 
 Make sure supervisor is disabled and that there are no supervisor services configured.
 
+For now, we don't support having supervisor services, because we can't guarantee everything works when scaling up. If you do think your use case should be supported, please let us know!
+
 #### Disable Podman services
 
 Make sure podman is disabled and that there are no podman services running.
+
+For now, we don't support having podman containers/services, because we can't guarantee everything works when scaling up. If you do think your use case should be supported, please let us know!
 
 #### Configure hostnames correctly
 
@@ -133,7 +146,9 @@ Make sure the env variables (db, cache, session, queue) are not using localhost.
 Horizontal autoscaling is available for Magento 2.4.7 and higher.
 To make use of Horizontal autoscaling, there are a couple of other requirements the application should meet.
 
-#### Make sure Redis cache is configured properly
+#### Make sure Redis cache is configured
+
+Having a centralized cache database is essential for a consistent experience for your application.
 
 Please make sure Redis cache is configured properly in the Magento 2 configuration file at `<magento_root>/app/etc/env.php`.
 
@@ -143,7 +158,8 @@ More information about [Redis on Hypernode](../../ecommerce-applications/magento
 
 #### Enable and configure Redis sessions
 
-Redis persistent is another requirement before you can make use of Horizontal autoscaling.
+Redis sessions on the persistent instance is also required to make use of Horizontal autoscaling.
+
 The persistent instance will be used to store the sessions so we can access the same sessions from the Horizontal autoscale Hypernodes.
 
 You can check if Redis Persistent is enabled on your Hypernode by running
