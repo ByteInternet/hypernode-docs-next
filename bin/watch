@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os
 import subprocess
-from datetime import datetime
+import time
 from pathlib import Path
 from time import sleep
 
@@ -24,7 +24,7 @@ def watch_for_changes():
     class MyHandler(FileSystemEventHandler):
         def __init__(self):
             super().__init__()
-            self.last_build = datetime.now()
+            self.last_build = time.time()
 
         def on_modified(self, event: FileSystemEvent):
             cwd = os.getcwd()
@@ -50,8 +50,12 @@ def watch_for_changes():
                 if str(file_path).startswith(ignored_path):
                     return
 
+            if self.last_build and time.time() - self.last_build < 0.5:
+                return
+
             build_docs()
             refresh_assets()
+            self.last_build = time.time()
 
     event_handler = MyHandler()
     observer = Observer()
