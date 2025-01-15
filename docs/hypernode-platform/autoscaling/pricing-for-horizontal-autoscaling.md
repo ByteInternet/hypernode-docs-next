@@ -27,7 +27,3 @@ The fixed license costs 25 euros per month and is added to your normal Hypernode
 | Falcon 3XL             | €1.02           |
 | Falcon 4XL             | €1.5            |
 | Falcon 5XL             | €2.2            |
-
-Please note that even though the costs are listed per minute, all the charges are applied on an hourly basis.
-
-So, if you had an extra server when you were autoscaled (due to high load) for 45 minutes, you will be charged for an hour. So the cost will be `60 * cost per minute`.
