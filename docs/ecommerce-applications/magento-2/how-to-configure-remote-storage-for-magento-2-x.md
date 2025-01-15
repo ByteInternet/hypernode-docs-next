@@ -21,7 +21,6 @@ This can be useful for many reasons, such as:
 ## Configuring the application
 
 Configuring Magento 2 to start storing files in your bucket is done using a single command.
-If you're using a different provider than AWS S3, you need to specify the `--remote-storage-endpoint` option.
 
 **AWS S3**
 
@@ -36,11 +35,13 @@ bin/magento setup:config:set \
 
 **Other S3 compatible providers**
 
+If you're using a different provider than AWS S3, you need to specify the `--remote-storage-endpoint` option.
+
 ```bash
 bin/magento setup:config:set \
     --remote-storage-driver="aws-s3" \
     --remote-storage-bucket="my_bucket_name" \
-    --remote-storage-region="my-aws-region" \
+    --remote-storage-region="provider-region" \
     --remote-storage-key="abcd1234" \
     --remote-storage-secret="abcd1234" \
     --remote-storage-endpoint="https://my-s3-compatible.endpoint.com"
@@ -66,6 +67,47 @@ This is much faster than Magento's built-in sync, because `aws s3 sync` uploads 
 ## The storage flag file in the bucket
 
 Magento's S3 implementation creates a test file called `storage.flag`, which is basically created to test if the connection works. So this is not a magic file to mark anything ([source](https://github.com/magento/magento2/blob/6f4805f82bb7511f72935daa493d48ebda3d9039/app/code/Magento/AwsS3/Driver/AwsS3.php#L104)).
+
+## Serving assets from your S3 bucket
+
+To start serving media assets from your S3 bucket, you need to make some adjustments to your nginx configuration.
+
+```nginx
+location /media {
+    # ...
+    location ~* \.(ico|jpg|jpeg|png|gif|svg|js|css|swf|eot|ttf|otf|woff|woff2)$ {
+        resolver 8.8.8.8;
+        set $bucket "<my_bucket_name>";
+        proxy_pass https://s3.amazonaws.com/$bucket$uri;
+        proxy_pass_request_body off;
+        proxy_pass_request_headers off;
+        proxy_intercept_errors on;
+        proxy_hide_header "x-amz-id-2";
+        proxy_hide_header "x-amz-request-id";
+        proxy_hide_header "x-amz-storage-class";
+        proxy_hide_header "Set-Cookie";
+        proxy_ignore_headers "Set-Cookie";
+    }
+    # ...
+}
+```
+
+Also make sure your S3 bucket policies are configured correctly, so that only `/media` is publicly readable. For example:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowPublicReadOnlyForMedia",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::<your-bucket-name>/media/*"
+    }
+  ]
+}
+```
 
 ## Magento remote storage documentation
 
