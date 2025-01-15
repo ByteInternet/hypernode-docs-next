@@ -63,7 +63,9 @@ We will divide them between Hypernode-specific and Application-specific requirem
 
 #### Operating system
 
-- The operating system of the Hypernode should be Debian Bookworm. If you would like to upgrade the os of your Hypernode, feel free to contact our support team for help. https://www.hypernode.com/en/contact/
+Horizontal autoscaling is only available on Hypernodes with the Debian Bookworm operating system.
+
+If you would like to upgrade the operating system of your Hypernode, feel free to [contact our support team](https://www.hypernode.com/en/contact/) for help.
 
 #### Make sure the Hypernode is a production plan
 
@@ -71,36 +73,31 @@ For now, we don't support horizontal autoscaling for development plans.
 
 #### Enable and configure Varnish
 
-To make use of Horizontal autoscaling, Varnish should be enabled and configured on the Hypernode.
+Varnish is a requirement, because it's essential to deliver cached pages from the load balancer instead of the application servers when scaled up.
+The benefits are:
+
+- Pages in the cache are served faster, because it is one less network hop
+- Saves network bandwidth
+- Saves CPU usage for both load balancer and application servers
+- Page cache is not affected by scaling up or down
+
 You can check if Varnish is enabled on your Hypernode by running
 
 ```console
-hypernode-systemctl settings varnish_enabled
-```
-
-Example output if Varnish is enabled:
-
-```console
+app@abcdef-example-magweb-cmbl:~$ hypernode-systemctl settings varnish_enabled
 varnish_enabled is set to value True
 ```
 
 If Varnish is not enabled, you can [enable Varnish](../varnish/how-to-enable-varnish-on-hypernode.md) by following the documentation
-If varnish is enabled on your Hypernode, your Magento store should also be configured to make use of varnish.
-You can verify if the Varnish host is configured correctly by running the following command from the Magento root:
+If Varnish is enabled on your Hypernode, your Magento store should also be configured to make use of varnish.
 
-```console
-php bin/magento config:show  system/full_page_cache/varnish/backend_host
-```
+Verify that your VCL has the health probe disabled. While we do support the health probe, we do not recommend to use it in a basic setup.
+The health probe can be removed by removing the `.probe` from your `backend default` section in the VCL file.
+If you do, however, want to use the health probe, make sure that you set the backend host to `127.0.0.1` instead of `localhost`.
 
-The output should show `varnish` as backend. If it is configured as something else (like `localhost` or `127.0.0.1`), you can update it by running which sets the backend host to `varnish` instead.
+Additionally, make sure the IP range `10.0.0.0/24` is allowed under the `acl purge` section in the Varnish VCL file. The `acl purge` section should look like the following:
 
-```console
-php bin/magento config:set  system/full_page_cache/varnish/backend_host varnish
-```
-
-Additionally make sure the IP range `10.0.0.0/24` is set to the `acl_purge` section in the Varnish VCL file. The `acl_purge` section should look something similar:loaded Varnish VCL.
-
-```console
+```vcl
 acl purge {
     "localhost";
     "10.0.0.0/24";
@@ -109,15 +106,12 @@ acl purge {
 
 #### Make sure to use MySQL 5.7 or higher
 
-The configured MySQL version should be 5.7 or above. You can check the enabled MySQL version by running the following command.
+MySQL 5.7 or higher is a requirement, because those versions support auto negotiation of TLS. TLS is an essential part for horizontal autoscaling, because the application servers will connect to the MySQL instance over the internet instead of wireguard.
+
+You can check the enabled MySQL version by running the following command:
 
 ```console
-hypernode-systemctl settings mysql_version
-```
-
-Example output if MySQL version is 8.0:
-
-```console
+app@abcdef-example-magweb-cmbl:~$ hypernode-systemctl settings mysql_version
 mysql_version is set to value 8.0
 ```
 
@@ -131,9 +125,13 @@ You should see something similar to `'host' => 'mysqlmaster',`. If this is not t
 
 Make sure supervisor is disabled and that there are no supervisor services configured.
 
+For now, we don't support having supervisor services, because we can't guarantee everything works when scaling up. If you do think your use case should be supported, please let us know!
+
 #### Disable Podman services
 
 Make sure podman is disabled and that there are no podman services running.
+
+For now, we don't support having podman containers/services, because we can't guarantee everything works when scaling up. If you do think your use case should be supported, please let us know!
 
 #### Configure hostnames correctly
 
@@ -141,34 +139,40 @@ The database, cache, session and queue of the application must be configured wit
 
 Make sure the env variables (db, cache, session, queue) are not using localhost.
 
-### Application Specific Requirements - Magento2
+### Application Specific Requirements - Magento 2
 
 #### Supported CMS
 
 Horizontal autoscaling is available for Magento 2.4.7 and higher.
 To make use of Horizontal autoscaling, there are a couple of other requirements the application should meet.
 
-#### Enable and configure Redis Persistent
+#### Make sure Redis cache is configured
 
-Redis persistent is another requirement before you can make use of Horizontal autoscaling.
+Having a centralized cache database is essential for a consistent experience for your application.
+
+Please make sure Redis cache is configured properly in the Magento 2 configuration file at `<magento_root>/app/etc/env.php`.
+
+For the Redis hostname, use `redismaster` instead of `localhost` or `127.0.0.1`.
+
+More information about [Redis on Hypernode](../../ecommerce-applications/magento-2/how-to-configure-redis-for-magento-2.md).
+
+#### Enable and configure Redis sessions
+
+Redis sessions on the persistent instance is also required to make use of Horizontal autoscaling.
+
 The persistent instance will be used to store the sessions so we can access the same sessions from the Horizontal autoscale Hypernodes.
 
 You can check if Redis Persistent is enabled on your Hypernode by running
 
 ```console
-hypernode-systemctl settings redis_persistent_instance
-```
-
-Example output if Redis Persistent is enabled:
-
-```console
+app@abcdef-example-magweb-cmbl:~$ hypernode-systemctl settings redis_persistent_instance
 redis_persistent_instance is set to value True
 ```
 
 If Redis Persistent instance is not enabled, you can enable the second Redis instance for sessions you run the command:
 
 ```console
-hypernode-systemctl settings redis_persistent_instance --value True
+app@abcdef-example-magweb-cmbl:~$ hypernode-systemctl settings redis_persistent_instance True
 ```
 
 Make sure Redis session is configured as [described](../../ecommerce-applications/magento-2/how-to-configure-redis-for-magento-2.md#configure-magento-2-to-use-redis-as-the-session-store) in our docs
@@ -176,24 +180,45 @@ Please notice the Redis host in the setup documentation. The Redis host should b
 
 #### Make sure Elasticsearch/Opensearch is configured properly
 
-Please make sure Elasticsearch or Opensearch host is set to `elasticsearchmaster` in the Magento2 configuration file at `<magento_root>/app/etc/env.php`
-More information about [Elasticsearch on Hypernode](../../hypernode-platform/tools/how-to-use-elasticsearch-on-hypernode.md)
+Please make sure Elasticsearch or Opensearch host is set to `elasticsearchmaster` your Magento 2 configuration.
+
+To set the hostname, you can run the following command for OpenSearch:
+
+```console
+app@abcdef-example-magweb-cmbl:~$ bin/magento config:set catalog/search/opensearch_server_hostname elasticsearchmaster
+```
+
+For ElasticSearch:
+
+```console
+app@abcdef-example-magweb-cmbl:~$ bin/magento config:set catalog/search/elasticsearch7_server_hostname elasticsearchmaster
+```
+
+More information about [Elasticsearch on Hypernode](../../hypernode-platform/tools/how-to-use-elasticsearch-on-hypernode.md).
 
 #### Make sure RabbitMQ configured properly
 
-Please make sure RabbitMQ host is set to `rabbitmqmaster` in the Magento2 configuration file at `<magento_root>/app/etc/env.php`
-More information about [RabbitMQ o Hypernode](../../best-practices/database/how-to-run-rabbitmq-on-hypernode.md)
+Please make sure RabbitMQ host is set to `rabbitmqmaster` in the Magento 2 configuration file at `<magento_root>/app/etc/env.php`
+More information about [RabbitMQ on Hypernode](../../best-practices/database/how-to-run-rabbitmq-on-hypernode.md)
 
-There is a rabbitmq user provisioned by Hypernode called hypernode-admin as a non-default user. But you can also configure RabbitMQ with a new different user of your own.
-But please make sure to configure RabbitMQ without the default guest user.
+There is a rabbitmq user provisioned by Hypernode called `hypernode-admin` as a non-default user, but you can also configure RabbitMQ with a new different user of your own.
+Please make sure to configure RabbitMQ without the default guest user.
 
-#### Make sure Database storage is disabled & Remote storage is enabled and configured.
+For example, you can run the following command to change your RabbitMQ config in Magento 2:
 
-Please make sure to enable remote storage for your application and configure it correctly as only AWS-s3 remote storage drivers are supported.
+```bash
+bin/magento setup:config:set \
+    --amqp-host="rabbitmqmaster" \
+    --amqp-user="my_rabbitmq_user" \
+    --amqp-password="my_rabbitmq_password"
+```
 
-Make sure that the `remote_storage` key is present in the Magento2 configuration file at `<magento_root>/app/etc/env.php` with the correct config.
+#### Make sure database storage is disabled & remote storage is enabled and configured
 
-More information about [S3 Remote Storage with Magento2](https://experienceleague.adobe.com/en/docs/commerce-operations/configuration-guide/storage/remote-storage/remote-storage-aws-s3)
+Remote storage is a requirement for Horizontal autoscaling. This is because the media files should be stored on a remote storage location instead of the local filesystem.
+This way the media files are available across multiple Hypernodes when the app is scaled up, and after scaling down the media files are still available.
+
+Follow our documentation on [remote storage for Magento 2](../../ecommerce-applications/magento-2/how-to-configure-remote-storage-for-magento-2-x) to configure remote storage.
 
 ## Enabling Horizontal Autoscaling
 
