@@ -72,26 +72,43 @@ Magento's S3 implementation creates a test file called `storage.flag`, which is 
 
 To start serving media assets from your S3 bucket, you need to make some adjustments to your nginx configuration.
 
+We recommend that you create a configuration file defining the cache storage location, structure, size constraints, and cache expiration policies.
+```bash
+echo "proxy_cache_path /data/var/nginx-asset-cache levels=1:2 keys_zone=asset_cache:10m max_size=1g inactive=1w;" > /data/web/nginx/http.asset_proxy_cache.conf
+```
+
+Then update your nginx configuration in the following manner.
+
 ```nginx
 location /media {
     # ...
     location ~* \.(ico|jpg|jpeg|png|gif|svg|js|css|swf|eot|ttf|otf|woff|woff2)$ {
         resolver 8.8.8.8;
         set $bucket "<my_bucket_name>";
-        proxy_pass https://s3.amazonaws.com/$bucket$uri;
+        proxy_pass https://$bucket.s3.amazonaws.com$uri;
         proxy_pass_request_body off;
         proxy_pass_request_headers off;
         proxy_intercept_errors on;
         proxy_hide_header "x-amz-id-2";
         proxy_hide_header "x-amz-request-id";
         proxy_hide_header "x-amz-storage-class";
+        proxy_hide_header "x-amz-server-side-encryption";
         proxy_hide_header "Set-Cookie";
         proxy_ignore_headers "Set-Cookie";
+        
+        # only include the following if you followed the previous step
+        proxy_cache_key "$bucket$uri";
+        proxy_cache_valid 200 302 7d;
+        proxy_cache_methods GET HEAD;
+        proxy_cache_background_update on;
+        proxy_cache_use_stale updating;
+        proxy_cache asset_cache;
+        
     }
     # ...
 }
 ```
-
+Keep in mind your bucket URL might be different depending on your AWS region. For example, you might need to change it to `https://s3.amazonaws.com/$bucket$uri` instead.
 Also make sure your S3 bucket policies are configured correctly, so that only `/media` is publicly readable. For example:
 
 ```json
