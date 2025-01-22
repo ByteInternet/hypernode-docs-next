@@ -68,10 +68,10 @@ Magento's S3 implementation creates a test file called `storage.flag`, which is 
 
 To start serving media assets from your S3 bucket, you need to make some adjustments to your nginx configuration.
 
-We recommend that you create a configuration file defining the cache storage location, structure, size constraints, and cache expiration policies.
+We recommend that you create a configuration file `/data/web/nginx/http.asset_proxy_cache.conf` defining the cache storage location, structure, size constraints, and cache expiration policies.
 
-```bash
-echo "proxy_cache_path /data/var/nginx-asset-cache levels=1:2 keys_zone=asset_cache:10m max_size=1g inactive=1w;" > /data/web/nginx/http.asset_proxy_cache.conf
+```nginx
+proxy_cache_path /data/var/nginx-asset-cache levels=1:2 keys_zone=asset_cache:10m max_size=1g inactive=1w;
 ```
 
 Then update your nginx configuration in the following manner.
@@ -93,7 +93,7 @@ location /media {
         proxy_hide_header "Set-Cookie";
         proxy_ignore_headers "Set-Cookie";
         
-        # only include the following if you followed the previous step
+        # include the following if you defined proxy_cache_path previously
         proxy_cache_key "$bucket$uri";
         proxy_cache_valid 200 302 7d;
         proxy_cache_methods GET HEAD;
