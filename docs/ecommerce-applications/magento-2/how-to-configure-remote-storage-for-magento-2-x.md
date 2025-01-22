@@ -1,10 +1,6 @@
----
-myst:
-  html_meta:
-    description: Configure remote storage for Magento 2.x. Learn how to configure
-      Magento 2 to start storing files in your bucket using a single command.
-    title: How to Configure Remote Storage for Magento 2.x | Hypernode
----
+______________________________________________________________________
+
+## myst: html_meta: description: Configure remote storage for Magento 2.x. Learn how to configure Magento 2 to start storing files in your bucket using a single command. title: How to Configure Remote Storage for Magento 2.x | Hypernode
 
 # How to Configure Remote Storage for Magento 2.x
 
@@ -73,6 +69,7 @@ Magento's S3 implementation creates a test file called `storage.flag`, which is 
 To start serving media assets from your S3 bucket, you need to make some adjustments to your nginx configuration.
 
 We recommend that you create a configuration file defining the cache storage location, structure, size constraints, and cache expiration policies.
+
 ```bash
 echo "proxy_cache_path /data/var/nginx-asset-cache levels=1:2 keys_zone=asset_cache:10m max_size=1g inactive=1w;" > /data/web/nginx/http.asset_proxy_cache.conf
 ```
@@ -108,6 +105,7 @@ location /media {
     # ...
 }
 ```
+
 Keep in mind your bucket URL might be different depending on your AWS region. For example, you might need to change it to `https://s3.amazonaws.com/$bucket$uri` instead.
 Also make sure your S3 bucket policies are configured correctly, so that only `/media` is publicly readable. For example:
 
