@@ -100,7 +100,6 @@ location /media {
         proxy_cache_background_update on;
         proxy_cache_use_stale updating;
         proxy_cache asset_cache;
-        
     }
     # ...
 }
