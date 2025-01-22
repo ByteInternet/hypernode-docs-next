@@ -1,6 +1,10 @@
-______________________________________________________________________
-
-## myst: html_meta: description: Configure remote storage for Magento 2.x. Learn how to configure Magento 2 to start storing files in your bucket using a single command. title: How to Configure Remote Storage for Magento 2.x | Hypernode
+---
+myst:
+  html_meta:
+    description: Configure remote storage for Magento 2.x. Learn how to configure
+      Magento 2 to start storing files in your bucket using a single command.
+    title: How to Configure Remote Storage for Magento 2.x | Hypernode
+---
 
 # How to Configure Remote Storage for Magento 2.x
 
