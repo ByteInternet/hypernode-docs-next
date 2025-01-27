@@ -70,29 +70,109 @@ Magento's S3 implementation creates a test file called `storage.flag`, which is 
 
 ## Serving assets from your S3 bucket
 
-To start serving media assets from your S3 bucket, you need to make some adjustments to your nginx configuration.
+To start serving media assets from your S3 bucket, you need to make some adjustments to your nginx configuration. Create the following file at `/data/web/nginx/example.com/server.assets.conf` for each relevant vhost:
 
 ```nginx
-location /media {
-    # ...
-    location ~* \.(ico|jpg|jpeg|png|gif|svg|js|css|swf|eot|ttf|otf|woff|woff2)$ {
-        resolver 8.8.8.8;
-        set $bucket "<my_bucket_name>";
-        proxy_pass https://s3.amazonaws.com/$bucket$uri;
-        proxy_pass_request_body off;
-        proxy_pass_request_headers off;
-        proxy_intercept_errors on;
-        proxy_hide_header "x-amz-id-2";
-        proxy_hide_header "x-amz-request-id";
-        proxy_hide_header "x-amz-storage-class";
-        proxy_hide_header "Set-Cookie";
-        proxy_ignore_headers "Set-Cookie";
+set $backend "haproxy";
+
+location @object_storage_fallback {
+    # Proxy to object storage
+    set $bucket "my_bucket_name";
+    proxy_cache_key "$bucket$uri";
+    proxy_cache_valid 200 302 7d;
+    proxy_cache_methods GET HEAD;
+    proxy_cache_background_update on;
+    proxy_cache_use_stale updating;
+    proxy_cache asset_cache;
+    resolver 8.8.8.8;
+    proxy_pass https://$bucket.s3.amazonaws.com$uri;
+    proxy_pass_request_body off;
+    proxy_pass_request_headers off;
+    proxy_intercept_errors on;
+    proxy_hide_header "x-amz-id-2";
+    proxy_hide_header "x-amz-request-id";
+    proxy_hide_header "x-amz-storage-class";
+    proxy_hide_header "x-amz-server-side-encryption";
+    proxy_hide_header "Set-Cookie";
+    proxy_ignore_headers "Set-Cookie";
+    add_header Cache-Control "public";
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Cache-Status $upstream_cache_status;
+    expires +1y;
+
+    # If object storage fails, fallback to PHP handler
+    error_page 404 = @asset_fallback;
+    error_page 403 = @asset_fallback;
+}
+
+location @php_asset_fallback {
+    # Handle with phpfpm
+    rewrite ^/media /get.php?$args last;
+    rewrite ^/static/(version\d*/)?(.*)$ /static.php?resource=$2 last;
+    echo_exec @phpfpm;
+}
+
+location @haproxy {
+    # Handle with haproxy
+    include /etc/nginx/proxy_to_haproxy.conf;
+    proxy_pass http://127.0.0.1:8080;
+}
+
+location @asset_fallback {
+    try_files "" $asset_fallback_handler;
+}
+
+location ~ ^/static/ {
+    expires max;
+
+    # Remove signature of the static files that is used to overcome the browser cache
+    location ~ ^/static/version\d*/ {
+        rewrite ^/static/version\d*/(.*)$ /static/$1 last;
     }
-    # ...
+
+    location ~* \.(ico|jpg|jpeg|png|gif|svg|svgz|webp|avif|avifs|js|css|eot|ttf|otf|woff|woff2|html|json|webmanifest)$ {
+        add_header Cache-Control "public";
+        add_header X-Frame-Options "SAMEORIGIN";
+        expires +1y;
+
+        try_files $uri $uri/ @asset_fallback;
+    }
+    location ~* \.(zip|gz|gzip|bz2|csv|xml)$ {
+        add_header Cache-Control "no-store";
+        add_header X-Frame-Options "SAMEORIGIN";
+        expires    off;
+
+        try_files $uri $uri/ @asset_fallback;
+    }
+    try_files $uri $uri/ @asset_fallback;
+    add_header X-Frame-Options "SAMEORIGIN";
+}
+
+location /media/ {
+    try_files $uri $uri/ @asset_fallback;
+
+    location ~ ^/media/theme_customization/.*\.xml {
+        deny all;
+    }
+
+    location ~* \.(ico|jpg|jpeg|png|gif|svg|svgz|webp|avif|avifs|js|css|swf|eot|ttf|otf|woff|woff2)$ {
+        add_header Cache-Control "public";
+        add_header X-Frame-Options "SAMEORIGIN";
+        expires +1y;
+	      try_files $uri $uri/ @object_storage_fallback;
+    }
+    location ~* \.(zip|gz|gzip|bz2|csv|xml)$ {
+        add_header Cache-Control "no-store";
+        add_header X-Frame-Options "SAMEORIGIN";
+        expires    off;
+	      try_files $uri $uri/ @object_storage_fallback;
+    }
+    add_header X-Frame-Options "SAMEORIGIN";
 }
 ```
 
-Also make sure your S3 bucket policies are configured correctly, so that only `/media` is publicly readable. For example:
+Make sure to change the string `my_bucket_name` to the name of your bucket and keep in mind that your bucket URL might be different depending on your AWS region. For example, you might need to change it from `https://$bucket.s3.amazonaws.com$uri` to `https://s3.amazonaws.com/$bucket$uri` instead.
+Furthermore, ensure that your S3 bucket policies are configured correctly, so that only `/media` is publicly readable. For example:
 
 ```json
 {
