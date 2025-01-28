@@ -14,7 +14,7 @@ Horizontal autoscaling pricing has two parts.
 
 ## Fixed license
 
-The fixed license costs 25 euros per month and is added to your normal Hypernode subscription when you enable Horizontal autoscaling. If you enable it in the middle of the month, you will only pay for the remaining days of that month accordingly.
+The fixed license costs 25 euros per month and is added to your normal Hypernode subscription when you enable Horizontal autoscaling.
 
 ## Variable Pricing Table
 
