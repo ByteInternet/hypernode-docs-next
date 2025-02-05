@@ -12,7 +12,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: quay.io/hypernode/deploy:4-php8.3-node20
+    container: quay.io/hypernode/deploy:4-php8.4-node20
     steps:
       - uses: actions/checkout@v3
         with:
@@ -47,13 +47,13 @@ jobs:
       name: acceptance
       url: ${{ steps.get_brancher_hostname.outputs.BRANCHER_URL }}
     if: github.ref != 'refs/heads/master'
-    container: quay.io/hypernode/deploy:4-php8.3-node20
+    container: quay.io/hypernode/deploy:4-php8.4-node20
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: download build artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: deployment-build
           path: build/
@@ -102,7 +102,7 @@ jobs:
       name: production
       url: https://docs.hypernode.io
     if: github.ref == 'refs/heads/master'
-    container: quay.io/hypernode/deploy:4-php8.3-node20
+    container: quay.io/hypernode/deploy:4-php8.4-node20
     steps:
       - uses: actions/checkout@v3
       - name: download build artifact
