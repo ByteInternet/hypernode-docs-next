@@ -34,7 +34,7 @@ jobs:
           echo "DOCS_INDEX_FOLLOW=1" >> $GITHUB_ENV
       - run: hypernode-deploy build -vvv
       - name: archive production artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: deployment-build
           path: build/build.tgz
@@ -53,7 +53,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: download build artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: deployment-build
           path: build/
@@ -106,7 +106,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: download build artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: deployment-build
           path: build/
