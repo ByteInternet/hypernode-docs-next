@@ -70,5 +70,5 @@ If you add these folders be aware that your new folders will be empty on your fi
 ```
 
 ```php
-$configuration->addSharedFile('var/reports');
+$configuration->addSharedFolder('var/reports');
 ```
