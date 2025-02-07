@@ -30,9 +30,10 @@ We currently run Hypernodes at several different hosting suppliers:
   - Datacenter certified with ISO 14001, ISO 27001, ISO 23301, and PCI-DSS
 - Amazon Web Services (AWS)
   - [ISO 9001](https://aws.amazon.com/compliance/iso-9001-faqs/), [ISO 27001](https://aws.amazon.com/compliance/iso-27001-faqs/), [ISO 27017](https://aws.amazon.com/compliance/iso-27017-faqs/), [ISO 27018](https://aws.amazon.com/compliance/iso-27018-faqs/), certified.
-  - Datacenter certified with ISO 9001 and ISO 27001.
+  - Datacenter certified with ISO 9001 and ISO 27001, and PCI-DSS
 - Dedicated (TBBM)
   - Both ISO 27001 and ISO 9001 certified.
+  - Datacenter certified with ISO 9001, ISO 14001, ISO 27001, and PCI-DSS
 
 ## Infrastructure Hardening
 

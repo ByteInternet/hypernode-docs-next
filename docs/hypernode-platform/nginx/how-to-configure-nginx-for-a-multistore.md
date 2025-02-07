@@ -42,6 +42,14 @@ You'd have to prefix the file with `varnish` instead of `server`, like `varnish.
 This way these multistore requests will go through varnish and will then be rewritten accordingly with the `varnish.storecode` configuration.
 ```
 
+### Use a different Store Type
+
+Magento uses a default store type of `store`, you can change this to `website` too if this better fits your need, more information about this can be found on `MAGE_RUN_TYPE` in [the Magento 2 official documentation](https://experienceleague.adobe.com/en/docs/commerce-operations/configuration-guide/multi-sites/ms-overview).
+
+```nginx
+set $storetype "store";
+```
+
 ### Using Subdirectories
 
 Another option is to use subdirectories instead. Once you have added the required vhost you need to add a `server.storecode` file to the specific vhost directory (`/data/web/nginx/example.com/`) with the following content:
