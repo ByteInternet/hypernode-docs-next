@@ -29,7 +29,7 @@ With Object Storage you get -
 hypernode-object-storage --help
 ```
 
-#### Creating a Hypernode Object Storage Workspace
+### Creating a Hypernode Object Storage Workspace
 
 1. SSH into your server.
 1. Run `hypernode-object-storage create`
@@ -44,7 +44,7 @@ If you receive this error, please make sure to enable "Allow billing through CLI
 You do not have permission to order object storage for this Hypernode. Please ask the Hypernode owner to enable 'Allow billing through the CLI' in the Control Panel settings or via the API
 ```
 
-#### Retrieve object storage
+### Retrieve object storage
 
 1. Run `hypernode-object-storage info`
 1. If you want to retrieve your credentials for the workspace pass in the flag `--with-credentials`.
