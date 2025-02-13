@@ -21,11 +21,11 @@ With Object Storage you get:
 - Full Access Control & Security – Secure and manage your data with ease
 - Safe Backup & Monitoring – Ensure reliability with built-in insights
 
-# How to enable Object Storage and use it with your Hypernode?
+# Getting started with Object Storage
 
 ## CLI option
 
-```
+```console
 hypernode-object-storage --help
 ```
 
@@ -52,12 +52,12 @@ You do not have permission to order object storage for this Hypernode. Please as
 The output should look like this
 
 ```
-app@hntesthehe ~ # hypernode-object-storage info
+app@testhypernode ~ # hypernode-object-storage info
 
 +--------------------------------------+--------------+--------+------------+----------------+---------------+---------------+
 |                 UUID                 |     Name     |  Plan  | Hypernodes | Management URL |   Access Key  |   Secret Key  |
 +--------------------------------------+--------------+--------+------------+----------------+---------------+---------------+
-| fdb95093-6e5e-4cf7-a128-26e376ffb77b | hntesthehe14 | OS50GB | hntesthehe | **sensitive**  | **sensitive** | **sensitive** |
+| d8770125-6c90-4770-b00f-1716f699990a | test-storage | OS50GB | hntesthehe | **sensitive**  | **sensitive** | **sensitive** |
 +--------------------------------------+--------------+--------+------------+----------------+---------------+---------------+
 ```
 
