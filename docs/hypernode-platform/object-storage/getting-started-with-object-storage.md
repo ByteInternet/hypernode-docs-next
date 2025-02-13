@@ -9,11 +9,11 @@ redirect_from:
 
 # What is Hypernode Object Storage?
 
-Hypernode Object Storage provides an option to store media files in a persistent, remote storage container.
-
-By default, media files are stored in the same filesystem that contains the application. This is inefficient for complex, multi-server configurations, and can result in degraded performance when sharing resources.
+Hypernode Object Storage provides an option to store media files, assets, backups, documents, etc in a persistent, remote storage container.
 
 Object storage eliminates redundancy and provides a centralized, scalable solution for storing application assets, session data, and backups.
+
+By default, media files are stored in the same filesystem that contains the application. This is inefficient for complex, multi-server configurations, and can result in degraded performance when sharing resources.
 
 With Object Storage you get:
 
@@ -65,4 +65,4 @@ You can use the credentials and the URL now to configure remote storage for your
 
 ## UI option - Control Panel
 
-TBD
+Coming soon
