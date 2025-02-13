@@ -15,7 +15,7 @@ By default, media files are stored in the same filesystem that contains the appl
 
 Object storage eliminates redundancy and provides a centralized, scalable solution for storing application assets, session data, and backups.
 
-With Object Storage you get -
+With Object Storage you get:
 
 - Effortless Data Sharing – Seamless access across all Hypernodes
 - Full Access Control & Security – Secure and manage your data with ease
@@ -52,7 +52,8 @@ You do not have permission to order object storage for this Hypernode. Please as
 The output should look like this
 
 ```
-root@levkxf-hntesthehe-magweb-cmbl ~ # hypernode-object-storage info
+app@hntesthehe ~ # hypernode-object-storage info
+
 +--------------------------------------+--------------+--------+------------+----------------+---------------+---------------+
 |                 UUID                 |     Name     |  Plan  | Hypernodes | Management URL |   Access Key  |   Secret Key  |
 +--------------------------------------+--------------+--------+------------+----------------+---------------+---------------+
