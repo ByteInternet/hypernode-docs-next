@@ -51,13 +51,13 @@ You do not have permission to order object storage for this Hypernode. Please as
 
 The output should look like this
 
-```
+```console
 app@testhypernode ~ # hypernode-object-storage info
 
 +--------------------------------------+--------------+--------+------------+----------------+---------------+---------------+
 |                 UUID                 |     Name     |  Plan  | Hypernodes | Management URL |   Access Key  |   Secret Key  |
 +--------------------------------------+--------------+--------+------------+----------------+---------------+---------------+
-| d8770125-6c90-4770-b00f-1716f699990a | test-storage | OS50GB | hntesthehe | **sensitive**  | **sensitive** | **sensitive** |
+| d8770125-6c90-4770-b00f-1716f699990a | test-storage | OS50GB | testnode12 | **sensitive**  | **sensitive** | **sensitive** |
 +--------------------------------------+--------------+--------+------------+----------------+---------------+---------------+
 ```
 
