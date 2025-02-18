@@ -16,7 +16,6 @@ This can be useful for many reasons, such as:
 - Offloading storage from your server, reducing the load on your server, and improving performance.
 - Allows you to make use of [horizontal scaling](../../hypernode-platform/autoscaling/how-does-horizontal-autoscaling-work), as you can easily add more servers without having to worry about syncing files between them.
 - Allows for effortless storage capacity scaling, as you can easily increase the storage capacity of your remote storage location.
-- **Note:** Staging ports (8888, 8443) will not be available when horizontal autoscaling is enabled.
 - Serving assets from a CDN, which can improve the performance of your website.
 
 ## Configuring the application
