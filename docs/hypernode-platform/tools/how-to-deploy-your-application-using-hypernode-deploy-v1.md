@@ -166,7 +166,7 @@ defaults:
 jobs:
  build:
  runs-on: ubuntu-latest
- container: quay.io/hypernode/deploy:4-php8.3-node20
+ container: quay.io/hypernode/deploy:latest-php8.3-node20
  steps:
  - uses: actions/checkout@v2
  - uses: actions/cache@v2
@@ -186,7 +186,7 @@ jobs:
  deploy_staging:
    needs: build
    runs-on: ubuntu-latest
-   container: quay.io/hypernode/deploy:4-php8.3-node20
+   container: quay.io/hypernode/deploy:latest-php8.3-node20
    steps:
    - uses: actions/checkout@v2
    - name: download build artifact
