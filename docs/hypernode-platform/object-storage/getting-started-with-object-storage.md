@@ -63,6 +63,15 @@ app@testhypernode ~ # hypernode-object-storage info
 
 You can use the credentials and the URL now to configure remote storage for your application with the help of [this document](../../ecommerce-applications/magento-2/how-to-configure-remote-storage-for-magento-2-x.md).
 
+### Cancel/Delete object storage
+
+1. To cancel an Object storage, you can ssh into the Hypernode that is linked to that object storage.
+1. Run `hypernode-object-storage cancel`
+
+Note: The cancellation will be in effect from the end of the month.
+Also if you change your mind or forgot to pull some data. It will still be available for 7 days after the cancellation. You can always reach out to the support team for help if that happens.
+
+
 ## UI option - Control Panel
 
 Coming soon
