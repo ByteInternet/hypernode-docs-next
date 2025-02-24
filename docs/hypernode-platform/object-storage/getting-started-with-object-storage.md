@@ -71,7 +71,6 @@ You can use the credentials and the URL now to configure remote storage for your
 Note: The cancellation will be in effect from the end of the month.
 Also if you change your mind or forgot to pull some data. It will still be available for 7 days after the cancellation. You can always reach out to the support team for help if that happens.
 
-
 ## UI option - Control Panel
 
 Coming soon
