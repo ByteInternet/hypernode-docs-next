@@ -23,6 +23,7 @@ This can be useful for many reasons, such as:
 Configuring Magento 2 to start storing files in your bucket is done using a single command.
 
 **Hypernode Object Storage**
+
 ```bash
 something something?
 ```
@@ -59,6 +60,7 @@ Magento provides an official method for syncing files using the following comman
 ```bash
 bin/magento remote-storage:sync
 ```
+
 However, for significantly improved performance, you can use the following alternative:
 
 ```bash
@@ -79,6 +81,7 @@ Alternatively, you can use the AWS CLI directly:
 aws s3 sync pub/media/ s3://my_bucket_name/media/
 aws s3 sync var/import_export s3://my_bucket_name/import_export
 ```
+
 Both methods are significantly faster than Magento’s built-in sync, as aws s3 sync handles uploads concurrently.
 
 ## The storage flag file in the bucket
@@ -94,6 +97,7 @@ If you're using Hypernode's object storage solution, simply run the following co
 ```bash
 hmv example.com --object-storage
 ```
+
 ### Using a custom object storage solution
 
 If you're using a custom storage provider, such as Amazon S3, you'll need to specify the bucket name and URL manually:
