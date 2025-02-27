@@ -52,37 +52,34 @@ bin/magento setup:config:set \
     --remote-storage-endpoint="https://my-s3-compatible.endpoint.com"
 ```
 
-## Syncing the files
+## Syncing the files (efficiently)
 
-Instead of running (which is Magento's official way to do this):
+Magento provides an official method for syncing files using the following command (not recommended):
 
 ```bash
 bin/magento remote-storage:sync
 ```
-
-you can run the following to really speed up the process:
+However, for significantly improved performance, you can use the following alternative:
 
 ```bash
 hypernode-object-storage objects sync pub/media/ s3://my_bucket_name/media/
 hypernode-object-storage objects sync var/import_export s3://my_bucket_name/import_export
 ```
 
-`hypernode-object-storage objects sync` will run a sync process in the background for you,
-and will tell you what the PID of that process is. With the PID you can run the following
-command to check up on the progress of the sync: 
+The `hypernode-object-storage objects sync` command runs the sync process in the background
+and provides the Process ID (PID). You can monitor the sync progress using:
 
 ```bash
 hypernode-object-storage objects show PID
 ```
 
-Alternatively, you can run the `aws s3 sync` command directly:
+Alternatively, you can use the AWS CLI directly:
 
 ```bash
 aws s3 sync pub/media/ s3://my_bucket_name/media/
 aws s3 sync var/import_export s3://my_bucket_name/import_export
 ```
-
-In any case, that is much faster than Magento's built-in sync, because `aws s3 sync` uploads files concurrently.
+Both methods are significantly faster than Magento’s built-in sync, as aws s3 sync handles uploads concurrently.
 
 ## The storage flag file in the bucket
 
@@ -90,24 +87,32 @@ Magento's S3 implementation creates a test file called `storage.flag`, which is 
 
 ## Serving assets from your S3 bucket
 
-To start serving media assets from your S3 bucket, you need to make some adjustments to your nginx configuration. Luckily, `hypernode-manage-vhosts` does this for you! If you are using Hypernode's object storage solution, all you need to do is run the following for relevant vhosts:
+To serve media assets directly from your S3 bucket, you need to adjust your Nginx configuration.
+Fortunately, `hypernode-manage-vhosts` simplifies this process for you. If you're using Hypernode's object storage solution,
+simply run the following command for the relevant vhosts:
 
 ```bash
 hmv example.com --object-storage
 ```
+### Using a custom object storage solution
 
-In the case that you're using custom object storage, such as Amazon's S3, you will need to supply the bucket name and the bucket URL yourself:
+If you're using a custom storage provider, such as Amazon S3, you'll need to specify the bucket name and URL manually:
+
 ```bash
 hmv example.com --object-storage --object-storage-bucket mybucket --object-storage-url https://example_url.com
 ```
 
-If you have previously set your own custom bucket name and URL, but have since switched to Hypernode's object storage solution, then you can use the `--object-storage-defaults` flag to force overwrite your values to Hypernode's default ones:
+### Switching back to Hypernode defaults
+
+If you previously set a custom bucket and URL but want to revert to Hypernode's default object storage, use the `--object-storage-defaults` flag:
 
 ```bash
-hmv example.com --object-storage --object-storage-defaults
+hmv example.com --object-storage-defaults
 ```
 
-Furthermore, if you're using Amazon S3 as your bucket, ensure that your S3 bucket policies are configured correctly, so that only `/media` is publicly readable. For example:
+### Configuring Amazon S3 bucket policies
+
+If you’re using Amazon S3, ensure that your S3 bucket policies are properly configured so that only the `/media` directory is publicly accessible. For example:
 
 ```json
 {
