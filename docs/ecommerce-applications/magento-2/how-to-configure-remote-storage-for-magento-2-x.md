@@ -88,8 +88,8 @@ Magento's S3 implementation creates a test file called `storage.flag`, which is 
 ## Serving assets from your S3 bucket
 
 To serve media assets directly from your S3 bucket, you need to adjust your Nginx configuration.
-Fortunately, `hypernode-manage-vhosts` simplifies this process for you. If you're using Hypernode's object storage solution,
-simply run the following command for the relevant vhosts:
+Fortunately, `hypernode-manage-vhosts` simplifies this process for you.
+If you're using Hypernode's object storage solution, simply run the following command for the relevant vhosts:
 
 ```bash
 hmv example.com --object-storage
