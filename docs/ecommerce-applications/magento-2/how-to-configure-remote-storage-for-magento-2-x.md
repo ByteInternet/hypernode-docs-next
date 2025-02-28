@@ -22,10 +22,29 @@ This can be useful for many reasons, such as:
 
 Configuring Magento 2 to start storing files in your bucket is done using a single command.
 
-**Hypernode Object Storage**
+**Hypernode Object Storage and other S3 compatible providers**
+
+If you're using Hypernode Object Storage or a different provider than AWS S3, you need to specify the `--remote-storage-endpoint` option.
 
 ```bash
-something something?
+bin/magento setup:config:set \
+    --remote-storage-driver="aws-s3" \
+    --remote-storage-bucket="my_bucket_name" \
+    --remote-storage-region="provider-region" \
+    --remote-storage-key="abcd1234" \
+    --remote-storage-secret="abcd1234" \
+    --remote-storage-endpoint="https://my-s3-compatible.endpoint.com"
+```
+
+In the case of Hypernode Object Storage you can get the relevant information by running `hypernode-object-storage info` with the `--with-credentials` flag:
+
+```console
+app@testapp ~ # hypernode-object-storage info --with-credentials
++--------------------------------------+----------------+---------+-------------+-------------------------------------+---------------+---------------+
+|                 UUID                 |      Name      |   Plan  |  Hypernodes |           Management URL            |   Access Key  |   Secret Key  |
++--------------------------------------+----------------+---------+-------------+-------------------------------------+---------------+---------------+
+| 12345678-9012-3456-b7e3-19ab43df4a23 | testappbucket1 | OS200GB |   testapp   |  https://example.ams.objectstore.eu |   abcd1234    |   abcd1234    |
++--------------------------------------+----------------+---------+-------------+-------------------------------------+---------------+---------------+
 ```
 
 **AWS S3**
@@ -39,20 +58,6 @@ bin/magento setup:config:set \
     --remote-storage-secret="abcd1234"
 ```
 
-**Other S3 compatible providers**
-
-If you're using a different provider than AWS S3, you need to specify the `--remote-storage-endpoint` option.
-
-```bash
-bin/magento setup:config:set \
-    --remote-storage-driver="aws-s3" \
-    --remote-storage-bucket="my_bucket_name" \
-    --remote-storage-region="provider-region" \
-    --remote-storage-key="abcd1234" \
-    --remote-storage-secret="abcd1234" \
-    --remote-storage-endpoint="https://my-s3-compatible.endpoint.com"
-```
-
 ## Syncing the files (efficiently)
 
 Magento provides an official method for syncing files using the following command (not recommended):
@@ -61,7 +66,7 @@ Magento provides an official method for syncing files using the following comman
 bin/magento remote-storage:sync
 ```
 
-However, for significantly improved performance, you can use the following alternative:
+However, for better performance, you can use the following alternative:
 
 ```bash
 hypernode-object-storage objects sync pub/media/ s3://my_bucket_name/media/
