@@ -93,6 +93,8 @@ Both methods are significantly faster than Magento’s built-in sync, as aws s3 
 
 Magento's S3 implementation creates a test file called `storage.flag`, which is basically created to test if the connection works. So this is not a magic file to mark anything ([source](https://github.com/magento/magento2/blob/6f4805f82bb7511f72935daa493d48ebda3d9039/app/code/Magento/AwsS3/Driver/AwsS3.php#L104)).
 
+
+THIS SHOULD BE IN PLATFORM, IT CAN BE APPLIED TO ANY SHOP TYPE
 ## Serving assets from your S3 bucket
 
 To serve media assets directly from your S3 bucket, you need to adjust your Nginx configuration.

@@ -23,7 +23,7 @@ With Object Storage you get:
 
 # Getting started with Object Storage
 
-## CLI option
+## CLI option: change the title of this
 
 ```console
 hypernode-object-storage --help
