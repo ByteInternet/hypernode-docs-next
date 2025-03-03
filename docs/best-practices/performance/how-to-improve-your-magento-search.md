@@ -25,7 +25,7 @@ Another alternative is Sphinx Search. Sphinx is an open source search engine tha
 
 ## ElasticSearch
 
-While previously it was already possible to use ElasticSearch with your Hypernode by connecting to an external search provider, we have now made it possible to use ElasticSearch for search in your shop out of the box on Hypernode without requiring any external service or configuration. In[this article](../../hypernode-platform/tools/how-to-use-elasticsearch-on-hypernode.md) we’ll explain a bit more about ElasticSearch and how to enable and configure it.
+While previously it was already possible to use ElasticSearch with your Hypernode by connecting to an external search provider, we have now made it possible to use ElasticSearch for search in your shop out of the box on Hypernode without requiring any external service or configuration. In [this article](../../hypernode-platform/tools/how-to-use-elasticsearch-on-hypernode.md) we’ll explain a bit more about ElasticSearch and how to enable and configure it.
 
 Please note that due to the relatively heavy resource requirements for ElasticSearch this feature can only be enabled on every plan except the formerly known Grow plan. If you are on a smaller plan and previously already depended on an external paid ElasticSearch provider now might be a good time to consider simplifying your setup.
 

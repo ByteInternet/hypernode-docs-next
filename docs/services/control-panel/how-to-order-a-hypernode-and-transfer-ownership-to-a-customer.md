@@ -13,7 +13,7 @@ redirect_from:
 
 # How To Order a Hypernode and Transfer Ownership To a Customer
 
-Need a (new) hosting plan for your Magento, Shopware or Akeneo shop? You’ve come to the right place. Hypernode has been developed in close consultation with e-commerce developers, with the objective of having e-commerce web shops perform to their best advantage and to make its development several times easier. An overview of all hosting plans can be found on[our website](https://www.hypernode.com/magento-hosting-plans/).
+Need a (new) hosting plan for your Magento, Shopware or Akeneo shop? You’ve come to the right place. Hypernode has been developed in close consultation with e-commerce developers, with the objective of having e-commerce web shops perform to their best advantage and to make its development several times easier. An overview of all hosting plans can be found on [our website](https://www.hypernode.com/magento-hosting-plans/).
 
 This article will explain how to order a Hypernode and how this plan can be transferred to your customer on our Control Panel.
 
