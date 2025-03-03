@@ -15,7 +15,7 @@ redirect_from:
 
 Customers with Hypernode Pelican, Falcon (formerly known as Professional) and Eagle (formerly known as Excellence) plans can use Varnish to boost their shop. This article explains how you can configure Varnish for your Hypernode.
 
-Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. We'd recommend to first test varnish on a [staging environment](how-to-use-a-basic-staging-environment-with-shopware-6.md) or a[development plan](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) before implementing varnish on a live node.
+Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. We'd recommend to first test varnish on a [staging environment](how-to-use-a-basic-staging-environment-with-shopware-6.md) or a [development plan](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) before implementing varnish on a live node.
 
 ## Step One: Enable Varnish on the Hypernode
 
