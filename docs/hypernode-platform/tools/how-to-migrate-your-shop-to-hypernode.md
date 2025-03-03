@@ -97,7 +97,7 @@ Please follow these steps:
 
 ## Done Migrating?
 
-Done? Now it's time to[check if everything works](../../best-practices/testing/how-to-check-if-everything-works.md) as it should!
+Done? Now it's time to [check if everything works](../../best-practices/testing/how-to-check-if-everything-works.md) as it should!
 
 ## Tips and Tricks
 
