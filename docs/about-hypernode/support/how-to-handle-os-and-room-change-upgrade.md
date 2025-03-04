@@ -1,7 +1,8 @@
 ---
 myst:
   html_meta:
-    description: 'Learn how our Xgrade proces work and how to make sure your Hypernode is ready for the Debian Bookworm upgrade'
+    description: Learn how our Xgrade proces work and how to make sure your Hypernode
+      is ready for the Debian Bookworm upgrade
     title: How does the Xgrade proces work
 ---
 
@@ -14,13 +15,13 @@ An Xgrade is an automated process that allows your server to be upgraded or down
 An Xgrade to Debian Bookworm or R405 (which can be performed together) is carried out by our automation. Below are the relevant steps in the process:
 
 1. Ensure a new Hypernode is created.
-2. Configure the new Hypernode (Operating system, MySQL, PHP, Varnish, etc.).
-3. Synchronize data (everything within the "/" and "/data" partition).
-4. Stop all services on the current Hypernode.
-5. Synchronize any new data that has been written.
-6. Perform checks to ensure all processes are complete.
-7. Send a "Hypernode migrated" event.
-8. Destroy the old Hypernode.
+1. Configure the new Hypernode (Operating system, MySQL, PHP, Varnish, etc.).
+1. Synchronize data (everything within the "/" and "/data" partition).
+1. Stop all services on the current Hypernode.
+1. Synchronize any new data that has been written.
+1. Perform checks to ensure all processes are complete.
+1. Send a "Hypernode migrated" event.
+1. Destroy the old Hypernode.
 
 As you can see, a completely new Hypernode is created with the correct configurations, whether for a Debian Bookworm or an R405 Xgrade. The first synchronization of data will then take place. The duration of this synchronization depends on the amount and type of data. Typically, we calculate about 1 GB per minute, but this may vary.
 
@@ -29,6 +30,7 @@ At a certain point, all services will be stopped to prevent new orders from bein
 ## What should be checked or adjusted before the Xgrade? (e.g., Node.js and TLS configuration)
 
 ### Nodejs
+
 Before scheduling a Xgrade to Debian Bookworm/R405, you must check which Node.js version you are using. This is necessary because Node.js versions 6 and 10 are no longer supported on the new operating system. Standard Magento 2 does not make use of Nodejs, but if you use another CMS or have custom scripts that require them, you may need to update your setup.
 
 You can check your Node.js version in two ways; withing the Control Panel, or on the CLI:
@@ -47,11 +49,13 @@ Operation was successful and is being processed. Please allow a few minutes for 
 ```
 
 ### TLS configuration
+
 With the upgrade to Debian Bookworm, the TLS configurations will also change. We have chosen to phase out outdated TLS versions 1.0 and 1.1. Additionally, the "modern" TLS configuration will now only support TLS 1.3.
 
 Below are the TLS configurations for Debian Buster:
 
 Intermediate TLS configuratie:
+
 ```
 # intermediate configuration
 # nginx 1.16.1 | intermediate profile | OpenSSL 1.1.1d
@@ -104,6 +108,7 @@ ssl_stapling_verify on;
 ```
 
 modern TLS configuratie:
+
 ```
 # modern configuration
 # nginx 1.22.1 | modern profile | OpenSSL 3.0.11
@@ -135,7 +140,6 @@ app@uaifqk-hnvandijk-magweb-cmbl:~$ hypernode-systemctl settings modern_ssl_conf
 false  true
 ```
 
-
 # What needs to be adjusted after the Xgrade? When can it be performed? (IP changes)
 
 If you choose to Xgrade to R405, you will receive a new IP address from our automation system. You must update this IP address in the DNS settings for both the non-www and www records of your domain. This information will be sent to the email address associated with the Hypernode owner.
@@ -145,11 +149,13 @@ My domain is at Hypernode, can we automate this? Yes, you can enable the "Synchr
 We make use of Cloudflare, would we be able to "automate" this proces? Sure! You can enable CNAME Flattening, which ensures that both the non-www and www records point to the Hypernode hostname. For example:
 
 ### Non-www Record
+
 ```
 CNAME hnvandijk.nl ---> hnvandijk.hypernode.io
 ```
 
 ### www Record
+
 ```
 CNAME www.hnvandijk.nl ---> hnvandijk.hypernode.io
 ```
@@ -164,9 +170,9 @@ The OS upgrade process itself is the same as for a cloud environment.
 
 # Additional Questions
 
- * An Xgrade to R405 does not incur additional costs, you will not be charged extra.
+- An Xgrade to R405 does not incur additional costs, you will not be charged extra.
 
-* An Xgrade from Hetzner to TBBM also incurs no extra costs, you will not be charged extra.
+- An Xgrade from Hetzner to TBBM also incurs no extra costs, you will not be charged extra.
 
 # More Information
 
