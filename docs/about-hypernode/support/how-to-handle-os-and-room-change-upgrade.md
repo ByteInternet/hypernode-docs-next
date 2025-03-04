@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Learn how our Xgrade proces work and how to make sure your Hypernode
+    description: Learn how our Xgrade process work and how to make sure your Hypernode
       is ready for the Debian Bookworm upgrade
-    title: How does the Xgrade proces work
+    title: How does the Xgrade process works
 ---
 
 # What is the Xgrade process of Hypernode?
@@ -33,7 +33,7 @@ At a certain point, all services will be stopped to prevent new orders from bein
 
 Before scheduling a Xgrade to Debian Bookworm/R405, you must check which Node.js version you are using. This is necessary because Node.js versions 6 and 10 are no longer supported on the new operating system. Standard Magento 2 does not make use of Nodejs, but if you use another CMS or have custom scripts that require them, you may need to update your setup.
 
-You can check your Node.js version in two ways; withing the Control Panel, or on the CLI:
+You can check your Node.js version in two ways; within the Control Panel, Or through the CLI:
 Within the Control Panel: Navigate to Settings → Development.
 
 ```
@@ -54,7 +54,7 @@ With the upgrade to Debian Bookworm, the TLS configurations will also change. We
 
 Below are the TLS configurations for Debian Buster:
 
-Intermediate TLS configuratie:
+Intermediate TLS configuration:
 
 ```
 # intermediate configuration
@@ -71,7 +71,7 @@ ssl_stapling on;
 ssl_stapling_verify on;
 ```
 
-modern TLS configuratie:
+modern TLS configuration:
 
 ```
 # intermediate configuration
@@ -107,7 +107,7 @@ ssl_stapling on;
 ssl_stapling_verify on;
 ```
 
-modern TLS configuratie:
+modern TLS configuration:
 
 ```
 # modern configuration
