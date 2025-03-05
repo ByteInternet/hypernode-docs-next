@@ -71,7 +71,7 @@ ssl_stapling on;
 ssl_stapling_verify on;
 ```
 
-modern TLS configuration:
+Modern TLS configuration:
 
 ```
 # intermediate configuration
@@ -107,7 +107,7 @@ ssl_stapling on;
 ssl_stapling_verify on;
 ```
 
-modern TLS configuration:
+Modern TLS configuration:
 
 ```
 # modern configuration
@@ -148,13 +148,13 @@ My domain is at Hypernode, can we automate this? Yes, you can enable the "Synchr
 
 We make use of Cloudflare, would we be able to "automate" this proces? Sure! You can enable CNAME Flattening, which ensures that both the non-www and www records point to the Hypernode hostname. For example:
 
-## Non-www Record
+## Non-www 
 
 ```
 CNAME hnvandijk.nl ---> hnvandijk.hypernode.io
 ```
 
-## www Record
+## www
 
 ```
 CNAME www.hnvandijk.nl ---> hnvandijk.hypernode.io
@@ -162,19 +162,19 @@ CNAME www.hnvandijk.nl ---> hnvandijk.hypernode.io
 
 We can schedule the Xgrade at a time that suits you! However, we can only provide the new IP address in advance if the Xgrade is performed during our standard working hours (09:00–18:00).
 
-# I have a dedicated machine at Hetzner/ TBBM instead of a cloud environment. What does this mean?
+## I have a dedicated machine instead of a cloud environment. What does this mean?
 
 If you have a dedicated machine and need an OS upgrade, you will be migrated to a different machine. This means you will receive a new IP address. The new machine will be set up at the TBBM data center, and we can only provide the new IP address during our standard working hours.
 
 The OS upgrade process itself is the same as for a cloud environment.
 
-# Additional Questions
+## Additional Questions
 
 - An Xgrade to R405 does not incur additional costs, you will not be charged extra.
 
 - An Xgrade from Hetzner to TBBM also incurs no extra costs, you will not be charged extra.
 
-# More Information
+## More Information
 
 https://changelog.hypernode.com/release-9961-akeneo-7-0-is-now-available-on-the-platform/
 
