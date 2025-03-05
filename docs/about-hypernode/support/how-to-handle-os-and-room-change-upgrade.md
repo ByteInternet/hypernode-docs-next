@@ -148,7 +148,7 @@ My domain is at Hypernode, can we automate this? Yes, you can enable the "Synchr
 
 We make use of Cloudflare, would we be able to "automate" this proces? Sure! You can enable CNAME Flattening, which ensures that both the non-www and www records point to the Hypernode hostname. For example:
 
-## Non-www 
+## Non-www
 
 ```
 CNAME hnvandijk.nl ---> hnvandijk.hypernode.io
