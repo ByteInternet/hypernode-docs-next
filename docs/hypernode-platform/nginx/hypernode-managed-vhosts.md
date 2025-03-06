@@ -16,46 +16,6 @@ The Hypernode Managed Vhosts (HMV) system is an easy to use, yet powerful, syste
 
 The main advantage of HMV is that it separates your Nginx config into a global folder, containing configuration for all server blocks, and domain specific configs, giving you more control and reducing unexpected side-effects of domain specific configurations.
 
-## Enabling Managed Vhosts
-
-The Hypernode Managed Vhosts (HMV) system is currently enabled by default on all new booted Hypernodes.
-
-However if you have a Hypernode created before 01-05-2020 your Hypernode may still be running in 'legacy' mode. To enable the HMV you can run the command:
-
-`hypernode-systemctl settings managed_vhosts_enabled True`.
-
-This will convert your current legacy config into the HMV config. It will also convert all currently active vhosts into managed vhosts.
-
-Please note that while switching to HMV is very easy, there are a few things to check after switching to make sure everything works, as not every setting is automatically transferred.
-
-Run `hypernode-manage-vhosts --list` to get an overview of your current configuration and use the list below to check if it's correct. Not everything will apply to your Hypernode.
-
-- Make sure your domain is the default server instead of the Hypernode. You can do this by running the following command:
-
-`hypernode-manage-vhosts www.example.com --default-server`
-
-- Configure the vhosts to only use HTTPS. If you already have an SSL certificate configured and you don't want to use Let's Encrypt, use this command:
-
-`hypernode-manage-vhosts www.example.com --https --force-https --ssl-noclobber`
-
-This will make sure you won't overwrite the existing SSL certificate.
-
-If you do want to configure Let's Encrypt for the vhost you can use this command:
-
-`hypernode-manage-vhosts www.example.com --https --force-https`
-
-- If you make use of Varnish, make sure to enable Varnish for the specific vhosts:
-
-`hypernode-manage-vhosts www.example.com --varnish`
-
-- Want to redirect all traffic over www? Set up your naked domains to be wwwizers, with this command:
-
-`hypernode-manage-vhosts --type wwwizer [example.com](//example.com)`
-
-Please make sure to also double check your custom Nginx configurations, as these might not be converted automatically.
-
-You can always use `hypernode-manage-vhosts --help` to get more information on the different configurations.
-
 ## Managing Vhosts
 
 Once the Hypernode Managed Vhosts (HMV) system is enabled, you can start defining and configuring your vhosts. On new booted Hypernodes there will be one vhosts by default: example.hypernode.io.
@@ -146,3 +106,43 @@ If you are running into issues (e.g. SSL or other configuration errors) with Hyp
 `hypernode-manage-vhosts --all`
 
 This regenerates the HMV configuration based on what is set in `hypernode-manage-vhosts --list` and in our experience resolves most basic issues with Hypernode Managed Vhosts.
+
+## Enabling Managed Vhosts
+
+The Hypernode Managed Vhosts (HMV) system is currently enabled by default on all new booted Hypernodes.
+
+However if you have a Hypernode created before 01-05-2020 your Hypernode may still be running in 'legacy' mode. To enable the HMV you can run the command:
+
+`hypernode-systemctl settings managed_vhosts_enabled True`.
+
+This will convert your current legacy config into the HMV config. It will also convert all currently active vhosts into managed vhosts.
+
+Please note that while switching to HMV is very easy, there are a few things to check after switching to make sure everything works, as not every setting is automatically transferred.
+
+Run `hypernode-manage-vhosts --list` to get an overview of your current configuration and use the list below to check if it's correct. Not everything will apply to your Hypernode.
+
+- Make sure your domain is the default server instead of the Hypernode. You can do this by running the following command:
+
+`hypernode-manage-vhosts www.example.com --default-server`
+
+- Configure the vhosts to only use HTTPS. If you already have an SSL certificate configured and you don't want to use Let's Encrypt, use this command:
+
+`hypernode-manage-vhosts www.example.com --https --force-https --ssl-noclobber`
+
+This will make sure you won't overwrite the existing SSL certificate.
+
+If you do want to configure Let's Encrypt for the vhost you can use this command:
+
+`hypernode-manage-vhosts www.example.com --https --force-https`
+
+- If you make use of Varnish, make sure to enable Varnish for the specific vhosts:
+
+`hypernode-manage-vhosts www.example.com --varnish`
+
+- Want to redirect all traffic over www? Set up your naked domains to be wwwizers, with this command:
+
+`hypernode-manage-vhosts --type wwwizer [example.com](//example.com)`
+
+Please make sure to also double check your custom Nginx configurations, as these might not be converted automatically.
+
+You can always use `hypernode-manage-vhosts --help` to get more information on the different configurations.
