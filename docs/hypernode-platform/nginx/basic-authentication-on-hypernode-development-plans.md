@@ -111,7 +111,6 @@ map $uri_whitelist$ip_whitelist $development_exceptions {
 - We use a geo directive to define `$ip_whitelist`, which checks if the visitor's IP address is whitelisted. If so, we set it to 1, otherwise to 0.
 - We combine `$uri_whitelist` and `$ip_whitelist` in a new map that defines `$development_exceptions`. Depending on whether the IP address or URI path is whitelisted, access without basic auth is allowed ("off").
 
-
 ### Whitelisting Based on IP and User Agent
 
 To create a whitelist based on two components: URL and User Agent.
