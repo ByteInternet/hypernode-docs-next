@@ -26,7 +26,7 @@ Configuring Shopware 6 to start storing files in your bucket is done by modifyin
 
 If you're using Hypernode Object Storage, you need to make sure that the configuration file contains the following:
 
-```yml
+```yaml
 shopware:
     filesystem:
       public:
@@ -57,7 +57,7 @@ app@testapp ~ # hypernode-object-storage info --with-credentials
 
 If you're using Amazon's S3 bucket, your configuration file should include the following:
 
-```yml
+```yaml
 shopware:
     filesystem:
       public:
