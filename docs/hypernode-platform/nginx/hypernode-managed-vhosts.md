@@ -91,7 +91,7 @@ If you're using object storage with Magento 2.x or Shopware 6.x you can use HMV 
 If you're using Hypernode's object storage solution, simply run the following command for the relevant vhosts:
 
 ```bash
-hmv example.com --object-storage
+hypernode-manage-vhosts example.com --object-storage
 ```
 
 ### Using a custom object storage solution
@@ -99,7 +99,7 @@ hmv example.com --object-storage
 If you're using a custom storage provider, such as Amazon S3, you'll need to specify the bucket name and URL manually:
 
 ```bash
-hmv example.com --object-storage --object-storage-bucket mybucket --object-storage-url https://example_url.com
+hypernode-manage-vhosts example.com --object-storage --object-storage-bucket mybucket --object-storage-url https://example_url.com
 ```
 
 ### Switching back to Hypernode defaults
@@ -107,7 +107,7 @@ hmv example.com --object-storage --object-storage-bucket mybucket --object-stora
 If you previously set a custom bucket and URL but want to revert to Hypernode's default object storage, use the `--object-storage-defaults` flag:
 
 ```bash
-hmv example.com --object-storage-defaults
+hypernode-manage-vhosts example.com --object-storage-defaults
 ```
 
 ## Managing Configuration Files
