@@ -8,7 +8,6 @@ myst:
 
 # How to Configure Remote Storage for Shopware 6.x
 
-
 Shopware 6.x supports remote storage for different types of files, allowing you to store assets such as product images, documents, and other media in an external storage service instead of the local server.
 
 Using remote object storage in Shopware 6 provides several benefits, including:
