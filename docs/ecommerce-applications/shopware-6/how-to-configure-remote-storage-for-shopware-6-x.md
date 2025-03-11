@@ -1,0 +1,108 @@
+---
+myst:
+  html_meta:
+    description: Configure remote storage for Shopware 6.x. Learn how to configure
+      Shopware 6 to start storing files in your bucket.
+    title: How to Configure Remote Storage for Shopware 6.x | Hypernode
+---
+
+# How to Configure Remote Storage for Shopware 6.x
+
+
+Shopware 6.x supports remote storage for different types of files, allowing you to store assets such as product images, documents, and other media in an external storage service instead of the local server.
+
+Using remote object storage in Shopware 6 provides several benefits, including:
+
+- Offloading storage from your server, reducing the load on your server, and improving performance.
+- Allows you to make use of [horizontal scaling](../../hypernode-platform/autoscaling/how-does-horizontal-autoscaling-work), as you can easily add more servers without having to worry about syncing files between them.
+- Allows for effortless storage capacity scaling, as you can easily increase the storage capacity of your remote storage location.
+- Serving assets from a CDN, which can improve the performance of your website.
+
+## Configuring the application
+
+Configuring Shopware 6 to start storing files in your bucket is done by modifying the the general bundle configuration file located at `config/packages/shopware.yml` in your shopware root directory.
+
+**Hypernode Object Storage and other S3 compatible providers**
+
+If you're using Hypernode Object Storage, you need to make sure that the configuration file contains the following:
+
+```yml
+shopware:
+    filesystem:
+      public:
+        type: 'amazon-s3'
+        config:
+            bucket: 'main'
+            region: 'EU'
+            endpoint: 'management url'
+            use_path_style_endpoint: true
+            credentials:
+              key: 'access key'
+              secret: 'secret key'
+
+```
+
+You can get the required management URL, access key, and secret key by running `hypernode-object-storage info` with the `--with-credentials` flag:
+
+```console
+app@testapp ~ # hypernode-object-storage info --with-credentials
++--------------------------------------+----------------+---------+-------------+-------------------------------------+---------------+---------------+
+|                 UUID                 |      Name      |   Plan  |  Hypernodes |           Management URL            |   Access Key  |   Secret Key  |
++--------------------------------------+----------------+---------+-------------+-------------------------------------+---------------+---------------+
+| 12345678-9012-3456-b7e3-19ab43df4a23 | testappbucket1 | OS200GB |   testapp   |  https://example.ams.objectstore.eu |   abcd1234    |   abcd1234    |
++--------------------------------------+----------------+---------+-------------+-------------------------------------+---------------+---------------+
+```
+
+**AWS S3**
+
+If you're using Amazon's S3 bucket, your configuration file should include the following:
+
+```yml
+shopware:
+    filesystem:
+      public:
+        type: 'amazon-s3'
+        config:
+            bucket: 'your bucket name'
+            region: 'your aws region'
+            credentials:
+              key: 'your aws access key'
+              secret: 'your aws secret key'
+
+```
+
+## Syncing the files
+
+You can use the following to sync the files between your local and remote storage:
+
+```bash
+hypernode-object-storage objects sync pub/media/ s3://my_bucket_name/media/
+hypernode-object-storage objects sync var/import_export s3://my_bucket_name/import_export
+```
+
+The `hypernode-object-storage objects sync` command runs the sync process in the background
+and provides the Process ID (PID). You can monitor the sync progress using:
+
+```bash
+hypernode-object-storage objects show PID
+```
+
+Alternatively, you can use the AWS CLI directly:
+
+```bash
+aws s3 sync pub/media/ s3://my_bucket_name/media/
+aws s3 sync var/import_export s3://my_bucket_name/import_export
+```
+
+## Serving assets from your S3 bucket
+
+To serve media assets directly from your S3 bucket, you need to adjust your nginx configuration.
+Fortunately, `hypernode-manage-vhosts` [simplifies this process for you](../../hypernode-platform/nginx/hypernode-managed-vhosts.md#object-storage-and-hypernode-managed-vhosts).
+
+### Configuring Amazon S3 bucket policies
+
+If you’re using Amazon S3, ensure that your S3 bucket has ACLs enabled.
+
+## Shopware remote storage documentation
+
+- [Filesystem](https://developer.shopware.com/docs/guides/hosting/infrastructure/filesystem.html)
