@@ -32,22 +32,36 @@ bin/magento setup:config:set \
     --remote-storage-bucket="my_bucket_name" \
     --remote-storage-region="provider-region" \
     --remote-storage-key="abcd1234" \
-    --remote-storage-secret="abcd1234" \
+    --remote-storage-secret="1234abcd" \
     --remote-storage-endpoint="https://my-s3-compatible.endpoint.com"
 ```
 
-In the case of Hypernode Object Storage you can get the relevant information by running `hypernode-object-storage info` with the `--with-credentials` flag:
+In the case of Hypernode Object Storage, the bucket name is `main`, and the region is `EU`. The other remaining parameters you can get by running `hypernode-object-storage info` with the `--with-credentials` flag:
 
 ```console
 app@testapp ~ # hypernode-object-storage info --with-credentials
 +--------------------------------------+----------------+---------+-------------+-------------------------------------+---------------+---------------+
 |                 UUID                 |      Name      |   Plan  |  Hypernodes |           Management URL            |   Access Key  |   Secret Key  |
 +--------------------------------------+----------------+---------+-------------+-------------------------------------+---------------+---------------+
-| 12345678-9012-3456-b7e3-19ab43df4a23 | testappbucket1 | OS200GB |   testapp   |  https://example.ams.objectstore.eu |   abcd1234    |   abcd1234    |
+| 12345678-9012-3456-b7e3-19ab43df4a23 | testappbucket1 | OS200GB |   testapp   |  https://example.ams.objectstore.eu |   abcd1234    |   1234abcd    |
 +--------------------------------------+----------------+---------+-------------+-------------------------------------+---------------+---------------+
 ```
 
+So, in that case, the command would look like this:
+
+```bash
+bin/magento setup:config:set \
+    --remote-storage-driver="aws-s3" \
+    --remote-storage-bucket="main" \
+    --remote-storage-region="EU" \
+    --remote-storage-key="abcd1234" \
+    --remote-storage-secret="1234abcd" \
+    --remote-storage-endpoint="https://example.ams.objectstore.eu"
+```
+
 **AWS S3**
+
+If you have an AWS S3 bucket, the command is somewhat simpler, you just need to know what your bucket name is, your aws region and your aws access and secret key.
 
 ```bash
 bin/magento setup:config:set \
@@ -55,7 +69,7 @@ bin/magento setup:config:set \
     --remote-storage-bucket="my_bucket_name" \
     --remote-storage-region="my-aws-region" \
     --remote-storage-key="abcd1234" \
-    --remote-storage-secret="abcd1234"
+    --remote-storage-secret="1234abcd"
 ```
 
 ## Syncing the files (efficiently)
