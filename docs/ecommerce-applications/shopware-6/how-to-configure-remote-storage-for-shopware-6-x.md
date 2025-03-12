@@ -21,7 +21,7 @@ Using remote object storage in Shopware 6 provides several benefits, including:
 
 Configuring Shopware 6 to start storing files in your bucket is done by modifying the the general bundle configuration file located at `config/packages/shopware.yml` in your shopware root directory.
 
-**Hypernode Object Storage and other S3 compatible providers**
+**Hypernode Object Storage**
 
 If you're using Hypernode Object Storage, you need to make sure that the configuration file contains the following:
 
@@ -75,9 +75,10 @@ shopware:
 You can use the following to sync the files between your local and remote storage:
 
 ```bash
-hypernode-object-storage objects sync pub/media/ s3://my_bucket_name/media/
-hypernode-object-storage objects sync var/import_export s3://my_bucket_name/import_export
+hypernode-object-storage objects sync public/media/ s3://bucket_name/media/
 ```
+
+In the case of Hypernode Object Storage, the bucket name will always be `main`.
 
 The `hypernode-object-storage objects sync` command runs the sync process in the background
 and provides the Process ID (PID). You can monitor the sync progress using:
@@ -89,8 +90,7 @@ hypernode-object-storage objects show PID
 Alternatively, you can use the AWS CLI directly:
 
 ```bash
-aws s3 sync pub/media/ s3://my_bucket_name/media/
-aws s3 sync var/import_export s3://my_bucket_name/import_export
+aws s3 sync public/media/ s3://bucket_name/media/
 ```
 
 ## Serving assets from your S3 bucket
