@@ -51,7 +51,7 @@ If you're using a different object storage provider, replace these values with t
 
 **AWS S3**
 
-If you have an AWS S3 bucket, the command is somewhat simpler, you just need to know what your bucket name is, your aws region and your aws access and secret key.
+If you're using an AWS S3 bucket, you only need your bucket name, AWS region, and access and secret keys.
 
 ```bash
 bin/magento setup:config:set \
