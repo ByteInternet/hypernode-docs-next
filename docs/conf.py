@@ -49,6 +49,7 @@ extensions = [
     "hypernode.sphinx.extensions.meta_robots",
     "hypernode.sphinx.extensions.github_actions_logging",
     "sphinxcontrib.mermaid",
+    "sphinx_docsearch",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -117,3 +118,7 @@ highlight_options = {
 notfound_no_urls_prefix = True
 
 myst_heading_anchors = 5
+
+docsearch_app_id = "ML4HHD5658"
+docsearch_api_key = "03f6d3f4f55562ca202f03baeb04b350" # Public Search API Key
+docsearch_index_name = "hypernode"
