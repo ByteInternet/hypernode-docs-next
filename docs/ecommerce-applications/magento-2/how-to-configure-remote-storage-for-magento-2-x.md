@@ -29,14 +29,14 @@ If you're using Hypernode Object Storage or a different provider than AWS S3, yo
 ```bash
 bin/magento setup:config:set \
     --remote-storage-driver="aws-s3" \
-    --remote-storage-bucket="my_bucket_name" \
-    --remote-storage-region="provider-region" \
+    --remote-storage-bucket="main" \
+    --remote-storage-region="EU" \
     --remote-storage-key="abcd1234" \
     --remote-storage-secret="1234abcd" \
     --remote-storage-endpoint="https://my-s3-compatible.endpoint.com"
 ```
 
-In the case of Hypernode Object Storage, the bucket name is `main`, and the region is `EU`. The other remaining parameters you can get by running `hypernode-object-storage info` with the `--with-credentials` flag:
+For Hypernode Object Storage, use `main` as the bucket name and `EU` as the region. You can retrieve the remaining parameters by running `hypernode-object-storage info --with-credentials`.
 
 ```console
 app@testapp ~ # hypernode-object-storage info --with-credentials
@@ -47,17 +47,7 @@ app@testapp ~ # hypernode-object-storage info --with-credentials
 +--------------------------------------+----------------+---------+-------------+-------------------------------------+---------------+---------------+
 ```
 
-So, in that case, the command would look like this:
-
-```bash
-bin/magento setup:config:set \
-    --remote-storage-driver="aws-s3" \
-    --remote-storage-bucket="main" \
-    --remote-storage-region="EU" \
-    --remote-storage-key="abcd1234" \
-    --remote-storage-secret="1234abcd" \
-    --remote-storage-endpoint="https://example.ams.objectstore.eu"
-```
+If you're using a different object storage provider, replace these values with the relevant details from your provider.
 
 **AWS S3**
 
