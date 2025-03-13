@@ -1,13 +1,14 @@
 # docs/ requirements
-sphinx==5.3.0
-sphinx_rtd_theme==1.1.1
-myst-parser==0.18.1
+sphinx==8.3.0
+sphinx_rtd_theme==3.0.2
+sphinx-docsearch==0.1.0
+myst-parser==4.0.1
 mdit-py-plugins
 sphinx-copybutton==0.5.1
-mdformat==0.7.16
-mdformat-myst==0.1.5
+mdformat==0.7.22
+mdformat-myst==0.2.1
 mdformat-frontmatter==0.4.1
-sphinx-notfound-page==0.8.3
+sphinx-notfound-page==1.1.0
 sphinx-sitemap==2.4.0
 GitPython==3.1.30
 sphinxcontrib-mermaid==0.7.1
