@@ -39,10 +39,13 @@
     {%- if css|attr("rel") %}
       <link rel="{{ css.rel }}" href="{{ pathto(css.filename, 1) }}" type="text/css"{% if css.title is not none %} title="{{ css.title }}"{% endif %} />
     {%- else %}
-      <link rel="stylesheet" href="{{ pathto(css, 1) }}" type="text/css" />
+      {%- if css.filename.startswith('https://') %}
+        <link rel="stylesheet" href="{{ css.filename }}" type="text/css" />
+      {%- else %}
+        <link rel="stylesheet" href="{{ pathto(css.filename, 1) }}" type="text/css" />
+      {%- endif %}
     {%- endif %}
   {%- endfor %}
-
   {%- for cssfile in extra_css_files %}
     <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
   {%- endfor -%}
