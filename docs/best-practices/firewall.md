@@ -18,13 +18,13 @@ Follow these steps to whitelist an IP addresses for FTP:
 - Once logged in, select the Hypernode you wish to configure
 - Click on **Allowlist** from the menu
 - Select **Rule type** and choose here for example **FTP** from the dropdown
-- Enter the IP address you want to add to the whitelist 
+- Enter the IP address you want to add to the whitelist
 - Provide a descriptive name for the entry for example **OfficeArnhem**. Use descriptive names when adding entries to help identify their purpose in the future.
 - Click on **Save** to apply the changes
 
 ### Adding IP Addresses by using CLI
 
-For users comfortable with the CLI, you can add the IP addresses directly on the server. This requires logging into the server using SSH. 
+For users comfortable with the CLI, you can add the IP addresses directly on the server. This requires logging into the server using SSH.
 
 ```bash
 hypernode-systemctl whitelist add ftp 1.2.3.4 --description "OfficeArnhem"
