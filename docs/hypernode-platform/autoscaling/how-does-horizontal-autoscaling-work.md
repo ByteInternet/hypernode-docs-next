@@ -57,6 +57,10 @@ Horizontal autoscaling is available on all the Falcon cloud plans (OpenStack).
 
 Next to the provider, horizontal autoscaling does have a couple of additional requirements.
 
+```{note}
+Staging ports (8888, 8443) will not be available when horizontal autoscaling is enabled.
+```
+
 We will divide them between Hypernode-specific and Application-specific requirements
 
 ### Hypernode Specific Requirements

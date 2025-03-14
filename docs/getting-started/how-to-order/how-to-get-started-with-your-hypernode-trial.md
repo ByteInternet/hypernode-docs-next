@@ -20,7 +20,7 @@ Enthusiastic about Hypernode? Convert your trial into a paid hosting plan. You c
 
 With your free trial you have 14 days to test your shops’ performance on Hypernode. After 2 weeks your trial will expire automatically, unless you decide to convert your trial into a paid hosting plan.
 
-The specs of your trial are: 62GB storage, 3 CPU, 8GB RAM, 1024MB Redis cache, PHP 7.4.
+The specs of your trial are: 57GB storage, 2 CPU, 4GB RAM, 1024MB Redis cache, PHP 8.3.
 
 ## Your Control Panel
 
