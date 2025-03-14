@@ -1,15 +1,46 @@
 ---
 myst:
   html_meta:
-    description: How can you add the IP addresses from ForusP to the whitelist
-    title: How to add ForusP to the whitelist
+    description: How can you whitelist an IP address
+    title: Firewall
 ---
 
-# How to add ForusP to the whitelist
+# Firewall
+
+In the text below we will explain how you can add an IP to the whitelist by using the control panel or CLI (command-line interface). Whitelisting an IP can be for multiple reasons like, connecting via FTP, connecting to a database or for security scans like ForusP.
+
+## Adding IP Addresses in the allowlist via the control panel for FTP, WAF and database
+
+Follow these steps to whitelist an IP addresses for FTP:
+
+- Go to to my.hypernode.com
+- Log in with your credentials
+- Once logged in, select the Hypernode you wish to configure
+- Click on **Allowlist** from the menu
+- Select **Rule type** and choose here for example **FTP** from the dropdown
+- Enter the IP address you want to add to the whitelist 
+- Provide a descriptive name for the entry for example **OfficeArnhem**. Use descriptive names when adding entries to help identify their purpose in the future.
+- Click on **Save** to apply the changes
+
+### Adding IP Addresses by using CLI
+
+For users comfortable with the CLI, you can add the IP addresses directly on the server. This requires logging into the server using SSH. 
+
+```bash
+hypernode-systemctl whitelist add ftp 1.2.3.4 --description "OfficeArnhem"
+```
+
+If you want to remove an added registration, use the command below:
+
+```bash
+hypernode-systemctl whitelist remove ftp 1.2.3.4
+```
+
+## How to add ForusP to the whitelist
 
 To ensure that ForusP can perform their scan on your Hypernode without anyissues, the IP addresses associated with ForusP must be added to the Hypernode Web Application Firewall (WAF). The WAF acts as a layer of protection by filtering incoming traffic and blocking potential threats. Adding the necessary IP addresses to the allowlist ensures that the scanning process runs smoothly without interruptions. You can achieve this by either using the Hypernode Control Panel or by executing commands directly on the server using the command-line interface (CLI).
 
-## Adding IP Addresses in the allowlist via the Control Panel
+### Adding IP Addresses in the allowlist via the Control Panel
 
 Follow these steps to add ForusP's IP addresses using the Hypernode Control Panel:
 
@@ -25,7 +56,7 @@ Follow these steps to add ForusP's IP addresses using the Hypernode Control Pane
 
 Repeat the steps above to add the others. The IP addresses you add will become active within a few minutes, allowing ForusP to access your Hypernode environment without being blocked by the firewall.
 
-## Adding IP Addresses by using CLI
+### Adding IP Addresses by using CLI
 
 For users comfortable with the command-line interface, you can add the IP addresses directly on the server. This requires logging into the server using SSH. Follow these steps:
 
