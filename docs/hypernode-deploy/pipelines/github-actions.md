@@ -57,7 +57,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: quay.io/hypernode/deploy:4-php8.3-node20
+    # See https://quay.io/repository/hypernode/deploy?tab=tags for all possible tags.
+    container: quay.io/hypernode/deploy:latest-php8.3-node20
     steps:
     - uses: actions/checkout@v3
     - uses: actions/cache@v3
@@ -82,7 +83,7 @@ For example, if your project needs PHP 8.3 and Node.js 20, set the image to:
 ```yaml
 jobs:
   build:
-    container: quay.io/hypernode/deploy:4-php8.3-node20
+    container: quay.io/hypernode/deploy:latest-php8.3-node20
     ...
 ```
 ````
@@ -112,7 +113,7 @@ jobs:
     environment:
       name: production
       url: https://www.example.com
-    container: quay.io/hypernode/deploy:4-php8.3-node20
+    container: quay.io/hypernode/deploy:latest-php8.3-node20
     steps:
     - uses: actions/checkout@v3
     - name: download build artifact
@@ -156,7 +157,7 @@ jobs:
     environment:
       name: acceptance
       url: https://acceptance.example.com
-    container: quay.io/hypernode/deploy:4-php8.3-node20
+    container: quay.io/hypernode/deploy:latest-php8.3-node20
     steps:
     - uses: actions/checkout@v3
     - name: download build artifact
