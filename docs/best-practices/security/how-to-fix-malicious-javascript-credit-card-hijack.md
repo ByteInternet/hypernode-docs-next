@@ -26,7 +26,7 @@ With this relatively new way of hacking, malware is added in the browser of your
 
 In 2015 we analyzed the malware and found out that a staggering amount of 3500 Magento shops are part of a zombie network that interfere credit card credentials, and send this data to so called command&control servers. (Command&control servers are a network of servers where hackers collect this sort of data). This was the first time we encountered an automated credit card fraud on this scale. It’s obvious hackers have massively improved in becoming more professional in automating large-scale credit card fraud.
 
-[Read more about Credit card Hijack](h../../best-practices/security/how-to-fix-malicious-javascript-credit-card-hijack.md#what-is-credit-card-hijack)
+[Read more about Credit card Hijack](../../best-practices/security/how-to-fix-malicious-javascript-credit-card-hijack.md#what-is-credit-card-hijack)
 
 We suspect this leak has been made possible due to unpatched Magento shops. So if you haven’t completely patched your Magento shop yet, make sure you do. Use Magereport.com to check if there are any patches not yet installed.
 
