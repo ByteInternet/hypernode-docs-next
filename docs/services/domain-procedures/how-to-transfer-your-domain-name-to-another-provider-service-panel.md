@@ -23,7 +23,7 @@ To transfer your domain name to another hosting provider, take the following ste
 
 Most domain names need an authorization code or token to initiate the transfer. This code or token will be emailed to your customer account  registrant email address when you cancel your subscription:
 
-- Log on to the [Service Panel](https://my.hypernode.com/) with your customer number and password
+- Log on to the [Control Panel](https://my.hypernode.com/) with your customer number and password
 - Click the domain you wish to transfer
 - Click “Opzeggen” under the tab ‘Administratief’.
 - Choose: “Ik wil het domein wegverhuizen naar een andere provider”
