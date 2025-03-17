@@ -120,11 +120,3 @@ We've seen one or two special cases where creating a sitemap was extremely slow.
      <active>1</active>
  </connection>
 ```
-
-## Additional Links
-
-There is lots of information about setting up and pushing your sitemap to Google and other search indexes. See:
-
-- <http://alanstorm.com/generating_google_sitemaps_in_magento>
-- <http://www.aschroder.com/2010/01/sitemap-submit-magento-extension-to-submit-your-google-sitemap/>
-- <https://support.google.com/webmasters/answer/183669?hl=en&topic=8476&ctx=topic>

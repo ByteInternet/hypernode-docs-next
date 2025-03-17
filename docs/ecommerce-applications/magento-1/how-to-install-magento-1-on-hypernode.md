@@ -14,7 +14,7 @@ redirect_from:
 
 Although Magento 1 has been End of Life since June 30 2020, it is still possible to host your Magento 1 store at Hypernode by using OpenMage. OpenMage is a free of charge fork of Magento 1, and allows store owners to continue the use of Magento 1 as a stable and secure eCommerce platform for the next years to come.
 
-OpenMage can be installed by using their [documentation](https://www.openmage.org/magento-lts/install.html). Don't implement OpenMage on production nodes without testing OpenMage first on a [Development plan](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md).
+OpenMage can be installed by using their [documentation](https://docs.openmage.org/users/install/use-composer/#configuration). Don't implement OpenMage on production nodes without testing OpenMage first on a [Development plan](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md).
 
 Would you rather install the officially supported Magento 2? Installing Magento 2 on Hypernode can be done by following the steps in the article: [Installing Magento 2 on Hypernode](../../ecommerce-applications/magento-2/how-to-install-magento-2-on-hypernode.md)
 
