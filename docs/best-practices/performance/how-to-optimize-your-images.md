@@ -15,7 +15,7 @@ redirect_from:
 
 If you want a faster shop, you have probably looked at [Google Pagespeed Insights](https://developers.google.com/speed/pagespeed/insights/) for useful suggestions. It probably told you to optimize your images. Which means, reducing the size-on-disk without losing quality. This is a very cumbersome process if you do this by hand (opening in Photoshop, saving-as, etcetera). But it is very easy if you use Hypernode. If you follow this article, **it will take you only a couple of minutes to set up automatic image optimization**.
 
-Thanks to Peter Jaap for doing the [initial research](https://www.byte.nl/blog/afbeeldingen-optimaliseren-magento-bespaart-veel-webruimte/) (in Dutch).
+Thanks to Peter Jaap for doing the initial research (in Dutch).
 
 > [@Hypernode_com](https://twitter.com/Hypernode_com) hypernode-image-optimizer is pretty effective "Optimization profit over all files: 502812 KB (82%)". Thanks for that!
 >

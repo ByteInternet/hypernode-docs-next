@@ -34,7 +34,6 @@ Please note that due to the relatively heavy resource requirements for ElasticSe
 If you are on a lower plan, you’ll need to either upgrade, or make use of an external search provider. There a several companies you can choose for a monthly subscription:
 
 - [Bonsai.io](https://bonsai.io/)
-- [Qbox.io](https://qbox.io/)
 - [Elastic.co](https://www.elastic.co/cloud/as-a-service)
 
 **If you choose Bonsai, we have made a special deal with Bonsai. Please send a mail to support@hypernode.com for a discount code.**
