@@ -36,8 +36,6 @@ To order a new Hypernode plan, follow these steps:
 1. Check if all information is correct and place your order.
 1. The new Hypernode plan will be booted and you will receive an email when it's ready.
 
-Please note: if you are a Service Panel user (i.e. you use the Dutch panel), please order your new plans directly via [this page in the Service Panel](https://service.byte.nl/planinfo/order-selection/). This is to prevent plans from being booted in the wrong system.
-
 ## Step 2: Tips For Ordering a Hypernode
 
 - Choose a logical name. IE: If your site is example.com, order example.hypernode.com
