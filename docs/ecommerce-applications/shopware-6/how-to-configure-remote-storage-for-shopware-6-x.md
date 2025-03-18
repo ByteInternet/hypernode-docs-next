@@ -38,7 +38,6 @@ shopware:
             credentials:
               key: 'access key'
               secret: 'secret key'
-
 ```
 
 You can get the required management URL, access key, and secret key by running `hypernode-object-storage info` with the `--with-credentials` flag:
@@ -54,7 +53,7 @@ app@testapp ~ # hypernode-object-storage info --with-credentials
 
 **AWS S3**
 
-If you're using Amazon's S3 bucket, your configuration file should include the following:
+If you're using the AWS S3 service, your configuration file should include the following:
 
 ```yaml
 shopware:
@@ -67,8 +66,11 @@ shopware:
             credentials:
               key: 'your aws access key'
               secret: 'your aws secret key'
-
 ```
+
+### Shopware remote storage documentation
+
+For more details on configuring remote storage in Shopware, you can refer to the official [Shopware Filesystem documentation](https://developer.shopware.com/docs/guides/hosting/infrastructure/filesystem.html)
 
 ## Syncing the files
 
@@ -101,7 +103,3 @@ Fortunately, `hypernode-manage-vhosts` [simplifies this process for you](../../h
 ### Configuring Amazon S3 bucket policies
 
 If you’re using Amazon S3, ensure that your S3 bucket has ACLs enabled.
-
-## Shopware remote storage documentation
-
-- [Filesystem](https://developer.shopware.com/docs/guides/hosting/infrastructure/filesystem.html)
