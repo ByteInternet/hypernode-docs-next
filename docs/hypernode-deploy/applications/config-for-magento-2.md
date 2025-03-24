@@ -17,8 +17,6 @@ return $configuration;
 
 By using the Magento2 ApplicationTemplate, a bunch of default configuration gets set in Hypernode Deploy, and should work out-of-the-box for most magento 2 stores.
 
-These are the steps that will be executed by running your deployment:
-
 ## Advanced
 
 However, for advanced configurations you can override most steps and variables set my Hypernode Deploy:
