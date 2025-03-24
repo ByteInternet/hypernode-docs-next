@@ -45,7 +45,7 @@ With a few easy steps, you can override php settings when running in PHP-FPM mod
 
 Any subsequent PHP installations such as WordPress in a `~/public/blog/` directory, will not be affected by the changes in this `.user.ini` If you wish to change the settings for both directories, you'll have to install two separate `.user.ini` files, or place the `.user.ini` file in your `~/public/` directory. This will affect all PHP scripts running on your Hypernode.
 
-More info can be found on the[PHP documentation page](http://php.net/manual/en/configuration.file.per-user.php).
+More info can be found on the [PHP documentation page](http://php.net/manual/en/configuration.file.per-user.php).
 
 ## Changing your PHP settings
 

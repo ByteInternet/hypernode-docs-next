@@ -25,13 +25,6 @@ At Hypernode it’s possible to enable Varnish 4.0 or 6.0 via the Control Panel,
 - Select the Hypernode
 - Click on "Enable Varnish"
 
-**Enable Varnish via the [Service Panel](https://service.byte.nl/)**
-
-- Log in on the Service Panel
-- Go to the tab "Instellingen"
-- Click on "Varnish"
-- Use the switch to enable Varnish
-
 **Configure Varnish 6.0 via the [hypernode-systemctl tool](../tools/how-to-use-the-hypernode-systemctl-cli-tool.md)**
 
 `hypernode-systemctl settings varnish_version 6.0`

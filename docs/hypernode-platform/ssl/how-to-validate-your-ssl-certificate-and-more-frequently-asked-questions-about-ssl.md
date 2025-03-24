@@ -17,7 +17,7 @@ redirect_from:
 
 ## What Kind of Certificates Can I Order via Hypernode?
 
-At Hypernode you can request various SSL certificates via the [Service Panel](https://auth.byte.nl/login/). There are three types of certificates:
+At Hypernode you can request various SSL certificates via the [Service Panel](https://my.hypernode.com/login/). There are three types of certificates:
 
 - SSL single certificate; you can use this on a single domain for the naked domain and the www domain (example.com and [www.example.com](http://www.example.com)).
 - SSL wildcard certificate; You can use this to secure all subdomains (\* .example.nl) for your domain name, but also on [www.example.nl](http://www.example.nl) and the naked domain (ie example.nl). However, this certificate does not work on \*. \*. example.nl.

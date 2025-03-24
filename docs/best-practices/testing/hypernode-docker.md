@@ -13,8 +13,6 @@ redirect_from:
 
 The official Hypernode Docker image for Magento development is now available. This image can be used to set up a fast and easy local development environment for Hypernode, or as a build machine in a CI environment representative of the production environment. The image contains the exact same packages and configuration as a real Hypernode except for some Docker specific tweaks. By testing and developing against this image you can be sure that when you deploy to a Hypernode in production there will be no surprises because of different software versions or configurations.
 
-Interested in a case study? Read [this article](https://blog.guapa.nl/local-development-with-the-hypernode-docker-container-linux/) about the Hypernode docker of one of our partners!
-
 ## About the Hypernode Docker Image
 
 We build this image multiple times a day (every time we do a [release](https://changelog.hypernode.com/)) by applying our configuration management on the [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker) ["fat" container](https://blog.phusion.nl/2015/01/20/baseimage-docker-fat-containers-treating-containers-vms/). By treating the Docker as a lightweight VM instead of as a vehicle for a single process we stay close to what an actual Hypernode actually looks like. No micro-services or a multi-container application, but a single instance with minimal network overhead and all batteries included.
