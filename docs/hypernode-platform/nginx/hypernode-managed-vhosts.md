@@ -84,6 +84,32 @@ Once the command is processed you could list all the vhosts to check if Varnish 
 
 To disable Varnish for a vhost, use the following command: `hypernode-manage-vhosts example.com --disable-varnish`
 
+## Object Storage and Hypernode Managed Vhosts
+
+If you're using object storage with Magento 2.x or Shopware 6.x you can use HMV to adjust your nginx config to serve assets directly from your bucket.
+
+If you're using Hypernode's object storage solution, simply run the following command for the relevant vhosts:
+
+```bash
+hypernode-manage-vhosts example.com --object-storage
+```
+
+### Using a custom object storage solution
+
+If you're using a custom storage provider, such as Amazon S3, you'll need to specify the bucket name and URL manually:
+
+```bash
+hypernode-manage-vhosts example.com --object-storage --object-storage-bucket mybucket --object-storage-url https://example_url.com
+```
+
+### Switching back to Hypernode defaults
+
+If you previously set a custom bucket and URL but want to revert to Hypernode's default object storage, use the `--object-storage-defaults` flag:
+
+```bash
+hypernode-manage-vhosts example.com --object-storage-defaults
+```
+
 ## Managing Configuration Files
 
 ### Vhost-specific configuration

@@ -72,7 +72,7 @@ Outputs or saves a http.magerunmaps boilerplate containing your store setup for 
 n98-magerun hypernode:varnish:config-save
 ```
 
-Fetches the VCL configuration from turpentine and applies it. Make sure [turpentine is installed and configured](https://support.hypernode.com/knowledgebase/varnish-on-hypernode/) correctly.
+Fetches the VCL configuration from turpentine and applies it. Make sure [turpentine is installed and configured](../../ecommerce-applications/magento-1/how-to-configure-varnish-for-magento-1-x.md#configure-turpentine) correctly.
 
 ### Flush all URL's in Varnish cache
 
@@ -120,7 +120,7 @@ Building a .deb for release:
 ./build.sh
 ```
 
-Then if everything is alright, upload the new version to your repository with something like [dput](http://manpages.ubuntu.com/manpages/precise/man1/dput.1.html)
+Then if everything is alright, upload the new version to your repository with something like [dput](https://manpages.ubuntu.com/manpages/plucky/en/man1/dput.1.html)
 
 ## n98-magerun2 compatibility
 

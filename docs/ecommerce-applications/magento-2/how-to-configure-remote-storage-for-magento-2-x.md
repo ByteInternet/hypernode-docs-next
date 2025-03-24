@@ -29,25 +29,29 @@ If you're using Hypernode Object Storage or a different provider than AWS S3, yo
 ```bash
 bin/magento setup:config:set \
     --remote-storage-driver="aws-s3" \
-    --remote-storage-bucket="my_bucket_name" \
-    --remote-storage-region="provider-region" \
+    --remote-storage-bucket="main" \
+    --remote-storage-region="EU" \
     --remote-storage-key="abcd1234" \
-    --remote-storage-secret="abcd1234" \
+    --remote-storage-secret="1234abcd" \
     --remote-storage-endpoint="https://my-s3-compatible.endpoint.com"
 ```
 
-In the case of Hypernode Object Storage you can get the relevant information by running `hypernode-object-storage info` with the `--with-credentials` flag:
+For Hypernode Object Storage, use `main` as the bucket name and `EU` as the region. You can retrieve the remaining parameters by running `hypernode-object-storage info --with-credentials`.
 
 ```console
 app@testapp ~ # hypernode-object-storage info --with-credentials
 +--------------------------------------+----------------+---------+-------------+-------------------------------------+---------------+---------------+
 |                 UUID                 |      Name      |   Plan  |  Hypernodes |           Management URL            |   Access Key  |   Secret Key  |
 +--------------------------------------+----------------+---------+-------------+-------------------------------------+---------------+---------------+
-| 12345678-9012-3456-b7e3-19ab43df4a23 | testappbucket1 | OS200GB |   testapp   |  https://example.ams.objectstore.eu |   abcd1234    |   abcd1234    |
+| 12345678-9012-3456-b7e3-19ab43df4a23 | testappbucket1 | OS200GB |   testapp   |  https://example.ams.objectstore.eu |   abcd1234    |   1234abcd    |
 +--------------------------------------+----------------+---------+-------------+-------------------------------------+---------------+---------------+
 ```
 
+If you're using a different object storage provider, replace these values with the relevant details from your provider.
+
 **AWS S3**
+
+If you're using an AWS S3 bucket, you only need your bucket name, AWS region, and access and secret keys.
 
 ```bash
 bin/magento setup:config:set \
@@ -55,7 +59,7 @@ bin/magento setup:config:set \
     --remote-storage-bucket="my_bucket_name" \
     --remote-storage-region="my-aws-region" \
     --remote-storage-key="abcd1234" \
-    --remote-storage-secret="abcd1234"
+    --remote-storage-secret="1234abcd"
 ```
 
 ## Syncing the files (efficiently)
@@ -95,29 +99,8 @@ Magento's S3 implementation creates a test file called `storage.flag`, which is 
 
 ## Serving assets from your S3 bucket
 
-To serve media assets directly from your S3 bucket, you need to adjust your Nginx configuration.
-Fortunately, `hypernode-manage-vhosts` simplifies this process for you.
-If you're using Hypernode's object storage solution, simply run the following command for the relevant vhosts:
-
-```bash
-hmv example.com --object-storage
-```
-
-### Using a custom object storage solution
-
-If you're using a custom storage provider, such as Amazon S3, you'll need to specify the bucket name and URL manually:
-
-```bash
-hmv example.com --object-storage --object-storage-bucket mybucket --object-storage-url https://example_url.com
-```
-
-### Switching back to Hypernode defaults
-
-If you previously set a custom bucket and URL but want to revert to Hypernode's default object storage, use the `--object-storage-defaults` flag:
-
-```bash
-hmv example.com --object-storage-defaults
-```
+To serve media assets directly from your S3 bucket, you need to adjust your nginx configuration.
+Fortunately, `hypernode-manage-vhosts` [simplifies this process for you](../../hypernode-platform/nginx/hypernode-managed-vhosts.md#object-storage-and-hypernode-managed-vhosts).
 
 ### Configuring Amazon S3 bucket policies
 

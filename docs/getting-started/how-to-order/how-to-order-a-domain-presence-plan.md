@@ -30,7 +30,8 @@ To order a domain at Hypernode you need a Presence plan. We offer two different 
 
 To order one of these plans, please follow the steps below:
 
-1. Go to <https://service.byte.nl/bestellen2/>
+1. Log into the [Hypernode control panel](https://my.hypernode.com/domain/)
+1. Go to the 'Domains' tab and press Order domain
 1. Enter the domain name that you want to register with/transfer to Hypernode.
 1. When you want to transfer a domain, our ordering system will recognize you want to order an existing domain and will ask you if you want to transfer the domain. This step will not initiate a transfer. If you want to transfer the domain to Hypernode you can choose the option 'Domein + hosting verhuizen' if you only want to order a Presence Plan but you have no plans for transferring the domain name you can choose the option 'Hosting only verhuizen'
 1. Select the plan you need.
