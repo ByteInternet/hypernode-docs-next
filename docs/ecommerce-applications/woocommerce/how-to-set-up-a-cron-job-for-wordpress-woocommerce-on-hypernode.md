@@ -11,6 +11,8 @@ myst:
 
 In this guide, we'll explain how to replace the default WordPress cron job with a cron job on your Hypernode server. This can be useful for low traffic sites, important tasks that need to be run at specific times, mitigating excessive DDoS attacks, or improving high page load times.
 
+**Important note:** Access to wp-cron.php is blocked by default on Hypernode for security reasons. This is done to protect your server from potential DDoS attacks and unauthorized execution of scheduled tasks through the wp-cron.php endpoint. Setting up a proper server-side cron job as described in this guide allows you to safely run your WordPress scheduled tasks while maintaining the security benefits.
+
 ## Disable WordPress cron
 
 To begin, disable the default WordPress cron by editing the wp-config.php file.
