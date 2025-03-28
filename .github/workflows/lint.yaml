@@ -26,5 +26,4 @@ jobs:
         run: mdformat docs/
       - uses: parkerbxyz/suggest-changes@v1
         with:
-          comment: 'Please commit the suggested changes from mdformat'
           event: 'REQUEST_CHANGES'
