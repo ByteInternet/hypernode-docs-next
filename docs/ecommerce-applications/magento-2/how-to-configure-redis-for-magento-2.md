@@ -125,7 +125,7 @@ $ redis-cli flushall
 
 ### Enable Second Redis Instance for Sessions
 
-We have made is possible to enable a second Redis instance more tailored for saving session data (more information can be found in our [changelog](https://changelog.hypernode.com/changelog/experimental-changes-redis-sessions-aws-performance/)).
+We have made it possible to enable a second Redis instance more tailored for saving session data (more information can be found in our [changelog](https://changelog.hypernode.com/changelog/experimental-changes-redis-sessions-aws-performance/)).
 
 To enable the second Redis instance for sessions you run the command: `hypernode-systemctl settings redis_persistent_instance True`
 

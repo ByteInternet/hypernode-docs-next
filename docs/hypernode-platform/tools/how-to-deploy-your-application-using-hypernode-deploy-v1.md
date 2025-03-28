@@ -49,7 +49,7 @@ bin/magento app:config:dump
 
 Strip the configuration files so that 'app/etc/config.php' contains only the essential configuration. Add 'app/etc/config.php' to your Git repo history, but not 'app/etc/env.php' because this file only needs to live on the server.
 
-Read more about dumping Magento configuration in the [devdocs of Magento](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-config-mgmt-export.html).
+Read more about dumping Magento configuration in the [devdocs of Magento](https://experienceleague.adobe.com/en/docs/commerce-operations/configuration-guide/cli/configuration-management/export-configuration).
 
 ## Create Hypernode Deploy configuration file
 
@@ -138,11 +138,11 @@ For Magento 2 your first build will fail due to missing configuration. Login to 
 
 ## Create Github configuration file
 
-Now it's time to create your CI configuration file. You can either start from scratch or use the [Hypernode Deploy Github configuration starter template](https://github.com/ByteInternet/hypernode-deploy-configuration/blob/master/templates/github-pipelines.yml).
+Now it's time to create your CI configuration file. You can either start from scratch or use the [Hypernode Deploy Github how-to page](../../hypernode-deploy/pipelines/github-actions.md).
 
-The CI configuration file needs to make use of the Hypernode Deploy image in order to run your CI/CD pipelines succesfully. We serve multiple flavors of the Hypernode Deploy image, one for every PHP + NodeJS version combination. See [Docker Hub](https://hub.docker.com/r/hypernode/deploy/tags) for all supported flavors. As new PHP / Node versions come out, we'll bake more images to support those.
+The CI configuration file needs to make use of the Hypernode Deploy image in order to run your CI/CD pipelines succesfully. We serve multiple flavors of the Hypernode Deploy image, one for every PHP + NodeJS version combination. See [our image repository](https://quay.io/repository/hypernode/deploy?tab=tags&tag=latest) for all supported flavors. As new PHP / Node versions come out, we'll bake more images to support those.
 
-Choose a version of the hypernode/deploy image that best reflects your application needs. Here's an example of a `.github/workflows/deploy.yml` file that uses the PHP 8.1 + Node 16 flavor and is configured with a configuration for the staging environment, containing a build step and deploy step to perform the deployment to the configured staging server. It uses the configuration provided in `deploy.php` to perform the steps.
+Choose a version of the hypernode/deploy image that best reflects your application needs. Here's an example of a `.github/workflows/deploy.yml` file that uses the PHP 8.3 + Node 20 flavor and is configured with a configuration for the staging environment, containing a build step and deploy step to perform the deployment to the configured staging server. It uses the configuration provided in `deploy.php` to perform the steps.
 
 ```yaml
 # This file would need to be placed in .github/workflows/deploy.yaml for example
@@ -166,7 +166,7 @@ defaults:
 jobs:
  build:
  runs-on: ubuntu-latest
- container: quay.io/hypernode/deploy:1-php8.1-node16
+ container: quay.io/hypernode/deploy:latest-php8.3-node20
  steps:
  - uses: actions/checkout@v2
  - uses: actions/cache@v2
@@ -186,7 +186,7 @@ jobs:
  deploy_staging:
    needs: build
    runs-on: ubuntu-latest
-   container: quay.io/hypernode/deploy:1-php8.1-node16
+   container: quay.io/hypernode/deploy:latest-php8.3-node20
    steps:
    - uses: actions/checkout@v2
    - name: download build artifact

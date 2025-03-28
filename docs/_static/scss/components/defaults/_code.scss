@@ -1,0 +1,86 @@
+@use "../../breakpoints" as *;
+
+.rst-content section ul {
+    line-height: auto;
+}
+
+code,
+pre,
+pre span,
+span.pre,
+.rst-content .linenodiv pre,
+.rst-content div[class^=highlight] pre,
+.rst-content pre.literal-block {
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+ul.simple li code,
+code.docutils.literal.notranslate {
+    border:none;
+    width: max-content;
+    font-size: 13px;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background: #292d3e;
+
+    &.literal {
+        color: var(--aqua);
+    }
+}
+code.docutils.literal.notranslate {
+    background: #efefef;
+    padding: 2px 6px;
+
+    &.literal {
+        color: var(--blue);
+    }
+}
+
+.rst-content div.notranslate {
+    border: none;
+
+
+    .highlight {
+        font-family: 'Ubuntu Mono', monospace;
+        font-size: 16px;
+        padding: 10px;
+        line-height: 24px;
+        margin: 10px 0;
+        border-radius: 8px;
+        background-color: #292d3e;
+        color: #D9E7F3;
+
+        .c1 {
+            color: var(--message-warning);
+        }
+        .mi,
+        .o,
+        .mf {
+            color: #e4e4e4;
+        }
+
+        .s,
+        .n,
+        .nb,
+        .na,
+        .s1 {
+            color: var(--aqua);
+        }
+
+        .s1 {
+            color: var(--light-orange);
+        }
+
+        .k,
+        .nv,
+        .m,
+        .vg,
+        .p {
+            color: #D9E7F3;
+        }
+    }
+}
+.rst-content div.highlight pre {
+    font-size: 14px;
+}

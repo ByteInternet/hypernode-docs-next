@@ -19,6 +19,7 @@ On Hypernode you can choose from a range of PHP versions. Check out which ones a
 
 On Hypernode you can choose from a range of PHP versions:
 
+- **PHP 8.4** (Fully supported)
 - **PHP 8.3** (Fully supported)
 - **PHP 8.2** (Fully supported)
 - **PHP 8.1** (Fully supported)
@@ -28,7 +29,7 @@ On Hypernode you can choose from a range of PHP versions:
 - **PHP 7.2** (EOL, No updates since 10 Nov 2020)
 - **PHP 7.1** (EOL, No updates since 1 Dec 2019)
 - **PHP 7.0** (EOL, No updates since 3 Dec 2018, deprecated)
-- **PHP 5.6** (EOL, No updates since 31 Dec 2018, deprecated, we strongly recommend you to upgrade, will likely be phased out by us somewhere in 2022)
+- **PHP 5.6** (EOL, No updates since 31 Dec 2018, deprecated, we strongly recommend you to upgrade)
 
 You can easily switch the PHP version of your Hypernode, but please thoroughly test a PHP change before implementing it on a live environment!
 
@@ -72,7 +73,7 @@ hypernode-systemctl settings php_version list
 To upgrade to another version simply provide the version like so:
 
 ```bash
-hypernode-systemctl settings php_version 8.1
+hypernode-systemctl settings php_version 8.4
 ```
 
 Afterwards you can use the livelog command to track progress of the upgrade.

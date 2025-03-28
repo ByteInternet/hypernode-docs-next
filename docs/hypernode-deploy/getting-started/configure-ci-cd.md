@@ -17,8 +17,8 @@ In this example we'll be covering the Github Actions CI/CD configuration.
 
 Hypernode Deploy needs a few 'credentials' to be able to function. The necessary credentials are:
 
-1. The private SSH key. (`SSH_PRIVATE_KEY`)
-1. The composer auth.json file, optional. (`DEPLOY_COMPOSER_AUTH`)
+1. The private SSH key as base64 encoded string. (`SSH_PRIVATE_KEY`)
+1. The composer auth.json file as base64 encoded string, optional. (`DEPLOY_COMPOSER_AUTH`)
    - This is only necessary when your project needs to access private Composer repositories.
 1. The Hypernode API token, optional. (`HYPERNODE_API_TOKEN`)
    - This is only necessary when you make use of Hypernode API driven features like Brancher.
@@ -103,8 +103,8 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # Here we use the Hypernode Deploy v3 image with PHP 8.1 and Node.js 18
-    container: quay.io/hypernode/deploy:3.0-php8.1-node18
+    # Here we use the latest Hypernode Deploy image with PHP 8.3 and Node.js 20
+    container: quay.io/hypernode/deploy:latest-php8.3-node20
     steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
@@ -137,8 +137,8 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    # Here we use the Hypernode Deploy v3 image with PHP 8.1 and Node.js 18
-    container: quay.io/hypernode/deploy:3.0-php8.1-node18
+    # Here we use the latest Hypernode Deploy image with PHP 8.3 and Node.js 20
+    container: quay.io/hypernode/deploy:latest-php8.3-node20
     steps:
       - uses: actions/checkout@v2
       - name: download build artifact

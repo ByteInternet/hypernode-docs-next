@@ -12,7 +12,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: quay.io/hypernode/deploy:3-php8.1-node18
+    container: quay.io/hypernode/deploy:latest-php8.3-node20
     steps:
       - uses: actions/checkout@v3
         with:
@@ -34,7 +34,7 @@ jobs:
           echo "DOCS_INDEX_FOLLOW=1" >> $GITHUB_ENV
       - run: hypernode-deploy build -vvv
       - name: archive production artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: deployment-build
           path: build/build.tgz
@@ -47,13 +47,13 @@ jobs:
       name: acceptance
       url: ${{ steps.get_brancher_hostname.outputs.BRANCHER_URL }}
     if: github.ref != 'refs/heads/master'
-    container: quay.io/hypernode/deploy:3-php8.1-node18
+    container: quay.io/hypernode/deploy:latest-php8.3-node20
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: download build artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: deployment-build
           path: build/
@@ -102,11 +102,11 @@ jobs:
       name: production
       url: https://docs.hypernode.io
     if: github.ref == 'refs/heads/master'
-    container: quay.io/hypernode/deploy:3-php8.1-node18
+    container: quay.io/hypernode/deploy:latest-php8.3-node20
     steps:
       - uses: actions/checkout@v3
       - name: download build artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: deployment-build
           path: build/
