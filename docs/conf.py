@@ -48,7 +48,6 @@ extensions = [
     "hypernode.sphinx.extensions.updated_at",
     "hypernode.sphinx.extensions.meta_robots",
     "hypernode.sphinx.extensions.github_actions_logging",
-    "sphinxcontrib.mermaid",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
