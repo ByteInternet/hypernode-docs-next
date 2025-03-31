@@ -48,10 +48,6 @@ To whitelist an IP address from basic authentication, you can add it to the geo 
 
 To find out the IP's that need to be whitelisted, please contact the external service provider, or [check your access logs](../../troubleshooting/performance/general-troubleshooting.md) to see what IP's are accessing the website.
 
-### Whitelist a User Agent
-
-To whitelist a specific user agent you can add it to the User Agent whitelist map in the whitelist file. We suggest whitelisting a specific term, such as the bot name, or the domainname used in the the user agent, using a regex pattern.
-
 ### Whitelist an URL
 
 To whitelist a specific URL you can add it to the url whitelist map in the whitelist file. Please note that the whitelist is based on the entire URL, including any arguments. As such, we advise using a regex pattern when whitelisting.
@@ -114,6 +110,23 @@ map $uri_whitelist$ip_whitelist $development_exceptions {
 - We define `$uri_whitelist` that checks if the request URI contains a path that should be whitelisted. If so, we set it to 1, otherwise to 0.
 - We use a geo directive to define `$ip_whitelist`, which checks if the visitor's IP address is whitelisted. If so, we set it to 1, otherwise to 0.
 - We combine `$uri_whitelist` and `$ip_whitelist` in a new map that defines `$development_exceptions`. Depending on whether the IP address or URI path is whitelisted, access without basic auth is allowed ("off").
+
+### Whitelisting Based on IP and User Agent
+
+To create a whitelist based on two components: URL and User Agent.
+In the **nginx** file named **whitelist-development-exception.conf**, you should use the following configuration:
+
+```nginx
+geo $ip_whitelist {
+    default "Development restricted area";
+    # 1.2.3.4 1; # IP address whitelist
+}
+
+map $http_user_agent $development_exceptions {
+    default $ip_whitelist;
+    ~*(Klaviyo) "off";
+}
+```
 
 ## Troubleshooting
 
