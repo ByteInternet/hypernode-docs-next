@@ -49,7 +49,7 @@ This sets the container image, defines the CI/CD stages and defines the build st
 
 ```yaml
 # See https://quay.io/repository/hypernode/deploy?tab=tags for all possible tags.
-image: quay.io/hypernode/deploy:4-php8.3-node20
+image: quay.io/hypernode/deploy:latest-php8.3-node20
 
 stages:
   - build
@@ -72,7 +72,7 @@ build:
 Don't forget to set the specifications of the image to what your project needs.
 For example, if your project needs PHP 8.3 and Node.js 16, set the image to:
 ```yaml
-image: quay.io/hypernode/deploy:3-php8.3-node16
+image: quay.io/hypernode/deploy:latest-php8.3-node16
 ```
 ````
 
