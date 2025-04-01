@@ -13,7 +13,7 @@ In the text below we will explain how you can add an IP to the whitelist by usin
 
 Follow these steps to whitelist an IP addresses for FTP:
 
-- Go to to my.hypernode.com
+- Go to the [control panel](https://my.hypernode.com)
 - Log in with your credentials
 - Once logged in, select the Hypernode you wish to configure
 - Click on **Allowlist** from the menu
