@@ -49,7 +49,7 @@ This sets the container image, defines the CI/CD stages and defines the build st
 
 ```yaml
 # See https://quay.io/repository/hypernode/deploy?tab=tags for all possible tags.
-image: quay.io/hypernode/deploy:latest-php8.3-node20
+image: quay.io/hypernode/deploy:latest-php8.3-node22
 
 stages:
   - build
