@@ -202,7 +202,7 @@ More information about [Elasticsearch on Hypernode](../../hypernode-platform/too
 
 #### Make sure RabbitMQ configured properly
 
-Please make sure RabbitMQ host is set to `rabbitmqmaster` in the Magento 2 configuration file at `<magento_root>/app/etc/env.php`
+Please make sure RabbitMQ host is set to `rabbitmq` in the Magento 2 configuration file at `<magento_root>/app/etc/env.php`
 More information about [RabbitMQ on Hypernode](../../best-practices/database/how-to-run-rabbitmq-on-hypernode.md)
 
 There is a rabbitmq user provisioned by Hypernode called `hypernode-admin` as a non-default user, but you can also configure RabbitMQ with a new different user of your own.
@@ -212,7 +212,7 @@ For example, you can run the following command to change your RabbitMQ config in
 
 ```bash
 bin/magento setup:config:set \
-    --amqp-host="rabbitmqmaster" \
+    --amqp-host="rabbitmq" \
     --amqp-user="my_rabbitmq_user" \
     --amqp-password="my_rabbitmq_password"
 ```

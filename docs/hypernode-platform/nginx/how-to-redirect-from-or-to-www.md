@@ -20,8 +20,6 @@ There are some restrictions when choosing your base URL.
 
 If you use the wwwizer servers, which are sometimes used when your domain is not hosted at Hypernode and thus the DNS can’t be automagically changed in case of up or downgrades, your domain will always redirect to [www](http://www).
 
-For Service Panel customers only: when your domain is hosted at Hypernode, simply link it to your Hypernode through the [Service Panel](https://service.byte.nl/)
-
 More info can be found [on our page about setting your DNS](../dns/how-to-manage-your-dns-settings-for-hypernode.md).
 
 ## Redirect From Apex to WWW

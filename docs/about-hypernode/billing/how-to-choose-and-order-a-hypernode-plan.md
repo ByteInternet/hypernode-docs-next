@@ -68,8 +68,6 @@ DigitalOcean and Amazon both have data centers all over the world.
 
 You can order a Hypernode plan via our [order page](https://www.hypernode.com/magento-cloud-hosting/#plans). The Control Panel is our default panel, which means all new Hypernode plans and trials will be booted in the Control Panel.
 
-**Please note:** if you are a Service Panel user (i.e. you use the Dutch panel), please order your new plans directly via [this page in the Service Panel](https://service.byte.nl/planinfo/order-selection/). This is to prevent plans from being booted in the wrong system.
-
 ## Tips For Ordering a Hypernode
 
 - Choose a logical name. IE: If your site is example.com, order example.hypernode.com

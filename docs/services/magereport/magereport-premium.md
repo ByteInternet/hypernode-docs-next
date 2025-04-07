@@ -47,7 +47,7 @@ This check tells you how big your var/log directory has gotten. We recommend kee
 
 ### Disk Usage
 
-A full disk slows your Hypernode down. You can always [upgrade to a bigger node](https://service.byte.nl/planinfo/), but in most cases cleaning up your disk is sufficient. More information about cleaning up your disk is explained in [How to Free up Disk Space.](../../hypernode-platform/tools/how-to-free-up-disk-space)
+A full disk slows your Hypernode down. You can always [upgrade to a bigger node](https://www.hypernode.com/en/plans-and-prices/), but in most cases cleaning up your disk is sufficient. More information about cleaning up your disk is explained in [How to Free up Disk Space.](../../hypernode-platform/tools/how-to-free-up-disk-space)
 
 ### Bot Traffic
 

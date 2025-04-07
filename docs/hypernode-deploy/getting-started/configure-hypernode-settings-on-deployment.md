@@ -31,7 +31,7 @@ $configuration->setPlatformConfigurations([
     new PlatformConfiguration\HypernodeSettingConfiguration('elasticsearch_enabled', 'False'),
     new PlatformConfiguration\HypernodeSettingConfiguration('opensearch_enabled', 'True'),
     new PlatformConfiguration\HypernodeSettingConfiguration('varnish_enabled', 'True'),
-    new PlatformConfiguration\HypernodeSettingConfiguration('nodejs_version', '20'),
+    new PlatformConfiguration\HypernodeSettingConfiguration('nodejs_version', '22'),
 ]);
 ```
 
