@@ -50,7 +50,7 @@ $configuration->setPlatformConfigurations([
     new PlatformConfiguration\HypernodeSettingConfiguration('elasticsearch_enabled', 'False'),
     new PlatformConfiguration\HypernodeSettingConfiguration('opensearch_enabled', 'False'),
     new PlatformConfiguration\HypernodeSettingConfiguration('varnish_enabled', 'False'),
-    new PlatformConfiguration\HypernodeSettingConfiguration('nodejs_version', '20'),
+    new PlatformConfiguration\HypernodeSettingConfiguration('nodejs_version', '22'),
 ]);
 
 $configuration->addBuildTask('node:install');
