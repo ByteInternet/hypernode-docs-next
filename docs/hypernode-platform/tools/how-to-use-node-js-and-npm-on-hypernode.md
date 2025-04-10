@@ -102,7 +102,7 @@ Installing and using unsupported Node.js versions is no longer supported on the 
 
 If you want to use a more recent version, it is very easy to install the latest version of Node.js yourself.
 
-NodeJs offers [precompiled packages on their website](https://nodejs.org/en/) that are ready to use on your Hypernode.  
+NodeJs offers [precompiled packages on their website](https://nodejs.org/en/) that are ready to use on your Hypernode.
 All we need to do is download and unpack them to make use of node and npm and install your own node modules.
 
 In this example, we use version v14.17.6, but the installation process is the same when using older or newer versions.
