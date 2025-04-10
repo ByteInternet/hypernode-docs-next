@@ -96,7 +96,6 @@ npm install yarn
 
 ## Using an unsupported Node.js version
 
-
 ```{note}
 Installing and using unsupported Node.js versions is no longer supported on the Hypernode Platform. We strongly advise against using unsupported versions, as we cannot provide any assistance or guarantee compatibility.
 ```
