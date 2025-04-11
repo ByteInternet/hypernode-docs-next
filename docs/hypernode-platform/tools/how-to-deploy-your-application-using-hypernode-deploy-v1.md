@@ -178,7 +178,7 @@ jobs:
      ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
  - run: hypernode-deploy build -vvv
  - name: archive production artifacts
-   uses: actions/upload-artifact@v3
+   uses: actions/upload-artifact@v4
    with:
      name: deployment-build
      path: build/build.tgz
