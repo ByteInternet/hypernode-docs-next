@@ -132,12 +132,12 @@ mysql -e "create database akeneo_pim;"
 
 ### Configure Your .env File
 
-Edit the values of your MySQL user, password, host and Elasticsearch host in `/data/web/akeneo/.env`
+Edit the values of your MySQL user, password, host and Elasticsearch host in `/data/web/akeneo/.env` by running these commands:
 
 ```bash
 sed -i "s/APP_DATABASE_PASSWORD=akeneo_pim/APP_DATABASE_PASSWORD=$(cat ~/.my.cnf | grep password | awk '{print$NF}')/" /data/web/akeneo/.env
 sed -i "s/APP_DATABASE_USER=akeneo_pim/APP_DATABASE_USER=$(cat ~/.my.cnf | grep user | awk '{print$NF}')/" /data/web/akeneo/.env
-sed -i "s/APP_DATABASE_HOST=mysql/APP_DATABASE_HOST=mysqlmaster/" /data/web/akeneo/.env
+sed -i "s/APP_DATABASE_HOST=mysql/APP_DATABASE_HOST=$(cat ~/.my.cnf |grep host|awk {'print $3'}/" /data/web/akeneo/.env
 sed -i "s/APP_INDEX_HOSTS=elasticsearch:9200/APP_INDEX_HOSTS=localhost:9200/" /data/web/akeneo/.env
 
 cp /data/web/akeneo/.env /data/web/akeneo/.env.local
