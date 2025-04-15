@@ -25,7 +25,9 @@ With Object Storage you get:
 
 ## CLI option
 
-```console
+You can run the CLI command with the `--help` command to find out about all the options and arguments.
+
+```bash
 hypernode-object-storage --help
 ```
 
@@ -38,22 +40,15 @@ hypernode-object-storage --help
 
 Note: You can use one object storage across multiple Hypernodes. But you can only use one object storage space per Hypernode.
 
-If you receive this error, please make sure to enable "Allow billing through CLI in the relevant Hypernode settings page"
-
-```
-You do not have permission to order object storage for this Hypernode. Please ask the Hypernode owner to enable 'Allow billing through the CLI' in the Control Panel settings or via the API
-```
-
 ### Retrieve object storage
 
 1. Run `hypernode-object-storage info`
 1. If you want to retrieve your credentials for the workspace pass in the flag `--with-credentials`.
 
-The output should look like this
+The output should look like the following:
 
 ```console
-app@testhypernode ~ # hypernode-object-storage info
-
+app@abcdef-example-magweb-cmbl:~$ hypernode-object-storage info
 +--------------------------------------+--------------+--------+------------+----------------+---------------+---------------+
 |                 UUID                 |     Name     |  Plan  | Hypernodes | Management URL |   Access Key  |   Secret Key  |
 +--------------------------------------+--------------+--------+------------+----------------+---------------+---------------+
@@ -61,14 +56,19 @@ app@testhypernode ~ # hypernode-object-storage info
 +--------------------------------------+--------------+--------+------------+----------------+---------------+---------------+
 ```
 
-You can use the credentials and the URL now to configure remote storage for your application with the help of [this document](../../ecommerce-applications/magento-2/how-to-configure-remote-storage-for-magento-2-x.md).
+You can use the credentials and the URL now to configure remote storage for your application with the help of the following articles:
+
+1. [How to configure remote storage for Magento 2.x](../../ecommerce-applications/magento-2/how-to-configure-remote-storage-for-magento-2-x.md)
+1. [How to configure remote storage for Shopware 6.x](../../ecommerce-applications/shopware-6/how-to-configure-remote-storage-for-shopware-6-x.md)
 
 ### Cancel/Delete Object Storage
 
 To cancel an Object Storage, you can ssh into the Hypernode that is linked to that Object Storage and run `hypernode-object-storage cancel`
 
-Note: The cancellation will be in effect from the end of the month.
+```{note}
+The cancellation will be in effect from the end of the month.
 Also if you change your mind or forgot to pull some data. It will still be available for 7 days after the cancellation. You can always reach out to the support team for help if that happens.
+```
 
 ### Managing objects in object storage
 
@@ -76,7 +76,7 @@ You can manage your objects using the `hypernode-object-storage objects` subcomm
 It supports all common operations--listing, copying, moving, and deleting files--while also allowing you to sync files in the background and monitor the progress of an ongoing sync.
 
 ```console
-app@testhypernode ~ # hypernode-object-storage objects --help
+app@abcdef-example-magweb-cmbl:~$ hypernode-object-storage objects --help
 usage: hypernode-object-storage objects [-h] {sync,cp,ls,mv,rm,show} ...
 
 Manage objects in object storage
@@ -101,7 +101,7 @@ It is important to note that `hypernode-object-storage objects` supports all opt
 Syncing files between your local directory and object storage is simple. Run the following command:
 
 ```console
-app@testhypernode ~ # hypernode-object-storage objects sync /example/local/path/ s3://example/bucket/uri/
+app@abcdef-example-magweb-cmbl:~$ hypernode-object-storage objects sync /example/local/path/ s3://example/bucket/uri/
 Syncing objects from /example/local/path/ to s3://example/bucket/uri/...
 Sync process started with PID 1234 in the background.
 ```
@@ -109,14 +109,14 @@ Sync process started with PID 1234 in the background.
 The `sync` operation runs in the background, and you can monitor its progress by using the `show` command, for example:
 
 ```console
-app@testhypernode ~ # hypernode-object-storage objects show 1234
+app@abcdef-example-magweb-cmbl:~$ hypernode-object-storage objects show 1234
 Completed 9.7 GiB/~30.0 GiB (118.2 MiB/s) with ~5 file(s) remaining (calculating...)
 ```
 
 If you run the `show` command after the sync operation has finished, you’ll see output like this:
 
 ```console
-app@testhypernode ~ # hypernode-object-storage objects show 1234
+app@abcdef-example-magweb-cmbl:~$ hypernode-object-storage objects show 1234
 Process 1234 does not exist anymore
 ```
 

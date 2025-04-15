@@ -43,7 +43,7 @@ shopware:
 You can get the required management URL, access key, and secret key by running `hypernode-object-storage info` with the `--with-credentials` flag:
 
 ```console
-app@testapp ~ # hypernode-object-storage info --with-credentials
+app@abcdef-example-magweb-cmbl:~$ hypernode-object-storage info --with-credentials
 +--------------------------------------+----------------+---------+-------------+-------------------------------------+---------------+---------------+
 |                 UUID                 |      Name      |   Plan  |  Hypernodes |           Management URL            |   Access Key  |   Secret Key  |
 +--------------------------------------+----------------+---------+-------------+-------------------------------------+---------------+---------------+
@@ -93,6 +93,10 @@ Alternatively, you can use the AWS CLI directly:
 
 ```bash
 aws s3 sync public/media/ s3://bucket_name/media/
+```
+
+```{tip}
+More information about the `hypernode-object-storage` command can be found in the [Object Storage article](../../hypernode-platform/object-storage/getting-started-with-object-storage.md).
 ```
 
 ## Serving assets from your S3 bucket
