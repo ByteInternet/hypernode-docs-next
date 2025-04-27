@@ -100,7 +100,7 @@ aws s3 sync var/import_export s3://my_bucket_name/import_export
 Both methods are significantly faster than Magento’s built-in sync, as aws s3 sync handles uploads concurrently.
 
 ```{tip}
-More information about the `hypernode-object-storage` command can be found in the [Object Storage article](../../hypernode-platform/object-storage/getting-started-with-object-storage.md).
+More information about the `hypernode-object-storage` commands can be found in the [Object Storage documentation](../../hypernode-platform/object-storage.md).
 ```
 
 ## The storage flag file in the bucket
