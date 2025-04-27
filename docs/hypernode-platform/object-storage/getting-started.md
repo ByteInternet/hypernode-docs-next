@@ -30,7 +30,6 @@ hypernode-object-storage --help
 1. Click the **Order a workspace** button in the top-right.
 1. Select the desired options for your workspace and proceed to checkout.
 
-
 ```{note}
 You can use one object storage across multiple Hypernodes. But you can only use one object storage space per Hypernode.
 ```
@@ -57,6 +56,7 @@ Secret Key   | **sensitive**
 ```
 
 **Control Panel**
+
 1. Go to the [Control Panel](https://my.hypernode.com).
 1. Click on the **Object Storage** tab in the left sidebar.
 1. Click your workspace.

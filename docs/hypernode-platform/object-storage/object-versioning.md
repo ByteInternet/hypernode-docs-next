@@ -13,7 +13,6 @@ With object versioning, you can keep track of changes made to your objects in th
 
 To enable object versioning, you can use the `update` command with the `--enable-versioning` flag. This will enable versioning for all objects in your Object Storage workspace.
 
-
 ```console
 app@abcdef-example-magweb-cmbl:~$ hypernode-object-storage update --enable-versioning
 Enabling versioning...
