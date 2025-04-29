@@ -96,7 +96,7 @@ aws s3 sync public/media/ s3://bucket_name/media/
 ```
 
 ```{tip}
-More information about the `hypernode-object-storage` command can be found in the [Object Storage article](../../hypernode-platform/object-storage/getting-started-with-object-storage.md).
+More information about the `hypernode-object-storage` command can be found in the [Object Storage documentation](../../hypernode-platform/object-storage.md).
 ```
 
 ## Serving assets from your S3 bucket
