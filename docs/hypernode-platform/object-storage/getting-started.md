@@ -9,7 +9,7 @@ redirect_from:
 
 # Getting started with Hypernode Object Storage
 
-You can run the CLI command with the `--help` command to find out about all the options and arguments.
+You can run the CLI command with the `--help` flag to find out about all the options and arguments.
 
 ```bash
 hypernode-object-storage --help

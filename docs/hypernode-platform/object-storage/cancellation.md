@@ -7,7 +7,7 @@ myst:
 
 # Cancellation
 
-To cancel an Object Storage Workspace, you can ssh into the Hypernode that is linked to that Object Storage and run `hypernode-object-storage cancel`.
+To cancel an Object Storage Workspace, you can SSH into the Hypernode that is linked to that Object Storage and run `hypernode-object-storage cancel`.
 
 ```{note}
 The cancellation will be in effect from the end of the month.
