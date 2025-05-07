@@ -11,7 +11,7 @@ Dynamic Upscaling is a feature that automatically increases your object storage 
 
 ## How it works
 
-When Dynamic Upscaling is enabled, the system monitors your usage and upgrades your object storage plan automatically when you're close to hitting the limit. This helps prevent issues related to running out of storage space and reduces the risk of downtime. Dynamic upscaling will always choose the next suitable plan size based on your current usage. You will be billed according to the upgraded plan after the change.
+When Dynamic Upscaling is enabled, the system monitors your usage and upgrades your object storage plan automatically when you reach 99% of your current limit. This helps prevent issues related to running out of storage space and reduces the risk of downtime. Dynamic upscaling will always choose the next suitable plan size based on your current usage. You will be billed according to the upgraded plan after the change.
 
 ## Managing Dynamic Upscaling
 
