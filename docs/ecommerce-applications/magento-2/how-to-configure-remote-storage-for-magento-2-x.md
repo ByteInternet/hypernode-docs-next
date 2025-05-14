@@ -22,6 +22,12 @@ This can be useful for many reasons, such as:
 
 Configuring Magento 2 to start storing files in your bucket is done using a single command.
 
+Before configuring remote storage, make sure that the deprecated database media storage backend is disabled.
+
+```bash
+bin/magento setup:config:set system/media_storage_configuration/media_storage 0
+```
+
 **Hypernode Object Storage and other S3 compatible providers**
 
 If you're using Hypernode Object Storage or a different provider than AWS S3, you need to specify the `--remote-storage-endpoint` option.
@@ -39,7 +45,7 @@ bin/magento setup:config:set \
 For Hypernode Object Storage, use `main` as the bucket name and `EU` as the region. You can retrieve the remaining parameters by running `hypernode-object-storage info --with-credentials`.
 
 ```console
-app@testapp ~ # hypernode-object-storage info --with-credentials
+app@abcdef-example-magweb-cml:~$ hypernode-object-storage info --with-credentials
 +--------------------------------------+----------------+---------+-------------+-------------------------------------+---------------+---------------+
 |                 UUID                 |      Name      |   Plan  |  Hypernodes |           Management URL            |   Access Key  |   Secret Key  |
 +--------------------------------------+----------------+---------+-------------+-------------------------------------+---------------+---------------+
@@ -93,6 +99,10 @@ aws s3 sync var/import_export s3://my_bucket_name/import_export
 
 Both methods are significantly faster than Magento’s built-in sync, as aws s3 sync handles uploads concurrently.
 
+```{tip}
+More information about the `hypernode-object-storage` commands can be found in the [Object Storage documentation](../../hypernode-platform/object-storage.md).
+```
+
 ## The storage flag file in the bucket
 
 Magento's S3 implementation creates a test file called `storage.flag`, which is basically created to test if the connection works. So this is not a magic file to mark anything ([source](https://github.com/magento/magento2/blob/6f4805f82bb7511f72935daa493d48ebda3d9039/app/code/Magento/AwsS3/Driver/AwsS3.php#L104)).
@@ -120,6 +130,12 @@ If you’re using Amazon S3, ensure that your S3 bucket policies are properly co
   ]
 }
 ```
+
+## Remote storage tweaks module
+
+After configuring remote storage for Magento 2, you might run into some slower pages in the admin product grid. This is caused by an inefficient image loading mechanism found in the Magento core code. For now we have written a Magento 2 module to fix this performance problem.
+
+You can find the module on [GitHub](https://github.com/ByteInternet/magento2-remote-storage-tweaks/) and [Packagist](https://packagist.org/packages/hypernode/magento2-remote-storage-tweaks).
 
 ## Magento remote storage documentation
 
