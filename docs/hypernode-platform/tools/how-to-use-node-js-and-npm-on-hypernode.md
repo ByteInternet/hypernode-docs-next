@@ -96,12 +96,16 @@ npm install yarn
 
 ## Using an unsupported Node.js version
 
+```{note}
+Installing and using unsupported Node.js versions is no longer supported on the Hypernode Platform. We strongly advise against using unsupported versions, as we cannot provide any assistance or guarantee compatibility.
+```
+
 If you want to use a more recent version, it is very easy to install the latest version of Node.js yourself.
 
 NodeJs offers [precompiled packages on their website](https://nodejs.org/en/) that are ready to use on your Hypernode.
 All we need to do is download and unpack them to make use of node and npm and install your own node modules.
 
-In this example we use version v14.17.6 but the installation process is the same when using older or newer versions.
+In this example, we use version v14.17.6, but the installation process is the same when using older or newer versions.
 
 - First, create the directory where we will unpack Node.js:
   ```bash
@@ -127,4 +131,4 @@ Both the installations (the already installed or the precompiled self-downloaded
 
 ## Troubleshooting
 
-- When using npm search, so much memory is used that on smaller Hypernode plans, your shell will get killed, and you’ll be automagically logged out of your Hypernode due to our out of memory protection.
+- When running `npm search`, the command may consume a significant amount of memory. On smaller Hypernode plans, this can trigger our out-of-memory protection, causing your shell session to be terminated and resulting in an automatic logout from your Hypernode.
