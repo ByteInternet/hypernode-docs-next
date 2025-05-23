@@ -7,7 +7,7 @@ on:
 jobs:
   cleanup:
     runs-on: ubuntu-latest
-    container: quay.io/hypernode/deploy:latest-php8.3-node20
+    container: quay.io/hypernode/deploy:latest-php8.4-node22
     environment: acceptance
     steps:
       - uses: actions/checkout@v2

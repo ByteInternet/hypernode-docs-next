@@ -21,13 +21,14 @@ sys.path.append(os.path.abspath("../"))
 
 # -- Project information -----------------------------------------------------
 
-project = "Docs"
+project = "Documentation"
+html_title = "Hypernode Documentation"
 current_year = datetime.now().year
 copyright = f"{current_year}, Hypernode"
 author = "Hypernode"
 
 # The full version, including alpha/beta/rc tags
-release = "dev"
+release = "latest"
 
 
 # -- General configuration ---------------------------------------------------
