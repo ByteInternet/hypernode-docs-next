@@ -86,7 +86,7 @@ To see which value a setting has you can run the following:
 
 To set a setting to a certain value you can run the following:
 
-`hypernode-systemctl settings php_version 8.3`
+`hypernode-systemctl settings php_version 8.4`
 
 If an invalid value is provided you will be notified of this during the setting procedure.
 

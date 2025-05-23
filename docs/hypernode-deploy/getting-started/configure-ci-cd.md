@@ -103,8 +103,8 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # Here we use the latest Hypernode Deploy image with PHP 8.3 and Node.js 22
-    container: quay.io/hypernode/deploy:latest-php8.3-node22
+    # Here we use the latest Hypernode Deploy image with PHP 8.4 and Node.js 22
+    container: quay.io/hypernode/deploy:latest-php8.4-node22
     steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
@@ -137,8 +137,8 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    # Here we use the latest Hypernode Deploy image with PHP 8.3 and Node.js 22
-    container: quay.io/hypernode/deploy:latest-php8.3-node22
+    # Here we use the latest Hypernode Deploy image with PHP 8.4 and Node.js 22
+    container: quay.io/hypernode/deploy:latest-php8.4-node22
     steps:
       - uses: actions/checkout@v2
       - name: download build artifact
