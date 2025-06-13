@@ -62,7 +62,13 @@ Secret Key   | **sensitive**
 1. Click your workspace.
 1. Click the **Show credentials** button in the top-right corner.
 
+## Setting up your application
+
 You can use the credentials and the URL now to configure remote storage for your application with the help of the following articles:
 
 1. [How to configure remote storage for Magento 2.x](../../ecommerce-applications/magento-2/how-to-configure-remote-storage-for-magento-2-x.md)
 1. [How to configure remote storage for Shopware 6.x](../../ecommerce-applications/shopware-6/how-to-configure-remote-storage-for-shopware-6-x.md)
+
+## Setting up Nginx
+
+After setting up Object Storage, you will want to configure your Nginx to serve assets directly from your storage bucket. Learn how to do this using Hypernode Managed Vhosts in our [Object Storage and Hypernode Managed Vhosts](../nginx/hypernode-managed-vhosts.md#object-storage-and-hypernode-managed-vhosts) article.
