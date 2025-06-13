@@ -55,7 +55,7 @@ When you select the maintenance box in the importer tool in the Service Panel, t
 
 \*If your domain is hosted at Hypernode, there is a quick and easy way to switch your DNS to the Hypernode. Login into the [Service Panel](https://service.byte.nl). Make sure your Hypernode is selected in the dropdown menu -> Instellingen -> SSL & DNS instellingen -> Find your domain in the list -> change the 'Beschikbaar' value into 'Koppel domeinnaam aan deze Hypernode'. Repeat these steps for all the domains that should be linked to your Hypernode.
 
-\*If your domain is being hosted externally, you need to change the DNS settings manually. Read [this article](../dns/how-to-manage-your-dns-settings-for-hypernode.md)to see which records you need to modify.
+\*If your domain is being hosted externally, you need to change the DNS settings manually. Read [this article](../dns/how-to-manage-your-dns-settings-for-hypernode.md) to see which records you need to modify.
 
 \*Although the Shop importer is a very easy way to import a shop, please keep in mind that is using the command line is a requirement. So if needed, find yourself an [experienced developer](https://www.byte.nl/partners#specialisms=Hypernode&cms=Magento) that can assist you with these tasks.
 
