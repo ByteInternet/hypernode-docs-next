@@ -54,3 +54,15 @@ If you run the `show` command after the sync operation has finished, you’ll se
 app@abcdef-example-magweb-cmbl:~$ hypernode-object-storage objects show 1234
 Process 1234 does not exist anymore
 ```
+
+## Empty up an Object Storage
+
+To remove all objects from an Object Storage, use the `rm` subcommand with the `--recursive` flag. This will delete every object within the specified Object Storage. For example:
+
+```console
+app@abcdef-example-magweb-cmbl:~$ hypernode-object-storage objects rm s3://main --recursive
+delete: s3://main/file1.txt
+delete: s3://main/file2.txt
+```
+
+Be careful when using `--recursive`, as this action is irreversible and will permanently remove all data from the Object Storage.
