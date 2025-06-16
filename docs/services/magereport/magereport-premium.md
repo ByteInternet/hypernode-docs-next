@@ -81,7 +81,7 @@ n98-magerun sys:store:config:base-url:list
 magerun2 sys:store:config:base-url:list
 ```
 
-This tool shows the storefronts configured in your shop and the storecode. In MageReport Premium you can check whether your DNS is configured correctly. See our manual on [configuring DNS](../../hypernode-platform/dns/how-to-manage-your-dns-settings-for-hypernode.md)for more information.
+This tool shows the storefronts configured in your shop and the storecode. In MageReport Premium you can check whether your DNS is configured correctly. See our manual on [configuring DNS](../../hypernode-platform/dns/how-to-manage-your-dns-settings-for-hypernode.md) for more information.
 
 *If you’re using Cloudflare the check will say your storefronts aren’t configured correctly and your shop is not live. Right now MageReport can’t detect if a shop is using Cloudflare, so you can ignore this.*
 
@@ -111,4 +111,4 @@ A line of 50% or higher in this chart indicates your Hypernode is very busy. If 
 
 This chart shows you the percentage of memory in use by Redis and the hitratio (percentage of requests served out of Redis cache). The more data is cached, the more the memory usage increases. The memory usage decreases when expired cache items are removed. Red vertical lines (not always showing), mean your cache was full and Redis deleted the least requested ([LRU](https://en.wikipedia.org/wiki/Cache_algorithms#LRU)) items. You’ll notice this can happen when less than 100% is used according to the graph. This is because the graph shows you the average usage (in %) per week.
 
-We recommend you to upgrade to a bigger node if you're using more memory than your Hypernode offers. If all available memory is in use, Redis will delete cache items to free up memory, which could lead to a reduced hit ratio depending on your configuration. Every Hypernode has access to Redis, starting from 768 MB, depending on the plan. Please [check our website](https://www.hypernode.com/magento-cloud-hosting/#plans)for an overview of the Hypernode plans and their specs.
+We recommend you to upgrade to a bigger node if you're using more memory than your Hypernode offers. If all available memory is in use, Redis will delete cache items to free up memory, which could lead to a reduced hit ratio depending on your configuration. Every Hypernode has access to Redis, starting from 768 MB, depending on the plan. Please [check our website](https://www.hypernode.com/magento-cloud-hosting/#plans) for an overview of the Hypernode plans and their specs.

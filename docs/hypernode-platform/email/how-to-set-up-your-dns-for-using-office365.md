@@ -17,7 +17,7 @@ When you want to use Office365 and your domain is registered with Hypernode or h
 
 ## Validation Record
 
-When you add your domain to Office365 they wil provide you with a verification string that you need to add to the DNS for your domain, the string will look something like this \*MS=ms#########.\*You need to add this at a TXT record. To do so login to your [Service Panel](https://my.hypernode.com/)and follow the next steps:
+When you add your domain to Office365 they wil provide you with a verification string that you need to add to the DNS for your domain, the string will look something like this \*MS=ms#########.\*You need to add this at a TXT record. To do so login to your [Service Panel](https://my.hypernode.com/) and follow the next steps:
 
 1. Log in to the Service Panel (my.hypernode.com).
 1. Select the domain from the domain overview.

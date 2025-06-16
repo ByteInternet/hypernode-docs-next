@@ -75,7 +75,7 @@ The `hypernode-auto-logrotate` command comes with a sensible out-of-the-box conf
 }
 ```
 
-The [logrotate main page](https://linux.die.net/man/8/logrotate)contains instructions on how to customize this.
+The [logrotate main page](https://linux.die.net/man/8/logrotate) contains instructions on how to customize this.
 
 ## Keeping the configuration up to date
 
