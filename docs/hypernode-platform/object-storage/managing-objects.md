@@ -98,16 +98,6 @@ app@abcdef-example-magweb-cmbl:~$ hypernode-object-storage objects ls s3://main/
 app@abcdef-example-magweb-cmbl:~$ hypernode-object-storage objects ls s3://main/media/
 ```
 
-### Filtering and Sorting
-
-```console
-# List only files
-app@abcdef-example-magweb-cmbl:~$ hypernode-object-storage objects ls s3://main/ --recursive
-
-# List with details
-app@abcdef-example-magweb-cmbl:~$ hypernode-object-storage objects ls s3://main/ --long
-```
-
 ### Output Formatting
 
 ```console
@@ -163,6 +153,16 @@ app@abcdef-example-magweb-cmbl:~$ hypernode-object-storage objects rm s3://main/
 ```console
 # Delete directory and contents
 app@abcdef-example-magweb-cmbl:~$ hypernode-object-storage objects rm s3://main/dir/ --recursive
+```
+
+## Empty up an Object Storage
+
+To remove all objects from an Object Storage, use the `rm` subcommand with the `--recursive` flag. This will delete every object within the specified Object Storage. For example:
+
+```console
+app@abcdef-example-magweb-cmbl:~$ hypernode-object-storage objects rm s3://main --recursive
+delete: s3://main/file1.txt
+delete: s3://main/file2.txt
 ```
 
 ### Troubleshooting
