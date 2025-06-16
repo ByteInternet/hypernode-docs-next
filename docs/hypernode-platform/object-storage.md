@@ -31,3 +31,5 @@ glob:
 object-storage/getting-started
 object-storage/*
 ```
+
+To get started with Hypernode Object Storage, check out our [Getting started](object-storage/getting-started.md) guide for a detailed overview of the system architecture and features.
