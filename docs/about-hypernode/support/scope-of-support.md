@@ -72,12 +72,6 @@ The goal of the onboarding process is to assist new customers in migrating their
 
 1. Basic Migration
    With a basic migration we will assist the customer in migrating their eCommerce platform as is. This means that we will make sure that the webshop is working on our Hypernode platform, but we will not look into any optimizations that can be done.
-1. Hyperformance
-   With a Hyperformance migration we will not only assist the customer in migrating their eCommerce platform to our Hypernode platform, we will also focus on optimizing the shop to guarantee the best performance on our Hypernode platform. We will be looking at the following things:
-   1. Caching
-   1. Image optimization
-   1. Static file optimization
-   1. Recommending any changes to be done within the eCommerce platform itself
 1. What is not included in onboarding
    1. Email migration
    1. Custom Varnish configuration

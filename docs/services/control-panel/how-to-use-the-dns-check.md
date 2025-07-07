@@ -104,4 +104,4 @@ The DNS Check verifies whether the Hypernode is reachable via the URL you entere
 
 ## Using Cloudflare or Other CDN
 
-If you are using Cloudflare or another CDN type product, we cannot check your records with our DNS Check. Use our [Support Documentation](../../hypernode-platform/dns/how-to-manage-your-dns-settings-for-hypernode.md#option-2-manage-an-external-dns-by-pointing-your-domain-to-hypernode-by-using-cname-and-not-an-a-record)for managing your DNS settings for your Hypernode to make sure you have your DNS settings set up correctly.
+If you are using Cloudflare or another CDN type product, we cannot check your records with our DNS Check. Use our [Support Documentation](../../hypernode-platform/dns/how-to-manage-your-dns-settings-for-hypernode.md#option-2-manage-an-external-dns-by-pointing-your-domain-to-hypernode-by-using-cname-and-not-an-a-record) for managing your DNS settings for your Hypernode to make sure you have your DNS settings set up correctly.

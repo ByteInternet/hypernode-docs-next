@@ -67,7 +67,7 @@ location ~ /wp-content/(?<path>.+)\.(?<ext>jpe?g|png|gif|webp)$ {
 # END Converter for Media
 ```
 
-Place the above configuration in `/data/web/server.media.conf.` Once you save the file, NGINX will automatically reload, and if something goes wrong, you will be notified.
+Place the above configuration in `/data/web/nginx/server.media.conf` Once you save the file, NGINX will automatically reload, and if something goes wrong, you will be notified.
 
 ## Test the Configuration
 
