@@ -2,7 +2,7 @@
 myst:
   html_meta:
     description: Hypernode uses a range of cloud providers to host its advanced hosting
-      platform, including Combell OpenStack, DigitalOcean, and Amazon Cloud Services.
+      platform, including Combell OpenStack and Amazon Cloud Services.
     title: Cloud Providers used by Hypernode | Hypernode
 redirect_from:
   - /en/about/about-us/which-cloud-providers-do-we-use/
@@ -26,37 +26,15 @@ If you order a trial or hosting plan (Falcon) your Hypernode will be booted in G
 
 **Advantages Combell OpenStack**
 
-- We influence the roadmap and, therefore, have more flexibility in achieving what we want.
-- Combell OpenStack provides the same uptime guarantee as DigitalOcean: 99.9% for the Falcon line.
-- Just as good or even better performance than DigitalOcean
+- We influence the roadmap and, therefore, have more flexibility in achieving what we want
+- Combell OpenStack provides an uptime of 99.9% for the Falcon line
 - In the case of incidents and issues, we have direct communication lines
-- Combell OpenStack uses only the latest hardware. Booting a new node is much faster compared to DigitalOcean
+- Combell OpenStack uses only the latest hardware
 - Combell OpenStack offers Snapshots backups
 
 **Disadvantages Combell OpenStack**
 
 Combell OpenStack has only one data center in Ghent (Belgium).
-
-### DigitalOcean
-
-DigitalOcean is an innovative and relatively young hosting party that focuses purely on the wishes of developers instead of end users. This works very well for us because their focus is entirely on what is essential for good stable hosting. Our Hypernode platform builds the bridge between the developer and the end user.
-
-We use DigitalOcean for shops that want their Hypernode to be located in a data center outside Western Europe.
-
-**Advantages DigitalOcean**
-
-- The innovative and young company
-- We have good contact with their engineers to discuss our wishes
-- Uptime guarantee: 99.9% for the Pelican line
-- Reliable and stable infrastructure
-- Unlimited IOPS (Input / Output operations per second)
-
-**Disadvantages DigitalOcean**
-
-- Less influence on roadmap compared to Combell OpenStack. We are one of many customers.
-- DigitalOcean uses a mix of older and newer (faster) hardware, meaning we need to search for the best hardware when booting a Hypernode. This takes time.
-- Backup creation is done differently. Backups are created on the node and transferred to a different location. Both creation and restoration take more time compared to snapshot backups.
-- DigitalOcean does not use shared storage. In case of issues with a hypervisor, an email ticket needs to be submitted before an engineer takes action and reboots a hypervisor. This may cost precious time.
 
 ### Amazon Cloud Services (AWS)
 
@@ -91,9 +69,7 @@ Email support@hypernode.com and let us know your data center of choice. Your sho
 
 ### Location of Data Centers
 
-**DigitalOcean:** London, Frankfurt, New York, San Francisco, Toronto, Bangalore, Singapore
-
-[**AWS:**](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions) N. Virginia, Ohio, N. California, Oregon, Central Canada, Frankfurt, Ireland, London, Paris, Tokyo, Seoul, Osaka, Singapore, Sidney, Mumbai, São Paulo
+[**AWS:**](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions) N. Virginia, Frankfurt and Ireland
 
 ### Keep in Mind
 
