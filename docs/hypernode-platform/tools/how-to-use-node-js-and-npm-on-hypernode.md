@@ -18,13 +18,13 @@ If you use the installed version, you can just start using node and npm.
 
 ## Upgrading and downgrading Node.js
 
-By default, the installed NodeJS version on our Hypernode platform is v18. You can check this on your Hypernode by running the command `node -v`. If you need to manually upgrade an app to another Node.js version, for example 20, you can use the command below:
+By default, the installed NodeJS version on our Hypernode platform is v18. You can check this on your Hypernode by running the command `node -v`. If you need to manually upgrade an app to another Node.js version, for example 22, you can use the command below:
 
 ```bash
-hypernode-systemctl settings nodejs_version 20
+hypernode-systemctl settings nodejs_version 22
 ```
 
-Supported Node.js versions are: 6, 10, 16, 18 and 20.
+Supported Node.js versions are: 16, 18, 20 and 22.
 
 ## Setting your PATH
 
