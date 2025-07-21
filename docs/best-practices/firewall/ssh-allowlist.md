@@ -25,6 +25,21 @@ As soon as you add one or more entries to the SSH allowlist, the firewall will i
 > **Warning:**
 > If you add an SSH allowlist entry, make sure to include your own IP address! Otherwise, you may lock yourself out of your server.
 
+## Adding IP Addresses to the SSH allowlist via the control panel
+
+You can also manage SSH allowlist entries using the Hypernode control panel. Follow these steps to whitelist an IP address for SSH:
+
+- Go to the [control panel](https://my.hypernode.com)
+- Log in with your credentials
+- Once logged in, select the Hypernode you wish to configure
+- Click on **Allowlist** from the menu
+- Select **Rule type** and choose **SSH** from the dropdown
+- Enter the IP address you want to add to the allowlist
+- Provide a descriptive name for the entry, for example **Office SSH**. Use descriptive names to help identify their purpose in the future.
+- Click on **Save** to apply the changes
+
+Once you add one or more SSH allowlist entries, SSH access will be restricted to only the IP addresses on the list. Make sure to add your own IP address to avoid being locked out.
+
 ## Example: Whitelisting your IP for SSH
 
 To allow your current IP address to access SSH, use the following command (replace `1.2.3.4` with your actual IP):
