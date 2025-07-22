@@ -53,6 +53,34 @@ app@abcdef-example-magweb-cml:~$ hypernode-object-storage info --with-credential
 +--------------------------------------+----------------+---------+-------------+-------------------------------------+---------------+---------------+
 ```
 
+Running the Magento object-storage command may not include all necessary settings in the configuration.
+
+If you are using Hypernode-object-storage, you need to add the following parameters to your env.php to complete the setup:
+
+```php
+'use_path_style_endpoint' => true,
+            'path_style' => true,
+```
+
+The complete and functional Magento configuration should resemble the following example:
+
+```php
+'remote_storage' => [
+        'driver' => 'aws-s3',
+        'config' => [
+            'endpoint' => '',
+            'bucket' => 'main',
+            'region' => 'eu',
+            'use_path_style_endpoint' => true,
+            'path_style' => true,
+            'credentials' => [
+                'key' => '',
+                'secret' => ''
+            ]
+        ]
+    ],
+```
+
 If you're using a different object storage provider, replace these values with the relevant details from your provider.
 
 **AWS S3**
