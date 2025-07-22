@@ -51,7 +51,6 @@ article: https://support.hypernode.com/en/best-practices/security/how-to-install
 article: https://support.hypernode.com/en/best-practices/security/how-to-install-magento-patch-supee-8788-and-release-1-9-3/
 article: https://support.hypernode.com/en/best-practices/security/how-to-protect-magento-against-brute-force-attacks/
 article: https://support.hypernode.com/en/best-practices/security/how-to-recover-a-hacked-magento-shop/
-article: https://support.hypernode.com/en/best-practices/security/how-to-scan-your-hypernode-for-malware/
 article: https://support.hypernode.com/en/best-practices/security/how-to-secure-magento-cacheleak/
 article: https://support.hypernode.com/en/best-practices/security/how-to-use-a-cloud-firewall-on-hypernode/
 article: https://support.hypernode.com/en/best-practices/security/what-you-need-to-know-about-the-visbot-malware/
