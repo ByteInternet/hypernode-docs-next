@@ -31,7 +31,7 @@ If you log in via [my.hypernode.com](https://auth.hypernode.com/), please use th
 - You'll now see an overview of your current plan on the left and the new plan on the right:
   ![](_res/tkmbOB9hsfJ0SfLR-TNCFtKqzRNgC6bvmA.png)
 - Select the desired plan and the type of environment, Development or Production.
-- Select an add-on. Read more about our two SLA levels [here](../support/emergency-support-outside-office-hours.md).
+- Select an add-on. Read more about our SLA levels [here](../support/emergency-support-outside-office-hours.md).
 - Optional: schedule the plan change for a specific date and time.
 - Agree with terms and conditions and click Change to this plan. Your plan will be changed immediately. (or on the scheduled date and time)
 - Warnings, if applicable, will be shown on the left:
@@ -59,12 +59,12 @@ Up -or downgrading your hosting plan is very easy, but be aware we will automati
 
 When upgrading or downgrading a Hypernode plan, we first create a second node, migrate your shop to this new node and then remove the old one. Hypernodes have a dedicated IP, meaning the IP address of your Hypernode does not (!) change when you change a Hypernode plan. However, there are 2 exceptions.
 
-1. Changing between Professional/Falcon, Pelican and Excellence/Eagle plans will lead to an IP change because you will change providers (e.g. Combell OpenStack to DigitalOcean to Amazon and visa versa)
+1. Changing between Falcon and Eagle plans will lead to an IP change because you will change providers (e.g. Combell OpenStack to Amazon and visa versa)
 1. If you request your node to be booted in a different region (datacenter) the IP address will change as well.
 
 Right before the migration is finished, we email the technical contact the new IP address.
 
-If you think you might switch between Professional/Falcon and Excellence/Eagle plans in the future, we recommend you to move your domain(s) to Hypernode so we can handle the DNS of your domains to avoid downtime. Or, use the DNS settings as explained in [this article](../../hypernode-platform/dns/how-to-manage-your-dns-settings-for-hypernode.md).
+If you think you might switch between Falcon and Eagle plans in the future, we recommend you to move your domain(s) to Hypernode so we can handle the DNS of your domains to avoid downtime. Or, use the DNS settings as explained in [this article](../../hypernode-platform/dns/how-to-manage-your-dns-settings-for-hypernode.md).
 
 Make also sure to keep a list of payment providers, firewalls, local DNS servers and other services that depend on the IP address of the Hypernode, so you can quickly change the IP address if needed.
 
@@ -80,7 +80,7 @@ During the up- or downgrade we disable SSH and FTP access to avoid new file chan
 
 Make sure not to add product changes, upload images, or change settings in the Magento admin backend while a migration is executed.
 
-## How an Up- or Downgrade is Managed (Grow, Professional/Falcon S-XL and Excellence/Eagle M-XL)
+## How an Up- or Downgrade is Managed (Falcon S-XL and Eagle M-XL)
 
 Up- and downgrades are a fully automated process which consists of provisioning a completely new Hypernode of the specified size, copying the data from the old Hypernode to the new one and updating the DNS. To perform the data synchronisation, we first perform a pre-sync where we copy the data to the new node while the old node continues functioning. Up until this point nothing has changed from the perspective of the original machine.
 
@@ -88,8 +88,8 @@ When the complete dataset has been synced to the new instance, we stop the servi
 
 Downtime depends on the size of the shop (the amount of data which needs to be synced) and the TTL of your DNS.
 
-## How an Up- or Downgrade is Managed (Professional/Falcon 2XL and up, Excellence/Eagle 2XL and up)
+## How an Up- or Downgrade is Managed (Falcon 2XL and up, Eagle 2XL and up)
 
-As explained above, a shop occurs downtime when up-or downgrading (only during the second sync). Downtime may only be a couple of minutes for small shops, but a data sync in case of (very) large shops may take a while, resulting in longer downtime. For Professional/Falcon 2XL, 3XL, 4XL and 5XL plans (Combell OpenStack) and Excellence/Eagle 2XL, 3XL, 4XL and 5XL (Amazon) we have therefore implemented a very cool way of handling up -and downgrades, resulting in very little downtime.
+As explained above, a shop occurs downtime when up-or downgrading (only during the second sync). Downtime may only be a couple of minutes for small shops, but a data sync in case of (very) large shops may take a while, resulting in longer downtime. For Falcon 2XL, 3XL, 4XL and 5XL plans (Combell OpenStack) and Eagle 2XL, 3XL, 4XL and 5XL (Amazon) we have therefore implemented a very cool way of handling up -and downgrades, resulting in very little downtime.
 
 Upgrades and downgrades between these plans keep the same cloud volume during x-grades instead of copying the filesystem from the old instance to the new one like before. This speeds up the data transfer step in migrations from multiple minutes (variable depending on the amount of data and rate of change on disk) to less than one minute for these specific node sizes. Details can be found in our [Hypernode Changelog](https://changelog.hypernode.com/changelog/faster-upscaling-larger-excellence-hypernodes/).

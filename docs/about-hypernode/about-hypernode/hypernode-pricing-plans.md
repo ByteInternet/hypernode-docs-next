@@ -2,7 +2,7 @@
 myst:
   html_meta:
     description: Learn about Hypernode's Managed Cloud Hosting and Managed Dedicated
-      Hosting and its pricing. Prices start at €109 per month.
+      Hosting and its pricing.
     title: Hypernode Pricing & Plans | Hypernode
 redirect_from:
   - /en/support/solutions/articles/48001228422-hypernode-pricing-plans/
@@ -30,7 +30,7 @@ Cloud hosting is a large group of physical servers tied together by a virtual la
 
 ### Pricing
 
-Hypernode Cloud Hosting Plans start at € 139,- a month. The pricing is based on your needed resources and your chosen cloud provider. At Hypernode, [we offer three different providers for your cloud hosting](which-cloud-providers-do-we-use.md): Combell OpenStack (**Falcon Plans**), DigitalOcean (**Pelican Plans**), and Amazon Web Services (**Eagle Plans**).
+The pricing is based on your needed resources and your chosen cloud provider. At Hypernode, [we offer two different providers for your cloud hosting](which-cloud-providers-do-we-use.md): Combell OpenStack (**Falcon Plans**) and Amazon Web Services (**Eagle Plans**).
 
 [An overview of our Cloud hosting plans can be found here.](https://www.hypernode.com/en/cloud-hosting/#plans)
 
@@ -47,8 +47,6 @@ Dedicated servers are stand-alone servers that do not have a virtual layer on to
 
 ### Pricing
 
-Hypernode Dedicated Hosting plans are named **Jackal** and start at € 499,- a month. The pricing is based on the resources you need. Dedicated servers are always booted with [Hetzner](https://www.hetzner.com/).
+Hypernode Dedicated Hosting plans are named **Jackal**. The pricing is based on the resources you need.
 
 [An overview of our Dedicated hosting plans can be found here.](https://www.hypernode.com/en/dedicated-hosting/#pricing-table)
-
-[\*:Hypernode will implement a price change as of January 1, 2023. View the price list for 2023 here (PDF).](https://www.hypernode.com/wp-content/uploads/2022/12/Hypernode-Price-Overview-2023.pdf)
