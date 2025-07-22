@@ -45,7 +45,6 @@ app@abcdef-example-magweb-cml:~$ hypernode-object-storage info --with-credential
 
 If you're using a different object storage provider, replace these values with the relevant details from your provider.
 
-
 ```bash
 bin/magento setup:config:set \
     --remote-storage-driver="aws-s3" \
