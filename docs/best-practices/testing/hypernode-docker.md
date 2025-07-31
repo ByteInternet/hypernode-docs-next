@@ -30,8 +30,8 @@ Now you need to decide which \*\*[image](https://github.com/byteinternet/hyperno
 Starting a container
 
 ```bash
-docker pull docker.hypernode.com/byteinternet/docker.hypernode.com/byteinternet/hypernode-bookworm-docker-php84-mysql80:latest
-docker run -p 222:22 -p 8080:80 -p 8025:8025 docker.hypernode.com/byteinternet/docker.hypernode.com/byteinternet/hypernode-bookworm-docker-php84-mysql80:latest
+docker pull docker.hypernode.com/byteinternet/hypernode-bookworm-docker-php84-mysql80:latest
+docker run -p 222:22 -p 8080:80 -p 8025:8025 docker.hypernode.com/byteinternet/hypernode-bookworm-docker-php84-mysql80:latest
 ```
 
 This makes the SSH, HTTP, and Mailhog ports available on the localhost. If you need any other ports (Such as 443 for HTTPS, or 2222 for sftp) available, you can insert these in the command above. In this example you should use the following command to connect to the container:
