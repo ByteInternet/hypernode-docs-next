@@ -21,7 +21,7 @@ By using the Magento2 ApplicationTemplate, a bunch of default configuration gets
 
 ### Error: The default website isn't defined. Set the website and try again.
 
-When this error is thrown, please assure the app/etc/config.php has the keys 'scopes' and 'themes'. This is needed for the deployment software to be aware of what themes are installed without a database present (during pipeline run).
+When this error is thrown, please assure the `app/etc/config.php` has the keys `scopes` and `themes`. This is needed for the deployment software to be aware of what themes are installed without a database present (during pipeline run).
 
 You can fix this by running the following command and then commiting the result to your codebase:
 
