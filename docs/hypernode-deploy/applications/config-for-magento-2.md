@@ -25,7 +25,7 @@ When this error is thrown, please assure the `app/etc/config.php` has the keys `
 
 You can fix this by running the following command and then commiting the result to your codebase:
 
-```
+```console
 $ php bin/magento app:config:dump scopes themes
 Done. Config types dumped: scopes, themes
 ```
