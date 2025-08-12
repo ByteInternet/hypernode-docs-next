@@ -22,7 +22,7 @@ Our Hypernode platform is available to webshops worldwide. Our customers can cho
 
 After years of preparation, testing, and improvement, we started using the OpenStack platform within the Combell Group in 2018. We both are part of team.blue. Using Combell OpenStack lets us take matters into our own hands because we have direct contact with colleagues instead of a supplier.
 
-If you order a trial or hosting plan (Falcon) your Hypernode will be booted in Ghent, Belgium.
+If you order a trial or hosting plan (Falcon) your Hypernode will be booted in Brussels, Belgium.
 
 **Advantages Combell OpenStack**
 
@@ -34,7 +34,7 @@ If you order a trial or hosting plan (Falcon) your Hypernode will be booted in G
 
 **Disadvantages Combell OpenStack**
 
-Combell OpenStack has only one data center in Ghent (Belgium).
+Combell OpenStack has only one data center in Brussels (Belgium).
 
 ### Amazon Cloud Services (AWS)
 
