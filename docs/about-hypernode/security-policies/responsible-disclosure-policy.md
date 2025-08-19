@@ -34,6 +34,7 @@ You can find the current scope and testing guidelines directly on our Intigriti 
 ## What We Expect
 We ask all researchers to follow these basic rules:
 
+
 If you play by the rules, we commit to:
 
 - Reviewing your report promptly.
