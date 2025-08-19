@@ -21,10 +21,11 @@ We’ve partnered with [Intigriti](https://www.intigriti.com/), a trusted bug bo
 To request access, simply e-mail us your Intigriti username at [security@nl.team.blue](mailto:security@nl.team.blue).
 
 Once invited, you’ll be able to access our Intigriti program, where you’ll find:
-* A detailed list of in-scope and out-of-scope systems
-* Rules of engagement for security testing
-* Submission guidelines
-* Potential rewards for eligible findings
+
+- A detailed list of in-scope and out-of-scope systems
+- Rules of engagement for security testing
+- Submission guidelines
+- Potential rewards for eligible findings
 
 ## Scope
 You can find the current scope and testing guidelines directly on our Intigriti page.
