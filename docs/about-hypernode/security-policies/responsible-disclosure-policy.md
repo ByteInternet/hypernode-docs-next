@@ -32,8 +32,13 @@ Once invited, you’ll be able to access our Intigriti program, where you’ll f
 You can find the current scope and testing guidelines directly on our Intigriti page.
 
 ## What We Expect
+
 We ask all researchers to follow these basic rules:
 
+- Do not exploit vulnerabilities beyond what is necessary for proof-of-concept.
+- Avoid impacting user data or privacy.
+- No social engineering or physical testing.
+- Keep your findings confidential until we’ve had a chance to fix the issue.
 
 If you play by the rules, we commit to:
 
@@ -43,13 +48,13 @@ If you play by the rules, we commit to:
 - Never taking legal action against responsible researchers.
 
 ## Why Intigriti?
-Using Intigriti benefits both sides:
 
+Using Intigriti benefits both sides:
 
 - A secure and trusted platform for disclosure of vulnerabilities.
 - Structured communication and feedback.
 - Bounty rewards for accepted reports and easy payout.
 - Optional anonymity for researchers.
-  By centralizing our vulnerability handling with Intigriti, we ensure a smooth, fair, and secure process for everyone involved.
-  Thanks for helping us make Hypernode more secure for all our users.
-  We appreciate your time, your skills, and your ethical approach.
+
+By centralizing our vulnerability handling with Intigriti, we ensure a smooth, fair, and secure process for everyone involved.
+Thanks for helping us make Hypernode more secure for all our users. We appreciate your time, your skills, and your ethical approach.
