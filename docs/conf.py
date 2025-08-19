@@ -114,6 +114,6 @@ highlight_options = {
     "php": {"startinline": True},  # We often have php snippets without the <?php tag
 }
 
-notfound_no_urls_prefix = True
+notfound_urls_prefix = None
 
 myst_heading_anchors = 5
