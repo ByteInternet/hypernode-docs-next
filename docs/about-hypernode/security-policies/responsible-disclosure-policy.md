@@ -35,10 +35,11 @@ You can find the current scope and testing guidelines directly on our Intigriti 
 We ask all researchers to follow these basic rules:
 
 If you play by the rules, we commit to:
-* Reviewing your report promptly.
-* Keeping you informed about progress.
-* Rewarding you when appropriate.
-* Never taking legal action against responsible researchers.
+
+- Reviewing your report promptly.
+- Keeping you informed about progress.
+- Rewarding you when appropriate.
+- Never taking legal action against responsible researchers.
 
 ## Why Intigriti?
 Using Intigriti benefits both sides:
