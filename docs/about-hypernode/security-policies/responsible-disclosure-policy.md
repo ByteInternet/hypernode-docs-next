@@ -44,10 +44,12 @@ If you play by the rules, we commit to:
 
 ## Why Intigriti?
 Using Intigriti benefits both sides:
-* A secure and trusted platform for disclosure of vulnerabilities.
-* Structured communication and feedback.
-* Bounty rewards for accepted reports and easy payout.
-* Optional anonymity for researchers.
-By centralizing our vulnerability handling with Intigriti, we ensure a smooth, fair, and secure process for everyone involved.
-Thanks for helping us make Hypernode more secure for all our users.
-We appreciate your time, your skills, and your ethical approach.
+
+
+- A secure and trusted platform for disclosure of vulnerabilities.
+- Structured communication and feedback.
+- Bounty rewards for accepted reports and easy payout.
+- Optional anonymity for researchers.
+  By centralizing our vulnerability handling with Intigriti, we ensure a smooth, fair, and secure process for everyone involved.
+  Thanks for helping us make Hypernode more secure for all our users.
+  We appreciate your time, your skills, and your ethical approach.
