@@ -31,7 +31,6 @@ Once invited, you’ll be able to access our Intigriti program, where you’ll f
 
 You can find the current scope and testing guidelines directly on our Intigriti page.
 
-
 ## What We Expect
 We ask all researchers to follow these basic rules:
 
