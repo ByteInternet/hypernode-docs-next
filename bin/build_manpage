@@ -4,5 +4,5 @@ set -e
 
 pushd docs
 make man
-echo "manpage located at $(realpath _build/man/docs.1)"
+echo "manpage located at $(realpath _build/man/documentation.1)"
 popd
