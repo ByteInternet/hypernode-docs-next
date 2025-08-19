@@ -33,10 +33,6 @@ You can find the current scope and testing guidelines directly on our Intigriti 
 
 ## What We Expect
 We ask all researchers to follow these basic rules:
-* Do not exploit vulnerabilities beyond what is necessary for proof-of-concept.
-* Avoid impacting user data or privacy.
-* No social engineering or physical testing.
-* Keep your findings confidential until we’ve had a chance to fix the issue.
 
 If you play by the rules, we commit to:
 * Reviewing your report promptly.
