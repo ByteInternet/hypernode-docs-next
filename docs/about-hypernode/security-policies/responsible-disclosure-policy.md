@@ -13,6 +13,7 @@ redirect_from:
 # Responsible Disclosure Policy
 
 Security is a core priority at Hypernode. We highly value the work of ethical hackers and security researchers who help us protect our systems and our users. If you’ve discovered a potential vulnerability, we would love to hear about it through the Intigriti platform.
+
 **Important**: We only accept vulnerability submissions via our Intigriti bug bounty program. Reports sent via email or other means will not be eligible for a bounty.
 
 ## How to Report a Vulnerability
