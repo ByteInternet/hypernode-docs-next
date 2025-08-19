@@ -28,6 +28,7 @@ Once invited, you’ll be able to access our Intigriti program, where you’ll f
 - Potential rewards for eligible findings
 
 ## Scope
+
 You can find the current scope and testing guidelines directly on our Intigriti page.
 
 
