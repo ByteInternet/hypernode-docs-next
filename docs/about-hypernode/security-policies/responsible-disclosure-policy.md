@@ -16,6 +16,7 @@ Security is a core priority at Hypernode. We highly value the work of ethical ha
 **Important**: We only accept vulnerability submissions via our Intigriti bug bounty program. Reports sent via email or other means will not be eligible for a bounty.
 
 ## How to Report a Vulnerability
+
 We’ve partnered with [Intigriti](https://www.intigriti.com/), a trusted bug bounty platform, to handle all responsible disclosure submissions. Our program is private, so you’ll need to be invited before you can submit a report.
 To request access, simply e-mail us your Intigriti username at [security@nl.team.blue](mailto:security@nl.team.blue).
 
