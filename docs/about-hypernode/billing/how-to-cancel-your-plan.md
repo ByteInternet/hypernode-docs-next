@@ -12,7 +12,7 @@ redirect_from:
 
 # How to Cancel Your Plan
 
-You can cancel your subscription at any time you want. Your cancellation will be processed automatically, and become effective on the first of the next month. 
+You can cancel your subscription at any time you want. Your cancellation will be processed automatically, and become effective on the first of the next month.
 
 ## How to Cancel Your Plan
 
@@ -26,7 +26,7 @@ The end date of your subscription is always the first of the next month. Example
 
 ### Access to your Data after cancellation
 
-When you cancel your Hypernode, it will display the date your data and its backups will be deleted. Until the Hypernode is deleted, you can still use [(S)FTP](/hypernode-platform/ftp/how-to-configure-ftp-sftp-on-hypernode.html) or similar techniques, to [download a backup](/best-practices/backups/how-to-create-a-backup-and-download-it-to-your-local-machine.html) of your data.
+When you cancel your Hypernode, it will display the date your data and its backups will be deleted. Until the Hypernode is deleted, you can still use [(S)FTP](../..//hypernode-platform/ftp/how-to-configure-ftp-sftp-on-hypernode.md) or similar techniques, to [download a backup](../../best-practices/backups/how-to-create-a-backup-and-download-it-to-your-local-machine.md) of your data.
 
 ![Cancellation date displayed](_res/cancel.png)
 
@@ -42,9 +42,6 @@ If you want to undo the cancellation you can do it till the end of the month aft
 - Your subscription will be revived immediately, subscription will continue and backups won't be destroyed.
 
 ![undo cancellation](_res/asdhbrthbq3rwgbqeqrq.png)
-
-## 
-
 
 ## How to Cancel Your Domain
 
