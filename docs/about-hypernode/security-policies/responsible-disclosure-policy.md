@@ -12,60 +12,50 @@ redirect_from:
 
 # Responsible Disclosure Policy
 
-We take the security of our systems and our users very seriously, and we value the security community. The responsible disclosure of security vulnerabilities helps us ensure the security and privacy of our users.
+Security is a core priority at Hypernode. We highly value the work of ethical hackers and security researchers who help us protect our systems and our users. If you’ve discovered a potential vulnerability, we would love to hear about it through the Intigriti platform.
 
-## Guidelines
+**Important**: We only accept vulnerability submissions via our Intigriti bug bounty program. Reports sent via email or other means will not be eligible for a bounty.
 
-We require that all researchers:
+## How to Report a Vulnerability
 
-- Make every effort to avoid privacy violations, degradation of user experience, disruption to production systems, and destruction of data during security testing.
-- Use the identified communication channels to report vulnerability information to us.
-- Keep information about any vulnerabilities you’ve discovered confidential between yourself and Hypernode until we’ve had 90 days to resolve the issue.
-- Do not abuse found vulnerabilities. Don’t download more information than is necessary to show the vulnerability.
-- Do not change or remove data. This includes scrubbing your own ‘footprints’, logfiles, tmpfiles, history files, etc, etc.
+We’ve partnered with [Intigriti](https://www.intigriti.com/), a trusted bug bounty platform, to handle all responsible disclosure submissions. Our program is private, so you’ll need to be invited before you can submit a report.
+To request access, simply e-mail us your Intigriti username at [security@nl.team.blue](mailto:security@nl.team.blue).
 
-If you follow these guidelines when reporting an issue to us, we commit to:
+Once invited, you’ll be able to access our Intigriti program, where you’ll find:
 
-- Not pursue or support any legal action related to your research;
-- Work with you to understand and resolve the issue quickly (including an initial confirmation of your report within 72 hours of submission);
-- Keep you updated on our efforts in solving the issue;
-- If you are the first to report the issue and we make a code or configuration change based on the issue, we will include you in our Security Hall of Fame.
+- A detailed list of in-scope and out-of-scope systems
+- Rules of engagement for security testing
+- Submission guidelines
+- Potential rewards for eligible findings
 
 ## Scope
 
-We accept reports for vulnerabilities in any of the following:
+You can find the current scope and testing guidelines directly on our Intigriti page.
 
-- All systems and services running under the byte.nl, hypernode.nl, hypernode.com, hipex.nl, hipex.io and magereport.com domains, and any of its subdomains.
-- All systems and services running in the 194.150.225.0/25 ip range.
-- Any published code on our [ByteInternet GitHub](https://github.com/ByteInternet), [Hypernode GitHub](https://github.com/Hypernode), [HipexBV GitHub](https://github.com/HipexBV), [hn-support GitHub gists](https://gist.github.com/hn-support), or in our documentation.
-- Any vulnerabilities on our clusterhosting environment, and on the Hypernode vagrant / docker setup, or generic Hypernode vulnerabilities, are also welcome.
+## What We Expect
 
-## Out of Scope
+We ask all researchers to follow these basic rules:
 
-In the interest of the safety of our users, staff, the Internet at large and you as a security researcher, the following test types are excluded from scope:
+- Do not exploit vulnerabilities beyond what is necessary for proof-of-concept.
+- Avoid impacting user data or privacy.
+- No social engineering or physical testing.
+- Keep your findings confidential until we’ve had a chance to fix the issue.
 
-- **The testing of sites we host for our customers, including sites hosted under the testbyte.nl, or the hypernode.io domain, is explicitly NOT ALLOWED.**
-- Any tests on services hosted by 3rd party providers and services, even if hosted under an in-scope domain name.
-- Physical testing such as office access (e.g. open doors, tailgating).
-- Social Engineering (e.g. phishing, vishing).
-- Tests on any applications or systems not listed in the ‘Scope’ section.
-- Testing for UI and UX bugs and spelling mistakes.
-- Network level Denial of Service (DoS/DDoS) vulnerabilities or brute force attacks.
+If you play by the rules, we commit to:
 
-Things we do not wish to receive from you are the following:
+- Reviewing your report promptly.
+- Keeping you informed about progress.
+- Rewarding you when appropriate.
+- Never taking legal action against responsible researchers.
 
-- Personally identifiable information (PII)
-- Credit Card holder data
-- We are aware not all our domains have complete SPF / DKIM / DMARC setups.
-- We are aware our marketing domains contain social media links are missing 'noopener' attributes, and can placed in iframes.
+## Why Intigriti?
 
-## How to report a security vulnerability
+Using Intigriti benefits both sides:
 
-If you believe you’ve found a security vulnerability in one of our products or platforms please send it to us by emailing disclosure@nl.team.blue. Please include the following details with your report:
+- A secure and trusted platform for disclosure of vulnerabilities.
+- Structured communication and feedback.
+- Bounty rewards for accepted reports and easy payout.
+- Optional anonymity for researchers.
 
-- Description of the location and potential impact of the vulnerability
-- A detailed description of the steps required to reproduce the vulnerability (POC scripts, screenshots, and compressed screen captures are all helpful to us)
-- If you saw any customer data, or confidential information, during your research, please inform us of this as well.
-- Your name/handle and a link for recognition in our Hall of Fame.
-
-If you’d like to encrypt the information, please use our [PGP-key](https://pgp.mit.edu/pks/lookup?search=0x4FDDF9236D0E2A2E&op=index&rel=noopener): (ID: 6D0E2A2E, Fingerprint: 5CF5 61BE C0AA AE11 8164 6576 4FDD F923 6D0E 2A2E).
+By centralizing our vulnerability handling with Intigriti, we ensure a smooth, fair, and secure process for everyone involved.
+Thanks for helping us make Hypernode more secure for all our users. We appreciate your time, your skills, and your ethical approach.

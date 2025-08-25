@@ -88,6 +88,18 @@ JetBrains has way more knowledge and information on this topic, so we advise you
 - [Remote debugging via SSH tunnel](https://www.jetbrains.com/help/phpstorm/remote-debugging-via-ssh-tunnel.html)
 - [Debug with PhpStorm: Ultimate Guide](https://www.jetbrains.com/help/phpstorm/debugging-with-phpstorm-ultimate-guide.html)
 
+### Enabling Xdebug for the CLI
+
+After enabling Xdebug, the CLI will not load the module by default.
+To load it, you can set the `PHP_INI_SCAN_DIR` environment variable to the specific Xdebug-enable config directory:
+
+```console
+app@abcdef-example-magweb-cmbl:~$ export PHP_VERSION=$(jq -r .php_version /etc/hypernode/app.json)
+app@abcdef-example-magweb-cmbl:~$ export PHP_INI_SCAN_DIR=/etc/php-debug/$PHP_VERSION/cli/conf.d/
+app@abcdef-example-magweb-cmbl:~$ php -m | grep xdebug
+xdebug
+```
+
 ## Varnish bypass
 
 While remote debugging works with Varnish enabled, you might want to bypass Varnish when debugging.
