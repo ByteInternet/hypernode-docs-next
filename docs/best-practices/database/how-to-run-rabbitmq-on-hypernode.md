@@ -85,7 +85,7 @@ To configure RabbitMQ in Magento 2, you can run the following command:
 
 ```bash
 bin/magento setup:config:set \
-    --amqp-host="rabbitmqmaster" \
+    --amqp-host="rabbitmq" \
     --amqp-port="5672" \
     --amqp-user="guest" \
     --amqp-password="guest" \

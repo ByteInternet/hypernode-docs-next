@@ -12,7 +12,7 @@ redirect_from:
 
 # How to Cancel Your Plan
 
-You can cancel your subscription at any time you want. Your cancellation will be processed automatically
+You can cancel your subscription at any time you want. Your cancellation will be processed automatically, and become effective on the first of the next month.
 
 ## How to Cancel Your Plan
 
@@ -22,9 +22,15 @@ You can cancel your subscription at any time you want. Your cancellation will be
 - The next screen confirms that your subscription will end. Please submit the reason of your cancellation as your feedback is valuable to us.
 - Click on **Continue to cancellation** to confirm the ending date of your subscription.
 
-### Cancellation Per End Date
+The end date of your subscription is always the first of the next month. Example: if you cancel your subscription on the 15th of June, your Hypernode will be no longer available from the 1st of July onwards. This allows you time to backup or transfer your data before it is deleted.
 
-You can cancel your subscription at any time via your Control Panel. The end date of your subscription is always the first of the next month. Example: if you cancel your subscription on the 15th of June, your Hypernode will be no longer available from the 1st of July onwards.
+### Access to your Data after cancellation
+
+When you cancel your Hypernode, it will display the date your data and its backups will be deleted. Until the Hypernode is deleted, you can still use [(S)FTP](../..//hypernode-platform/ftp/how-to-configure-ftp-sftp-on-hypernode.md) or similar techniques, to [download a backup](../../best-practices/backups/how-to-create-a-backup-and-download-it-to-your-local-machine.md) of your data.
+
+![Cancellation date displayed](_res/cancel.png)
+
+After the Hypernode and its backups have been destroyed, your data will NOT BE RECOVERABLE.
 
 ## How to Undo Cancelling Your Plan
 

@@ -18,7 +18,7 @@ Use the steps below to test everything in your shop.
 
 **NB:** When browsing your preview shop, double check that you don’t end up on your production shop by following a hardcoded link.
 
-A bigger checklist is available [on the Github account](https://gist.github.com/peterjaap/10016278)of one of our well appreciated technical partners Peter Jaap (Elgentos).
+A bigger checklist is available [on the Github account](https://gist.github.com/peterjaap/10016278) of one of our well appreciated technical partners Peter Jaap (Elgentos).
 
 - Test all storefronts *(use the storefront view in MageReport Premium (only for Magento 1.x versions)).*
 - Test front pages, categories and product pages.
@@ -51,7 +51,7 @@ grep -Ri memcache /data/web/public/app/etc
 - Test for images, css, js and mixed content warnings.
 - Test if all static content is loaded: View the console in your browser to check if there are javascript errors or 404 errors on stylesheets and js files.
 - Test if [the Magento API is accessible when used](../../ecommerce-applications/magento-2/how-to-enable-the-magento-2-api.md).
-- Test if the sitemap is accessible for [Magento 1](../../ecommerce-applications/magento-1/how-to-create-a-sitemap-xml-for-magento-1-x.md)or [Magento 2](../../ecommerce-applications/magento-2/how-to-create-a-sitemap-xml-for-magento-2-x.md).
+- Test if the sitemap is accessible for [Magento 1](../../ecommerce-applications/magento-1/how-to-create-a-sitemap-xml-for-magento-1-x.md) or [Magento 2](../../ecommerce-applications/magento-2/how-to-create-a-sitemap-xml-for-magento-2-x.md).
 - Test if [you can easily download the robots.txt file](../../ecommerce-applications/magento-1/how-to-create-a-robots-txt-for-your-magento-1-shop.md) (Or for [Magento 2](../../ecommerce-applications/magento-2/how-to-create-a-robots-txt-for-magento-2-x.md)).
 - Test product and price import and export routines.
 - Test product push mechanisms for search engines.

@@ -29,7 +29,6 @@ A subshop is just be what you need if you like to use the Shopware installation 
 
 - Main shop: `hypernode.com`
 - Subshop: `byte.nl`
-- Subshop: `hyperformance.nl`
 
 ### Language Shop
 

@@ -22,8 +22,6 @@ In many cases, Magereport.com would tell you if your shop has been hacked! Mager
 
 You may also get alerted some other way, perhaps via a central agency such as the NCSC, or your local equivalent.
 
-On Hypernode we also provide a [Malware scanner](../../best-practices/security/how-to-scan-your-hypernode-for-malware.md), based on [Yara](http://yara.readthedocs.io/) with an [extra set of signatures to detect magento directed malware](https://github.com/gwillem/magento-malware-scanner). Every night an audit on new or changed files will be performed and when the scanner hits a possible infected file, it will notify Hypernode's abuse department. We will check if it is a false-positive and if not; we'll send you a warning message by email.
-
 ## What to do When your Shop is Hacked
 
 This is a good priority list to start cleaning up your shop:

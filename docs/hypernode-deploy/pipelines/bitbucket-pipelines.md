@@ -58,8 +58,8 @@ Create the file `bitbucket-pipelines.yml` with the contents below.
 This workflow will be used in other workflows.
 
 ```yaml
-# Here we use the latest Hypernode Deploy image with PHP 8.3 and Node.js 20
-image: quay.io/hypernode/deploy:latest-php8.3-node20
+# Here we use the latest Hypernode Deploy image with PHP 8.4 and Node.js 22
+image: quay.io/hypernode/deploy:latest-php8.4-node22
 
 definition:
   steps:
@@ -73,9 +73,9 @@ definition:
 
 ````{note}
 Don't forget to set the specifications of the image to what your project needs. The same goes for the deploy steps.
-For example, if your project needs PHP 8.3 and Node.js 20, set the image to:
+For example, if your project needs PHP 8.4 and Node.js 22, set the image to:
 ```yaml
-image: quay.io/hypernode/deploy:latest-php8.3-node20
+image: quay.io/hypernode/deploy:latest-php8.4-node22
 ```
 ````
 

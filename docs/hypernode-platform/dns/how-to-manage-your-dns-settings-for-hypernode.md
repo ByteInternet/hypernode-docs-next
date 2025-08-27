@@ -57,7 +57,7 @@ Syncing a domain to your Hypernode will immediately change the domain's DNS reco
 
 #### The steps:
 
-1. [Log in to your Control Panel](https://my.hypernode.com/)with your customer email and password and select "domains."
+1. [Log in to your Control Panel](https://my.hypernode.com/) with your customer email and password and select "domains."
 1. Here you will find a list of your domain names.
 1. Click on your domain name.
 1. In your next view, you can **link**\* the domain to your Hypernode.

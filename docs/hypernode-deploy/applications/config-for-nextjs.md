@@ -1,9 +1,5 @@
 # Config for NextJS
 
-```{note}
-NextJS is not officially supported on the Hypernode Platform. So please use this at your own risk,.
-```
-
 Configuration to use as Hypernode Deploy deploy.php for a NextJS webserver application:
 
 ```php
@@ -50,7 +46,7 @@ $configuration->setPlatformConfigurations([
     new PlatformConfiguration\HypernodeSettingConfiguration('elasticsearch_enabled', 'False'),
     new PlatformConfiguration\HypernodeSettingConfiguration('opensearch_enabled', 'False'),
     new PlatformConfiguration\HypernodeSettingConfiguration('varnish_enabled', 'False'),
-    new PlatformConfiguration\HypernodeSettingConfiguration('nodejs_version', '20'),
+    new PlatformConfiguration\HypernodeSettingConfiguration('nodejs_version', '22'),
 ]);
 
 $configuration->addBuildTask('node:install');
@@ -126,3 +122,5 @@ module.exports = {
     ]
   }
 ```
+
+Please note that we don't offer active support through our supportdesk for the above application or deployment configuration.

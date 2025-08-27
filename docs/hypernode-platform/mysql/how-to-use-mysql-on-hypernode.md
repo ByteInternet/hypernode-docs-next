@@ -196,6 +196,29 @@ TABLE="core_url_rewrite"
 mysql "$DATABASE" -e "TRUNCATE TABLE $TABLE"
 ```
 
+## Changing the Authentication Plugin for a Custom MySQL User
+
+Some MySQL features and upgrades require that users use a supported authentication plugin.
+For example, newer MySQL versions no longer support `mysql_native_password` by default.
+
+To change the authentication plugin for an existing CUSTOM user to the recommended `caching_sha2_password` plugin, first log in to MySQL:
+
+```bash
+mysql
+```
+
+Then run the following command, replacing `<username>`, `<host>` and `<password>` with your own values:
+
+```mysql
+ALTER USER '<username>'@'<host>' IDENTIFIED WITH caching_sha2_password BY '<password>';
+```
+
+For example, to update a custom user for all hosts:
+
+```mysql
+ALTER USER 'someuser'@'%' IDENTIFIED WITH caching_sha2_password BY 'new_secure_password';
+```
+
 ## Changing Your Password
 
 How you change the database password depends on what version of MySQL you are running on your Hypernode.
@@ -289,3 +312,21 @@ hypernode-systemctl settings mysql_version 8.0
 ```
 
 You can then check with `livelog` when the process has finished and your MySQL version has been upgraded.
+
+### Upgrading to MySQL 8.4
+
+**Please note that once you have upgraded the MySQL version on your Hypernode, you won't be able to downgrade it.**
+
+Upgrading to MySQL 8.4 is only supported from MySQL 8.0.\
+If you are not yet on MySQL 8.0, first follow the steps above to upgrade to 8.0.
+
+Before upgrading, ensure all MySQL users are using supported authentication plugins (for example `caching_sha2_password`).\
+See [Changing the Authentication Plugin for a Custom MySQL User](#changing-the-authentication-plugin-for-a-custom-mysql-user) for details.
+
+Once ready, run the following command:
+
+```bash
+hypernode-systemctl settings mysql_version --value 8.4
+```
+
+Use the `livelog` command to monitor the progress of the update job.

@@ -142,7 +142,7 @@ Now it's time to create your CI configuration file. You can either start from sc
 
 The CI configuration file needs to make use of the Hypernode Deploy image in order to run your CI/CD pipelines succesfully. We serve multiple flavors of the Hypernode Deploy image, one for every PHP + NodeJS version combination. See [our image repository](https://quay.io/repository/hypernode/deploy?tab=tags&tag=latest) for all supported flavors. As new PHP / Node versions come out, we'll bake more images to support those.
 
-Choose a version of the hypernode/deploy image that best reflects your application needs. Here's an example of a `.github/workflows/deploy.yml` file that uses the PHP 8.3 + Node 20 flavor and is configured with a configuration for the staging environment, containing a build step and deploy step to perform the deployment to the configured staging server. It uses the configuration provided in `deploy.php` to perform the steps.
+Choose a version of the hypernode/deploy image that best reflects your application needs. Here's an example of a `.github/workflows/deploy.yml` file that uses the PHP 8.4 + Node 22 image and is configured with a configuration for the staging environment, containing a build step and deploy step to perform the deployment to the configured staging server. It uses the configuration provided in `deploy.php` to perform the steps.
 
 ```yaml
 # This file would need to be placed in .github/workflows/deploy.yaml for example
@@ -166,7 +166,7 @@ defaults:
 jobs:
  build:
  runs-on: ubuntu-latest
- container: quay.io/hypernode/deploy:latest-php8.3-node20
+ container: quay.io/hypernode/deploy:latest-php8.4-node20
  steps:
  - uses: actions/checkout@v2
  - uses: actions/cache@v2
@@ -178,7 +178,7 @@ jobs:
      ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
  - run: hypernode-deploy build -vvv
  - name: archive production artifacts
-   uses: actions/upload-artifact@v3
+   uses: actions/upload-artifact@v4
    with:
      name: deployment-build
      path: build/build.tgz
@@ -186,7 +186,7 @@ jobs:
  deploy_staging:
    needs: build
    runs-on: ubuntu-latest
-   container: quay.io/hypernode/deploy:latest-php8.3-node20
+   container: quay.io/hypernode/deploy:latest-php8.4-node20
    steps:
    - uses: actions/checkout@v2
    - name: download build artifact
