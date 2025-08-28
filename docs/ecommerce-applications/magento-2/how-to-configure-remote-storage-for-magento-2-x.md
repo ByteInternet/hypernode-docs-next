@@ -25,7 +25,7 @@ Configuring Magento 2 to start storing files in your bucket is done using a sing
 Before configuring remote storage, make sure that the deprecated database media storage backend is disabled.
 
 ```bash
-bin/magento setup:config:set system/media_storage_configuration/media_storage 0
+bin/magento config:set system/media_storage_configuration/media_storage 0
 ```
 
 **Hypernode Object Storage and other S3 compatible providers**
