@@ -21,7 +21,6 @@ Want to know how to configure Redis in Magento 1? Have a look at [this article](
 
 Want to know how to configure Valkey in Magento 2? Have a look at [this article](../../ecommerce-applications/magento-2/how-to-configure-valkey-for-magento-2.md)!
 
-
 ## Configure Redis Cache for Magento 2
 
 There are two ways to configure Redis Cache for Magento 2. You can either run a command which automatically updates the `env.php` with the correct details or you can manually change the `env.php` file.
