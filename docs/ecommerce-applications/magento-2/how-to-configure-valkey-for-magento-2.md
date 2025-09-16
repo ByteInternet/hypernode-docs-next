@@ -28,7 +28,7 @@ Valkey is Redis-compatible, so your existing Magento `redis` configuration flags
 > $ hypernode-systemctl settings valkey_enabled True
 > ```
 
-Take a look at the `livelog` command to check the progress on the update job. 
+Take a look at the `livelog` command to check the progress on the update job.
 
 ## Redis Tools or Valkey Tools?
 
@@ -37,7 +37,7 @@ Take a look at the `livelog` command to check the progress on the update job.
 
 # First Time Setup - Redis Not Previously Configured
 
-## Configure Valkey Cache for Magento 2 
+## Configure Valkey Cache for Magento 2
 
 There are two ways to configure the cache. You can run a command that updates `env.php`, or you can edit it yourself.
 
