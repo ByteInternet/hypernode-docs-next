@@ -128,7 +128,6 @@ This only works on bigger nodes, as there needs to be some memory available for 
 To store sessions in Redis, take a look at [the instructions on how to configure this on Magento-1](../../ecommerce-applications/magento-1/how-to-configure-redis-for-magento-1.md) ([Redis on Magento 2](../../ecommerce-applications/magento-2/how-to-configure-redis-for-magento-2.md) )
 ([Valkey on Magento 2](../../ecommerce-applications/magento2/how-to-configure-valkey-on-magento-2.md))
 
-
 ## Image Optimizations (10 mins)
 
 Big images take more time to download and view than smaller images. We created a resize tool to reduce the size of your images to improve load times. To do this, use the Hypernode-image-optimizer which is installed on all nodes. It’s recommended to run this command nightly through cron. More information can be found in [this article about optimizing your image size](../../best-practices/performance/how-to-optimize-your-images.md).
