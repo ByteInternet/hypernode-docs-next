@@ -125,7 +125,9 @@ On bigger Hypernodes with more memory available, you can reduce disk IO by stori
 
 This only works on bigger nodes, as there needs to be some memory available for rendering pages using PHP too.
 
-To store sessions in Redis, take a look at [the instructions on how to configure this](../../ecommerce-applications/magento-1/how-to-configure-redis-for-magento-1.md) ([Magento 2](../../ecommerce-applications/magento-2/how-to-configure-redis-for-magento-2.md))
+To store sessions in Redis, take a look at [the instructions on how to configure this on Magento-1](../../ecommerce-applications/magento-1/how-to-configure-redis-for-magento-1.md) ([Redis on Magento 2](../../ecommerce-applications/magento-2/how-to-configure-redis-for-magento-2.md) )
+([Valkey on Magento 2](../../ecommerce-applications/magento2/how-to-configure-valkey-on-magento-2.md))
+
 
 ## Image Optimizations (10 mins)
 
