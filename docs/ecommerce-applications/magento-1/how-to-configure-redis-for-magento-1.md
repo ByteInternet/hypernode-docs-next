@@ -18,7 +18,8 @@ Redis is a caching method which can increase the speed of the backend and fronte
 
 **NB: When you used the [hypernode-importer](../../hypernode-platform/tools/how-to-migrate-your-shop-to-hypernode.md#how-to-migrate-your-shop-to-hypernode) and you were already using Redis you don't have to follow this tutorial.**
 
-Want to know how to configure Redis in Magento 2? Have a look at [this article](../../ecommerce-applications/magento-2/how-to-configure-redis-for-magento-2.md)!
+Want to know how to configure Redis or Valkey in Magento 2? Have a look at [Redis on Magento-2](../../ecommerce-applications/magento-2/how-to-configure-redis-for-magento-2.md) or
+[Valkey on Magento-2](../../ecommerce-applications/magento-2/how-to-configure-valkey-for-magento-2.md)!
 
 ## Setup Redis by Changing your local.xml File
 

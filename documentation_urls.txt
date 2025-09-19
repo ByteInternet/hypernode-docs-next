@@ -86,6 +86,7 @@ article: https://support.hypernode.com/en/ecommerce/magento-1/how-to-set-the-ret
 article: https://support.hypernode.com/en/ecommerce/magento-1/how-to-set-up-a-staging-environment-for-magento-1/
 article: https://support.hypernode.com/en/ecommerce/magento-2/how-to-change-your-magento-2-base-urls/
 article: https://support.hypernode.com/en/ecommerce/magento-2/how-to-configure-redis-for-magento-2/
+article: https://support.hypernode.com/en/ecommerce/magento-2/how-to-configure-valkey-for-magento-2/
 article: https://support.hypernode.com/en/ecommerce/magento-2/how-to-configure-varnish-for-magento-2-x/
 article: https://support.hypernode.com/en/ecommerce/magento-2/how-to-create-a-robots-txt-for-magento-2-x/
 article: https://support.hypernode.com/en/ecommerce/magento-2/how-to-create-a-sitemap-xml-for-magento-2-x/
