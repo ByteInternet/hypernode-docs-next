@@ -17,7 +17,7 @@ return $configuration;
 
 By using the Magento2 ApplicationTemplate, a bunch of default configuration gets set in Hypernode Deploy, and should work out-of-the-box for most magento 2 stores.
 
-## Known issues
+## Common issues
 
 ### Error: The default website isn't defined. Set the website and try again.
 
