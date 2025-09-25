@@ -13,8 +13,8 @@ Sometimes you want to serve an application that listens on a local port (for exa
 
 Create a new vhost and set its type to `proxy`. In the example below we create a vhost for `proxy.myapp.hypernode.io`:
 
-```bash
-app@abc123-myapp-magweb-cmbl:~$ hmv proxy.myapp.hypernode.io --type proxy
+```console
+app@abc123-example-magweb-cmbl:~$ hmv proxy.myapp.hypernode.io --type proxy
 INFO: Managing configs for proxy.myapp.hypernode.io
 INFO: No existing config for proxy.myapp.hypernode.io, starting with default options
 INFO: Writing HTTP config for proxy.myapp.hypernode.io
@@ -22,7 +22,7 @@ INFO: Writing HTTP config for proxy.myapp.hypernode.io
 
 This command creates a vhost directory under `/data/web/nginx/<your-domain>/` with the proxy templates. You will see the following files:
 
-```bash
+```console
 app@abc123-myapp-magweb-cmbl:~/nginx/proxy.myapp.hypernode.io$ ls
 public.proxy.conf  server.rewrites.conf  staging.proxy.conf
 ```
@@ -32,7 +32,6 @@ public.proxy.conf  server.rewrites.conf  staging.proxy.conf
 Open `public.proxy.conf`. The only lines you normally need to change are at the top: the upstream host and port your application listens on. By default they point to `localhost:3000`.
 
 ```nginx
-app@abc123-app-magweb-cmbl:~/nginx/proxy.myapp.hypernode.io$ cat public.proxy.conf
 set $app_proxy_host localhost;
 set $app_proxy_port 3000;
 
