@@ -61,7 +61,9 @@ hypernode-servicectl restart rabbitmq-server
 - The default admin account is username `guest` and password `guest`. You can change and add users via the admin interface.
 - You can access the admin interface e.g. by forwarding the tcp port via SSH:
 
-`ssh app@appname.hypernode.io -L 55672:localhost:15672`
+```bash
+ssh app@appname.hypernode.io -L 55672:localhost:15672
+```
 
 Use your browser to go to `localhost:55672` and logon using guest/guest.
 
