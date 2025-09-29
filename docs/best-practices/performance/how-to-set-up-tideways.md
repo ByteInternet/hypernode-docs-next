@@ -1,0 +1,45 @@
+---
+myst:
+  html_meta:
+    description: Enable Tideways profiling on Hypernode. Learn how to activate it, set the API key, configure sampling, and set an environment name.
+    title: How to set up Tideways on Hypernode
+redirect_from:
+  - /en/best-practices/performance/how-to-set-up-tideways/
+---
+
+# How to Set Up Tideways on Hypernode
+
+[Tideways](https://tideways.com/) is an application performance profiling and monitoring tool. On Hypernode you can enable Tideways in minutes using the CLI and control panel.
+
+## Prerequisites
+
+- A Tideways account and project. Create a new project in Tideways and note the project API key.
+
+## How to Activate Tideways
+
+### Activation Via the CLI
+
+First, enable Tideways and set your project API key:
+
+```bash
+hypernode-systemctl settings tideways_enabled True
+hypernode-systemctl settings tideways_api_key <api_key_here>
+```
+
+After enabling, it can take a short while for data to appear in Tideways. We recommend generating some traffic on your shop to produce samples.
+
+### Optional: Configure Sample Rate
+
+Sampling controls the percentage of requests that will be stored in Tideways, which helps manage cost. For example, to store 25% of samples:
+
+```bash
+hypernode-systemctl settings tideways_sample_rate 25
+```
+
+### Optional: Set Environment Name
+
+You can assign an environment label (for example when this node is a staging server):
+
+```bash
+hypernode-systemctl settings tideways_env_name staging
+```
