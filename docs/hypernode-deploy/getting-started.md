@@ -12,6 +12,7 @@ myst:
 ---
 caption: Chapters
 maxdepth: 1
+glob:
 ---
 getting-started/*
 ```
