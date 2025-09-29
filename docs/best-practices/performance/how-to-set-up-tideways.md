@@ -28,7 +28,7 @@ hypernode-systemctl settings tideways_api_key <api_key_here>
 
 After enabling, it can take a short while for data to appear in Tideways. We recommend generating some traffic on your shop to produce samples.
 
-### Optional: Configure Sample Rate
+#### Optional: Configure Sample Rate
 
 Sampling controls the percentage of requests that will be stored in Tideways, which helps manage cost. For example, to store 25% of samples:
 
@@ -36,10 +36,19 @@ Sampling controls the percentage of requests that will be stored in Tideways, wh
 hypernode-systemctl settings tideways_sample_rate 25
 ```
 
-### Optional: Set Environment Name
+#### Optional: Set Environment Name
 
 You can assign an environment label (for example when this node is a staging server):
 
 ```bash
 hypernode-systemctl settings tideways_env_name staging
 ```
+
+### Activation through Control Panel
+
+It’s also possible to configure Tideways in the Control Panel.
+
+1. Go to your **Hypernode** in the Control Panel
+2. Click **Settings**
+3. Go to the tab **Performance & Monitoring**
+4. Enable the toggle for **Tideways**, and set your API key in **Tideways API key**
