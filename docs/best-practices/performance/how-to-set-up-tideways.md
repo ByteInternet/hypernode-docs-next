@@ -1,7 +1,8 @@
 ---
 myst:
   html_meta:
-    description: Enable Tideways profiling on Hypernode. Learn how to activate it, set the API key, configure sampling, and set an environment name.
+    description: Enable Tideways profiling on Hypernode. Learn how to activate it,
+      set the API key, configure sampling, and set an environment name.
     title: How to set up Tideways on Hypernode
 redirect_from:
   - /en/best-practices/performance/how-to-set-up-tideways/
@@ -49,6 +50,6 @@ hypernode-systemctl settings tideways_env_name staging
 It’s also possible to configure Tideways in the Control Panel.
 
 1. Go to your **Hypernode** in the Control Panel
-2. Click **Settings**
-3. Go to the tab **Performance & Monitoring**
-4. Enable the toggle for **Tideways**, and set your API key in **Tideways API key**
+1. Click **Settings**
+1. Go to the tab **Performance & Monitoring**
+1. Enable the toggle for **Tideways**, and set your API key in **Tideways API key**
