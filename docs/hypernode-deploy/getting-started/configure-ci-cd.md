@@ -90,6 +90,8 @@ on:
     branches:
       - 'master'  # Your main/master/production branch
       - 'staging' # Your staging/acceptance branch
+
+run-name: Build and deploy application – ${{ github.ref_name }}
 ```
 
 ### Build step
@@ -106,8 +108,8 @@ jobs:
     # Here we use the latest Hypernode Deploy image with PHP 8.4 and Node.js 22
     container: quay.io/hypernode/deploy:latest-php8.4-node22
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v2
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
         with:
           path: /tmp/composer-cache
           key: ${{ runner.os }}-composer
@@ -122,6 +124,7 @@ jobs:
         with:
           name: deployment-build
           path: build/build.tgz
+          retention-days: 1
 ```
 
 ### Deploy step
@@ -140,9 +143,9 @@ jobs:
     # Here we use the latest Hypernode Deploy image with PHP 8.4 and Node.js 22
     container: quay.io/hypernode/deploy:latest-php8.4-node22
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: download build artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: deployment-build
           path: build/
