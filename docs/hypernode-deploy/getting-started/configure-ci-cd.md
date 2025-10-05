@@ -108,19 +108,19 @@ jobs:
     # Here we use the latest Hypernode Deploy image with PHP 8.4 and Node.js 22
     container: quay.io/hypernode/deploy:latest-php8.4-node22
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/cache@v3
+      - uses: actions/checkout@v5
+      - uses: actions/cache@v4
         with:
           path: /tmp/composer-cache
           key: ${{ runner.os }}-composer
-      - uses: webfactory/ssh-agent@v0.5.4
+      - uses: webfactory/ssh-agent@v0.9.1
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - run: hypernode-deploy build -vvv
         env:
           DEPLOY_COMPOSER_AUTH: ${{ secrets.DEPLOY_COMPOSER_AUTH }}
       - name: archive production artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: deployment-build
           path: build/build.tgz
@@ -143,13 +143,13 @@ jobs:
     # Here we use the latest Hypernode Deploy image with PHP 8.4 and Node.js 22
     container: quay.io/hypernode/deploy:latest-php8.4-node22
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - name: download build artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: deployment-build
           path: build/
-      - uses: webfactory/ssh-agent@v0.5.4
+      - uses: webfactory/ssh-agent@v0.9.1
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - run: mkdir -p $HOME/.ssh
