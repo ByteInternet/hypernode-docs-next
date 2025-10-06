@@ -9,7 +9,7 @@ redirect_from:
 
 # How to Enable Valkey for Magento 2
 
-Valkey is a Redis-compatible in-memory store. On Hypernode, **Valkey-8** is available on Debian Bookworm single-node setups. It is not supported on Debian Buster or on Hypernode Clusters. **Redis remains supported.**
+Valkey is a Redis-compatible in-memory store. **Valkey-8** is available on Debian Bookworm Hypernodes.
 
 > If you previously used Redis, **no action needed** after enabling it ( **see example below** ), existing Magento settings continue to work with Valkey.
 >
