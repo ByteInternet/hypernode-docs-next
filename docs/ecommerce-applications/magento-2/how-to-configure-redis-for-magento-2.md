@@ -24,7 +24,7 @@ Want to know how to configure Redis in Magento 1? Have a look at [this article](
 
 # Enable Redis or Valkey on your Hypernode
 
-First thing you need to do is enable Redis or Valkey on your Hypernode. 
+First thing you need to do is enable Redis or Valkey on your Hypernode.
 
 Redis is enabled by default, if you want to make use of Valkey, you can enable it by running the following command:
 
