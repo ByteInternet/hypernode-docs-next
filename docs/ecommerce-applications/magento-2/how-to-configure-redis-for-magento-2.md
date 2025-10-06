@@ -13,21 +13,32 @@ redirect_from:
 
 <!-- source: https://support.hypernode.com/en/ecommerce/magento-2/how-to-configure-redis-for-magento-2/ -->
 
-# How to Configure Redis for Magento 2
+
+# How to Configure Redis / Valkey for Magento 2
 
 Redis is a caching method which can increase the speed of the backend and frontend of your shop. On Hypernode every customer has access to Redis cache, starting from 64 MB, depending on the plan. This article will explain how to configure Redis on your Magento 2 shop on Hypernode and how to work with redis-cli.
+Valkey is a Redis-compatible in-memory store en supported by the latest Magento 2 versions. Since all the existing Redis configuration flags work unchanged, you can easily switch from Redis to Valkey. Valkey is available on Debian Bookworm Hypernodes. 
+> `redis-cli`and `redis-tools` is symlinked to `valkey-cli` and `valkey-tools` when Valkey is enabled. You can use **either**. Examples below show `redis-cli` with an `or valkey-cli` alternative.
 
 Want to know how to configure Redis in Magento 1? Have a look at [this article](../../ecommerce-applications/magento-1/how-to-configure-redis-for-magento-1.md)!
 
-Want to know how to configure Valkey in Magento 2? Have a look at [this article](../../ecommerce-applications/magento-2/how-to-configure-valkey-for-magento-2.md)!
+# Enable Redis or Valkey on your Hypernode
 
-## Configure Redis Cache for Magento 2
+First thing you need to do is enable Redis or Valkey on your Hypernode. 
 
-There are two ways to configure Redis Cache for Magento 2. You can either run a command which automatically updates the `env.php` with the correct details or you can manually change the `env.php` file.
+Redis is enabled by default, if you want to make use of Valkey, you can enable it by running the following command:
 
-## Configure Redis Cache for Magento 2 Through the Commandline
+```console
+$ hypernode-systemctl settings valkey_enabled true
+```
 
-Use the following command to enable Redis backend caching:
+## Configure Redis/Valkey Cache for Magento 2
+
+There are two ways to configure Redis/Valkey Cache for Magento 2. You can either run a command which automatically updates the `env.php` with the correct details or you can manually change the `env.php` file.
+
+## Configure Redis/Valkey Cache for Magento 2 Through the Commandline
+
+Use the following command to enable Redis/Valkey backend caching:
 
 ```console
 $ cd /data/web/magento2
@@ -44,9 +55,9 @@ $ rm -rf /data/web/magento2/var/cache/*
 $ redis-cli flushall
 ```
 
-## Configure Redis Full Page Caching for Magento 2
+## Configure Redis/Valkey Full Page Caching for Magento 2
 
-To enable page caching Redis, extend your /data/web/magento2/app/etc/env.php with the following snippet. You should paste this in between the cache keys, so leave the cache tag in this snippet out of it.
+To enable page caching in Redis/Valkey, extend your /data/web/magento2/app/etc/env.php with the following snippet. You should paste this in between the cache keys, so leave the cache tag in this snippet out of it.
 
 ```console
 $ cd /data/web/magento2
@@ -65,7 +76,7 @@ $ redis-cli flushall
 
 ## Flush Your Caches
 
-To flush your Magento cache, clear the Redis database corresponding to your configured Redis database:
+To flush your Magento cache, clear the Redis/Valkey database corresponding to your configured Redis/Valkey database:
 
 ```console
 $ redis-cli -n 1 flushdb
@@ -98,15 +109,15 @@ $ # If you use Magento's builtin page cache with Redis
 $ bin/magento setup:config:set --page-cache-redis-compression-lib=snappy
 ```
 
-## Configure Magento 2 to Use Redis as the Session Store
+## Configure Magento 2 to Use Redis/Valkey as the Session Store
 
-You can use Redis for storing sessions too!
+You can use Redis/Valkey for storing sessions too!
 
-Hypernodes bigger than a Grow plan, often have enough memory to store the session data in Redis. This way sessions are stored in-memory, making the shop faster and use less IO than when using MySQL or files as session store.
+Hypernodes bigger than a Grow plan, often have enough memory to store the session data in Redis/Valkey. This way sessions are stored in-memory, making the shop faster and use less IO than when using MySQL or files as session store.
 
-### Configure Magento 2 to Store Sessions in Redis
+### Configure Magento 2 to Store Sessions in Redis/Valkey
 
-As Magento 2 is fully supporting Redis, there is no need to install additional extensions to configure Redis. All you need to do is extend your `app/etc/env.php` and flush your cache.
+As Magento 2 is fully supporting Redis, there is no need to install additional extensions to configure Redis/Valkey. All you need to do is extend your `app/etc/env.php` and flush your cache.
 
 To enable session storage in Redis, run the following command:
 
@@ -125,13 +136,13 @@ $ rm -rf /data/web/magento2/var/cache/*
 $ redis-cli flushall
 ```
 
-### Enable Second Redis Instance for Sessions
+### Enable Second Redis/Valkey Instance for Sessions
 
 We have made it possible to enable a second Redis instance more tailored for saving session data (more information can be found in our [changelog](https://changelog.hypernode.com/changelog/experimental-changes-redis-sessions-aws-performance/)).
 
-To enable the second Redis instance for sessions you run the command: `hypernode-systemctl settings redis_persistent_instance True`
+To enable the second Redis/Valkey instance for sessions you run the command: `hypernode-systemctl settings redis_persistent_instance True`
 
-After enabling the second Redis instance you need to change the configured Redis session port value to `6378` instead of the default `6379` and the database to `0`, since we're using a separate Redis instance now:
+After enabling the second Redis/Valkey instance you need to change the configured Redis session port value to `6378` instead of the default `6379` and the database to `0`, since we're using a separate Redis/Valkey instance now:
 
 ```console
 $ cd /data/web/magento2
@@ -146,7 +157,7 @@ Furthermore you need to add the following line to your crontab:
 * * * * * redis-cli -p 6378 bgsave
 ```
 
-### Test Whether Your Sessions Are Stored in Redis
+### Test Whether Your Sessions Are Stored in Redis/Valkey
 
 To verify whether your configuration is working properly, first clear your session store:
 
