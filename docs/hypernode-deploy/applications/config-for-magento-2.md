@@ -17,6 +17,19 @@ return $configuration;
 
 By using the Magento2 ApplicationTemplate, a bunch of default configuration gets set in Hypernode Deploy, and should work out-of-the-box for most magento 2 stores.
 
+## Common issues
+
+### Error: The default website isn't defined. Set the website and try again.
+
+When this error is thrown, please assure the `app/etc/config.php` has the keys `scopes` and `themes`. This is needed for the deployment software to be aware of what themes are installed without a database present (during pipeline run).
+
+You can fix this by running the following command and then commiting the result to your codebase:
+
+```console
+$ php bin/magento app:config:dump scopes themes
+Done. Config types dumped: scopes, themes
+```
+
 ## Advanced
 
 However, for advanced configurations you can override most steps and variables set my Hypernode Deploy:

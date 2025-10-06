@@ -6,6 +6,7 @@ myst:
     title: Responsible Disclosure Policy | Security | Hypernode
 redirect_from:
   - /en/about/security/responsible-disclosure-policy/
+  - /about-hypernode/security-policies/security-hall-of-fame.html
 ---
 
 <!-- source: https://support.hypernode.com/en/about/security/responsible-disclosure-policy/ -->

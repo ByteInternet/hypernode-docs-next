@@ -12,7 +12,6 @@ article: https://support.hypernode.com/en/about/billing/how-to-up-or-downgrade-y
 article: https://support.hypernode.com/en/about/billing/migration-faq/
 article: https://support.hypernode.com/en/about/billing/our-payment-service-provider/
 article: https://support.hypernode.com/en/about/billing/supported-payment-methods-in-the-control-panel/
-article: https://support.hypernode.com/en/about/security/hall-of-fame/
 article: https://support.hypernode.com/en/about/security/hypernode-security-statement/
 article: https://support.hypernode.com/en/about/security/one-of-your-magento-extensions-is-vulnerable/
 article: https://support.hypernode.com/en/about/security/responsible-disclosure-policy/
