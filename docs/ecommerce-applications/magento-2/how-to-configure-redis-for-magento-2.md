@@ -16,7 +16,8 @@ redirect_from:
 # How to Configure Redis / Valkey for Magento 2
 
 Redis is a caching method which can increase the speed of the backend and frontend of your shop. On Hypernode every customer has access to Redis cache, starting from 64 MB, depending on the plan. This article will explain how to configure Redis on your Magento 2 shop on Hypernode and how to work with redis-cli.
-Valkey is a Redis-compatible in-memory store en supported by the latest Magento 2 versions. Since all the existing Redis configuration flags work unchanged, you can easily switch from Redis to Valkey. Valkey is available on Debian Bookworm Hypernodes. 
+Valkey is a Redis-compatible in-memory store en supported by the latest Magento 2 versions. Since all the existing Redis configuration flags work unchanged, you can easily switch from Redis to Valkey. Valkey is available on Debian Bookworm Hypernodes.
+
 > `redis-cli`and `redis-tools` is symlinked to `valkey-cli` and `valkey-tools` when Valkey is enabled. You can use **either**. Examples below show `redis-cli` with an `or valkey-cli` alternative.
 
 Want to know how to configure Redis in Magento 1? Have a look at [this article](../../ecommerce-applications/magento-1/how-to-configure-redis-for-magento-1.md)!
