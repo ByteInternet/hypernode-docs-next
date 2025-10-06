@@ -12,8 +12,7 @@ myst:
 ---
 caption: Chapters
 maxdepth: 1
+glob:
 ---
-getting-started/install-and-configure-hypernode-deploy.md
-getting-started/configure-ci-cd.md
-getting-started/configure-hypernode-settings-on-deployment.md
+getting-started/*
 ```
