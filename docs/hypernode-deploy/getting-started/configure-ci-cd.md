@@ -120,7 +120,7 @@ jobs:
         env:
           DEPLOY_COMPOSER_AUTH: ${{ secrets.DEPLOY_COMPOSER_AUTH }}
       - name: archive production artifacts
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v4
         with:
           name: deployment-build
           path: build/build.tgz
