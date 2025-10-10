@@ -244,7 +244,7 @@ If you want to debug cron timing issues, use a wrapper that logs all issues to l
 ```bash
 #!/bin/bash
 # This script is a debug utility for cronjobs as explained in:
-# - https://support.hypernode.com/knowledgebase/configure-cronjobs-on-hypernode/
+# - https://docs.hypernode.com/knowledgebase/configure-cronjobs-on-hypernode/
 # It logs all output and timing to a log file
 #
 # To use it, download the script, add the executable bit and put it in your cronjob:

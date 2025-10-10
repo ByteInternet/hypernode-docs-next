@@ -139,6 +139,6 @@ Convinced about Hypernode? [Convert your trial into a paid hosting plan](../../a
 
 ## In Need of Support?
 
-We encourage you to have a look at our extensive Hypernode support documentation on [support.hypernode.com](../../index.md). Here you will find useful information and tips and tricks on e.g. how to import a shop to Hypernode, recommended tools for developers, etc.
+We encourage you to have a look at our extensive Hypernode support documentation on [docs.hypernode.com](../../index.md). Here you will find useful information and tips and tricks on e.g. how to import a shop to Hypernode, recommended tools for developers, etc.
 
 Do you have questions about our Hypernode platform or would you like to give us some feedback? We would love to hear from you! Please send an email to [support@hypernode.com](mailto:support@hypernode.com) and we will get back to you. Our sales team and support team are available on weekdays from 8:00 AM until 18:00 PM CET/CEST (UTC+1/UTC+2).
