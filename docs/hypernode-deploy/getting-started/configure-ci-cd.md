@@ -108,8 +108,6 @@ jobs:
     timeout-minutes: 60
     # Here we use the latest Hypernode Deploy image with PHP 8.4 and Node.js 22
     container: quay.io/hypernode/deploy:latest-php8.4-node22
-    outputs:
-       safe_branch: ${{ steps.sanitize_branch.outputs.safe_branch }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/cache@v4
@@ -119,20 +117,13 @@ jobs:
       - uses: webfactory/ssh-agent@v0.9.1
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      - name: sanitize branch name
-        id: sanitize_branch
-        shell: bash
-        run: |
-           RAW="${GITHUB_REF_NAME}"
-           SAFE="$(printf '%s' "$RAW" | sed -E 's/[^[:alnum:]._-]+/-/g; s/^-+//; s/-+$//')"
-           echo "safe_branch=$SAFE" >> "$GITHUB_OUTPUT"
       - run: hypernode-deploy build -vvv
         env:
           DEPLOY_COMPOSER_AUTH: ${{ secrets.DEPLOY_COMPOSER_AUTH }}
       - name: archive production artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: deployment-build-${{ steps.sanitize_branch.outputs.safe_branch }}
+          name: deployment-build
           path: build/build.tgz
           retention-days: 1
 ```
@@ -158,7 +149,7 @@ jobs:
       - name: download build artifact
         uses: actions/download-artifact@v5
         with:
-          name: deployment-build-${{ needs.build.outputs.safe_branch }}
+          name: deployment-build
           path: build/
       - uses: webfactory/ssh-agent@v0.9.1
         with:
