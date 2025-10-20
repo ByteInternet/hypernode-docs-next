@@ -1,5 +1,3 @@
-
-
 # How to use Valkey on your Hypernode
 
 This article explains how to use Valkey on our Hypernode platform.
