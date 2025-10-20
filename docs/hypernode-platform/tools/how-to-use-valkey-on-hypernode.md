@@ -16,7 +16,7 @@ This article explains how to use Valkey on our Hypernode platform.
 ## What is Valkey?
 
 Valkey is a Redis-compatible in-memory store. On Hypernode, **Valkey-8** is available on Debian Bookworm single-node setups.
-Valkey is supported by the latest Magento releases and you don't need to make any configuration changes within Magento when switching from Redis to Valkey.
+Since Valkey is a drop-in replacement for Redis, it can be used in the same applications as Redis.
 
 ## Changing from Redis to Valkey
 
