@@ -1,13 +1,4 @@
----
-myst:
-  html_meta:
-    description: 'In this article we will explain how to use Valkey on Hypernode. '
-    title: How to use Valkey? | Hypernode
-redirect_from:
-  - /en/hypernode/tools/how-to-use-valkey-on-hypernode/
----
 
-<!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-use-valkey-on-hypernode/ -->
 
 # How to use Valkey on your Hypernode
 
@@ -24,7 +15,7 @@ Your Hypernode is configured with Redis by default.
 Changing from Redis to Valkey is pretty easy on Hypernode. You can use the `hypernode-systemctl` command-line tool to change from Redis to Valkey.
 
 ```console
-app@levka6-appname-magweb-cmbl:~$ hypernode-systemctl settings valkey_enabled true
+app@abcdef-appname-magweb-cmbl:~$ hypernode-systemctl settings valkey_enabled true
 Operation was successful and is being processed. Please allow a few minutes for the settings to be applied. Run 'livelog' to see the progress.
 ```
 
