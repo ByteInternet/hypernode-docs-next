@@ -105,6 +105,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     # Here we use the latest Hypernode Deploy image with PHP 8.4 and Node.js 22
     container: quay.io/hypernode/deploy:latest-php8.4-node22
     steps:
@@ -140,6 +141,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     # Here we use the latest Hypernode Deploy image with PHP 8.4 and Node.js 22
     container: quay.io/hypernode/deploy:latest-php8.4-node22
     steps:
