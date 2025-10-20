@@ -173,6 +173,7 @@ article: https://support.hypernode.com/en/hypernode/tools/how-to-use-node-js-and
 article: https://support.hypernode.com/en/hypernode/tools/how-to-use-periodic-tasks-cronjobs-on-hypernode/
 article: https://support.hypernode.com/en/hypernode/tools/how-to-use-supervisor/
 article: https://support.hypernode.com/en/hypernode/tools/how-to-use-the-hypernode-systemctl-cli-tool/
+article: https://support.hypernode.com/en/hypernode/tools/how-to-use-valkey-on-hypernode/
 article: https://support.hypernode.com/en/hypernode/tools/hypernode-cli-tools-and-magerun-plugins/
 article: https://support.hypernode.com/en/hypernode/tools/unblocking-and-accessing-magmi-for-hypernode/
 article: https://support.hypernode.com/en/hypernode/varnish/how-to-enable-varnish-on-hypernode/
