@@ -12,6 +12,9 @@ myst:
 It can be used on Hypernode to inspect the current stack frame of a running PHP process.
 It requires some setup to get running, but it is very powerful when investigating long running cron commands, or hanging web requests.
 
+Note that livestack.py is not a Hypernode project, and as such Hypernode does not give support for the usage or with any issues of livestack.py.
+You can [create a GitHub issue](https://github.com/bigbridge-nl/livestack/issues) on the livestack GitHub page when you encounter problems.
+
 ## Setup
 
 First, contact [hypernode support](mailto:support@hypernode.io?subject=PHP%20debug%20symbols) to ask them to enable the php-dbg (PHP debug symbols) package for your Hypernode.
