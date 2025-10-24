@@ -24,41 +24,13 @@ You can find more in-depth information in [this article about SSL on Hypernode](
 
 Please check out [this article](../ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-com.md) for the different SSL options when you use the Hypernode Control Panel.
 
-## Order Let’s Encrypt Certificates
-
-### On Hypernodes With Hypernode Managed Vhosts Enabled
-
-**Please note: If you want to use Let’s Encrypt and have the Hypernode Managed Vhosts (HMV) system enabled, you need to configure LE during the creation of the vhost. Using the old method with dehydrated won't work!**
-
-First, check if HMV is enabled on your Hypernode:
-
-`hypernode-systemctl settings managed_vhosts_enabled`
-
-If so, it will give the following output:
-
-`managed_vhosts_enabled is set to value True`
+## How to Use Let’s Encrypt (LE) Certificates
 
 If you want to request a LE certificate you need to add the `--https` flag with the HMV-command.
 
 `hypernode-manage-vhosts www.example.com --https --force-https`
 
-This command will not only request a LE Certificate but because of the --force-https flag it will also redirects all traffic for that specific vhost to HTTPS.
-
-### On Hypernodes Without Hypernode Managed Vhosts Enabled
-
-To order [Let’s Encrypt](../ssl/how-to-use-lets-encrypt-on-hypernode.md) certificates for all storefronts, use the following command:
-
-```bash
-## Create an entry for each storefront
-for DOMAIN in $( n98-magerun sys:store:config:base-url:list --format=csv | sed 1d | cut -d , -f 3 | perl -pe "s/https?://(www.)?//" | tr -d "/" | sort -u ); do
-    echo -e "$DOMAIN www.${DOMAIN}" >> ~/.dehydrated/domains.txt
-done
-
-## Order the certificates
-dehydrated -c --create-dirs
-```
-
-Don’t forget to [add the cron to renew your certificates](../ssl/how-to-use-lets-encrypt-on-hypernode.md) to the crontab if you are using Let’s Encrypt!
+This command will not only request a LE Certificate but, because of the --force-https flag, it will also redirect all traffic for that specific vhost to HTTPS.
 
 ## Changing Your Base URLs
 
@@ -79,17 +51,9 @@ If this is done by Magento, the database and PHP are used for making this redire
 
 This is why we must configure this in Nginx, so the redirect does not use unnecessary resources.
 
-Run the following command to add the configuration to Nginx that routes all traffic over HTTPS:
+Run the following command to configure a vhost to automatically redirect all traffic to HTTPS:
 
-Create the following file at `/data/web/nginx/public.ssl_redirect.conf`:
-
-```nginx
-if ($scheme = http) {
-    return 301 https://$host$request_uri;
-}
-```
-
-**Please note that if you have [Hypernode Managed Vhosts](hypernode-managed-vhosts.md) enabled, you can skip this.**
+`hypernode-manage-vhosts www.example.com --https --force-https`
 
 ## Check Settings of Third Party Solutions
 

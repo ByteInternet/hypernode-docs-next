@@ -14,13 +14,9 @@ redirect_from:
 
 Akeneo 3 preferably requires a Hypernode Pelican L, Falcon M, Eagle M hosting plan or larger. You can either choose to install it on a seperate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 5.7, PHP 7.2 and Elasticsearch 6.x**, so it won’t affect your shop negatively. Installing Akeneo version 3.x may take up to 15 minutes.
 
-## Enable managed_vhosts
+## Managed Vhosts
 
-All new Hypernodes (from April 2020) will automatically be booted with [Hypernode Managed Vhosts](../../hypernode-platform/nginx/hypernode-managed-vhosts.md). If you already have an older Hypernode, then you need to enable Hypernode Managed Vhosts by running the following command:
-
-```bash
-hypernode-systemctl settings managed_vhosts_enabled True
-```
+Hypernode uses [Hypernode Managed Vhosts](../../hypernode-platform/nginx/hypernode-managed-vhosts.md). Ensure you have a vhost for your Akeneo domain.
 
 ## Create a Managed_vhost for a (Sub)Domain
 

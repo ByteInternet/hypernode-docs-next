@@ -15,13 +15,9 @@ redirect_from:
 Akeneo 7 preferably requires a Hypernode Pelican L, Falcon M, Eagle M hosting plan or larger. You can either choose to install it on a seperate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 8.0, PHP 8.1 and OpenSearch 2.x**, so it won’t affect your shop negatively. Installing Akeneo version 7.x may take up to 15 minutes.\
 **Important note: Akeneo 7.x requires MySQL 8.0.30, which is only available on Debian Bookworm.**
 
-## Enable managed_vhosts
+## Managed Vhosts
 
-All new Hypernodes (from April 2020) will automatically be booted with [Hypernode Managed Vhosts](../../hypernode-platform/nginx/hypernode-managed-vhosts.md). If you already have an older Hypernode, then you need to enable Hypernode Managed Vhosts by running the following command:
-
-```bash
-hypernode-systemctl settings managed_vhosts_enabled True
-```
+Hypernode uses [Hypernode Managed Vhosts](../../hypernode-platform/nginx/hypernode-managed-vhosts.md). Ensure you have a vhost for your Akeneo domain.
 
 ## Create a Managed_vhost for a (Sub)Domain
 
