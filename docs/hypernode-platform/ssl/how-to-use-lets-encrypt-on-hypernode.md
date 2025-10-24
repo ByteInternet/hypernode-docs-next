@@ -30,12 +30,7 @@ See their website for more information about how to use [Let's Encrypt](https://
 
 ## Let’s Encrypt and Hypernode Managed Vhosts
 
-**Please note:** If you want to use Let’s Encrypt and have the [Hypernode Managed Vhosts (HMV)](../nginx/hypernode-managed-vhosts.md) system enabled, you need to create a vhost for every domain you want to use Let’s Encrypt on or else it won’t work.
-
-First, check if HMV is enabled on your Hypernode:
-`hypernode-systemctl settings managed_vhosts_enabled`
-If so, it will give the following output:
-`managed_vhosts_enabled is set to value True`
+**Please note:** The [Hypernode Managed Vhosts (HMV)](../nginx/hypernode-managed-vhosts.md) system requires a vhost for every domain you want to use Let’s Encrypt on.
 Then run this command to set up a vhost for the domain:
 `hypernode-manage-vhosts www.example.com --https --force-https`
 This command redirects everything for the domain from http to https and installs a Let’s Encrypt certificate.
@@ -50,127 +45,7 @@ If you have Let's Encrypt configured for your vhost, but want to add a third par
 1. Install the third party certificate.
 1. Run `hypernode-manage-vhosts example.com --https --ssl-noclobber` to configure HTTPS for your vhost without overwriting the third party certificate.
 
-**If Hypernode Managed Vhosts IS NOT ENABLED, you can use the steps below to configure Let’s Encrypt.**
-
-## Configuration
-
-To make use of Let's Encrypt on Hypernodes, we installed the [dehydrated](https://github.com/lukas2511/dehydrated) Let's Encrypt client.
-This command-line utility orders and renews a certificate through the LE API and stores the retrieved certificates on disk so we can use them in the Nginx configuration.
-
-### Configure dehydrated
-
-To configure `dehydrated` to manage SSL certificates for a domain, add the domain to the list of domains in `/data/web/.dehydrated/domains.txt`:
-
-For example:
-
-```text
-your_hypernode_app_name.hypernode.io
-test.domainA.com
-staging.domainB.com
-```
-
-Then run `dehydrated` to request a certificate:
-
-```bash
-dehydrated -c --create-dirs
-```
-
-This will create a directory tree in `/data/web/certs` with the configured certificates
-
-*Make sure you add an entry for each domain record you need ssl for. This means that you should add both the `www.example.com` **AND** `example.com` on it's own line to the `domains.txt` file.*
-
-### Add Existing Let's Encrypt Certificates to Be Renewed by Dehydrated
-
-If you want to use a different Let’s Encrypt client you can do so as well, just place your cert.pem, chain.pem and fullchain.pem files in the `/data/web/certs` directory in a subdirectory with as name the domain name the certificate is for.
-
-The directory tree will look like this if you have example.com and example.net:
-
-```console
-app@abcdef-example-magweb-cmbl:~$ find /data/web/certs
-example.com/
-example.com/fullchain.pem
-example.com/cert.pem
-example.com/privkey.pem
-example.net/
-example.net/fullchain.pem
-example.net/cert.pem
-example.net/privkey.pem
-```
-
-When a certificate is renewed, the old certificate will be renamed to cert-`unique id` for recovery usage.
-
-## Manually Renew Your Certificates
-
-To force renewal on your certificates, even when the certificate is longer valid than 30 days, use the `--force` flags:
-
-```bash
-dehydrated -c --force
-```
-
-**Be careful not to exceed the ratelimits at Let's Encrypt!**
-
-### Multiple Domains for One Shop
-
-Both `dehydrated` and out config generator now support multidomain certificates. This implicated that if you want to serve both your `www.` and `apex` domain over SSL, you may add both records on the same line in `.dehydrated/domains.txt` to ensure a valid nginx configuration is created for both domains.
-
-Example:
-
-```console
-app@abcdef-example-magweb-cmbl:~$ cat ~/.dehydrated/domains.txt
-example.hypernode.io
-example.com www.example.com test.example.com
-example.nl www.example.nl
-```
-
-### Configure the Hypernode and Magento to Support Let's Encrypt
-
-After creating certificates you need to update the Nginx configuration. This is done using the script `hypernode-ssl-config-generator`.
-When you run this script, an SSL enabled Nginx configuration for your shop is generated in `/data/web/nginx/ssl`
-
-After creating an Nginx configuration, you should adjust your Magento base URLs to support SSL:
-
-- For Magento 1:
-
-```bash
-magerun sys:store:config:base-url:set # set your baseurl to secure (https)
-magerun cache:clean
-```
-
-- For Magento 2, check your base-urls with `magerun2 sys:store:config:base-url:list`. Then change the base-url with:
-
-```bash
-cd ~/magento2
-magerun2 config:store:set web/secure/base_url https://my.hypernode.io
-magerun2 cache:clean
-```
-
-Read more [here](../dns/how-to-manage-your-dns-settings-for-hypernode.md).
-
-Or, additionally you can make use of the scripts we created to change your baseurl provided for [Magento 1](https://gist.github.com/hn-support/0c76ebb5615a5be789997db2ae40bcdd) or for [Magento 2](https://gist.github.com/hn-support/083aabc8f9125b29098454cee1f25c89).
-
-### Setup a Cron to Automatically Renew Certificates
-
-To periodically check and renew certificates, create a cronjob running dehydrated:
-
-```text
-PATH="/data/web/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-MAILTO="your@email.com"
-0 1 * * * flock -n /data/web/.dehydrated.lock chronic dehydrated --no-lock --cron --create-dirs
-```
-
-This will check nightly at 1:00 if there are configured certificates that should be renewed. We use the `--no-lock` option so that flock manages the lock file accordingly and we don't use the outdated lock file mechanism of dehydrated.
-
-## Stop using dehydrated / Cleanup
-
-If you want to switch to an SSL certificate managed by Hypernode (for example you switch to an SSL EV certificate), you can easily remove the configuration and certificated for Let's Encrypt:
-
-- Remove the `ssl/` directory in `/data/web/nginx`
-- Remove the `certs/` directory in `/data/web/`
-- Remove all domains from the `/data/web/.dehydrated/domains.txt`
-- Remove the cronjob from your crontab
-- Renew the Nginx configuration by running `hypernode-ssl-config-generator`
-
-If you decide to not use any SSL certificate anymore and switch back to http (not recommended), don't forget to change your Magento base-url settings back to http, please see these docs for [Magento 1](../../ecommerce-applications/magento-1/how-to-change-the-base-url-in-magento-1-x.md) and [Magento 2](../../ecommerce-applications/magento-2/how-to-change-your-magento-2-base-urls.md).
+<!-- Legacy dehydrated flow removed: Hypernode platform uses Managed Vhosts across the board. -->
 
 ## Troubleshooting
 

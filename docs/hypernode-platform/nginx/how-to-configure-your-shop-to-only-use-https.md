@@ -1,9 +1,7 @@
 ---
 myst:
   html_meta:
-    description: 'We recommend serving your site only over HTTPS traffic. This is
-      safer and is better for search index optimization. Configure your shop with
-      these steps. '
+    description: 'We recommend serving your site only over HTTPS traffic. This is safer and is better for search index optimization. Configure your shop with these steps. '
     title: How to configure your shop to only use https? | Hypernode
 redirect_from:
   - /en/hypernode/nginx/how-to-configure-your-shop-to-only-use-https/
@@ -26,39 +24,15 @@ Please check out [this article](../ssl/how-to-use-ssl-certificates-on-your-hyper
 
 ## Order Let’s Encrypt Certificates
 
-### On Hypernodes With Hypernode Managed Vhosts Enabled
+### Ordering Let’s Encrypt Certificates on Hypernodes
 
 **Please note: If you want to use Let’s Encrypt and have the Hypernode Managed Vhosts (HMV) system enabled, you need to configure LE during the creation of the vhost. Using the old method with dehydrated won't work!**
-
-First, check if HMV is enabled on your Hypernode:
-
-`hypernode-systemctl settings managed_vhosts_enabled`
-
-If so, it will give the following output:
-
-`managed_vhosts_enabled is set to value True`
 
 If you want to request a LE certificate you need to add the `--https` flag with the HMV-command.
 
 `hypernode-manage-vhosts www.example.com --https --force-https`
 
 This command will not only request a LE Certificate but because of the --force-https flag it will also redirects all traffic for that specific vhost to HTTPS.
-
-### On Hypernodes Without Hypernode Managed Vhosts Enabled
-
-To order [Let’s Encrypt](../ssl/how-to-use-lets-encrypt-on-hypernode.md) certificates for all storefronts, use the following command:
-
-```bash
-## Create an entry for each storefront
-for DOMAIN in $( n98-magerun sys:store:config:base-url:list --format=csv | sed 1d | cut -d , -f 3 | perl -pe "s/https?://(www.)?//" | tr -d "/" | sort -u ); do
-    echo -e "$DOMAIN www.${DOMAIN}" >> ~/.dehydrated/domains.txt
-done
-
-## Order the certificates
-dehydrated -c --create-dirs
-```
-
-Don’t forget to [add the cron to renew your certificates](../ssl/how-to-use-lets-encrypt-on-hypernode.md) to the crontab if you are using Let’s Encrypt!
 
 ## Changing Your Base URLs
 
@@ -89,7 +63,7 @@ if ($scheme = http) {
 }
 ```
 
-**Please note that if you have [Hypernode Managed Vhosts](hypernode-managed-vhosts.md) enabled, you can skip this.**
+**Please note that with [Hypernode Managed Vhosts](hypernode-managed-vhosts.md), you typically do not need this snippet.**
 
 ## Check Settings of Third Party Solutions
 

@@ -24,7 +24,7 @@ More info can be found [on our page about setting your DNS](../dns/how-to-manage
 
 ## Redirect From Apex to WWW
 
-**When hypernode-managed-vhosts enabled**
+**When Hypernode Managed Vhosts is enabled**
 
 To redirect all traffic to www you have to create both a vhost for the Apex and for the `www`. For the non-www vhost you can create the vhost as type wwwizer. This will redirect all traffic to the `www`. version of that vhost. This can be achieved by running: `hypernode-manage-vhosts example.com --type wwwizer`.
 
@@ -34,17 +34,7 @@ To redirect all traffic to www you have to create both a vhost for the Apex and 
 | www.example.com | magento2 | False          | False | False       | False   | intermediate |
 ```
 
-**Without hypernode-manage-vhosts enabled (old legacy nginx-config)**
-
-You can redirect all traffic to www with the following Nginx snippet:
-
-```nginx
-if ($http_host ~* "^example.com$") {
-    rewrite ^ https://www.$http_host$request_uri;
-}
-```
-
-Save this snippet in `/data/web/nginx/server.rewrites`.
+<!-- Legacy nginx instructions removed: Hypernode platform uses Managed Vhosts across the board. -->
 
 ## Redirect From WWW to Apex
 
