@@ -149,7 +149,7 @@ map $request_uri $limit_conn_per_ip {
     default $limit_conn_per_ip_base;
     # ~^/rest/V1/example-call/ '';
     # ~^/elasticsearch\.php$ '';
-    # ~^/graphql$ '';
+    # ~^/graphql '';
 }
 ```
 
