@@ -34,8 +34,6 @@ To redirect all traffic to www you have to create both a vhost for the Apex and 
 | www.example.com | magento2 | False          | False | False       | False   | intermediate |
 ```
 
-<!-- Legacy nginx instructions removed: Hypernode platform uses Managed Vhosts across the board. -->
-
 ## Redirect From WWW to Apex
 
 To redirect all traffic from www to the apex domain use the following Nginx snippet:

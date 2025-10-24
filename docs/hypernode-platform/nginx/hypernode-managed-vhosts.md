@@ -124,5 +124,3 @@ If you are running into issues (e.g. SSL or other configuration errors) with Hyp
 `hypernode-manage-vhosts --all`
 
 This regenerates the HMV configuration based on what is set in `hypernode-manage-vhosts --list` and in our experience resolves most basic issues with Hypernode Managed Vhosts.
-
-##

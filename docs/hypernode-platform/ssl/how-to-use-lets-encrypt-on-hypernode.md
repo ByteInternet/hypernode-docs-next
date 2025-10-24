@@ -45,8 +45,6 @@ If you have Let's Encrypt configured for your vhost, but want to add a third par
 1. Install the third party certificate.
 1. Run `hypernode-manage-vhosts example.com --https --ssl-noclobber` to configure HTTPS for your vhost without overwriting the third party certificate.
 
-<!-- Legacy dehydrated flow removed: Hypernode platform uses Managed Vhosts across the board. -->
-
 ## Troubleshooting
 
 - By default, `dehydrated` renews Let's Encrypt certificates 30 days before expiring.
