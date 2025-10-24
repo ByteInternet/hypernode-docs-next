@@ -24,17 +24,13 @@ You can find more in-depth information in [this article about SSL on Hypernode](
 
 Please check out [this article](../ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-com.md) for the different SSL options when you use the Hypernode Control Panel.
 
-## Order Let’s Encrypt Certificates
-
-### Ordering Let’s Encrypt Certificates on Hypernodes
-
-**Please note: If you want to use Let’s Encrypt and have the Hypernode Managed Vhosts (HMV) system enabled, you need to configure LE during the creation of the vhost. Using the old method with dehydrated won't work!**
+## How to Use Let’s Encrypt (LE) Certificates
 
 If you want to request a LE certificate you need to add the `--https` flag with the HMV-command.
 
 `hypernode-manage-vhosts www.example.com --https --force-https`
 
-This command will not only request a LE Certificate but because of the --force-https flag it will also redirects all traffic for that specific vhost to HTTPS.
+This command will not only request a LE Certificate but, because of the --force-https flag, it will also redirect all traffic for that specific vhost to HTTPS.
 
 ## Changing Your Base URLs
 
@@ -55,17 +51,9 @@ If this is done by Magento, the database and PHP are used for making this redire
 
 This is why we must configure this in Nginx, so the redirect does not use unnecessary resources.
 
-Run the following command to add the configuration to Nginx that routes all traffic over HTTPS:
+Run the following command to configure a vhost to automatically redirect all traffic to HTTPS:
 
-Create the following file at `/data/web/nginx/public.ssl_redirect.conf`:
-
-```nginx
-if ($scheme = http) {
-    return 301 https://$host$request_uri;
-}
-```
-
-**Please note that with [Hypernode Managed Vhosts](hypernode-managed-vhosts.md), you typically do not need this snippet.**
+`hypernode-manage-vhosts www.example.com --https --force-https`
 
 ## Check Settings of Third Party Solutions
 
