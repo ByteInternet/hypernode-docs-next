@@ -12,7 +12,7 @@ redirect_from:
 
 # How to Resolve Rate Limited Requests (429 Too Many Requests)
 
-To protect your Hypernode from all kinds of attacks, bots, brute forces, and scriptkiddies causing downtime, we've implemented several layers of rate limiting.
+To protect your Hypernode from all kinds of attacks, bots, brute forces, and script kiddies causing downtime, we've implemented several layers of rate limiting.
 
 Most of these rate-limit methods only apply to bots. Still, to avoid FPM worker depletion, we [implemented a rate-limiting mechanism per IP](https://changelog.hypernode.com/release-4735-upper-limit-active-php-requests-per-ip/) to prevent one single IP from exhausting the available FPM workers.
 
@@ -25,16 +25,16 @@ On Hypernode we currently differentiate between two rate limiting methods and th
 - Rate limiting based on User Agents and requests per second (zone `bots`)
 - Rate limiting based on requests per IP address (zone `zoneperip`)
 
-Both methods are implemented using [NginX's limit_req module](http://nginx.org/en/docs/http/ngx_http_limit_req_module.html)
+Both methods are implemented using [Nginx's limit_req module](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html)
 
 ### Determining the Applied Rate Limiting Method
 
-You can quickly determine which method of Rate Limiting was the cause of the request being 429'd since each time any of the rate-limiting methods are hit, a message with be logged in the Nginx error log.
+You can quickly determine which method of rate limiting was the cause of the request being 429'd since each time any of the rate-limiting methods are hit, a message will be logged in the Nginx error log.
 
 To look for rate limiting messages in the error log, you can run the following command:
 
 ```console
-$ grep limiting.requests /var/log/nginx/error.log
+$ grep -E 'limiting (requests|connections)' /var/log/nginx/error.log
 2020/06/07 13:33:37 [error] limiting requests, excess: 0.072 by zone "bots", client: 203.0.113.104, server: example.hypernode.io, request: "GET /api/ HTTP/2.0", host: "example.hypernode.io"
 2020/06/07 13:33:37 [error] limiting connections by zone "zoneperip", client: 198.51.100.69, server: example.hypernode.io, request: "POST /admin/ HTTP/2.0", host: "example.hypernode.io"
 ```
@@ -51,7 +51,7 @@ A log entry where the rate limit is applied per IP address (based on the `zonepe
 2020/06/07 13:33:37 [error] limiting connections by zone "zoneperip", client: 198.51.100.69, server: example.hypernode.io, request: "POST /admin/ HTTP/2.0", host: "example.hypernode.io"
 ```
 
-**Note: Per IP rate limiting only applies to requests handled by PHP and not to the static content.**
+**Note: Per‑IP rate limiting only applies to requests handled by PHP and not to static content.**
 
 ## Rate Limiting for Bots and Crawlers
 
@@ -63,7 +63,7 @@ Since our goal is not to block bots but to rate limit them nicely, we must be ca
 
 ### How to Configure the Bot Rate Limiter
 
-Some bots are default exempt from rate limitings, like Google, Bing, and several monitoring systems. These bots never get rate limited since they usually abide by the robots.txt. However, some bots don't follow the instructions given in robots.txt or are used by abusive crawlers. These bots will be rate limited at one request per second. Any requests over this limit will then return a 429 error. If you want, you can override the system-wide configuration on who gets blocked and who does not. To get started, place the following in a config file called `/data/web/nginx/http.ratelimit`:
+Some bots are exempt from rate limiting by default, like Google, Bing, and several monitoring systems. These bots never get rate limited since they usually abide by the robots.txt. However, some bots don't follow the instructions given in robots.txt or are used by abusive crawlers. These bots will be rate limited at one request per second. Any requests over this limit will then return a 429 error. If you want, you can override the system-wide configuration on who gets blocked and who does not. To get started, place the following in a config file called `/data/web/nginx/http.ratelimit`:
 
 ```nginx
 map $http_user_agent $limit_bots {
@@ -77,8 +77,8 @@ map $http_user_agent $limit_bots {
 
 As you can see, this sorts all visitors into two groups:
 
-- On the first line, the allowlist, you find the keywords that are exempt from the rate liming, like: `google`, `bing`, `heartbeat`, or `magereport.com`.
-- The second line, contains keywords for generic and abusive bots and crawlers, which can trigger the ratelimiter, like `crawler`, `spider`, or `bot`
+- On the first line, the allowlist, you find the keywords that are exempt from rate limiting, like: `google`, `bing`, `heartbeat`, or `magereport.com`.
+- The second line contains keywords for generic and abusive bots and crawlers, which can trigger the rate limiter, like `crawler`, `spider`, or `bot`.
 
 The keywords are separated by `|` characters since it is a regular expression.
 
@@ -97,14 +97,14 @@ In the example above you can see that a bot with the User Agent `SpecialSnowflak
 ```nginx
 map $http_user_agent $limit_bots {
     default '';
-    ~*(specialsnowflakecrawler|google|bing|heartbeat|uptimerobot|shoppimon|facebookexternal|monitis.com|Zend_Http_Client|magereport.com|SendCloud/|Adyen|ForusP|contentkingapp|node-fetch|Hipex) '';
+    ~*(specialsnowflakecrawler|google|bing|heartbeat|uptimerobot|shoppimon|facebookexternal|monitis.com|Zend_Http_Client|magereport.com|SendCloud/|Adyen|ForusP|contentkingapp|node-fetch|Hipex|xCore|Mollie) '';
     ~*(http|crawler|spider|bot|search|Wget|Python-urllib|PHPCrawl|bGenius|MauiBot|aspiegel) 'bot';
 }
 ```
 
-Instead of adding the complete User Agent to the regex, it’s often better to limit it to just an identifying keyword, as shown above. The reason behind this is that the string is evaluated as a Regular Expression, which means that extra care needs to be taken when adding anything other than alphanumeric characters. Also as user agents might change slightly over time, this may this bot will no longer be allowlisted over time.
+Instead of adding the complete User Agent to the regex, it’s often better to limit it to just an identifying keyword, as shown above. The reason behind this is that the string is evaluated as a Regular Expression, which means that extra care needs to be taken when adding anything other than alphanumeric characters. Also, as user agents might change slightly over time, an overly specific string may stop matching and the bot will no longer be allowlisted.
 
-### Known Rate Limited Plugins and Service Provider
+### Known Rate Limited Plugins and Service Providers
 
 There are a couple of plugins and service providers that tend to hit the blacklisted keyword in the `http.ratelimit` snippet and, therefore, may need to be excluded individually. Below we have listed them and their User Agents for your convenience
 
@@ -115,7 +115,7 @@ There are a couple of plugins and service providers that tend to hit the blackli
 - Mollie - `Mollie.nl HTTP client/1.0`
 - Screaming - `Screaming Frog SEO Spider`
 
-Besides the above-known plugins that will hit the blacklisted keyword, `http.ratelimit` we know that Picqer will also hit the rate limiter because of being blocked by "**zoneperip**". Please find [here](https://picqer.com/files/ip-addresses.txt) the IP addresses of Picqer. You can exclude those IP addressess from hitting the rate limiter if you follow the [instructions](#known-rate-limited-plugins-and-service-provider).
+Besides the above-known plugins that will hit the blacklisted keyword, `http.ratelimit` we know that Picqer will also hit the rate limiter because of being blocked by "**zoneperip**". Please find [here](https://picqer.com/files/ip-addresses.txt) the IP addresses of Picqer. You can exclude those IP addresses from hitting the rate limiter if you follow the [instructions](#known-rate-limited-plugins-and-service-providers).
 
 ## Rate Limiting per IP Address
 
@@ -123,66 +123,114 @@ To prevent a single IP from using all the FPM workers available simultaneously, 
 
 **Please note:** if [Hypernode Managed Vhosts](hypernode-managed-vhosts.md) is enabled, only add the `http.ratelimit` file in the Nginx root. Don't add it to the specific vhost as well, as this may cause conflicts.
 
-### Exclude IP Addresses from the per IP Rate Limiting
+### How per‑IP limiting works (what you can influence)
 
-In some cases, it might be necessary to exclude specific IP addresses from the per IP rate limiting. If you wish to exclude an IP address, you can do so by creating a config file called `/data/web/nginx/http.ratelimit` with the following content:
+The platform manages the global per‑IP limiter (zone and limits). You control only the key variable used for counting connections: `$limit_conn_per_ip`. If this variable is an empty string, the per‑IP limiter is effectively disabled for that request; if it contains the client IP, that request is counted towards that IP.
+
+### Exclude IP addresses from the per‑IP rate limiting
+
+In some cases, it might be necessary to exclude specific IP addresses from the per‑IP rate limiting. Define an allowlist and compose the effective key using a geo→map chain in `/data/web/nginx/http.ratelimit`:
 
 ```nginx
-geo $limit_conn_per_ip {
-    default $remote_addr;
-    198.51.100.69 '';
+# 1) Mark IPs/CIDRs that should be exempt from per‑IP limiting
+geo $limit_conn_ip_allow {
+    default 1;          # 1 = enforce limit
+    1.2.3.4 0;          # 0 = exempt
+}
+
+# 2) Build the base key used for per‑IP limiting. If exempt → empty key disables per‑IP limiting for this request
+map $limit_conn_ip_allow $limit_conn_per_ip_base {
+    0 '';
+    1 $remote_addr;
+}
+
+# 3) Exclude additional URLs from per-IP limiting
+map $request_uri $limit_conn_per_ip {
+    default $limit_conn_per_ip_base;
+    # ~^/rest/V1/example-call/ '';
+    # ~^/elasticsearch\.php$ '';
+    # ~^/graphql$ '';
 }
 ```
 
-In this example, we have excluded the IP address **198.51.100.69** by setting an empty value in the form of `''`.
+In this example, we have excluded the IP address **1.2.3.4** by emitting an empty key, no URL whitelists are active in the above example.
 
-In addition to excluding a single IP address, it is also possible to allow a whole range of IP addresses. You can do this by using the so-called CIDR notation (e.g., 198.51.100.0/24 to whitelist all IP addresses within the range 198.51.100.0 to 198.51.100.255). In that case, you can use the following snippet in `/data/web/nginx/http.ratelimit` instead:
+In addition to excluding a single IP address, it is also possible to allow a whole range of IP addresses. You can do this by using the so-called CIDR notation (e.g., 198.51.100.0/24 to allowlist all IP addresses within the range 198.51.100.0 to 198.51.100.255). Extend the `geo` block accordingly:
 
 ```nginx
-geo $limit_conn_per_ip {
-    default $remote_addr;
-    198.51.100.0/24 '';
+geo $limit_conn_ip_allow {
+    default 1;
+    1.2.3.1 0;
+    1.2.3.0/24 0;
 }
 ```
 
-### Disable per IP Rate Limiting
+### Disable per‑IP rate limiting
 
 When your shop performance is very poor, it’s possible all your FPM workers are busy just serving regular traffic. Handling a request takes so much time that all workers are continuously depleted by a small number of visitors. We highly recommend optimizing your shop for speed and a temporary upgrade to a bigger plan if this situation arises. Disabling the rate limit will not fix this problem but only change the error message from a `Too many requests` error to a timeout error.
 
-For debugging purposes, however, it could be helpful to disable the per-IP connection limit for all IP’s. With the following snippet in `/data/web/nginx/http.ratelimit` , it is possible to altogether disable IP based rate limiting:
+For debugging purposes, however, it could be helpful to disable the per‑IP connection limit for all IPs. With the following snippet in `/data/web/nginx/http.ratelimit`, it is possible to disable per‑IP rate limiting entirely by emitting an empty key for all requests:
 
 ```nginx
-geo $limit_conn_per_ip {
+map $request_uri $limit_conn_per_ip {
     default '';
 }
 ```
 
-**Warning: Only use this setting for debugging purposed! Using this setting on production Hypernodes is highly discouraged, as your shop can be easily taken offline by a single IP using slow and/or flood attacks.**
+**Warning: Only use this setting for debugging purposes! Using this setting on production Hypernodes is highly discouraged, as your shop can be easily taken offline by a single IP using slow and/or flood attacks.**
 
-### Exclude Specific URLs from the per IP Rate Limiting Mechanism
+### Exclude specific URLs from the per‑IP rate limiting mechanism
 
-To exclude specific URLs from being rate-limited you can create a file `/data/web/nginx/server.ratelimit` with the following content:
+To exclude specific URLs from being rate‑limited, use the `map $request_uri $limit_conn_per_ip` you added above in `/data/web/nginx/http.ratelimit` and add/uncomment entries like:
 
 ```nginx
-set $ratelimit_request_url "$remote_addr";
-if ($request_uri ~ ^\/(.*)\/rest\/V1\/example-call\/(.*) ) {
-    set $ratelimit_request_url '';
-}
-
-if ($request_uri ~ ^\/elasticsearch.php$ ) {
-    set $ratelimit_request_url '';
+map $request_uri $limit_conn_per_ip {
+    default $limit_conn_per_ip_base;
+    ~^/rest/V1/example-call/ '';
+    ~^/elasticsearch\.php$ '';
+    ~^/graphql$ '';
 }
 ```
 
-In the example above, the URLs `*/rest/V1/example-call/*` and `/elasticsearch.php` are the ones that have to be excluded. You now have to use the `$ratelimit_request` variable as a default value in the file `/data/web/nginx/http.ratelimit` (see below) to exclude these URLs from the rate limiter and make sure that bots and crawlers will still be rate limited based on their User Agent.
+With these entries, the URLs `*/rest/V1/example-call/*`, `/elasticsearch.php`, and `/graphql` are excluded from per‑IP limiting. The platform’s global limiter will use `$limit_conn_per_ip` implicitly. You can also combine this with a regular allowlist, as described above.
 
-```nginx
-geo $limit_conn_per_ip {
-    default $ratelimit_request_url;
-}
+### Debugging per‑IP rate limiting
+
+Define a custom JSON log format that records the effective per‑IP key and enable it. Add the JSON log format in `/data/web/nginx/http.ratelimit`:
+
+Ensure the log directory exists:
+
+```bash
+mkdir -p /data/web/log
 ```
 
-You can also combine this with a regular allowlist, and exclude IP Addresses as described above.
+Then configure the JSON log format and enable the access log:
+
+```text
+log_format custom escape=json '{'
+                                       '"time":"$time_iso8601", '
+                                       '"remote_addr":"$remote_addr", '
+                                       '"host":"$http_host", '
+                                       '"request":"$request", '
+                                       '"status":"$status", '
+                                       '"request_time":"$request_time", '
+                                       '"user_agent":"$http_user_agent", '
+                                       '"limit_conn_per_ip":"$limit_conn_per_ip"'
+                                     '}';
+access_log /data/web/log/nginx-custom custom;
+```
+
+How to read it:
+
+- "limit_conn_per_ip" empty: per‑IP limiter disabled (allowlisted IP/CIDR or URL exclusion)
+- Rejections from the per‑IP limiter are logged to the error log, not the access log.
+
+Inspect and correlate recent rejections with keys seen in the access log:
+
+```bash
+grep -E 'limiting (requests|connections)' /var/log/nginx/error.log | tail -n 50
+tail -n 200 /data/web/log/nginx-custom | jq -r '. | "\(.remote_addr) \(.request) \(.limit_conn_per_ip)"' | tail -n 50
+```
 
 ### How to Serve a Custom Static Error Page to Rate Limited IP Addresses
 
