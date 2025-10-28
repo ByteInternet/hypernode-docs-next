@@ -14,9 +14,9 @@ redirect_from:
 
 Customers with a Trial, Pelican M (or up), Falcon S (or up) or Eagle plan can use Varnish to boost the performance of their application. After enabling Varnish, you still need to configure both Varnish and your application. We have [support documentation per application](../varnish/how-to-enable-varnish-on-hypernode.md#configure-varnish-on-your-application) available to guide you through the process:
 
-## Enable Varnish 4.0 or 6.0
+## Enable Varnish 4.0, 6.0 or 7.x
 
-At Hypernode it’s possible to enable Varnish 4.0 or 6.0 via the Control Panel, Service Panel or CLI. The Varnish version needed depends on the application version you’re running.
+At Hypernode it’s possible to enable Varnish 4.0, 6.0 or 7.x via the Control Panel, Service Panel or CLI. The Varnish version needed depends on the application version you’re running.
 
 **Enable Varnish via the [Control Panel](https://auth.hypernode.com/)**
 
@@ -26,14 +26,15 @@ At Hypernode it’s possible to enable Varnish 4.0 or 6.0 via the Control Panel,
 - Click on "Enable Varnish"
 
 **Configure Varnish 6.0 via the [hypernode-systemctl tool](../tools/how-to-use-the-hypernode-systemctl-cli-tool.md)**
-
 `hypernode-systemctl settings varnish_version 6.0`
 
 **Or if you want to switch to Varnish 4.0**
 `hypernode-systemctl settings varnish_version 4.0`
 
-**Enable Varnish via the [hypernode-systemctl tool](../tools/how-to-use-the-hypernode-systemctl-cli-tool.md)**
+**Or configure Varnish 7.x**
+`hypernode-systemctl settings varnish_version 7.x`
 
+**Enable Varnish via the [hypernode-systemctl tool](../tools/how-to-use-the-hypernode-systemctl-cli-tool.md)**
 `hypernode-systemctl settings varnish_enabled true`
 
 ## Configure Varnish on the Vhost
