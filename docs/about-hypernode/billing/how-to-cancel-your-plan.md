@@ -77,9 +77,9 @@ If you cancel a foreign domain name, Hypernode will let it expire automatically 
 If Insights isn’t the right fit for you right now, canceling is simple:
 
 1. Log in to your **[Control Panel](https://auth.hypernode.com/login)**.
-2. Open the **Settings** of the Hypernode where Insights is active.
-3. In the **Cancellation** section, find *Hypernode Insights* and click **Cancel Insights**.
+1. Open the **Settings** of the Hypernode where Insights is active.
+1. In the **Cancellation** section, find *Hypernode Insights* and click **Cancel Insights**.
 
-+ ![Cancel Hypernode Insights Screenshot]( _res/cancel-insights.png)
+- ![Cancel Hypernode Insights Screenshot](_res/cancel-insights.png)
 
 Your cancellation will be processed automatically and will take effect on the **first day of the following month**.
