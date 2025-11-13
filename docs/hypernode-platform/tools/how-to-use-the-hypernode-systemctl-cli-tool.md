@@ -76,6 +76,7 @@ To see which values you can set and which values they are allowed to have take a
 | **varnish_workspace_backend**<br/><sub></sub>                                                                                                                   | None          | 4k, 8k, 16k, 32k, 64k, 128k, 256k                                                                                                           |
 | **varnish_large_thread_pool_stack**<br/><sub></sub>                                                                                                             | False         | True, False                                                                                                                                 |
 | **varnish_version**<br/><sub>Change the Varnish version</sub>                                                                                                   | 7.x           | 4.0, 6.0, 7.x                                                                                                                               |
+| **valkey_enabled**<br/><sub>Enable valkey</sub>                                                                                                                 | False         | True, False                                                                                                                                 |
 
 ### Checking a Value for a Setting
 
