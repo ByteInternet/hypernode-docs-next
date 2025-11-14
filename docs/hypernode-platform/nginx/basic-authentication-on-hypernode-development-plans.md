@@ -121,7 +121,7 @@ In the **nginx** file named **whitelist-development-exception.conf**, you should
 ```nginx
 geo $ip_whitelist {
     default "Development restricted area";
-    # 1.2.3.4 1; # IP address whitelist
+    # 1.2.3.4 "off"; # IP address whitelist
 }
 
 map $http_user_agent $development_exceptions {
