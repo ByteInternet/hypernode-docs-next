@@ -1,8 +1,10 @@
 ---
 myst:
   html_meta:
-    description: 'If you have a PHP process that has been running for a long while, it can be difficult to find out what it’s currently doing.
-      With livestack.py you can see a point-in-time stack trace of a running process, and have a place to start debugging further.'
+    description: If you have a PHP process that has been running for a long while,
+      it can be difficult to find out what it’s currently doing. With livestack.py
+      you can see a point-in-time stack trace of a running process, and have a place
+      to start debugging further.
     title: How to debug long running PHP processes with livestack on Hypernode?
 ---
 
@@ -93,7 +95,6 @@ You may not yet know what exactly is causing the problem, but you can start your
 You may already know how to use livefpm and hypernode-fpm-status to see [what kinds of requests your Hypernode is currently serving](/hypernode-platform/tools/what-kind-of-request-is-my-hypernode-serving.md).
 You can investigate any long running requests further using livestack.py.
 
-
 As `hypernode-fpm-status | grep '/some/url'` would give you current PHP process generating some url, you can also run `livestack.py --fpm '/some/url'` to find the current stack trace of that PHP process.
 
 When using the `--fpm` flag, you are basically grepping through the output of `hypernode-fpm-status`, so you can search for a url, ip or user-agent.
@@ -134,9 +135,9 @@ Besides the regular GDB commands, two extra PHP specific commands are added by l
 - `php-print-stack` This is the same as a regular incantation of livestack.py, and prints the stack trace PHP was currently executing.
 
 - `php-frame-info <frame-number>` Using the frame number from `php-print-stack`, get some more information about this function call.
-Currently this only shows the contents of "simple" function arguments.
-As internally this uses json_encode, object arguments are not supported.
-However, you can see the sql insert command or the bindings of the `Magento\Framework\DB\Adapter\Pdo\Mysql::query` function for example.
+  Currently this only shows the contents of "simple" function arguments.
+  As internally this uses json_encode, object arguments are not supported.
+  However, you can see the sql insert command or the bindings of the `Magento\Framework\DB\Adapter\Pdo\Mysql::query` function for example.
 
 Using interactive mode requires a bit more GDB knowledge, and ideally knowledge of the PHP/Zend C code internals.
 One interesting command to get started may be the `bt full` command, which shows you a stack trace of the PHP internals.
