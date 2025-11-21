@@ -14,13 +14,11 @@ redirect_from:
 
 Akeneo 5 preferably requires a Hypernode Pelican L, Falcon M, Eagle M hosting plan or larger. You can either choose to install it on a seperate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 8.0, PHP 7.4 and Elasticsearch 7.x**, so it won’t affect your shop negatively. Installing Akeneo version 5.x may take up to 15 minutes.
 
-## Managed Vhosts
+## Create a Vhost for a (Sub)Domain
 
-Hypernode uses [Hypernode Managed Vhosts](../../hypernode-platform/nginx/hypernode-managed-vhosts.md). Ensure you have a vhost for your Akeneo domain.
+Ensure you have a vhost for your Akeneo domain.
 
-## Create a Managed_vhost for a (Sub)Domain
-
-If your Magento or Shopware installation already points to `example.hypernode.io`, you can create a managed_vhost for your Akeneo installation on a subdomain, for example `akeneo.example.hypernode.io`. The command below will also install Let’s Encrypt and force your domain to use HTTPS.
+If your Magento or Shopware installation already points to `example.hypernode.io`, you can create a vhost for your Akeneo installation on a subdomain, for example `akeneo.example.hypernode.io`. The command below will also install Let’s Encrypt and force your domain to use HTTPS.
 
 ```bash
 hypernode-manage-vhosts akeneo.example.hypernode.io --type akeneo4 --https --force-https

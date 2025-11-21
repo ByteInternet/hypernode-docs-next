@@ -91,7 +91,7 @@ To add custom NGINX rules for handling specific things on the loadbalancer (like
 used in `/data/web/nginx` and `/data/web/nginx/<vhost>`. This can be very crucial for your performance, accelerating asset delivery
 and lowering pressure on varnish.
 
-When running `hypernode-manage-vhosts` ([docs](nginx/hypernode-managed-vhosts.md)) on a loadbalancer server for a specific vhost, a
+When running [hypernode-manage-vhosts](nginx/hypernode-managed-vhosts.md) on a loadbalancer server for a specific vhost, a
 preconfigured loadbalancer configuration file will be created for you (for example `/data/web/nginx/example.com/loadbalancer.magento2.conf`).
 These preconfigured files act as a good starting point for your loadbalancer setup, but can be customized to your needs.
 

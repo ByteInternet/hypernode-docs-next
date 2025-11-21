@@ -30,12 +30,12 @@ See their website for more information about how to use [Let's Encrypt](https://
 
 ## Let’s Encrypt and Hypernode Managed Vhosts
 
-**Please note:** The [Hypernode Managed Vhosts (HMV)](../nginx/hypernode-managed-vhosts.md) system requires a vhost for every domain you want to use Let’s Encrypt on.
+**Please note:** You need a vhost for every domain you want to use Let's Encrypt on.
 Then run this command to set up a vhost for the domain:
 `hypernode-manage-vhosts www.example.com --https --force-https`
 This command redirects everything for the domain from http to https and installs a Let’s Encrypt certificate.
 
-**Note**: If you use Let's Encrypt with HMV, the cron for the renewal of the certificates will be placed automatically in the crontab, you don't have to do anything manually!
+**Note**: If you use Let's Encrypt for vhosts, the cron for the renewal of the certificates will be placed automatically in the crontab, you don't have to do anything manually!
 
 ### Adding an Third Party Certificate When Let’s Encrypt Is Configured
 
