@@ -39,9 +39,9 @@ ssh app@appname.hypernode.io -L 8025:localhost:8025
 
 This will forward `localhost:8025` (where MailHog is running) to our local `8025` port. Now going to `localhost:8025` in a browser will show the MailHog mailbox with all the mails it catches from the Hypernode.
 
-## Access MailHog with HMV and Basic Authentication
+## Access MailHog with Basic Authentication
 
-If HMV ([Hypernode Managed Vhosts](../nginx/hypernode-managed-vhosts.md)) is enabled on your Hypernode, you can easily create a vhost for MailHog by using the command below which also enables Basic Authentication.
+You can create a vhost for MailHog by using the command below which also enables Basic Authentication.
 
 ```bash
 hypernode-manage-vhosts mailhog.example.hypernode.io --https --force-https --type mailhog

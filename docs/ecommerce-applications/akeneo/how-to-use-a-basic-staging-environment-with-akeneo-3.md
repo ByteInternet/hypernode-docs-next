@@ -14,9 +14,9 @@ redirect_from:
 
 Hypernode offers a staging environment so it can be used as a sandbox for your Akeneo PIM project. Please keep in mind that your staging environment for Akeneo shares resources (disk, CPU, memory) with your production environment. It’s also possible to order a [development plan](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) instead, so your production environment will not be affected. Once again a big thank you to our partner [Experius](https://www.experius.nl/) for contributing to this article!
 
-## Update managed_vhosts
+## Update Vhosts
 
-Update the current managed_vhost with staging port.
+Update the current vhost with staging port.
 
 ```bash
 hypernode-manage-vhosts  akeneo.example.hypernode.io --port-http-staging 8888 --port-https-staging 8443 --force-https --https

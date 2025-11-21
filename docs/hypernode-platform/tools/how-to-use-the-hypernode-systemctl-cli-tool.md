@@ -32,7 +32,6 @@ To see which values you can set and which values they are allowed to have take a
 | **firewall_block_ftp_enabled**<br/><sub>Indicates whether FTP (which is unsafe) is completely blocked or not</sub>                                              | False         | True, False                                                                                                                                 |
 | **magerun2_version**<br/><sub>Change the N98 Magerun version</sub>                                                                                              | latest        | 3.x, 4.x, 5.x, 6.x, 7.x, latest                                                                                                             |
 | **mailhog_enabled**<br/><sub>Enable the Mailhog feature</sub>                                                                                                   | False         | True, False                                                                                                                                 |
-| **managed_vhosts_enabled**<br/><sub>Enable the managed_vhosts nginx configuration</sub>                                                                         | True          | True, False                                                                                                                                 |
 | **modern_ssh_config_enabled**<br/><sub>Enable modern SSH configuration</sub>                                                                                    | False         | True, False                                                                                                                                 |
 | **modern_ssl_config_enabled**<br/><sub>Safer SSL and SSH configuration:<br />you can configure Mozilla Modern SSL and enable<br />stricter SSH encryption</sub> | False         | True, False                                                                                                                                 |
 | **mysql_disable_stopwords**<br/><sub>Disable MySQL stopwords</sub>                                                                                              | False         | True, False                                                                                                                                 |
@@ -124,10 +123,6 @@ Indicates whether FTP is completely blocked or not in favour of SFTP. For more i
 ### Mailhog
 
 This options enables Mailhog. Mailhog is an email testing tool for developers. Check our [documentation](../../hypernode-platform/tools/how-to-use-mailhog-on-hypernode.md) for a more detailed explanation about Mailhog on Hypernode.
-
-### Managed Vhosts
-
-Eanble the Hypernode Managed Vhosts option to setup the Hypernode with a specific Nginx config which allows you to setup multiple domain names with their own independent Nginx configuration. See our [documentation](../nginx/hypernode-managed-vhosts.md) for more information.
 
 ### Modern SSH config enabled
 
