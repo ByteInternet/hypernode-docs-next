@@ -120,7 +120,7 @@ jobs:
         path: /tmp/composer-cache
         key: ${{ runner.os }}-composer
     - run: mkdir -p $HOME/.ssh
-    - run: hypernode-deploy deploy production -vvv  # Deploy production stage defined in deploy.php    
+    - run: hypernode-deploy deploy production -vvv  # Deploy production stage defined in deploy.php
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 ```
