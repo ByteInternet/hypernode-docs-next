@@ -13,6 +13,34 @@ There are many CI/CD pipelines available, but it's probably best to stick with t
 
 In this example we'll be covering the Github Actions CI/CD configuration.
 
+## How Hypernode Deploy pipelines work
+
+Hypernode Deploy uses a **two-step architecture** designed to keep your server runtime fast and efficient:
+
+### 1. Build step (runs in the CI/CD pipeline)
+
+The build step runs entirely within your CI/CD pipeline's infrastructure (GitHub Actions, GitLab CI, or Bitbucket Pipelines) and **never touches your production server**. This is where all the heavy, resource-intensive work happens:
+The build step handles all resource-intensive operations: installing dependencies with `composer install`, compiling frontend assets and themes, running code minification and image optimization, and performing any other heavy preparation tasks needed to ready your application for deployment.
+
+By performing these heavy operations in the pipeline, you avoid consuming precious server resources. Your production server stays responsive and dedicated to serving customer requests, not compiling code or building assets.
+
+The build step produces a **build artifact** (typically `build.tgz`) containing your ready-to-deploy application.
+
+### 2. Deploy step (runs in the CI/CD pipeline, deploys to server)
+
+The deploy step also runs in your CI/CD pipeline infrastructure, but this time it:
+
+- Downloads the build artifact created in the build step
+- Connects to your Hypernode server via SSH
+- Transfers the pre-built application to the server
+- Runs deployment tasks like:
+  - Database migrations
+  - Cache clearing
+  - Symlink switching (zero-downtime deployments)
+  - Running post-deployment hooks
+
+This way your artifact deploys in seconds, seserver resources stay focused on serving customers, and you can deploy the same tested build to multiple environments without rebuilding.
+
 ## Prepare the secrets
 
 Hypernode Deploy needs a few 'credentials' to be able to function. The necessary credentials are:
@@ -68,103 +96,9 @@ Then go to your Github repository on Github.com and go to **Settings -> Secrets 
 
 ***Optional step***
 
-We assume you want to use the Hypernode Brancher feature to spin up temporary nodes based on a specific Hypernode. SSH into that Hypernode and copy the contents of the `/etc/hypernode/hypernode_api_token` file.
+We assume you may want to use the Hypernode Brancher feature to spin up temporary nodes based on a specific Hypernode. SSH into that Hypernode and copy the contents of the `/etc/hypernode/hypernode_api_token` file.
 
 Then go to your Github repository on Github.com and go to **Settings -> Secrets -> Actions**. Click the **New repository secret**, fill in `HYPERNODE_API_TOKEN` as the name, paste the contents of your `hypernode_api_token` file and press **Save**.
-
-## Create the workflow file
-
-Create the `.github/workflows` directory structure:
-
-```console
-$ mkdir -p .github/workflows
-```
-
-In that directory, create a file named `deploy.yaml` and fill in the following contents:
-
-```yaml
-name: Build and deploy application
-
-on:
-  push:
-    branches:
-      - 'master'  # Your main/master/production branch
-      - 'staging' # Your staging/acceptance branch
-
-run-name: Build and deploy application – ${{ github.ref_name }}
-```
-
-### Build step
-
-The first thing we want to run is the `build` step, which does all the dirty work to prepare the application for the web. Add the following configuration to the `deploy.yaml` file.
-
-```yaml
-env:
-  COMPOSER_CACHE_DIR: /tmp/composer-cache
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    # Here we use the latest Hypernode Deploy image with PHP 8.4 and Node.js 22
-    container: quay.io/hypernode/deploy:latest-php8.4-node22
-    steps:
-      - uses: actions/checkout@v5
-      - uses: actions/cache@v4
-        with:
-          path: /tmp/composer-cache
-          key: ${{ runner.os }}-composer
-      - uses: webfactory/ssh-agent@v0.9.1
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      - run: hypernode-deploy build -vvv
-        env:
-          DEPLOY_COMPOSER_AUTH: ${{ secrets.DEPLOY_COMPOSER_AUTH }}
-      - name: archive production artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: deployment-build
-          path: build/build.tgz
-          retention-days: 1
-```
-
-### Deploy step
-
-For the deployment part, add a job called `deploy` to the `jobs` configuration.
-
-```yaml
-...
-
-jobs:
-  build:
-    ...
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    # Here we use the latest Hypernode Deploy image with PHP 8.4 and Node.js 22
-    container: quay.io/hypernode/deploy:latest-php8.4-node22
-    steps:
-      - uses: actions/checkout@v5
-      - name: download build artifact
-        uses: actions/download-artifact@v5
-        with:
-          name: deployment-build
-          path: build/
-      - uses: webfactory/ssh-agent@v0.9.1
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      - run: mkdir -p $HOME/.ssh
-      - name: deploy to staging     # Staging deployment happens here
-        if: github.ref == 'refs/heads/staging'
-        run: hypernode-deploy deploy staging -vvv
-      - name: deploy to production  # Production deployment happens here
-        if: github.ref == 'refs/heads/master'
-        run: hypernode-deploy deploy production -vvv
-      - name: cleanup acquired resources
-        if: ${{ always() }}
-        run: hypernode-deploy cleanup
-```
 
 ```{note}
 CI/CD configuration templates can be found here:
