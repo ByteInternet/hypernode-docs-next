@@ -64,7 +64,8 @@ To disable the basic authentication on our development plans add the following l
 geo $development_exceptions {
     default "Development restricted area";
     # 1.2.3.4/32 "off"; # disables basic auth for 1.2.3.4/32
-    0.0.0.0/0 "off"; # Everything is allowed.
+    0.0.0.0/0 "off"; # Everything is allowed (IPv4).
+    ::/0 "off"; # Everything is allowed (IPv6, may be needed when using Cloudflare).
 }
 ```
 
@@ -81,7 +82,8 @@ First, disable the following nginx configuration:
 geo $development_exceptions {
     default "Development restricted area";
     # 1.2.3.4/32 "off"; # disables basic auth for 1.2.3.4/32
-    0.0.0.0/0 "off"; # Everything is allowed.
+    0.0.0.0/0 "off"; # Everything is allowed (IPv4).
+    ::/0 "off"; # Everything is allowed (IPv6, may be needed when using Cloudflare).
 }
 ```
 
@@ -119,7 +121,7 @@ In the **nginx** file named **whitelist-development-exception.conf**, you should
 ```nginx
 geo $ip_whitelist {
     default "Development restricted area";
-    # 1.2.3.4 1; # IP address whitelist
+    # 1.2.3.4 "off"; # IP address whitelist
 }
 
 map $http_user_agent $development_exceptions {

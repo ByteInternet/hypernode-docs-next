@@ -45,7 +45,7 @@ Modify the lines of the following block:
 
 ```nginx
 location ~ ^/(pub/)?(rest|soap)(/.+)?/V1/(products|store/storeViews|store/storeConfigs)/?$ {
-    return https://support.hypernode.com/knowledgebase/protecting-the-magento-2-api/;
+    return https://docs.hypernode.com/knowledgebase/protecting-the-magento-2-api/;
 }
 ```
 

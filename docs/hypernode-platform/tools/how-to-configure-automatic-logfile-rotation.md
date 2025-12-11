@@ -81,7 +81,7 @@ The [logrotate main page](https://linux.die.net/man/8/logrotate) contains instru
 
 *****This cronjob configuration is deployed by default on new Hypernodes. If you don't want this configuration, feel free to comment or delete the configuration from your crontab.*****
 
-To make sure you keep your logrotate config keeps up to date with newer log files, it is advised to run `hypernode-auto-logrotate-detect --detect` every night. Open your cronjob configuration with `crontab -e` and add the following configuration.
+To make sure you keep your logrotate config keeps up to date with newer log files, it is advised to run `hypernode-auto-logrotate --detect` every night. Open your cronjob configuration with `crontab -e` and add the following configuration.
 
 ```
 # Add logfiles to logrotate configuration

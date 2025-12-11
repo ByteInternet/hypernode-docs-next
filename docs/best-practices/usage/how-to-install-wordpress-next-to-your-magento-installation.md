@@ -85,7 +85,7 @@ Create a `/data/web/nginx/server.wordpress` with the following content:
 location /blog {
     root /data/web/public;
     index index.php;
-    try_files $uri $uri/ /blog/index.php;
+    try_files $uri $uri/ /blog/index.php$is_args$args;
 
     location ~ \.php$ {
         echo_exec @phpfpm;

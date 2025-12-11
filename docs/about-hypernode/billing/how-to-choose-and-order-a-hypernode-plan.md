@@ -23,9 +23,9 @@ An overview of all hosting plans can be found on [our website](https://www.hyper
 
 Depending on your shop’s wants and needs, we offer different Hypernode hosting plans:
 
-- Pelican (and up)
-- Falcon (and up) formerly known as Professional
-- Eagle (and up) formerly known as Excellence
+- Jackal (Dedicated)
+- Falcon (Cloud)
+- Eagle (Cloud)
 
 Each production plan has a development equivalent. A development plan is cheaper and therefore recommended when developing and testing shops before going live. A development plan can easily be upgraded to a production plan.
 
@@ -50,7 +50,6 @@ Not sure what to order? Do not worry about ordering the wrong plan. The contract
 We make use of cloud providers:
 
 - Combell OpenStack: Hypernode Falcon plans, booted in Gent (Belgium)
-- DigitalOcean: Hypernode Pelican plans, booted in other data centers around the world
 - Amazon Web Services: Hypernode Eagle plans.
 
 When you order a Hypernode, your node is by default booted in Gent (Combell OpenStack) or Frankfurt (Amazon).
@@ -58,11 +57,6 @@ When you order a Hypernode, your node is by default booted in Gent (Combell Open
 However, it is possible to boot a Hypernode in a different region on request. This can be desirable if you do most of your business in (for example) the USA. Simply send an email to support@hypernode.com and let us know which data center you prefer. We will then boot a Hypernode in your preferred data center and arrange the switch.
 
 Please keep into account that a switch of datacenter triggers an IP change of your Hypernode.
-
-DigitalOcean and Amazon both have data centers all over the world.
-
-- DigitalOcean has data centers in: Londen, Frankfurt, New York, San Fransisco, Toronto, Bangalore, Singapore
-- The location of the Amazon (AWS) data centers can be found on [their website](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions).
 
 ## How To Order a Hypernode?
 

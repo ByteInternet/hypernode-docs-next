@@ -19,11 +19,11 @@ The Hypernode Docker Image can be used to set up a local test environment for Ma
 
 Before you can start a Docker container make sure that Docker is running. Next you need to choose which Docker image you want to run depending on the PHP and MySQL version. You can see all available images **[here](https://github.com/byteinternet/hypernode-docker).**
 
-After you've chosen the image you need to pull the image to your local machine. Once the image is pulled, you can start a Docker container from that image. Use the format below and if needed change the name "hypernode-buster-docer-php7.4-mysql57" to your right version.
+After you've chosen the image you need to pull the image to your local machine. Once the image is pulled, you can start a Docker container from that image. Use the format below and if needed change the name "hypernode-bookworm-docker-php84-mysql80" to your right version.
 
 ```bash
-docker pull docker.hypernode.com/byteinternet/hypernode-buster-docker-php74-mysql57:latest
-docker run -p 222:22 -p 8080:80 -p 8025:8025 docker.hypernode.com/byteinternet/hypernode-buster-docker-php74-mysql57:latest
+docker pull docker.hypernode.com/byteinternet/hypernode-bookworm-docker-php84-mysql80:latest
+docker run -p 222:22 -p 8080:80 -p 8025:8025 docker.hypernode.com/byteinternet/hypernode-bookworm-docker-php84-mysql80:latest
 ```
 
 This will expose port 222 on the container and port 8080 on the localhost. In this example you should use the following command to connect to the container:

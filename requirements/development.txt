@@ -1,11 +1,11 @@
 -r base.txt
 
 ipython==7.32.0
-pre-commit==2.18.1
-black==22.10.0
-pytest==7.1.2
-pytest-xdist==2.5.0
-mypy==1.0.0
-flake8==3.9.2
-tox==3.25.0
+pre-commit==4.1.0
+black==25.1.0
+pytest==8.3.5
+pytest-xdist==3.6.1
+mypy==1.15.0
+flake8==7.1.2
+tox==4.24.2
 watchdog
