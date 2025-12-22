@@ -289,6 +289,10 @@ Remember to update your `~/.my.cnf` with your new password so you could easily l
 
 ## How to Upgrade Your MySQL Version
 
+```{note}
+Updated 2025: New Hypernodes default to MySQL 8.0 or newer. The 5.6/5.7 sections below are historical and only apply to older stacks.
+```
+
 ### Upgrading to MySQL 5.7
 
 **Please note that once you have upgraded the MySQL version on your Hypernode, you won't be able to downgrade it.**

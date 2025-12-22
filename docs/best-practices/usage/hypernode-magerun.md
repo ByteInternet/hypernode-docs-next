@@ -64,7 +64,7 @@ Quickly reference the most common lines in the log file ordered by frequency.
 n98-magerun hypernode:maps-generate
 ```
 
-Outputs or saves a http.magerunmaps boilerplate containing your store setup for Nginx. Refer to the [Hypernode Nginx documentation.](https://support.hypernode.com/knowledgebase/how-to-use-nginx/)
+Outputs or saves a http.magerunmaps boilerplate containing your store setup for Nginx. Refer to the [Hypernode Nginx documentation.](../../hypernode-platform/nginx.md)
 
 ### Varnish config
 

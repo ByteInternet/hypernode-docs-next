@@ -129,19 +129,7 @@ Don’t fancy these solutions? Migrate your domain to Hypernode and let us manag
 
 ## DNS and Hypernode Managed Vhosts
 
-The Hypernode Managed Vhosts (HMV) system is currently enabled by default on all newly booted Hypernodes (all Hypernodes created after 01-05-2020).
-
-Check if you have HMV enabled by running this command:
-
-`hypernode-systemctl settings managed_vhosts_enabled`
-
-If so, it will give the following output:
-
-`managed_vhosts_enabled is set to value True`
-
-If this isn't enabled, you can just skip the part below.
-
-Due to this configuration, it is required to add a new vhost for every domain you want to link to your Hypernode. So you need to configure your DNS correctly and add a new vhost for the domain.
+With Hypernode Managed Vhosts (HMV), you must add a new vhost for every domain you want to link to your Hypernode. So you need to configure your DNS correctly and add a new vhost for the domain.
 
 To add a new vhost, for example the domain name `www.example.com`, to your configuration, you can run the command `hypernode-manage-vhosts www.example.com`. This will create a new vhost configuration in `/data/web/nginx/www.example.com/`, using the Magento 2 template.
 

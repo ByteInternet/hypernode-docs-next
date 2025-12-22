@@ -131,7 +131,7 @@ Host/IP: xxxxx-dummytag-docker.nodes.hypernode.io (172.17.0.3)
 Account_id: 666
 Release: release-5278-28-ga9d3844 @ 2018-06-05 12:56:34 UTC
 
-Handy commands (more at https://support.hypernode.com):
+Handy commands (more at https://docs.hypernode.com):
 
 livefpm (see live PHP status)
 tal | pnl (follow live requests)
@@ -209,7 +209,7 @@ Host/IP: xxxxx-dummytag-docker.nodes.hypernode.io (172.17.0.3)
 Account_id: 666
 Release: release-5278-28-ga9d3844 @ 2018-06-05 12:56:34 UTC
 
-Handy commands (more at https://support.hypernode.com):
+Handy commands (more at https://docs.hypernode.com):
 
 livefpm (see live PHP status)
 tal | pnl (follow live requests)

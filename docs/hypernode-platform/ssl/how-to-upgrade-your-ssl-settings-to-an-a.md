@@ -35,7 +35,7 @@ It is possible to switch to the [Modern Compatibility Settings](https://wiki.moz
 
 #### Mozilla Modern Configuration and Hypernode Managed Vhosts
 
-The Hypernode Managed Vhosts (HMV) system is currently enabled by default on all new booted Hypernodes (booted after 01-05-2020). Read more about HMV [here](../nginx/hypernode-managed-vhosts.md).
+Hypernode uses Managed Vhosts (HMV) for per-domain configuration. Read more about HMV [here](../nginx/hypernode-managed-vhosts.md).
 
 When you have different vhosts configured, you also need to enable the SSL config **per vhost**. You do this by running this command:
 
