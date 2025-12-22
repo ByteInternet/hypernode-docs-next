@@ -23,7 +23,7 @@ INFO: Writing HTTP config for proxy.myapp.hypernode.io
 This command creates a vhost directory under `/data/web/nginx/<your-domain>/` with the proxy templates. You will see the following files:
 
 ```console
-app@abc123-myapp-magweb-cmbl:~/nginx/proxy.myapp.hypernode.io$ ls
+app@abc123-example-magweb-cmbl:~/nginx/proxy.myapp.hypernode.io$ ls
 public.proxy.conf  server.rewrites.conf  staging.proxy.conf
 ```
 
