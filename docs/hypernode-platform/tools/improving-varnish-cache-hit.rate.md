@@ -71,11 +71,10 @@ curl -I https://www.example.com/ \
 ```
 
 ### What to look for
-
-- **Age** header increasing → cached response  
-- **X-Cache: HIT** → served from Varnish  
-- **Cache-Control** headers that allow caching  
-- Absence of **Set-Cookie** for cacheable pages  
+- **Age** header increasing → cached response.
+- **X-Cache: HIT** → served from Varnish.
+- **Cache-Control** → verifies cacheability.
+- No **Set-Cookie** header → indicates a cacheable page.
 
 ---
 
@@ -83,7 +82,7 @@ curl -I https://www.example.com/ \
 
 ### Snapshot of hits and misses
 
-Untested example (single run):
+single run (untested):
 
 ```bash
 varnishstat -1 -f MAIN.cache_hit,MAIN.cache_miss,MAIN.backend_req
@@ -101,7 +100,7 @@ This helps identify which URLs are effectively cached and which are not.
 
 ## Handling Marketing and Tracking URL Parameters
 
-Marketing parameters such as `utm_source`, `utm_medium`, or `gclid` can dramatically increase the number of unique cache entries.  
+Marketing (query) parameters such as `utm_source`, `utm_medium`, or `gclid` can dramatically increase the number of unique cache entries.  
 Each parameter variation creates a new cache object, lowering your overall hit rate.
 
 ### Best practice
