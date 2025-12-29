@@ -134,6 +134,7 @@ After enabling the second Redis instance you need to change the configured Redis
 ```console
 $ cd /data/web/magento2
 $ bin/magento setup:config:set \
+    --session-save=redis \
     --session-save-redis-port=6378 \
     --session-save-redis-db=0
 ```
@@ -149,7 +150,7 @@ Furthermore you need to add the following line to your crontab:
 To verify whether your configuration is working properly, first clear your session store:
 
 ```console
-$ rm /data/web/public/var/sessions/*
+$ rm /data/web/magento2/var/sessions/*
 ```
 
 Now open the site in your browser and hit `F5` a few times or log in to the admin panel. If all is well, no additional sessions files should be written to `/data/web/var/sessions`, but instead to the Redis database:
@@ -157,7 +158,7 @@ Now open the site in your browser and hit `F5` a few times or log in to the admi
 To verify whether your configuration is working properly, first clear your session store:
 
 ```console
-$ redis-cli -n 2 keys '*'
+$ redis-cli -p 6378 keys '*'
 ```
 
 ## Troubleshooting
