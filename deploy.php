@@ -33,16 +33,17 @@ task('python:venv:create', static function () {
 
 # Install the requirements
 task('python:venv:requirements', static function () {
-    run('./.venv/bin/pip install -r requirements/base.txt');
+    run('.venv/bin/pip install -r requirements/base.txt');
 });
 
 task('python:generate_redirects', static function () {
     run('mkdir -p etc/nginx');
-    run('./.venv/bin/python bin/generate_nginx_redirects > etc/nginx/server.redirects.conf');
+    run('.venv/bin/python bin/generate_nginx_redirects > etc/nginx/server.redirects.conf');
 });
 
+# Build the documentation
 task('python:build_documentation', static function () {
-    run('./.venv/bin/python bin/build_docs');
+    run('bash -lc ". .venv/bin/activate && bin/build_docs"');
     run('ln -sf docs/_build/html pub');
 });
 
