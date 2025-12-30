@@ -43,7 +43,7 @@ task('python:generate_redirects', static function () {
 
 # Build the documentation
 task('python:build_documentation', static function () {
-    run('source .venv/bin/activate && bin/build_docs');
+    run('.venv/bin/sphinx-build -b html docs docs/_build/html');
     run('ln -sf docs/_build/html pub');
 });
 
