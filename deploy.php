@@ -28,22 +28,22 @@ task('python:venv:create', static function () {
     }
     run('mkdir -p .hypernode');
     run('virtualenv -p python3 .venv');
+    run('echo export PYTHONPATH=$(pwd) >> .venv/bin/activate');
 });
 
 # Install the requirements
 task('python:venv:requirements', static function () {
-    run('.venv/bin/pip install -r requirements/base.txt');
+    run('source .venv/bin/activate && pip install -r requirements/base.txt');
 });
 
 task('python:generate_redirects', static function () {
     run('mkdir -p etc/nginx');
-    run('export PYTHONPATH=$(pwd)');
-    run('.venv/bin/python bin/generate_nginx_redirects > etc/nginx/server.redirects.conf');
+    run('source .venv/bin/activate && bin/generate_nginx_redirects > etc/nginx/server.redirects.conf');
 });
 
 # Build the documentation
 task('python:build_documentation', static function () {
-    run('./.venv/bin/sphinx-build -b html docs docs/_build/html');
+    run('.venv/bin/sphinx-build -b html docs docs/_build/html');
     run('ln -sf docs/_build/html pub');
 });
 
