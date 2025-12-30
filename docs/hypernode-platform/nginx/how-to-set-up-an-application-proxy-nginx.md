@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    description: Learn how to set up an Nginx application proxy on Hypernode using Managed Vhosts: create a proxy vhost and point it to your app
-    title: How to set up an application proxy in Nginx? | Hypernode
+    description: "Learn how to set up an Nginx application proxy on Hypernode using Managed Vhosts: create a proxy vhost and point it to your app"
+    title: "How to set up an application proxy in Nginx? | Hypernode"
 ---
 
 # How to Set Up an Application Proxy in Nginx
