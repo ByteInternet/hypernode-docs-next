@@ -159,7 +159,7 @@ $testStage = $configuration->addStage('test', 'example.com');
 // and run your tests. Cancel it when your tests fail or after your tests pass to incur minimal costs.
 $testStage->addBrancherServer('example')
     ->setLabels(['stage=test'])
-    ->setSettings(['clear_services' => ['cron', 'supervisor']);
+    ->setSettings(['clear_services' => ['cron', 'supervisor']]);
 
 return $configuration;
 ```
