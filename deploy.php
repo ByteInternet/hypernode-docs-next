@@ -38,7 +38,7 @@ task('python:venv:requirements', static function () {
 
 task('python:generate_redirects', static function () {
     run('mkdir -p etc/nginx');
-    run('.venv/bin/python bin/generate_nginx_redirects > etc/nginx/server.redirects.conf');
+    run('PYTHONPATH=$(pwd) .venv/bin/python bin/generate_nginx_redirects > etc/nginx/server.redirects.conf');
 });
 
 # Build the documentation
