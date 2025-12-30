@@ -28,7 +28,6 @@ task('python:venv:create', static function () {
     }
     run('mkdir -p .hypernode');
     run('virtualenv -p python3 .venv');
-    run('echo export PYTHONPATH=$(pwd) >> .venv/bin/activate');
 });
 
 # Install the requirements
@@ -38,7 +37,8 @@ task('python:venv:requirements', static function () {
 
 task('python:generate_redirects', static function () {
     run('mkdir -p etc/nginx');
-    run('PYTHONPATH=$(pwd) .venv/bin/python bin/generate_nginx_redirects > etc/nginx/server.redirects.conf');
+    run('export PYTHONPATH=$(pwd)');
+    run('.venv/bin/python bin/generate_nginx_redirects > etc/nginx/server.redirects.conf');
 });
 
 # Build the documentation
