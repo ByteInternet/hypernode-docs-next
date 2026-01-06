@@ -27,6 +27,7 @@ Penetration testing is allowed under the following conditions:
 - If the pentest causes, or discovers, any server side issues, you will share the full report of the pentest with us afterwards. You will keep these findings confidential, untill we've had the opportunity to assess and address the issue.
 
 We do not allow pentests that:
+
 - Rely on Social Engineering.
 - Perform Brute Force testing.
 - Test (D)DoS protection or -resilience.
