@@ -120,7 +120,7 @@ $configuration->setDeployExclude([
 ]);
 
 $productionStage = $configuration->addStage('production', 'docs.hypernode.io');
-$productionStage->addServer('docs-epht1mqn6.hypernode.io');
+$productionStage->addServer('docs.hypernode.io');
 
 # We can also deploy to a Hypernode Docker instance. To do that you go to
 # https://github.com/byteinternet/hypernode-docker, make sure you
@@ -140,7 +140,7 @@ $dockerStage = $configuration->addStage('docker', $DOCKER_HOST);
 # Define the target server (docker instance) we're deploying to
 $dockerStage->addServer($DOCKER_HOST);
 
-$testingStage = $configuration->addStage("acceptance", "docs-epht1mqn6");
+$testingStage = $configuration->addStage("acceptance", "docs");
 $testingStage->addBrancherServer("docs")
     ->setLabels(['stage=acceptance', 'ci_ref=' . (\getenv('GITHUB_HEAD_REF') ?: 'none')]);
 
