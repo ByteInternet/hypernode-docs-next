@@ -7,5 +7,6 @@ pub
 .ssh
 .vscode
 *.css.map
+*.br
 deployment-report.json
 build/

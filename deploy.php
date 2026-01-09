@@ -4,10 +4,7 @@ declare(strict_types=1);
 
 namespace Hypernode\DeployConfiguration;
 
-use function Deployer\after;
-use function Deployer\run;
-use function Deployer\task;
-use function Deployer\test;
+use function Deployer\{run, task, test, within, set};
 
 $DOCKER_HOST = '172.17.0.2';
 $DOCKER_WEBROOT = sprintf('/data/web/apps/%s/current/pub', $DOCKER_HOST);
@@ -74,12 +71,29 @@ task('deploy:nginx_redirects', static function () {
     run('cp {{release_path}}/etc/nginx/server.redirects.conf /data/web/nginx/server.redirects.conf');
 });
 
+// This will pre-compress files using brotli compression so we can serve them directly from nginx
+// without needing to compress them on-the-fly.
+task('build:compress:brotli', function () {
+    set('brotli_compression_level', 11);
+
+    run('apt update && apt install brotli -y');
+    within('{{release_or_current_path}}/docs/_build/html', function () {
+        run('find . -name "*.html" -type f -exec brotli -f -q {{brotli_compression_level}} {} \\;');
+        run('find . -name "*.css" -type f -exec brotli -f -q {{brotli_compression_level}} {} \\;');
+        run('find . -name "*.js" -type f -exec brotli -f -q {{brotli_compression_level}} {} \\;');
+        run('find . -name "*.svg" -type f -exec brotli -f -q {{brotli_compression_level}} {} \\;');
+        run('find . -name "*.png" -type f -exec brotli -f -q {{brotli_compression_level}} {} \\;');
+        run('find . -name "*.jpg" -type f -exec brotli -f -q {{brotli_compression_level}} {} \\;');
+    });
+});
+
 $configuration = new Configuration();
 $configuration->addBuildTask('node:build:scss');
 $configuration->addBuildTask('python:venv:create');
 $configuration->addBuildTask('python:venv:requirements');
 $configuration->addBuildTask('python:build_documentation');
 $configuration->addBuildTask('python:generate_redirects');
+$configuration->addBuildTask('build:compress:brotli');
 $configuration->addDeployTask('deploy:disable_public');
 $configuration->addDeployTask('deploy:hmv_docker');
 $configuration->addDeployTask('deploy:docs_vhost:acceptance');
@@ -106,7 +120,7 @@ $configuration->setDeployExclude([
 ]);
 
 $productionStage = $configuration->addStage('production', 'docs.hypernode.io');
-$productionStage->addServer('docs.hypernode.io');
+$productionStage->addServer('docs-epht1mqn6.hypernode.io');
 
 # We can also deploy to a Hypernode Docker instance. To do that you go to
 # https://github.com/byteinternet/hypernode-docker, make sure you
@@ -126,7 +140,7 @@ $dockerStage = $configuration->addStage('docker', $DOCKER_HOST);
 # Define the target server (docker instance) we're deploying to
 $dockerStage->addServer($DOCKER_HOST);
 
-$testingStage = $configuration->addStage("acceptance", "docs");
+$testingStage = $configuration->addStage("acceptance", "docs-epht1mqn6");
 $testingStage->addBrancherServer("docs")
     ->setLabels(['stage=acceptance', 'ci_ref=' . (\getenv('GITHUB_HEAD_REF') ?: 'none')]);
 
