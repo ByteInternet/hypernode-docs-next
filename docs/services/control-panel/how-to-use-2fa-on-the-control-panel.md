@@ -38,7 +38,7 @@ Any app that supports time-based one-time passwords (TOTP) will work.
 
 ## How to Enable 2FA
 
-1. Sign in to the Hypernode Control Panel. 
+1. Sign in to the Hypernode Control Panel.
 1. Hover over your username in the top-right corner.
 1. Select **Account settings**.
 1. Click **Manage 2FA**.
