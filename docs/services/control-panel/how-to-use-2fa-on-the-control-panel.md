@@ -59,7 +59,7 @@ If you need to disable 2FA, please contact Hypernode Support at **support@hypern
 During setup, you receive a set of backup codes. These are important.
 
 - Each backup code can be used only once.
-- Backup codes allow you to sign in if you lose access to your phone or authentication app. 
+- Backup codes allow you to sign in if you lose access to your phone or authentication app.
 - You can always find your backup codes on your **Account** page.
 
 We strongly recommend storing these codes somewhere safe and offline.
