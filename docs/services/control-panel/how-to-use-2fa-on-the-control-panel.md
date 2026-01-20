@@ -70,7 +70,6 @@ If you receive a verification code that you did not request, someone may be tryi
 
 In that case:
 
-
 - Log in to your account immediately.
 - Change your password.
 - Contact Hypernode Support if you suspect unauthorized activity.
