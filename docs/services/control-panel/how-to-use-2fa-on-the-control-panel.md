@@ -28,9 +28,9 @@ This makes it significantly harder for unauthorized users to access your account
 
 You must install an authentication app on your mobile device. Common options include:
 
-- Google Authenticator 
-- Okta Verify 
-- Duo Mobile 
+- Google Authenticator
+- Okta Verify
+- Duo Mobile
 - Authy
 - 1Password
 
