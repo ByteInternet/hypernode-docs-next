@@ -69,6 +69,7 @@ We strongly recommend storing these codes somewhere safe and offline.
 If you receive a verification code that you did not request, someone may be trying to access your account.
 
 In that case:
+
 - Log in to your account immediately.
 - Change your password.
 - Contact Hypernode Support if you suspect unauthorized activity.
