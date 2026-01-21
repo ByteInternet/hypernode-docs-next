@@ -17,5 +17,5 @@ ruamel.yaml==0.18.12
 beautifulsoup4==4.11.1
 markdownify==0.11.2
 python-slugify==6.1.2
-pyyaml==5.1
+pyyaml==5.4
 frontmatter==3.0.7
