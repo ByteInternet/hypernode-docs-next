@@ -160,7 +160,7 @@ $testStage = $configuration->addStage('test', 'example.com');
 // 'example' is the name of the parent hypernode, which will be cloned to create the brancher, without the '.hypernode.io'.
 $testStage->addBrancherServer('example')
     ->setLabels(['stage=test'])
-    ->setSettings(['clear_services' => ['cron', 'supervisor']);
+    ->setSettings(['clear_services' => ['cron', 'supervisor']]);
 
 return $configuration;
 ```
