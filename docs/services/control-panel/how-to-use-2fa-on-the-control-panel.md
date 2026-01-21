@@ -54,25 +54,12 @@ For security reasons, 2FA can no longer be disabled directly from the Control Pa
 
 If you need to disable 2FA, please contact Hypernode Support at **support@hypernode.com**.
 
-## Backup Codes
+## Recovery from Lost Authentication App
 
-During setup, you receive a set of backup codes. These are important.
+If you lose access to your authentication app, contact **support@hypernode.com** for assistance.
 
-- Each backup code can be used only once.
-- Backup codes allow you to sign in if you lose access to your phone or authentication app.
-- You can always find your backup codes on your **Account** page.
+## Troubleshooting
 
-We strongly recommend storing these codes somewhere safe and offline.
+### Cannot Verify TOTP Code
 
-## Security Notice
-
-If you receive a verification code that you did not request, someone may be trying to access your account.
-
-In that case:
-
-
-- Log in to your account immediately.
-- Change your password.
-- Contact Hypernode Support if you suspect unauthorized activity.
-
-If you lose access to your authentication app and do not have backup codes, contact **support@hypernode.com** for assistance.
+If you cannot verify the TOTP code, and getting "Entered token is not valid." message, please check your time settings on your mobile device. TOTP codes are time-sensitive, and incorrect time settings can lead to verification failures. If your device time is incorrect, you can try to sync it with the Internet.
