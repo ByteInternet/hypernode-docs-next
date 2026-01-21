@@ -86,7 +86,31 @@ location ~ \.php$ {
 
 **This step is only necessary if you're on Shopware >= 6.4.**
 
-Go to [Shopware's Reverse Http Cache documentation](https://developer.shopware.com/docs/guides/hosting/infrastructure/reverse-http-cache) to configure Shopware to take Varnish into account.
+Go to [Shopware's Reverse Http Cache documentation](https://developer.shopware.com/docs/guides/hosting/infrastructure/reverse-http-cache) to configure Shopware to take Varnish into account. 
+
+First, we need to enable reverse proxy support in Shopware. To do this, we must create a new file in `config/packages/storefront.yaml`:
+```php
+storefront:
+    reverse_proxy:
+        enabled: true
+        ban_method: "BAN"
+        # This should point to your Varnish hosts
+        hosts: [ "http://varnish:6081" ]
+        # Maximum parallel invalidations at the same time for a single worker
+        max_parallel_invalidations: 3
+        # Redis Storage for the HTTP cache tags
+        redis_url: "redis://redismaster:6379"
+```
+
+To assist you further, modify the following settings:
+
+`http://varnish` to `http://varnish:6081`
+`redis://redis` to `redis://redismaster:6379/`
+
+Also, set `SHOPWARE_HTTP_CACHE_ENABLED=1` in your `.env` file.
+
+For the correct Varnish VCL configuration and additional settings, refer to the docs: [Shopware's Reverse Http Cache documentation](https://developer.shopware.com/docs/guides/hosting/infrastructure/reverse-http-cache)
+
 
 ## Step Four: Implement a .vcl Into Varnish
 
