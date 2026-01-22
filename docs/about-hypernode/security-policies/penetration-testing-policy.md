@@ -24,7 +24,7 @@ Penetration testing is allowed under the following conditions:
 
 - All pentests must be performed by a reputable, experienced, party.
 - You will [inform us](https://www.hypernode.com/en/support/) at least 72 hours ahead of time, and let us know the time, source IP(s) and target of the pentest.
-- If the pentest causes, or discovers, any server side issues, you will share the full report of the pentest with us afterwards. You will keep these findings confidential, untill we've had the opportunity to assess and address the issue.
+- If the pentest causes, or discovers, any server side issues, you will share the full report of the pentest with us afterwards. You will keep these findings confidential, until we've had the opportunity to assess and address the issue.
 
 We do not allow pentests that:
 
