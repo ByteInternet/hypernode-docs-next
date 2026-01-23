@@ -190,7 +190,7 @@ This happens faster when the Magento shop is not well optimized and it takes a l
 
 To make sure a small set of IP addresses can’t take your shop down we use rate limiting based on IP address. A single IP might use up to 80% of the total PHP-FPM worker capacity available.
 
-On smaller nodes (mostly on Hypernode Start and Grow plans) this can cause errors when working in the Magento admin. To resolve these errors, you can whitelist IP’s to make sure they will not be rate limited when working in the Magento admin backend. If you use nightly product imports through the Magento SOAP API, sometimes you need to whitelist the remote ip of the import tool as well.
+On smaller nodes this can cause errors when working in the Magento admin. To resolve these errors, you can whitelist IP’s to make sure they will not be rate limited when working in the Magento admin backend. If you use nightly product imports through the Magento SOAP API, sometimes you need to whitelist the remote ip of the import tool as well.
 
 [To whitelist these IP’s have a look at our article about rate limiting](../../hypernode-platform/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests.md).
 

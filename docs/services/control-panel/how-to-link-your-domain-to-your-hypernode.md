@@ -20,7 +20,7 @@ Thanks to Hypernode’s very cool **Dedicated IP** feature the IP address of you
 
 There are two exceptions when you can't benefit from a dedicated IP and which may have impact on how you would like to manage your DNS:
 
-1. Changing between Falcon (formerly known as Professional), Pelican and Eagle (formerly know as Excellence) plans will lead to an IP change because you will change providers (e.g. Combell OpenStack or DigitalOcean to Amazon and vice versa)
+1. Changing between Falcon and Eagle plans will lead to an IP change because you will change providers (e.g. Combell OpenStack to Amazon and vice versa)
 1. If you request your node to be booted in a different region (datacenter) the IP address will change as well.
 
 If you are likely to switch between Falcon and Eagle plans in the future, we recommend to move your domain(s) to Hypernode so we can handle the DNS of your domains to avoid downtime.

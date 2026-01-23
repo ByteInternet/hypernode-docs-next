@@ -125,7 +125,7 @@ In order to use the compression library Snappy for your Redis cache you need to 
 
 You can use Redis for storing sessions too!
 
-Hypernode plans bigger than Magento Grow, often have enough memory to store the session data in Redis.
+Larger Hypernode plans often have enough memory to store the session data in Redis.
 This way sessions are stored in-memory, making the shop faster and use less IO than when using MySQL or files as session store.
 
 ### Install `Cm_RedisSession`
