@@ -26,7 +26,7 @@ There are multiple ways to set up your Magento multistore. You can choose betwee
 - Using subdirectories (e.g. example.com/en/ and example.com/fr/ etc.)
 - Using a combination of different domains and subdirectories (e.g. example.com and example.net/en/ and example.net/fr/)
 
-Below we have provided the instructions on how to set up each of the scenarios within Nginx on your Hypernode. Please do note that in order to follow the instructions your Hypernode must have [Hypernode Managed Vhosts](hypernode-managed-vhosts.md) enabled. Furthermore, we cannot guarantee that the instructions will work with all plugins and custom configurations since this has only been tested with the default Luma theme and without any customizations.
+Below we have provided the instructions on how to set up each of the scenarios within Nginx on your Hypernode. Furthermore, we cannot guarantee that the instructions will work with all plugins and custom configurations since this has only been tested with the default Luma theme and without any customizations.
 
 ### Using Different Domains
 
@@ -144,7 +144,7 @@ Magento Stores - Base URLs
 +----+---------+------------------------------------+--------------------+
 ```
 
-First add the following vhosts using the information from the [Hypernode Managed Vhosts](hypernode-managed-vhosts.md) documentation.
+First add the following vhosts using the information from the [vhost configuration](hypernode-managed-vhosts.md) documentation.
 
 - [www.example.com](http://www.example.com)
 - [www.example.nl](http://www.example.nl)

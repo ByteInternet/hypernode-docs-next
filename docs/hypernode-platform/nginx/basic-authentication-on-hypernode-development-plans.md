@@ -133,4 +133,3 @@ map $http_user_agent $development_exceptions {
 ## Troubleshooting
 
 - Google Pagespeed analysis uses the Google bot user agent and can therefore not be used on development nodes.
-- In some cases, particularly if you have not yet enabled [Hypernode Managed Vhosts](../../hypernode-platform/nginx/hypernode-managed-vhosts.md), it’s possible the Basic Authentication blocks the Let’s Encrypt validation server. If you wish to make use of Let’s Encrypt on your development Hypernode, you should add the ‘letsencrypt’ user agent to the whitelist file.

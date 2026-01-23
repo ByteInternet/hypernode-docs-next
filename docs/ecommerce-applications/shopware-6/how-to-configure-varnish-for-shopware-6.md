@@ -25,7 +25,7 @@ You can enable varnish on the hypernode using the [systemctl-tool](../../hyperno
 
 ## Step Two: How to Setup Varnish for the Vhost
 
-The [hypernode-manage-vhosts](../../hypernode-platform/nginx/hypernode-managed-vhosts.md) (HMV) config allows you to enable varnish for every vhost individually. So if you for example have a domain example.com. You should create 2 vhosts:
+The [hypernode-manage-vhosts](../../hypernode-platform/nginx/hypernode-managed-vhosts.md) command allows you to enable varnish for every vhost individually. So if you for example have a domain example.com. You should create 2 vhosts:
 
 - example.com
 - [www.example.com](http://www.example.com)

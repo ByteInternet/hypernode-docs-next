@@ -18,13 +18,11 @@ Many constructions are possible when it gets to the base URL. Some shop owners p
 
 There are some restrictions when choosing your base URL.
 
-If you use the wwwizer servers, which are sometimes used when your domain is not hosted at Hypernode and thus the DNS can’t be automagically changed in case of up or downgrades, your domain will always redirect to [www](http://www).
+If you use the wwwizer servers, which are sometimes used when your domain is not hosted at Hypernode and thus the DNS can’t be automagically changed in case of up or downgrades, your domain will always redirect to www.
 
 More info can be found [on our page about setting your DNS](../dns/how-to-manage-your-dns-settings-for-hypernode.md).
 
 ## Redirect From Apex to WWW
-
-**When Hypernode Managed Vhosts is enabled**
 
 To redirect all traffic to www you have to create both a vhost for the Apex and for the `www`. For the non-www vhost you can create the vhost as type wwwizer. This will redirect all traffic to the `www`. version of that vhost. This can be achieved by running: `hypernode-manage-vhosts example.com --type wwwizer`.
 

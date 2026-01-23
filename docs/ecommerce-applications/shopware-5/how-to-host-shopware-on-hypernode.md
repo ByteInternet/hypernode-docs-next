@@ -28,7 +28,7 @@ Shopware is an e-commerce system roughly the same as Magento and both have the s
 
 ## Configuring Hypernode for Shopware
 
-All you need to do is create a [vhost](../../hypernode-platform/nginx/hypernode-managed-vhosts.md#managing-vhosts) (or change an existing vhost) with type `shopware5` or `shopware6`.
+All you need to do is create a vhost (or change an existing vhost) with type `shopware5` or `shopware6`.
 This will make sure the specific vhost has the right nginx configuration to host your Shopware environment.
 So for example, your domain is `www.example.com` and you'd like a vhost with Shopware 6 configuration.
 You can create this vhost with the following command: `hypernode-manage-vhosts www.example.com --type shopware6 --https --force-https`.

@@ -69,9 +69,9 @@ In our support documentation you will find detailed information about installing
 - [Shopware 5](../../ecommerce-applications/shopware-5/how-to-install-shopware-5-on-hypernode.md)
 - [Shopware 6](../../ecommerce-applications/shopware-6/how-to-install-shopware-6-on-hypernode.md)
 
-### Step 4 – Set up Hypernode Managed Vhosts
+### Step 4 – Set up Your Vhosts
 
-Due to this configuration it is required to add a new vhost for every domain you want to link to your Hypernode. So you need to configure your DNS correctly and add a new vhost for the domain.
+You need to add a new vhost for every domain you want to link to your Hypernode. So you need to configure your DNS correctly and add a new vhost for the domain.
 
 To add a new vhost, for example the domainname [www.example.com](http://www.example.com), to your configuration, you can simply run the command `hypernode-manage-vhosts www.example.com`. This will create a new vhost configuration in `/data/web/nginx/www.example.com/`, using the Magento 2 template.
 
