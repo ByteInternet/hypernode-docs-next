@@ -2,8 +2,7 @@
 myst:
   html_meta:
     description: Improve Magento search speed and relevancy with ElasticSearch or
-      Sphinx Search. Out-of-box integration on Hypernode Falcon and Eagle
-      plans.
+      Sphinx Search. Out-of-box integration on Hypernode Falcon and Eagle plans.
     title: How to improve your Magento search? | Hypernode
 redirect_from:
   - /en/best-practices/performance/how-to-improve-your-magento-search/
