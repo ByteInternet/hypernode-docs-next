@@ -133,7 +133,7 @@ Note that the time on Hypernode is configured to UTC, so the times used in the c
 
 ## Step 11: Configure Backups on Hypernode (Optional)
 
-For Hypernode Falcon S (or up) and Eagle hosting plans free backups are available. If you need a backup, contact us via support@hypernode.com. Hypernode Falcon XS (used to be Grow) plans do not have free backups included, but we can make one available for 25 euros excl VAT per backup.
+For Hypernode Falcon S (or up) and Eagle hosting plans free backups are available. If you need a backup, contact us via support@hypernode.com.
 
 ## Downgrade or Cancel Your Previous Plan
 

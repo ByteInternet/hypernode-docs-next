@@ -147,4 +147,4 @@ This will create a location `/robots.txt` which returns the same data on all sto
 
 ### Create a single robots.txt
 
-If you want to serve just one single storefront (for example on a Hypernode Start plan), all you have to do is place a `robots.txt` file in `/data/web/public` and you're done. :-)
+If you want to serve just one single storefront, all you have to do is place a `robots.txt` file in `/data/web/public` and you're done. :-)

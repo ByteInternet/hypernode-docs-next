@@ -100,7 +100,7 @@ $ bin/magento setup:config:set --page-cache-redis-compression-lib=snappy
 
 You can use Redis for storing sessions too!
 
-Hypernodes bigger than a Grow plan, often have enough memory to store the session data in Redis. This way sessions are stored in-memory, making the shop faster and use less IO than when using MySQL or files as session store.
+Larger Hypernode plans often have enough memory to store the session data in Redis. This way sessions are stored in-memory, making the shop faster and use less IO than when using MySQL or files as session store.
 
 ### Configure Magento 2 to Store Sessions in Redis
 

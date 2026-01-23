@@ -23,7 +23,7 @@ Thanks to Hypernode’s very cool **Dedicated IP**feature, the IP address of you
 
 There are three exceptions in which you cannot benefit from a dedicated IP and which may have an impact on how you would like to manage your DNS:
 
-1. A change of cloud provider – also when switching between Falcon (formerly known as Professional) and Eagle (Formerly known as Excellence) plans – will trigger an IP change
+1. A change of cloud provider – also when switching between Falcon and Eagle plans – will trigger an IP change
 1. The IP address will also change if you request your node to be booted in a different region (data center).
 1. In extreme emergency situations (like fire or longtime power outages), we might need to migrate your Hypernode to another data center. Luckily these chances are very low.
 
