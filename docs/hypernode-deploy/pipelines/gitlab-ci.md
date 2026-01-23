@@ -1,5 +1,9 @@
 # Gitlab CI
 
+```{note}
+This guide assumes you have already configured Hypernode Deploy with a `deploy.php` file in your project root. If you haven't set this up yet, please follow the [installation and configuration guide](../getting-started/install-and-configure-hypernode-deploy.md) first.
+```
+
 ## Configuring deployment environments
 
 To start using Gitlab CI, we need to prepare the environments we want to deploy to.
@@ -109,3 +113,9 @@ deploy_acceptance:
     name: acceptance
     url: https://acceptance.example.com
 ```
+
+## Next steps
+
+After you've added these files, commit your changes and make sure the changes are newly present on the branches configured in your pipeline files. By default, these branches are `master` (or `main`) and `acceptance`.
+
+Once pushed, you will see a Pipeline automatically run in your repository's "Build" -> "Pipelines" or "CI/CD" -> "Pipelines" tab.

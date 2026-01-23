@@ -71,3 +71,15 @@ You never want to accidentally delete a domain name. Because this causes many pr
 #### Cancelling Foreign Domains
 
 If you cancel a foreign domain name, Hypernode will let it expire automatically after the contract date has expired. It is therefore possible that your domain name is still available for some time after you have canceled the domain. After the domain expires, your domain may go into quarantine. In this status, only you can register the domain name again, and usually only via Hypernode. Only after the quarantine period has expired is your domain name completely free and can it be registered by everyone.
+
+### How to cancel Hypernode Insights
+
+If Insights isn’t the right fit for you right now, canceling is simple:
+
+1. Log in to your **[Control Panel](https://auth.hypernode.com/login)**.
+1. Open the **Settings** of the Hypernode where Insights is active.
+1. In the **Cancellation** section, find *Hypernode Insights* and click **Cancel Insights**.
+
+- ![Cancel Hypernode Insights Screenshot](_res/cancel-insights.png)
+
+Your cancellation will be processed automatically and will take effect on the **first day of the following month**.

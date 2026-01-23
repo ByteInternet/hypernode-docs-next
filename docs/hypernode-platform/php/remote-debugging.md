@@ -52,7 +52,9 @@ If you're not using Xdebug cloud, you need to open a reverse SSH tunnel so that 
 $ ssh -R 9003:localhost:9003 app@example.hypernode.io -N
 ```
 
-### Configure PhpStorm
+### IDEs
+
+#### PhpStorm
 
 Then you open up your PhpStorm project and go to your *File -> Settings -> PHP -> Servers*. Click the *+* button to add a server and fill *Name* and *Host* with the full domain name of the site you want to debug (for example www.shop.com). Then check the box *Use path mappings* and click on the right column next to your project root. Here you can fill in the absolute path of the application on the remote server, for example:
 
@@ -71,6 +73,29 @@ app@abcdef-example-magweb-cmbl:~$ realpath apps/magento2.komkommer.store/current
 Finally click the *Start Listening for PHP Debug Connections* button. Now your debug environment is ready to go.
 
 ![](_res/phpstorm-listen-for-debug.png)
+
+#### Visual Studio Code
+
+If you prefer Visual Studio Code, you can use the PHP Debug extension. Create or update `.vscode/launch.json` in your project with the following configuration and adjust `pathMappings` to your remote application path:
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Listen for XDebug",
+      "type": "php",
+      "request": "launch",
+      "port": 9003,
+      "pathMappings": {
+        "/data/web/releases/1767778825": "${workspaceRoot}"
+      }
+    }
+  ]
+}
+```
+
+After saving, open the *Run and Debug* panel, choose **Listen for XDebug**, and start listening for incoming debug connections on port 9003.
 
 ### Start debugging
 

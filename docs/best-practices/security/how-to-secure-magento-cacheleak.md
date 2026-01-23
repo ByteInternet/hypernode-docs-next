@@ -278,7 +278,7 @@ http {
         # would not be able to redirect the magmi .php files (which are
         # the ones we really MUST redirect).
         location ~* /magmi($|/) {
-            return https://support.hypernode.com/knowledgebase/securing-access-to-magmi/;
+            return https://docs.hypernode.com/knowledgebase/securing-access-to-magmi/;
         }
 
         location ~ .php/ {
