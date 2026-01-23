@@ -12,7 +12,7 @@ redirect_from:
 
 # How to enable Varnish on Hypernode
 
-Customers with a Trial, Pelican M (or up), Falcon S (or up) or Eagle plan can use Varnish to boost the performance of their application. After enabling Varnish, you still need to configure both Varnish and your application. We have [support documentation per application](../varnish/how-to-enable-varnish-on-hypernode.md#configure-varnish-on-your-application) available to guide you through the process:
+Customers with a Trial, Falcon S (or up) or Eagle plan can use Varnish to boost the performance of their application. After enabling Varnish, you still need to configure both Varnish and your application. We have [support documentation per application](../varnish/how-to-enable-varnish-on-hypernode.md#configure-varnish-on-your-application) available to guide you through the process:
 
 ## Enable Varnish 4.0, 6.0 or 7.x
 

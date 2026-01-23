@@ -12,7 +12,7 @@ redirect_from:
 
 # How to Configure Varnish for Magento 2.x
 
-Customers with Hypernode Pelican, Falcon (formerly known as Professional) and Eagle (formerly known as Excellence plans can use Varnish to boost their Magento shop. This article explains how you can configure Varnish 4 or 6 for your Hypernode. If you want to know which Varnish version you need to configure, please check the [Magento documentation](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html) first. Do you have a Magento 1 shop, please check [this article](../../ecommerce-applications/magento-1/how-to-configure-varnish-for-magento-1-x.md).
+Customers with Hypernode Falcon (formerly known as Professional) and Eagle (formerly known as Excellence) plans can use Varnish to boost their Magento shop. This article explains how you can configure Varnish 4 or 6 for your Hypernode. If you want to know which Varnish version you need to configure, please check the [Magento documentation](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html) first. Do you have a Magento 1 shop, please check [this article](../../ecommerce-applications/magento-1/how-to-configure-varnish-for-magento-1-x.md).
 
 Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. Don't implement varnish on production nodes without testing Varnish first on a [development node](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) or the [Hypernode Docker](../../best-practices/testing/hypernode-docker.md).
 

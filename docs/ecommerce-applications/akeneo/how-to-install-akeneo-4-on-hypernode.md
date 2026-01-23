@@ -13,7 +13,7 @@ redirect_from:
 
 # How to Install Akeneo 4 on Hypernode
 
-Akeneo 4 preferably requires a Hypernode Pelican L, Falcon M, Eagle M hosting plan or larger. You can either choose to install it on a seperate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 8.0, PHP 7.3 and Elasticsearch 7.x**, so it won’t affect your shop negatively. Installing Akeneo version 4.x may take up to 15 minutes.
+Akeneo 4 preferably requires a Hypernode Falcon M, Eagle M hosting plan or larger. You can either choose to install it on a seperate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 8.0, PHP 7.3 and Elasticsearch 7.x**, so it won’t affect your shop negatively. Installing Akeneo version 4.x may take up to 15 minutes.
 
 ## Managed Vhosts
 
