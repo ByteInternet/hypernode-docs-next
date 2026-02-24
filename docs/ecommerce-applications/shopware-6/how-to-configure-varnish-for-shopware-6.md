@@ -89,7 +89,7 @@ location ~ \.php$ {
 Go to [Shopware's Reverse Http Cache documentation](https://developer.shopware.com/docs/guides/hosting/infrastructure/reverse-http-cache) to configure Shopware to take Varnish into account.
 
 ```{important}
-Make sure your hosts in the shopware =>  http_cache => reverse_proxy section is set to `http://varnish:8081` to prevent cURL SSL ERRORS.
+Make sure your hosts in the shopware => http_cache => reverse_proxy section is set to `http://varnish:8081` to prevent cURL SSL ERRORS.
 ```
 ## Step Four: Implement a .vcl Into Varnish
 
