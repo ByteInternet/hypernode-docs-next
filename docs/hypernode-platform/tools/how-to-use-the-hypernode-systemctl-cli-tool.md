@@ -76,6 +76,8 @@ To see which values you can set and which values they are allowed to have take a
 | **varnish_large_thread_pool_stack**<br/><sub></sub>                                                                                                             | False         | True, False                                                                                                                                 |
 | **varnish_version**<br/><sub>Change the Varnish version</sub>                                                                                                   | 7.x           | 4.0, 6.0, 7.x                                                                                                                               |
 | **valkey_enabled**<br/><sub>Enable valkey</sub>                                                                                                                 | False         | True, False                                                                                                                                 |
+| **block_bad_ips_enabled**<br/><sub>Blocks abusive IPs with high AbuseIPDB.com confidence scores</sub>                                                           | True          | True, False                                                                                                                                 |
+
 
 ### Checking a Value for a Setting
 
