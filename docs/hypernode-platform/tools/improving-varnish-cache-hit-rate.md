@@ -7,8 +7,8 @@ myst:
 
 # Improving Your Varnish Cache Hit Rate
 
-A higher Varnish cache hit rate means more pages are served directly from cache.
-This reduces backend resource usage on your Hypernode, improves page load speed, and helps your shop handle more concurrent visitors without performance degradation.
+A higher Varnish cache hit rate means more requests are served directly from cache.
+This reduces resource usage on your Hypernode, improves page load speed, and helps your shop handle more concurrent visitors without performance degradation.
 
 A low hit rate often indicates that cache isn’t being reused effectively, typically caused by misconfiguration, frequent invalidation, or too much variation in URLs.
 
@@ -51,13 +51,21 @@ Use `curl` to inspect response headers:
 curl -I https://yourdomain.com
 ```
 
-Look for:
-- `X-Cache: HIT` → Served from Varnish
-- `X-Cache: MISS` → Served from backend
-- `Age` → How long the object has been cached
-- `X-Magento-*` headers → Useful Magento cache debug info only visible when developer mode is enabled.
+Review the following headers:
 
-If most responses return `MISS`, caching is not being reused effectively.
+- **`Set-Cookie`**  
+  If `PHPSESSID` is present, Varnish will not cache the response.
+
+- **`Cache-Control`**  
+  Should **not** contain `private`, `no-store`, or `no-cache`.
+
+- **`Age`**  
+  Indicates how long (in seconds) the object has been cached.
+
+- **`X-Magento-*`**  
+  Provides Magento cache/debug information (visible in developer mode).
+
+If most responses return `MISS` (for example in `X-Magento-Cache-Debug` or similar headers), caching is not being reused effectively.
 
 You can also inspect these headers in your browser via:
 Developer Tools → Network tab → Select request → Response Headers
@@ -81,6 +89,12 @@ For live monitoring:
 ```console
 varnishstat
 ```
+
+Look for:
+- `VCL_call HIT` → Served from Varnish
+- `VCL_call MISS` → Served from backend
+- `Age` → Indicates how long (in seconds) the object has been cached.
+- `X-Magento-*` headers → Provides Magento cache/debug information (visible in developer mode).
 
 # Step 4 — Common Causes of Low Hit Rates
 
