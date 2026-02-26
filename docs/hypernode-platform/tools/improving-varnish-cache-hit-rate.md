@@ -28,20 +28,19 @@ Keep in mind:
 
 # Step 1 — Verify Varnish Is Enabled
 
-Ensure Varnish is properly enabled on your Hypernode and configured in your
+Ensure Varnish is properly enabled on your vhost and configured in your
 application (e.g. Magento 2).
 
 For Magento 2, verify:
+- That varnish is enabled on the vhost  
 - Varnish is selected as the caching application
 - The correct VCL is generated and loaded
 - Full Page Cache (FPC) is enabled
 
-For a complete guide on how to configure Varnish in Magento 2 see: 
-https://docs.hypernode.com/ecommerce-applications/magento-2/how-to-configure-varnish-for-magento-2-x.html#how-to-configure-varnish-for-magento-2-x
+For a step-by-step guide on activating and configuring Varnish in Magento 2, please refer to our [documentation here](https://docs.hypernode.com/ecommerce-applications/magento-2/how-to-configure-varnish-for-magento-2-x.html#how-to-configure-varnish-for-magento-2-x)
 
 ```{tip}
-Tip: The [elgentos/magento2-varnish-extended](https://github.com/elgentos/magento2-varnish-extended) extension improves Magento’s
-default VCL configuration and marketing parameter handling.
+Tip: The [elgentos/magento2-varnish-extended](https://github.com/elgentos/magento2-varnish-extended) extension improves Magento’s default VCL configuration and marketing parameter handling.
 ```
 
 # Step 2 — Check if Pages Are Being Cached
@@ -63,8 +62,6 @@ If most responses return `MISS`, caching is not being reused effectively.
 You can also inspect these headers in your browser via:
 Developer Tools → Network tab → Select request → Response Headers
 
----
-
 # Step 3 — Measure Your Cache Hit Rate
 
 Run:
@@ -84,8 +81,6 @@ For live monitoring:
 ```console
 varnishstat
 ```
-
----
 
 # Step 4 — Common Causes of Low Hit Rates
 
@@ -111,8 +106,6 @@ Best practice:
 Perform targeted purges (specific URLs or cache tags) instead of full cache
 flushes.
 
----
-
 ## 3. Marketing & Tracking Parameters
 
 Tracking parameters create separate cache entries for identical content.
@@ -130,13 +123,11 @@ Example problem:
 These generate separate cache objects unless normalized.
 
 Solution:
-
 Strip non-essential tracking parameters in VCL.
 
 ```{tip}
 The [elgentos/magento2-varnish-extended](https://github.com/elgentos/magento2-varnish-extended) module improves this behavior.
 ```
----
 
 ## 4. URL Normalization Issues
 
@@ -149,8 +140,6 @@ Examples:
 - Session IDs in URLs
 
 Normalize URLs to ensure identical content maps to a single cache object.
-
----
 
 ## 5. Non-Cacheable Magento Blocks
 
