@@ -7,10 +7,10 @@ myst:
 
 # Improving Your Varnish Cache Hit Rate
 
-A higher Varnish cache hit rate means more requests are served directly from cache.
+A higher Varnish cache hit rate means more requests are served directly from the cache.
 This reduces resource usage on your Hypernode, improves page load speed, and helps your shop handle more concurrent visitors without performance degradation.
 
-A low hit rate often indicates that cache isn’t being reused effectively, typically caused by misconfiguration, frequent invalidation, or too much variation in URLs.
+A low hit rate often indicates that cache is not being reused effectively, typically caused by misconfiguration, frequent invalidation, or too much variation in URLs.
 
 This guide takes you step-by-step from verifying that your cache is active to diagnosing and improving your hit ratio.
 
@@ -18,21 +18,35 @@ This guide takes you step-by-step from verifying that your cache is active to di
 
 Typical cache hit rates:
 - **Below 10%** → Cache is barely reused  
-- **30–70%** → Improvement possible (depends on shop type)  
-- **Above 80%** → Generally healthy  
+- **30–70%** → Improvement possible (depends on shop type and traffic patterns) 
+- **Above 80%** → Generally healthy for most shops 
 
 Keep in mind:
 - Staging environments typically have low hit rates  
 - B2B webshops often have lower hit rates due to personalization  
+- Recently flushed caches temporarily reduce hit rates until the cache warms up
 
+Cache hit rate should always be evaluated in context. Traffic volume, personalization, and recent deployments directly affect cache reuse.
 
-# Step 1 — Verify Varnish Is Enabled
+## When a Low Hit Rate Is Expected
+
+A low hit rate does not always indicate a problem. It is normal when:
+
+- Traffic volume is low  
+- The cache was recently flushed  
+- Most visitors are logged in  
+- The shop uses heavy personalization  
+- You are working in a staging environment  
+
+Investigate further only if traffic is stable, the cache is warmed up, and the hit rate remains consistently low.
+
+## Step 1 — Verify Varnish Is Enabled
 
 Ensure Varnish is properly enabled on your vhost and configured in your
 application (e.g. Magento 2).
 
 For Magento 2, verify:
-- That varnish is enabled on the vhost  
+- That Varnish is enabled on the vhost  
 - Varnish is selected as the caching application
 - The correct VCL is generated and loaded
 - Full Page Cache (FPC) is enabled
@@ -43,9 +57,17 @@ For a step-by-step guide on activating and configuring Varnish in Magento 2, ple
 Tip: The [elgentos/magento2-varnish-extended](https://github.com/elgentos/magento2-varnish-extended) extension improves Magento’s default VCL configuration and marketing parameter handling.
 ```
 
-# Step 2 — Check if Pages Are Being Cached
+## Step 2 — Check if Pages Are Being Cached
 
-Use `curl` to inspect response headers:
+Using `varnishncsa` from the CLI to see in real time which pages are cached and which are not:
+```console 
+varnishncsa -F '%U%q %{Varnish:hitmiss}x'
+```
+Look for:
+- `hit` → Served from Varnish
+- `miss` → Served from backend
+
+Alternatively, you can use `curl` to inspect response headers:
 
 ```console
 curl -I https://yourdomain.com
@@ -54,7 +76,7 @@ curl -I https://yourdomain.com
 Review the following headers:
 
 - **`Set-Cookie`**  
-  If `PHPSESSID` is present, Varnish will not cache the response.
+  If a Set-Cookie header (such as PHPSESSID) is present, Varnish will typically not cache the response.
 
 - **`Cache-Control`**  
   Should **not** contain `private`, `no-store`, or `no-cache`.
@@ -70,7 +92,7 @@ If most responses return `MISS` (for example in `X-Magento-Cache-Debug` or simil
 You can also inspect these headers in your browser via:
 Developer Tools → Network tab → Select request → Response Headers
 
-# Step 3 — Measure Your Cache Hit Rate
+## Step 3 — Measure Your Cache Hit Rate
 
 Run:
 
@@ -84,10 +106,10 @@ This shows:
 
 A high miss count relative to hits indicates room for improvement.
 
-For live monitoring:
+For live monitoring of which requests are hitting Varnish, use:
 
 ```console
-varnishstat
+varnishlog
 ```
 
 Look for:
@@ -96,9 +118,11 @@ Look for:
 - `Age` → Indicates how long (in seconds) the object has been cached.
 - `X-Magento-*` headers → Provides Magento cache/debug information (visible in developer mode).
 
-# Step 4 — Common Causes of Low Hit Rates
+Alternatively, reuse the varnishncsa command from Step 2 for live hit/miss monitoring.
 
-## 1. Pages Bypassing Varnish
+## Step 4 — Common Causes of Low Hit Rates
+
+### 1. Pages Bypassing Varnish
 
 Some pages are intentionally not cached:
 - Checkout
@@ -107,9 +131,9 @@ Some pages are intentionally not cached:
 
 This is expected behavior.
 
-## 2. Frequent Cache Invalidations
+### 2. Frequent Cache Invalidations
 
-If cache clears happen frequently, reuse becomes impossible.
+If cache clears happen frequently, cache reuse becomes nearly impossible.
 
 Common causes:
 - Stock or pricing integrations
@@ -120,7 +144,7 @@ Best practice:
 Perform targeted purges (specific URLs or cache tags) instead of full cache
 flushes.
 
-## 3. Marketing & Tracking Parameters
+### 3. Marketing & Tracking Parameters
 
 Tracking parameters create separate cache entries for identical content.
 
@@ -134,7 +158,7 @@ Example problem:
 - /product-x
 - /product-x?utm_source=google
 
-These generate separate cache objects unless normalized.
+These generate separate cache objects unless the URLs are normalized.
 
 Solution:
 Strip non-essential tracking parameters in VCL.
@@ -143,7 +167,7 @@ Strip non-essential tracking parameters in VCL.
 The [elgentos/magento2-varnish-extended](https://github.com/elgentos/magento2-varnish-extended) module improves this behavior.
 ```
 
-## 4. URL Normalization Issues
+### 4. URL Normalization Issues
 
 Different URL formats fragment your cache.
 
@@ -153,18 +177,18 @@ Examples:
 - Unsorted query parameters
 - Session IDs in URLs
 
-Normalize URLs to ensure identical content maps to a single cache object.
+Normalize URLs to ensure identical content maps to a single cache object in Varnish.
 
-## 5. Non-Cacheable Magento Blocks
+### 5. Non-Cacheable Magento Blocks
 
-In Magento, a single block marked as non-cacheable can disable Full Page Cache
-for the entire page.
+In Magento, a single block marked as non-cacheable can disable Full Page Cache (FPC) for the entire page.
 
 Search for non-cacheable blocks:
 
 ```console
 grep -R "cacheable=\"false\"" app/code vendor
 ```
+
 If found:
 - Verify the block truly needs to be dynamic
 - Remove cacheable="false" if unnecessary
@@ -172,38 +196,43 @@ If found:
 
 Even one unnecessary non-cacheable block can severely impact hit rate.
 
-# Optional — Enable Magento Developer Mode for Debugging
+## Optional — Enable Magento Developer Mode for Debugging
 
-Developer mode provides more detailed error output:
+Enable developer mode temporarily for debugging purposes:
+
 ```console
 magerun2 deploy:mode:set developer
 ```
 
 Or: 
+
 ```console
 php bin/magento deploy:mode:set developer
 ```
 
-# Debugging Tools
+## Debugging Tools
 
-## varnishlog
+### varnishlog
+
 Inspect detailed request handling:
-```bash
+```console
 varnishlog
 ```
 Look for recurring MISS patterns on pages that should be cacheable.
 
-## varnishncsa
+### varnishncsa
+
 Show hit/miss per URL:
-```bash
+```console
 varnishncsa -F '%U%q %{Varnish:hitmiss}x'
 ```
 Filter for hits:
-```bash
+```console
 varnishncsa -F '%U%q %{Varnish:hitmiss}x' | grep hit
 ```
 
-## Hypernode Insights (If Available)
+### Hypernode Insights (If Available)
+
 Use Hypernode Insights to:
 - Monitor hit/miss ratios
 - Detect purge spikes
