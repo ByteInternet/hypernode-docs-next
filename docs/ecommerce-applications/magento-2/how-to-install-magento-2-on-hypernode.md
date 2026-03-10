@@ -215,5 +215,5 @@ magerun2 cache:flush
 ```
 
 - I’m getting `out-of-memory` errors:
-  If you are running on a Start plan: Upgrade to a bigger hypernode with more memory available.
+  If you are running on a smaller plan: Upgrade to a bigger Hypernode with more memory available.
   If this happens while you are running a setup:static-content:deploy: Try deploying static content per language or per theme rather then all at once.

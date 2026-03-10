@@ -111,7 +111,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: download build artifact
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: deployment-build
         path: build/
@@ -155,7 +155,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: download build artifact
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: deployment-build
         path: build/

@@ -19,10 +19,11 @@ On Hypernode you can choose from a range of PHP versions. Check out which ones a
 
 On Hypernode you can choose from a range of PHP versions:
 
+- **PHP 8.5** (Fully supported)
 - **PHP 8.4** (Fully supported)
 - **PHP 8.3** (Fully supported)
 - **PHP 8.2** (Fully supported)
-- **PHP 8.1** (Fully supported)
+- **PHP 8.1** (EOL, No updates since 31 Dec 2025)
 - **PHP 8.0** (EOL, No updates since 26 Nov 2023)
 - **PHP 7.4** (EOL, No updates since 28 Nov 2022)
 - **PHP 7.3** (EOL, No updates since 6 Dec 2021)
