@@ -92,6 +92,16 @@ We assume you have an `auth.json` file in either your project directory or your 
 
 Then go to your Github repository on Github.com and go to **Settings -> Secrets -> Actions**. Click the **New repository secret**, fill in `DEPLOY_COMPOSER_AUTH` as the name, paste the contents of your `auth.json` file and press **Save**.
 
+````{note}
+The `DEPLOY_COMPOSER_AUTH` variable accepts both raw JSON and base64-encoded JSON. If you're having trouble with special characters in your CI/CD system, you can base64-encode the contents:
+
+```bash
+base64 -w0 < auth.json
+```
+
+This produces a single-line encoded string that's safer for environment variables.
+````
+
 ### Hypernode API authentication
 
 ***Optional step***

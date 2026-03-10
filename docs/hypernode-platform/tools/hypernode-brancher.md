@@ -157,6 +157,7 @@ $testStage = $configuration->addStage('test', 'example.com');
 // We use an automatically created Brancher node based on the parent for the 'test' stage.
 // In your testing pipeline, you can simply use the 'test' stage to push changes to the Brancher server,
 // and run your tests. Cancel it when your tests fail or after your tests pass to incur minimal costs.
+// 'example' is the name of the parent hypernode, which will be cloned to create the brancher, without the '.hypernode.io'.
 $testStage->addBrancherServer('example')
     ->setLabels(['stage=test'])
     ->setSettings(['clear_services' => ['cron', 'supervisor']);

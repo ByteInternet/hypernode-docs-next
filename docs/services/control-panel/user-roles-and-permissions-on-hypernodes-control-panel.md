@@ -55,6 +55,9 @@ A user can have different roles between teams. Each role is defined by a set of 
 | Transfer Hypernode ownership          |              |               |           | ✅        |
 | Change payment details                |              |               |           | ✅        |
 | View invoices                         |              |               |           | ✅        |
+| Managing DNS of domains\*             |              |               |           | ✅        |
+
+\*= Domains are not managed through teams. Only the owner of a domain can edit the DNS records of that domain.
 
 ## How to Assign Roles
 
