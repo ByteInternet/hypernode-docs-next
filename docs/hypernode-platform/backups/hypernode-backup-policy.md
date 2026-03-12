@@ -46,7 +46,6 @@ If you need a less recent snapshot (older than one day) and you don't have SLA S
 | -------------------------------------------- | --------------- | ---------------- |
 |                                              | **SLA Basic**   | **SLA Standard** |
 | Most recent Hypernode Backup (AWS/Openstack) | Free            | Free             |
-| Most recent Hypernode Backup (DigitalOcean)  | Free            | Free             |
 | Older Hypernode Backups                      | € 25,- (ex VAT) | Free             |
 
 ## SLA Standard
