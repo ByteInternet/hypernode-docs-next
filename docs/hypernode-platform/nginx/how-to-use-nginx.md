@@ -128,3 +128,46 @@ rewrite ^/fr/(.*)$ http://yourshop.fr/$1 permanent;
 This will also maintain subfolders and query strings (such as <http://yourshop.com/fr/subfolder?arguments>).
 
 If the move is only temporary, you should use redirect instead of permanent.
+
+## Redirects using mapping
+
+The map directive allows you to define conditional logic outside of your main server block. This keeps your configuration:
+
+- Easier to read
+- More scalable for large numbers of redirects
+- More efficient than stacking multiple if statements
+
+You will define your redirects in two parts:
+
+1. A mapping configuration (placed in an `/data/web/nginx/http.*` file)
+2. A rewrite rule (placed in a `/data/web/nginx/server.*` file)
+
+Step 1: Define the Redirect Mapping
+
+`/data/web/nginx/http.*`
+
+```nginx
+map $uri $out_redirect {
+~/the-location-you-want-to-redirect /new-location;
+}
+```
+
+You can expand this map with multiple rules:
+
+```nginx
+map $uri $out_redirect {
+~/old-page /new-page;
+~/blog/(.*) /articles/$1;
+~/deprecated /; }
+```
+
+Step 2: Apply the Redirect in the Server Block
+
+`/data/web/nginx/server.*`
+
+```nginx
+if ($out_redirect) { rewrite 301 $out_redirect;
+}
+```
+
+Using `map` for redirects in NGINX provides a clean, scalable, and efficient way to manage URL rewrites. By separating logic from execution, your configuration remains easy to maintain even as the number of redirects grows.
