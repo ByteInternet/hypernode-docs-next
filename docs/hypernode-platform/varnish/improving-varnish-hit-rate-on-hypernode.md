@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Learn how to improve your Varnish cache hit rate on Hypernode 
-      by identifying automatic cache purges, analyzing hit/miss patterns, and 
-      optimizing URL normalization to boost performance and efficiency.
+    description: Learn how to improve your Varnish cache hit rate on Hypernode by
+      identifying automatic cache purges, analyzing hit/miss patterns, and optimizing
+      URL normalization to boost performance and efficiency.
     title: Improving Varnish Cache Hit Rate on Hypernode
 ---
 
