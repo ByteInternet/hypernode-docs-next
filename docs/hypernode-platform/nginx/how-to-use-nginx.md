@@ -140,7 +140,7 @@ The map directive allows you to define conditional logic outside of your main se
 You will define your redirects in two parts:
 
 1. A mapping configuration (placed in an `/data/web/nginx/http.*` file)
-2. A rewrite rule (placed in a `/data/web/nginx/server.*` file)
+1. A rewrite rule (placed in a `/data/web/nginx/server.*` file)
 
 Step 1: Define the Redirect Mapping
 
