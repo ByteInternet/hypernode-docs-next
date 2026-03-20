@@ -158,7 +158,8 @@ You can expand this map with multiple rules:
 map $uri $out_redirect {
 ~/old-page /new-page;
 ~/blog/(.*) /articles/$1;
-~/deprecated /; }
+~/deprecated /;
+}
 ```
 
 Step 2: Apply the Redirect in the Server Block
@@ -166,7 +167,8 @@ Step 2: Apply the Redirect in the Server Block
 `/data/web/nginx/server.*`
 
 ```nginx
-if ($out_redirect) { rewrite 301 $out_redirect;
+if ($out_redirect) {
+rewrite 301 $out_redirect;
 }
 ```
 
