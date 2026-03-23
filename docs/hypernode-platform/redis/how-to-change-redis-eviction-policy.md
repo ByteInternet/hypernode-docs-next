@@ -52,41 +52,33 @@ hypernode-systemctl settings redis_eviction_policy allkeys-lru
 ## Policy explanation
 
 ### `noeviction`
-
 Redis will not evict any keys when memory is full. New write operations
 that require memory will fail.
 
 ### `allkeys-lru`
-
 Redis can evict any key and removes the least recently used keys first.
 
 ### `allkeys-lfu`
-
 Redis can evict any key and removes the least frequently used keys first.
 
 ### `allkeys-random`
-
 Redis can evict any key and removes keys at random.
 
 ### `volatile-lru`
-
 Redis only evicts keys with an expiration time and removes the least
 recently used keys first.
 
 This is the default policy on Hypernode.
 
 ### `volatile-lfu`
-
 Redis only evicts keys with an expiration time and removes the least
 frequently used keys first.
 
 ### `volatile-ttl`
-
 Redis only evicts keys with an expiration time and prefers keys that will
 expire soonest.
 
 ### `volatile-random`
-
 Redis only evicts keys with an expiration time and removes those keys at
 random.
 
