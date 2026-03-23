@@ -1,8 +1,9 @@
 ---
 myst:
   html_meta:
-    description: Learn how to investigate and resolve Varnish errors on Hypernode by checking NGINX and Varnish logs,
-      identifying header and workspace issues, and applying the correct buffer and workspace settings.
+    description: Learn how to investigate and resolve Varnish errors on Hypernode
+      by checking NGINX and Varnish logs, identifying header and workspace issues,
+      and applying the correct buffer and workspace settings.
     title: Investigating Varnish errors on Hypernode
 ---
 
@@ -18,6 +19,7 @@ One common cause of a `502 Bad Gateway` error with Varnish enabled is that NGINX
 
 This can happen after enabling Varnish or after a change that increases the
 size of response headers, for example:
+
 - large cookies
 - many `Set-Cookie` headers
 - additional custom response headers
@@ -46,9 +48,9 @@ proxy_busy_buffers_size 256k;
 
 This increases the buffer sizes NGINX uses when reading response headers from upstream (Varnish), which resolves the "too big header" issue in the vast majority of cases.
 
-```{tip} 
+```{tip}
 After creating the file, NGINX will be reloaded automatically
-``` 
+```
 
 ## 503 Service Unavailable (Backend Fetch Failed)
 
@@ -81,6 +83,7 @@ If you confirmed a `503` response, inspect the Varnish logs using `varnishlog` t
 ```
 
 The key indicators are:
+
 - `FetchError: workspace_backend overflow` — Varnish could not allocate enough workspace to process the backend response.
 - `Error: out of workspace (Bo)` — the backend object workspace (`Bo`) is too small for the response headers being returned.
 
@@ -107,6 +110,7 @@ hypernode-systemctl settings varnish_http_resp_hdr_len 8k
 # Maximum total size of all response headers combined
 hypernode-systemctl settings varnish_http_resp_size 32k
 ```
+
 ```{important}
 After changing these settings, Varnish will restart automatically. Allow a moment for it to reload before testing.
 ```
