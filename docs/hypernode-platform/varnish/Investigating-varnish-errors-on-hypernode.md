@@ -1,7 +1,8 @@
 ---
 myst:
   html_meta:
-    description: Learn how to investigate and resolve Varnish errors on Hypernode by checking NGINX and Varnish logs, identifying header and workspace issues, and applying the correct buffer and workspace settings.
+    description: Learn how to investigate and resolve Varnish errors on Hypernode by checking NGINX and Varnish logs,
+      identifying header and workspace issues, and applying the correct buffer and workspace settings.
     title: Investigating Varnish errors on Hypernode
 ---
 
@@ -120,26 +121,9 @@ varnishlog -q "BerespStatus == 503"
 
 If errors continue, consider gradually increasing the workspace values further (e.g., `512k` for `varnish_workspace_backend`).
 
----
-
-## Summary
-
-| Error | Logged in | Root cause | Fix |
-|---|---|---|---|
-| **502** | `/var/log/nginx/error.log` | Nginx buffer too small for response headers from Varnish | Add `~/nginx/server.header_buffer` with increased buffer settings |
-| **503** | `/var/log/nginx/access.log` + `varnishlog` | Varnish backend workspace too small | Increase `varnish_workspace_backend` (and optionally `varnish_http_resp_hdr_len` / `varnish_http_resp_size`) via `hypernode-systemctl` |
-
-## Additional Information
-
-| Setting | Description | Default | Recommended |
-|---|---|---|---|
-| `varnish_workspace_backend` | Memory allocated for processing backend responses | `64k` | `256k`+ |
-| `varnish_http_resp_hdr_len` | Maximum size of a single response header | `8k` | `8k`–`16k` |
-| `varnish_http_resp_size` | Maximum total size of all response headers | `32k` | `32k`–`64k` |
-
 If the problem persists after applying these fixes, contact support for further assistance.
 
-For more information about Varnish configuration and tuning, see our
-[documentation on improving Varnish hit rate](https://docs.hypernode.com/hypernode-platform/varnish/improving-varnish-hit-rate-on-hypernode.html)
-and the official
+```{information}
+For more information about Varnish configuration and tuning, see our [documentation on improving Varnish hit rate](https://docs.hypernode.com/hypernode-platform/varnish/improving-varnish-hit-rate-on-hypernode.html) and the official
 [Varnish documentation](https://varnish-cache.org/docs/).
+```
