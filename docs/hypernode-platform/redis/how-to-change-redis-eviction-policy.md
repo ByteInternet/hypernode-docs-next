@@ -1,14 +1,14 @@
 ---
 myst:
   html_meta:
-    description: Changing the Redis eviction policy on Hypernode with hypernode-systemctl. Learn which policies are available and how to verify the active Redis maxmemory-policy.
+    description: Changing the Redis eviction policy on Hypernode with hypernode-systemctl.
+      Learn which policies are available and how to verify the active Redis maxmemory-policy.
     title: Changing the Redis eviction policy on Hypernode
 ---
 
 # Changing the Redis eviction policy
 
 You can change the Redis `maxmemory-policy` with `hypernode-systemctl settings redis_eviction_policy`. This policy determines which keys Redis can evict when memory is full.
-
 
 ## Available policies
 
