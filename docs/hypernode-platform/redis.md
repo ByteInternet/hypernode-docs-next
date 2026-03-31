@@ -6,7 +6,7 @@ myst:
     title: Redis | Hypernode platform
 ---
 
-# Varnish
+# Redis
 
 ```{toctree}
 ---
