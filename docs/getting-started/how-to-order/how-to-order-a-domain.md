@@ -1,20 +1,21 @@
 ---
 myst:
   html_meta:
-    description: 'Find out here how to order a domain '
+    description: 'Find out here how to order a domain.'
 redirect_from:
   - /en/getting-started/how-to-order/how-to-order-a-domain-presence-plan/
+  - /getting-started/how-to-order/how-to-order-a-domain-presence-plan.html
 ---
 
 <!-- source: https://support.hypernode.com/en/getting-started/how-to-order/how-to-order-a-domain-presence-plan/ -->
 
-# Requirement
+# How to Order a Domain
 
 To order a domain you will need a Hypernode as the domain needs to be linked to it during the ordering process.
 
 ## How to Order
 
-To order one a domain, please follow the steps below:
+To order a domain, please follow the steps below:
 
 1. Log into the [Hypernode control panel](https://my.hypernode.com/domain/)
 1. Go to the 'Domains' tab and press Order domain
@@ -22,13 +23,13 @@ To order one a domain, please follow the steps below:
 1. When you want to transfer a domain, our ordering system will recognize you want to order an existing domain and will ask you if you want to transfer the domain or only manage the DNS. These steps will not initiate a transfer right away. If you want to transfer the domain to Hypernode you can choose the option 'Transfer to Hypernode'.
 1. Make a selection of the Hypernode it needs to link to.
 1. Select the Legal owner or fill in the information.
-1. After completing your order you can either transfer your domain with the authorisation token or manage the DNS after providing the domein registar with the new nameservers.
+1. After completing your order you can either transfer your domain with the authorisation token or manage the DNS after providing the domain registrar with the new nameservers.
 
 ## FAQ
 
-**What extensions to your offer?**
+**What extensions do you offer?**
 
-A complete list of extensions we offer can be found [here](https://docs.hypernode.com/services/domain-procedures/which-tlds-does-hypernode-offer.html#which-tlds-does-hypernode-offer).
+A complete list of extensions we offer can be found [here](../../services/domain-procedures/which-tlds-does-hypernode-offer.md).
 
 **How can I transfer my domain?**
 
