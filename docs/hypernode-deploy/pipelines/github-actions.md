@@ -61,6 +61,7 @@ jobs:
     - run: hypernode-deploy build -vvv
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        DEPLOY_COMPOSER_AUTH: ${{ secrets.DEPLOY_COMPOSER_AUTH }}
     - name: archive production artifacts
       uses: actions/upload-artifact@v4
       with:
@@ -111,7 +112,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: download build artifact
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: deployment-build
         path: build/
@@ -155,7 +156,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: download build artifact
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: deployment-build
         path: build/

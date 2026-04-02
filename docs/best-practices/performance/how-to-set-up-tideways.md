@@ -45,6 +45,16 @@ You can assign an environment label (for example when this node is a staging ser
 hypernode-systemctl settings tideways_env_name staging
 ```
 
+#### Optional: Collect Keys for Redis Instrumentation
+
+Enable Redis key collection to see which keys are accessed by Redis operations in your traces. This provides more detailed insights when debugging Redis-related performance issues.
+
+```bash
+hypernode-systemctl settings tideways_redis_keys_enabled True
+```
+
+**Please note:** This setting can have privacy implications if your application uses personal identifiable information (such as email addresses or IP addresses) inside Redis keys. For more information, see the [Tideways documentation on Redis instrumentation](https://support.tideways.com/documentation/setup/configuration/advanced-instrumentation.html#collect-keys-for-redis-instrumentation).
+
 ### Activation through Control Panel
 
 It’s also possible to configure Tideways in the Control Panel.
