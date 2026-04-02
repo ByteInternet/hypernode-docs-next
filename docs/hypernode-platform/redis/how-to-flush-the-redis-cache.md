@@ -6,6 +6,7 @@ myst:
     title: How to flush the Redic cache? | Hypernode
 redirect_from:
   - /en/hypernode/tools/how-to-flush-the-redis-cache/
+  - /hypernode-platform/tools/how-to-flush-the-redis-cache/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-flush-the-redis-cache/ -->
