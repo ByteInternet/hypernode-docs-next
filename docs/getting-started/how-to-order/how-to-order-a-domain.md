@@ -1,11 +1,14 @@
----
+______________________________________________________________________
+
 myst:
-  html_meta:
-    description: 'Find out here how to order a domain.'
+html_meta:
+description: 'Find out here how to order a domain.'
 redirect_from:
-  - /en/getting-started/how-to-order/how-to-order-a-domain-presence-plan/
-  - /getting-started/how-to-order/how-to-order-a-domain-presence-plan.html
----
+
+- /en/getting-started/how-to-order/how-to-order-a-domain-presence-plan/
+- /getting-started/how-to-order/how-to-order-a-domain-presence-plan.html
+
+______________________________________________________________________
 
 <!-- source: https://support.hypernode.com/en/getting-started/how-to-order/how-to-order-a-domain-presence-plan/ -->
 
