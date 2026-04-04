@@ -73,7 +73,7 @@ You could experience a 502 error due to a misconfiguration of Varnish. For examp
 - Have you configured Varnish caching in the backend? Check if Varnish is enabled on the Hypernode: `hypernode-systemctl settings varnish_enabled`
   this should return `true`.
   If not, enable Varnish: `hypernode-systemctl settings varnish_enabled true`
-- Is [HMV](../nginx/hypernode-managed-vhosts.md) enabled? Check if Varnish is enabled for the vhost:
+- Check if Varnish is enabled for the vhost:
   `hypernode-manage-vhosts --all`
   If not, enable Varnish for the vhost:`hypernode-manage-vhosts example.com --varnish`
 - Or if you've just disabled Varnish in the backend, make sure to disable Varnish for the vhosts as well:
