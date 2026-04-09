@@ -121,7 +121,7 @@ Besides the above-known plugins that will hit the blacklisted keyword, `http.rat
 
 To prevent a single IP from using all the FPM workers available simultaneously, leaving no workers available for other visitors, we implemented a per IP rate limit mechanism. This mechanism sets a maximum amount of PHP-FPM workers that can be used by one IP to 20. This way, one single IP address cannot deplete all the available FPM workers, leaving other visitors with an error page or a non-responding site.
 
-**Please note:** if [Hypernode Managed Vhosts](hypernode-managed-vhosts.md) is enabled, only add the `http.ratelimit` file in the Nginx root. Don't add it to the specific vhost as well, as this may cause conflicts.
+**Please note:** only add the `http.ratelimit` file in the Nginx root. Don't add it to the specific vhost as well, as this may cause conflicts.
 
 ### How per‑IP limiting works (what you can influence)
 
