@@ -31,7 +31,7 @@ define('WP_REDIS_MAXTTL', '900');
 define('WP_REDIS_SELECTIVE_FLUSH', true);
 ```
 
-### Explanation of the wp-config.php options 
+### Explanation of the wp-config.php options
 
 - **WP_REDIS_PREFIX** adds a clear prefix to your Redis keys. This helps prevent key collisions, especially when multiple applications use Redis.
 - **WP_REDIS_MAXTTL** sets a maximum lifetime for cached items, in this example 900 seconds.
