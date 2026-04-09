@@ -97,6 +97,32 @@ return $configuration;
 
 This automatically enables split static deployment for optimal build performance.
 
+### High-Performance Static Content Deployment (Experimental)
+
+```{warning}
+This feature is experimental and may cause unexpected issues. Test thoroughly in a staging environment before using in production.
+```
+
+For Hyvä-based stores, you can enable a Go-based static content deployer that is **230-380x faster** than Magento's native `setup:static-content:deploy` command. Typical deployment times drop from ~115 seconds to ~0.3-0.5 seconds.
+
+```php
+<?php
+
+namespace Hypernode\DeployConfiguration;
+
+$configuration = new ApplicationTemplate\Magento2(['nl_NL', 'en_US']);
+
+$configuration->setMagentoThemes([
+    'Vendor/theme' => 'nl_NL en_US',
+]);
+
+$configuration->enableHighPerformanceStaticDeploy();
+
+return $configuration;
+```
+
+For more information, see the [Hypernode Deploy v4.8.0 changelog](https://changelog.hypernode.com/hypernode-deploy-v4-8-0/).
+
 ### Defining custom steps
 
 You potentially need to add custom steps to the deployment, for example to build npm assets or do server actions after deployment.
