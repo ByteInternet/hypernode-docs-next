@@ -20,7 +20,13 @@ More information about DNS settings for your webshop on Hypernode technology, fo
 
 ## Manage DNS With a Third Party
 
-Please note that Hypernode cannot provide uptime guarantees for external DNS. Your SLA does not apply in this case. When a domain name is registered externally, please keep in mind that Hypernode has no influence on the functioning of the DNS. If you don't want to transfer your domain name to Hypernode, changing the name servers to the Byte name servers is a good second option. You will need a Presence plan to be able to manage your DNS from the Service Panel. When you have the DNS set up correctly you can ask your domain name provider to change the name servers to the Byte name servers:
+Please note that Hypernode cannot provide uptime guarantees for external DNS, so your SLA does not apply in this case.
+
+If your domain name is registered with an external provider, please be aware that Hypernode has no control over the availability or functioning of that provider’s DNS services.
+
+If you prefer not to transfer your domain name to Hypernode, a good alternative is to update your domain’s nameservers to the Hypernode nameservers. To manage your DNS through the Service Panel, you will need a Presence plan.
+
+Once your DNS has been configured correctly, you can ask your domain provider to update the nameservers to the Hypernode nameservers:
 
 ns1.hypernode.com
 
@@ -94,11 +100,11 @@ Different DNS records have been created for the different types of internet traf
 
 The NS records contain the "authoritative name servers" or prevailing name servers. When your domain name is listed with Hypernode, these will always be on Byte's name servers by default. This determines that we are the party that manages the DNS records. You can also find them in the WHOIS. The Byte name servers are:
 
-nsa.byte.nl
+ns1.hypernode.com
 
-nsb.byte.nl
+ns2.hypernode.com
 
-nsc.byte.nl
+ns3.hypernode.com
 
 If you have set up other name servers, the DNS data will be downloaded from that server. Hypernode always recommends using the Byte name servers so that in the event of IP changes (if you switch from datacenter) we can switch quickly, without having to make changes to the DNS configuration. You can NOT change the name servers from the Service Panel. If you need to change the name servers (to for example Cloudflare) you can request this by sending an email to [support@hypernode.com](mailto:support@hypernode.com) (from the email address that is linked to the account).
 
@@ -114,13 +120,19 @@ This is the A record for IPv6 addresses.
 
 ### MX Records
 
-The MX records contain the host names of the mail server(s). In addition to the hostname, you can assign a priority to each MX record. For example, you can give your own mail servers a higher priority (a lower number) than our smtp2.byte.nl server. This means that smtp2.byte.nl is only used as a mail server when your own servers are not available. We also call this "fallback server". Also make sure that you do not give every MX record a priority of 10, otherwise our server will not be able to determine which record is about the primary mail server. These are the MX records of the Hypernode mail servers:
+MX records determine where email for your domain should be delivered. The value of an MX record must point to the mail server that handles incoming email for your domain. Each MX record also includes a priority: the lower the number, the higher the priority.
 
-|             |          |               |          |
-| ----------- | -------- | ------------- | -------- |
-| **Name**    | **Type** | **Value**     | **Prio** |
-| example.com | MX       | smtp1.byte.nl | 10       |
-| example.com | MX       | smtp2.byte.nl | 20       |
+If you use multiple mail servers, the server with the lowest priority number is treated as the primary server. A second server can be configured as a fallback by giving it a higher priority number.
+
+Make sure not all MX records use the same priority. If they do, sending servers may distribute delivery across them instead of treating one as the primary server.
+
+Example MX configuration:
+
+|             |          |                   |          |
+| ----------- | -------- | ----------------- | -------- |
+| **Name**    | **Type** | **Value**         | **Prio** |
+| example.com | MX       | smtp1.example.com | 10       |
+| example.com | MX       | smtp2.example.com | 20       |
 
 Always use your primary domain for your MX records. An MX record with the Name on “mail.example.nl” will only work for …@mail.example.nl addresses.
 

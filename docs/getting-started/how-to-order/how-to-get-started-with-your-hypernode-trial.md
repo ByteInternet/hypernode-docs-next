@@ -71,18 +71,6 @@ In our support documentation you will find detailed information about installing
 
 ### Step 4 – Set up Hypernode Managed Vhosts
 
-The Hypernode Managed Vhosts (HMV) system is currently enabled by default on all new booted Hypernodes (all Hypernodes created after 01-05-2020).
-
-Check if you have HMV enabled by running this command:
-
-`hypernode-systemctl settings managed_vhosts_enabled`
-
-If so, it will give the following output:
-
-`managed_vhosts_enabled is set to value True`
-
-If this is not enabled, skip the part below.
-
 Due to this configuration it is required to add a new vhost for every domain you want to link to your Hypernode. So you need to configure your DNS correctly and add a new vhost for the domain.
 
 To add a new vhost, for example the domainname [www.example.com](http://www.example.com), to your configuration, you can simply run the command `hypernode-manage-vhosts www.example.com`. This will create a new vhost configuration in `/data/web/nginx/www.example.com/`, using the Magento 2 template.
@@ -139,6 +127,6 @@ Convinced about Hypernode? [Convert your trial into a paid hosting plan](../../a
 
 ## In Need of Support?
 
-We encourage you to have a look at our extensive Hypernode support documentation on [support.hypernode.com](../../index.md). Here you will find useful information and tips and tricks on e.g. how to import a shop to Hypernode, recommended tools for developers, etc.
+We encourage you to have a look at our extensive Hypernode support documentation on [docs.hypernode.com](../../index.md). Here you will find useful information and tips and tricks on e.g. how to import a shop to Hypernode, recommended tools for developers, etc.
 
 Do you have questions about our Hypernode platform or would you like to give us some feedback? We would love to hear from you! Please send an email to [support@hypernode.com](mailto:support@hypernode.com) and we will get back to you. Our sales team and support team are available on weekdays from 8:00 AM until 18:00 PM CET/CEST (UTC+1/UTC+2).

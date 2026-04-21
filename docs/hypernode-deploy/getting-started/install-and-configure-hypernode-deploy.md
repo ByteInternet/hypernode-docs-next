@@ -50,7 +50,7 @@ In the next step we're going to configure a CI/CD pipeline to let Hypernode Depl
 
 ## Override Deployer variables
 
-Some varaibles are automatically set, for example the default timeout of every task, you can change this by simply adding a `set` in our `deploy.php` as can be shown here:
+Some variables are automatically set, for example the default timeout of every task, you can change this by simply adding a `set` in our `deploy.php` as can be shown here:
 
 ```php
 use function Deployer\set;

@@ -6,6 +6,7 @@ myst:
     title: How to Solve Redis Out-of-Memory Error? | Hypernode
 redirect_from:
   - /en/hypernode/tools/how-to-solve-redis-error-oom-command-not-allowed-when-used-memory-maxmemory-/
+  - /hypernode-platform/tools/how-to-solve-redis-error-oom-command-not-allowed-when-used-memory-maxmemory/
 ---
 
 <!-- source: https://support.hypernode.com/en/hypernode/tools/how-to-solve-redis-error-oom-command-not-allowed-when-used-memory-maxmemory-/ -->

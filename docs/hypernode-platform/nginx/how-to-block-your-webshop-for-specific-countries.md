@@ -18,7 +18,7 @@ A lot of spam and abuse comes from specific countries. If you don't do business 
 - Country detection is 99,8% accurate (according to MaxMind, the supplier of the geo database).
 - It is generally better to serve a static page, than to enforce a hard block. Static pages consume almost no resources and can be used to explain alternative ways to contact your organisation.
 
-If you want to block, say, Russia and China, create the files `http.countries_map` and `server.countries_block` in the `/nginx` folder on your Hypernode. In these files you can use the following configuration:
+If you want to block, say, Russia and China, create the files `http.countries_map` and `server.countries_block` in the `~/nginx` folder on your Hypernode. In these files you can use the following configuration:
 
 In `http.countries_map`:
 

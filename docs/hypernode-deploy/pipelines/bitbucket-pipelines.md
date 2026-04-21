@@ -1,5 +1,9 @@
 # Bitbucket Pipelines
 
+```{note}
+This guide assumes you have already configured Hypernode Deploy with a `deploy.php` file in your project root. If you haven't set this up yet, please follow the [installation and configuration guide](../getting-started/install-and-configure-hypernode-deploy.md) first.
+```
+
 ## Configuring deployment environments
 
 To start using Bitbucket Pipelines, we need to prepare the environments we want to deploy to.
@@ -23,7 +27,7 @@ Bitbucket allows you to create an SSH key from the Repository Settings, you do t
 
 #### Generating own pair of SSH Keys
 
-You cangenerate an SSH keypair on the server, copy the public key to the `~/.ssh/authorized_keys` file
+You can generate an SSH keypair on the server, copy the public key to the `~/.ssh/authorized_keys` file
 and encode the private key with base64. We'll use this base64-encoded private key later on.
 
 ```console
@@ -110,3 +114,9 @@ pipelines:
         script:
           - hypernode-deploy deploy staging
 ```
+
+## Next steps
+
+After you've added these files, commit your changes and make sure the changes are newly present on the branches configured in your pipeline files. By default, these branches are `master` (or `main`) and `acceptance`.
+
+Once pushed, you will see a Pipeline automatically run in your repository's "Pipelines" tab.

@@ -22,6 +22,14 @@ You can modify your personal settings from the Control Panel. These settings aff
 
 You can change your personal settings here. Account changes will immediately be synced with your Chargebee account.
 
+## Changing Your Email
+
+1. Visit my.hypernode.com and access the Control Panel
+1. Hover over your username in the top right.
+1. Select Account settings from the menu.
+1. At Email & Password, click change to go to the email change page.
+1. Next, change your email.
+
 ## Changing Your Password
 
 There are two ways to reset your password:

@@ -73,17 +73,6 @@ Flush the cache of Magento on the Hypernode. (`magerun cache:flush`)
 
 ## Step 7: Set up Hypernode Managed Vhosts
 
-The Hypernode Managed Vhosts (HMV) system is currently enabled by default on all new booted Hypernodes (all Hypernodes created after 01-05-2020).
-
-Check if you have HMV enabled by running this command:
-
-```console
-app@abcdef-example-magweb-cmbl:~$ hypernode-systemctl settings managed_vhosts_enabled
-managed_vhosts_enabled is set to value True
-```
-
-If this is not enabled, skip the part below.
-
 Due to this configuration it is required to add a new vhost for every domain you want to link to your Hypernode. So you need to configure your DNS correctly and add a new vhost for the domain.
 
 To add a new vhost, for example the domainname [www.example.com](http://www.example.com), to your configuration, you can simply run the command `hypernode-manage-vhosts www.example.com`. This will create a new vhost configuration in `/data/web/nginx/www.example.com/`, using the Magento 2 template.
@@ -144,7 +133,7 @@ Note that the time on Hypernode is configured to UTC, so the times used in the c
 
 ## Step 11: Configure Backups on Hypernode (Optional)
 
-For Hypernode Pelican, Falcon S (or up) and Eagle hosting plans free backups are available. If you need a backup, contact us via support@hypernode.com. Hypernode Pelican S and Falcon XS (used to be Grow) plans do not have free backups included, but we can make one available for 25 euros excl VAT per backup.
+For Hypernode Falcon S (or up) and Eagle hosting plans free backups are available. If you need a backup, contact us via support@hypernode.com.
 
 ## Downgrade or Cancel Your Previous Plan
 
