@@ -13,9 +13,9 @@ redirect_from:
 
 # How to Configure Varnish for Shopware 6
 
-Customers with Hypernode Pelican, Falcon (formerly known as Professional) and Eagle (formerly known as Excellence) plans can use Varnish to boost their shop. This article explains how you can configure Varnish for your Hypernode.
+Customers with Hypernode Falcon and Eagle plans can use Varnish to boost their shop. This article explains how you can configure Varnish for your Hypernode.
 
-Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. We'd recommend to first test varnish on a [staging environment](how-to-use-a-basic-staging-environment-with-shopware-6.md) or a[development plan](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) before implementing varnish on a live node.
+Although Varnish is extremely awesome when it get's to speeding up websites, Varnish is a complex technique that needs some experience to set it up. We'd recommend to first test varnish on a [staging environment](how-to-use-a-basic-staging-environment-with-shopware-6.md) or a [development plan](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) before implementing varnish on a live node.
 
 ## Step One: Enable Varnish on the Hypernode
 
@@ -87,6 +87,10 @@ location ~ \.php$ {
 **This step is only necessary if you're on Shopware >= 6.4.**
 
 Go to [Shopware's Reverse Http Cache documentation](https://developer.shopware.com/docs/guides/hosting/infrastructure/reverse-http-cache) to configure Shopware to take Varnish into account.
+
+```{important}
+Make sure your hosts in the shopware => http_cache => reverse_proxy section is set to `http://varnish:6081` to prevent cURL SSL ERRORS.
+```
 
 ## Step Four: Implement a .vcl Into Varnish
 

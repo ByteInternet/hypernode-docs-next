@@ -13,8 +13,6 @@ redirect_from:
 
 The official Hypernode Docker image for Magento development is now available. This image can be used to set up a fast and easy local development environment for Hypernode, or as a build machine in a CI environment representative of the production environment. The image contains the exact same packages and configuration as a real Hypernode except for some Docker specific tweaks. By testing and developing against this image you can be sure that when you deploy to a Hypernode in production there will be no surprises because of different software versions or configurations.
 
-Interested in a case study? Read [this article](https://blog.guapa.nl/local-development-with-the-hypernode-docker-container-linux/) about the Hypernode docker of one of our partners!
-
 ## About the Hypernode Docker Image
 
 We build this image multiple times a day (every time we do a [release](https://changelog.hypernode.com/)) by applying our configuration management on the [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker) ["fat" container](https://blog.phusion.nl/2015/01/20/baseimage-docker-fat-containers-treating-containers-vms/). By treating the Docker as a lightweight VM instead of as a vehicle for a single process we stay close to what an actual Hypernode actually looks like. No micro-services or a multi-container application, but a single instance with minimal network overhead and all batteries included.
@@ -25,15 +23,15 @@ The `hypernode-docker` image has SSH, PHP, NGINX, MySQL, Redis, Varnish and Elas
 
 First of all download the latest version of Docker for Windows or Mac from the [Docker website](https://www.docker.com/get-started) and make sure to install Docker on your computer. If you are working with Linux you can find all the info to install Docker in their documentation [Docker Docs](https://docs.docker.com/install).
 
-Now you need to decide which \*\*[image](https://github.com/byteinternet/hypernode-docker)\*\*you need. We've several images, all with other PHP and MySQL versions. After you decided which images fits your requirements you can pull the image to your local machine and start a new Docker container. In the below example we used the image "hypernode-buster-docker-php74-mysql57". If you need another you can change that name in both commands below to the image you want to use.
+Now you need to decide which \*\*[image](https://github.com/byteinternet/hypernode-docker)\*\*you need. We've several images, all with other PHP and MySQL versions. After you decided which images fits your requirements you can pull the image to your local machine and start a new Docker container. In the below example we used the image "hypernode-bookworm-docker-php84-mysql80". If you need another you can change that name in both commands below to the image you want to use.
 
 ### Start the Docker and logging in
 
 Starting a container
 
 ```bash
-docker pull docker.hypernode.com/byteinternet/hypernode-buster-docker-php74-mysql57:latest
-docker run -p 222:22 -p 8080:80 -p 8025:8025 docker.hypernode.com/byteinternet/hypernode-buster-docker-php74-mysql57:latest
+docker pull docker.hypernode.com/byteinternet/hypernode-bookworm-docker-php84-mysql80:latest
+docker run -p 222:22 -p 8080:80 -p 8025:8025 docker.hypernode.com/byteinternet/hypernode-bookworm-docker-php84-mysql80:latest
 ```
 
 This makes the SSH, HTTP, and Mailhog ports available on the localhost. If you need any other ports (Such as 443 for HTTPS, or 2222 for sftp) available, you can insert these in the command above. In this example you should use the following command to connect to the container:
@@ -133,7 +131,7 @@ Host/IP: xxxxx-dummytag-docker.nodes.hypernode.io (172.17.0.3)
 Account_id: 666
 Release: release-5278-28-ga9d3844 @ 2018-06-05 12:56:34 UTC
 
-Handy commands (more at https://support.hypernode.com):
+Handy commands (more at https://docs.hypernode.com):
 
 livefpm (see live PHP status)
 tal | pnl (follow live requests)
@@ -211,7 +209,7 @@ Host/IP: xxxxx-dummytag-docker.nodes.hypernode.io (172.17.0.3)
 Account_id: 666
 Release: release-5278-28-ga9d3844 @ 2018-06-05 12:56:34 UTC
 
-Handy commands (more at https://support.hypernode.com):
+Handy commands (more at https://docs.hypernode.com):
 
 livefpm (see live PHP status)
 tal | pnl (follow live requests)

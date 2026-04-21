@@ -8,7 +8,8 @@ myst:
 
 # Enable alternative PHP versions
 
-Alternative PHP versions are disabled by default. Please contact our support department if you want to make use of this feature.
+Please note that this feature is only supported on Debian Bookworm and the feature is disabled by default.
+Please contact our support department if your Hypernode is not on Debian Bookworm or you want to make use of this feature.
 We will enable it for your Hypernode and you can start using it using the CLI.
 
 # How to use alternative PHP versions

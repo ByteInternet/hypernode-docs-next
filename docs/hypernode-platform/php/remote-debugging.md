@@ -52,7 +52,9 @@ If you're not using Xdebug cloud, you need to open a reverse SSH tunnel so that 
 $ ssh -R 9003:localhost:9003 app@example.hypernode.io -N
 ```
 
-### Configure PhpStorm
+### IDEs
+
+#### PhpStorm
 
 Then you open up your PhpStorm project and go to your *File -> Settings -> PHP -> Servers*. Click the *+* button to add a server and fill *Name* and *Host* with the full domain name of the site you want to debug (for example www.shop.com). Then check the box *Use path mappings* and click on the right column next to your project root. Here you can fill in the absolute path of the application on the remote server, for example:
 
@@ -72,6 +74,29 @@ Finally click the *Start Listening for PHP Debug Connections* button. Now your d
 
 ![](_res/phpstorm-listen-for-debug.png)
 
+#### Visual Studio Code
+
+If you prefer Visual Studio Code, you can use the PHP Debug extension. Create or update `.vscode/launch.json` in your project with the following configuration and adjust `pathMappings` to your remote application path:
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Listen for XDebug",
+      "type": "php",
+      "request": "launch",
+      "port": 9003,
+      "pathMappings": {
+        "/data/web/releases/1767778825": "${workspaceRoot}"
+      }
+    }
+  ]
+}
+```
+
+After saving, open the *Run and Debug* panel, choose **Listen for XDebug**, and start listening for incoming debug connections on port 9003.
+
 ### Start debugging
 
 To start debugging, make sure you have the Xdebug helper extension enabled in your browser:
@@ -87,6 +112,18 @@ JetBrains has way more knowledge and information on this topic, so we advise you
 
 - [Remote debugging via SSH tunnel](https://www.jetbrains.com/help/phpstorm/remote-debugging-via-ssh-tunnel.html)
 - [Debug with PhpStorm: Ultimate Guide](https://www.jetbrains.com/help/phpstorm/debugging-with-phpstorm-ultimate-guide.html)
+
+### Enabling Xdebug for the CLI
+
+After enabling Xdebug, the CLI will not load the module by default.
+To load it, you can set the `PHP_INI_SCAN_DIR` environment variable to the specific Xdebug-enable config directory:
+
+```console
+app@abcdef-example-magweb-cmbl:~$ export PHP_VERSION=$(jq -r .php_version /etc/hypernode/app.json)
+app@abcdef-example-magweb-cmbl:~$ export PHP_INI_SCAN_DIR=/etc/php-debug/$PHP_VERSION/cli/conf.d/
+app@abcdef-example-magweb-cmbl:~$ php -m | grep xdebug
+xdebug
+```
 
 ## Varnish bypass
 

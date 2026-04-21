@@ -12,7 +12,7 @@ This article will explain how to install Laravel on your Hypernode. Laravel is a
 
 ## Upgrade your PHP version
 
-Laravel only has a few system requirements. One of which, is that PHP needs to be at least 8.1. Run the following command to upgrade to PHP 8.1:
+Laravel only has a few system requirements. One of which, is that PHP needs to be at least 8.2. Run the following command to upgrade to PHP 8.2:
 
 ```console
 app@abcdef-example-magweb-cmbl:~$ hypernode-systemctl settings php_version 8.2

@@ -12,7 +12,6 @@ article: https://support.hypernode.com/en/about/billing/how-to-up-or-downgrade-y
 article: https://support.hypernode.com/en/about/billing/migration-faq/
 article: https://support.hypernode.com/en/about/billing/our-payment-service-provider/
 article: https://support.hypernode.com/en/about/billing/supported-payment-methods-in-the-control-panel/
-article: https://support.hypernode.com/en/about/security/hall-of-fame/
 article: https://support.hypernode.com/en/about/security/hypernode-security-statement/
 article: https://support.hypernode.com/en/about/security/one-of-your-magento-extensions-is-vulnerable/
 article: https://support.hypernode.com/en/about/security/responsible-disclosure-policy/
@@ -51,7 +50,6 @@ article: https://support.hypernode.com/en/best-practices/security/how-to-install
 article: https://support.hypernode.com/en/best-practices/security/how-to-install-magento-patch-supee-8788-and-release-1-9-3/
 article: https://support.hypernode.com/en/best-practices/security/how-to-protect-magento-against-brute-force-attacks/
 article: https://support.hypernode.com/en/best-practices/security/how-to-recover-a-hacked-magento-shop/
-article: https://support.hypernode.com/en/best-practices/security/how-to-scan-your-hypernode-for-malware/
 article: https://support.hypernode.com/en/best-practices/security/how-to-secure-magento-cacheleak/
 article: https://support.hypernode.com/en/best-practices/security/how-to-use-a-cloud-firewall-on-hypernode/
 article: https://support.hypernode.com/en/best-practices/security/what-you-need-to-know-about-the-visbot-malware/
@@ -204,7 +202,6 @@ article: https://support.hypernode.com/en/support/solutions/articles/48000970831
 article: https://support.hypernode.com/en/support/solutions/articles/48000982378-how-to-flush-the-varnish-cache/
 article: https://support.hypernode.com/en/support/solutions/articles/48001153093-dns-for-service-panel-users/
 article: https://support.hypernode.com/en/support/solutions/articles/48001153348-how-to-secure-your-data-using-encryption-and-hashing/
-article: https://support.hypernode.com/en/support/solutions/articles/48001154919-how-to-use-the-mysql-slow-queries-in-the-control-panel/
 article: https://support.hypernode.com/en/support/solutions/articles/48001155575-how-to-change-your-hypernode-settings/
 article: https://support.hypernode.com/en/support/solutions/articles/48001158433-how-hypernode-protects-your-magento-shop/
 article: https://support.hypernode.com/en/support/solutions/articles/48001163357-how-to-block-bad-bots-via-the-service-panel/

@@ -1,21 +1,15 @@
 # GitHub Actions
 
-## Configuring deployment environments
+```{note}
+This guide assumes you have already configured Hypernode Deploy with a `deploy.php` file in your project root. If you haven't set this up yet, please follow the [installation and configuration guide](../getting-started/install-and-configure-hypernode-deploy.md) first.
+```
 
-To start using GitHub Actions, we need to prepare the environments we want to deploy to.
-
-For example, these environments can be:
-
-- production
-- acceptance (or staging)
-- test
-
-### Configuring the production environment
+## Configuring SSH authentication
 
 Hypernode Deploy will need a pair of SSH keys for authentication to the server.
 
-First, we generate an SSH keypair on the production server, copy the public key to the `~/.ssh/authorized_keys` file
-and encode the private key with base64. We'll use this base64-encoded private key later on.
+First, we generate an SSH keypair on one of your servers (e.g., production), copy the public key to the `~/.ssh/authorized_keys` file
+on all servers you want to deploy to, and encode the private key with base64. We'll use this base64-encoded private key later on.
 
 ```console
 app@abc-example-magweb-cmbl:~$ ssh-keygen -t ed25519 -C gh-actions-deploy -f gh-actions-deploy -q -P ""
@@ -24,18 +18,16 @@ app@abc-example-magweb-cmbl:~$ cat gh-actions-deploy | base64 -w0  # encode the 
 LS0tLS1CRUdJTiBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjNCbGJuTnphQzFyWlhrdGRqRUFBQUFBQkc1dmJtV...
 ```
 
-Now go to your GitHub project and go to **Settings -> Environments**.
+```{note}
+If you have multiple environments (production, acceptance, staging), make sure to add the public key to each server through the Control Panel.
+```
 
-1. Create a new environment called `production`, if it doesn't exist yet.
-1. Click the `production` environment and click `Add secret`.
+Now go to your GitHub project and go to **Settings -> Secrets and variables -> Actions**.
+
+1. Click **New repository secret**.
 1. Set the **Name** to `SSH_PRIVATE_KEY`.
 1. Set the **Value** to the base64-encoded private key we generated earlier.
 1. Click **Add secret**.
-
-### Configuring the acceptance environment
-
-If you have an acceptance (or staging) environment, repeat the same steps for the production environment, but now for
-your acceptance environment, with the GitHub environment name `acceptance`.
 
 ## Build
 
@@ -57,19 +49,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: quay.io/hypernode/deploy:3-php8.1-node18
+    # See https://quay.io/repository/hypernode/deploy?tab=tags for all possible tags.
+    container: quay.io/hypernode/deploy:latest-php8.4-node22
     steps:
     - uses: actions/checkout@v3
     - uses: actions/cache@v3
       with:
         path: /tmp/composer-cache
         key: ${{ runner.os }}-composer
-    - uses: webfactory/ssh-agent@v0.7.0
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+    - run: mkdir -p $HOME/.ssh
     - run: hypernode-deploy build -vvv
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        DEPLOY_COMPOSER_AUTH: ${{ secrets.DEPLOY_COMPOSER_AUTH }}
     - name: archive production artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: deployment-build
         path: build/build.tgz
@@ -78,11 +72,11 @@ jobs:
 
 ````{note}
 Don't forget to set the specifications of the image to what your project needs. The same goes for the deploy steps.
-For example, if your project needs PHP 7.4 and Node.js 16, set the image to:
+For example, if your project needs PHP 8.4 and Node.js 22, set the image to:
 ```yaml
 jobs:
   build:
-    container: quay.io/hypernode/deploy:3-php7.4-node16
+    container: quay.io/hypernode/deploy:latest-php8.4-node22
     ...
 ```
 ````
@@ -97,11 +91,13 @@ name: Deploy application to production
 on:
   push:
     branches:
-      - 'master'  # production branch
+      - 'master'
+      - 'main'
 
 jobs:
   build:
     uses: ./.github/workflows/build.yml
+    secrets: inherit
 
   deploy:
     needs: build
@@ -112,11 +108,11 @@ jobs:
     environment:
       name: production
       url: https://www.example.com
-    container: quay.io/hypernode/deploy:3-php8.1-node18
+    container: quay.io/hypernode/deploy:latest-php8.4-node22
     steps:
     - uses: actions/checkout@v3
     - name: download build artifact
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: deployment-build
         path: build/
@@ -124,11 +120,10 @@ jobs:
       with:
         path: /tmp/composer-cache
         key: ${{ runner.os }}-composer
-    - uses: webfactory/ssh-agent@v0.7.0
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
     - run: mkdir -p $HOME/.ssh
     - run: hypernode-deploy deploy production -vvv  # Deploy production stage defined in deploy.php
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 ```
 
 ## Deploy to acceptance
@@ -146,6 +141,7 @@ on:
 jobs:
   build:
     uses: ./.github/workflows/build.yml
+    secrets: inherit
 
   deploy:
     needs: build
@@ -156,11 +152,11 @@ jobs:
     environment:
       name: acceptance
       url: https://acceptance.example.com
-    container: quay.io/hypernode/deploy:3-php8.1-node18
+    container: quay.io/hypernode/deploy:latest-php8.4-node22
     steps:
     - uses: actions/checkout@v3
     - name: download build artifact
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: deployment-build
         path: build/
@@ -168,9 +164,14 @@ jobs:
       with:
         path: /tmp/composer-cache
         key: ${{ runner.os }}-composer
-    - uses: webfactory/ssh-agent@v0.7.0
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
     - run: mkdir -p $HOME/.ssh
     - run: hypernode-deploy deploy acceptance -vvv  # Deploy acceptance/staging stage defined in deploy.php
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 ```
+
+## Next steps
+
+After you've added these files, commit your changes and make sure the changes are newly present on the branches configured in your pipeline files. By default, these branches are `master` (or `main`) and `acceptance`.
+
+Once pushed, you will see a GitHub Action automatically run in your repository's "Actions" tab.

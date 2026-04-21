@@ -22,7 +22,7 @@ This can include creditcard theft, sending email spam in your name, stealing cus
 
 ## Special attention to online credit card theft
 
-A hot topic over the past few years are digital skimmers. A hacker group (also know as Magecart) use code inserted into websites to steal credit card details. As of October 2018 more than 20 extensions have been abused by hackers. Details can be found[in this blog explaining the attack method PHP Object Injection (POI)](https://sansec.io/labs/2018/10/23/magecart-extension-0days/). Former Hypernode owner Willem will update the list of vulnerable extensions regularly.
+A hot topic over the past few years are digital skimmers. A hacker group (also know as Magecart) use code inserted into websites to steal credit card details. As of October 2018 more than 20 extensions have been abused by hackers. Details can be found [in this blog explaining the attack method PHP Object Injection (POI)](https://sansec.io/labs/2018/10/23/magecart-extension-0days/). Former Hypernode owner Willem will update the list of vulnerable extensions regularly.
 
 ## How do I fix it?
 

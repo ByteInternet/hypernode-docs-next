@@ -1,5 +1,9 @@
 # Gitlab CI
 
+```{note}
+This guide assumes you have already configured Hypernode Deploy with a `deploy.php` file in your project root. If you haven't set this up yet, please follow the [installation and configuration guide](../getting-started/install-and-configure-hypernode-deploy.md) first.
+```
+
 ## Configuring deployment environments
 
 To start using Gitlab CI, we need to prepare the environments we want to deploy to.
@@ -49,7 +53,7 @@ This sets the container image, defines the CI/CD stages and defines the build st
 
 ```yaml
 # See https://quay.io/repository/hypernode/deploy?tab=tags for all possible tags.
-image: quay.io/hypernode/deploy:3-php8.1-node18
+image: quay.io/hypernode/deploy:latest-php8.4-node22
 
 stages:
   - build
@@ -70,9 +74,9 @@ build:
 
 ````{note}
 Don't forget to set the specifications of the image to what your project needs.
-For example, if your project needs PHP 7.4 and Node.js 16, set the image to:
+For example, if your project needs PHP 8.4 and Node.js 16, set the image to:
 ```yaml
-image: quay.io/hypernode/deploy:3-php7.4-node16
+image: quay.io/hypernode/deploy:latest-php8.4-node16
 ```
 ````
 
@@ -109,3 +113,9 @@ deploy_acceptance:
     name: acceptance
     url: https://acceptance.example.com
 ```
+
+## Next steps
+
+After you've added these files, commit your changes and make sure the changes are newly present on the branches configured in your pipeline files. By default, these branches are `master` (or `main`) and `acceptance`.
+
+Once pushed, you will see a Pipeline automatically run in your repository's "Build" -> "Pipelines" or "CI/CD" -> "Pipelines" tab.

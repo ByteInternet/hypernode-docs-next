@@ -91,7 +91,7 @@ magerun --root-dir=/data/web/staging config:set web/secure/base_url https://$SHO
 magerun --root-dir=/data/web/staging cache:flush
 ```
 
-If you have many storefronts, that all should be changed it's easier to use [our script](https://gist.github.com/hn-support/faf03c5898f5553b7fd9f4059709aef4)to change the base URL's of your staging environment.
+If you have many storefronts, that all should be changed it's easier to use [our script](https://gist.github.com/hn-support/faf03c5898f5553b7fd9f4059709aef4) to change the base URL's of your staging environment.
 
 To use this script:
 

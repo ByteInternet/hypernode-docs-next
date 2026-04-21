@@ -83,4 +83,4 @@ Jazeker, het mail adres die je bij **Billing & Shipping Addresses**gebruiken wij
 
 ## Wat als ik verder nog vragen heb?
 
-Zet je vraag graag op de mail naar [billling@hypernode.com](mailto:billling@hypernode.com), je kunt ons ook telefonisch benaderen voor vraagstukken maar gezien vragen over facturatie nog best vaak wat uitzoekwerk vergt nemen we liever graag de tijd om hier goed in te duiken, en dit gaat simpelweg makkelijker via e-mail. Je kunt in meeste gevallen verwachten dat wij binnen 1 werkdag reageren.
+Zet je vraag graag op de mail naar [billing@hypernode.com](mailto:billing@hypernode.com), je kunt ons ook telefonisch benaderen voor vraagstukken maar gezien vragen over facturatie nog best vaak wat uitzoekwerk vergt nemen we liever graag de tijd om hier goed in te duiken, en dit gaat simpelweg makkelijker via e-mail. Je kunt in meeste gevallen verwachten dat wij binnen 1 werkdag reageren.

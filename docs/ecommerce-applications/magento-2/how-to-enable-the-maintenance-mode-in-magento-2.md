@@ -60,7 +60,7 @@ n98-magerun2 sys:maintenance --off
 
 ### Additional Information
 
-For additional information, take a look at the [Magento 2 documentation about enabling the maintenance mode.](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-subcommands-maint.html)
+For additional information, see the Magento 2 documentation on maintenance mode (bin/magento maintenance) on Experience League.
 
 ## Serve a Custom Error Message When in Maintenance Mode
 

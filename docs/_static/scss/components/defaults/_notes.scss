@@ -1,0 +1,71 @@
+
+/*notes (admonition notes)*/
+.rst-content {
+    .note,
+    .attention,
+    .caution,
+    .danger,
+    .error,
+    .hint,
+    .important,
+    .tip,
+    .warning {
+        padding: 25px 20px 20px 40px;
+        margin: 20px 0;
+        border-radius: 4px;
+
+        .admonition-title {
+            background: transparent;
+            font-size: 16px;
+        }
+
+        p,
+        a {
+            font-size: 13px;
+        }
+    }
+
+    .note {
+        background: var(--message-info-bg);
+        p {
+            color: var(--message-info-text);
+        }
+        .admonition-title {
+            color: var(--message-info-text);
+        }
+    }
+    .attention,
+    .caution,
+    .warning,
+    .important {
+        background: var(--message-warning-bg);
+        p {
+            color: var(--message-warning-text);
+        }
+        .admonition-title {
+            color: var(--message-warning-text);
+        }
+    }
+    .danger,
+    .error {
+        background: var(--message-danger-bg);
+        p {
+            color: var(--message-danger-text);
+        }
+        .admonition-title {
+            color: var(--message-danger-text);
+        }
+    }
+    .hint,
+    .tip {
+        background: var(--message-success-bg);
+        p {
+            color: var(--message-success-text);
+        }
+        .admonition-title {
+            color: var(--message-success-text);
+        }
+    }
+}
+
+/* notes (admonition notes) end */

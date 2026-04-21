@@ -36,7 +36,7 @@ To check if your DNS records have been configured correctly, please check our on
 - The second and third records are needed for automatic DKIM signing and DMARC
 - The fourth record is the SPF record. Please make sure you include spf.***example***.hypernode.io in your DNS's SPF record.
 
-Please check our [DNS validato](https://my.hypernode.com/dns/check/)r to confirm email can be sent successfully.
+Please check our [DNS validator](https://my.hypernode.com/dns/check/) to confirm email can be sent successfully.
 
 ## Additional audit options
 

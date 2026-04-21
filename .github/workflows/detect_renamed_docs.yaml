@@ -20,7 +20,7 @@ jobs:
           echo "$result" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
         shell: bash
-      - name: Comment hostname on PR
+      - name: Comment changed files on PR
         if: ${{ steps.changed_files.outputs.CHANGED_FILES }}
         uses: thollander/actions-comment-pull-request@v1
         with:

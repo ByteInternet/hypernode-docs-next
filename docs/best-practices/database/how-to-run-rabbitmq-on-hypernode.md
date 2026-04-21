@@ -55,32 +55,43 @@ You can run this command to restart RabbitMQ:
 hypernode-servicectl restart rabbitmq-server
 ```
 
-## Accessing RabbitMQ
+## Accessing the RabbitMQ admin interface
 
 - RabbitMQ only binds on localhost
 - The default admin account is username `guest` and password `guest`. You can change and add users via the admin interface.
 - You can access the admin interface e.g. by forwarding the tcp port via SSH:
 
-`ssh app@appname.hypernode.io -L 55672:localhost:15672`
+```bash
+ssh app@appname.hypernode.io -L 55672:localhost:15672
+```
 
 Use your browser to go to `localhost:55672` and logon using guest/guest.
 
 Another way to access the admin interface is via [hypernode-vpn](https://changelog.hypernode.com/changelog/release-6064-rabbitmq-can-be-accessed-via-the-hypernode-vpn/)
 
-## RabbitMQ and Magento
+## Creating RabbitMQ users
 
-You need to make some changes in Magento in order to use RabbitMQ. For example in `/data/web/magento2/app/etc/env.php`:
+You can also create your own RabbitMQ users. This can be done by in the RabbitMQ admin interface, as follows:
 
-```php
-'queue' =>
-        array (
-            'amqp' =>
-                array (
-                    'host' => 'localhost',
-                    'port' => '5672',
-                    'user' => 'guest',
-                    'password' => 'guest',
-                    'virtualhost' => '/',
-                ),
-        ),
+1. Go to the RabbitMQ admin interface
+1. Click on the `Admin` tab
+1. Click on `Add a user`
+1. Fill in the username and password
+1. Click on `Add user`
+1. Click on the user you just created
+1. Click on `Set permission`
+
+## RabbitMQ and Magento 2
+
+To configure RabbitMQ in Magento 2, you can run the following command:
+
+```bash
+bin/magento setup:config:set \
+    --amqp-host="rabbitmq" \
+    --amqp-port="5672" \
+    --amqp-user="guest" \
+    --amqp-password="guest" \
+    --amqp-virtualhost="/"
 ```
+
+Note: Hypernode provisions a non-default user called `hypernode-admin` but you are free to create new users.

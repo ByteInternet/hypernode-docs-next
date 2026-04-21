@@ -85,7 +85,7 @@ Create a `/data/web/nginx/server.wordpress` with the following content:
 location /blog {
     root /data/web/public;
     index index.php;
-    try_files $uri $uri/ /blog/index.php;
+    try_files $uri $uri/ /blog/index.php$is_args$args;
 
     location ~ \.php$ {
         echo_exec @phpfpm;
@@ -103,6 +103,6 @@ After installing and configuring Nginx, you can visit your WordPress at `/blog/`
 
 ## Multisite
 
-It is possible to set up a multisite environment in WordPress. To do this, refer to the [original WordPress documentation about creating multisites](https://codex.wordpress.org/Create_A_Network)and the article [about configuring WordPress on Nginx](https://wordpress.org/support/article/nginx/).
+It is possible to set up a multisite environment in WordPress. To do this, refer to the [original WordPress documentation about creating multisites](https://codex.wordpress.org/Create_A_Network) and the article [about configuring WordPress on Nginx](https://wordpress.org/support/article/nginx/).
 
 *Please note that it won’t work in all cases due to the fact that certain Nginx configurations cannot be changed. At the moment we are still looking into a solution that will work for everyone.*

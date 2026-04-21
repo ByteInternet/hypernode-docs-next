@@ -5,6 +5,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 import os
 import sys
+from datetime import datetime
 
 # -- Path setup --------------------------------------------------------------
 
@@ -20,12 +21,14 @@ sys.path.append(os.path.abspath("../"))
 
 # -- Project information -----------------------------------------------------
 
-project = "Docs"
-copyright = "2023, Hypernode"
+project = "Documentation"
+html_title = "Hypernode Documentation"
+current_year = datetime.now().year
+copyright = f"{current_year}, Hypernode"
 author = "Hypernode"
 
 # The full version, including alpha/beta/rc tags
-release = "dev"
+release = "latest"
 
 
 # -- General configuration ---------------------------------------------------
@@ -46,7 +49,7 @@ extensions = [
     "hypernode.sphinx.extensions.updated_at",
     "hypernode.sphinx.extensions.meta_robots",
     "hypernode.sphinx.extensions.github_actions_logging",
-    "sphinxcontrib.mermaid",
+    "sphinx_docsearch",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -112,6 +115,10 @@ highlight_options = {
     "php": {"startinline": True},  # We often have php snippets without the <?php tag
 }
 
-notfound_no_urls_prefix = True
+notfound_urls_prefix = None
 
 myst_heading_anchors = 5
+
+docsearch_app_id = "ML4HHD5658"
+docsearch_api_key = "03f6d3f4f55562ca202f03baeb04b350"  # Public Search API Key
+docsearch_index_name = "hypernode"

@@ -21,6 +21,39 @@ This article will explain how you can use PHPMyAdmin and how to create a databas
 
 PHPMyAdmin comes preinstalled on your Hypernode at <http://example.hypernode.io/phpmyadmin/>. In order to reduce brute force attacks, it is not accessible via any other domains names linked to your Hypernode.
 
+### Enabling PHPMyAdmin
+
+By default, PHPMyAdmin is disabled. You can enable it by:
+
+1. Enabling the PHPMyAdmin feature
+1. Adding an allowlist entry
+
+This can be done in both the Control Panel and the CLI.
+
+#### Enabling PHPMyAdmin in the Control Panel
+
+To enable PHPMyAdmin in the Control Panel, go to [the Control Panel](https://my.hypernode.com) and follow the steps below:
+
+1. Go to Settings and open the Security tab.
+1. Enable the **Enable PHPMyAdmin** option.
+1. Click **Save changes**.
+1. Go to **Allowlist**.
+1. Choose **phpmyadmin** as rule type.
+1. Enter an IP address.
+1. Enter a description.
+1. Click **Add allowlist rule**.
+
+It takes a few minutes for the changes to be applied.
+
+#### Enabling PHPMyAdmin in the CLI
+
+To enable PHPMyAdmin in the CLI, log in to your Hypernode over SSH and run the following commands:
+
+```console
+app@abcdef-example-magweb-cmbl:~$ hypernode-systemctl settings phpmyadmin_enabled True
+app@abcdef-example-magweb-cmbl:~$ hypernode-systemctl whitelist add phpmyadmin 1.2.3.4 --description 'Example entry'
+```
+
 ### Credentials
 
 PHPMyAdmin uses the same user and password your database uses. You can find them safely stored on your hypernode in `/data/web/.my.cnf`.

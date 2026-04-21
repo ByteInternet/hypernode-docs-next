@@ -55,7 +55,7 @@ GET /clothing/pants.html?color=1181_1188_1500 HTTP/1.1 Mozilla/5.0 (compatible; 
 It is clear that the “size” and “color” parameters are used for layered navigation, because they define subsets of your catalogue. For normal indexing, you only want /clothing.html and /clothing/pants.html indexed. To block bots in this case, you should add this to `/data/web/nginx/server.layered_navigation:`
 
 ```nginx
-if ($http_user_agent ~* 'http|bot|crawl|spider') {
+if ($http_user_agent ~* 'http|bot|crawl|spider|GoogleOther') {
     set $is_bot 1;
 }
 # Here, you should define the layered navigation urls.

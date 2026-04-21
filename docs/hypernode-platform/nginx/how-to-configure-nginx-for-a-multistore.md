@@ -36,10 +36,18 @@ When you opt for using different domains for each storefront then it will be rel
 set $storecode "example_storecode";
 ```
 
-```{note}
-If you have a multistore, with hypernode-manage-vhost enabled AND you are using Varnish.
-You'd have to prefix the file with `varnish` instead of `server`, like `varnish.storecode`.
-This way these multistore requests will go through varnish and will then be rewritten accordingly with the `varnish.storecode` configuration.
+```{important}
+If you have a multistore with `hypernode-manage-vhost` enabled **and** you are using Varnish, you need to prefix the file with `varnish` instead of `server`, like `varnish.storecode`. This way multistore requests will go through Varnish and be rewritten accordingly using the `varnish.storecode` configuration.
+
+This does **not** apply if your Hypernode is running behind a load balancer (e.g. a cluster setup). In that case, you should keep using `server.storecode` instead.
+```
+
+### Use a different Store Type
+
+Magento uses a default store type of `store`, you can change this to `website` too if this better fits your need, more information about this can be found on `MAGE_RUN_TYPE` in [the Magento 2 official documentation](https://experienceleague.adobe.com/en/docs/commerce-operations/configuration-guide/multi-sites/ms-overview).
+
+```nginx
+set $storetype "store";
 ```
 
 ### Using Subdirectories

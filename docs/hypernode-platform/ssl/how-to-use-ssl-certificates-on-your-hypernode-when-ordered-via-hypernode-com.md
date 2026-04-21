@@ -33,7 +33,7 @@ We recommend you to purchase an SSL certificate via Hypernode, because then youâ
 You can only order an SSL certificate if you have a Hypernode in your account for which you have the owner and/or admin role.
 
 1. In the Hypernode Control Panel, select SSL from the menu on the left.
-1. Click the orange**Add SSL** button on the right hand side.
+1. Click the orange **Add SSL** button on the right hand side.
 1. Click **+Add managed SSL** **certificate**.
 1. Fill in your domain name.
 1. Choose the type of SSL certificate.

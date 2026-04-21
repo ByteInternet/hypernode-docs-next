@@ -23,7 +23,7 @@ Thanks to Hypernode’s very cool **Dedicated IP**feature, the IP address of you
 
 There are three exceptions in which you cannot benefit from a dedicated IP and which may have an impact on how you would like to manage your DNS:
 
-1. A change of cloud provider – also when switching between Falcon (formerly known as Professional), Pelican, and Eagle (Formerly known as Excellence) plans – will trigger an IP change
+1. A change of cloud provider – also when switching between Falcon and Eagle plans – will trigger an IP change
 1. The IP address will also change if you request your node to be booted in a different region (data center).
 1. In extreme emergency situations (like fire or longtime power outages), we might need to migrate your Hypernode to another data center. Luckily these chances are very low.
 
@@ -57,7 +57,7 @@ Syncing a domain to your Hypernode will immediately change the domain's DNS reco
 
 #### The steps:
 
-1. [Log in to your Control Panel](https://my.hypernode.com/)with your customer email and password and select "domains."
+1. [Log in to your Control Panel](https://my.hypernode.com/) with your customer email and password and select "domains."
 1. Here you will find a list of your domain names.
 1. Click on your domain name.
 1. In your next view, you can **link**\* the domain to your Hypernode.
@@ -129,19 +129,7 @@ Don’t fancy these solutions? Migrate your domain to Hypernode and let us manag
 
 ## DNS and Hypernode Managed Vhosts
 
-The Hypernode Managed Vhosts (HMV) system is currently enabled by default on all newly booted Hypernodes (all Hypernodes created after 01-05-2020).
-
-Check if you have HMV enabled by running this command:
-
-`hypernode-systemctl settings managed_vhosts_enabled`
-
-If so, it will give the following output:
-
-`managed_vhosts_enabled is set to value True`
-
-If this isn't enabled, you can just skip the part below.
-
-Due to this configuration, it is required to add a new vhost for every domain you want to link to your Hypernode. So you need to configure your DNS correctly and add a new vhost for the domain.
+With Hypernode Managed Vhosts (HMV), you must add a new vhost for every domain you want to link to your Hypernode. So you need to configure your DNS correctly and add a new vhost for the domain.
 
 To add a new vhost, for example the domain name `www.example.com`, to your configuration, you can run the command `hypernode-manage-vhosts www.example.com`. This will create a new vhost configuration in `/data/web/nginx/www.example.com/`, using the Magento 2 template.
 

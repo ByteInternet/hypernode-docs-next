@@ -20,7 +20,7 @@ Enthusiastic about Hypernode? Convert your trial into a paid hosting plan. You c
 
 With your free trial you have 14 days to test your shops’ performance on Hypernode. After 2 weeks your trial will expire automatically, unless you decide to convert your trial into a paid hosting plan.
 
-The specs of your trial are: 62GB storage, 3 CPU, 8GB RAM, 1024MB Redis cache, PHP 7.4.
+The specs of your trial are: 57GB storage, 2 CPU, 4GB RAM, 1024MB Redis cache, PHP 8.3.
 
 ## Your Control Panel
 
@@ -70,18 +70,6 @@ In our support documentation you will find detailed information about installing
 - [Shopware 6](../../ecommerce-applications/shopware-6/how-to-install-shopware-6-on-hypernode.md)
 
 ### Step 4 – Set up Hypernode Managed Vhosts
-
-The Hypernode Managed Vhosts (HMV) system is currently enabled by default on all new booted Hypernodes (all Hypernodes created after 01-05-2020).
-
-Check if you have HMV enabled by running this command:
-
-`hypernode-systemctl settings managed_vhosts_enabled`
-
-If so, it will give the following output:
-
-`managed_vhosts_enabled is set to value True`
-
-If this is not enabled, skip the part below.
 
 Due to this configuration it is required to add a new vhost for every domain you want to link to your Hypernode. So you need to configure your DNS correctly and add a new vhost for the domain.
 
@@ -139,6 +127,6 @@ Convinced about Hypernode? [Convert your trial into a paid hosting plan](../../a
 
 ## In Need of Support?
 
-We encourage you to have a look at our extensive Hypernode support documentation on [support.hypernode.com](../../index.md). Here you will find useful information and tips and tricks on e.g. how to import a shop to Hypernode, recommended tools for developers, etc.
+We encourage you to have a look at our extensive Hypernode support documentation on [docs.hypernode.com](../../index.md). Here you will find useful information and tips and tricks on e.g. how to import a shop to Hypernode, recommended tools for developers, etc.
 
 Do you have questions about our Hypernode platform or would you like to give us some feedback? We would love to hear from you! Please send an email to [support@hypernode.com](mailto:support@hypernode.com) and we will get back to you. Our sales team and support team are available on weekdays from 8:00 AM until 18:00 PM CET/CEST (UTC+1/UTC+2).

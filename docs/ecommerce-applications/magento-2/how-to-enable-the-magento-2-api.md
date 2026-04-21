@@ -13,7 +13,7 @@ redirect_from:
 
 # How to Enable the Magento 2 API
 
-To enable the Magento API, first [**create the correct users**](https://www.yireo.com/tutorials/magebridge/administration/596-step-by-step-create-a-magento-api-user).
+To enable the Magento API, first create the correct users.
 
 The Magento API is supposed to work out-of-the box on Hypernodes, but due to clean-url-rewrites sometimes the API does not work and returns a 404 error.
 To resolve this issue, some additional configuration is required.

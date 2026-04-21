@@ -118,5 +118,4 @@ Disallow: /
 ## Additional resources
 
 - <https://developers.google.com/s/results?q=control-crawl>
-- <https://support.google.com/webmasters/answer/6062596?hl=en>
 - <http://www.robotstxt.org/>

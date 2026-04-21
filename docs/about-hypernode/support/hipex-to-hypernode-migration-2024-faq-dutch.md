@@ -49,4 +49,4 @@ We hanteren dezelfde prijzen als bij Hipex, tenzij er andere afspraken zijn gema
 
 ## Wat als ik verder nog vragen heb?
 
-Zet je vraag graag op de mail naar [billling@hypernode.com](mailto:onboarding@hypernode.com), je kunt ons ook telefonisch benaderen voor vraagstukken maar gezien vragen over de migraties nog best vaak wat uitzoekwerk vergt nemen we liever graag de tijd om hier goed in te duiken, en dit gaat simpelweg makkelijker via e-mail. Je kunt in meeste gevallen verwachten dat wij binnen vier uur reageren.
+Zet je vraag graag op de mail naar [billing@hypernode.com](mailto:billing@hypernode.com), je kunt ons ook telefonisch benaderen voor vraagstukken maar gezien vragen over de migraties nog best vaak wat uitzoekwerk vergt nemen we liever graag de tijd om hier goed in te duiken, en dit gaat simpelweg makkelijker via e-mail. Je kunt in meeste gevallen verwachten dat wij binnen vier uur reageren.

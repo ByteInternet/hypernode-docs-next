@@ -1,4 +1,4 @@
-hndocsnext (20240607.131443) UNRELEASED; urgency=medium
+hndocsnext (20250819.101155) UNRELEASED; urgency=medium
 
   [ Rick van de Loo ]
   * Initial packaging
@@ -623,4 +623,478 @@ hndocsnext (20240607.131443) UNRELEASED; urgency=medium
   [ Timon de Groot ]
   * Fix formatting for how-to-use-alternative-php-versions.md
 
- -- Hypernode team <hypernode@byte.nl>  Fri, 07 Jun 2024 13:14:56 +0000
+  [ Marvin Sanders ]
+  * Added some wordpress and Wocommerce docs
+  * Small fixed for md formatted
+
+  [ Rick van de Loo ]
+  * format wordpress and woocommerce docs
+
+  [ Niuta Godlewska ]
+  * updating screenshots and cancelling via CP not chargebee
+
+  [ Rolf van de Bovenkamp ]
+  *  Change old Hipex phone number to Hypernode
+
+  [ Niuta Godlewska ]
+  * correcting the other cancellation doc
+
+  [ dominik.matic ]
+  * fixed some sentences in hypernode-managed-vhosts.md
+  * fixed what Martijn pointed out and some more other ones I noticed too
+
+  [ Karel Louwagie ]
+  * Updates curl command to set 0 ES replicas
+
+  [ Cipriano Groenendal ]
+  * Update hypernode-security-statement.md
+
+  [ Niuta Godlewska ]
+  * adding section about undo cancellation
+  * mdformat
+  * removing changing and cancelling plan from billing doc
+
+  [ Karel Louwagie ]
+  * Updates for newer magento2 varnish versions
+
+  [ Cipriano Groenendal ]
+  * Update Backup Policy
+  * Fix myst warning
+  * Fix markup
+
+  [ Niuta Godlewska ]
+  * correcting doc for creating, deleting and managing teams
+
+  [ Rolf van de Bovenkamp ]
+  * Update hypernode-backup-policy.md
+
+  [ Karel Louwagie ]
+  * Removes doc for a feature that no longer exists
+
+  [ Timon de Groot ]
+  * docs: Fix formatting
+
+  [ Jonathan Kamphuis ]
+  * Update how-to-scan-your-hypernode-for-malware.md
+
+  [ ikidnapmyself ]
+  * update CLI commands to fix outdated Mag2 version
+  * delete specific version from repository URL and use the latest
+
+  [ Demian Delwig ]
+  * Remove line This limit is set at 30 workers per IP
+
+  [ dominik.matic ]
+  * fix email address in docs (billling)
+
+  [ Akif Gumussu ]
+  * Update how-to-use-alternative-php-versions.md
+
+  [ martijneichelsheim ]
+  * Revert "Update how-to-use-alternative-php-versions.md"
+
+  [ Cipriano Groenendal ]
+  * Fix typo
+
+  [ Jonathan ]
+  * New page. (Document provided by Rene)
+
+  [ Martijn ]
+  * Alternative php versions only available on debian bookworm
+
+  [ Jonathan ]
+  * Styling update
+  * Adding newline at eof
+
+  [ Timon de Groot ]
+  * docs/cluster: Add documentation on loadbalancer setup
+  * ext/updated_at: Replace Zulu time marker at end of datetime string
+
+  [ Hritik Kothari ]
+  * Make copyright dynamic in docs
+
+  [ Timon de Groot ]
+  * docs: platform/php: Update supported php versions doc
+  * docs: applications/akeneo: Remove reference to OpenSearch 2.x
+  * Update supported-php-versions-and-how-to-change-them-on-hypernode.md
+  * docs/magento2: Update Varnish documentation
+
+  [ Jonathan Visser ]
+  * docs: hypernode-deploy: Add hypernode-deploy documentation for Bitbucket pipelines
+  * docs: hypernode-deploy: Clarify parameters to be base64 encoded
+  * docs: hypernode-deploy: Fix linting
+  * docs: hypernode-deploy: Add docs about using Bitbucket repository SSH keys
+
+  [ Marvin Sanders ]
+  * remove the redirect_from
+  * Change some things on suggestion
+
+  [ Jonathan Visser ]
+  * Add start of documentation for Magento 2 application
+
+  [ Marvin Sanders ]
+  * more suggestions added and `/dev/null` change to `/usr/bin/chronic`
+
+  [ Jonathan Visser ]
+  * Add definining custom steps to the hypernode deploy magento 2 docs
+
+  [ Martijn ]
+  * feat: add hor autoscale docs
+
+  [ Jonathan Visser ]
+  * Add hypernode docs for NextJS example
+
+  [ Martijn ]
+  * add Redirect_from
+
+  [ Jonathan Visser ]
+  * Fix markdown linting
+
+  [ Martijn ]
+  * Mdformat
+
+  [ Jonathan Visser ]
+  * Rename article title to NextJS
+
+  [ Martijn ]
+  * Mdformat
+
+  [ Hritik Kothari ]
+  * Some typo fixing, paraphrasing, etc in the doc
+  * run mdformat fix
+
+  [ Martijn ]
+  * rename rabbitmq host magento2 to rabbitmqmaster
+
+  [ Jonathan Visser ]
+  * Remove unused node:env step from NestJS configuration
+
+  [ Hritik Kothari ]
+  * Split checks into hypernode and application specific
+  * Update docs/hypernode-platform/autoscaling/how-does-horizontal-autoscaling-work.md
+  * Update docs/hypernode-platform/autoscaling/how-does-horizontal-autoscaling-work.md
+  * Update docs/hypernode-platform/autoscaling/how-does-horizontal-autoscaling-work.md
+  * Update docs/hypernode-platform/autoscaling/how-does-horizontal-autoscaling-work.md
+  * add remote storage link and mention non-default rabbitmq user
+
+  [ Jonathan Visser ]
+  * Add new line to fix formatting issues
+
+  [ Hritik Kothari ]
+  * point customer to support and move redis to application specific
+
+  [ Jonathan Visser ]
+  * Use hypernode-deploy 4, bookworm, php 8.3, python 3.11
+
+  [ Hritik Kothari ]
+  * Add doc for enabling horizontal autoscaling from cp
+  * run mdformat
+
+  [ Demian Delwig ]
+  * Update TLD prices 2025
+
+  [ ddelwig ]
+  * Delete docs/hypernode-platform/varnish/how-to-read-varnish-stats.md
+
+  [ Jonathan Visser ]
+  * Remove accidental symlink
+  * Only build one stylesheet file, use newest scss notations
+  * Build stylesheet on buildtime
+  * Add instructions for styling in reflection of deployment
+
+  [ Hritik Kothari ]
+  * fix image and review comments
+  * change text a bit
+  * fix: img tag doesnt work
+  * fix the numbering in the doc
+
+  [ Jonathan Visser ]
+  * Modularize styling, and improve breakpoint responsiveness to page layout
+  * Add newlines at the end of the file
+  * Fix issue where code blocks dont properly respect page size width
+  * Revert to old page layout styling
+
+  [ Hritik Kothari ]
+  * Add podman and supervisor to hypernode specific requirements doc
+  * change title and move descr
+  * add dot
+  * add hostnames part to the doc application check
+
+  [ Jonathan Visser ]
+  * Add docs for changing Hypernode settings in Hypernode Deploy
+  * Update fields for hypernode-systemctl settings
+  * Fix formatting issues
+  * Improve formatting
+  * Improve formatting issues
+  * Improve readability of systemctl settings table
+  * Use default values from a new hypernode
+  * Fix typos in configure-hypernode-settings-on-deployment doc
+  * folder -> file for configure-hypernode-settings-on-deployment
+
+  [ Hritik Kothari ]
+  * Horizontal autoscaling pricing doc
+  * oops: put .md in pricing file
+  * mdformat it
+
+  [ Jonathan Visser ]
+  * Fix wierd newline for hypernode-systemctl firewall_block_ftp_enabled setting
+
+  [ ikidnapmyself ]
+  * Add Eagle 7XL and get rid of pricing column
+  * mdformat how-to-change-your-plan-via-the-cli.md
+
+  [ Timon de Groot ]
+  * docs/nginx: Update 429 resolution documentation
+  * docs: Add Magento 2 Remote Storage documentation
+  * docs/autoscaling: Link to remote storage
+  * docs/autoscaling: Polish up little details
+  * docs/rabbitmq: Add nodes on creating users better magento2 config
+  * bin/watch: Use cross-platform watchdog
+  * chore: mdformat and black
+  * docs/autoscaling: Fix incorrect console prompt hostnames
+
+  [ Jeffrey ]
+  * Fixed typo in how-to-configure-redis-for-magento-2.md
+
+  [ Timon de Groot ]
+  * bin/watch: Add debounce for batched events
+  * docs/magento2: Add serving assets example
+  * docs/autoscaling: Add more clarification on requirements
+
+  [ Hritik Kothari ]
+  * Remove extra info from pricing doc
+
+  [ HPNDdnsh ]
+  * Create how-to-add-forusp-to-the-whitelist.md
+
+  [ Cipriano Groenendal ]
+  * Update hypernode-security-statement.md
+
+  [ dominik.matic ]
+  * update magento2 s3 obj storage doc
+  * apply mdformat
+  * something like this?
+  * remove line
+  * undo bad mdformat change
+  * remove python 3.7 from test matrix
+  * update docs
+
+  [ Hritik Kothari ]
+  * update autoscaling pricing doc
+
+  [ Eoghan Rainey ]
+  * add note for staging ports not being available when ha is enabled
+
+  [ Jonathan Visser ]
+  * add note about being able to change the $storetype in nginx for magento docs
+  * fix deployment build for docs
+  * update all references for upload-artifact to v4
+  * revert change and go back to php8.3 for deployment
+
+  [ Jonathan ]
+  * Update config-for-magento-2.md
+
+  [ Jonathan Visser ]
+  * Change deploy and PHP versions
+
+  [ Hritik Kothari ]
+  * Add object storage docs
+  * mdformat
+
+  [ Jonathan Visser ]
+  * add varnish_workspace_backend systemctl setting
+  * Add NodeJS 20 docs
+
+  [ Hritik Kothari ]
+  * update doc
+  * fix warning
+  * review comments
+  * tiny changes
+  * update hypernode name
+  * update description and put 'comin soon'
+
+  [ Eoghan Rainey ]
+  * add staging note in correct place
+  * Update docs/hypernode-platform/autoscaling/how-does-horizontal-autoscaling-work.md
+
+  [ Jonathan Visser ]
+  * Make use of :latest Hypernode Deploy image in docs
+
+  [ dominik.matic ]
+  * initial draft
+  * improve sentences, add subchapters
+  * minor aesthetic fix
+  * apply mdformat
+  * add info about hypernode-object-storage objects to getting-started-with-object-storage
+  * add info about configuring magento to use hypernode object storage
+
+  [ Jonathan Visser ]
+  * Add spaces between hyperlinks
+  * run mdformat
+
+  [ Jesse van Dijk ]
+  * Added more information about OS + Room change
+
+  [ Jonathan Visser ]
+  * run mdformat
+
+  [ Jesse van Dijk ]
+  * Changed typos
+
+  [ Jonathan Visser ]
+  * fix hierarchy for heading levels
+
+  [ Jesse van Dijk ]
+  * Typos
+
+  [ Jonathan Visser ]
+  * mdformat
+  * Move enabling of vhosts to the bottom of the documentation page
+  * Add overriding Deployer variables
+  * Add whitelisting based on User Agent and IP
+  * mdformat
+
+  [ Dominik Matic ]
+  * move magento2 OS HMV section to hypernode-managed-vhosts and link to it
+  * update link to point to specific header
+  * replace hmv with hypernode-manage-vhosts and fix link
+  * How to configure remote storage for shopware 6.x
+  * change yml->yaml
+  * apply mdformat
+  * make paths make sense with shopware, add sentence making note of the bucket name for Hypernode Object Storage
+  * Add clarity and more information to the magento 2 command section for setting up object storage
+  * improvements
+  * fix aws sentence
+
+  [ HPNDdnsh ]
+  * Update how-to-add-forusp-to-the-whitelist.md
+
+  [ Dinesh Raghoebar ]
+  * Moved the instruction to the right path as requested. Added other information about adding IPs to the whitelist like for FTP , database en WAF.
+
+  [ Jonathan Visser ]
+  * run mdformat .
+  * Fix a lot of deadlinks and references to byte control panel
+  * Fix weird sentance
+  * Fix typo in reference to other file link
+
+  [ Jonathan ]
+  * Update docs/services/domain-procedures/how-to-transfer-your-domain-name-to-another-provider-service-panel.md
+
+  [ Jonathan Visser ]
+  * Update the feedback group to the beta test group
+
+  [ Dominik Matic ]
+  * move Shopware 6 OS section, fix a sentence, and remove trailing whitespace
+
+  [ Jonathan Visser ]
+  * Add sample config for Shopware 6 application on hypernode deploy
+  * Remove less informative line in Magento docs for Hypernode Deploy
+  * add trailing newline to config-for-shopware-6
+  * Change wp-cron to a PHP CLI command instead of curling (which gets blocked by our security rules)
+  * add autolinter suggest-changes to github actions
+  * Remove comment at autosuggestion
+  * Add EOF line
+  * Add clarification that wp-cron.php is blocked in nginx by default on Hypernodes
+
+  [ Nealsvanderven ]
+  * Update how-to-run-rabbitmq-on-hypernode.md
+
+  [ Jonathan Visser ]
+  * Remove sphinxcontrib-mermaid dependency
+  * Update rabbitmqmaster to rabbitmq for horizontal autoscaling for magento
+
+  [ Hritik Kothari ]
+  * Add cancel cmd to obj storage docs
+  * remove numbering
+
+  [ Timon de Groot ]
+  * Update docs/best-practices/firewall.md
+
+  [ Jonathan Visser ]
+  * Add docs for supporting Node 22
+  * Add note for using a pre-compiled older nodejs version
+
+  [ Jonathan ]
+  * Update docs/hypernode-platform/tools/how-to-use-node-js-and-npm-on-hypernode.md
+
+  [ Jonathan Visser ]
+  * Remove extra characters on EOL
+  * Update actions/upload-artifact@v3 to actions/upload-artifact@v4
+
+  [ Timon de Groot ]
+  * remote_storage: General improvements
+  * object-storage: Restructure documentation
+  * object-storage: Add object versioning article
+  * bin/watch: Allow build_docs to fail
+  * docs/conf.py: Fix weird HTML title suffix
+  * object-storage: Fix formatting errors
+
+  [ Dominik Matic ]
+  * small fixes
+
+  [ alejandro ]
+  * add documentation for object storage dynamic upscaling
+  * be more specific of when we automatically upgrade a plan
+
+  [ Jonathan Visser ]
+  * Add and use Hypernode Deploy PHP 8.4 image
+  * Add space after links to fix syntax
+  * Add command with example how to empty up an entire Object Storage
+  * Update parkerbxyz/suggest-changes to v2
+  * Add more spaces after links
+  * Downgrade ruamel.yaml to 0.18.12 Turns out in a recently updated version (0.18.13) the way mdformat works and formats the yaml in the markdowns has been changed.
+  * Improve Hypernode Object Storage CLI docs
+
+  [ hypercharles ]
+  * Update how-to-fix-performance-issues-caused-by-bots-and-crawlers.md
+
+  [ Jonathan Visser ]
+  * Remove Hyperformance references
+
+  [ Jonathan ]
+  * Update woocommerce converter docs to reflect correct nginx path
+
+  [ Timon de Groot ]
+  * docs: Add CLI example to remote debugging
+
+  [ Jonathan Visser ]
+  * Remove old plans, old references to Hipex and plans
+  * Update docs on supported NodeJS versions
+  * Remove direct references to price to connect to the plans & prices pages and eliminating the need to keep the docs up to date
+  * Split up firewall docs, add SSH allowlist docs
+  * Add control panel flow to the SSH allowlist document
+
+  [ Demian Delwig ]
+  * Remove mwscan docs
+  * Remove mwscan reference
+  * Remove-mscan
+
+  [ Jonathan ]
+  * Adding information about the path-style config
+  * update based on feedback
+  * Removing double newline
+
+  [ Jonathan Visser ]
+  * Add debian bookworm hypernode-deploy images
+
+  [ Hans Nieser ]
+  * Update basic-authentication-on-hypernode-development-plans.md
+
+  [ Jonathan Visser ]
+  * Fix typo for Debian Bookworm image
+
+  [ Eoghan Rainey ]
+  * add upgrade to 8.4 and auth section
+
+  [ Jonathan Visser ]
+  * Change documentation on location of combell openstack
+
+  [ Erwin Romkes ]
+  * Add 8.4 for MySQL as possible value
+  * Change default value
+
+  [ Jonathan Visser ]
+  * Run formatter for how-to-use-the-hypernode-systemctl-cli-tool.md
+
+ -- Hypernode team <hypernode@byte.nl>  Tue, 19 Aug 2025 10:12:24 +0000

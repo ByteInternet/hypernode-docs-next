@@ -65,4 +65,4 @@ Scroll down to select ‘Empty’ from the dropdown ‘With selected’ and clic
 
 ## Turn Off Database Logging
 
-If you don’t need any database logging it can be worthwhile to disable all logging. To do so, install the [`disablelog extension by Yireo`](https://www.yireo.com/software/magento-extensions). For shops that are heavy on the database, this can help reduce the amount of update/insert queries and therefore reducing load times.
+If you don’t need any database logging it can be worthwhile to disable all logging. To do so, install the [`disablelog extension by Yireo`](https://github.com/yireo-magento1/Yireo_DisableLog). For shops that are heavy on the database, this can help reduce the amount of update/insert queries and therefore reducing load times.

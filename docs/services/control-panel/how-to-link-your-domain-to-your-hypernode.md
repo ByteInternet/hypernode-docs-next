@@ -20,7 +20,7 @@ Thanks to Hypernode’s very cool **Dedicated IP** feature the IP address of you
 
 There are two exceptions when you can't benefit from a dedicated IP and which may have impact on how you would like to manage your DNS:
 
-1. Changing between Falcon (formerly known as Professional), Pelican and Eagle (formerly know as Excellence) plans will lead to an IP change because you will change providers (e.g. Combell OpenStack or DigitalOcean to Amazon and vice versa)
+1. Changing between Falcon and Eagle plans will lead to an IP change because you will change providers (e.g. Combell OpenStack to Amazon and vice versa)
 1. If you request your node to be booted in a different region (datacenter) the IP address will change as well.
 
 If you are likely to switch between Falcon and Eagle plans in the future, we recommend to move your domain(s) to Hypernode so we can handle the DNS of your domains to avoid downtime.
@@ -43,7 +43,7 @@ When you link your domain to your Hypernode, you mark your domain as being in us
 
 This way we know which domains are used on a node that is being migrated or upgraded, so we are able to take action. When you sync a domain, we automatically add a CNAME- and A-record that points to your Hypernode to the DNS. If the IP address of the Hypernode has changed, we correct this by updating the DNS records of the domain(s) on our name servers.
 
-To make this work your domains should be hosted at Hypernode, so [order your domain](https://www.byte.nl/hosting/domeinnaam) or migrate it to Hypernode.
+To make this work your domains should be hosted at Hypernode, so [order your domain](https://my.hypernode.com/) or migrate it to Hypernode.
 
 If your domains are not hosted at Hypernode, read the documentation about [how to configure your DNS for Hypernode](../../hypernode-platform/dns/how-to-manage-your-dns-settings-for-hypernode.md).
 
