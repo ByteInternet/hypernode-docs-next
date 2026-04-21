@@ -1,7 +1,7 @@
 ---
 myst:
   html_meta:
-    description: Learn all about The Hypernode Managed Vhosts (HMV). The system is
+    description: Learn all about the Hypernode Managed Vhosts (HMV). The system is
       an easy to use, yet powerful, system of configuring Nginx on Hypernode.
     title: How to enable and manage Hypernode Vhosts?
 redirect_from:
@@ -14,11 +14,11 @@ redirect_from:
 
 The Hypernode Managed Vhosts (HMV) system is an easy to use, yet powerful, system of configuring Nginx on Hypernode. A vhost is a configuration that allows you to setup multiple domainnames, each with it's own, independent, configuration. With it, you can easily host a Wordpress blog on a subdomain, and a Magento on your main domain, set up HTTPS for both automatically, and efficiently redirect visitors to your www-domain.
 
-The main advantage of HMV is that it separates your Nginx config into a global folder, containing configuration for all server blocks, and domain specific configs, giving you more control and reducing unexpected side-effects of domain specific configurations.
+The main advantage of vhosts is that it separates your Nginx config into a global folder, containing configuration for all server blocks, and domain specific configs, giving you more control and reducing unexpected side-effects of domain specific configurations.
 
 ## Managing Vhosts
 
-Once the Hypernode Managed Vhosts (HMV) system is enabled, you can start defining and configuring your vhosts. On new booted Hypernodes there will be one vhosts by default: example.hypernode.io.
+You can start defining and configuring your vhosts. On new booted Hypernodes there will be one vhost by default: example.hypernode.io.
 
 ### Adding Vhosts
 
@@ -58,27 +58,27 @@ Please take not that the webroot option is not used for the built-in staging for
 
 ## Let’s Encrypt and Hypernode Managed Vhosts
 
-**Please note: If you want to use Let’s Encrypt and have the Hypernode Managed Vhosts (HMV) system enabled, you need to configure LE during the creation of the vhost. Using the old method with *dehydrated* won't work!**
+**Please note: If you want to use Let's Encrypt, you need to configure it during the creation of the vhost. Using the old method with *dehydrated* won't work!**
 
-If you want to request a LE certificate you need to add the `--https` flag with the HMV-command.
+If you want to request a LE certificate you need to add the `--https` flag with the command.
 
 `hypernode-manage-vhosts www.example.com --https --force-https`
 
 This command will not only request a LE Certificate but because of the `--force-https`flag it will also redirects all traffic for that specific vhost to HTTPS.
 
-## Varnish and Hypernode Managed Vhosts
+## Varnish Configuration
 
-Using Varnish works slightly differently with HMV enabled. Of course Varnish needs to be enabled with the **systemctl** tool. `hypernode-systemctl settings varnish_enabled True`
+Using Varnish works with vhosts. Of course Varnish needs to be enabled with the **systemctl** tool. `hypernode-systemctl settings varnish_enabled True`
 
-But with HMV you need to configure the vhost for Varnish as well. You can do this by adding the `--varnish`flag to you HMV-command. For example: `hypernode-manage-vhosts example.com --varnish`
+You need to configure the vhost for Varnish as well. You can do this by adding the `--varnish`flag to your command. For example: `hypernode-manage-vhosts example.com --varnish`
 
 Once the command is processed you could list all the vhosts to check if Varnish is enabled for that vhost. The value in the Varnish column should be set to **True**.
 
 To disable Varnish for a vhost, use the following command: `hypernode-manage-vhosts example.com --disable-varnish`
 
-## Object Storage and Hypernode Managed Vhosts
+## Object Storage Configuration
 
-If you're using object storage with Magento 2.x or Shopware 6.x you can use HMV to adjust your nginx config to serve assets directly from your bucket.
+If you're using object storage with Magento 2.x or Shopware 6.x you can adjust your nginx config to serve assets directly from your bucket.
 
 If you're using Hypernode's object storage solution, simply run the following command for the relevant vhosts:
 
@@ -111,7 +111,7 @@ Please note that any files with the 'HTTP.' prefix will also be loaded in the HT
 
 ### Global configuration
 
-Even when using the Hypernode Managed Vhosts (HMV) system, it's still possible to setup configuration on the 'global' level by placing a file in `/data/web/nginx`.
+It's possible to setup configuration on the 'global' level by placing a file in `/data/web/nginx`.
 
 ### Multi-domain configuration
 
@@ -119,8 +119,8 @@ If you have multiple vhosts, and want to share configuration between them, witho
 
 ## Troubleshooting
 
-If you are running into issues (e.g. SSL or other configuration errors) with Hypernode Managed Vhosts, we recommend running this command first:
+If you are running into issues (e.g. SSL or other configuration errors), we recommend running this command first:
 
 `hypernode-manage-vhosts --all`
 
-This regenerates the HMV configuration based on what is set in `hypernode-manage-vhosts --list` and in our experience resolves most basic issues with Hypernode Managed Vhosts.
+This regenerates the configuration based on what is set in `hypernode-manage-vhosts --list` and in our experience resolves most basic issues.
