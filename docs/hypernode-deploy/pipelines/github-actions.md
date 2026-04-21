@@ -61,6 +61,7 @@ jobs:
     - run: hypernode-deploy build -vvv
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        DEPLOY_COMPOSER_AUTH: ${{ secrets.DEPLOY_COMPOSER_AUTH }}
     - name: archive production artifacts
       uses: actions/upload-artifact@v4
       with:

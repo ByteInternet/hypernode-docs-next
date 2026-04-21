@@ -135,6 +135,7 @@ In some cases, it might be necessary to exclude specific IP addresses from the p
 # 1) Mark IPs/CIDRs that should be exempt from per‑IP limiting
 geo $limit_conn_ip_allow {
     default 1;          # 1 = enforce limit
+    127.0.0.1 0;        # Whitelist internal automations
     1.2.3.4 0;          # 0 = exempt
 }
 
