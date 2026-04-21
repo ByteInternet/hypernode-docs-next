@@ -29,7 +29,6 @@ To set a TTL for all keys stored in Redis, add the following lines to your wp-co
 define('WP_REDIS_PREFIX', 'example');
 define('WP_REDIS_MAXTTL', '900');
 define('WP_REDIS_SELECTIVE_FLUSH', true);
-```
 ```{important}
 Be sure to change the example prefix to a unique name for your application so Redis keys do not get mixed up when Redis is used by multiple applications on the same Hypernode.
 ```
@@ -38,7 +37,7 @@ Be sure to change the example prefix to a unique name for your application so Re
 
 - **WP_REDIS_PREFIX** adds a clear prefix to your Redis keys. This helps prevent key collisions, especially when multiple applications use Redis.
 - **WP_REDIS_MAXTTL** sets a maximum lifetime for cached items, in this example 900 seconds.
-- **WP_REDIS_SELECTIVE_FLUSH*** ensures that only keys related to this WordPress installation are flushed, instead of clearing the entire Redis database.
+- **WP_REDIS_SELECTIVE_FLUSH**\* ensures that only keys related to this WordPress installation are flushed, instead of clearing the entire Redis database.
 
 ## How to Install Redis Object Cache
 
