@@ -53,7 +53,7 @@ We will email you once your certificate is received and installed on the Hyperno
 
 1. In the Hypernode Control Panel, select SSL from the menu on the left.
 1. Select the SSL certificate you want to cancel by clicking **Details**.
-1. Click **Don't renew this certificate**and follow the steps.
+1. Click **Don't renew this certificate** and follow the steps.
 
 Please note! To avoid being charged for another year, please make sure to cancel the SSL certificate before it is renewed. We renew your certificate 30 days before it expires.
 
@@ -66,14 +66,14 @@ You can add your SSL certificate to your account via your Control Panel. Follow 
 1. Log into your [Control Panel](https://my.hypernode.com/).
 1. Select SSL in the sidebar on the left:
    ![](_res/70A9nqtDSG-ga6grDZKSyU1VZZ5n7dDN7w.png)
-1. To add a new SSL certificate, click the **Add SSL**button on the right.
+1. To add a new SSL certificate, click the **Add SSL** button on the right.
 1. Click **Add third party SSL certificate**.
 1. Fill in the Private Key, Certificate and Certificate Authority (only .PEM files).
 1. Click **Apply your SSL certificate**. You'll then go to this page:
    ![](_res/UqBkwBviAbHtB6a_r9CtWNqTCEI3LPr8Fg.png)
-1. Click **Details**and then **(Un)link to Hypernodes**to select one or more Hypernodes to link the certificate to.
+1. Click **Details** and then **(Un)link to Hypernodes** to select one or more Hypernodes to link the certificate to.
 
-From the detail page, you can also select **Link**in the sidebar to link the SSL certificate to a Hypernode:
+From the detail page, you can also select **Link** in the sidebar to link the SSL certificate to a Hypernode:
 ![](_res/IiWCW9rqAmLQdl396f1Z00kEAwLjJbDJkQ.png)
 
 ### Add a Third Party SSL Certificate Directly to a Hypernode
@@ -82,9 +82,9 @@ You can also add a third pardy SSL certificate directly to a Hypernode. Follow t
 
 1. Log into your [Control Panel](https://my.hypernode.com/).
 1. Select the specific Hypernode from the overview.
-1. Hover over **Hypernodes**in the sidebar and click **SSL:**
+1. Hover over **Hypernodes** in the sidebar and click **SSL:**
    **![](_res/uEon-9GZzywfE7GSNAiSzd45sCWVecpBsw.png)**
-1. To add a new SSL certificate, click the **Add SSL**button on the right.
+1. To add a new SSL certificate, click the **Add SSL** button on the right.
 1. Click **Add third party SSL certificate**.
 1. Fill in the Private Key, Certificate and Certificate Authority (only .PEM files).
 1. Click **Apply your SSL certificate**.
@@ -95,9 +95,9 @@ If you already have a third party SSL added to your account, you can link it to 
 
 1. Log into your [Control Panel](https://my.hypernode.com/).
 1. Select the specific Hypernode from the overview.
-1. Hover over **Hypernodes**in the sidebar and click **SSL:**
+1. Hover over **Hypernodes** in the sidebar and click **SSL:**
    **![](_res/uEon-9GZzywfE7GSNAiSzd45sCWVecpBsw.png)**
-1. Here you'll see an overview of the available SSL certificates. Click **Details**and then **(Un)link to Hypernodes**to link one or more Hypernodes to link the certificate to.
+1. Here you'll see an overview of the available SSL certificates. Click **Details** and then **(Un)link to Hypernodes** to link one or more Hypernodes to link the certificate to.
 
 ### Check Which Third Party Certificates Are Linked to Your Hypernode
 
@@ -105,10 +105,10 @@ If you want to check which Third Party certificates are linked to a specific Hyp
 
 1. Log into your [Control Panel](https://my.hypernode.com/).
 1. Select the Hypernode from the overview.
-1. Hover over **Hypernodes**in the sidebar and click **SSL:**
+1. Hover over **Hypernodes** in the sidebar and click **SSL:**
    **![](_res/uEon-9GZzywfE7GSNAiSzd45sCWVecpBsw.png)**
 1. You will now see an overview of all linked SSL certificates.
-1. Click **Details**to go the detail page. You can unlink the domain or delete the SSL certificate from here.
+1. Click **Details** to go the detail page. You can unlink the domain or delete the SSL certificate from here.
 
 ## Use Let’s Encrypt
 
