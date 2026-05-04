@@ -25,6 +25,8 @@ To see which values you can set and which values they are allowed to have take a
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | **blackfire_enabled**<br/><sub>A great tool to find performance bottlenecks<br />in Magento</sub>                                                               | False         | True, False                                                                                                                                 |
 | **block_bad_ips_enabled**<br/><sub>Blocks abusive IPs with high AbuseIPDB.com confidence scores</sub>                                                           | True          | True, False                                                                                                                                 |
+| **botstopper_ai_policy**<br/><sub>Choose how strict Botstopper should be for AI crawlers and AI clients</sub>                                                   | aggressive    | aggressive, moderate, permissive                                                                                                            |
+| **botstopper_enabled**<br/><sub>Enable Botstopper bot protection</sub>                                                                                          | False         | True, False                                                                                                                                 |
 | **composer_version**<br/><sub>Change the Composer version</sub>                                                                                                 | 2.x           | 1.x, 2.2, 2.6, 2.7, 2.8, 2.x                                                                                                                |
 | **disable_optimizer_switch**<br/><sub>Disable the optimizer switch</sub>                                                                                        | False         | True, False                                                                                                                                 |
 | **elasticsearch_enabled**<br/><sub>Enable Elasticsearch</sub>                                                                                                   | False         | True, False                                                                                                                                 |
@@ -112,6 +114,13 @@ If an invalid value is provided you will be notified of this during the setting 
 - `blackfire_enabled`Indicates whether Blackfire is enabled. Check out [this article](../../best-practices/performance/how-to-use-blackfire-on-hypernode-to-find-performance-issues.md) on how to set up Blackfire.
 - `blackfire_server_token`The BlackFire server token for your Blackfire setup.
 - `blackfire_server_id` The BlackFire server ID for your Blackfire setup.
+
+### Botstopper
+
+- `botstopper_enabled`: Enables Botstopper bot protection.
+- `botstopper_ai_policy`: Configures the Botstopper AI policy. Possible values are `aggressive`, `moderate`, and `permissive`.
+
+See [How to Use Botstopper on Hypernode](../botstopper/how-to-use-botstopper.md) for details about enabling Botstopper, configuring it per vhost, and writing custom policies.
 
 ### Disable optimizer switch
 

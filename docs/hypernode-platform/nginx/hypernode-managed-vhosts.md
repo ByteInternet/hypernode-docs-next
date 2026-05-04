@@ -76,6 +76,10 @@ Once the command is processed you could list all the vhosts to check if Varnish 
 
 To disable Varnish for a vhost, use the following command: `hypernode-manage-vhosts example.com --disable-varnish`
 
+## Botstopper and Hypernode Managed Vhosts
+
+When [Botstopper](../botstopper/how-to-use-botstopper.md) is enabled on Hypernode level, it is enabled for managed vhosts by default. Disable it for a specific vhost with `hypernode-manage-vhosts example.com --disable-botstopper`. Enable it again with `hypernode-manage-vhosts example.com --botstopper`.
+
 ## Object Storage and Hypernode Managed Vhosts
 
 If you're using object storage with Magento 2.x or Shopware 6.x you can use HMV to adjust your nginx config to serve assets directly from your bucket.
