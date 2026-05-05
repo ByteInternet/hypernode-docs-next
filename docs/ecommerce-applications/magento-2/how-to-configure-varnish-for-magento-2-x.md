@@ -41,7 +41,7 @@ $ hypernode-systemctl settings varnish_enabled True
 
 ## Configure Varnish on the Vhost
 
-Since the introduction of [hypernode-manage-vhosts](https://changelog.hypernode.com/changelog/release-7166-hypernode-manage-vhosts-enabled-by-default/) Hypernode may work somewhat different than you might be used to. With HMV enabled, it requires one more step to configure Varnish for your shop/vhost. Remember, for each domain, there should be a vhost created. You can list an overview of all configured vhosts with `hypernode-manage-vhosts --list`. While you do that, note that there is a column, "varnish". By default this is set to "False". Which means that Varnish isn't configured for this vhost. You can configure Varnish for the vhost by running the following command:
+The [hypernode-manage-vhosts](../../hypernode-platform/nginx/hypernode-managed-vhosts.md) command requires one additional step to configure Varnish for your shop/vhost. Remember, for each domain, there should be a vhost created. You can list an overview of all configured vhosts with `hypernode-manage-vhosts --list`. While you do that, note that there is a column, "varnish". By default this is set to "False". Which means that Varnish isn't configured for this vhost. You can configure Varnish for the vhost by running the following command:
 
 ```console
 $ hypernode-manage-vhosts EXAMPLE.COM --varnish
