@@ -65,12 +65,12 @@ You can add your SSL certificate to your account via your Control Panel. Follow 
 
 1. Log into your [Control Panel](https://my.hypernode.com/).
 1. Select SSL in the sidebar on the left:
-![SSL side bar screenshot](_res/Sidebar%20SSL%20selection.png)
+   ![SSL side bar screenshot](_res/Sidebar%20SSL%20selection.png)
 1. To add a new SSL certificate, click the **Add SSL** button on the right.
 1. Click **Add third party SSL certificate**.
 1. Fill in the Private Key, Certificate and Certificate Authority (only .PEM files).
 1. Click **Apply your SSL certificate**. You'll then go to this page:
-![SSL certificates page screenshot](_res/SSL%20certificate%20page.png)
+   ![SSL certificates page screenshot](_res/SSL%20certificate%20page.png)
 1. Click **Details** and then **(Un)link to Hypernodes** to select one or more Hypernodes to link the certificate to.
 
 ### Add a Third Party SSL Certificate Directly to a Hypernode
@@ -80,7 +80,7 @@ You can also add a third pardy SSL certificate directly to a Hypernode. Follow t
 1. Log into your [Control Panel](https://my.hypernode.com/).
 1. Select the specific Hypernode from the overview.
 1. Click on your **Hypernode** and click **SSL:** under **Services**.
-![SSL side bar list screenshot](_res/Sidebar%20list.png)
+   ![SSL side bar list screenshot](_res/Sidebar%20list.png)
 1. To add a new SSL certificate, click the **Add SSL** button on the right.
 1. Click **Add third party SSL certificate**.
 1. Fill in the Private Key, Certificate and Certificate Authority (only .PEM files).
@@ -93,7 +93,7 @@ If you already have a third party SSL added to your account, you can link it to 
 1. Log into your [Control Panel](https://my.hypernode.com/).
 1. Select the specific Hypernode from the overview.
 1. Click on your **Hypernode** and click **SSL:** under **Services**.
-![SSL side bar list screenshot](_res/Sidebar%20list.png)
+   ![SSL side bar list screenshot](_res/Sidebar%20list.png)
 1. Here you'll see an overview of the available SSL certificates. Click **Details** and then **(Un)link to Hypernodes** to link one or more Hypernodes to link the certificate to.
 
 ### Check Which Third Party Certificates Are Linked to Your Hypernode
@@ -103,7 +103,7 @@ If you want to check which Third Party certificates are linked to a specific Hyp
 1. Log into your [Control Panel](https://my.hypernode.com/).
 1. Select the Hypernode from the overview.
 1. Click on your **Hypernode** and click **SSL:** under **Services**.
-![SSL side bar list screenshot](_res/Sidebar%20list.png)
+   ![SSL side bar list screenshot](_res/Sidebar%20list.png)
 1. You will now see an overview of all linked SSL certificates.
 1. Click **Details** to go the detail page. You can unlink the domain or delete the SSL certificate from here.
 
