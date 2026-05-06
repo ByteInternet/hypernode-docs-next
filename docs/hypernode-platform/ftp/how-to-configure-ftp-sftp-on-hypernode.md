@@ -151,7 +151,7 @@ If you want to connect to FTP you’ll have to use the following credentials:
 - Password: **Your password**
 - Port:
   - **21** For regular FTP
-  - **2222** For SFTP (you need to opt-in first!)
+  - **2222** For SFTP
 
 ## ACTIVE Mode or PASSIVE Mode
 

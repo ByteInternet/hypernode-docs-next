@@ -74,3 +74,7 @@ Composer version 2.2.18 2022-08-20 11:33:38
 ```
 
 So if you want to use Composer 2 you only need to run `composer2` instead of `composer`.
+
+## Update Composer to a Newer Version
+
+You can update Composer to a newer version using the [hypernode-systemctl CLI tool](how-to-use-the-hypernode-systemctl-cli-tool.md).
