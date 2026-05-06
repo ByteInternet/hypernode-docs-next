@@ -64,16 +64,18 @@ In our support documentation you will find detailed information about installing
 - [Akeneo 4](../../ecommerce-applications/akeneo/how-to-install-akeneo-4-on-hypernode.md)
 - [Akeneo 5](../../ecommerce-applications/akeneo/how-to-install-akeneo-5-on-hypernode.md)
 - [Akeneo 6](../../ecommerce-applications/akeneo/how-to-install-akeneo-6-on-hypernode.md)
+- [Akeneo 7](../../ecommerce-applications/akeneo/how-to-install-akeneo-7-on-hypernode.md)
 - [Magento 1](../../ecommerce-applications/magento-1/how-to-install-magento-1-on-hypernode.md)
 - [Magento 2](../../ecommerce-applications/magento-2/how-to-install-magento-2-on-hypernode.md)
 - [Shopware 5](../../ecommerce-applications/shopware-5/how-to-install-shopware-5-on-hypernode.md)
 - [Shopware 6](../../ecommerce-applications/shopware-6/how-to-install-shopware-6-on-hypernode.md)
+- [WooCommerce](../../ecommerce-applications/woocommerce/how-to-install-woocommerce-on-hypernode.md)
 
 ### Step 4 – Set up Hypernode Managed Vhosts
 
 Due to this configuration it is required to add a new vhost for every domain you want to link to your Hypernode. So you need to configure your DNS correctly and add a new vhost for the domain.
 
-To add a new vhost, for example the domainname [www.example.com](http://www.example.com), to your configuration, you can simply run the command `hypernode-manage-vhosts www.example.com`. This will create a new vhost configuration in `/data/web/nginx/www.example.com/`, using the Magento 2 template.
+To add a new vhost, for example the domain name [www.example.com](http://www.example.com), to your configuration, you can simply run the command `hypernode-manage-vhosts www.example.com`. This will create a new vhost configuration in `/data/web/nginx/www.example.com/`, using the Magento 2 template.
 
 Please note that defining the vhosts '[www.example.com](http://www.example.com)', does not automatically add 'example.com' as a vhost. You will have to manually define a vhost for this. Since most people simply want their 'example.com' to redirect to '[www.example.com](http://www.example.com)', you can simply use the `--type wwwizer` argument to set this up. This will configure the vhost to redirect all traffic to the www-version of the domain.
 
