@@ -132,5 +132,5 @@ map $http_user_agent $development_exceptions {
 
 ## Troubleshooting
 
-- Google Pagespeed analysis uses the Google bot user agent and can therefore not be used on development nodes.
+- To allow Google Pagespeed analysis in development hypernodes you can whitelist the following IPs https://www.gstatic.com/ipranges/goog.json. PSI uses different user agents than Google bot and will be able to perform analysis on your frontend without allowing crawling.
 - In some cases, particularly if you have not yet enabled [Hypernode Managed Vhosts](../../hypernode-platform/nginx/hypernode-managed-vhosts.md), it’s possible the Basic Authentication blocks the Let’s Encrypt validation server. If you wish to make use of Let’s Encrypt on your development Hypernode, you should add the ‘letsencrypt’ user agent to the whitelist file.
