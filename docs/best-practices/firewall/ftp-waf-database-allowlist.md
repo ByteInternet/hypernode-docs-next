@@ -26,6 +26,8 @@ Follow these steps to whitelist an IP addresses for FTP:
 
 The `hypernode-systemctl whitelist` command allows you to manage allowlist entries for different services on your Hypernode. You can use it to add, remove, or list allowlist entries for FTP, WAF, database, and SSH.
 
+When [Botstopper](../../hypernode-platform/botstopper/how-to-use-botstopper.md) is enabled, IP addresses on the WAF allowlist are also allowed by Botstopper before custom and standard Botstopper deny or challenge rules are evaluated.
+
 ### Command structure
 
 ```
