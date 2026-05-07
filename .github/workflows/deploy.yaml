@@ -1,7 +1,7 @@
 name: Deploy application
 
 on:
-  pull_request:
+  pull_request_target:
   push:
     branches:
       - 'master'
@@ -17,6 +17,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       # Declares the repository safe and not under dubious ownership.
       - name: Add repository to git safe directories
         run: git config --global --add safe.directory $GITHUB_WORKSPACE
@@ -46,12 +47,13 @@ jobs:
     environment:
       name: acceptance
       url: ${{ steps.get_brancher_hostname.outputs.BRANCHER_URL }}
-    if: github.ref != 'refs/heads/master'
+    if: github.event_name == 'pull_request_target'
     container: quay.io/hypernode/deploy:latest-php8.4-node22
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: download build artifact
         uses: actions/download-artifact@v4
         with:
@@ -101,7 +103,7 @@ jobs:
     environment:
       name: production
       url: https://docs.hypernode.io
-    if: github.ref == 'refs/heads/master'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     container: quay.io/hypernode/deploy:latest-php8.4-node22
     steps:
       - uses: actions/checkout@v3
