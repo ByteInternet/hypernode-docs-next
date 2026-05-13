@@ -10,7 +10,7 @@ mdformat-frontmatter==0.4.1
 sphinx-notfound-page==1.1.0
 sphinx-sitemap==2.6.0
 sphinx-docsearch
-GitPython==3.1.44
+GitPython==3.1.50
 ruamel.yaml==0.18.12
 
 # hypernode/ requirements
