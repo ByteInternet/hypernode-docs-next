@@ -12,7 +12,7 @@ redirect_from:
 
 # How to Install Akeneo 7 on Hypernode
 
-Akeneo 7 preferably requires a Hypernode Falcon M, Eagle M hosting plan or larger. You can either choose to install it on a seperate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 8.0, PHP 8.1 and OpenSearch 2.x**, so it won’t affect your shop negatively. Installing Akeneo version 7.x may take up to 15 minutes.\
+Akeneo 7 preferably requires a Hypernode Falcon M, Eagle M hosting plan or larger. You can either choose to install it on a separate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 8.0, PHP 8.1 and OpenSearch 2.x**, so it won’t affect your shop negatively. Installing Akeneo version 7.x may take up to 15 minutes.\
 **Important note: Akeneo 7.x requires MySQL 8.0.30, which is only available on Debian Bookworm.**
 
 ## Managed Vhosts
@@ -52,7 +52,7 @@ location ~ \.php$ {
 
 It's important to follow these steps in order since you *cannot* upgrade straight from **MySQL 5.6** to **MySQL 8.0**.
 
-First you’ll have to upgrade MySQL 5.6 to 5.7 by running the commando:
+First you’ll have to upgrade MySQL 5.6 to 5.7 by running the command:
 
 ```bash
 hypernode-systemctl settings mysql_version 5.7
@@ -209,7 +209,7 @@ Configure your crons by adding these scripts to your crontab file as recommended
 
 ```bash
 30 1 * * * php /data/web/akeneo/bin/console pim:versioning:refresh
-30 2 * * * php /data/web/akeneo/bin/console pim:versioning:purge –more-than-days 90 --no-interaction --force
+30 2 * * * php /data/web/akeneo/bin/console pim:versioning:purge --more-than-days 90 --no-interaction --force
 1 * * * * php /data/web/akeneo/bin/console akeneo:connectivity-audit:update-data
 20 0 1 * * php /data/web/akeneo/bin/console akeneo:batch:purge-job-execution
 30 4 * * * php /data/web/akeneo/bin/console pim:volume:aggregate
