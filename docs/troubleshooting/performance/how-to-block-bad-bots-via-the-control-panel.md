@@ -14,6 +14,8 @@ redirect_from:
 
 A lot of bot traffic has a negative impact on the performance of your webshop. Some bots are very useful (e.g. Google), others have no value at all and even have a negative influence on the performance of your shop. We offer you the possibility to block bad user agents with a few mouse clicks, via your Control Panel.
 
+The Control Panel bot blocklist is useful when you know exactly which user agent you want to block. If you want Hypernode to challenge, deny, or allow traffic based on richer Botstopper policies, see [How to Use Botstopper on Hypernode](../../hypernode-platform/botstopper/how-to-use-botstopper.md).
+
 ## Add Bad Bots to the Blocklist
 
 If blocking (a part of) the recommended list of bad bots does not have enough positive impact on your webshop, please add unwanted bots to the list yourself.

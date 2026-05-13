@@ -25,6 +25,20 @@ p {
     }
 }
 
+.rst-content table.docutils thead th,
+.rst-content table.docutils thead td,
+.rst-content table.field-list thead th,
+.rst-content table.field-list thead td,
+.wy-table thead th,
+.wy-table thead td {
+    p,
+    a {
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+    }
+}
+
 a {
     text-decoration: none;
 

@@ -20,7 +20,7 @@ Among the thousands of shops on our platform, **excessive bot traffic is the num
 
 Layered navigation pages do not require crawling, and in fact, their indexation could **produce a penalty** for your search engine ranking, as it produces a lot of duplicate content. So you are advised to resolve this, both for performance and SEO reasons.
 
-With these four measures, you will resolve this situation completely.
+With these four measures, you will resolve this situation completely. If you want Hypernode to challenge, deny, or allow bot traffic before it reaches your shop, see [How to Use Botstopper on Hypernode](../../hypernode-platform/botstopper/how-to-use-botstopper.md).
 
 # How to Block Abusive Bots (If Any)
 
@@ -35,7 +35,7 @@ app@abcdef-example-magweb-cmbl:~$ pnl --yesterday --php --bots --fields ua | sor
 
 ```
 
-In this example, there were almost 4K Bingbot pageviews, 2K Google pageviews and almost 13K MegaIndex pageviews. So you could eliminate a large chunk of load by blocking MegaIndex (a shady crawler whose benefits to you are disputable). [Here](../../hypernode-platform/nginx/how-to-block-user-agents-and-referrer-sites.md) are instructions on blocking specific bots on Hypernode.
+In this example, there were almost 4K Bingbot pageviews, 2K Google pageviews and almost 13K MegaIndex pageviews. So you could eliminate a large chunk of load by blocking MegaIndex (a shady crawler whose benefits to you are disputable). You can use [Botstopper](../../hypernode-platform/botstopper/how-to-use-botstopper.md) for policy-based bot handling, or use [Nginx rules](../../hypernode-platform/nginx/how-to-block-user-agents-and-referrer-sites.md) to block specific user agents yourself.
 
 # How to Block Bot Access to Layered Navigation
 
@@ -89,3 +89,4 @@ Make sure all URLs in the layered navigation have “nofollow” in its links. H
 
 - [How to Block Specific Countries From Accessing Your Shop](../../hypernode-platform/nginx/how-to-block-your-webshop-for-specific-countries.md)
 - [How to Resolve 429 Too Many Requests](../../hypernode-platform/nginx/how-to-resolve-rate-limited-requests-429-too-many-requests.md)
+- [How to Use Botstopper on Hypernode](../../hypernode-platform/botstopper/how-to-use-botstopper.md)
