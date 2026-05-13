@@ -15,6 +15,8 @@ redirect_from:
 
 **Blocking IP addresses, User Agents or Referres may cause unforseen issues, since it's easy to block more then expected.**
 
+If your goal is to manage bot traffic more broadly, consider [Botstopper](../botstopper/how-to-use-botstopper.md). Botstopper can allow, deny, challenge, or weigh requests before they reach your application.
+
 ## How to Block User Agents
 
 First you need to know what User Agent you wish to block. You can retrieve such information from the access logs (`/var/log/nginx/access.log`)
