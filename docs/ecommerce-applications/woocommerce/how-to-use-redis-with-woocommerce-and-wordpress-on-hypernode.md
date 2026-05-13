@@ -29,6 +29,8 @@ To set a TTL for all keys stored in Redis, add the following lines to your wp-co
 define('WP_REDIS_PREFIX', 'example');
 define('WP_REDIS_MAXTTL', '900');
 define('WP_REDIS_SELECTIVE_FLUSH', true);
+```
+
 ```{important}
 Be sure to change the example prefix to a unique name for your application so Redis keys do not get mixed up when Redis is used by multiple applications on the same Hypernode.
 ```
