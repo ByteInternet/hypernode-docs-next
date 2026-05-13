@@ -14,6 +14,8 @@ redirect_from:
 
 To protect your Hypernode from all kinds of attacks, bots, brute forces, and script kiddies causing downtime, we've implemented several layers of rate limiting.
 
+Rate limiting slows down excessive traffic. If you want to challenge, deny, or allow bot traffic before it reaches your application, see [How to Use Botstopper on Hypernode](../botstopper/how-to-use-botstopper.md).
+
 Most of these rate-limit methods only apply to bots. Still, to avoid FPM worker depletion, we [implemented a rate-limiting mechanism per IP](https://changelog.hypernode.com/release-4735-upper-limit-active-php-requests-per-ip/) to prevent one single IP from exhausting the available FPM workers.
 
 This article will explain the differences between the different rate-limiting methods and show you how to find which rate-limiting method applies and, if needed, how to override them.
