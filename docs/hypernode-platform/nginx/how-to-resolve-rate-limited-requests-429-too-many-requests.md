@@ -108,7 +108,7 @@ Instead of adding the complete User Agent to the regex, it’s often better to l
 
 ### Known Rate Limited Plugins and Service Providers
 
-There are a couple of plugins and service providers that tend to hit the blacklisted keyword in the `http.ratelimit` snippet and, therefore, may need to be excluded individually. Below we have listed them and their User Agents for your convenience
+There are a couple of plugins and service providers that tend to hit the blacklisted keyword in the `http.ratelimit` snippet and, therefore, may need to be excluded individually. Below we have listed some popular services and their User Agents for your convenience
 
 - Adyen - `Jakarta Commons-HttpClient/3.0.1`
 - Adyen - `Apache-HttpClient/4.4.1 (Java/1.8.0_74)`
