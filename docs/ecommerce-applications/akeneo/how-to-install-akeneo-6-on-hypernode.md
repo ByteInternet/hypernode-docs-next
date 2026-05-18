@@ -12,7 +12,7 @@ redirect_from:
 
 # How to Install Akeneo 6 on Hypernode
 
-Akeneo 6 preferably requires a Hypernode Falcon M, Eagle M hosting plan or larger. You can either choose to install it on a seperate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 8.0, PHP 8.0 and Elasticsearch 7.x**, so it won’t affect your shop negatively. Installing Akeneo version 6.x may take up to 15 minutes.
+Akeneo 6 preferably requires a Hypernode Falcon M, Eagle M hosting plan or larger. You can either choose to install it on a separate Hypernode instance or on the same Hypernode as your Magento or Shopware installation. If you choose the latter you have to make sure that you have enough resources (disk space, memory and CPU) left. Furthermore you need to make sure that you are already using **MySQL 8.0, PHP 8.0 and Elasticsearch 7.x**, so it won’t affect your shop negatively. Installing Akeneo version 6.x may take up to 15 minutes.
 
 ## Managed Vhosts
 
@@ -51,7 +51,7 @@ location ~ \.php$ {
 
 It's important to follow these steps in order since you *cannot* upgrade straight from **MySQL 5.6** to **MySQL 8.0**.
 
-First you’ll have to upgrade MySQL 5.6 to 5.7 by running the commando:
+First you’ll have to upgrade MySQL 5.6 to 5.7 by running the command:
 
 ```bash
 hypernode-systemctl settings mysql_version 5.7
@@ -89,7 +89,9 @@ hypernode-systemctl settings elasticsearch_enabled True
 
 ## Download and Install Akeneo 6 Using the Pre-install
 
-Soon available.
+```bash
+hypernode-systemctl preinstall akeneo_6_0
+```
 
 ## Download and Install Akeneo 6 Manually Using the Command Line
 
@@ -207,7 +209,7 @@ Configure your crons by adding these scripts to your crontab file as recommended
 
 ```bash
 30 1 * * * php /data/web/akeneo/bin/console pim:versioning:refresh
-30 2 * * * php /data/web/akeneo/bin/console pim:versioning:purge –more-than-days 90
+30 2 * * * php /data/web/akeneo/bin/console pim:versioning:purge --more-than-days 90
 1 * * * * php /data/web/akeneo/bin/console akeneo:connectivity-audit:update-data
 20 0 1 * * php /data/web/akeneo/bin/console akeneo:batch:purge-job-execution
 0 1 * * * php /data/web/akeneo/bin/console pim:asset:send-expiration-notification
