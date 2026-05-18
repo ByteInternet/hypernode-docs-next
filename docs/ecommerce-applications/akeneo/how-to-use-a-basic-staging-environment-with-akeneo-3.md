@@ -22,12 +22,12 @@ Update the current managed_vhost with staging port.
 hypernode-manage-vhosts  akeneo.example.hypernode.io --port-http-staging 8888 --port-https-staging 8443 --force-https --https
 ```
 
-## Split the Nnginx Configuration for Production and Staging
+## Split the Nginx Configuration for Production and Staging
 
-First run the following commands to differentiate between te Production and Staging environment within Nginx.
+First run the following commands to differentiate between the Production and Staging environment within Nginx.
 
 ```bash
-cd ~/nginx/demo.akeneo.experius.io
+cd ~/nginx/akeneo.example.hypernode.io
 cp server.akeneo.conf staging.akeneo.conf
 mv server.akeneo.conf public.akeneo.conf
 ```
