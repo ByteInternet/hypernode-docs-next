@@ -85,6 +85,8 @@ least connections.
 Web traffic is terminated by NGINX, which (optionally) forwards the request to varnish, which can return a cached page or send the
 request to [HAProxy](https://www.haproxy.org/), which sends the request to the application servers.
 
+To manage the HAProxy service, you can use our utility command `hypernode-haproxyctl`. Learn more about this command in our [hypernode-haproxyctl documentation](tools/how-to-use-hypernode-haproxyctl-tool.md).
+
 ### Managing NGINX
 
 To add custom NGINX rules for handling specific things on the loadbalancer (like serving assets), the `loadbalancer.` prefix can be
