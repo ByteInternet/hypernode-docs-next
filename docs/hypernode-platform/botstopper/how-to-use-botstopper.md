@@ -233,17 +233,7 @@ You usually do not need allow rules for API or webhook traffic. Botstopper allow
 
 The botstopper service logs to `/var/log/botstopper/botstopper.log`. The log file consists [JSON Lines](https://jsonlines.org/), meaning that each line in the log file is a JSON-parseable line.
 
-You can render the entire log file:
-
-```bash
-cat /var/log/botstopper/botstopper.log | jq .
-```
-
-Or follow the log file
-
-```bash
-tail -f /var/log/botstopper/botstopper.log | jq .
-```
+To check the Botstopper logs in a human-readable manner, you can use the `hypernode-parse-botstopper-log` command. Read more about it in [How to View Botstopper Logs on Hypernode](./how-to-view-botstopper-logs.md).
 
 ## Safe Policy Changes
 
