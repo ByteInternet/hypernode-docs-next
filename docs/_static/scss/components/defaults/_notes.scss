@@ -10,13 +10,14 @@
     .important,
     .tip,
     .warning {
-        padding: 25px 20px 20px 40px;
+        padding: 25px 20px 12px 20px;
         margin: 20px 0;
         border-radius: 4px;
 
         .admonition-title {
             background: transparent;
             font-size: 16px;
+            margin: -12px -12px 6px;
         }
 
         p,
