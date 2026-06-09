@@ -20,6 +20,10 @@ For more background on bot traffic and Magento performance, see [How to Fix Perf
 
 ## Enable Botstopper
 
+```{warning}
+If you run a cookie consent manager in explicit mode, where only required cookies are persisted until the visitor accepts, mark the `hnbotstopper-auth` cookie as required before enabling Botstopper. Otherwise visitors who pass a challenge keep losing the cookie and the site breaks. See [The hnbotstopper-auth Cookie](#the-hnbotstopper-auth-cookie) for details.
+```
+
 Botstopper is disabled by default on a Hypernode. Enable it with:
 
 ```bash
@@ -84,6 +88,14 @@ Botstopper evaluates policy rules from top to bottom. A rule can allow, deny, ch
 `WEIGH` does not stop evaluation. Multiple `WEIGH` rules can match the same request. After all rules are checked, Botstopper uses the final weight to decide whether the request should be allowed or challenged.
 
 Challenge responses use HTTP `200`. This is intentional. Many aggressive scraper bots stop retrying once they receive a `200` response.
+
+## The hnbotstopper-auth Cookie
+
+When a visitor passes a browser challenge, Botstopper stores the result in a cookie named `hnbotstopper-auth`. The browser sends this cookie on later requests so the visitor does not have to solve a new challenge every time.
+
+```{warning}
+If you run a cookie consent manager in explicit mode, where only required cookies are persisted until the visitor accepts, you must mark `hnbotstopper-auth` as a required cookie. Otherwise the consent manager strips the cookie, the visitor fails the challenge on every request, and the site breaks.
+```
 
 ## Standard Hypernode Policies
 
