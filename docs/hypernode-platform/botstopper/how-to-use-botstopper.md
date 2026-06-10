@@ -146,7 +146,7 @@ sensible-editor /data/web/botstopper/pre.policy.yml
 After changing a policy file, restart Botstopper:
 
 ```bash
-hypernode-servicectl restart techaro-botstopper@default.service
+hypernode-servicectl restart techaro-botstopper@default
 ```
 
 ## Policy Conditions
