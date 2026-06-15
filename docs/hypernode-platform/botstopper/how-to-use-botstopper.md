@@ -198,8 +198,10 @@ Add suspicion weight for bots crawling layered navigation URLs:
 ```yaml
 - name: weigh-layered-navigation-bots
   action: WEIGH
-  path_regex: ^/.*(color|size|brand)=.*
-  user_agent_regex: (?i:bot|crawler|spider)
+  expression:
+    all:
+      - userAgent.matches("(?i:bot|crawler|spider)")
+      - '"color" in query || "size" in query || "brand" in query'
   weight:
     adjust: 20
 ```
