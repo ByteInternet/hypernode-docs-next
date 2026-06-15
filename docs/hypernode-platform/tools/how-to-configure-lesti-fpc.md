@@ -85,4 +85,4 @@ Flush your cache after making these adjustments.
 
 ## Warm Your Full Page Cache
 
-To warm your full page cache, see the page about cache warming.
+After configuring Lesti::FPC your cache is still empty, so the first visit to each page will be slow until it gets cached. To speed this up, warm your full page cache by crawling your `sitemap.xml`. See [how to warm your caches using the sitemap](../../best-practices/performance/how-to-optimize-the-performance-of-your-magento-shop.md#warm-caches-and-test-urls-using-the-sitemap-10-mins) for the steps.
