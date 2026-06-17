@@ -32,9 +32,9 @@ app@example-magweb-cmbl ~ $ hypernode-parse-botstopper-log --today
 The output shows the timestamp, log level, message, and request metadata:
 
 ```console
-2026-06-05 01:40:05.717877576Z [INF] new challenge issued > host=example.com method=GET path=/ user_agent="Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)" client_ip=66.132.172.211 accept_language="" priority="" challenge=019e956f-ffd3-735d-9dce-5fe1aa40d534
-2026-06-05 02:07:11.959647899Z [INF] new challenge issued > host=example.com method=GET path=/ user_agent="Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" client_ip=134.209.40.161 accept_language=en-US,en;q=0.5 priority="u=0, i" challenge=019e9588-d054-7c99-8684-61bbcb099b2f
-2026-06-05 02:38:01.225327165Z [INF] new challenge issued > host=example.com method=GET path=/compete-track-tote.html user_agent="Mozilla/5.0 (Linux; Android 5.0) AppleWebKit/537.36 (KHTML, like Gecko) Mobile Safari/537.36 (compatible; TikTokSpider; ttspider-feedback@tiktok.com)" client_ip=47.128.111.110 accept_language=en-US,en;q=0.5 priority="u=0, i" challenge=019e95a5-0807-759a-80d7-f450d68a1923
+2026-06-05 01:40:05.717877576Z [INF] new challenge issued > host=example.com method=GET path=/ user_agent="Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)" client_ip=66.132.172.211 accept_language="" priority="" challenge=019e956f-ffd3-735d-9dce-5fe1aa40d534 weight=10
+2026-06-05 02:07:11.959647899Z [INF] new challenge issued > host=example.com method=GET path=/ user_agent="Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" client_ip=134.209.40.161 accept_language=en-US,en;q=0.5 priority="u=0, i" challenge=019e9588-d054-7c99-8684-61bbcb099b2f weight=10
+2026-06-05 02:38:01.225327165Z [INF] new challenge issued > host=example.com method=GET path=/compete-track-tote.html user_agent="Mozilla/5.0 (Linux; Android 5.0) AppleWebKit/537.36 (KHTML, like Gecko) Mobile Safari/537.36 (compatible; TikTokSpider; ttspider-feedback@tiktok.com)" client_ip=47.128.111.110 accept_language=en-US,en;q=0.5 priority="u=0, i" challenge=019e95a5-0807-759a-80d7-f450d68a1923 weight=10
 ```
 
 Common messages include `new challenge issued` for visitors or bots that received a browser challenge.

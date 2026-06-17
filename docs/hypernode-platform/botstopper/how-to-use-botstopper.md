@@ -48,6 +48,10 @@ Enable it again for that vhost with:
 hypernode-manage-vhosts example.com --botstopper
 ```
 
+```{tip}
+Keep in mind that botstopper is only active for HTTPS domains, because it uses the Secure flag for its cookies, which requires TLS.
+```
+
 ## Choose an AI Policy
 
 Botstopper has three AI policies. The default policy is `aggressive`.
@@ -229,6 +233,19 @@ Allow JSON API requests, using [CEL expressions](https://anubis.techaro.lol/docs
       - 'path.startsWith("/api/")'
 ```
 
+Add suspicion weight for traffic from a specific country:
+
+```yaml
+- name: weigh-countries-with-high-bot-traffic
+  action: WEIGH
+  expression:
+    all:
+      - '"X-Country-Code" in headers'
+      - 'headers["X-Country-Code"] in ["BY", "RU"]'
+  weigh:
+    adjust: 10
+```
+
 You usually do not need allow rules for API or webhook traffic. Botstopper allows traffic by default. Use an `ALLOW` rule when you already have, or plan to add, a broader custom rule that could otherwise challenge or block this trusted traffic.
 
 ## Logging
@@ -236,6 +253,23 @@ You usually do not need allow rules for API or webhook traffic. Botstopper allow
 The botstopper service logs to `/var/log/botstopper/botstopper.log`. The log file consists [JSON Lines](https://jsonlines.org/), meaning that each line in the log file is a JSON-parseable line.
 
 To check the Botstopper logs in a human-readable manner, you can use the `hypernode-parse-botstopper-log` command. Read more about it in [How to View Botstopper Logs on Hypernode](./how-to-view-botstopper-logs.md).
+
+## Cookies
+
+In order to verify visitors, Botstopper uses cookies to track whether a visitor has passed a challenge. The following cookies are used:
+
+| Cookie Name                        | Purpose                                                            |
+| ---------------------------------- | ------------------------------------------------------------------ |
+| `hnbotstopper-auth`                | Used for authenticated sessions after a successful challenge.      |
+| `hnbotstopper-cookie-verification` | Temporary cookie to check whether the browser has cookies enabled. |
+
+Cookies sent by Botstopper have the following flags set:
+
+| Flag            | Purpose                                                                    |
+| --------------- | -------------------------------------------------------------------------- |
+| `Secure`        | Ensures cookies are only sent over HTTPS connections.                      |
+| `HttpOnly`      | Prevents client-side scripts from accessing the cookies.                   |
+| `SameSite=None` | Cross-domain requests will keep working, safe option with the Secure flag. |
 
 ## Safe Policy Changes
 
