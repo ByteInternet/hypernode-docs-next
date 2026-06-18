@@ -127,7 +127,7 @@ If errors continue, consider gradually increasing the workspace values further (
 
 If the problem persists after applying these fixes, contact support for further assistance.
 
-```{information}
+```{tip}
 For more information about Varnish configuration and tuning, see our [documentation on improving Varnish hit rate](https://docs.hypernode.com/hypernode-platform/varnish/improving-varnish-hit-rate-on-hypernode.html) and the official
 [Varnish documentation](https://varnish-cache.org/docs/).
 ```
