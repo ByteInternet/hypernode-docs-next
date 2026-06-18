@@ -3,7 +3,7 @@
 ipython==7.32.0
 pre-commit==4.1.0
 black==25.1.0
-pytest==8.3.5
+pytest==9.0.3
 pytest-xdist==3.6.1
 mypy==1.15.0
 flake8==7.1.2
