@@ -54,6 +54,8 @@ Cloudflare offers SSL offloading. You can upload your SSL certificates to Cloudf
 
 If you use manual SSL certificates, make sure you monitor when your certificate is about to expire.
 
+You can also use a [Cloudflare Origin CA certificate](../../hypernode-platform/ssl/how-to-use-a-custom-ssl-certificate-on-hypernode.md#use-a-cloudflare-origin-ca-certificate) to encrypt traffic between Cloudflare and your Hypernode.
+
 ## Redirection From HTTP to HTTP
 
 Redirecting from HTTP to HTTPS can cause a *Too many redirects* error. This error comes from a cached redirect that is served on both HTTP and HTTPS connection, causing the site to redirect from HTTP to HTTPS.
