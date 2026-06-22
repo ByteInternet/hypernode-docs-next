@@ -9,19 +9,15 @@ redirect_from:
   - /en/hypernode/ssl/how-to-validate-your-ssl-certificate-and-more-frequently-asked-questions-about-ssl/
 ---
 
-<!-- source: https://support.hypernode.com/en/hypernode/ssl/how-to-validate-your-ssl-certificate-and-more-frequently-asked-questions-about-ssl/ -->
-
 # How to Validate Your SSL Certificate and More Frequently Asked Questions About SSL
-
-**Please note that this only applies to Service Panel users who log in via service.byte.nl.**
 
 ## What Kind of Certificates Can I Order via Hypernode?
 
-At Hypernode you can request various SSL certificates via the [Service Panel](https://my.hypernode.com/login/). There are three types of certificates:
+At Hypernode you can request various SSL certificates via the [Control Panel](https://my.hypernode.com/login/). There are three types of certificates:
 
-- SSL single certificate; you can use this on a single domain for the naked domain and the www domain (example.com and [www.example.com](http://www.example.com)).
-- SSL wildcard certificate; You can use this to secure all subdomains (\* .example.nl) for your domain name, but also on [www.example.nl](http://www.example.nl) and the naked domain (ie example.nl). However, this certificate does not work on \*. \*. example.nl.
-- EV-SSL certificate; you can only use this on the main domain (example.nl). EV stands for Extended Validation and gives you the reliable green bar, known from many bank websites. In terms of technology, an EV-SSL certificate does not differ from the "normal" SSL certificates, but the difference is in the identity investigation. With an EV-SSL certificate, extensive research is done into the identity of the applicant. In that sense, an EV-SSL certificate is "worth" more or more reliable. The contract period for all SSL certificates is one year.
+- SSL single certificate; you can use this on a single domain for the naked domain and the www domain (`example.com` and `www.example.com`).
+- SSL wildcard certificate; You can use this to secure all subdomains (`*.example.nl`) for your domain name, but also on `www.example.nl` and the naked domain (ie `example.nl`). However, this certificate does not work on `*.*.example.nl`.
+- EV-SSL certificate; you can only use this on the main domain (`example.nl`). EV stands for Extended Validation. In terms of technology, an EV-SSL certificate does not differ from the "normal" SSL certificates, but the difference is in the identity investigation. With an EV-SSL certificate, extensive research is done into the identity of the applicant. In that sense, an EV-SSL certificate is "worth" more or more reliable. The contract period for all SSL certificates is one year.
 
 Please take into account that it can take a few days to apply for an SSL certificate. This mainly applies to EV SSL certificates for which the applicant needs to show that they have control over the domain for which the certificate was requested, the company data als needs to be verified. To do so, our supplier (Sectigo) looks at a public registry, such as that of the Chamber of Commerce, and they contact the organisation by phone. EV certificates also require documents to be signed and submitted to our supplier.
 
@@ -29,16 +25,15 @@ Please take into account that it can take a few days to apply for an SSL certifi
 
 The costs for an SSL certificate consist of two aspects: the costs for the actual certificate and the service costs for the certificate.
 
-|          |                       |                   |           |
-| -------- | --------------------- | ----------------- | --------- |
-| **Type** | **Certificate costs** | **Service costs** | **Total** |
-| Single   | € 8,00                | € 30,00           | € 38,00   |
-| Wildcard | € 75,00               | € 80,00           | € 155,00  |
-| EV       | € 95,00               | € 80,00           | € 175,00  |
+| Type     | Certificate costs | Service costs | Total    |
+| -------- | ----------------- | ------------- | -------- |
+| Single   | € 8,00            | € 30,00       | € 38,00  |
+| Wildcard | € 75,00           | € 80,00       | € 155,00 |
+| EV       | € 95,00           | € 80,00       | € 175,00 |
 
 The certificate costs you pay for an SSL certificate that you order via Hypernode, is the purchase prise we pay at our supplier. We arrange the entire SSL application for you. You do not have to do anything more than to order the certificate in your Service Panel. Only with EV-SSL you still have to take care of a number of things (as explained [here](#what-kind-of-certificates-can-i-order-via-hypernode)).
 
-In the background, the certificate is requested with the correct data, the validation is done (place file, perform validation), the certificate is retrieved and safely stored in the right place. We ensure that your SSL certificate works properly, even if you change your plan. All you have to take care of is to link the SSL certificate to the right Hypernode (which can be done with [one click](../ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-com.md#link-a-third-party-ssl-certificate-to-a-hypernode)).
+In the background, the certificate is requested with the correct data, the validation is done (place file, perform validation), the certificate is retrieved and safely stored in the right place. We ensure that your SSL certificate works properly, even if you change your plan. All you have to take care of is to link the SSL certificate to the right Hypernode (which can be done with [one click](../ssl/how-to-use-a-custom-ssl-certificate-on-hypernode.md#link-a-custom-ssl-certificate-to-a-hypernode)).
 
 ### Your SSL Certificate Is Automatically Renewed
 
@@ -86,32 +81,24 @@ You can order an SSL certificate in the Control Panel. You can find out how to d
 
 ## How Can I Link the SSL Certificate to the Hypernode?
 
-As soon as your SSL certificate has been issued you can install it on your Hypernode.
+As soon as your SSL certificate has been issued you can link it on your Hypernode.
 
-You do this via the Service Panel.
-
-1. Select your Hypernode in the Service Panel
-1. Go to the **Instellingen** tab and then to **SSL & DNS Instellingen**
-1. You will see all domains of which you are a Contracting Party. The domain for which you ordered an SSL certificate has the status "Beschikbaar" in the "SSL-certificaat" column. Click on **installeren**to install the SSL certificate on your Hypernode.
-
-Repeat this for other domains/store fronts if necessary.
+Follow our [How to use SSL certificates on your Hypernode](../ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-com.md) article.
 
 ## How Can I Cancel My SSL Certificate?
 
-Do you no longer want to use a secure connection for your website? Then you can always cancel the certificate via the Service Panel. Follow the steps below:
+Do you no longer want to use a secure connection for your website? Then you can always cancel the certificate via the Control Panel. Follow the steps below:
 
-- Login to the Service Panel
-- Select your domain name.
-- Click the **Administratief**tab.
-- Click on the**SSL Certificaat**option.
-- At the bottom you can indicate that you wish to cancel the certificate (**SSL-certificaat opzeggen**). This can be done immediately or at the end of the contract.
+1. Login to the Control Panel
+1. Select SSL in the sidebar on the left.
+1. Select your SSL certificate.
+1. Click **Delete this third-party SSL certificate**.
+1. Click **Delete this SSL certificate**.
 
-If you cancel immediately and you do not have another SSL installed, keep the following in mind:
-
-Make sure your site can work without SSL: there should no longer be references to HTTPS in your site.
+Make sure your site can work without this SSL certificate: there should no longer be references to HTTPS in your site.
 
 Make sure there are no more redirects to the HTTPS version of your site.
 
 ## Can I Use My Own SSL Certificate?
 
-You can also use a (custom) SSL certificate you purchased elsewhere on a Hypernode. You can find out how to install this on your Hypernode [here](../ssl/how-to-use-ssl-certificates-on-your-hypernode-when-ordered-via-hypernode-com.md#add-a-third-party-ssl-certificate-to-your-account).
+You can also use a (custom) SSL certificate you purchased elsewhere on a Hypernode. You can find out how to install this on your Hypernode [here](../ssl/how-to-use-a-custom-ssl-certificate-on-hypernode.md#add-a-custom-ssl-certificate-to-your-account).

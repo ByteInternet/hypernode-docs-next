@@ -21,7 +21,7 @@ SSL sends information across the internet encrypted so that only the intended re
 When you have ordered your Hypernode on Hypernode.com you have three options to use SSL on your Hypernode plan(s):
 
 - Buy an SSL certificate via Hypernode.
-- Upload your own SSL certificate
+- [Upload your own SSL certificate](../ssl/how-to-use-a-custom-ssl-certificate-on-hypernode.md)
 - Request a certificate using Let’s Encrypt
 
 ## Buy an SSL Certificate Via Hypernode (Recommended)
@@ -59,53 +59,9 @@ Please note! To avoid being charged for another year, please make sure to cancel
 
 If the certificate has already been renewed, Hypernode has already incurred costs for the renewal of the SSL certificate. Approving or not approving this request does not change that. The costs for the certificate will be added to the upcoming invoice.
 
-## Add a Third Party SSL Certificate to Your Account
+## Upload Your Own SSL Certificate
 
-You can add your SSL certificate to your account via your Control Panel. Follow the steps below:
-
-1. Log into your [Control Panel](https://my.hypernode.com/).
-1. Select SSL in the sidebar on the left:
-   ![SSL side bar screenshot](_res/sidebar-ssl-selection.png)
-1. To add a new SSL certificate, click the **Add SSL** button on the right.
-1. Click **Add third party SSL certificate**.
-1. Fill in the Private Key, Certificate and Certificate Authority (only .PEM files).
-1. Click **Apply your SSL certificate**. You'll then go to this page:
-   ![SSL certificates page screenshot](_res/ssl-certificate-page.png)
-1. Click **Details** and then **(Un)link to Hypernodes** to select one or more Hypernodes to link the certificate to.
-
-### Add a Third Party SSL Certificate Directly to a Hypernode
-
-You can also add a third pardy SSL certificate directly to a Hypernode. Follow the steps below to do so:
-
-1. Log into your [Control Panel](https://my.hypernode.com/).
-1. Select the specific Hypernode from the overview.
-1. Click on your **Hypernode** and click **SSL:** under **Services**.
-   ![SSL side bar list screenshot](_res/sidebar-list.png)
-1. To add a new SSL certificate, click the **Add SSL** button on the right.
-1. Click **Add third party SSL certificate**.
-1. Fill in the Private Key, Certificate and Certificate Authority (only .PEM files).
-1. Click **Apply your SSL certificate**.
-
-### Link a Third Party SSL Certificate to a Hypernode
-
-If you already have a third party SSL added to your account, you can link it to a specific Hypernode by following these steps:
-
-1. Log into your [Control Panel](https://my.hypernode.com/).
-1. Select the specific Hypernode from the overview.
-1. Click on your **Hypernode** and click **SSL:** under **Services**.
-   ![SSL side bar list screenshot](_res/sidebar-list.png)
-1. Here you'll see an overview of the available SSL certificates. Click **Details** and then **(Un)link to Hypernodes** to link one or more Hypernodes to link the certificate to.
-
-### Check Which Third Party Certificates Are Linked to Your Hypernode
-
-If you want to check which Third Party certificates are linked to a specific Hypernode, you can do so by following these steps:
-
-1. Log into your [Control Panel](https://my.hypernode.com/).
-1. Select the Hypernode from the overview.
-1. Click on your **Hypernode** and click **SSL:** under **Services**.
-   ![SSL side bar list screenshot](_res/sidebar-list.png)
-1. You will now see an overview of all linked SSL certificates.
-1. Click **Details** to go the detail page. You can unlink the domain or delete the SSL certificate from here.
+If you already have an SSL certificate from another certificate authority, follow [How to Use a Custom SSL Certificate on Hypernode](../ssl/how-to-use-a-custom-ssl-certificate-on-hypernode.md).
 
 ## Use Let’s Encrypt
 
@@ -208,39 +164,3 @@ After configuring your shop to only use HTTPS, please do not forget to check HTT
 - Payment providers like Adyen
 - Stock providers like Picqer
 - Google Analytics and Google Search Console
-
-## How to Generate Certificate Signing Request on Nginx using OpenSSL
-
-Log into your Hypernode with SSH and run the following command:
-
-```bash
-openssl req -new -newkey rsa:2048 -nodes -keyout myserver.key -out myserver.csr
-```
-
-**Note:** Replace yourdomain with the domain name you're securing. For example, if your domain name is mydomain.com, you would type mydomain.key and mydomain.csr where server is the name of your server.
-
-This will begin the process of generating two files: the Private-Key file for the decryption of your SSL Certificate, and a certificate signing request (CSR) file used to apply for your SSL Certificate.
-
-Enter the requested information:
-
-**- Common Name (CN):** The fully-qualified domain name, or URL, you want to secure.
-
-If you are requesting a Wildcard certificate, add an asterisk (\*) to the left of the common name where you want the wildcard, for example `*.mydomain.com`.
-
-**- Organization (O):** The legally-registered name for your business. If you are enrolling as an individual, enter the certificate requestor's name.
-
-**- Organization Unit (OU):** If applicable, enter the DBA (Doing Business As) name.
-
-**- City or Locality (L):** Name of the city where your organization is registered/located. Do not abbreviate.
-
-**- State or Province (S):** Name of the state or province where your organization is located. Do not abbreviate.
-
-**- Country (C):** The two-letter International Organization for Standardization (ISO) format country code for where your organization is legally registered.
-
-**Note:** If you do not want to enter a password for this SSL, you can leave the Passphrase field blank.
-
-Your `.csr` file will then be created.
-
-Open the CSR file with a text editor and copy and paste it (including the BEGIN and END tags) into the Certificate order form.
-
-Save (backup) the generated .key file as it will be required later when installing your SSL certificate in Nginx.
