@@ -59,7 +59,7 @@ If you want to check which custom SSL certificates are linked to a specific Hype
 
 ## Use a Cloudflare Origin CA Certificate
 
-Cloudflare Origin CA certificates encrypt traffic between Cloudflare and your Hypernode. They are useful when your domain uses Cloudflare proxying and you want to use Cloudflare SSL/TLS mode **Full (strict)**. For more information, see the [official Cloudflare Origin CA documentation](https://developers.cloudflare.com/ssl/origin-configuration/origin-ca/).
+Cloudflare Origin CA certificates encrypt traffic between Cloudflare and your Hypernode. They are useful when your domain uses Cloudflare proxying and you want to use Cloudflare SSL/TLS mode **Full (Strict)**. For more information, see the [official Cloudflare Origin CA documentation](https://developers.cloudflare.com/ssl/origin-configuration/origin-ca/).
 
 ```{warning}
 Cloudflare Origin CA certificates are only trusted by Cloudflare. Site visitors can get certificate warnings if they connect directly to your Hypernode, if you pause Cloudflare, or if you turn off proxying for a hostname that uses this certificate.
@@ -101,13 +101,13 @@ After applying the SSL certificate, link it to the correct Hypernode. If the cer
 After the certificate is installed and linked in Hypernode, update the SSL/TLS encryption mode in Cloudflare:
 
 ```{note}
-Only set **Full (strict)** globally if all Cloudflare-proxied origin hosts in the zone use a valid Origin CA or publicly trusted certificate. If only this Hypernode uses the Origin CA certificate, configure **Full (strict)** for the relevant hostname in Cloudflare.
+Only set **Full (Strict)** globally if all Cloudflare-proxied origin hosts in the zone use a valid Origin CA or publicly trusted certificate. If only this Hypernode uses the Origin CA certificate, configure **Full (Strict)** for the relevant hostname in Cloudflare.
 ```
 
 1. Log into the [Cloudflare dashboard](https://dash.cloudflare.com/).
 1. Select your account and domain.
 1. Go to **SSL/TLS** > **Overview**.
-1. Set **SSL/TLS encryption mode** to **Full (strict)**.
+1. Set **SSL/TLS encryption mode** to **Full (Strict)**.
 
 Test the website through the Cloudflare-proxied hostname after changing this setting.
 
