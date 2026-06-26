@@ -35,6 +35,9 @@ We currently run Hypernodes at several different hosting suppliers:
   - Both ISO 27001 and ISO 9001 certified.
   - Datacenter certified with ISO 9001, ISO 14001, ISO 27001, and PCI-DSS
 
+These are certifications held by external suppliers. They cover the supplier's own facilities, and are not inherited by Hypernode or by the shops we host.
+
+
 ## Infrastructure Hardening
 
 As your security is only as strong as the weakest link, the safety of our systems is built-in from the ground up, starting with our own infrastructure used to manage, monitor, and deploy Hypernodes. We employ various technical and non-technical measures to ensure both the stability and safety of these systems.
