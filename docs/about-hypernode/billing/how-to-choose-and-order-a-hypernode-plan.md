@@ -41,7 +41,7 @@ Absolutely. When choosing a free non-binding trial you can test our platform and
 
 Depending on your needs. Naturally you’ll need enough disk space for your shop, as well as enough CPU to make sure your shops stays fast during peak hours.
 
-If your shop generates a lot of traffic but is small in size, it’s better to choose a Hypernode plan that can handle said traffic easily. Bigger hosting plans like Hypernode Falcon and Eagle also offer a lot more features, such as; historical back-ups, Varnish cache and PCI compliancy (only with Eagle plans).
+If your shop generates a lot of traffic but is small in size, it’s better to choose a Hypernode plan that can handle said traffic easily. Bigger hosting plans like Hypernode Falcon and Eagle also offer a lot more features, such as; historical back-ups, and Varnish cache.
 
 Not sure what to order? Do not worry about ordering the wrong plan. The contract term of Hypernode plans is only 30 days and you can up- or downgrade your plan any time you want. You only pay for what you use.
 

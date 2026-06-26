@@ -2,7 +2,7 @@
 myst:
   html_meta:
     description: At Hypernode, we prioritize the security of our servers and hosting
-      platform. Our security policies and procedures are based on ISO 27001:2013 certification.
+      platform. Our security policies and procedures are based on ISO 27001:2022 certification.
     title: Security Statement - Protecting Your Data | Hypernode
 redirect_from:
   - /en/about/security/hypernode-security-statement/
@@ -15,18 +15,18 @@ redirect_from:
 At Hypernode we take the security of our servers, and our hosting platform, very seriously. We understand that many of our customers entrust their most important data to us, and we strive to keep this data as secure as possible. A good security standard leans on certifications, best practices, and industry standards, to set policies, and implement procedures. Combining all this allows us to defend both your, and our own data, against an ever-changing landscape of both online and offline threats.
 Below we have listed some of our most important policies to help ensure the safety of your data.
 
-## ISO Certification
+## Hypernode's Certification
 
-One of the main pillars of our security policy is our ISO 27001:2013 certification. ISO 27001 is a highly respected internationally standard for information security management. To obtain this certificate, we had to set up an information security management system, which allowed us to identify what policies, guidelines, and procedures were needed to safeguard both our own, and our customer's data. This system receives yearly, external, audits, to help us identify missing, or insufficient, policies and procedures.
+One of the main pillars of our security policy is our ISO 27001:2022 certification. ISO 27001 is a highly respected internationally standard for information security management. To obtain this certificate, we had to set up an information security management system, which allowed us to identify what policies, guidelines, and procedures were needed to safeguard both our own, and our customer's data. This system receives yearly, external, audits, to help us identify missing, or insufficient, policies and procedures.
 
-## Cloud Hosting Supplier Certification
+## Supplier Certification
 
-Because we work with cloud hosting suppliers around the world, we also need to make sure that your data is safely stored at these suppliers. To ensure this, we only work with ISO 27001:2013 certified hosting companies.
+Because we work with cloud hosting suppliers around the world, we also need to make sure that your data is safely stored at these suppliers. To ensure this, we only work with ISO 27001:2022 certified hosting companies.
 
 We currently run Hypernodes at several different hosting suppliers:
 
 - Combell OpenStack (COS)
-  - Both [ISO 27001](https://www.combell.com/en/about-combell/iso-27001-quality-label) and [ISO 9001](https://www.combell.com/en/about-combell/iso-9001-quality-label) certified.
+  - [ISO 9001](https://www.combell.com/en/about-combell/iso-certificate-hosting), [ISO 27001](https://www.combell.com/en/about-combell/iso-certificate-hosting) and [ISO 27701](https://www.combell.com/en/about-combell/iso-certificate-hosting) certified.
   - Datacenter certified with ISO 14001, ISO 27001, ISO 23301, and PCI-DSS
 - Amazon Web Services (AWS)
   - [ISO 9001](https://aws.amazon.com/compliance/iso-9001-faqs/), [ISO 27001](https://aws.amazon.com/compliance/iso-27001-faqs/), [ISO 27017](https://aws.amazon.com/compliance/iso-27017-faqs/), [ISO 27018](https://aws.amazon.com/compliance/iso-27018-faqs/), certified.
@@ -34,6 +34,8 @@ We currently run Hypernodes at several different hosting suppliers:
 - Dedicated (TBBM)
   - Both ISO 27001 and ISO 9001 certified.
   - Datacenter certified with ISO 9001, ISO 14001, ISO 27001, and PCI-DSS
+
+These are certifications held by external suppliers. They cover the supplier's own facilities, and are not inherited by Hypernode or by the shops we host.
 
 ## Infrastructure Hardening
 
