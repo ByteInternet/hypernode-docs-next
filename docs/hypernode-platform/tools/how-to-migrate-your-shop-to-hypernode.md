@@ -59,7 +59,6 @@ When you select the maintenance box in the importer tool in the Service Panel, t
 
 \*Although the Shop importer is a very easy way to import a shop, please keep in mind that is using the command line is a requirement. So if needed, find yourself an [experienced developer](https://www.byte.nl/partners#specialisms=Hypernode&cms=Magento) that can assist you with these tasks.
 
-\*The import isn't 100% foolproof so there could be situations in which it doesn't work and you'd have to use the importer-tool via the Shell.
 
 ## Option 2: for all Customers: Migrate Your Shop via Shell Using the `hypernode-importer`
 
@@ -103,5 +102,9 @@ Done? Now it's time to [check if everything works](../../best-practices/testing/
 
 - You could also use `screen` or `tmux` to migrate your shop in a terminal session. Use `man screen` or `man tmux` to learn more about these commands.
 - The Shop importer first uses `rsync` to copy the file content and retrieves the database credentials required to dump the database from the copied configuration files. This implies that if you already imported another shop before, you should first remove the old content of the other shop before migrating a new one.
+- The import isn't 100% foolproof so there could be situations in which it doesn't work. 
+- Need help with hypernode-importer? Contact support at [support@hypernode.com](mailto:support@hypernode.com) if you have questions or run into any issues.
+
+
 
 *Starting over and need a fresh Magento or Shopware install? With the `preinstall` option can start over with just one single command*
