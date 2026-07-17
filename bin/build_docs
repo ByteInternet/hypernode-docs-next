@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-set -e
-
-pushd docs
-make html
-popd

