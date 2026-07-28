@@ -1,11 +1,5 @@
 name: Run linting and suggest changes
 
-# `pull_request_target` because posting review suggestions requires a write
-# token, which `pull_request` withholds from fork pull requests. Note that the
-# fork approval policy does NOT gate `pull_request_target` runs, so nothing
-# from the pull request head may ever be executed here: dependencies are
-# installed from the trusted base branch BEFORE the head is checked out, and
-# the head is only processed as data by mdformat.
 on:
   pull_request_target:
 
