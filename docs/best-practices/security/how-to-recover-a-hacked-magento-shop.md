@@ -50,6 +50,7 @@ In most cases this will be:
 - Install all the relevant patches, for both Magento and any plugins.
 - Upgrade your Magento to the latest version.
 - Configure brute force protection.
+- Run a malware scan using [Sansec eComscan](../../hypernode-platform/tools/how-to-set-up-sansec-ecomscan-on-hypernode.md), which comes preinstalled on your Hypernode.
 - Run a scan using the [Magento corediff scanner](../../hypernode-platform/tools/how-to-use-magento-corediff-on-hypernode.md). If any clearly suspicious files are found, move them to a non reachable directory (like `/data/web/hacked/`) for later analysis, remove them from your website, and restore a trusted copy of the affected files.
 
 ### Throw the Hacker Out

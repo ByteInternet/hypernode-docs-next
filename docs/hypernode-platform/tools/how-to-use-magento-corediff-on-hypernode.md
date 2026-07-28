@@ -15,7 +15,7 @@ redirect_from:
 
 [Magento Corediff](https://github.com/sansecio/magento-corediff) is an open source tool to quickly find unauthorized modifications in a Magento 1 or 2 install. It compares each line of code in your webshop with a database filled with millions of lines of trusted code, showing you exactly what code your webshop contains that isn't supposed to be there.
 
-Corediff was created by [Sansec](https://sansec.io), specialists in Magento security and digital forensics since 2010.
+Corediff was created by [Sansec](https://sansec.io), specialists in Magento security and digital forensics since 2010. Sansec also offers a full malware and vulnerability scanner: check out [our article about eComscan](how-to-set-up-sansec-ecomscan-on-hypernode.md), which comes preinstalled on your Hypernode.
 
 ## Scanning your Magento's code
 
