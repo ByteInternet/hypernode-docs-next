@@ -1,18 +1,23 @@
 name: Cleanup acceptance environments
 
 on:
-  pull_request:
+  pull_request_target:
     types: [closed]
+
+permissions:
+  contents: read
 
 jobs:
   cleanup:
     runs-on: ubuntu-latest
     container: quay.io/hypernode/deploy:latest-php8.4-node22
     environment: acceptance
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v2
-      - name: Dump env
-        run: env
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
       - name: Cleanup acceptance environments
         run: hypernode-deploy cleanup acceptance -vvv
         env:

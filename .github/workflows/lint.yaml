@@ -5,27 +5,31 @@ on:
 
 permissions:
   contents: read
-  pull-requests: write
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ['3.12']
+    permissions:
+      contents: read
+      pull-requests: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out trusted dependency manifests from the base branch
+        uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.base.sha }}
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install dependencies
+          python-version: '3.12'
+      - name: Install dependencies from the base branch
         run: |
           pip install -r requirements/base.txt
+      - name: Check out the pull request head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - name: Check markdown format
         run: mdformat docs/
-      - uses: parkerbxyz/suggest-changes@v2
+      - uses: parkerbxyz/suggest-changes@e24c62a5a3235e6090721c7b0355b825a3a4ba9a # v3.1.2
         with:
           event: 'REQUEST_CHANGES'
