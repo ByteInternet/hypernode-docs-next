@@ -1,0 +1,152 @@
+name: Deploy pull request to acceptance
+
+on:
+  workflow_run:
+    workflows: ["Build pull request"]
+    types: [completed]
+
+permissions:
+  contents: read
+
+jobs:
+  deploy_acceptance:
+    if: >-
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    concurrency:
+      group: acceptance-${{ github.event.workflow_run.head_repository.full_name }}-${{ github.event.workflow_run.head_branch }}
+      cancel-in-progress: false
+    environment:
+      name: acceptance
+      url: ${{ steps.get_brancher_hostname.outputs.BRANCHER_URL }}
+    permissions:
+      actions: read
+      contents: read
+      pull-requests: write
+      statuses: write
+    container: quay.io/hypernode/deploy:latest-php8.4-node22
+    steps:
+      - name: Resolve the pull request behind this build
+        id: pr
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const run = context.payload.workflow_run;
+
+            // Populated for same-repository branches, empty for forks.
+            let number = (run.pull_requests || []).map((p) => p.number)[0];
+            if (!number) {
+              const { data: prs } =
+                await github.rest.repos.listPullRequestsAssociatedWithCommit({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  commit_sha: run.head_sha,
+                });
+              number = prs.filter((p) => p.state === 'open').map((p) => p.number)[0];
+            }
+            if (!number) {
+              core.setFailed(`No open pull request found for commit ${run.head_sha}`);
+              return;
+            }
+
+            const { data: pr } = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: number,
+            });
+            core.setOutput('number', pr.number);
+            core.setOutput('head_sha', run.head_sha);
+            core.setOutput('head_ref', pr.head.ref);
+            core.setOutput('base_sha', pr.base.sha);
+
+      - name: Check out the trusted deploy configuration
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+      - name: Add repository to git safe directories
+        run: git config --global --add safe.directory $GITHUB_WORKSPACE
+
+      - name: download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: deployment-build
+          path: build/
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: webfactory/ssh-agent@e83874834305fe9a4a2997156cb26c5de65a8555 # v0.10.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - run: mkdir -p $HOME/.ssh
+
+      - name: deploy to acceptance
+        run: hypernode-deploy deploy acceptance -vvv --reuse-brancher
+        env:
+          HYPERNODE_API_TOKEN: ${{ secrets.HYPERNODE_API_TOKEN }}
+          # workflow_run does not set GITHUB_HEAD_REF, which deploy.php uses to
+          # label the brancher. Without this every pull request shares one node.
+          CI_REF: ${{ steps.pr.outputs.head_ref }}
+
+      - name: Get brancher hostname
+        id: get_brancher_hostname
+        run: echo "BRANCHER_URL=https://$(jq .hostnames[0] deployment-report.json -r)" >> $GITHUB_OUTPUT
+
+      - name: Get changed pages
+        id: changed_pages
+        env:
+          BASE_SHA: ${{ steps.pr.outputs.base_sha }}
+          HEAD_SHA: ${{ steps.pr.outputs.head_sha }}
+          BRANCHER_URL: ${{ steps.get_brancher_hostname.outputs.BRANCHER_URL }}
+        run: |
+          # The built commit is fetched by SHA as data to diff against (the
+          # pull request ref may already point at a newer push); it is never
+          # checked out or executed.
+          git fetch --no-tags --quiet origin "$HEAD_SHA"
+          result="$(python3 ci/bin/get_changed_urls.py \
+            "$BASE_SHA" \
+            "$HEAD_SHA" \
+            --base-url="$BRANCHER_URL"
+          )"
+          echo "$result"
+          {
+            echo "CHANGED_PAGES<<EOF"
+            echo "$result"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+        shell: bash
+
+      - name: Comment hostname on PR
+        uses: thollander/actions-comment-pull-request@24bffb9b452ba05a4f3f77933840a6a841d1b32b # v3.0.1
+        with:
+          pr-number: ${{ steps.pr.outputs.number }}
+          comment-tag: acceptance-environment
+          message: |
+            Acceptance server is available at ${{ steps.get_brancher_hostname.outputs.BRANCHER_URL }}.
+            ${{ steps.changed_pages.outputs.CHANGED_PAGES }}
+
+      # workflow_run runs do not appear in the pull request's check list.
+      - name: Mirror result onto the pull request head commit
+        if: always() && steps.pr.outputs.head_sha
+        uses: actions/github-script@v7
+        env:
+          HEAD_SHA: ${{ steps.pr.outputs.head_sha }}
+          JOB_STATUS: ${{ job.status }}
+          BRANCHER_URL: ${{ steps.get_brancher_hostname.outputs.BRANCHER_URL }}
+        with:
+          script: |
+            const ok = process.env.JOB_STATUS === 'success';
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            await github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: process.env.HEAD_SHA,
+              state: ok ? 'success' : 'failure',
+              context: 'Deploy pull request to acceptance',
+              target_url: ok ? (process.env.BRANCHER_URL || runUrl) : runUrl,
+              description: ok
+                ? 'Acceptance environment deployed'
+                : 'Acceptance deploy failed',
+            });
