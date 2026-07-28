@@ -5,11 +5,13 @@ on:
 
 permissions:
   contents: read
-  pull-requests: write
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     strategy:
       matrix:
         python-version: ['3.12']
@@ -26,6 +28,6 @@ jobs:
           pip install -r requirements/base.txt
       - name: Check markdown format
         run: mdformat docs/
-      - uses: parkerbxyz/suggest-changes@v2
+      - uses: parkerbxyz/suggest-changes@e24c62a5a3235e6090721c7b0355b825a3a4ba9a # v3.1.2
         with:
           event: 'REQUEST_CHANGES'

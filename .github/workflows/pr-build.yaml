@@ -1,0 +1,27 @@
+name: Build pull request
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    container: quay.io/hypernode/deploy:latest-php8.4-node22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Add repository to git safe directories
+        run: git config --global --add safe.directory $GITHUB_WORKSPACE
+      - run: hypernode-deploy build -vvv
+      - name: archive build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: deployment-build
+          path: build/build.tgz
+          retention-days: 5
