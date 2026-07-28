@@ -1,5 +1,11 @@
 name: Run linting and suggest changes
 
+# `pull_request_target` because posting review suggestions requires a write
+# token, which `pull_request` withholds from fork pull requests. Note that the
+# fork approval policy does NOT gate `pull_request_target` runs, so nothing
+# from the pull request head may ever be executed here: dependencies are
+# installed from the trusted base branch BEFORE the head is checked out, and
+# the head is only processed as data by mdformat.
 on:
   pull_request_target:
 
@@ -12,20 +18,22 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
-    strategy:
-      matrix:
-        python-version: ['3.12']
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out trusted dependency manifests from the base branch
+        uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.base.sha }}
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install dependencies
+          python-version: '3.12'
+      - name: Install dependencies from the base branch
         run: |
           pip install -r requirements/base.txt
+      - name: Check out the pull request head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - name: Check markdown format
         run: mdformat docs/
       - uses: parkerbxyz/suggest-changes@e24c62a5a3235e6090721c7b0355b825a3a4ba9a # v3.1.2
