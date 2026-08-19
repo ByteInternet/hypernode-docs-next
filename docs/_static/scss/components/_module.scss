@@ -52,6 +52,6 @@
     }
 }
 
-.rst-content p + ul {
+.rst-content p:not(.admonition-title) + ul {
     margin-top: -14px;
 }
