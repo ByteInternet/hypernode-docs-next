@@ -213,7 +213,7 @@ requires-dist = [
     { name = "beautifulsoup4", specifier = "==4.11.1" },
     { name = "frontmatter", specifier = "==3.0.7" },
     { name = "gitpython", specifier = "==3.1.44" },
-    { name = "markdownify", specifier = "==0.11.2" },
+    { name = "markdownify", specifier = "==0.14.1" },
     { name = "mdformat", specifier = "==0.7.18" },
     { name = "mdformat-myst", specifier = "==0.2.1" },
     { name = "mdit-py-plugins" },
@@ -273,15 +273,15 @@ wheels = [
 
 [[package]]
 name = "markdownify"
-version = "0.11.2"
+version = "0.14.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "beautifulsoup4" },
     { name = "six" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/6b/ea/a4e0d129b95ad792a924430efbdad9e31f67f1ff6f2d6a0edbc3ed9be12e/markdownify-0.11.2.tar.gz", hash = "sha256:d613f95b2649d8b83c4c4cb2e6c24cea8c7df4e07d418f92fa25ad0ddbb045e0", size = 14175, upload-time = "2022-04-24T09:03:36.097Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/1b/75/483a4bcca436fe88d02dc7686c372631d833848951b368700bdc0c770bb7/markdownify-0.14.1.tar.gz", hash = "sha256:a62a7a216947ed0b8dafb95b99b2ef4a0edd1e18d5653c656f68f03db2bfb2f1", size = 14332, upload-time = "2024-11-24T22:08:30.775Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/0b/58/65fbb51c854e80268b85af4358bc212844037820e71279af20d524f7fd36/markdownify-0.11.2-py3-none-any.whl", hash = "sha256:ef396bb8d0ffb3efacc08b86ab4aa6d36b234e782aea9f6b7f980798eaa64e33", size = 14389, upload-time = "2022-04-24T09:03:34.553Z" },
+    { url = "https://files.pythonhosted.org/packages/65/0b/74cec93a7b05edf4fc3ea1c899fe8a37f041d7b9d303c75abf7a162924e0/markdownify-0.14.1-py3-none-any.whl", hash = "sha256:4c46a6c0c12c6005ddcd49b45a5a890398b002ef51380cd319db62df5e09bc2a", size = 11530, upload-time = "2024-11-24T22:08:29.005Z" },
 ]
 
 [[package]]
