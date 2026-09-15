@@ -258,10 +258,10 @@ To check the Botstopper logs in a human-readable manner, you can use the `hypern
 
 In order to verify visitors, Botstopper uses cookies to track whether a visitor has passed a challenge. The following cookies are used:
 
-| Cookie Name                        | Purpose                                                            |
-| ---------------------------------- | ------------------------------------------------------------------ |
-| `hnbotstopper-auth`                | Used for authenticated sessions after a successful challenge.      |
-| `hnbotstopper-cookie-verification` | Temporary cookie to check whether the browser has cookies enabled. |
+| Cookie Name                               | Purpose                                                            |
+| ----------------------------------------- | ------------------------------------------------------------------ |
+| `hnbotstopper-auth-[hash]`                | Used for authenticated sessions after a successful challenge.      |
+| `hnbotstopper-cookie-verification-[hash]` | Temporary cookie to check whether the browser has cookies enabled. |
 
 Cookies sent by Botstopper have the following flags set:
 
