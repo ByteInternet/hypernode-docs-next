@@ -127,7 +127,7 @@ This check protects HTTPS requests handled by the configured Nginx server blocks
 
 #### Download the Cloudflare Certificate
 
-Log into your Hypernode using SSH as the app user. Create the certificate directory and download the Authenticated Origin Pull CA certificate.
+Log into your Hypernode using SSH as the app user. Create the certificate directory and download the [Authenticated Origin Pull CA certificate](https://developers.cloudflare.com/ssl/static/authenticated_origin_pull_ca.pem).
 
 ```bash
 mkdir -p /data/web/nginx/ssl
