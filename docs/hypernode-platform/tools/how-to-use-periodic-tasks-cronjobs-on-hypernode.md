@@ -100,7 +100,7 @@ When you use `crontab -e` for the first time, you’ll be asked which editor you
 ## Recommendations
 
 - Idem-potency: When you write your own cron script, make sure the script is idempotent. When a script should only be run after a certain time or when a new import file is present, always make sure to exit the script when the conditions are not met. This avoids things breaking down when people run cron scripts manually to debug cron issues.
-- Time is always based on UTC (= GMT). This might differ from your local time: Dutch time is UTC+1 in winter and UTC+2 in summer. Or use this [handy converter](http://www.timeanddate.com/worldclock/))
+- Time is always based on UTC (= GMT). This might differ from your local time: Dutch time is UTC+1 in winter and UTC+2 in summer. Or use this [handy converter](https://www.timeanddate.com/worldclock/))
 - Do not run the Magento crons using `wget` or `curl`, as this is slow, might give partial results, and occupies webslots for real visitors). See above how to invoke the non-HTTP Magento cron.
 - Do not run the same cron simultaneously on multiple hosts, as results are unpredictable. When migrating, do not forget to disable the old crons.
 - Be carefull when using day of month and day of week together. Using `Dom` and `Dow` without wildcards makes this an `OR` condition and not an `AND`, running the job more often then you’d expect.

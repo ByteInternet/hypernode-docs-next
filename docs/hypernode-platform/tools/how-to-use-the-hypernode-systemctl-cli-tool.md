@@ -13,7 +13,7 @@ redirect_from:
 
 # How to Use the hypernode-systemctl CLI Tool
 
-The `hypernode-systemctl` tool allows you to set certain values for your Hypernode via the command line interface. In the past we asked you to contact support or to go to your Service Panel or Control Panel to change a setting. The `hypernode-systemctl` tool saves valuable time and makes developing and maintaining a Magento shop even more easier.
+The `hypernode-systemctl` tool allows you to set certain values for your Hypernode via the command line interface. In the past we asked you to contact support or to go to your Control Panel to change a setting. The `hypernode-systemctl` tool saves valuable time and makes developing and maintaining a Magento shop even more easier.
 
 ## Which Settings Can Be Changed on Your Hypernode?
 
@@ -239,7 +239,7 @@ Besides changing settings, the hypernode-systemctl tool also allows you to white
 
 `hypernode-systemctl whitelist --help`
 
-This tool works with the same whitelists (FTP, WAF and external database) as the Service and Control Panel. So if you would whitelist a certain IP through the hypernode-systemctl tool, it would then also show in the Service and Control Panel and vice versa. You can use the two tools interchangeably.
+This tool works with the same whitelists (FTP, WAF and external database) as the Control Panel. So if you would whitelist a certain IP through the hypernode-systemctl tool, it would then also show in the Control Panel and vice versa. You can use the two tools interchangeably.
 
 ### Seeing Your Current Whitelists
 

@@ -24,15 +24,7 @@ When a virus is detected, it is possible that only the infected attachment is de
 
 ## Disable Virus Filter
 
-We do not recommend deactivating the virus filter, but if you want to do this, you can do so via the Service Panel:
-
-- Log in to the [Service Panel](https://service.byte.nl/protected/overzicht/).
-- Select your domain name.
-- Click the 'Instellingen' tab.
-- Click on the 'Email' option.
-- Click on the 'virus- en spamfilterinstellingen' icon
-- Deselect the box after Virus Filter.
-- Click Save.
+We do not recommend deactivating the virus filter, but if you want to do this, please contact [support@hypernode.com](mailto:support@hypernode.com). The virus filter cannot be disabled from the Control Panel.
 
 ## Blocked Files
 

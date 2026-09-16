@@ -15,7 +15,7 @@ The official Hypernode Docker image for Magento development is now available. Th
 
 ## About the Hypernode Docker Image
 
-We build this image multiple times a day (every time we do a [release](https://changelog.hypernode.com/)) by applying our configuration management on the [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker) ["fat" container](https://blog.phusion.nl/2015/01/20/baseimage-docker-fat-containers-treating-containers-vms/). By treating the Docker as a lightweight VM instead of as a vehicle for a single process we stay close to what an actual Hypernode actually looks like. No micro-services or a multi-container application, but a single instance with minimal network overhead and all batteries included.
+We build this image multiple times a day (every time we do a [release](https://changelog.hypernode.com/)) by applying our configuration management on the [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker) ["fat" container](https://web.archive.org/web/2020/https://blog.phusion.nl/2015/01/20/baseimage-docker-fat-containers-treating-containers-vms/). By treating the Docker as a lightweight VM instead of as a vehicle for a single process we stay close to what an actual Hypernode actually looks like. No micro-services or a multi-container application, but a single instance with minimal network overhead and all batteries included.
 
 The `hypernode-docker` image has SSH, PHP, NGINX, MySQL, Redis, Varnish and Elasticsearch. The biggest difference between a real Hypernode and this container is that this environment does not have an [init system](https://en.wikipedia.org/wiki/Init). While it is possible to [run systemd within a Docker Container](https://developers.redhat.com/blog/2014/05/05/running-systemd-within-docker-container/) if the host is also runs [systemd](https://www.freedesktop.org/wiki/Software/systemd/), we choose not to do so to achieve greater compatibility and user-friendliness.
 
@@ -56,7 +56,7 @@ Now you're ready to use the hypernode-importer to import a shop from a remote se
 hypernode-importer --host yourhypernode.hypernode.io --path /data/web/public --set-default-url
 ```
 
-To see the container in your browser you should change the base-url to “[http://127.0.0.1:8080/”](http://127.0.0.1:8080/%E2%80%9D) and don’t forget to flush your cache afterwards:
+To see the container in your browser you should change the base-url to “[http://127.0.0.1:8080/](http://127.0.0.1:8080/)” and don’t forget to flush your cache afterwards:
 
 #### Magento 1
 
@@ -284,7 +284,7 @@ app@e4b7d958e69c:~$ ls /etc/hypernode/is_docker
 
 5. Import application
 
-Run the [hypernode-importer](../../hypernode-platform/tools/how-to-migrate-your-shop-to-hypernode.md#option-2-for-all-customers-migrate-your-shop-via-shell-using-the-hypernode-importer) to import a shop from a real Hypernode:
+Run the [hypernode-importer](../../hypernode-platform/tools/how-to-migrate-your-shop-to-hypernode.md#migrate-your-shop-via-shell-using-the-hypernode-importer) to import a shop from a real Hypernode:
 
 ```bash
 hypernode-importer --host yourhypernode.hypernode.io --path /data/web/public --set-default-url

@@ -64,4 +64,4 @@ suspicious and/or recently modified files. And you could compare with a new Mage
 
 ## Need help?
 
-Magento is no easy open source CMS. Although we’re very skilled in hosting Magento shops, making them fast and keeping conversion high, we’re no Magento developers. Luckily, we know a lot of agencies that do know a lot about how Magento works. If you need help, we advise you to contact an expert in recovering hacked Magento shops, such as [Sansec](https://www.sansec.io/), or find [a local technical partner](https://www.magereport.com/page/support) to assist you.
+Magento is no easy open source CMS. Although we’re very skilled in hosting Magento shops, making them fast and keeping conversion high, we’re no Magento developers. Luckily, we know a lot of agencies that do know a lot about how Magento works. If you need help, we advise you to contact an expert in recovering hacked Magento shops, such as [Sansec](https://www.sansec.io/), or find [a local technical partner](https://www.hypernode.com/en/our-partners/) to assist you.

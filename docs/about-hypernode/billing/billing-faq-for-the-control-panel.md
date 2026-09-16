@@ -6,6 +6,7 @@ myst:
     title: Billing Control Panel FAQ | Hypernode
 redirect_from:
   - /en/about/billing/billing-faq-for-the-control-panel/
+  - /en/about/billing/migration-faq/
 ---
 
 <!-- source: https://support.hypernode.com/en/about/billing/billing-faq-for-the-control-panel/ -->

@@ -165,8 +165,8 @@ Disclaimer: these configuration snippets are provided “as is” and we do not 
 
 ### Amasty Improved Layered Navigation (Magento 1)
 
-Do you have a Magento 1 shop and do you use the Amasty extension? You may be open to bruteforce attacks if you have a vulnerable version of the Improved Layered Navigation plugin installed. Try visiting the path `/amshopby/adminhtml_filter` (e.g. [www.example.com/amshopby/adminhtml_filter](http://www.example.com/amshopby/adminhtml_filter)) and check if you are redirected to your admin login page. If so, follow the instructions above to restrict access to this path.
+Do you have a Magento 1 shop and do you use the Amasty extension? You may be open to bruteforce attacks if you have a vulnerable version of the Improved Layered Navigation plugin installed. Try visiting the path `/amshopby/adminhtml_filter` (e.g. `www.example.com/amshopby/adminhtml_filter`) and check if you are redirected to your admin login page. If so, follow the instructions above to restrict access to this path.
 
 ## Need help?
 
-We do not provide Magento consultancy ourselves, however we partnered with professional agencies that will be able to help you. Don’t hesitate to [contact one of these agencies](https://www.magereport.com/page/support).
+We do not provide Magento consultancy ourselves, however we partnered with professional agencies that will be able to help you. Don’t hesitate to [contact one of these agencies](https://www.hypernode.com/en/our-partners/).

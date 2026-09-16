@@ -54,13 +54,13 @@ You are in control and can change some Hypernode settings yourself via [the Hype
 
 We have developed an awesome time saving tool, the Hypernode Importer tool. With 1 simple command you import a copy of an existing shop onto your Hypernode.
 This will not have a negative impact on your live shop.
-Instructions can be found in the [Hypernode support documentation](../../hypernode-platform/tools/how-to-migrate-your-shop-to-hypernode.md#option-2-for-all-customers-migrate-your-shop-via-shell-using-the-hypernode-importer).
+Instructions can be found in the [Hypernode support documentation](../../hypernode-platform/tools/how-to-migrate-your-shop-to-hypernode.md#migrate-your-shop-via-shell-using-the-hypernode-importer).
 
 ### Step 3b – Install a new application on your Hypernode
 
 In our support documentation you will find detailed information about installing the different applications on a Hypernode:
 
-- [Akeneo 3](../../ecommerce-applications/akeneo/how-to-install-akeneo-3-on-hypernode)
+- [Akeneo 3](../../ecommerce-applications/akeneo/how-to-install-akeneo-3-on-hypernode.md)
 - [Akeneo 4](../../ecommerce-applications/akeneo/how-to-install-akeneo-4-on-hypernode.md)
 - [Akeneo 5](../../ecommerce-applications/akeneo/how-to-install-akeneo-5-on-hypernode.md)
 - [Akeneo 6](../../ecommerce-applications/akeneo/how-to-install-akeneo-6-on-hypernode.md)
@@ -91,12 +91,12 @@ Please note: when you have an SSL certificate and use the secure base URL you sh
 
 ### Step 6 – Configure DNS
 
-There are 2 ways to handle your DNS. Only customers who have access to the Service Panel can choose option 2.
+There are 2 ways to handle your DNS. You can choose option 2 if your domain is registered with (or moved to) Hypernode.
 
 1. Point the DNS of your externally hosted domain to the Hypernode by adding two records:
    1. An A-record to the direct IP of your Hypernode for your apex or naked domain.
    1. A CNAME-record to example.hypernode.io for your www-domain, with example replaced by your appname of course.
-1. Move your domain(s) to Hypernode and let us manage the DNS (Service Panel users only).
+1. Move your domain(s) to Hypernode and let us manage the DNS.
 
 ### Step 7 – Configure Nginx
 

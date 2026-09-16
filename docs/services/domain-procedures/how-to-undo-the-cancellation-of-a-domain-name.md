@@ -12,8 +12,6 @@ redirect_from:
 
 # How to Undo the Cancellation of a Domain Name
 
-**Please note that this only applies to Service Panel users who log in via service.byte.nl. We don't offer domain registration for our Control Panel users at the moment.**
-
 For 40 days after you cancel a domain name, it can't be re-registered by anyone except you. It's 'in quarantine'. So, if your cancelled your domain by mistake, or you change your mind, you can get your domain back.
 
 ## My Domain Is in Quarantine

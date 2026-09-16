@@ -1,6 +1,14 @@
+---
+myst:
+  html_meta:
+    description: Example Hypernode Deploy deploy.php configuration for Magento 2, including
+      themes, static content locales, shared files and custom build steps.
+    title: Hypernode Deploy Config for Magento 2 | Hypernode
+---
+
 # Config for Magento 2
 
-This is a sample configuration that suffices for most magento2 installations:
+This is a sample configuration that suffices for most Magento 2 installations:
 
 ```php
 <?php
@@ -15,7 +23,7 @@ $productionStage->addServer('appname.hypernode.io');
 return $configuration;
 ```
 
-By using the Magento2 ApplicationTemplate, a bunch of default configuration gets set in Hypernode Deploy, and should work out-of-the-box for most magento 2 stores.
+By using the Magento2 ApplicationTemplate, a bunch of default configuration gets set in Hypernode Deploy, and should work out-of-the-box for most Magento 2 shops.
 
 ## Common issues
 
@@ -125,9 +133,12 @@ For more information, see the [Hypernode Deploy v4.8.0 changelog](https://change
 
 ### Defining custom steps
 
-You potentially need to add custom steps to the deployment, for example to build npm assets or do server actions after deployment.
+You potentially need to add custom steps to the deployment, for example to build npm assets or do server actions after deployment. Import the Deployer functions you use at the top of your `deploy.php`, otherwise PHP cannot resolve them inside the `Hypernode\DeployConfiguration` namespace:
 
 ```php
+use function Deployer\run;
+use function Deployer\task;
+
 task('node:install', static function () {
     run("npm ci");
 });

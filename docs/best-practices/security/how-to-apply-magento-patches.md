@@ -41,9 +41,9 @@ Log on to the shell server. If you don’t how to log on, contact your hosting p
 
 ### Step 3: Download and Upload the Patch
 
-To download the correct patch for your webshop you need to know what version of Magento you’re using. Don’t know what version you use? Find out using [this tutorial](https://www.euperia.com/development/how-to-find-the-magento-version/844).
+To download the correct patch for your webshop you need to know what version of Magento you’re using. Don’t know what version you use? You can find it in the back-end of your Magento shop under **System > Tools > Compilation**, or by checking the `app/Mage.php` file.
 
-Download the patch(es) you need via the [Magento downloads page](http://magento.com/security/patches). Upload the patch with SSH to your Magento folder.
+Download the patch(es) you need via the [Magento downloads page](https://magento.com/security/patches). Upload the patch with SSH to your Magento folder.
 
 ### Step 4: Apply the Patch
 
@@ -56,11 +56,11 @@ app@abcdef-example-magweb-cmbl:~/magento$ bash patch_supee-5994.sh
 
 ### Step 5: Clear Your Cache
 
-It’s important to flush the Magento cache after applying the patch. Flushing your caches can be done in the back-end of your Magento shop under Cache management. More info about flushing your cache in the back-end of Magento can be found in the [Magentocommerce Knowledgebase](http://www.magentocommerce.com/knowledge-base/entry/cache-storage-management/%09200). Don’t forget to flush your OPcode or APC cache as well!
+It’s important to flush the Magento cache after applying the patch. Flushing your caches can be done in the back-end of your Magento shop under Cache management. More info about flushing your cache in the back-end of Magento can be found in the [Adobe Commerce documentation](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management). Don’t forget to flush your OPcode or APC cache as well!
 
 ### Step 6: Check Your Shop
 
-Don’t forget to check your shop for vulnerabilities after patching and flushing your caches. Magento’s [Security Patch Page](http://magento.com/security-patch) provides a list of signs to look out for to determine whether your site is comprised or not.
+Don’t forget to check your shop for vulnerabilities after patching and flushing your caches. Adobe’s [Security Patch Page](https://magento.com/security/patches) provides a list of signs to look out for to determine whether your site is comprised or not.
 
 ### Step 7: Clean up the Patch
 
@@ -103,12 +103,12 @@ In this example only SUPEE-5344 has been applied. When you uninstalled a patch, 
 
 **Magereport keeps saying security patch 6482 isn’t installed**
 
-We found out that there are several reasons why Patch 6788 comes out as uninstalled on [MageReport.com.](https://www.magereport.com/page/support), so we recommend you to check the following:
+We found out that there are several reasons why Patch 6788 comes out as uninstalled on [MageReport.com.](https://www.magereport.com/), so we recommend you to check the following:
 
-- When compilation is enabled in the backend of your Magento, SUPEE-6482 doesn’t work properly. Disable compilation (navigate to System > Tools > Compilation page and click on Disable button) to make sure the patch works. After disabling compilation, check your site with [MageReport.com.](https://www.magereport.com/page/support) again. If the check still comes out as not installed, try re-compiling.
+- When compilation is enabled in the backend of your Magento, SUPEE-6482 doesn’t work properly. Disable compilation (navigate to System > Tools > Compilation page and click on Disable button) to make sure the patch works. After disabling compilation, check your site with [MageReport.com.](https://www.magereport.com/) again. If the check still comes out as not installed, try re-compiling.
 - Check if the patch is installed in the correct directory;
 - Reload your opcode cache, webserver, php-fpm process and possible other caches. The old code might be still be active;
 - Check your shops’ .htaccess. If you’ve made any adjustements in your .htaccess, it’s possible the patch is only partially installed;
 - Using a Magento version older than Magento 1.6.1.0? Update to a more recent version. When patching Magento versions older than Magento 1.6.1.0, certain redirects aren’t added.
 
-We hope one of the causes mentioned above can fix your problem. If not, we recommend you to hire a Magento specialist. Unfortunately we can’t help fixing these problems. We’re a hosting company that specializes in Magento hosting. Magento development however is a completely different specialty. A list of Magento developers per country can be found on [MageReport.com.](https://www.magereport.com/page/support)
+We hope one of the causes mentioned above can fix your problem. If not, we recommend you to hire a Magento specialist. Unfortunately we can’t help fixing these problems. We’re a hosting company that specializes in Magento hosting. Magento development however is a completely different specialty. A list of Magento developers per country can be found on [MageReport.com.](https://www.hypernode.com/en/our-partners/)

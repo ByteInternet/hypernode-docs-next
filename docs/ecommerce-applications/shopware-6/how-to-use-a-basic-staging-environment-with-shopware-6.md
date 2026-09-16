@@ -76,7 +76,7 @@ mysqldump $databasename | mysql staging
 editor /data/web/shopware_staging/.env
 ```
 
-Make sure you edit the value of APP_URL to your Hypernode-URL: APP_URL="<http://APPNAME.hypernode.io:8888/>"
+Make sure you edit the value of APP_URL to your Hypernode-URL: APP_URL="http://APPNAME.hypernode.io:8888/"
 
 ### Step Eight: Change the URL in the `sales_channel_domain` Table for Your Staging Database
 
