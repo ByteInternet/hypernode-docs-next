@@ -205,7 +205,7 @@ A server certificate warning alone does not confirm that Authenticated Origin Pu
 
 If requests through Cloudflare fail after enforcement, check that Global Authenticated Origin Pulls is enabled for the correct zone, proxying is active, and the Nginx file uses the Authenticated Origin Pull CA certificate. Check the Nginx reloader output for configuration errors.
 
-To restore access temporarily, change ssl_verify_client from on to off in the same file. Save and confirm that Nginx accepts the change before disabling Authenticated Origin Pulls in Cloudflare. Direct HTTPS access is permitted again while verification is off.
+To restore access temporarily, change `ssl_verify_client` from `on` to `off` in the same file. Save and confirm that Nginx accepts the change before disabling Authenticated Origin Pulls in Cloudflare. Direct HTTPS access is permitted again while verification is off.
 
 ## How to Generate a Certificate Signing Request on Nginx Using OpenSSL
 
