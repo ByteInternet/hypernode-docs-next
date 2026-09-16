@@ -207,7 +207,6 @@ If requests through Cloudflare fail after enforcement, check that Global Authent
 
 To restore access temporarily, change ssl_verify_client from on to off in the same file. Save and confirm that Nginx accepts the change before disabling Authenticated Origin Pulls in Cloudflare. Direct HTTPS access is permitted again while verification is off.
 
-
 ## How to Generate a Certificate Signing Request on Nginx Using OpenSSL
 
 Log into your Hypernode with SSH and run the following command:
