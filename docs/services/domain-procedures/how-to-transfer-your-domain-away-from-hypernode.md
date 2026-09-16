@@ -7,6 +7,7 @@ myst:
 redirect_from:
   - /en/services/domains/how-to-transfer-your-domain-away-from-hypernode/
   - /en/services/domains/how-to-transfer-your-domain-name-to-another-provider/
+  - /services/domain-procedures/how-to-transfer-your-domain-name-to-another-provider-service-panel/
 ---
 
 <!-- source: https://support.hypernode.com/en/services/domains/how-to-transfer-your-domain-away-from-hypernode/ -->
