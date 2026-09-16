@@ -113,7 +113,7 @@ Test the website through the Cloudflare-proxied hostname after changing this set
 
 ### Restrict Origin Access With Authenticated Origin Pulls
 
-An origin server certificate lets Cloudflare verify your Hypernode when you use Full (Strict). Authenticated Origin Pulls lets your Hypernode verify the client certificate presented by Cloudflare. Installing an origin server certificate alone does not prevent direct access to your Hypernode. See [Cloudflare Authenticated Origin Pulls](https://developers.cloudflare.com/ssl/origin-configuration/authenticated-origin-pull/).
+An origin server certificate lets Cloudflare verify your Hypernode when you use Full (Strict). Authenticated Origin Pulls lets your Hypernode verify the client certificate presented by Cloudflare. Installing an origin server certificate alone does not prevent direct access to your Hypernode. See [Cloudflare Authenticated Origin Pulls](https://developers.cloudflare.com/ssl/origin-configuration/authenticated-origin-pull/) to learn more.
 
 Hypernode supports [custom Nginx configuration](../nginx/how-to-use-nginx.md). You can use this to configure Authenticated Origin Pulls as described below. The existing Cloudflare integration for visitor IP addresses does not itself enable this certificate check.
 
