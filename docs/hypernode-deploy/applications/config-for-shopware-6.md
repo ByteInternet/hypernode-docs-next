@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    description: Example Hypernode Deploy deploy.php configuration for a Shopware 6
-      shop, using the Shopware 6 application template.
+    description: Example Hypernode Deploy deploy.php configuration for a Shopware
+      6 shop, using the Shopware 6 application template.
     title: Hypernode Deploy Config for Shopware 6 | Hypernode
 ---
 

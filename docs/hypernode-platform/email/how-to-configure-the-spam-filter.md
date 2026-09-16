@@ -43,8 +43,8 @@ The diagram below shows an approximation of what happens when you set up the spa
 
 If you use Hypernode's mail servers, you can configure the spam filter per mailbox. These settings are not available in the Control Panel; please contact [support@hypernode.com](mailto:support@hypernode.com) to change them for you. When contacting us, we advise you to set the following:
 
-   1. \*\*Marking spam: High.\*\*For example, most of the spam (about 98%) is marked in the subject line and you can have it set aside by your email program
-   1. **Blocking spam: Low**. Only obvious spam is blocked and the chance that you will lose a legit email is negligible.
+1. \*\*Marking spam: High.\*\*For example, most of the spam (about 98%) is marked in the subject line and you can have it set aside by your email program
+1. **Blocking spam: Low**. Only obvious spam is blocked and the chance that you will lose a legit email is negligible.
 
 ## Tests by Our Spam Filter
 

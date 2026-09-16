@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    description: Example Hypernode Deploy deploy.php configuration for Magento 2, including
-      themes, static content locales, shared files and custom build steps.
+    description: Example Hypernode Deploy deploy.php configuration for Magento 2,
+      including themes, static content locales, shared files and custom build steps.
     title: Hypernode Deploy Config for Magento 2 | Hypernode
 ---
 
