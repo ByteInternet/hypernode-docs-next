@@ -60,7 +60,7 @@ Download the latest Shopware version (version 5 in this example) to your Docker 
 
 ## Step Five - Install Shopware via Your Browser
 
-- Open your browser and browse to: “[http://127.0.0.1:8080/recovery/install”](http://127.0.0.1:8080/recovery/install/index.php%E2%80%9D)
+- Open your browser and browse to: “[http://127.0.0.1:8080/recovery/install](http://127.0.0.1:8080/recovery/install)”
 - Click "Next"
 - Agree to the terms of service.
 - Make sure to configure your database correctly:

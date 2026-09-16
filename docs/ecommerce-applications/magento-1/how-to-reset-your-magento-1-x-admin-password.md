@@ -81,7 +81,7 @@ Additionally you can change the passwords for admin users directly in the databa
 
 First, log in to phpMyAdmin:
 
-- Go to phpMyAdmin on the hypernode by visiting <http://appname.hypernode.io/phpmyadmin> or by clicking the link in our service panel.
+- Go to phpMyAdmin on the hypernode by visiting `http://appname.hypernode.io/phpmyadmin` or by enabling it via the Control Panel.
 - Login with the username and password in `~/.my.cnf`
 - Select the prod database on the left side panel.
 - In the top bar, select the `SQL` tab.

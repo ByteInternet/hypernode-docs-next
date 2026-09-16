@@ -17,14 +17,13 @@ When you want to use Office365 and your domain is registered with Hypernode or h
 
 ## Validation Record
 
-When you add your domain to Office365 they wil provide you with a verification string that you need to add to the DNS for your domain, the string will look something like this \*MS=ms#########.\*You need to add this at a TXT record. To do so login to your [Service Panel](https://my.hypernode.com/) and follow the next steps:
+When you add your domain to Office365 they wil provide you with a verification string that you need to add to the DNS for your domain, the string will look something like this \*MS=ms#########.\*You need to add this at a TXT record. To do so open the DNS manager in your [Control Panel](https://my.hypernode.com/) and follow the next steps:
 
-1. Log in to the Service Panel (my.hypernode.com).
-1. Select the domain from the domain overview.
-1. Click the tab **Instellingen**.
-1. Then select **DNS**.
-1. Click **Voeg Record Toe**
-1. Switch the record type to TXT and for the content add the string Office365 generated for you. Then click **Save Record**
+1. Log in to the [Control Panel](https://my.hypernode.com/).
+1. Select **Domains** in the sidebar and open the domain you want to configure.
+1. Click **DNS manager**.
+1. Click **Add new record**.
+1. Switch the record type to TXT and for the content add the string Office365 generated for you. Then save the record.
 
 ## DNS Records for Office365
 
@@ -46,6 +45,6 @@ When you want to keep using the Hypernode name servers while using Office365 you
 
 You don't need to add a new SPF record if you already have one (for example for your Hypernode) you can just edit the current one (with the pencil icon) and add the Outlook value to the current record
 
-Please note that if you had created email boxes and email addresses at Hypernode, you must delete them. You can do this under **Instellingen > Email**in the Service Panel. Make sure to [export the emails](../../best-practices/email/how-to-export-your-emails.md) in the inbox if you want to save them to your new Office365 account before deleting the accounts at Hypernode.
+Please note that if you had created email boxes and email addresses at Hypernode, you must delete them. Please contact [support@hypernode.com](mailto:support@hypernode.com) to remove them. Make sure to [export the emails](../../best-practices/email/how-to-export-your-emails.md) in the inbox if you want to save them to your new Office365 account before deleting the accounts at Hypernode.
 
 Do you have any questions about how Office 365 works? Then it is best to visit the [Office 365 Community](https://techcommunity.microsoft.com/t5/office-365/bd-p/Office365General).

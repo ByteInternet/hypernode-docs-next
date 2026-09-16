@@ -18,7 +18,7 @@ For e-commerce shops like Magento or Shopware, uptime is key. Customers may perc
 
 On Hypernode, zero downtime deployment is supported. As we host a large number of very different shops, we do not want to interfere with the deployment processes of our customers and partners. We offer our customers full flexibility with their deployment processes.
 
-Zero downtime deployment can be a challenge, but investing time in the set-up may absolutely pay off. Developers around the world exchange ideas and best practices on how to deploy new code without downtime. Not sure where to start? We recommend reading [this article](https://www.hypernode.com/blog/time-saving/how-to-choose-the-best-method-to-deploy-code) on how to deploy code first.
+Zero downtime deployment can be a challenge, but investing time in the set-up may absolutely pay off. Developers around the world exchange ideas and best practices on how to deploy new code without downtime. Not sure where to start? We recommend reading our [Hypernode Deploy documentation](../../hypernode-deploy/getting-started.md) on how to deploy code first.
 
 ## Magento 2
 

@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    description: You can edit the DNS setting for your domain names in the Control
-      Panel(Instellingen => DNS). It takes 24 hours for a DNS change to be implemented.
+    description: You can edit the DNS settings for your domain names in the Control
+      Panel. It takes 24 hours for a DNS change to be implemented.
     title: How to manage your DNS as a Control Panel user?
 redirect_from:
   - /en/support/solutions/articles/48001153093-dns-for-service-panel-users/
@@ -12,7 +12,7 @@ redirect_from:
 
 DNS stands for "Domain Name System" and is a protocol that translates domain names to IP addresses on the internet. A DNS server is simply a table that contains IP addresses and hostnames (the name of a computer). The internet also uses DNS. When you go to a website, the IP address of the server behind the domain name is checked.
 
-You can edit the DNS setting for your domain names in the Service Panel (Instellingen => DNS).
+You can edit the DNS settings for your domain names in the Control Panel under **Domains** > your domain > **DNS manager**.
 
 It takes 24 hours for a DNS change to be implemented everywhere. Take this into account.
 
@@ -24,7 +24,7 @@ Please note that Hypernode cannot provide uptime guarantees for external DNS, so
 
 If your domain name is registered with an external provider, please be aware that Hypernode has no control over the availability or functioning of that provider’s DNS services.
 
-If you prefer not to transfer your domain name to Hypernode, a good alternative is to update your domain’s nameservers to the Hypernode nameservers. To manage your DNS through the Service Panel, you will need a Presence plan.
+If you prefer not to transfer your domain name to Hypernode, a good alternative is to update your domain’s nameservers to the Hypernode nameservers. To manage your DNS through the Control Panel, you will need a DNS only plan.
 
 Once your DNS has been configured correctly, you can ask your domain provider to update the nameservers to the Hypernode nameservers:
 
@@ -98,7 +98,7 @@ Different DNS records have been created for the different types of internet traf
 
 ### NS Records
 
-The NS records contain the "authoritative name servers" or prevailing name servers. When your domain name is listed with Hypernode, these will always be on Byte's name servers by default. This determines that we are the party that manages the DNS records. You can also find them in the WHOIS. The Byte name servers are:
+The NS records contain the "authoritative name servers" or prevailing name servers. When your domain name is listed with Hypernode, these will always be on Hypernode's name servers by default. This determines that we are the party that manages the DNS records. You can also find them in the WHOIS. The Hypernode name servers are:
 
 ns1.hypernode.com
 
@@ -106,13 +106,13 @@ ns2.hypernode.com
 
 ns3.hypernode.com
 
-If you have set up other name servers, the DNS data will be downloaded from that server. Hypernode always recommends using the Byte name servers so that in the event of IP changes (if you switch from datacenter) we can switch quickly, without having to make changes to the DNS configuration. You can NOT change the name servers from the Service Panel. If you need to change the name servers (to for example Cloudflare) you can request this by sending an email to [support@hypernode.com](mailto:support@hypernode.com) (from the email address that is linked to the account).
+If you have set up other name servers, the DNS data will be downloaded from that server. Hypernode always recommends using the Hypernode name servers so that in the event of IP changes (if you switch from datacenter) we can switch quickly, without having to make changes to the DNS configuration. You can NOT change the name servers from the Control Panel. If you need to change the name servers (to for example Cloudflare) you can request this by sending an email to [support@hypernode.com](mailto:support@hypernode.com) (from the email address that is linked to the account).
 
 ### A Records
 
 The A record is used to link a domain name to an IP address. Usually there are multiple A records per domain name. In the example mentioned earlier under “The fields in a DNS table” there are three A records. One ensures that all visitors of domainname.nl are forwarded to the correct server and the other ensures that the domain name starting with www is also redirected to the server. A domain name always needs at least one A record to identify the web server. The third A record in the example is a wildcard record (`*.example.com`)
 
-If no A (or CNAME) record exists for * .example.nl, subdomains will not be accessible and (provided no separate address has been created for it) [www.example.nl](http://www.domainname.nl) neither. Www.example.com is seen as a subdomain by DNS.
+If no A (or CNAME) record exists for * .example.nl, subdomains will not be accessible and (provided no separate address has been created for it) [www.example.nl](http://www.example.nl) neither. Www.example.com is seen as a subdomain by DNS.
 
 ### AAAA Records
 

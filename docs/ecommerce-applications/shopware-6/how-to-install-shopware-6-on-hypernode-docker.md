@@ -75,7 +75,7 @@ ln -s /data/web/shopware/public/ /data/web/public
 
 ## Install Shopware 6
 
-Now open your browser and browse to [http://127.0.0.1:8080/recovery/install](http://127.0.0.1:8080/recovery/install/index.php%22%3Ehttp://127.0.0.1:8080/recovery/install/index.php%3C/a). At this point you can follow the install-guide through your browser. Make sure to fill in the right details at **Configure database:**
+Now open your browser and browse to [http://127.0.0.1:8080/recovery/install](http://127.0.0.1:8080/recovery/install). At this point you can follow the install-guide through your browser. Make sure to fill in the right details at **Configure database:**
 
 - Database server: localhost
 - Database user: app
@@ -87,4 +87,4 @@ Now open your browser and browse to [http://127.0.0.1:8080/recovery/install](htt
 
 **Demo data**
 
-If you’d like you could install demo data as well. To do this you’ll need to login the backend: <http://APPNAME.hypernode.io/admin/> with the credentials you entered during the step: Basic shop set-up at the installation. At your first login you’ll see the “First Run Wizard”, make sure to install the Demo data at the “Demo data” menu.
+If you’d like you could install demo data as well. To do this you’ll need to login the backend: `http://APPNAME.hypernode.io/admin/` with the credentials you entered during the step: Basic shop set-up at the installation. At your first login you’ll see the “First Run Wizard”, make sure to install the Demo data at the “Demo data” menu.

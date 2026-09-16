@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Complete Gitlab CI pipeline example to build and deploy your application
+      to Hypernode with Hypernode Deploy.
+    title: Hypernode Deploy With Gitlab CI | Hypernode
+---
+
 # Gitlab CI
 
 ```{note}

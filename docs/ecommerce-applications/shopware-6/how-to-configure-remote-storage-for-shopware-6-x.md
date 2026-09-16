@@ -13,7 +13,7 @@ Shopware 6.x supports remote storage for different types of files, allowing you 
 Using remote object storage in Shopware 6 provides several benefits, including:
 
 - Offloading storage from your server, reducing the load on your server, and improving performance.
-- Allows you to make use of [horizontal scaling](../../hypernode-platform/autoscaling/how-does-horizontal-autoscaling-work), as you can easily add more servers without having to worry about syncing files between them.
+- Allows you to make use of [horizontal scaling](../../hypernode-platform/autoscaling/how-does-horizontal-autoscaling-work.md), as you can easily add more servers without having to worry about syncing files between them.
 - Allows for effortless storage capacity scaling, as you can easily increase the storage capacity of your remote storage location.
 - Serving assets from a CDN, which can improve the performance of your website.
 

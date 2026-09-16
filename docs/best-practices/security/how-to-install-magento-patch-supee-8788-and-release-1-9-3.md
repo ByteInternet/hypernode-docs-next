@@ -19,7 +19,7 @@ This patch fixes about 17 issues, some of which are highly critical. They allow 
 
 ## How to Install the Patch
 
-Follow the regular patch instructions. If you run into problems, please visit the [8788 answers page at the StackExchange](http://magento.stackexchange.com/questions/140550/security-patch-supee-8788-possible-problems).
+Follow the regular patch instructions. If you run into problems, please visit the [8788 answers page at the StackExchange](https://magento.stackexchange.com/questions/140550/security-patch-supee-8788-possible-problems).
 
 Notably: the patch contains binary characters. So you should probably not open it with a regular editor, as that will mangle the data.
 

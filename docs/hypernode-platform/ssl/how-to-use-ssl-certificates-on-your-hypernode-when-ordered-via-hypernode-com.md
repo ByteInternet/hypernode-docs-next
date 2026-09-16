@@ -143,7 +143,7 @@ All files in /data/web/nginx starting with public.\* will be included in front o
 
 ## SSL on Your (non-www) Naked Domain While Using the Www-izer
 
-If you use the www-izer forwarders in the DNS settings for your domain name, people that visit [https://example.com](https://yourdomain.com) directly will get an error message, either indicating that there is no https available or a plain connection refused error.
+If you use the www-izer forwarders in the DNS settings for your domain name, people that visit [https://example.com](https://example.com) directly will get an error message, either indicating that there is no https available or a plain connection refused error.
 If Hypernode manages your DNS, or you’ve configured your DNS to point directly to the Hypernode, this will not be a problem.
 
 For more information please read the article DNS Settings Hypernode

@@ -41,7 +41,7 @@ app      1614969  0.0  0.0   2584   932 ?        S    10:39   23:51 /usr/bin/php
 The ps output shows this process has been running for a long time.
 It may be in a loop, or waiting on something, or just processing way too many things---but you don't know yet.
 
-If you knew where to look you could use XDebug locally or on your [staging server](/hypernode-platform/php/remote-debugging.md), but the first step is knowing where to look.
+If you knew where to look you could use XDebug locally or on your [staging server](../php/remote-debugging.md), but the first step is knowing where to look.
 Using livestack.py you can pause the program momentarily and print out a stacktrace.
 Now you have an idea what the program is currently running.
 By running livestack.py a few times, you can see in which area of the code PHP is spending the most time.
@@ -92,7 +92,7 @@ You may not yet know what exactly is causing the problem, but you can start your
 
 ## Examining long running web requests
 
-You may already know how to use livefpm and hypernode-fpm-status to see [what kinds of requests your Hypernode is currently serving](/hypernode-platform/tools/what-kind-of-request-is-my-hypernode-serving.md).
+You may already know how to use livefpm and hypernode-fpm-status to see [what kinds of requests your Hypernode is currently serving](what-kind-of-request-is-my-hypernode-serving.md).
 You can investigate any long running requests further using livestack.py.
 
 As `hypernode-fpm-status | grep '/some/url'` would give you current PHP process generating some url, you can also run `livestack.py --fpm '/some/url'` to find the current stack trace of that PHP process.

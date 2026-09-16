@@ -75,7 +75,7 @@ This means that [www.example.com](http://www.example.com) will point to wherever
 
 ### A Record
 
-One way to redirect your apex (or naked) domain, when the domain is not hosted on the Byte name servers, is to use the www-izers:
+One way to redirect your apex (or naked) domain, when the domain is not hosted on the Hypernode name servers, is to use the www-izers:
 
 |                                       |          |         |               |
 | ------------------------------------- | -------- | ------- | ------------- |

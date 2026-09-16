@@ -114,7 +114,7 @@ python change_magento2_staging_baseurls.py
 
 #### Change the Base URLS' for All Your Storefronts Via MySQL
 
-Another easy way to change the base URLs of all your stores is by running the [following database queries:](https://gist.github.com/experius-nl/8e5cfd21bbb407dfdaa79021ee1f3da1)
+Another easy way to change the base URLs of all your stores is by running a series of database queries. See our article on [how to change your Magento 2 base URLs](how-to-change-your-magento-2-base-urls.md) for the queries and instructions.
 
 A big thank you to our partner [Experius](https://www.experius.nl/) for providing these.
 
