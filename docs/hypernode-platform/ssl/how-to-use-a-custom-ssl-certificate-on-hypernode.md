@@ -59,7 +59,7 @@ If you want to check which custom SSL certificates are linked to a specific Hype
 
 ## Use a Cloudflare Origin CA Certificate
 
-Cloudflare Origin CA certificates encrypt traffic between Cloudflare and your Hypernode. They are useful when your domain uses Cloudflare proxying and you want to use Cloudflare SSL/TLS mode **Full (Strict)**. For more information, see the [official Cloudflare Origin CA documentation](https://developers.cloudflare.com/ssl/origin-configuration/origin-ca/).
+Cloudflare Origin CA certificates encrypt traffic between Cloudflare and your Hypernode. They are useful when your domain uses Cloudflare proxying and you want to use Cloudflare SSL/TLS mode Full (Strict). For more information, see the [official Cloudflare Origin CA documentation](https://developers.cloudflare.com/ssl/origin-configuration/origin-ca/).
 
 ```{warning}
 Cloudflare Origin CA certificates are only trusted by Cloudflare. Site visitors can get certificate warnings if they connect directly to your Hypernode, if you pause Cloudflare, or if you turn off proxying for a hostname that uses this certificate.
@@ -110,6 +110,103 @@ Only set **Full (Strict)** globally if all Cloudflare-proxied origin hosts in th
 1. Set **SSL/TLS encryption mode** to **Full (Strict)**.
 
 Test the website through the Cloudflare-proxied hostname after changing this setting.
+
+### Restrict Origin Access With Authenticated Origin Pulls
+
+An origin server certificate lets Cloudflare verify your Hypernode when you use Full (Strict). Authenticated Origin Pulls lets your Hypernode verify the client certificate presented by Cloudflare. Installing an origin server certificate alone does not prevent direct access to your Hypernode. See [Cloudflare Authenticated Origin Pulls](https://developers.cloudflare.com/ssl/origin-configuration/authenticated-origin-pull/).
+
+Hypernode supports [custom Nginx configuration](../nginx/how-to-use-nginx.md). You can use this to configure Authenticated Origin Pulls as described below. The existing Cloudflare integration for visitor IP addresses does not itself enable this certificate check.
+
+#### Before You Start
+
+Ensure your website works through Cloudflare with proxying enabled and SSL/TLS mode set to Full (Strict). Install and link a valid origin server certificate first, following [the custom SSL certificate guide](#add-the-cloudflare-certificate-to-hypernode).
+
+Global Authenticated Origin Pulls uses a certificate shared across Cloudflare accounts. It proves that a request came through the Cloudflare network. It does not prove that the request passed through your specific account or its security rules. For account-specific authentication, use [your own zone-level certificate](https://developers.cloudflare.com/ssl/origin-configuration/authenticated-origin-pull/set-up/zone-level/).
+
+This check protects HTTPS requests handled by the configured Nginx server blocks. It does not block plain HTTP or other services. To prevent an HTTP bypass, configure the origin to redirect HTTP to HTTPS or deny HTTP application access. Cloudflare Always Use HTTPS only affects requests that reach Cloudflare.
+
+#### Download the Cloudflare Certificate
+
+Log into your Hypernode using SSH as the app user. Create the certificate directory and download the Authenticated Origin Pull CA certificate.
+
+```bash
+mkdir -p /data/web/nginx/ssl
+cd /data/web/nginx/ssl
+wget -O authenticated_origin_pull_ca.pem https://developers.cloudflare.com/ssl/static/authenticated_origin_pull_ca.pem
+openssl x509 -in authenticated_origin_pull_ca.pem -noout -subject -issuer -dates
+```
+
+Continue only if the download succeeds and OpenSSL can read the certificate. This is a separate certificate from the Origin CA certificate installed through the Hypernode Control Panel. See [Cloudflare global setup](https://developers.cloudflare.com/ssl/origin-configuration/authenticated-origin-pull/set-up/global/).
+
+#### Configure Nginx
+
+Create the global configuration file below.
+
+```bash
+vi /data/web/nginx/server.authenticated_origin_pull
+```
+
+A global configuration can affect multiple websites. If you use Hypernode Managed Vhosts and only want to protect one website, use the existing vhost directory instead.
+
+```bash
+vi /data/web/nginx/example.com/server.authenticated_origin_pull
+```
+
+Replace example.com with the configured vhost name. Choose one scope. Check all affected hostnames, including staging sites, monitoring endpoints and integrations that connect directly. See [Hypernode Managed Vhosts](../nginx/hypernode-managed-vhosts.md#managing-configuration-files).
+
+Start with optional verification so requests without a client certificate remain accepted during setup.
+
+```nginx
+# Cloudflare global Authenticated Origin Pulls
+ssl_verify_client optional;
+ssl_client_certificate /data/web/nginx/ssl/authenticated_origin_pull_ca.pem;
+```
+
+Save the file. Hypernode automatically validates and reloads custom Nginx configuration. Check for errors after each edit.
+
+Resolve any reported errors before continuing. A rejected configuration leaves the previous configuration active. See [the Nginx config reloader](../nginx/how-to-use-nginx.md#nginx-config-reloader).
+
+#### Enable and Enforce Authentication
+
+In the Cloudflare dashboard, select your domain. Open SSL/TLS, then Origin Server, then Authenticated Origin Pulls. Switch Global to On. This setting covers all proxied hostnames in that zone. Follow [Cloudflare global setup](https://developers.cloudflare.com/ssl/origin-configuration/authenticated-origin-pull/set-up/global/).
+
+Check that requests through Cloudflare still work. Then edit the same Nginx file and replace its contents with the enforcing configuration.
+
+```nginx
+# Cloudflare global Authenticated Origin Pulls
+ssl_verify_client on;
+ssl_client_certificate /data/web/nginx/ssl/authenticated_origin_pull_ca.pem;
+```
+
+Save and check the reloader error file again. Optional verification does not prevent direct requests without a client certificate. The on setting requires one. See [Nginx client certificate verification](https://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_verify_client).
+
+#### Test the Configuration
+
+Test each protected hostname through Cloudflare. Use an uncached page or a temporary cache bypass rule so the test reaches your Hypernode. Check the storefront, admin and checkout.
+
+From your own computer, test direct HTTPS access using the origin IP. Replace example.com and 203.0.113.10 with your hostname and Hypernode IP.
+
+```bash
+curl --noproxy '*' --resolve example.com:443:203.0.113.10 -k -i https://example.com/
+```
+
+This preserves the hostname and TLS server name while bypassing Cloudflare DNS. The -k option skips server certificate verification for this diagnostic test, which is useful with Cloudflare Origin CA certificates. It does not provide a client certificate.
+
+A direct request without a client certificate should be rejected. Nginx can return the following response.
+
+```text
+400 Bad Request
+No required SSL certificate was sent
+```
+
+A server certificate warning alone does not confirm that Authenticated Origin Pulls works. Confirm that the origin rejects the missing client certificate and that uncached requests through Cloudflare succeed. Repeat for each origin IP and protected hostname.
+
+#### Troubleshooting and Rollback
+
+If requests through Cloudflare fail after enforcement, check that Global Authenticated Origin Pulls is enabled for the correct zone, proxying is active, and the Nginx file uses the Authenticated Origin Pull CA certificate. Check the Nginx reloader output for configuration errors.
+
+To restore access temporarily, change ssl_verify_client from on to off in the same file. Save and confirm that Nginx accepts the change before disabling Authenticated Origin Pulls in Cloudflare. Direct HTTPS access is permitted again while verification is off.
+
 
 ## How to Generate a Certificate Signing Request on Nginx Using OpenSSL
 
