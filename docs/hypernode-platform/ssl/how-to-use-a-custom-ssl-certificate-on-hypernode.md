@@ -152,7 +152,7 @@ A global configuration can affect multiple websites. If you use Hypernode Manage
 vi /data/web/nginx/example.com/server.authenticated_origin_pull
 ```
 
-Replace example.com with the configured vhost name. Choose one scope. Check all affected hostnames, including staging sites, monitoring endpoints and integrations that connect directly. See [Hypernode Managed Vhosts](../nginx/hypernode-managed-vhosts.md#managing-configuration-files).
+Replace `example.com` with the configured vhost name. Choose one scope. Check all affected hostnames, including staging sites, monitoring endpoints and integrations that connect directly. See [Hypernode Managed Vhosts](../nginx/hypernode-managed-vhosts.md#managing-configuration-files).
 
 Start with optional verification so requests without a client certificate remain accepted during setup.
 
