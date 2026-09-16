@@ -27,7 +27,7 @@ Anyone can scan their Magento shop with [MageReport.com](http://magereport.com/)
 
 The Performance checks and charts offer specific information about your shop’s performance and help you optimize your Hypernode. That’s why MageReport for Hypernode users is called MageReport Premium.
 
-Accessing [MageReport Premium](http://magereport.com/) is easy by logging on to MageReport.com with your Hypernode customer account. Choose ‘Sign in with Byte’(for Service Panel users) or 'Sign in with Hypernode' (for Control Panel users) on your top right.
+Accessing [MageReport Premium](http://magereport.com/) is easy by logging on to MageReport.com with your Hypernode customer account. Choose 'Sign in with Hypernode' on your top right.
 
 ## Security Level
 

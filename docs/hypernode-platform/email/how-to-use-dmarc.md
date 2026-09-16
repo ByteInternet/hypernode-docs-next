@@ -12,8 +12,6 @@ redirect_from:
 
 # How to Use DMARC
 
-**Please note that this only applies to Service Panel users who log in via service.byte.nl. This functionality isn't available in the Control Panel yet.**
-
 Hypernode offers DMARC (Domain-based Message Authentication, Reporting and Conformance). With SPF and DKIM you indicate which mail is real and which is fake. With DMARC you then indicate what the recipient of the mail should do if it doesn't pass the inspection.
 
 ## What Is DMARC?

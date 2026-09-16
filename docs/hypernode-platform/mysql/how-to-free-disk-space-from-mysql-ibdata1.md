@@ -43,6 +43,6 @@ This procedure includes:
 - restarting MySQL
 - re-importing the databases from the backup
 
-As mentioned [in this Stack Exchange article](http://dba.stackexchange.com/questions/24942/how-do-i-shrink-the-innodb-file-ibdata1-without-dumping-all-databases) there sadly is no other solution than the aforementioned procedure.
+As mentioned [in this Stack Exchange article](https://dba.stackexchange.com/questions/24942/how-do-i-shrink-the-innodb-file-ibdata1-without-dumping-all-databases) there sadly is no other solution than the aforementioned procedure.
 
 **If you're encountering this problem on a Hypernode, please contact support@hypernode.com so we can help you reclaim your disk space!**

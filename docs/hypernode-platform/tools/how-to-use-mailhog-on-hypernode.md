@@ -47,7 +47,7 @@ If HMV ([Hypernode Managed Vhosts](../nginx/hypernode-managed-vhosts.md)) is ena
 hypernode-manage-vhosts mailhog.example.hypernode.io --https --force-https --type mailhog
 ```
 
-After you've whitelisted your IP-address in ~/nginx/mailhog.example.hypernode.io/server.basicauth.conf, MailHog will be accessible through <https://mailhog.example.hypernode.io>
+After you've whitelisted your IP-address in ~/nginx/mailhog.example.hypernode.io/server.basicauth.conf, MailHog will be accessible through `https://mailhog.example.hypernode.io`
 
 ## How to Deactivate Mailhog
 

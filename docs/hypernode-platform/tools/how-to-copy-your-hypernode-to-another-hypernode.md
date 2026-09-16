@@ -39,7 +39,7 @@ hypernode-importer --user app --host old-appname.hypernode.io --path /data/web/m
 
 ## 4. Base-URLS
 
-One last step is to change the Base-URLS into the right URL for example: [https://newappname.hypernode.io/](https://appname%28new%29.hypernode.io/)
+One last step is to change the Base-URLS into the right URL for example: `https://newappname.hypernode.io/`
 You're able to request Let's Encrypt for this vhost:
 
 ```bash

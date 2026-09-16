@@ -81,4 +81,4 @@ bin/magento --version
 
 ## Need Help?
 
-Magento is no easy open-source CMS. Although we’re skilled in hosting Magento shops, making them fast, and keeping conversion high, we’re no Magento developers. Luckily, we know a lot of agencies that do know a lot about how Magento works. If you need help, don’t hesitate to many agencies that [contact one of these agencies](https://www.magereport.com/page/support).
+Magento is no easy open-source CMS. Although we’re skilled in hosting Magento shops, making them fast, and keeping conversion high, we’re no Magento developers. Luckily, we know a lot of agencies that do know a lot about how Magento works. If you need help, don’t hesitate to many agencies that [contact one of these agencies](https://www.hypernode.com/en/our-partners/).

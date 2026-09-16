@@ -226,5 +226,5 @@ Similar to FTP you can also grant other users access to only certain directories
 ## Troubleshooting
 
 - When using SFTP, you are always chrooted to the homedir. This implies that when you want to copy a file to `/tmp`, you will receive an error, as the `tmp/` directory does not exist in the configured homedir.
-- If you experience a ‘Connection timed out’ error, please check in our service panel if your IP address is whitelisted.
+- If you experience a ‘Connection timed out’ error, please check in the Control Panel (Hypernode > **Allowlist**) if your IP address is whitelisted.
 - If the IP is whitelisted and you still get this error: Check your local firewall and antivirus logs.

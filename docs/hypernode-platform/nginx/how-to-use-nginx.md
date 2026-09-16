@@ -125,7 +125,7 @@ For example, you want every URL starting with `/fr` to redirect to <http://yours
 rewrite ^/fr/(.*)$ http://yourshop.fr/$1 permanent;
 ```
 
-This will also maintain subfolders and query strings (such as <http://yourshop.com/fr/subfolder?arguments>).
+This will also maintain subfolders and query strings (such as `http://yourshop.com/fr/subfolder?arguments`).
 
 If the move is only temporary, you should use redirect instead of permanent.
 
