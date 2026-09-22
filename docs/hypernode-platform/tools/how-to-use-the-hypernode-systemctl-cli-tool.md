@@ -13,7 +13,7 @@ redirect_from:
 
 # How to Use the hypernode-systemctl CLI Tool
 
-The `hypernode-systemctl` tool allows you to set certain values for your Hypernode via the command line interface. In the past we asked you to contact support or to go to your Service Panel or Control Panel to change a setting. The `hypernode-systemctl` tool saves valuable time and makes developing and maintaining a Magento shop even more easier.
+The `hypernode-systemctl` tool allows you to set certain values for your Hypernode via the command line interface. In the past we asked you to contact support or to go to your Control Panel to change a setting. The `hypernode-systemctl` tool saves valuable time and makes developing and maintaining a Magento shop even more easier.
 
 ## Which Settings Can Be Changed on Your Hypernode?
 
@@ -54,7 +54,7 @@ To see which values you can set and which values they are allowed to have take a
 | **new_relic_enabled**<br/><sub></sub>                                                                                                                           | False         | True, False                                                                                                                                 |
 | **new_relic_app_name**<br/><sub>The application name shown in New Relic</sub>                                                                                   |               |                                                                                                                                             |
 | **new_relic_secret**<br/><sub>The New Relic license key</sub>                                                                                                   |               |                                                                                                                                             |
-| **nodejs_version**<br/><sub>Change the Node version</sub>                                                                                                       | 22            | 6, 10, 16, 18, 20, 22                                                                                                                       |
+| **nodejs_version**<br/><sub>Change the Node version</sub>                                                                                                       | 22            | 6, 10, 16, 18, 20, 22, 24, 26                                                                                                               |
 | **opensearch_auto_create_index**<br/><sub></sub>                                                                                                                | True          | True, False                                                                                                                                 |
 | **opensearch_enabled**<br/><sub>Enable OpenSearch</sub>                                                                                                         | True          | True, False                                                                                                                                 |
 | **opensearch_version**<br/><sub>Change the OpenSearch version</sub>                                                                                             | 2.12          | 1.x, 2.6, 2.12, 2.19, 3.3                                                                                                                   |
@@ -239,7 +239,7 @@ Besides changing settings, the hypernode-systemctl tool also allows you to white
 
 `hypernode-systemctl whitelist --help`
 
-This tool works with the same whitelists (FTP, WAF and external database) as the Service and Control Panel. So if you would whitelist a certain IP through the hypernode-systemctl tool, it would then also show in the Service and Control Panel and vice versa. You can use the two tools interchangeably.
+This tool works with the same whitelists (FTP, WAF and external database) as the Control Panel. So if you would whitelist a certain IP through the hypernode-systemctl tool, it would then also show in the Control Panel and vice versa. You can use the two tools interchangeably.
 
 ### Seeing Your Current Whitelists
 

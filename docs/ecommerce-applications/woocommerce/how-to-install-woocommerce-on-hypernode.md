@@ -80,7 +80,7 @@ $ wp core config --dbhost='localhost' --dbuser='app' --dbpass='your_mysql_passwo
 $ wp core install --admin_user='mynode_admin' --admin_password='insecure_wp_password' --admin_email='owner@example.com' --url='https://mynode.hypernode.io' --title='My WooCommerce Shop'
 ```
 
-At this point, you should be able to access your application at '<https://mynode.hypernode.io>', but you'll note that it's just a WordPress site. To change that into a WooCommerce site, run the following commands:
+At this point, you should be able to access your application at `https://mynode.hypernode.io`, but you'll note that it's just a WordPress site. To change that into a WooCommerce site, run the following commands:
 
 ```console
 $ # Optional: before installing the WooCommerce plugin, we set the email from address so we can make sure that our mails arrive.

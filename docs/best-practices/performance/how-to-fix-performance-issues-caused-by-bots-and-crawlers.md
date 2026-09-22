@@ -60,7 +60,7 @@ if ($http_user_agent ~* 'http|bot|crawl|spider|GoogleOther') {
 }
 # Here, you should define the layered navigation urls.
 # You should use your own filter keywords here
-if ($request_uri ~ 'color=|size=|mode=list|dir=desc|dir=asc') {
+if ($args ~* "(^|&)(color|size|mode=list|dir=desc|dir=asc)") {
     set $layered_navigation 1;
 }
 set $bot_and_layered "$is_bot$layered_navigation";

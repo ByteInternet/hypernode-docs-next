@@ -13,8 +13,6 @@ redirect_from:
 
 # How to Configure the Spam Filter
 
-**Please note that this only applies to Service Panel users who log in via service.byte.nl.**
-
 Spam is unsolicited email, usually with a commercial content. If you receive a lot of spam in your email box, we recommend you to configure a spam filter.
 
 ## How Does the Spam Filter Work
@@ -43,16 +41,10 @@ The diagram below shows an approximation of what happens when you set up the spa
 
 ## Configuring the Spam Filter
 
-If you use Hypernode's mail servers, you can set the spam filter yourself on the Service Panel using this step-by-step plan:
+If you use Hypernode's mail servers, you can configure the spam filter per mailbox. These settings are not available in the Control Panel; please contact [support@hypernode.com](mailto:support@hypernode.com) to change them for you. When contacting us, we advise you to set the following:
 
-1. Log into the Service Panel.
-1. Select the desired domain.
-1. Go to the tab *Instellingen*\*.\*\*\*
-1. Select *E-mail*.
-1. Click the virus- and spam settings icon located next to each mailbox (you can have different settings for each mail box).
-1. On the virus and spam filter settings page you can use the dropdown menu to configure the spam settings. We advice you to set the following:
-   1. \*\*Marking spam: High.\*\*For example, most of the spam (about 98%) is marked in the subject line and you can have it set aside by your email program
-   1. **Blocking spam: Low**. Only obvious spam is blocked and the chance that you will lose a legit email is negligible.
+1. \*\*Marking spam: High.\*\*For example, most of the spam (about 98%) is marked in the subject line and you can have it set aside by your email program
+1. **Blocking spam: Low**. Only obvious spam is blocked and the chance that you will lose a legit email is negligible.
 
 ## Tests by Our Spam Filter
 
@@ -64,7 +56,7 @@ Our spam filter contains many hundreds of tests that are performed to determine 
 - The text of the mail is searched. If words such as Viagra and Get Rich Quick appear, there will be penalty points. If it contains URLs of well-known spam sites, there will be penalty points. Above a certain number of penalty points, the mail will be rejected.
 - Via a statistical method (so-called Bayesian Spam Filtering) the mail gets a spam score. Above a certain score, the mail will be rejected.
 
-These are only a few examples. Please see [this website](http://www.spamassassin.org/) for more information. We also use [this Sender Verification](http://www.postfix.org/). We also use this blacklist.
+These are only a few examples. Please see [this website](https://spamassassin.apache.org/) for more information. We also use [this Sender Verification](https://www.postfix.org/). We also use this blacklist.
 
 ## Frequently Asked Questions
 
@@ -101,4 +93,4 @@ Use the filters of your mail program to filter out this header.
 
 **Can I disable the spam filter completely?**
 
-You can disable the spam filter via the Service Panel. Your email will still be checked for Sender Address Verification and with a blacklist (only Spamhaus at the moment).
+You can have the spam filter disabled by [support@hypernode.com](mailto:support@hypernode.com). Your email will still be checked for Sender Address Verification and with a blacklist (only Spamhaus at the moment).

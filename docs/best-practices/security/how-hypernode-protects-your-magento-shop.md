@@ -12,7 +12,7 @@ redirect_from:
 
 # How Hypernode protects your Magento shop
 
-Due to the standardisation of the ecosystem of Hypernode and our continuous integration pipeline, we can implement changes to all Hypernodes in no time. From the moment a security issue becomes known, a Magento patch for example, [we are able to block security threads on our complete platform in less than 4 hours](https://www.hypernode.com/blog/security/how-hypernode-identifies-and-blocks-new-security-threats-within-the-hour). This way we can offer our customers premium protection.
+Due to the standardisation of the ecosystem of Hypernode and our continuous integration pipeline, we can implement changes to all Hypernodes in no time. From the moment a security issue becomes known, a Magento patch for example, [we are able to block security threads on our complete platform in less than 4 hours](../../about-hypernode/security-policies/hypernode-security-statement.md). This way we can offer our customers premium protection.
 
 But, this is not only applicable for acute security issues. As Magento nerds we know that development files also need to be protected and that the Magmi tool can create a huge security hazard for example. Such risks are proactively taken care of at Hypernode.
 

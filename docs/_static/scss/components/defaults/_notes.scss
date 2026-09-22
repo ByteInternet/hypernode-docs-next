@@ -23,8 +23,22 @@
         }
 
         p,
-        a {
+        a,
+        li {
             font-size: 13px;
+        }
+
+        ul,
+        ol {
+            margin-bottom: 6px;
+
+            li {
+                line-height: 1.6;
+
+                p {
+                    line-height: inherit;
+                }
+            }
         }
     }
 

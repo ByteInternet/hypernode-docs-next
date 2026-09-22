@@ -17,7 +17,7 @@ This tutorial shows how to create a keypair and use PuTTY (for Windows users) or
 
 ## For Windows Users (PuTTY)
 
-To generate an SSH keypair and connect to your Hypernode, you’ll need to use three different programs; PuTTY, PuTTYgen and Pageant. Download these programs from the [PuTTY website](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). Follow the next steps.
+To generate an SSH keypair and connect to your Hypernode, you’ll need to use three different programs; PuTTY, PuTTYgen and Pageant. Download these programs from the [PuTTY website](https://www.putty.org/). Follow the next steps.
 
 ### Generate the Keypair With PuTTYgen
 

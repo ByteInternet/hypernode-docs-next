@@ -222,7 +222,7 @@ bin/magento setup:config:set \
 Remote storage is a requirement for Horizontal autoscaling. This is because the media files should be stored on a remote storage location instead of the local filesystem.
 This way the media files are available across multiple Hypernodes when the app is scaled up, and after scaling down the media files are still available.
 
-Follow our documentation on [remote storage for Magento 2](../../ecommerce-applications/magento-2/how-to-configure-remote-storage-for-magento-2-x) to configure remote storage.
+Follow our documentation on [remote storage for Magento 2](../../ecommerce-applications/magento-2/how-to-configure-remote-storage-for-magento-2-x.md) to configure remote storage.
 
 ## Enabling Horizontal Autoscaling
 
@@ -230,4 +230,4 @@ For detailed steps on enabling horizontal Autoscaling, please refer to our docum
 
 ## Horizontal Autoscaling Pricing
 
-To know more about the pricing, you can visit our documentation: [Horizontal Autoscaling Pricing](pricing-for-horizontal-autoscaling).
+To know more about the pricing, you can visit our documentation: [Horizontal Autoscaling Pricing](pricing-for-horizontal-autoscaling.md).

@@ -133,7 +133,7 @@ The From header is part of the message body and is only used for display purpose
 
 There are web based tools available that can help you generate an SPF record. As there are always corner cases which the generator does not take into account, blindly generating an SPF record with one of these tools and copy paste it in your DNS zone is never a good idea. If you know what you are doing however, this generators can be of great assistance.
 
-The best generators we’ve found so far are the one on [spfwizard.net](https://www.spfwizard.net), and the one on [unlock the inbox.](https://www.unlocktheinbox.com/spfwizard/) Both tools are free of use for anyone.
+The best generator we’ve found so far is the one on [unlock the inbox.](https://www.unlocktheinbox.com/spfwizard/) This tool is free of use for anyone.
 
 ### Finding your current SPF record
 
@@ -158,7 +158,6 @@ We list a few that can help you solving SPF problems:
 
 - [Kittermans SPF validation](https://www.kitterman.com/spf/validate.html) – This is the first SPF checker ever, and still well known for it’s completeness
 - [The SPF Check @ MX Toolbox](https://mxtoolbox.com/spf.aspx)– This is the most complete online email utility
-- [Mailcleaner Batch SPF Tester](https://www.mailcleaner.net/tools/test_spf.html) – Very useful to verify if all your domains are setup correctly.
 
 ## Differences compared to DKIM
 

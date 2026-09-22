@@ -74,7 +74,7 @@ default "Development restricted area";
 
 Do you want to check a webshop on a development plan using MageReport? Add the username, the password and the domain name to the URL like this:
 
-<https://www.magereport.com/scan/?s=username:password@dev.example.com>
+`https://www.magereport.com/scan/?s=username:password@dev.example.com`
 
 Alternatively you can whitelist add the IP’s MageReport uses to scan your Hypernode.
 

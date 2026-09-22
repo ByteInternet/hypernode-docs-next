@@ -116,7 +116,7 @@ You can update symlinks using the `ln` tool with the `-f` (force) feature flag:
 ln -sf /data/web/staging/some_file /data/web/staging/some_other_file
 ```
 
-That's all! Now you should be able to reach your staging environment on <http://mynode.hypernode.io:8888>
+That's all! Now you should be able to reach your staging environment on `http://mynode.hypernode.io:8888`
 
 ### How to Limit Access to a Staging Environment
 

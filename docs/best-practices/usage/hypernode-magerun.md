@@ -120,7 +120,7 @@ Building a .deb for release:
 ./build.sh
 ```
 
-Then if everything is alright, upload the new version to your repository with something like [dput](https://manpages.ubuntu.com/manpages/plucky/en/man1/dput.1.html)
+Then if everything is alright, upload the new version to your repository with something like [dput](https://manpages.ubuntu.com/manpages/noble/en/man1/dput.1.html)
 
 ## n98-magerun2 compatibility
 

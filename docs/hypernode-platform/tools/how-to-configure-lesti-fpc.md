@@ -22,7 +22,7 @@ This module also works in combination with `Redis`.
 
 This article will explain how to configure Lesti::FPC and use it on Hypernode. It is however recommended to first enable [Redis Cache](../../ecommerce-applications/magento-1/how-to-configure-redis-for-magento-1.md) as your caching backend before proceeding with this tutorial.
 
-**NB: When you used the [hypernode-importer](how-to-migrate-your-shop-to-hypernode.md#option-2-for-all-customers-migrate-your-shop-via-shell-using-the-hypernode-importer) and you were already using `Lesti::FPC`, you can skip this tutorial, as we already added the configuration for caching using `Lesti::FPC`.**
+**NB: When you used the [hypernode-importer](how-to-migrate-your-shop-to-hypernode.md#migrate-your-shop-via-shell-using-the-hypernode-importer) and you were already using `Lesti::FPC`, you can skip this tutorial, as we already added the configuration for caching using `Lesti::FPC`.**
 
 ## Download Lesti::FPC
 

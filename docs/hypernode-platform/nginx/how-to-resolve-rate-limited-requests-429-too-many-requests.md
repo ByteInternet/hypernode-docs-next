@@ -117,6 +117,7 @@ There are a couple of plugins and service providers that tend to hit the blackli
 - Mollie - `Mollie.nl HTTP client/1.0`
 - Screaming - `Screaming Frog SEO Spider`
 - Cloudflare Healthchecks - `Cloudflare-Healthchecks`
+- Sansec Security Monitor - `Sansec Security Monitor`
 
 Besides the above-known plugins that will hit the blacklisted keyword, `http.ratelimit` we know that Picqer will also hit the rate limiter because of being blocked by "**zoneperip**". Please find [here](https://picqer.com/files/ip-addresses.txt) the IP addresses of Picqer. You can exclude those IP addresses from hitting the rate limiter if you follow the [instructions](#known-rate-limited-plugins-and-service-providers).
 

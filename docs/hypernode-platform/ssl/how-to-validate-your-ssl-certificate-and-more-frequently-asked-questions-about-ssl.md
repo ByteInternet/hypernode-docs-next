@@ -13,7 +13,7 @@ redirect_from:
 
 ## What Kind of Certificates Can I Order via Hypernode?
 
-At Hypernode you can request various SSL certificates via the [Control Panel](https://my.hypernode.com/login/). There are three types of certificates:
+At Hypernode you can request various SSL certificates via the [Control Panel](https://my.hypernode.com/). There are three types of certificates:
 
 - SSL single certificate; you can use this on a single domain for the naked domain and the www domain (`example.com` and `www.example.com`).
 - SSL wildcard certificate; You can use this to secure all subdomains (`*.example.nl`) for your domain name, but also on `www.example.nl` and the naked domain (ie `example.nl`). However, this certificate does not work on `*.*.example.nl`.
@@ -31,7 +31,7 @@ The costs for an SSL certificate consist of two aspects: the costs for the actua
 | Wildcard | € 75,00           | € 80,00       | € 155,00 |
 | EV       | € 95,00           | € 80,00       | € 175,00 |
 
-The certificate costs you pay for an SSL certificate that you order via Hypernode, is the purchase prise we pay at our supplier. We arrange the entire SSL application for you. You do not have to do anything more than to order the certificate in your Service Panel. Only with EV-SSL you still have to take care of a number of things (as explained [here](#what-kind-of-certificates-can-i-order-via-hypernode)).
+The certificate costs you pay for an SSL certificate that you order via Hypernode, is the purchase prise we pay at our supplier. We arrange the entire SSL application for you. You do not have to do anything more than to order the certificate in the Control Panel. Only with EV-SSL you still have to take care of a number of things (as explained [here](#what-kind-of-certificates-can-i-order-via-hypernode)).
 
 In the background, the certificate is requested with the correct data, the validation is done (place file, perform validation), the certificate is retrieved and safely stored in the right place. We ensure that your SSL certificate works properly, even if you change your plan. All you have to take care of is to link the SSL certificate to the right Hypernode (which can be done with [one click](../ssl/how-to-use-a-custom-ssl-certificate-on-hypernode.md#link-a-custom-ssl-certificate-to-a-hypernode)).
 
@@ -51,7 +51,7 @@ If the company validation step fails, for example because the company name at Hy
 
 ### Domain Validation
 
-For a domain validated certificate, the certificate issuer only performs domain validation. When the domain name runs on the Byte name servers, we can do the validation for you. If not, the default method of doing this will be email validation. You will receive an email for this on a standard email address; admin, administrator, hostmaster, postmaster, or webmaster@example.nl. In some cases the address from the whois data is also possible. Unfortunately, other email addresses cannot be used for this, because only these emails are accepted by the CA/B forum. If it is not possible to use one of these email addresses, you can also choose CNAME validation. To do this, a CNAME record must be added to the domain name's DNS that can be verified by the certificate issuer. To request this option, you can send an email to support@hypernode.com, you will then receive the record that needs to be added to the DNS.
+For a domain validated certificate, the certificate issuer only performs domain validation. When the domain name runs on the Hypernode name servers, we can do the validation for you. If not, the default method of doing this will be email validation. You will receive an email for this on a standard email address; admin, administrator, hostmaster, postmaster, or webmaster@example.nl. In some cases the address from the whois data is also possible. Unfortunately, other email addresses cannot be used for this, because only these emails are accepted by the CA/B forum. If it is not possible to use one of these email addresses, you can also choose CNAME validation. To do this, a CNAME record must be added to the domain name's DNS that can be verified by the certificate issuer. To request this option, you can send an email to support@hypernode.com, you will then receive the record that needs to be added to the DNS.
 
 ### Whois Validation
 
@@ -61,7 +61,7 @@ The Whois register records who owns a domain name. Nowadays it is no longer requ
 
 When applying for EVs, it is necessary to sign the EV Documents. These documents consist of a Certificate Request Form & Certificate Subscriber Agreement (contract). You will receive a link by email to sign the Sectigo Subscriber Agreement online.
 
-If the EV Documents are not signed, the certificate cannot be delivered. If you do not receive these documents, you can have resend them via the Service Panel.
+If the EV Documents are not signed, the certificate cannot be delivered. If you do not receive these documents, please contact [support@hypernode.com](mailto:support@hypernode.com) to have them resent.
 
 ### Phone Validation
 

@@ -31,7 +31,7 @@ If you're likely to switch between Falcon and Eagle plans in the future, we reco
 
 ## Three ways to handle your DNS
 
-There are three ways to handle your DNS. Only customers who have access to a Service Panel can choose option 1.
+There are three ways to handle your DNS. Option 1 is available if your domain is registered with (or moved to) Hypernode.
 
 1. Move your domain(s) to Hypernode and let Hypernode manage the DNS
 1. Manage an external DNS by pointing your domain(s) to Hypernode by using CNAME and not A record
@@ -145,7 +145,7 @@ You can read how this works [in this article](../nginx/how-to-redirect-from-or-t
 
 ## Shop on a subdomain?
 
-If you host your shop on a subdomain (for example, shop.example.com), and you don’t want to be available on [www.shop.example.com](http://www.shop.example.com), you can forget all about the wwwizer service, and there’s no need to add the two IP addresses in your A records as explained above. Simply create a CNAME-record pointing to your Hypernode, and it will work:
+If you host your shop on a subdomain (for example, shop.example.com), and you don’t want to be available on `www.shop.example.com`, you can forget all about the wwwizer service, and there’s no need to add the two IP addresses in your A records as explained above. Simply create a CNAME-record pointing to your Hypernode, and it will work:
 
 ```
 shop.example.com      CNAME       example.hypernode.io

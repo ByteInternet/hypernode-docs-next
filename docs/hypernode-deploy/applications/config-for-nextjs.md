@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Example Hypernode Deploy deploy.php configuration for a NextJS application
+      on Hypernode, including PM2, Nginx proxy and Hypernode settings.
+    title: Hypernode Deploy Config for NextJS | Hypernode
+---
+
 # Config for NextJS
 
 Configuration to use as Hypernode Deploy deploy.php for a NextJS webserver application:
