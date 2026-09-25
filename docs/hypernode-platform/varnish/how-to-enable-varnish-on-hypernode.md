@@ -16,7 +16,7 @@ Customers with a Trial, Falcon S (or up) or Eagle plan can use Varnish to boost 
 
 ## Enable Varnish 4.0, 6.0 or 7.x
 
-At Hypernode it’s possible to enable Varnish 4.0, 6.0 or 7.x via the Control Panel, Service Panel or CLI. The Varnish version needed depends on the application version you’re running.
+At Hypernode it’s possible to enable Varnish 4.0, 6.0 or 7.x via the Control Panel or CLI. The Varnish version needed depends on the application version you’re running.
 
 **Enable Varnish via the [Control Panel](https://auth.hypernode.com/)**
 

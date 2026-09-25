@@ -87,17 +87,17 @@ Read more about Hypernode Managed Vhosts in [this article](../../hypernode-platf
 
 See our manual on configuring DNS for more information. As the DNS changes are propagated, traffic will go to your Hypernode.
 
-There are 3 ways to handle your DNS. Only customers who have access to the Service Panel (service.byte.nl) can choose option 1.
+There are 3 ways to handle your DNS. Option 1 is available if your domain is registered with (or moved to) Hypernode.
 
-1. Move your domain(s) to Hypernode and let Hypernode  manage the DNS (Dutch customers only).
+1. Move your domain(s) to Hypernode and let Hypernode manage the DNS.
 1. Manage an external DNS by pointing your domain(s) to Hypernode by using CNAME and not A record.
 1. Manage an external DNS by pointing your domain(s) to the IP-address of Hypernode via A record.
 
 Good to know:
 
 - Option 1 and 2 will prevent DNS downtime.
-- Option 2 has an important disadvantage: your cannot use SSL in combination with your naked domain. People that directly visit <https://yourdomain.com/>, will get a certificate warning from the browser.
-- Option 3 is the best option in case of an external DNS and you want to make use of <https://yourdomain.com/>, but you will encounter DNS downtime if the IP address of your Hypernode changes.
+- Option 2 has an important disadvantage: your cannot use SSL in combination with your naked domain. People that directly visit `https://yourdomain.com/`, will get a certificate warning from the browser.
+- Option 3 is the best option in case of an external DNS and you want to make use of `https://yourdomain.com/`, but you will encounter DNS downtime if the IP address of your Hypernode changes.
 
 As there are situations you cannot benefit from a dedicated IP on Hypernode, please decide for yourself what is the best way to handle DNS. Our recommendation is always to move your domains to Hypernode if possible.
 

@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    description: Complete Bitbucket Pipelines example to build and deploy your application
+      to Hypernode with Hypernode Deploy.
+    title: Hypernode Deploy With Bitbucket Pipelines | Hypernode
+---
+
 # Bitbucket Pipelines
 
 ```{note}
@@ -65,14 +73,14 @@ This workflow will be used in other workflows.
 # Here we use the latest Hypernode Deploy image with PHP 8.4 and Node.js 22
 image: quay.io/hypernode/deploy:latest-php8.4-node22
 
-definition:
+definitions:
   steps:
     - step: &hypernode-build
         name: Build
-       script:
-         - hypernode-deploy build
-       artifacts:
-         - build/**
+        script:
+          - hypernode-deploy build
+        artifacts:
+          - build/**
 ```
 
 ````{note}
@@ -109,10 +117,10 @@ pipelines:
   acceptance: # acceptance/staging branch
     - step: *hypernode-build
     - step:
-        name: Deploy to staging
+        name: Deploy to acceptance
         deployment: staging
         script:
-          - hypernode-deploy deploy staging
+          - hypernode-deploy deploy acceptance  # Deploy acceptance stage defined in deploy.php
 ```
 
 ## Next steps

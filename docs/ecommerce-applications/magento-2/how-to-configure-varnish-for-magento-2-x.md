@@ -116,7 +116,7 @@ The VCL you just imported and activated should have the status `active`. If all 
 
 ### The "Boot" profile
 
-To make sure your .vcl stays active even after a restart of Varnish we run a script every 5 minutes which saves the running config to /data/var/varnish/default.vcl which will be used once Varnish restarts. the "boot" profile will check what the last running .vcl was, and use that config in the "boot" profile.
+To make sure your .vcl stays active even after a restart of Varnish, the running config is saved to /data/var/varnish/default.vcl as soon as a VCL is activated (and every 5 minutes as a fallback), which will be used once Varnish restarts. the "boot" profile will check what the last running .vcl was, and use that config in the "boot" profile.
 
 This will mean that your loaded .vcl profile won't be existing the next time you'll look, and that your own .vcl profile is renamed to "boot". This is expected behaviour.
 

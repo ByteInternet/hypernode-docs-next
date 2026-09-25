@@ -2,8 +2,7 @@
 myst:
   html_meta:
     description: Learn how to export your emails from various email clients such as
-      Byte Webmail, Outlook, Mozilla Thunderbird and Mac Mail. Follow our step-by-step
-      guide.
+      Outlook, Mozilla Thunderbird and Mac Mail. Follow our step-by-step guide.
     title: How to Export your Emails? | Hypernode
 redirect_from:
   - /en/best-practices/email/how-to-export-your-emails/
@@ -13,19 +12,7 @@ redirect_from:
 
 # How to Export your Emails
 
-In this article we explain how you can export your email with a number of common email clients and our own webmail application.
-
-## Export email in Byte Webmail
-
-In the Byte webmail client it is not possible to export all the emails at once, so you have to save each email individually.
-
-1. Log in to the Byte webmail application.
-
-1. Click on an email.
-
-1. In the menu item More, select the option 'Opslaan' (.eml)
-
-An .eml file is then created in which the specific email is stored. You can then import this .eml file back into your email client. Please note that you cannot import email into Byte's webmail.
+In this article we explain how you can export your email with a number of common email clients.
 
 ## Export Email in Outlook
 

@@ -67,19 +67,14 @@ When the Magento Connect Manager is not available, Turpentine needs to be instal
 
 After installing Turpentine and flushing the Magento cache, you can start configuring Turpentine:
 
-- Log on to your [Byte Service Panel](http://auth.byte.nl)
-- Select your Hypernode plan
-- Click on the tab **Instellingen**
-- Select the option `Varnish`
-- You’ll notice Varnish cache is non-active. This is necessary for testing your shop with Varnish. (See `Test your shop with Varnish` below)
-- Don’t close this page, you’ll need this information later
+- Note the Varnish cache is non-active by default. This is necessary for testing your shop with Varnish. (See `Test your shop with Varnish` below)
 - Log on to your Magento backend
 - Navigate to System -> Configuration
 - Select **Varnish Options** under `Turpentine`
 - In the `Servers`section, fill in the following information:
   - *Varnish version*: leave this on `auto`
   - *Varnish server list*: varnish:6082
-  - *Varnish authentication key*: Paste the content from your Service Panel here
+  - *Varnish authentication key*: Paste the Varnish secret shown in your Control Panel here
 - Select `Caching Options` under `Turpentine`
 - Check if the following information is correct:
   - *Backend host*: This should say `varnish`

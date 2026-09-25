@@ -23,7 +23,7 @@ NB: If you want to create SSH keys, please read the article: [Create SSH Keys on
 
 ### Log in Using PuTTY
 
-To use PuTTY you need to download this program from the [PuTTY website](http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). To connect to Hypernode you’ll have to use your SSH hostname (name.hypernode.io) and username (app).
+To use PuTTY you need to download this program from the [PuTTY website](https://www.putty.org/). To connect to Hypernode you’ll have to use your SSH hostname (name.hypernode.io) and username (app).
 
 If you ordered your Hypernode plan or trial via Hypernode.com, you received your SSH hostname and IP address via email as soon as your Hypernode is ready for use.
 

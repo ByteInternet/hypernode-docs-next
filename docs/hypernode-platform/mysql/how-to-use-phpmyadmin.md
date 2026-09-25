@@ -112,7 +112,7 @@ deny all;
 
 Now make sure to set a symlink from within your webroot: `ln -s /usr/share/phpmyadmin/ dbadmin`
 
-And finally visit phpMyAdmin on <https://yourdomain.nl/dbadmin>
+And finally visit phpMyAdmin on `https://yourdomain.nl/dbadmin`
 
 **This will only add another URL where phpMyAdmin is accessible. If you only want to use this endpoint, block all access to `/phpmyadmin` too**
 

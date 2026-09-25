@@ -6,6 +6,7 @@ myst:
     title: How to use Domains in the Control Panel? | Hypernode
 redirect_from:
   - /en/services/domains/how-to-use-domains-in-the-control-panel/
+  - /en/services/domains/everything-about-presence-plans-and-domains/
 ---
 
 <!-- source: https://support.hypernode.com/en/services/domains/how-to-use-domains-in-the-control-panel/ -->

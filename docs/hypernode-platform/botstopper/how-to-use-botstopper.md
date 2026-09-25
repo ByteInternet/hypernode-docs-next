@@ -97,6 +97,7 @@ The standard policy does the following:
 
 1. Allows Hypernode platform services, payment providers, monitoring tools, and common e-commerce integrations.
 1. Allows IP addresses on the Hypernode WAF allowlist.
+1. Allows requests that your Hypernode, or any other node in your cluster, sends to itself, for example an extension that fetches WordPress content from your own domain, or a cache warmer requesting storefront pages.
 1. Runs your custom pre-policy from `/data/web/botstopper/pre.policy.yml`.
 1. Denies sensitive Magento media paths, such as `/media/customer/`, `/media/import/`, and `/media/downloadable/`.
 1. Allows storefront assets, such as `/static/`, normal `/media/` files, etc.
@@ -258,10 +259,10 @@ To check the Botstopper logs in a human-readable manner, you can use the `hypern
 
 In order to verify visitors, Botstopper uses cookies to track whether a visitor has passed a challenge. The following cookies are used:
 
-| Cookie Name                        | Purpose                                                            |
-| ---------------------------------- | ------------------------------------------------------------------ |
-| `hnbotstopper-auth`                | Used for authenticated sessions after a successful challenge.      |
-| `hnbotstopper-cookie-verification` | Temporary cookie to check whether the browser has cookies enabled. |
+| Cookie Name                               | Purpose                                                            |
+| ----------------------------------------- | ------------------------------------------------------------------ |
+| `hnbotstopper-auth-[hash]`                | Used for authenticated sessions after a successful challenge.      |
+| `hnbotstopper-cookie-verification-[hash]` | Temporary cookie to check whether the browser has cookies enabled. |
 
 Cookies sent by Botstopper have the following flags set:
 
