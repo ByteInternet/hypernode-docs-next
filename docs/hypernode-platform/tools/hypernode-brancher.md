@@ -21,7 +21,7 @@ This saves time and resources, and it allows users to test and develop their app
 Overall, Hypernode Brancher is a valuable addition to the Hypernode toolset, and it can help users improve the reliability and performance of their applications.
 
 ```{note}
-Hypernode Brancher is currently only available for Hypernodes on the Falcon plans. If you want to see Brancher support for the Eagle plans, please let us know by contacting support@hypernode.com.
+Hypernode Brancher is available for Hypernodes on both the Falcon and Eagle plans.
 ```
 
 ## What is Hypernode Brancher?
@@ -102,7 +102,7 @@ This fetches the hostname of the Brancher node, and leaves a comment on the pull
 
 ### Free Usage Allowance: First 400 Minutes per Hypernode
 
-All Combell Openstack plans (Falcons) include 400 complimentary Brancher minutes for each Hypernode
+All Falcon and Eagle plans include 400 complimentary Brancher minutes for each Hypernode
 as part of the base package. This means you will not be charged for your Brancher minutes usage until it surpasses the
 threshold of 400 minutes per month per Hypernode. We aim to ensure that you enjoy the benefits of our service without
 incurring additional costs within this specified limit.
