@@ -28,13 +28,13 @@ hypernode-systemctl settings botstopper_ai_policy permissive
 
 Botstopper sorts AI traffic into categories and treats them differently per policy:
 
-| AI traffic type | `aggressive` | `moderate` | `permissive` |
-| --------------- | ------------ | ---------- | ------------ |
-| Unknown or undocumented AI bots | Blocked | Blocked | Blocked |
-| AI training crawlers (`GPTBot`, `ClaudeBot`) | Blocked | Blocked | Allowed when verified |
-| AI search crawlers (`OAI-SearchBot`, `Claude-SearchBot`, `PerplexityBot`) | Blocked | Allowed when verified | Allowed when verified |
-| AI clients (`ChatGPT-User`, `Claude-User`, `MistralAI-User`, `Perplexity-User`) | Blocked | Allowed when verified | Allowed when verified |
-| Google AI fetchers (`Google-GeminiNotebook`, `Google-Agent`) | Blocked | Blocked | Allowed when verified |
+| AI traffic type                                                                 | `aggressive` | `moderate`            | `permissive`          |
+| ------------------------------------------------------------------------------- | ------------ | --------------------- | --------------------- |
+| Unknown or undocumented AI bots                                                 | Blocked      | Blocked               | Blocked               |
+| AI training crawlers (`GPTBot`, `ClaudeBot`)                                    | Blocked      | Blocked               | Allowed when verified |
+| AI search crawlers (`OAI-SearchBot`, `Claude-SearchBot`, `PerplexityBot`)       | Blocked      | Allowed when verified | Allowed when verified |
+| AI clients (`ChatGPT-User`, `Claude-User`, `MistralAI-User`, `Perplexity-User`) | Blocked      | Allowed when verified | Allowed when verified |
+| Google AI fetchers (`Google-GeminiNotebook`, `Google-Agent`)                    | Blocked      | Blocked               | Allowed when verified |
 
 Unknown AI bots are blocked in every policy. These are bots that use an AI-style user agent but are not documented by a legitimate vendor.
 
