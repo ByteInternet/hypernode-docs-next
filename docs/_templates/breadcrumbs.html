@@ -30,6 +30,9 @@
     {%- endblock %}
     {%- block breadcrumbs_aside %}
       <li class="wy-breadcrumbs-aside">
+        {%- if markdown_page_url %}
+          <a href="{{ markdown_page_url|e }}" type="text/markdown"><span class="fa fa-file-alt"></span> Markdown</a>
+        {%- endif %}
         {%- if hasdoc(pagename) and display_vcs_links %}
           {%- if display_github %}
             {%- if check_meta and 'github_url' in meta %}
