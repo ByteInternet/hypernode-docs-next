@@ -65,6 +65,14 @@
     <link rel="canonical" href="{{ pageurl|e }}" />
   {%- endif -%}
 
+  {#- LLM-FRIENDLY MARKDOWN VERSION #}
+  {%- if markdown_page_url %}
+    <link rel="alternate" type="text/markdown" href="{{ markdown_page_url|e }}" />
+  {%- endif -%}
+  {%- if llms_txt_url %}
+    <link rel="describedby" type="text/plain" href="{{ llms_txt_url|e }}" />
+  {%- endif -%}
+
   {#- JAVASCRIPTS #}
   {%- block scripts %}
   <!--[if lt IE 9]>
