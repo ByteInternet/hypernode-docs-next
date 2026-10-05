@@ -99,3 +99,12 @@ app@abcdef-example-magweb-cmbl:~$ cat nginx/server.block_cn
 # Placed by Hypernode automation on 2019-01-11 12:18
 if ($geoip_country_code = CN) { return 403; }
 ```
+
+## Removing an automatic country block
+
+Blocks placed by Hypernode automation (`server.block_<cc>` in `/data/web/nginx`) are re-armed: if you delete the file, automation will place it again when the triggering conditions recur. To permanently lift a block, leave the file in place and comment out its directives, for example:
+
+```nginx
+# Placed by Hypernode automation on 2019-01-11 12:18
+# if ($geoip_country_code = CN) { return 403; }
+```
