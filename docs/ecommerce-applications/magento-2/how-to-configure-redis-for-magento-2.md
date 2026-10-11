@@ -44,7 +44,7 @@ $ redis-cli flushall
 
 ## Configure Redis Full Page Caching for Magento 2
 
-To enable page caching Redis, extend your /data/web/magento2/app/etc/env.php with the following snippet. You should paste this in between the cache keys, so leave the cache tag in this snippet out of it.
+To enable page caching Redis:
 
 ```console
 $ cd /data/web/magento2
