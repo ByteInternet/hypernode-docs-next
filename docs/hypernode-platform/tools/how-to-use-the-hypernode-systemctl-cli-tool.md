@@ -65,6 +65,7 @@ To see which values you can set and which values they are allowed to have take a
 | **php_apcu_enabled**<br/><sub>Enable the php-apcu module</sub>                                                                                                  | False         | True, False                                                                                                                                 |
 | **php_legacy_serialize_precision_enabled**<br/><sub></sub>                                                                                                      | True          | True, False                                                                                                                                 |
 | **php_opcache_interned_strings_buffer_mb**<br/><sub>Set the OPcache interned strings buffer size in MB</sub>                                                    | None          | 16, 32, 64, 128                                                                                                                             |
+| **php_opcache_preload_enabled**<br/><sub>Enable PHP OPcache preload</sub>                                                                                       | False         | True, False                                                                                                                                 |
 | **php_opentelemetry_enabled**<br/><sub>Enable the PHP OpenTelemetry extension</sub>                                                                             | False         | True, False                                                                                                                                 |
 | **php_version**<br/><sub>Change the PHP version</sub>                                                                                                           | 8.3           | 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2, 8.3, 8.4, 8.5                                                                                  |
 | **php_xdebug_enabled**<br/><sub>Enable Xdebug for remote debugging</sub>                                                                                        | False         | True, False                                                                                                                                 |
@@ -202,6 +203,7 @@ Configure the OOM-killer to be permissive of short term memory usage, allowing m
 
 - `php_version`: Change the PHP version
 - `php_apcu_enabled`: Enable the PHP-apcu.
+- `php_opcache_preload_enabled`: Enable PHP OPcache preload. See [this article](../../hypernode-platform/php/how-to-use-php-opcache-preload.md) for more information.
 
 ### Redis persistent instance
 
