@@ -1,8 +1,7 @@
 ---
 myst:
   html_meta:
-    description: Learn how to enable and configure PHP OPcache preload on your
-      Hypernode.
+    description: Learn how to enable and configure PHP OPcache preload on your Hypernode.
     title: How to Use PHP OPcache Preload on Hypernode | Hypernode
 ---
 
