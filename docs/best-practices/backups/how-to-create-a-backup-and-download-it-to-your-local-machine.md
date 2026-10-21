@@ -14,9 +14,9 @@ redirect_from:
 
 This article will explain how you can create you own backup and download it your PC. Do note that you'll need to have **SSH** access to your Hypernode to be able to create the backup. In this tutorial we assume you're already logged into your Hypernode with SSH.
 
-*Please note that the following procedure is not supported by Hypernode. We simply list this option as we have had a number of customers who have requested this for a variety of reasons. If you run into any issues following the below steps we are unfortunately not able to help you with this.*
+Prefer to have us prepare the backup for you? For a one-off fee (€75) we can create a complete copy of your website and/or database and make it available for download. Send an e-mail to [support@hypernode.com](mailto:support@hypernode.com) with the subject "Requesting backup for download" and a description of what you need, and we will take care of it within 12 working hours. The fee will be added to your next invoice.
 
-*That said, we can upon your request and for a small fee (€ 75 EUR) arrange for a complete copy of your website (and/or database) to be made available for download. If you would like to make use of this option please send us an e-mail at [support@hypernode.com](http://support@hypernode.com) with the subject ‘Requesting backup for download’ with a description of what you need and we will take care of this within 12 (working) hours. The costs will then be added to your next invoice.*
+If you would rather create and download the backup yourself, follow the steps below.
 
 ## Create the Backup
 
