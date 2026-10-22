@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    description: Learn how to enable Botstopper, choose an AI policy, and write custom
-      Botstopper policies on Hypernode.
+    description: Learn how to enable Botstopper, choose an AI policy, preserve UTM
+      attribution after a challenge, and write custom Botstopper policies on Hypernode.
     title: How to use Botstopper on Hypernode | Hypernode
 ---
 
@@ -71,6 +71,26 @@ hypernode-systemctl settings botstopper_ai_policy permissive
 Use `aggressive` if you want the strictest AI blocking. Use `moderate` if you want to block AI training while keeping documented AI search and user tools working. Use `permissive` if you only want to block unclear or undocumented AI crawlers.
 
 Some AI crawlers also require `robots.txt` rules before they respect your opt-out. Botstopper blocks requests at the webserver layer, but `robots.txt` is still useful for crawlers that require policy signals there. See the [Magento 1 robots.txt](../../ecommerce-applications/magento-1/how-to-create-a-robots-txt-for-your-magento-1-shop.md) or [Magento 2 robots.txt](../../ecommerce-applications/magento-2/how-to-create-a-robots-txt-for-magento-2-x.md) articles if you need to configure one.
+
+## Preserve UTM Attribution After a Challenge
+
+When a visitor passes a Botstopper challenge, the browser lands on your shop with the challenge page as the technical referrer. This breaks referrer attribution in client-side analytics tools such as Plausible or GA4. Botstopper restores the original `Referer` header on the request it forwards to your shop, but tools that read `document.referrer` or UTM tags cannot be corrected that way.
+
+To keep attribution working for those tools, Botstopper can append the original external referer host to the post-challenge redirect URL as `utm_source` and `utm_medium` query parameters. For example, a visitor coming from `https://www.google.com/search?q=shoes` lands on `https://example.com/?utm_source=www.google.com&utm_medium=referral` after passing the challenge.
+
+This behavior is enabled by default. Disable it with:
+
+```bash
+hypernode-systemctl settings botstopper_utm_referer_enabled False
+```
+
+Enable it again with:
+
+```bash
+hypernode-systemctl settings botstopper_utm_referer_enabled True
+```
+
+Botstopper only adds these parameters when the original referer is an external domain and the redirect URL does not already contain UTM parameters.
 
 ## How Botstopper Handles Requests
 
