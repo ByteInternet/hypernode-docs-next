@@ -141,13 +141,6 @@ All files in /data/web/nginx starting with public.\* will be included in front o
 - Don’t forget to point the DNS for your domain to your Hypernode. More information about how this is done can be found in the article DNS settings Hypernode.
 - You will need a storefront in Magento with a secure_base_url. Otherwise Magento will redirect you to the main store. You can change the base urls using the script mentioned above, you can also do this using the following support documentation.
 
-## SSL on Your (non-www) Naked Domain While Using the Www-izer
-
-If you use the www-izer forwarders in the DNS settings for your domain name, people that visit [https://example.com](https://example.com) directly will get an error message, either indicating that there is no https available or a plain connection refused error.
-If Hypernode manages your DNS, or you’ve configured your DNS to point directly to the Hypernode, this will not be a problem.
-
-For more information please read the article DNS Settings Hypernode
-
 ## Enable SSL Stapling
 
 To enable SSL Stapling for your SSL certificate, create the following configuration in /data/web/nginx/http.ocsp:
