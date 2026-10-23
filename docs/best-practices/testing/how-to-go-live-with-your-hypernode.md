@@ -63,15 +63,11 @@ Note: from now on, database changes (orders) will be written to Hypernode, but n
 
 Remove the maintenance flag on the Hypernode, so customers accessing the new site won’t hit the maintenance page.
 
-## Step 5: Change Your Base URL to Include WWW
-
-Only if you use Hypernode’s WWW-redirection service, ensure that the base URL of your shop starts with [www](http://www). or a subdomain such as shop. Otherwise, your visitors will bounce back and forth between the redirection service and the Hypernode.
-
-## Step 6: Flush Magento Cache on Hypernode
+## Step 5: Flush Magento Cache on Hypernode
 
 Flush the cache of Magento on the Hypernode. (`magerun cache:flush`)
 
-## Step 7: Set up Hypernode Managed Vhosts
+## Step 6: Set up Hypernode Managed Vhosts
 
 Due to this configuration it is required to add a new vhost for every domain you want to link to your Hypernode. So you need to configure your DNS correctly and add a new vhost for the domain.
 
@@ -81,23 +77,20 @@ Please note that defining the vhosts '[www.example.com](http://www.example.com)'
 
 Read more about Hypernode Managed Vhosts in [this article](../../hypernode-platform/nginx/hypernode-managed-vhosts.md).
 
-## Step 8: Change DNS Records
+## Step 7: Change DNS Records
 
 ### Web Records
 
 See our manual on configuring DNS for more information. As the DNS changes are propagated, traffic will go to your Hypernode.
 
-There are 3 ways to handle your DNS. Option 1 is available if your domain is registered with (or moved to) Hypernode.
+There are 2 ways to handle your DNS. Option 1 is available if your domain is registered with (or moved to) Hypernode.
 
 1. Move your domain(s) to Hypernode and let Hypernode manage the DNS.
 1. Manage an external DNS by pointing your domain(s) to Hypernode by using CNAME and not A record.
-1. Manage an external DNS by pointing your domain(s) to the IP-address of Hypernode via A record.
 
 Good to know:
 
 - Option 1 and 2 will prevent DNS downtime.
-- Option 2 has an important disadvantage: your cannot use SSL in combination with your naked domain. People that directly visit `https://yourdomain.com/`, will get a certificate warning from the browser.
-- Option 3 is the best option in case of an external DNS and you want to make use of `https://yourdomain.com/`, but you will encounter DNS downtime if the IP address of your Hypernode changes.
 
 As there are situations you cannot benefit from a dedicated IP on Hypernode, please decide for yourself what is the best way to handle DNS. Our recommendation is always to move your domains to Hypernode if possible.
 
@@ -119,19 +112,19 @@ mydomain.com TXT v=spf1 mx:mydomain.com include:spf.appname.hypernode.io ~all
 
 For more information have a look at [our article about SPF records](../../hypernode-platform/dns/how-to-set-up-your-spf-records-for-hypernode.md).
 
-## Step 9: Configure SSL
+## Step 8: Configure SSL
 
 Enable SSL for your shop for safety and to improve search engine optimisation.
 
 You can find a detailed how-to in [this article](../../hypernode-platform/nginx/how-to-configure-your-shop-to-only-use-https.md) about configuring SSL on your shop.
 
-## Step 10: Configure Cron
+## Step 9: Configure Cron
 
 Configure cron jobs to run on your Hypernode (`crontab -e`), and configure them not to run on your old host (`crontab -ir`).
 
 Note that the time on Hypernode is configured to UTC, so the times used in the crontab are one or two hours later than Central European Time. More information about cronjobs can be found in [Configure Cronjobs on Hypernode](../../hypernode-platform/tools/how-to-use-periodic-tasks-cronjobs-on-hypernode.md).
 
-## Step 11: Configure Backups on Hypernode (Optional)
+## Step 10: Configure Backups on Hypernode (Optional)
 
 For Hypernode Falcon S (or up) and Eagle hosting plans free backups are available. If you need a backup, contact us via support@hypernode.com.
 

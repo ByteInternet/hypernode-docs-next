@@ -1,7 +1,7 @@
 ---
 myst:
   html_meta:
-    description: This article explains three ways to handle your DNS. Please decide
+    description: This article explains two ways to handle your DNS. Please decide
       for yourself the best option for your specific situation.
     title: How to manage your DNS settings on a Hypernode?
 redirect_from:
@@ -17,7 +17,7 @@ Hypernode is a cloud-based hosting service. In case of an up- or downgrade, your
 
 Thanks to Hypernode’s very cool **Dedicated IP**feature, the IP address of your Hypernode does not (!) change when you change a Hypernode plan. However, there are three exceptions to take into account.
 
-**This article explains three ways to handle your DNS. Please decide for yourself the best option for your specific situation.**
+**This article explains two ways to handle your DNS. Please decide for yourself the best option for your specific situation.**
 
 ## Dedicated IP on Hypernode – 3 exceptions
 
@@ -29,21 +29,16 @@ There are three exceptions in which you cannot benefit from a dedicated IP and w
 
 If you're likely to switch between Falcon and Eagle plans in the future, we recommend you move your domain(s) to Hypernode so we can handle the DNS of your domains to avoid downtime. Or, use the DNS settings as explained below (by using CNAME and not A record).
 
-## Three ways to handle your DNS
+## Two ways to handle your DNS
 
-There are three ways to handle your DNS. Option 1 is available if your domain is registered with (or moved to) Hypernode.
+There are two ways to handle your DNS. Option 1 is available if your domain is registered with (or moved to) Hypernode.
 
 1. Move your domain(s) to Hypernode and let Hypernode manage the DNS
 1. Manage an external DNS by pointing your domain(s) to Hypernode by using CNAME and not A record
-1. Manage an external DNS by pointing your domain(s) to the IP address of Hypernode via A record
 
 Good to know:
 
 *Options 1 and 2 will prevent DNS downtime.*
-
-*Option 2 has a significant disadvantage: you cannot use SSL with your naked domain. People who visit <https://example.com/>, will get a certificate warning from the browser.*
-
-*Option 3 is the best in case of an external DNS, and you want to make use of <https://example.com/>, but you will encounter DNS downtime if the IP address of your Hypernode changes.*
 
 If you cannot benefit from a dedicated IP on Hypernode, please decide the best way to handle your DNS. We recommend always moving your domains to Hypernode. We've included a detailed explanation of options 1 and 2 below.
 
@@ -85,7 +80,6 @@ If this is not an issue, the configuration needed can be found below:
 ### Configuration:
 
 - Have a CNAME for your www-domain + an A Record that directs to the dedicated IP address of your Hypernode
-- Have a CNAME for your www-domain + an A record for your apex (also called naked) domain pointing to a redirector that redirects to the www-domain (our wwwizers)
 
 These examples assume you have a site called example.com and a Hypernode called example.hypernode.io.
 
@@ -102,30 +96,6 @@ This means that [www.example.com](http://www.example.com) will point to wherever
 ```
 *.example.com      CNAME       example.hypernode.io
 ```
-
-## Option 3: Manage an external DNS by pointing your domain(s) to Hypernode by using CNAME and not an A-record
-
-Problems arise when people visit your naked (also called apex) domain name: example.com, without the ‘www.’-prefix. It is not possible to create a CNAME record for your apex domain.
-
-The preferred way to redirect your apex (or naked) domain when the domain is not managed by Hypernode, is to use the direct IP address of your Hypernode. You can find your IP with the `ping example.hypernode.io` command.
-
-Some DNS providers, like [DNSimple](https://dnsimple.com/) or [DNS Made Easy](http://www.dnsmadeeasy.com/), can create ALIAS or ANAME pseudo-records. These behave like CNAME records for apex domains. Unfortunately, they are not widespread yet, so the chances are your provider doesn’t support them.
-
-Another solution is redirecting traffic for the apex domain example.com to its www-counterpart [www.example.com](http://www.example.com). You can use our free wwwizer service for this. Just configure the following A-records for your apex domain, and they will redirect all traffic for you.
-
-```
-# Add both for redundancy!
-example.com A 46.21.232.141
-example.com A 46.21.233.172
-```
-
-**Please note**: Note that if you make use of the wwwizer redirect servers, people that visit <https://example.com> directly will get an error message, either indicating that there is no https available or a plain connection refused error. The wwwizers work as a forwarding service to the direct IP address of the Hypernode. This way, we can manage any IP changes for you. That is the advantage. The disadvantage is that these records do not cooperate with SSL and that, therefore the certificate does not work correctly on the domain name without the www.
-
-### Let's Encrypt and Wwwizers
-
-Also important to note is that [Let's Encrypt](../ssl/how-to-use-lets-encrypt-on-hypernode.md) does not work when you use the wwwizers, the Let's Encrypt validation cannot be completed and will return an error. The solution is to purchase a paid SSL certificate via us or to use the direct IP of your Hypernode instead.
-
-Don’t fancy these solutions? Migrate your domain to Hypernode and let us manage your DNS.
 
 ## DNS and Hypernode Managed Vhosts
 
@@ -145,7 +115,7 @@ You can read how this works [in this article](../nginx/how-to-redirect-from-or-t
 
 ## Shop on a subdomain?
 
-If you host your shop on a subdomain (for example, shop.example.com), and you don’t want to be available on `www.shop.example.com`, you can forget all about the wwwizer service, and there’s no need to add the two IP addresses in your A records as explained above. Simply create a CNAME-record pointing to your Hypernode, and it will work:
+If you host your shop on a subdomain (for example, shop.example.com), and you don’t want to be available on `www.shop.example.com`, simply create a CNAME-record pointing to your Hypernode, and it will work:
 
 ```
 shop.example.com      CNAME       example.hypernode.io

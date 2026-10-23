@@ -18,8 +18,6 @@ Many constructions are possible when it gets to the base URL. Some shop owners p
 
 There are some restrictions when choosing your base URL.
 
-If you use the wwwizer servers, which are sometimes used when your domain is not hosted at Hypernode and thus the DNS can’t be automagically changed in case of up or downgrades, your domain will always redirect to [www](http://www).
-
 More info can be found [on our page about setting your DNS](../dns/how-to-manage-your-dns-settings-for-hypernode.md).
 
 ## Redirect From Apex to WWW
