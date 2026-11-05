@@ -62,6 +62,25 @@ ssh app@example.hypernode.io
 
 Press ‘Enter’. Congrats! You now accessed your Hypernode
 
+## Troubleshooting: Prompted for a Password
+
+The `app` user on Hypernode does not have a password; authentication works with SSH keys only. If you are prompted for a password, the server did not accept your SSH key.
+
+If you have just added your SSH key in the Control Panel, keep in mind that it can take several minutes before the key is synced to your Hypernode. Wait a few minutes and try again before troubleshooting further.
+
+Do not try to enter a password at the prompt. Repeated failed login attempts can get your IP blocked by fail2ban (see [Brute Force Protection](#brute-force-protection) below).
+
+If the key is still rejected after waiting:
+
+- Make sure the key is assigned to the correct Hypernode in the SSH key manager in the Control Panel.
+- Check which key your SSH client offers by running `ssh -v app@example.hypernode.io` and comparing the fingerprint with the one shown in the Control Panel. The Control Panel shows the MD5 fingerprint, which you can get locally with:
+
+```bash
+ssh-keygen -E md5 -lf /path/to/your/key.pub
+```
+
+Replace `/path/to/your/key.pub` with the path to your public key, for example `~/.ssh/id_ed25519.pub` or `~/.ssh/id_rsa.pub`.
+
 ## Brute Force Protection
 
 We enabled fail2ban on the hypernode, which is a tool that detects bruteforces by tailing the remote access logs (`/var/log/auth.log`). IP’s that try to login with incorrect credentials more then 6 times in 20 minutes will be added to the firewall for an hour.
