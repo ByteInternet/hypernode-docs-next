@@ -55,3 +55,10 @@
 .rst-content p:not(.admonition-title) + ul {
     margin-top: -14px;
 }
+
+// Let tables with the wrap-table class wrap their text instead of scrolling sideways
+.rst-content table.wrap-table {
+    td, th {
+        white-space: normal;
+    }
+}
