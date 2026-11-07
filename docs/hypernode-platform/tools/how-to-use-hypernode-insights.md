@@ -8,7 +8,7 @@ myst:
 
 # How to Use Hypernode Insights
 
-Hypernode Insights is a real-time monitoring dashboard for your Hypernode. It shows the health of your whole stack in one place, without any configuration, so you can spot problems early and see how your Hypernode performs over time.
+Hypernode Insights is a real-time monitoring dashboard for your Hypernode. It shows the health of your whole stack in one place, without any configuration, so you can spot problems early and see how your Hypernode performs over time. Insights is free and included with every Hypernode.
 
 ## What Hypernode Insights Shows
 
@@ -26,7 +26,9 @@ Besides the graphs, Insights has cards that point out common problems, such as *
 
 ## How to Open Hypernode Insights
 
-Go to [insights.hypernode.com](https://insights.hypernode.com/) and log in with your Hypernode account. Then choose the Hypernode you want to look at.
+1. Log in to the [Control Panel](https://my.hypernode.com/).
+1. Click the **Insights** button in the top right corner.
+1. Choose the Hypernode you want to look at.
 
 ## Working With the Dashboard
 
