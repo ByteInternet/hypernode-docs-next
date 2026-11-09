@@ -70,7 +70,7 @@ Some bots are exempt from rate limiting by default, like Google, Bing, and sever
 ```nginx
 map $http_user_agent $limit_bots {
     default '';
-    ~*(google|bing|heartbeat|uptimerobot|shoppimon|facebookexternal|monitis.com|Zend_Http_Client|magereport.com|SendCloud/|Adyen|ForusP|contentkingapp|node-fetch|Hipex|xCore|Mollie) '';
+    ~*(google|bing|heartbeat|uptimerobot|shoppimon|facebookexternal|monitis.com|Zend_Http_Client|magereport.com|SendCloud/|Adyen|ForusP|contentkingapp|node-fetch|Hipex|xCore|Mollie|Stripe) '';
     ~*(http|crawler|spider|bot|search|Wget|Python-urllib|PHPCrawl|bGenius|MauiBot|aspiegel) 'bot';
 }
 ```
@@ -99,7 +99,7 @@ In the example above you can see that a bot with the User Agent `SpecialSnowflak
 ```nginx
 map $http_user_agent $limit_bots {
     default '';
-    ~*(specialsnowflakecrawler|google|bing|heartbeat|uptimerobot|shoppimon|facebookexternal|monitis.com|Zend_Http_Client|magereport.com|SendCloud/|Adyen|ForusP|contentkingapp|node-fetch|Hipex|xCore|Mollie) '';
+    ~*(specialsnowflakecrawler|google|bing|heartbeat|uptimerobot|shoppimon|facebookexternal|monitis.com|Zend_Http_Client|magereport.com|SendCloud/|Adyen|ForusP|contentkingapp|node-fetch|Hipex|xCore|Mollie|Stripe) '';
     ~*(http|crawler|spider|bot|search|Wget|Python-urllib|PHPCrawl|bGenius|MauiBot|aspiegel) 'bot';
 }
 ```
