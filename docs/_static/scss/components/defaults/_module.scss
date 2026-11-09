@@ -81,12 +81,3 @@ h2 {
 section {
     scroll-margin-top: 120px;
 }
-
-// Keep the hidden heading link icon from wrapping onto an empty line
-.rst-content {
-    h1, h2, h3, h4, h5, h6 {
-        .headerlink {
-            position: absolute;
-        }
-    }
-}
