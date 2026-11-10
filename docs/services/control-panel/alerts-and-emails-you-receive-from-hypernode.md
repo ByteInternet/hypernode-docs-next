@@ -42,7 +42,7 @@ widths: 40 15 10 35
   - No
   - Yes. Follow the steps in the email.
 * - Emergency Rescue
-  - Only when the rescue took action
+  - Only for out-of-memory (OOM) events
   - No
   - None. See [Emergency Rescue](#emergency-rescue).
 * - A domain can't send email, because DNS records are missing
@@ -72,7 +72,7 @@ Alerts are set up per Control Panel account, not per Hypernode:
 
 ## Emergency Rescue
 
-When the monitoring sees too many errors on your Hypernode, an Emergency Rescue is started automatically. You do not have to do anything. The event shows in the Control Panel logs under the name of the account owner, because the platform uses that name for the audit trail. You only receive an email about an Emergency Rescue when the rescue took action on your Hypernode. If it started but did not need to do anything, no email is sent, but the event is still shown in the Control Panel logs. Emergency Rescue emails are not available as a Slack alert. See our guide on [24/7 monitoring and alerting](../../about-hypernode/support/24-7-monitoring-and-alerting.md) for how this works.
+When the monitoring sees too many errors on your Hypernode, an Emergency Rescue is started automatically. You do not have to do anything. The event shows in the Control Panel logs under the name of the account owner, because the platform uses that name for the audit trail. You only receive an email about an Emergency Rescue when it was caused by an out-of-memory (OOM) event. For other rescues no email is sent, but the event is still shown in the Control Panel logs. Emergency Rescue emails are not available as a Slack alert. See our guide on [24/7 monitoring and alerting](../../about-hypernode/support/24-7-monitoring-and-alerting.md) for how this works.
 
 ## A Domain Can't Send Email
 
