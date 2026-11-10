@@ -75,21 +75,7 @@ This means that [www.example.com](http://www.example.com) will point to wherever
 
 ### A Record
 
-One way to redirect your apex (or naked) domain, when the domain is not hosted on the Hypernode name servers, is to use the www-izers:
-
-|                                       |          |         |               |
-| ------------------------------------- | -------- | ------- | ------------- |
-| **Label**                             | **Type** | **TTL** | **Content**   |
-| [example.com](http://www.example.com) | A        | 600     | 46.21.232.141 |
-| [example.com](http://www.example.com) | A        | 600     | 46.21.233.172 |
-
-Add both for redundancy!
-
-This is the preferred way for the DNS Check because if for whatever reason the IP of your Hypernode changes, your shop will still be reachable.
-
-**NB:** Note that if you make use of the www-izer redirect servers, users that visit <https://example.com> directly will get an error message, either indicating that there is no HTTPS available or a plain connection refused error. The www-izers actually work as a forwarding service to the direct IP address of the Hypernode. This way we can manage any IP changes for you. That is the advantage, the disadvantage is that these records do not cooperate with SSL and that therefore the certificate does not work properly on the domain name without the [www.](http://www.%C2%A0)
-
-It's also an option to use the direct IP address of your Hypernode. You can find your IP with the “ping example.hypernode.io” command.
+To point your apex (or naked) domain to your Hypernode when the domain is not hosted on the Hypernode name servers, use the direct IP address of your Hypernode. You can find your IP with the `ping example.hypernode.io` command.
 
 |                                       |          |         |                      |
 | ------------------------------------- | -------- | ------- | -------------------- |
