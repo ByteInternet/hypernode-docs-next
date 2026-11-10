@@ -90,6 +90,6 @@ Hypernode blocks IP addresses that show malicious behavior, such as brute force 
 
 ## Malware Detected
 
-The malware scan runs daily on every Hypernode. When it finds something, this is shown in the Control Panel logs as "Action required: Malware detected on your Hypernode". No email or Slack message is sent for this, because the scan can produce false positives.
+The malware scan runs daily on every Hypernode. When it finds something, this is shown in the Control Panel logs as "Action required: Malware detected on your Hypernode". No email or Slack message is sent for this, because the scan also detects vulnerabilities and attacks that have already been mitigated.
 
 A finding means you have to look into it yourself, or ask your developer or a security partner. Hypernode does not investigate or clean up malware on your shop. Details about what was found and where are available with a Sansec license. See our guide on [Sansec eComscan](../../hypernode-platform/tools/how-to-set-up-sansec-ecomscan-on-hypernode.md). If you find a compromise, reset all credentials and secrets as well.
