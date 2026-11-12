@@ -26,7 +26,9 @@ In our release note you'll find a [more detailed description of Elasticsearch.](
 
 ## How to Enable Elasticsearch on Hypernode
 
-**Please note that when you change versions all Elasticsearch data will be deleted.**
+```{warning}
+When you change versions all Elasticsearch data will be deleted.
+```
 
 Elasticsearch can be enabled on all Hypernodes. To enable Elasticsearch, you can [talk to the API](https://community.hypernode.io/#/Documentation/hypernode-api/settings/README) or use the [hypernode-systemctl command-line tool](../tools/how-to-use-the-hypernode-systemctl-cli-tool.md). First configure the Elasticsearch version you wish to use. You can see the available versions of Elasticsearch which you can use on your Hypernode when running hypernode-systemctl settings. This will show the following:
 
@@ -105,7 +107,11 @@ ssh -L 9200:localhost:9200 app@yourhypernodename.hypernode.io
 
 ```
 
-If you ever need to switch between `6.x` to `7.x` or back after you have already been using it, note that **when you change versions all Elasticsearch data will be deleted**. When you are using the default Magento implementation that should be OK since you can just re-index the data.
+```{warning}
+If you ever need to switch between `6.x` and `7.x` or back after you have already been using it: when you change versions, all Elasticsearch data will be deleted.
+```
+
+When you are using the default Magento implementation that should be OK since you can just re-index the data.
 
 ## How to Configure Magento to Use Elasticsearch
 
