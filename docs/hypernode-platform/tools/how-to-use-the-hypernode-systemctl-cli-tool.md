@@ -27,7 +27,8 @@ To see which values you can set and which values they are allowed to have take a
 | **block_bad_ips_enabled**<br/><sub>Blocks abusive IPs with high AbuseIPDB.com confidence scores</sub>                                                           | True          | True, False                                                                                                                                 |
 | **botstopper_ai_policy**<br/><sub>Choose how strict Botstopper should be for AI crawlers and AI clients</sub>                                                   | aggressive    | aggressive, moderate, permissive                                                                                                            |
 | **botstopper_enabled**<br/><sub>Enable Botstopper bot protection</sub>                                                                                          | False         | True, False                                                                                                                                 |
-| **composer_version**<br/><sub>Change the Composer version</sub>                                                                                                 | 2.x           | 1.x, 2.2, 2.6, 2.7, 2.8, 2.x                                                                                                                |
+| **botstopper_utm_referer_enabled**<br/><sub>Pass on the external referer as<br />utm_source and utm_medium after a challenge</sub>                              | True          | True, False                                                                                                                                 |
+| **composer_version**<br/><sub>Change the Composer version</sub>                                                                                                 | 2.x           | 1.x, 2.2, 2.6, 2.7, 2.8, 2.9, 2.10, 2.11, 2.x                                                                                               |
 | **disable_optimizer_switch**<br/><sub>Disable the optimizer switch</sub>                                                                                        | False         | True, False                                                                                                                                 |
 | **elasticsearch_enabled**<br/><sub>Enable Elasticsearch</sub>                                                                                                   | False         | True, False                                                                                                                                 |
 | **elasticsearch_version**<br/><sub>Change the Elasticsearch version</sub>                                                                                       | 7.x           | 5.2, 6.x, 7.x                                                                                                                               |
@@ -57,7 +58,7 @@ To see which values you can set and which values they are allowed to have take a
 | **nodejs_version**<br/><sub>Change the Node version</sub>                                                                                                       | 22            | 6, 10, 16, 18, 20, 22, 24, 26                                                                                                               |
 | **opensearch_auto_create_index**<br/><sub></sub>                                                                                                                | True          | True, False                                                                                                                                 |
 | **opensearch_enabled**<br/><sub>Enable OpenSearch</sub>                                                                                                         | True          | True, False                                                                                                                                 |
-| **opensearch_version**<br/><sub>Change the OpenSearch version</sub>                                                                                             | 2.12          | 1.x, 2.6, 2.12, 2.19, 3.3                                                                                                                   |
+| **opensearch_version**<br/><sub>Change the OpenSearch version (note: changing the<br />version deletes all search indexes)</sub>                                | 2.12          | 1.x, 2.6, 2.12, 2.19, 3.3                                                                                                                   |
 | **openvpn_enabled**<br/><sub>Enables OpenVPN for secure database connections</sub>                                                                              | False         | True, False                                                                                                                                 |
 | **password_auth**<br/><sub>Indicates whether password authentication for the Hypernode is<br />allowed instead of only SSH keys</sub>                           | True          | True, False                                                                                                                                 |
 | **permissive_memory_management**<br/><sub>Configure memory management policy (OOM kills)</sub>                                                                  | False         | True, False                                                                                                                                 |
@@ -119,6 +120,7 @@ If an invalid value is provided you will be notified of this during the setting 
 
 - `botstopper_enabled`: Enables Botstopper bot protection.
 - `botstopper_ai_policy`: Configures the Botstopper AI policy. Possible values are `aggressive`, `moderate`, and `permissive`.
+- `botstopper_utm_referer_enabled`: Passes on the original external referer as `utm_source` and `utm_medium` query parameters after a Botstopper challenge. Enabled by default.
 
 See [How to Use Botstopper on Hypernode](../botstopper/how-to-use-botstopper.md) for details about enabling Botstopper, configuring it per vhost, and writing custom policies.
 
@@ -136,6 +138,10 @@ Indicates whether `use_index_extensions` and `mrr` are turned off. If turned off
 - `opensearch_enabled`: Enable OpenSearch
 - `opensearch_version`: Change the OpenSearch version
 - `opensearch_auto_create_index`: Indicates whether OpenSearch is allowed to automatically create an index when a document is indexed into a non-existing index.
+
+```{warning}
+Changing the OpenSearch version will delete all search indexes. You will have to reindex the data from your application afterwards.
+```
 
 ### Enabled IonCube
 
