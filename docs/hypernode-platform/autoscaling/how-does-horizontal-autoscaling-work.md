@@ -198,6 +198,14 @@ For ElasticSearch:
 app@abcdef-example-magweb-cmbl:~$ bin/magento config:set catalog/search/elasticsearch7_server_hostname elasticsearchmaster
 ```
 
+If Smile ElasticSuite is installed, set the servers it connects to:
+
+```console
+app@abcdef-example-magweb-cmbl:~$ bin/magento config:set smile_elasticsuite_core_base_settings/es_client/servers elasticsearchmaster:9200
+```
+
+If you use the Algolia search adapter (`catalog/search/engine` is set to `algolia`), no search engine hostname needs to be configured.
+
 More information about [Elasticsearch on Hypernode](../../hypernode-platform/tools/how-to-use-elasticsearch-on-hypernode.md).
 
 #### Make sure RabbitMQ configured properly
