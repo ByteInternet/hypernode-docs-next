@@ -269,6 +269,67 @@ Add suspicion weight for traffic from a specific country:
 
 You usually do not need allow rules for API or webhook traffic. Botstopper allows traffic by default. Use an `ALLOW` rule when you already have, or plan to add, a broader custom rule that could otherwise challenge or block this trusted traffic.
 
+## Only Challenge Visitors Under High Load
+
+You can keep Botstopper enabled at all times, but only show challenges to visitors when your Hypernode is actually under pressure. Botstopper keeps running in the background, and when a bot attack drives up the load, the protection kicks in automatically. When the load drops again, visitors are no longer challenged.
+
+To do this, use the system load average in a `WEIGH` rule.
+
+### What the Load Average Is
+
+On Linux, every process has to wait its turn to run on a CPU core. The load average is the number of processes that are running or waiting to run. Botstopper can use this value in expressions:
+
+| Variable   | Meaning                                    |
+| ---------- | ------------------------------------------ |
+| `load_1m`  | The average load over the last minute.     |
+| `load_5m`  | The average load over the last 5 minutes.  |
+| `load_15m` | The average load over the last 15 minutes. |
+
+The load average does not take the number of CPU cores into account. A load of `4.0` means that a 4-core Hypernode is fully busy, while an 8-core Hypernode is only half busy. Check the number of cores on your Hypernode with:
+
+```bash
+nproc
+```
+
+### Choose a Threshold
+
+To have Botstopper kick in when the CPU is more than 75% busy, multiply the number of cores by `0.75`:
+
+| CPU cores | Load threshold (75%) |
+| --------- | -------------------- |
+| 2         | `1.5`                |
+| 4         | `3.0`                |
+| 8         | `6.0`                |
+| 16        | `12.0`               |
+
+Always write the threshold as a decimal number, for example `3.0` instead of `3`. Otherwise the comparison in the expression does not work.
+
+### Add the Rule
+
+Add the following rule to `/data/web/botstopper/post.policy.yml`. This example is for a Hypernode with 4 CPU cores:
+
+```yaml
+- name: skip-challenges-under-low-load
+  action: WEIGH
+  expression: load_1m < 3.0
+  weight:
+    adjust: -100
+```
+
+As long as the load stays below `3.0`, this rule removes a large amount of suspicion weight from every request. The final weight then stays below the challenge threshold, so visitors are not challenged. As soon as the load reaches `3.0` or higher, the rule no longer matches and Botstopper challenges suspicious requests as usual.
+
+Restart Botstopper to apply the change:
+
+```bash
+hypernode-servicectl restart techaro-botstopper@default
+```
+
+Keep the following in mind:
+
+- This rule only changes the challenges that are based on suspicion weight. Rules that `DENY` or `CHALLENGE` a request directly, such as the rules for known bad bots, still apply at any load.
+- `load_1m` reacts quickly, so Botstopper turns on soon after an attack starts. It also turns off quickly, which can make it switch on and off often during an attack that comes in waves. Use `load_5m` if you prefer a more stable setting.
+- The load average is a symptom, not a cause. A shop can also become slow because of a slow database or external service while the load stays low. In that case, this rule does not activate the challenges.
+
 ## Logging
 
 The botstopper service logs to `/var/log/botstopper/botstopper.log`. The log file consists [JSON Lines](https://jsonlines.org/), meaning that each line in the log file is a JSON-parseable line.
