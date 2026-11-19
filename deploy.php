@@ -79,6 +79,8 @@ task('build:compress:brotli', function () {
     run('apt update && apt install brotli -y');
     within('{{release_or_current_path}}/docs/_build/html', function () {
         run('find . -name "*.html" -type f -exec brotli -f -q {{brotli_compression_level}} {} \\;');
+        run('find . -name "*.html.md" -type f -exec brotli -f -q {{brotli_compression_level}} {} \\;');
+        run('find . -name "llms.txt" -type f -exec brotli -f -q {{brotli_compression_level}} {} \\;');
         run('find . -name "*.css" -type f -exec brotli -f -q {{brotli_compression_level}} {} \\;');
         run('find . -name "*.js" -type f -exec brotli -f -q {{brotli_compression_level}} {} \\;');
         run('find . -name "*.svg" -type f -exec brotli -f -q {{brotli_compression_level}} {} \\;');
