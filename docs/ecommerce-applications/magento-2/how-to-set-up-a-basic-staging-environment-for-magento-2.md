@@ -13,9 +13,33 @@ redirect_from:
 
 # How to Set Up a Basic Staging Environment for Magento 2
 
-This article is an extension to the [article for Magento 1](../magento-1/how-to-set-up-a-staging-environment-for-magento-1.md). For information about the capabilities of the staging environment, please read it first.
+A staging environment is very useful, for things such as:
 
-Your staging environment **shares resources**(disk, CPU, memory) with your production site. If you want to do things such as automated load tests, it is recommended to order a [development plan](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) instead, so your production site will not be affected.
+- Let a customer (shop-owner) click around a proposed change
+- Quickly make a copy of a production shop to analyse a bug that didn't show up during development
+- Automated testing by external tools
+
+This article explains how you set one up on Hypernode for a Magento 2 shop. For Magento 1, see [How to Set Up a Staging Environment for Magento 1](../magento-1/how-to-set-up-a-staging-environment-for-magento-1.md).
+
+Keep in mind:
+
+- Your staging environment **shares resources** (disk, CPU, memory) with your production site. If you want to do things such as automated load tests, it is recommended to order a [development plan](../../hypernode-platform/tools/how-to-use-hypernode-development-plans.md) instead, so your production site will not be affected.
+- We don't recommend creating hardlinks from your production media folder to your staging media folder as our backup mechanism does not cope well with hardlinks.
+
+## How Does it Work
+
+A second document root (/data/web/staging) is provided and supports all defined vhosts (notably: every SSL vhost). It is reachable on port 8888 and 8880 (http) and 8443 (https).
+
+For Nginx configuration (in /data/web/nginx/\*), the following rules apply:
+
+- http.\* files are included only once in HTTP context
+- server.\* files are included in every vhost
+- public.\* files are ONLY included in the production vhosts
+- staging.\* files are ONLY included in the staging vhosts
+
+This has two distinct advantages. First, there's no need to change DNS, so its very easy to send your customer a link and it just works. Second, SSL certificates will work the same without warning.
+
+Remember that you will need to update the base_url for every storefront (with the new port number). You would have to update the config anyway, as you will likely require a separate database for MySQL and Redis. See below for a simple command.
 
 ## How to Make a Copy of a Live Site
 
@@ -139,9 +163,48 @@ Keep in mind:
 - Regenerate your sitemap as it may still contain links to your live site.
 - Change all custom links and references that are in your staging installation pointing to the production install.
 
+You can update symlinks using the `ln` tool with the `-f` (force) feature flag:
+
+```bash
+ln -sf /data/web/magento2_staging/some_file /data/web/magento2_staging/some_other_file
+```
+
 Now you should be able to reach your Magento 2 staging environment on `http://example.hypernode.io:8888`
 
-For additional configuration and troubleshooting refer to the [Magento 1 staging environment article](../magento-1/how-to-set-up-a-staging-environment-for-magento-1.md)
+### How to Limit Access to a Staging Environment
+
+If you want to restrict access, you can do so by editing /data/web/nginx/staging.access. There are two options.
+
+- Restrict by IP, use this code:
+
+```nginx
+allow your.ip.add.ress;
+deny all;
+```
+
+- Restrict by password (called HTTP basic authentication).
+
+```nginx
+auth_basic "Restricted area";
+auth_basic_user_file /data/web/htpasswd-staging;
+```
+
+And run this command to add a Hypernode/Hypernode user for the staging environment:
+
+```bash
+htpasswd -bc /data/web/htpasswd-staging hypernode hypernode
+```
+
+Read more [here](../../hypernode-platform/nginx/how-to-protect-your-magento-store-with-a-password-in-nginx.md) about using HTTP basic authentication on Hypernode.
+
+## Nginx Configuration
+
+To make config adjustments that are only active in the staging environment, use Nginx config files starting with staging. (For example staging.rewrites instead of server.rewrites)
+
+all configuration files for Nginx in /data/web/nginx starting with "staging." will only be included in the staging server block.
+
+_Files starting with "public." will be included in the public environment only.
+Files starting with "server." will be included in both the public and the staging environment._
 
 ## Staging Environment and Varnish
 
@@ -181,6 +244,32 @@ root /data/web/public;
 ```
 
 So now we want to set this to: `root /data/web/example_staging;` and save the file. Now you can set the Magento installation in this location and you're set.
+
+## Troubleshooting
+
+### Do You Have Enough Disk Space?
+
+If you don't import log and report tables, it will save you a lot. Use [**this script**](https://gist.github.com/hn-support/be909515580cd08bd23a45dc561c3b78#file-check-enough-space-sh%5B/embed%5D) to check whether you have enough space to make a copy of your live site.
+
+To use this script, save it in your home directory on the Hypernode and execute with `bash scriptname.`
+
+### Find and Remove Hardlinks
+
+We do not recommend linking the media folder of your staging site to the media folder of the production site using hardlinks, as our backup mechanism can not cope with hardlinks and restores the linked files as individual files, causing the restored backup to be a lot larger than the original.
+
+To detect earlier created hardlinks, use find:
+
+```bash
+find /data/web/ -type f -links +1
+```
+
+### External Module Crashes on Different base_url?
+
+The updated base_url will possibly conflict with external modules that use the base_url (with the new port) as license key. Usually, you can fix this by updating the module or asking the vendor to add your staging base_url to the license check.
+
+### Product Feeds Pushed for Staging Environment
+
+If you use extensions that push a product feed to merchant indexing sites like Bol, Google and Marktplaats or Ebay, turn off these feeds for your staging environment to be sure your staging product feeds are not being pushed to any merchant index site.
 
 ## Cleanup and Refresh
 
