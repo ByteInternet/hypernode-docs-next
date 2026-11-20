@@ -71,7 +71,7 @@ If you have an SLA Basic and need to access an older snapshot, you can request i
 1. Click Backups in the sidebar to go to the backup page.
 1. Fill in and submit the form.
 
-Our support team will now manually attach the backup to your Hypernode, and inform you when it has become available. Please note that [a fee may apply](./hypernode-backup-policy.md#requesting-older-snapshots) for customers with an SLA Basic.
+Our support team will now manually attach the backup to your Hypernode, and inform you when it has become available.
 
 ```{important}
 Our support team is only available during business hours (Amsterdam/Netherlands time). If you need an older snapshot to be attached manually outside of business hours, please file an [Hypernode Emergency Support Request](../../about-hypernode/support/emergency-support-outside-office-hours.md)
