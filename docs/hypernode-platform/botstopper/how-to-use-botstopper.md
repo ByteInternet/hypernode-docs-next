@@ -68,7 +68,7 @@ hypernode-systemctl settings botstopper_ai_policy permissive
 | `moderate`   | Blocks AI training crawlers and unknown AI bots. Allows documented AI search bots and user-triggered AI clients. |
 | `permissive` | Allows documented AI bots. Blocks unknown AI-style bots.                                                         |
 
-Use `aggressive` if you want the strictest AI blocking. Use `moderate` if you want to block AI training while keeping documented AI search and user tools working. Use `permissive` if you only want to block unclear or undocumented AI crawlers.
+See [How to Choose a Botstopper AI Policy](./how-to-choose-a-botstopper-ai-policy.md) for a detailed comparison of what each policy blocks and how verified AI bots are treated.
 
 Some AI crawlers also require `robots.txt` rules before they respect your opt-out. Botstopper blocks requests at the webserver layer, but `robots.txt` is still useful for crawlers that require policy signals there. See the [Magento 1 robots.txt](../../ecommerce-applications/magento-1/how-to-create-a-robots-txt-for-your-magento-1-shop.md) or [Magento 2 robots.txt](../../ecommerce-applications/magento-2/how-to-create-a-robots-txt-for-magento-2-x.md) articles if you need to configure one.
 
