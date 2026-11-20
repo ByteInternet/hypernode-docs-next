@@ -68,6 +68,13 @@ acl profile {
 }
 
 sub vcl_recv {
+  # Restore client IP from Cloudflare
+  if (req.http.CF-Connecting-IP) {
+    set req.http.X-Real-IP = req.http.CF-Connecting-IP;
+  } else {
+    set req.http.X-Real-IP = client.ip;
+  }
+
   if (req.esi_level > 0) {
     # ESI request should not be included in the profile.
     # Instead you should profile them separately, each one
@@ -80,7 +87,7 @@ sub vcl_recv {
 
   # If it's a Blackfire query and the client is authorized,
   # just pass directly to the application.
-  if (req.http.X-Blackfire-Query && client.ip ~ profile) {
+  if (req.http.X-Blackfire-Query && std.ip(req.http.X-Real-IP, "0.0.0.0") ~ profile) {
     return (pass);
   }
 }
