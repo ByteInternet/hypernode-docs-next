@@ -16,7 +16,7 @@ This article will explain how you can create you own backup and download it your
 
 *Please note that the following procedure is not supported by Hypernode. We simply list this option as we have had a number of customers who have requested this for a variety of reasons. If you run into any issues following the below steps we are unfortunately not able to help you with this.*
 
-*That said, we can upon your request and for a small fee (€ 75 EUR) arrange for a complete copy of your website (and/or database) to be made available for download. If you would like to make use of this option please send us an e-mail at [support@hypernode.com](http://support@hypernode.com) with the subject ‘Requesting backup for download’ with a description of what you need and we will take care of this within 12 (working) hours. The costs will then be added to your next invoice.*
+*That said, we can upon your request and free of charge arrange for a complete copy of your website (and/or database) to be made available for download. If you would like to make use of this option please send us an e-mail at [support@hypernode.com](http://support@hypernode.com) with the subject ‘Requesting backup for download’ with a description of what you need and we will take care of this within 12 (working) hours.*
 
 ## Create the Backup
 

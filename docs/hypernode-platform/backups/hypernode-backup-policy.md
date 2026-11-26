@@ -36,17 +36,11 @@ As the backup snapshot contains a second MySQL instance running, attaching a sna
 To restore database and file backups from a snapshot, see [this article](how-to-restore-your-hypernode-from-a-snapshot.md).
 **Please note:** Restoring a snapshot/backup is never completely without risk, Hypernode is not liable for data loss or other discrepancies.
 
-You can always attach the most recent snapshot to your Hypernode for free. Depending on your SLA, attaching older snapshots might come at a fee. For details see the SLA Standard section below.
+You can always attach the most recent snapshot to your Hypernode yourself, for free.
 
 ### Requesting Older Snapshots
 
-If you need a less recent snapshot (older than one day) and you don't have SLA Standard, you need to contact Support. Please note we charge a fee for this:
-
-|                                              |                 |                  |
-| -------------------------------------------- | --------------- | ---------------- |
-|                                              | **SLA Basic**   | **SLA Standard** |
-| Most recent Hypernode Backup (AWS/Openstack) | Free            | Free             |
-| Older Hypernode Backups                      | € 25,- (ex VAT) | Free             |
+If you need a less recent snapshot (older than one day) and you don't have SLA Standard, you need to contact Support. This is free of charge.
 
 ## SLA Standard
 

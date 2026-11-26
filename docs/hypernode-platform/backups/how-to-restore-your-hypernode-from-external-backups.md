@@ -20,6 +20,8 @@ Your Hypernode is backed up daily to an external server. This page explains how 
 
 Please contact our support department if you want to access an external backup. We will prepare the data onto the server so you can restore the data yourself. Be sure to indicate if you need a backup of a file, database or both, and from before what date and time you require the backup to be.
 
+Placing the external backup on your server is free of charge.
+
 # Restore from a Prepared Backup
 
 ## Restore from a Prepared Database Backup
