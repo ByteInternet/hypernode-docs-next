@@ -3,7 +3,7 @@ myst:
   html_meta:
     description: Learn what an Emergency Rescue on Hypernode is, why it shows up in
       your logs, and how to use the incident files to find out what caused it.
-    title: Emergency Rescue on Hypernode and How to Investigate It | Hypernode
+    title: Emergency Rescue on Hypernode and How to Investigate It
 ---
 
 # Emergency Rescue on Hypernode and How to Investigate It
