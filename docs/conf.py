@@ -49,6 +49,9 @@ extensions = [
     "hypernode.sphinx.extensions.updated_at",
     "hypernode.sphinx.extensions.meta_robots",
     "hypernode.sphinx.extensions.github_actions_logging",
+    "hypernode.sphinx.extensions.markdown_pages",
+    "hypernode.sphinx.extensions.markdown_pages_writer",
+    "hypernode.sphinx.extensions.llms_txt",
     "sphinx_docsearch",
 ]
 
