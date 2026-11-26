@@ -254,7 +254,7 @@ varnishncsa -F '%U%q %{Varnish:hitmiss}x' | grep hit
 
 ### Hypernode Insights (If Available)
 
-Use Hypernode Insights to:
+Use [Hypernode Insights](../tools/how-to-use-hypernode-insights.md) to:
 
 - Monitor hit/miss ratios
 - Detect purge spikes
