@@ -17,7 +17,7 @@ At Hypernode we understand like no other that the availability and stability of 
 
 ## Monitoring
 
-It is our responsibility to monitor all the offered services on the Hypernode. As such we have setup a global monitoring network that checks your Hypernode’s availability from locations in Europe, the United States, and Eastern Asia. Each location checks the availability roughly every 2 minutes. An alert is raised if too many errors are received globally, and an Emergency Rescue is started. If the automated Emergency Rescue can’t fix the issue, the alert is escalated to the Hypernode Emergency Recovery Operative (Hero).
+It is our responsibility to monitor all the offered services on the Hypernode. As such we have setup a global monitoring network that checks your Hypernode’s availability from locations in Europe, the United States, and Eastern Asia. Each location checks the availability roughly every 2 minutes. An alert is raised if too many errors are received globally, and an Emergency Rescue is started. If the automated Emergency Rescue can’t fix the issue, the alert is escalated to the Hypernode Emergency Recovery Operative (Hero). See [Emergency Rescue on Hypernode and How to Investigate It](../../troubleshooting/performance/emergency-rescue-on-hypernode-and-how-to-investigate-it.md) for what a rescue does and how to find out what caused it.
 
 ### What Do We Monitor
 
