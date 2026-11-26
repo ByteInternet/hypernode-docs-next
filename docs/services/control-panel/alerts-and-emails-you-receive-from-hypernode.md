@@ -23,41 +23,14 @@ Events on your Hypernode are also shown in the [logs of the Control Panel](using
 
 ## Overview
 
-```{list-table}
----
-header-rows: 1
-class: wrap-table
-widths: 40 15 10 35
----
-* - Message
-  - Email
-  - Slack
-  - Action for you
-* - Essential system alerts, such as crawler bot traffic, too many MySQL connections, full disk and Redis memory
-  - Yes
-  - Yes
-  - Depends on the alert. The email explains it.
-* - Incident or security notice, for example about a vulnerability
-  - Yes, to the owner and Admin team members
-  - No
-  - Yes. Follow the steps in the email.
-* - Emergency Rescue
-  - Only for out-of-memory (OOM) events
-  - No
-  - None. See [Emergency Rescue](#emergency-rescue).
-* - A domain can't send email, because DNS records are missing
-  - Yes
-  - No
-  - Check your DNS records. See [A Domain Can't Send Email](#a-domain-cant-send-email).
-* - An IP address was blocked for malicious activity
-  - Yes
-  - No
-  - None, unless a legitimate visitor is blocked. See [An IP Address Was Blocked](#an-ip-address-was-blocked).
-* - Malware detected on your Hypernode
-  - No
-  - No
-  - Yes. See [Malware Detected](#malware-detected).
-```
+| Message | Email | Slack | Action for you |
+| --- | --- | --- | --- |
+| Essential system alerts, such as crawler bot traffic, too many MySQL connections, full disk and Redis memory | Yes | Yes | Depends on the alert. The email explains it. |
+| Incident or security notice, for example about a vulnerability | Yes, to the owner and Admin team members | No | Yes. Follow the steps in the email. |
+| Emergency Rescue | Only for out-of-memory (OOM) events | No | None. See [Emergency Rescue](#emergency-rescue). |
+| A domain can't send email, because DNS records are missing | Yes | No | Check your DNS records. See [A Domain Can't Send Email](#a-domain-cant-send-email). |
+| An IP address was blocked for malicious activity | Yes | No | None, unless a legitimate visitor is blocked. See [An IP Address Was Blocked](#an-ip-address-was-blocked). |
+| Malware detected on your Hypernode | No | No | Yes. See [Malware Detected](#malware-detected). |
 
 ## Alerts You Can Send to Email or Slack
 
