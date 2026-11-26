@@ -4,7 +4,7 @@ myst:
     description: With PHP Extended Support, Hypernode patches PHP versions that have
       reached end of life, so your shop keeps receiving security fixes until you can
       upgrade.
-    title: PHP Extended Support on Hypernode | Hypernode
+    title: PHP Extended Support on Hypernode
 ---
 
 # PHP Extended Support on Hypernode
