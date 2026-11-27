@@ -20,7 +20,7 @@ To display the percentile usage of files that can be created: `df -i /data`
 
 To display the percentage of used space in gigabytes: `df -h /data`
 
-To display the disk usage report sorted in descending order: `ncdu /data`
+To explore your disk usage interactively, sorted by size, while it shows you live progress during the scan: `ncdu -x /data` (see the ncdu section below)
 
 ## Do You Have Too Many Files? Did You Run out of Inodes?
 
@@ -42,8 +42,33 @@ find . -type f -mtime +2 -ls -delete
 Try to see where you can clear up the most space. The following command (using SSH) will show you the top 10 largest directories:
 
 ```bash
-du -h /data/web /data/mysql | sort -h | tail -10
+du -hx /data/web /data/mysql | sort -h | tail -10
 ```
+
+`du` reads the metadata of every file it counts, so the scan time depends on the number of files in your shop rather than on the number of gigabytes. On a store with hundreds of thousands of files this can run for several minutes. Because the output is piped through `sort`, the terminal stays empty until the whole scan has finished: that is normal, the command has not hung. The `-x` flag keeps the scan on the `/data` filesystem, so it does not wander into anything mounted underneath it (a remote storage mount, for example).
+
+Want to see progress while it runs? Drop the pipe and ask for one line per top-level directory. `du` prints each line as soon as that directory is done:
+
+```bash
+du -hx --max-depth=1 /data/web /data/mysql
+```
+
+## Browse Your Disk Usage With ncdu
+
+`ncdu` is an interactive disk usage explorer, installed on every Hypernode. Unlike `du`, it shows a live count of files scanned while it works, and once it is done you can browse straight into the directories that use the most space:
+
+```bash
+ncdu -x /data
+```
+
+On a slow SSH connection, `ncdu -q /data` refreshes the screen less often and saves bandwidth.
+
+Run `ncdu --help` for the available options, and press `?` inside the interface for the full key list.
+
+Two things to know before you delete anything from inside `ncdu` (press `d` to delete the selected file or directory):
+
+- Deleting is permanent: there is no trash and no undo. If you only want to look around, start `ncdu` in read-only mode: `ncdu -r -x /data`.
+- Never delete anything under `/data/mysql` from inside `ncdu`. Those files belong to MySQL, and removing them by hand corrupts your database. See “Do You Suffer From the MySQL ibdata Bug?” below for the only safe way to reclaim MySQL disk space.
 
 ## Have You Tried Optimizing Your Images Yet?
 
