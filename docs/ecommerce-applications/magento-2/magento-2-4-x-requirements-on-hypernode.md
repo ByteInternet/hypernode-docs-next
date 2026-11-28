@@ -21,14 +21,14 @@ Adobe publishes separate requirement tables for Commerce on Cloud and for on-pre
 
 For each release line, the table lists the versions Adobe names for the latest patch release. When Adobe lists multiple versions, any of them satisfies the requirement.
 
-| Component | Hypernode offers | 2.4.4-p18 | 2.4.5-p17 | 2.4.6-p15 | 2.4.7-p10 | 2.4.8-p5 | 2.4.9 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| PHP | 8.1, 8.2, 8.3, 8.4, 8.5 | ✓ 8.1 | ✓ 8.1 | ✓ 8.2, 8.1 | ✓ 8.3, 8.2 | ✓ 8.4, 8.3 | ✓ 8.5 |
-| Database | MySQL 8.0, 8.4 | ✗ MariaDB 10.6 | ✗ MariaDB 10.11 | ✗ MariaDB 10.11 | ✗ MariaDB 10.11, 11.8 | ✓ MySQL 8.4 | ✓ MySQL 8.4 |
-| Search | 1.x, 2.6, 2.12, 2.19, 3.3 | ✓ 2.19 | ✓ 2.19 | ✓ 2.19, 3 | ✓ 2.19, 3 | ✓ 3 (3.3) | ✓ 3 (3.3) |
-| Cache and sessions | Valkey 8.1 | ✓ Redis 7.2 | ✓ Valkey 8.1 | ✓ Valkey 8.1 | ✓ Valkey 8.1 | ✓ Valkey 8.1 | ✗ Valkey 9 |
-| Varnish | 4.0, 6.0, 7.x | ✓ 7.7 | ✗ 8 | ✗ 8 | ✗ 8 | ✗ 8 | ✗ 8 |
-| Composer | 1.x, 2.2, 2.6 through 2.11 | ✓ 2.2.26+ | ✓ 2.2.26+ | ✓ 2.2.26+ | ✓ 2.10 | ✓ 2.10 | ✓ 2.10 |
+| Component          | Hypernode offers           | 2.4.4-p18      | 2.4.5-p17       | 2.4.6-p15       | 2.4.7-p10             | 2.4.8-p5     | 2.4.9       |
+| ------------------ | -------------------------- | -------------- | --------------- | --------------- | --------------------- | ------------ | ----------- |
+| PHP                | 8.1, 8.2, 8.3, 8.4, 8.5    | ✓ 8.1          | ✓ 8.1           | ✓ 8.2, 8.1      | ✓ 8.3, 8.2            | ✓ 8.4, 8.3   | ✓ 8.5       |
+| Database           | MySQL 8.0, 8.4             | ✗ MariaDB 10.6 | ✗ MariaDB 10.11 | ✗ MariaDB 10.11 | ✗ MariaDB 10.11, 11.8 | ✓ MySQL 8.4  | ✓ MySQL 8.4 |
+| Search             | 1.x, 2.6, 2.12, 2.19, 3.3  | ✓ 2.19         | ✓ 2.19          | ✓ 2.19, 3       | ✓ 2.19, 3             | ✓ 3 (3.3)    | ✓ 3 (3.3)   |
+| Cache and sessions | Valkey 8.1                 | ✓ Redis 7.2    | ✓ Valkey 8.1    | ✓ Valkey 8.1    | ✓ Valkey 8.1          | ✓ Valkey 8.1 | ✗ Valkey 9  |
+| Varnish            | 4.0, 6.0, 7.x              | ✓ 7.7          | ✗ 8             | ✗ 8             | ✗ 8                   | ✗ 8          | ✗ 8         |
+| Composer           | 1.x, 2.2, 2.6 through 2.11 | ✓ 2.2.26+      | ✓ 2.2.26+       | ✓ 2.2.26+       | ✓ 2.10                | ✓ 2.10       | ✓ 2.10      |
 
 ✓ available on Hypernode and meets the requirement · ✗ not available on Hypernode. Details per component in the sections below.
 
@@ -49,10 +49,15 @@ Items in progress appear in [changelog.hypernode.com](https://changelog.hypernod
 - In progress, without an ETA: Valkey 9 (required by 2.4.9), Varnish 8 and MariaDB (listed by Adobe for every line; Hypernode provides MySQL) are being worked on.
 
 - Adobe lists exact PHP versions instead of a floor: 8.5 is validated only for 2.4.9, so run the PHP version Adobe lists for your release ([the PHP version documentation](../../hypernode-platform/php/supported-php-versions-and-how-to-change-them-on-hypernode.md)). PHP 8.1, required by 2.4.4 and 2.4.5, is past its upstream end of life (December 2025) but remains selectable.
+
 - Changing `opensearch_version` deletes all search indexes: switch and reindex as part of the upgrade itself, and Elasticsearch can keep running until the upgrade window ([the OpenSearch documentation](../../hypernode-platform/tools/how-to-use-elasticsearch-on-hypernode.md)).
+
 - Switching to Valkey is a drop-in swap: the Magento configuration stays the same and `redis-cli` keeps working through symlinks; Redis 7.x remains selectable through `redis_version` ([the Valkey documentation](../../hypernode-platform/tools/how-to-use-valkey-on-hypernode.md), [Redis configuration for Magento 2](how-to-configure-redis-for-magento-2.md)).
+
 - Composer 2.2 through 2.11 are selectable; 2.11 satisfies every Composer requirement, including the 2.2.26+ floors ([the Composer documentation](../../hypernode-platform/tools/how-to-use-composer-2-on-your-hypernode.md)).
+
 - nginx runs 1.22.1 as part of the managed platform image and has no setting; a newer nginx arrives automatically with a future platform update and, as far as we can assess, does not block 2.4.9.
+
 - `rabbitmq_enabled` turns RabbitMQ on (on plans that support it); the version is not selectable, and a delayed message exchange plugin has its own toggle ([how to run RabbitMQ](../../best-practices/database/how-to-run-rabbitmq-on-hypernode.md)).
     - Adobe requires RabbitMQ 4.3 (or ActiveMQ Artemis 2) for 2.4.5 through 2.4.9, and RabbitMQ 3.9 or 3.13 for 2.4.4; ActiveMQ Artemis is not offered.
     - Enable it only for queue consumers (B2B, MediaGallery, async operations).
@@ -73,6 +78,7 @@ In practice this means:
 Getting to MySQL 8.4 for 2.4.7 and higher:
 
 - The upgrade goes in steps: 5.7 first moves to 8.0, and only 8.0 moves to 8.4. Upgrading directly from 5.7 to 8.4 is not supported. Treat the 8.0 step as temporary: 8.0 and 5.7 no longer receive security updates.
+
 - Before the switch to 8.4, every MySQL user must use the `caching_sha2_password` authentication plugin, otherwise the platform refuses the upgrade. Find the exceptions with:
 
     ```sql
